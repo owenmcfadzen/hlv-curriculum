@@ -8,3 +8,13 @@ node_modules/
 *.swp
 .idea/
 .vscode/
+
+# Raw source materials — local only, never committed
+sources/decks/
+sources/notion/
+sources/transcripts/
+sources/worksheets/
+!sources/decks/.gitkeep
+!sources/notion/.gitkeep
+!sources/transcripts/.gitkeep
+!sources/worksheets/.gitkeep
