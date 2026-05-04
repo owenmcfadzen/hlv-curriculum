@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/owenmcfadzen/hlv-curriculum/schema/schedule.schema.json",
+  "title": "SCHEDULE",
+  "description": "The program schedule. weeks → days → AM/PM blocks.",
+  "type": "object",
+  "required": ["weeks"],
+  "properties": {
+    "weeks": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/week" }
+    }
+  },
+  "definitions": {
+    "week": {
+      "type": "object",
+      "required": ["tag", "label", "days"],
+      "properties": {
+        "tag": { "type": "string", "description": "Short label, e.g. 'WEEK 1'" },
+        "label": { "type": "string", "description": "Week theme, e.g. 'Discovery'" },
+        "sub": { "type": "string", "description": "Optional one-line week framing" },
+        "days": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/day" }
+        },
+        "band": {
+          "type": "object",
+          "description": "Optional banner across the week (e.g. sponsor access band)",
+          "required": ["label", "kind"],
+          "properties": {
+            "label": { "type": "string" },
+            "kind": { "$ref": "block.schema.json#/definitions/kind" }
+          }
+        }
+      }
+    },
+    "day": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "enum": ["Mon", "Tue", "Wed", "Thu", "Fri"] },
+        "am": { "type": "array", "items": { "$ref": "block.schema.json#" } },
+        "pm": { "type": "array", "items": { "$ref": "block.schema.json#" } },
+        "amSub": { "type": "string", "description": "Optional sub-line under AM column" },
+        "pmSub": { "type": "string", "description": "Optional sub-line under PM column" }
+      }
+    }
+  }
+}

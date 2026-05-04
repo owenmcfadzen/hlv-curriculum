@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/owenmcfadzen/hlv-curriculum/schema/extraction-entry.schema.json",
+  "title": "Extraction entry",
+  "description": "One entry in data/porto-extraction.json. Structural read of a deck slide; no judgment fields.",
+  "type": "object",
+  "required": ["deck", "slide_n", "title", "kind", "content"],
+  "properties": {
+    "deck": {
+      "type": "string",
+      "description": "Deck identifier (e.g. 'Day 1', 'Day 2')"
+    },
+    "slide_n": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "PDF page number (1-indexed)"
+    },
+    "deck_slide_n": {
+      "type": ["integer", "null"],
+      "description": "Original deck slide number, parsed from speaker notes. Null when no marker."
+    },
+    "title": {
+      "type": "string",
+      "description": "Best-guess slide title; '(visual only)' or '(untitled)' as fallback"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "teaching",
+        "activity_instruction",
+        "facilitator_note",
+        "visual_reference",
+        "cover",
+        "transition",
+        "schedule",
+        "stat"
+      ]
+    },
+    "content": {
+      "type": "string",
+      "description": "Verbatim text from the slide"
+    },
+    "facilitator_voice": {
+      "type": ["string", "null"],
+      "description": "Speaker notes / facilitator-aimed text, if any"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/owenmcfadzen/hlv-curriculum/schema/mapping-entry.schema.json",
+  "title": "Mapping entry",
+  "description": "Carry-forward decision for one extraction slide. Keyed by '<deck>::<slide_n>' in data/porto-mapping.json.",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": ["string", "null"],
+      "enum": ["applicable", "retired", "reframe", "general_resource", null],
+      "description": "Carry-forward decision"
+    },
+    "proposed_2026_block": {
+      "type": ["string", "null"],
+      "description": "block_id from data/blocks-index.json (e.g. 'w1-mon-am-welcome') or null"
+    },
+    "note": {
+      "type": ["string", "null"],
+      "description": "Short reason — especially for retired/reframe"
+    },
+    "_provenance": {
+      "type": "string",
+      "enum": ["v0_heuristic", "reviewed", "drafted"],
+      "description": "Confidence track. v0_heuristic = produced by old regex pass; needs review."
+    }
+  }
+}

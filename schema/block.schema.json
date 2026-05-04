@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/owenmcfadzen/hlv-curriculum/schema/block.schema.json",
+  "title": "Block",
+  "description": "A single block in a SCHEDULE day's AM or PM. Either a phase marker (groupLabel only) or a real block.",
+  "oneOf": [
+    {
+      "type": "object",
+      "title": "Phase marker",
+      "required": ["groupLabel"],
+      "additionalProperties": false,
+      "properties": {
+        "groupLabel": {
+          "type": "string",
+          "description": "Header text for the phase marker (e.g. 'PHASE 1 · RECONNAISSANCE')"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "title": "Schedule block",
+      "required": ["label", "kind"],
+      "properties": {
+        "label": { "type": "string", "description": "Visible name in the schedule grid" },
+        "kind": { "$ref": "#/definitions/kind" },
+        "sub": { "type": "string", "description": "Optional italic sublabel under the title" },
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z][0-9]+$",
+          "description": "Optional — links to ACTIVITIES entry by code"
+        },
+        "track": { "$ref": "#/definitions/track" },
+        "slide": { "$ref": "#/definitions/slide" }
+      }
+    }
+  ],
+  "definitions": {
+    "kind": {
+      "type": "string",
+      "enum": [
+        "welcome",
+        "work",
+        "module",
+        "game",
+        "rc",
+        "panel",
+        "sponsor",
+        "teamteach",
+        "social",
+        "pitch",
+        "lpp",
+        "track"
+      ],
+      "description": "Visual category — controls color in the schedule grid"
+    },
+    "track": {
+      "type": "string",
+      "enum": ["product", "business", "market"],
+      "description": "Specialty track (only used when kind=track)"
+    },
+    "slide": {
+      "type": "object",
+      "description": "Block detail content rendered in slide-mode drill-down",
+      "required": ["status"],
+      "properties": {
+        "status": { "$ref": "#/definitions/status" },
+        "foundation": {
+          "type": "string",
+          "description": "1-3 sentences. The concept being taught/practiced."
+        },
+        "students": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Bullet list of what students actually do"
+        },
+        "facilitator": {
+          "type": "string",
+          "description": "Notes for the person running it"
+        },
+        "references": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["ready", "draft", "stub"],
+      "description": "ready = Owen-reviewed; draft = exists, needs review; stub = placeholder"
+    }
+  }
+}
