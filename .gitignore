@@ -18,3 +18,8 @@ sources/worksheets/
 !sources/notion/.gitkeep
 !sources/transcripts/.gitkeep
 !sources/worksheets/.gitkeep
+
+# Derivative data exports — regenerable via tools/export-data.mjs
+data/schedule.json
+data/activities.json
+data/days.json
