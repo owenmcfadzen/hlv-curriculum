@@ -2168,9 +2168,144 @@ body.view-b-active .view-b {
   box-shadow: inset 0 0 0 1px var(--text);
 }
 .vb-cal-block[data-dim="true"] { opacity: 0.28; }
+/* Color-by-kind — the 12 KIND_LEGEND classifications visible at a glance */
+.vb-cal-block[data-kind="welcome"]   { background: #FBE7C840; border-left: 3px solid #C5A462; }
+.vb-cal-block[data-kind="work"]      { background: #E8E9EC55; border-left: 3px solid #8A95A8; }
+.vb-cal-block[data-kind="module"]    { background: #F3D8DD40; border-left: 3px solid #B86577; }
+.vb-cal-block[data-kind="game"]      { background: #CFDFE955; border-left: 3px solid #6B8FAD; }
+.vb-cal-block[data-kind="rc"]        { background: #D8505016; border-left: 3px solid #D85050; }
+.vb-cal-block[data-kind="panel"]     { background: #DDECCF55; border-left: 3px solid #7AA84E; }
+.vb-cal-block[data-kind="sponsor"]   { background: #F2B96830; border-left: 3px solid #E89A2A; }
+.vb-cal-block[data-kind="teamteach"] { background: #C5B7E840; border-left: 3px solid #7B4FDB; }
+.vb-cal-block[data-kind="social"]    { background: #DCD3EC40; border-left: 3px solid #8A6FCC; }
+.vb-cal-block[data-kind="pitch"]     { background: #F4D4DD55; border-left: 3px solid #C24A6E; }
+.vb-cal-block[data-kind="lpp"]       { background: #C7DECC55; border-left: 3px solid #4E9E66; }
+
+/* Tracks keep their track color on the left edge regardless of kind */
 .vb-cal-block[data-track="product"]  { border-left: 3px solid #E46C41; }
 .vb-cal-block[data-track="business"] { border-left: 3px solid #34C759; }
 .vb-cal-block[data-track="market"]   { border-left: 3px solid #3B7DD8; }
+
+/* Kind legend (small strip below filter bar) */
+.vb-kindlegend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 6px 24px 8px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+  font-family: var(--condensed);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.vb-kindlegend .kl-label {
+  color: var(--text-faint);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+.vb-kindlegend .kl-item { display: inline-flex; align-items: center; gap: 5px; }
+.vb-kindlegend .kl-sw {
+  display: inline-block;
+  width: 14px; height: 10px;
+  border-radius: 1px;
+  border-left: 3px solid;
+}
+.vb-kindlegend .kl-sw[data-kind="welcome"]   { border-left-color: #C5A462; background: #FBE7C840; }
+.vb-kindlegend .kl-sw[data-kind="work"]      { border-left-color: #8A95A8; background: #E8E9EC55; }
+.vb-kindlegend .kl-sw[data-kind="module"]    { border-left-color: #B86577; background: #F3D8DD40; }
+.vb-kindlegend .kl-sw[data-kind="game"]      { border-left-color: #6B8FAD; background: #CFDFE955; }
+.vb-kindlegend .kl-sw[data-kind="rc"]        { border-left-color: #D85050; background: #D8505016; }
+.vb-kindlegend .kl-sw[data-kind="panel"]     { border-left-color: #7AA84E; background: #DDECCF55; }
+.vb-kindlegend .kl-sw[data-kind="sponsor"]   { border-left-color: #E89A2A; background: #F2B96830; }
+.vb-kindlegend .kl-sw[data-kind="teamteach"] { border-left-color: #7B4FDB; background: #C5B7E840; }
+.vb-kindlegend .kl-sw[data-kind="social"]    { border-left-color: #8A6FCC; background: #DCD3EC40; }
+.vb-kindlegend .kl-sw[data-kind="pitch"]     { border-left-color: #C24A6E; background: #F4D4DD55; }
+.vb-kindlegend .kl-sw[data-kind="lpp"]       { border-left-color: #4E9E66; background: #C7DECC55; }
+.vb-kindlegend .kl-sw[data-kind="product"]   { border-left-color: #E46C41; background: rgba(228,108,65,.10); }
+.vb-kindlegend .kl-sw[data-kind="business"]  { border-left-color: #34C759; background: rgba(52,199,89,.10); }
+.vb-kindlegend .kl-sw[data-kind="market"]    { border-left-color: #3B7DD8; background: rgba(59,125,216,.10); }
+
+/* Edit form (in detail panel) */
+.vb-edit-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  align-items: center;
+}
+.vb-edit-btn {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  padding: 4px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.vb-edit-btn:hover { border-color: var(--text); }
+.vb-edit-btn--primary {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+.vb-edit-btn--ghost { color: var(--text-mute); }
+.vb-edit-foot { margin-left: auto; font-size: 11px; color: var(--text-faint); font-style: italic; }
+
+.vb-edit-form { display: flex; flex-direction: column; gap: 14px; }
+.vb-edit-row { display: flex; flex-direction: column; gap: 4px; }
+.vb-edit-row.vb-edit-row--inline { flex-direction: row; gap: 12px; align-items: center; }
+.vb-edit-row.vb-edit-row--inline .vb-edit-field { flex: 1; }
+.vb-edit-row.vb-edit-row--double { flex-direction: row; gap: 12px; }
+.vb-edit-row.vb-edit-row--double > .vb-edit-field { flex: 1; }
+.vb-edit-field { display: flex; flex-direction: column; gap: 4px; }
+.vb-edit-label {
+  font-family: var(--condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.vb-edit-input, .vb-edit-select {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 6px 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.vb-edit-input:focus, .vb-edit-select:focus {
+  outline: none;
+  border-color: var(--text);
+}
+.vb-edit-input[data-error="true"] { border-color: #D85050; }
+.vb-edit-help { font-size: 11px; color: var(--text-faint); font-style: italic; }
+
+.vb-slides-iframe-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 60%;        /* 5:3 aspect for Slides */
+  background: var(--bg-shade);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.vb-slides-iframe-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 .vb-cal-block .cb-time {
   font-family: var(--condensed);
   font-size: 9px;
@@ -4264,25 +4399,51 @@ const VIEW_B_CAL_START = 9 * 60;                  // calendar top
 const VIEW_B_CAL_END = 17 * 60;                   // calendar bottom
 const VIEW_B_PX_PER_MIN = 1.1;                    // see :root --vb-cal-px-per-min
 
-/* Roster lives outside SCHEDULE per PRD §04 (people-agnostic schema).
-   Stub seed: names from PROJECT.md so the People filter has chips visible
-   even before block-level role assignments exist. `blocks` is empty until
-   the assignment surface is wired; clicking a chip is currently a no-op. */
-const ROSTER = [
-  { id: "owen",   name: "Owen",   role: "lead",      blocks: [] },
-  { id: "stacey", name: "Stacey", role: "lead",      blocks: [] },
-  { id: "cate",   name: "Cate",   role: "alumni",    blocks: [] },
-];
+/* User-overrides written via the edit form, persisted to localStorage.
+   Shape: { [blockId]: { label?, kind?, track?, sub?, time_start?, time_end?,
+                         slides_link_or_embed?, ... } }
+   These layer on top of SCHEDULE at render-time; SCHEDULE itself stays pristine. */
+const VIEW_B_STORAGE_KEY = "hlv-vb-overrides-v1";
+function loadOverrides() {
+  try {
+    const raw = localStorage.getItem(VIEW_B_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (_) { return {}; }
+}
+function saveOverrides(obj) {
+  try { localStorage.setItem(VIEW_B_STORAGE_KEY, JSON.stringify(obj)); }
+  catch (_) { /* ignore quota / private mode */ }
+}
+const VIEW_B_OVERRIDES = loadOverrides();
+
+function effectiveBlock(blockId, block) {
+  const ov = VIEW_B_OVERRIDES[blockId];
+  if (!ov) return block;
+  const merged = Object.assign({}, block, ov);
+  if (ov.slide) merged.slide = Object.assign({}, block.slide || {}, ov.slide);
+  return merged;
+}
+
+function parseHHMM(s) {
+  const m = (s || "").match(/^(\d{1,2}):(\d{2})$/);
+  if (!m) return null;
+  const h = parseInt(m[1], 10), mm = parseInt(m[2], 10);
+  if (h < 0 || h > 23 || mm < 0 || mm > 59) return null;
+  return h * 60 + mm;
+}
 
 const VIEW_B_STATE = {
-  view: "week",                                   // "week" | "day"
+  view: "program",                                 // "program" (2-week) | "week" (1-week) | "day"
   weekIdx: 0,
   dayIdx: 0,
+  weekOnlyIdx: null,                                // when view==="week", which week (0|1)
   selectedBlockId: null,
   activeTab: "overview",
-  filters: { track: null, role: null, moment: null, person: null },
-  allBlocks: [],                                   // current day's blocks (View B only)
-  weekBlocks: [],                                  // all 80 blocks (View A or shared)
+  editing: false,
+  editDraft: null,
+  filters: { track: null, role: null, moment: null },
+  allBlocks: [],
+  weekBlocks: [],
 };
 
 function parseViewBDayParam(token) {
@@ -4320,26 +4481,40 @@ function renderViewBFilterBar() {
   const tracks = TRACK_LEGEND.map(t => `
     <button class="vb-filter-btn" data-filter="track" data-value="${t.track}"
       data-active="${VIEW_B_STATE.filters.track === t.track}">${escapeText(t.label || t.track)}</button>`).join("");
-  const people = ROSTER.length ? ROSTER.map(p => `
-    <button class="vb-filter-btn" data-filter="person" data-value="${escapeText(p.id)}"
-      data-active="${VIEW_B_STATE.filters.person === p.id}"
-      data-disabled="${p.blocks && p.blocks.length ? "false" : "true"}"
-      title="${p.blocks && p.blocks.length ? "Highlight " + p.name + "'s path" : "No block assignments yet for " + p.name + " — populate ROSTER[i].blocks to light up."}">${escapeText(p.name)}</button>`).join("") : "";
   const roleStubs = ["lead", "assistant", "specialist", "guest", "sponsor rep"].map(r => `
     <button class="vb-filter-btn" data-filter="role" data-value="${r}" data-disabled="true"
       title="No role data on blocks yet — schema field facilitator_roles lands in Phase 6.">${escapeText(r)}</button>`).join("");
   const momentStubs = ["plenary", "workshop", "reality check", "sponsor", "social"].map(m => `
     <button class="vb-filter-btn" data-filter="moment" data-value="${m}" data-disabled="true"
       title="No moment-type bucketing on blocks yet — wires up once Phase 6 content lands.">${escapeText(m)}</button>`).join("");
-  const anyActive = VIEW_B_STATE.filters.track || VIEW_B_STATE.filters.person;
+  const viewSwitch = `
+    <div class="vb-filter-group" style="margin-left:auto">
+      <span class="vb-filter-label">View</span>
+      <button class="vb-filter-btn" data-nav="program" data-active="${VIEW_B_STATE.view === 'program'}">Program</button>
+      <button class="vb-filter-btn" data-nav="week" data-w="0" data-active="${VIEW_B_STATE.view === 'week' && VIEW_B_STATE.weekOnlyIdx === 0}">Wk 1</button>
+      <button class="vb-filter-btn" data-nav="week" data-w="1" data-active="${VIEW_B_STATE.view === 'week' && VIEW_B_STATE.weekOnlyIdx === 1}">Wk 2</button>
+    </div>`;
+  const anyActive = VIEW_B_STATE.filters.track;
   return `
     <div class="vb-filterbar">
       <div class="vb-filter-group"><span class="vb-filter-label">Track</span>${tracks}</div>
-      <div class="vb-filter-group"><span class="vb-filter-label">People</span>${people}</div>
       <div class="vb-filter-group"><span class="vb-filter-label">Role</span>${roleStubs}</div>
       <div class="vb-filter-group"><span class="vb-filter-label">Moment</span>${momentStubs}</div>
-      <button class="vb-clear" id="vbClear" ${anyActive ? "" : "disabled"}>Clear filters</button>
-    </div>`;
+      <button class="vb-clear" id="vbClear" ${anyActive ? "" : "disabled"}>Clear</button>
+      ${viewSwitch}
+    </div>
+    ${renderKindLegend()}`;
+}
+
+function renderKindLegend() {
+  const kinds = KIND_LEGEND.map(k => `
+    <span class="kl-item"><span class="kl-sw" data-kind="${k.kind}"></span>${escapeText(k.label || k.kind)}</span>`).join("");
+  const tracks = TRACK_LEGEND.map(t => `
+    <span class="kl-item"><span class="kl-sw" data-kind="${t.track}"></span>${escapeText(t.label || t.track)}</span>`).join("");
+  return `<div class="vb-kindlegend">
+    <span class="kl-label">Kinds</span>${kinds}
+    <span class="kl-label" style="margin-left:8px">Tracks</span>${tracks}
+  </div>`;
 }
 
 /* ─── Calendar primitive — single day column on the time axis ─── */
@@ -4374,25 +4549,31 @@ function computeDayCalendar(day, weekIdx, dayIdx) {
     const slotDur = total / N;
     const entries = [];
     slots.forEach((s, sIdx) => {
-      const start = range[0] + sIdx * slotDur;
-      const end = range[0] + (sIdx + 1) * slotDur;
+      const defStart = range[0] + sIdx * slotDur;
+      const defEnd = range[0] + (sIdx + 1) * slotDur;
       const M = s.blocks.length;
       s.blocks.forEach((bw, bi) => {
         const id = viewBBlockId(weekIdx, dayIdx, laneKey, bw.block, bw.idx);
+        const eff = effectiveBlock(id, bw.block);
+        // Override time_start/time_end if present; else fall back to uniform spread.
+        const ovStart = parseHHMM(eff.time_start);
+        const ovEnd = parseHHMM(eff.time_end);
+        const start = (ovStart != null) ? ovStart : defStart;
+        const end = (ovEnd != null && ovEnd > start) ? ovEnd : (ovStart != null ? ovStart + 60 : defEnd);
         const widthPct = M > 1 ? (100 / M) : 100;
         const leftPct = M > 1 ? (bi * widthPct) : 0;
         const top = (start - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN;
         const height = (end - start) * VIEW_B_PX_PER_MIN;
         entries.push({
-          id, block: bw.block, lane: laneKey,
+          id, block: eff, rawBlock: bw.block, lane: laneKey,
           slotStart: formatMin(start), slotEnd: formatMin(end),
           slotTime: `${formatMin(start)}–${formatMin(end)}`,
           startMin: start, endMin: end,
           top, height, leftPct, widthPct,
         });
       });
-      s.startMin = start;
-      s.top = (start - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN;
+      s.startMin = defStart;
+      s.top = (defStart - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN;
     });
     const phaseRows = phaseMarks.map(pm => {
       const owning = slots[pm.slotAfter];
@@ -4467,8 +4648,11 @@ function renderViewBDetail() {
   if (!id) return `<div class="vb-detail-empty">Pick a block on the left to see details.</div>`;
   const entry = VIEW_B_STATE.allBlocks.find(e => e.id === id);
   if (!entry) return `<div class="vb-detail-empty">Block not found.</div>`;
+  if (VIEW_B_STATE.editing) return renderViewBEdit(entry);
+
   const block = entry.block;
   const status = block._slideStatus || (block.slide && block.slide.status) || "stub";
+  const hasOverride = !!VIEW_B_OVERRIDES[id];
 
   const metaTags = [];
   if (block.code) metaTags.push(`<span class="vb-tag">${escapeText(block.code)}</span>`);
@@ -4485,6 +4669,11 @@ function renderViewBDetail() {
   const tabContent = renderViewBDetailTab(VIEW_B_STATE.activeTab, block);
 
   return `
+    <div class="vb-edit-toolbar">
+      <button class="vb-edit-btn" id="vbEditBtn" type="button">Edit</button>
+      ${hasOverride ? `<button class="vb-edit-btn vb-edit-btn--ghost" id="vbResetBtn" type="button" title="Reset this block to canonical SCHEDULE">Reset</button>` : ""}
+      <span class="vb-edit-foot">${hasOverride ? "edited · stored in browser" : "view-only"}</span>
+    </div>
     <div class="vb-detail-eyebrow">${escapeText(entry.slotTime || entry.lane.toUpperCase())}</div>
     <div class="vb-detail-title">${escapeText(block.label || "")}</div>
     <div class="vb-detail-meta">${metaTags.join("")}</div>
@@ -4495,6 +4684,73 @@ function renderViewBDetail() {
         data-disabled="${t.disabled}">${escapeText(t.label)}</button>`).join("")}
     </div>
     <div class="vb-tabpanel">${tabContent}</div>`;
+}
+
+function renderViewBEdit(entry) {
+  const block = entry.block;
+  const draft = VIEW_B_STATE.editDraft || {
+    label: block.label || "",
+    kind: block.kind || "",
+    track: block.track || "",
+    sub: block.sub || "",
+    time_start: block.time_start || entry.slotStart || "",
+    time_end:   block.time_end   || entry.slotEnd   || "",
+    slides_link_or_embed: block.slides_link_or_embed || "",
+  };
+  VIEW_B_STATE.editDraft = draft;
+
+  const kindOpts = KIND_LEGEND.map(k => `<option value="${k.kind}" ${draft.kind === k.kind ? "selected" : ""}>${escapeText(k.label || k.kind)}</option>`).join("");
+  const trackOpts = `<option value="">— none —</option>` + TRACK_LEGEND.map(t => `<option value="${t.track}" ${draft.track === t.track ? "selected" : ""}>${escapeText(t.label || t.track)}</option>`).join("");
+
+  return `
+    <div class="vb-edit-toolbar">
+      <button class="vb-edit-btn vb-edit-btn--primary" id="vbEditSave" type="button">Save</button>
+      <button class="vb-edit-btn vb-edit-btn--ghost" id="vbEditCancel" type="button">Cancel</button>
+      <span class="vb-edit-foot">edits persist to this browser's localStorage</span>
+    </div>
+    <div class="vb-detail-eyebrow">${escapeText(entry.lane.toUpperCase())} · editing</div>
+    <form class="vb-edit-form" id="vbEditForm" onsubmit="return false">
+      <div class="vb-edit-row">
+        <span class="vb-edit-label">Label</span>
+        <input class="vb-edit-input" type="text" name="label" value="${escapeText(draft.label)}" />
+      </div>
+      <div class="vb-edit-row vb-edit-row--double">
+        <div class="vb-edit-field">
+          <span class="vb-edit-label">Kind</span>
+          <select class="vb-edit-select" name="kind">${kindOpts}</select>
+        </div>
+        <div class="vb-edit-field">
+          <span class="vb-edit-label">Track</span>
+          <select class="vb-edit-select" name="track">${trackOpts}</select>
+        </div>
+      </div>
+      <div class="vb-edit-row vb-edit-row--double">
+        <div class="vb-edit-field">
+          <span class="vb-edit-label">Time start</span>
+          <input class="vb-edit-input" type="text" name="time_start" value="${escapeText(draft.time_start)}" placeholder="HH:MM" />
+        </div>
+        <div class="vb-edit-field">
+          <span class="vb-edit-label">Time end</span>
+          <input class="vb-edit-input" type="text" name="time_end" value="${escapeText(draft.time_end)}" placeholder="HH:MM" />
+        </div>
+      </div>
+      <div class="vb-edit-row">
+        <span class="vb-edit-label">Sub</span>
+        <input class="vb-edit-input" type="text" name="sub" value="${escapeText(draft.sub)}" />
+      </div>
+      <div class="vb-edit-row">
+        <span class="vb-edit-label">Slides link (Google Slides URL)</span>
+        <input class="vb-edit-input" type="text" name="slides_link_or_embed" value="${escapeText(draft.slides_link_or_embed)}"
+          placeholder="https://docs.google.com/presentation/d/.../edit" />
+        <span class="vb-edit-help">Paste a Slides edit URL — the Slides tab will embed it.</span>
+      </div>
+    </form>`;
+}
+
+function googleSlidesEmbedUrl(url) {
+  const m = (url || "").match(/^https:\/\/docs\.google\.com\/presentation\/d\/([a-zA-Z0-9_-]+)/);
+  if (!m) return null;
+  return `https://docs.google.com/presentation/d/${m[1]}/embed`;
 }
 
 function renderViewBDetailTab(tab, block) {
@@ -4566,8 +4822,30 @@ function renderViewBActivityFold(activity) {
 
 function renderViewBSlides(block) {
   const slide = block.slide || {};
+  const url = block.slides_link_or_embed;
+  let slidesBlock = "";
+  if (url) {
+    const embed = googleSlidesEmbedUrl(url);
+    if (embed) {
+      slidesBlock = `
+        <div class="vb-panel-section">
+          <div class="vb-panel-label">Embedded deck</div>
+          <div class="vb-panel-body"><a href="${escapeText(url)}" target="_blank" rel="noopener">Open in Google Slides ↗</a></div>
+          <div class="vb-slides-iframe-wrap"><iframe src="${escapeText(embed)}" allowfullscreen referrerpolicy="no-referrer"></iframe></div>
+        </div>`;
+    } else {
+      slidesBlock = `
+        <div class="vb-panel-section">
+          <div class="vb-panel-label">Slides link</div>
+          <div class="vb-panel-body"><a href="${escapeText(url)}" target="_blank" rel="noopener">${escapeText(url)} ↗</a></div>
+          <div class="vb-edit-help">Not a recognized Google Slides URL — rendering as a plain link. Edit the block to paste a docs.google.com/presentation/... URL.</div>
+        </div>`;
+    }
+  } else {
+    slidesBlock = vbPlaceholder("Slides link", "No deck linked yet. Use the Edit button to paste a Google Slides URL.");
+  }
   return `
-    ${vbPlaceholder("Slides link", "slides_link_or_embed — Phase 6. Showing the schedule-side slide outline as fallback.")}
+    ${slidesBlock}
     ${vbSection("Foundation", slide.foundation)}
     ${vbSectionList("Students", slide.students)}
     ${vbSection("Facilitator notes", slide.facilitator)}
@@ -4593,6 +4871,7 @@ function viewBNavigateToDay(weekIdx, dayIdx, blockId) {
   VIEW_B_STATE.view = "day";
   VIEW_B_STATE.weekIdx = weekIdx;
   VIEW_B_STATE.dayIdx = dayIdx;
+  VIEW_B_STATE.editing = false;
   if (blockId) {
     VIEW_B_STATE.selectedBlockId = blockId;
     VIEW_B_STATE.activeTab = "overview";
@@ -4607,25 +4886,40 @@ function viewBNavigateToDay(weekIdx, dayIdx, blockId) {
   renderViewB(weekIdx, dayIdx);
 }
 
-function viewBNavigateToWeek() {
-  VIEW_B_STATE.view = "week";
+function viewBNavigateToProgram() {
+  VIEW_B_STATE.view = "program";
+  VIEW_B_STATE.weekOnlyIdx = null;
   VIEW_B_STATE.selectedBlockId = null;
-  const url = `?view=week`;
+  VIEW_B_STATE.editing = false;
   if (window.history && window.history.pushState) {
-    window.history.pushState({ view: "week" }, "", url);
+    window.history.pushState({ view: "week" }, "", "?view=week");
   }
   renderViewA();
 }
 
-/* ─── View A — Two-week calendar (entry point) ─── */
+function viewBNavigateToWeekOnly(wIdx) {
+  VIEW_B_STATE.view = "week";
+  VIEW_B_STATE.weekOnlyIdx = wIdx;
+  VIEW_B_STATE.selectedBlockId = null;
+  VIEW_B_STATE.editing = false;
+  if (window.history && window.history.pushState) {
+    window.history.pushState({ view: "week", weekOnly: wIdx }, "", `?view=week&w=${wIdx + 1}`);
+  }
+  renderViewA();
+}
+
+/* ─── View A — Calendar (two-week program or single-week) ─── */
 function renderViewA() {
   const host = document.getElementById("viewB");
   if (!host) return;
 
-  // Walk all 10 days; collect block layout and metadata.
+  const weeks = (VIEW_B_STATE.view === "week" && VIEW_B_STATE.weekOnlyIdx != null)
+    ? [{ week: SCHEDULE.weeks[VIEW_B_STATE.weekOnlyIdx], wIdx: VIEW_B_STATE.weekOnlyIdx }]
+    : SCHEDULE.weeks.map((w, i) => ({ week: w, wIdx: i }));
+
   const cols = [];
   const allBlocks = [];
-  SCHEDULE.weeks.forEach((week, wIdx) => {
+  weeks.forEach(({ week, wIdx }) => {
     week.days.forEach((day, dIdx) => {
       const meta = DAYS.find(d => d.weekIdx === wIdx && d.dayIdx === dIdx);
       const layout = computeDayCalendar(day, wIdx, dIdx);
@@ -4635,28 +4929,32 @@ function renderViewA() {
   });
   VIEW_B_STATE.weekBlocks = allBlocks;
 
-  // Header row — week spans (5 columns each)
-  const weekSpan = SCHEDULE.weeks.map((w, i) => `
+  const colCount = cols.length;
+  const weekSpan = weeks.map(({ week }) => `
     <div class="vb-cal-weekspan" style="grid-column: span 5;">
-      <strong>${escapeText(w.tag)}</strong>${escapeText(w.label || "")}${w.sub ? " · " + escapeText(w.sub) : ""}
+      <strong>${escapeText(week.tag)}</strong>${escapeText(week.label || "")}${week.sub ? " · " + escapeText(week.sub) : ""}
     </div>`).join("");
 
-  // Day headers
   const dayHeads = cols.map(c => `
     <button class="vb-cal-dayhead" type="button" data-w="${c.wIdx}" data-d="${c.dIdx}">
       <span class="dh-name">${escapeText(c.day.name)} · Wk${c.wIdx + 1}</span>
       <span class="dh-theme">${escapeText(c.meta && c.meta.theme || "")}</span>
     </button>`).join("");
 
-  // Day columns
-  const dayCols = cols.map(c => renderCalendarDayColumn(c.day, c.wIdx, c.dIdx, { compact: true })).join("");
+  // Compact in 2-week view, more spacious in 1-week view.
+  const compact = VIEW_B_STATE.view === "program";
+  const dayCols = cols.map(c => renderCalendarDayColumn(c.day, c.wIdx, c.dIdx, { compact })).join("");
+
+  const headerLabel = VIEW_B_STATE.view === "week"
+    ? `One-week view · ${escapeText(weeks[0].week.tag)}`
+    : "Two-week program";
 
   host.innerHTML = `
     ${renderViewBFilterBar()}
-    <div class="vb-cal-shell" style="--vb-cal-cols: 10;">
+    <div class="vb-cal-shell" style="--vb-cal-cols: ${colCount};">
       <div class="vb-cal-program-head">
         <h1>Curriculum</h1>
-        <span class="sub">Two-week view · calendar entry</span>
+        <span class="sub">${headerLabel}</span>
       </div>
       <div class="vb-cal-weekrow">
         <div></div>
@@ -4701,7 +4999,7 @@ function renderViewB(weekIdx, dayIdx) {
     <div class="vb-body vb-body--day">
       <section class="vb-master vb-master--cal" aria-label="Day calendar">
         <div class="vb-crumbs">
-          <a href="?view=week" data-nav="week">Two-week</a><span class="sep">/</span><span class="here">${escapeText(week.tag)} · ${escapeText(day.name)}</span>
+          <a href="?view=week" data-nav="program">Program</a><span class="sep">/</span><a href="?view=week&w=${weekIdx + 1}" data-nav="week" data-w="${weekIdx}">${escapeText(week.tag)}</a><span class="sep">/</span><span class="here">${escapeText(day.name)}</span>
         </div>
         <div class="vb-day-title">${escapeText(day.name)} · ${escapeText(meta.theme)}</div>
         <div class="vb-day-lead">${escapeText(meta.lead)}</div>
@@ -4718,6 +5016,11 @@ function renderViewB(weekIdx, dayIdx) {
     </div>`;
 
   wireViewBEvents();
+}
+
+function rerenderCurrentView() {
+  if (VIEW_B_STATE.view === "day") renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
+  else renderViewA();
 }
 
 function wireViewBEvents() {
@@ -4741,11 +5044,17 @@ function wireViewBEvents() {
       viewBNavigateToDay(w, d, null);
     });
   });
-  // Crumb back to View A.
-  document.querySelectorAll('[data-nav="week"]').forEach(el => {
+  // Top-bar view switch + crumb back to program.
+  document.querySelectorAll('[data-nav="program"], [data-nav="week"]').forEach(el => {
     el.addEventListener("click", (e) => {
       e.preventDefault();
-      viewBNavigateToWeek();
+      const nav = el.dataset.nav;
+      if (nav === "program") return viewBNavigateToProgram();
+      if (nav === "week") {
+        const w = parseInt(el.dataset.w || "", 10);
+        if (!Number.isNaN(w)) return viewBNavigateToWeekOnly(w);
+        return viewBNavigateToProgram();
+      }
     });
   });
   // Detail panel tabs.
@@ -4756,22 +5065,74 @@ function wireViewBEvents() {
       renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
     });
   });
-  // Filter buttons.
-  document.querySelectorAll(".vb-filter-btn").forEach(el => {
+  // Filter buttons (Track is live; others are stubbed via data-disabled).
+  document.querySelectorAll(".vb-filter-btn[data-filter]").forEach(el => {
     if (el.dataset.disabled === "true") return;
     el.addEventListener("click", () => {
       const dim = el.dataset.filter;
       const val = el.dataset.value;
       VIEW_B_STATE.filters[dim] = (VIEW_B_STATE.filters[dim] === val) ? null : val;
-      if (VIEW_B_STATE.view === "week") renderViewA();
-      else renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
+      rerenderCurrentView();
     });
   });
   const clear = document.getElementById("vbClear");
   if (clear) clear.addEventListener("click", () => {
-    VIEW_B_STATE.filters = { track: null, role: null, moment: null, person: null };
-    if (VIEW_B_STATE.view === "week") renderViewA();
-    else renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
+    VIEW_B_STATE.filters = { track: null, role: null, moment: null };
+    rerenderCurrentView();
+  });
+
+  // Edit toolbar (View B detail panel only).
+  const editBtn = document.getElementById("vbEditBtn");
+  if (editBtn) editBtn.addEventListener("click", () => {
+    VIEW_B_STATE.editing = true;
+    VIEW_B_STATE.editDraft = null;
+    renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
+  });
+  const cancelBtn = document.getElementById("vbEditCancel");
+  if (cancelBtn) cancelBtn.addEventListener("click", () => {
+    VIEW_B_STATE.editing = false;
+    VIEW_B_STATE.editDraft = null;
+    renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
+  });
+  const saveBtn = document.getElementById("vbEditSave");
+  if (saveBtn) saveBtn.addEventListener("click", () => {
+    const form = document.getElementById("vbEditForm");
+    if (!form) return;
+    const fd = new FormData(form);
+    const patch = {};
+    ["label", "kind", "track", "sub", "time_start", "time_end", "slides_link_or_embed"].forEach(k => {
+      const v = (fd.get(k) || "").toString().trim();
+      if (v !== "") patch[k] = v; else patch[k] = "";
+    });
+    // Validate times (if either set, both must parse and end > start)
+    if (patch.time_start || patch.time_end) {
+      const s = parseHHMM(patch.time_start), e = parseHHMM(patch.time_end);
+      if (s == null || e == null || e <= s) {
+        const inputs = form.querySelectorAll("input[name='time_start'], input[name='time_end']");
+        inputs.forEach(i => i.dataset.error = "true");
+        return;
+      }
+    }
+    // Remove empty fields so we don't override with blanks.
+    const cleaned = {};
+    Object.keys(patch).forEach(k => { if (patch[k] !== "") cleaned[k] = patch[k]; });
+    const id = VIEW_B_STATE.selectedBlockId;
+    if (Object.keys(cleaned).length) {
+      VIEW_B_OVERRIDES[id] = Object.assign({}, VIEW_B_OVERRIDES[id] || {}, cleaned);
+    } else {
+      delete VIEW_B_OVERRIDES[id];
+    }
+    saveOverrides(VIEW_B_OVERRIDES);
+    VIEW_B_STATE.editing = false;
+    VIEW_B_STATE.editDraft = null;
+    renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
+  });
+  const resetBtn = document.getElementById("vbResetBtn");
+  if (resetBtn) resetBtn.addEventListener("click", () => {
+    const id = VIEW_B_STATE.selectedBlockId;
+    delete VIEW_B_OVERRIDES[id];
+    saveOverrides(VIEW_B_OVERRIDES);
+    renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
   });
 }
 
@@ -4781,12 +5142,20 @@ function tryRenderViewB() {
   if (view !== "day" && view !== "week") return false;
   document.body.classList.add("view-b-active");
   if (view === "week") {
+    const wRaw = params.get("w");
+    if (wRaw === "1" || wRaw === "2") {
+      VIEW_B_STATE.view = "week";
+      VIEW_B_STATE.weekOnlyIdx = parseInt(wRaw, 10) - 1;
+    } else {
+      VIEW_B_STATE.view = "program";
+      VIEW_B_STATE.weekOnlyIdx = null;
+    }
     renderViewA();
     return true;
   }
   const coord = parseViewBDayParam(params.get("d"));
   if (!coord) {
-    // Missing/invalid d → fall back to two-week entry.
+    VIEW_B_STATE.view = "program";
     renderViewA();
     return true;
   }

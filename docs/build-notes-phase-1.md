@@ -8,6 +8,28 @@ Initial Phase 1.0 brief was deliberately minimal: a single-day chronological lis
 
 **Round 2.** Owen redirected with a reference image (master-detail + filter bar + parallel-track columns + Overview/Slides/Analog tabs) and the note that the redo should not match the existing workbench aesthetic. Rebuilt as `feat(view-b): destination master-detail shape`.
 
+**Round 4.** Owen pulled five improvements from the calendar version:
+
+- Drop People filter (roles capture the same dimension).
+- Color every block by its `kind` (and keep track-color left edges for track blocks) — the 12 KIND_LEGEND classifications should be scannable at a glance.
+- Add a one-week view alongside the two-week program view.
+- Make the detail panel editable: time length, Google Slides embed, etc. — bigger ask, expected partial answer.
+- Show a colour key for the classifications.
+
+Round-4 result, in this commit:
+
+- People filter removed; `ROSTER` const deleted with it.
+- `vb-cal-block[data-kind="..."]` colors land on every block using the existing `--k-*` tokens as light-tint backgrounds and saturated left borders. Track blocks override the kind border with their track color. A `.vb-kindlegend` strip sits directly under the filter bar listing every kind + the three tracks with matching swatches.
+- View switch chips in the filter bar (Program / Wk 1 / Wk 2). URLs: `?view=week` (two-week program), `?view=week&w=1`, `?view=week&w=2`. `?view=day&d=...` unchanged.
+- Edit flow: each block in View B's detail panel has an `Edit` button. The form covers label, kind, track, time start, time end, sub, and `slides_link_or_embed`. Save validates HH:MM, writes to `localStorage["hlv-vb-overrides-v1"]`, and re-renders. A `Reset` chip appears on any block that has an override; clicking it deletes that block's patch and re-renders. The calendar layout reads override `time_start`/`time_end` directly (bypassing the uniform-spread fallback) so changes show up immediately in the time axis. The Slides tab parses Google Slides URLs of the form `docs.google.com/presentation/d/{ID}/edit` and renders the deck inline at `/{ID}/embed`; non-Slides URLs render as plain links with a help line.
+
+Out-of-scope for this round (named in build notes for the next session):
+
+- Drag-to-resize on the calendar surface.
+- Editing the prose fields (`slide.foundation`, `slide.students[]`, `slide.facilitator`, `slide.references[]`) and the Phase 6 destination fields (`facilitator_roles`, `audiences`, `prep_buffer_minutes`, etc.).
+- Undo / multi-step history.
+- Export the localStorage overrides back into `SCHEDULE` (durable persistence — right now edits live only in the browser that made them).
+
 **Round 3.** Owen reframed the whole tool:
 - Two-week calendar is the **entry point**, not the day view.
 - The "calendar has to be more like a calendar" — time on the y-axis, blocks positioned by clock, not slot indices.
