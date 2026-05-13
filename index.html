@@ -1795,6 +1795,169 @@ body.detail-open .slide-controls { display: none !important; }
   .block { font-size: 8pt; }
   .activity { break-inside: avoid; }
 }
+
+/* ─────────────────────────────────────────────────────────── */
+/* VIEW B — Day View (Phase 1.0)                               */
+/* Reads SCHEDULE.weeks[i].days[j]; renders one day in a       */
+/* chronological AM/PM list. Activated by ?view=day&d=wN-day.  */
+/* ─────────────────────────────────────────────────────────── */
+body.view-b-active .topbar,
+body.view-b-active .masthead,
+body.view-b-active main,
+body.view-b-active .detail-slide,
+body.view-b-active .slide-controls { display: none !important; }
+
+.view-b { display: none; }
+body.view-b-active .view-b {
+  display: block;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 64px 36px 120px;
+  font-family: var(--sans);
+  color: var(--text);
+}
+
+.view-b-crumbs {
+  font-family: var(--condensed);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 40px;
+}
+.view-b-crumbs a { color: var(--text-mute); text-decoration: none; }
+.view-b-crumbs a:hover { color: var(--text); }
+.view-b-crumbs .sep { margin: 0 10px; color: var(--text-faint); }
+.view-b-crumbs .here { color: var(--text); }
+
+.view-b-section + .view-b-section { margin-top: 72px; }
+.view-b-section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.view-b-section-head .num {
+  font-family: var(--condensed);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  font-feature-settings: "tnum";
+}
+.view-b-section-head h2 {
+  font-family: var(--sans);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.view-b-section-head .meta {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+
+.view-b-day-theme {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+.view-b-day-lead { font-size: 17px; color: var(--text-mute); margin-bottom: 14px; max-width: 680px; }
+.view-b-day-takeaway { font-size: 15px; color: var(--text-mute); max-width: 680px; }
+
+.view-b-lane + .view-b-lane { margin-top: 48px; }
+.view-b-lane-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 10px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--rule);
+}
+.view-b-lane-label {
+  font-family: var(--condensed);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.view-b-lane-sub { font-size: 13px; color: var(--text-faint); font-style: italic; }
+
+.view-b-timeline { display: flex; flex-direction: column; gap: 8px; }
+
+.view-b-phase {
+  padding: 22px 0 4px;
+  font-family: var(--condensed);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+}
+.view-b-phase:first-child { padding-top: 4px; }
+
+.view-b-block {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: baseline;
+  gap: 18px;
+  padding: 14px 18px;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.view-b-block:hover { border-color: var(--rule-strong); background: var(--bg-alt); }
+.view-b-block:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.view-b-block-slot {
+  font-family: var(--condensed);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  font-feature-settings: "tnum";
+}
+.view-b-block-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.view-b-block-label { font-size: 16px; font-weight: 500; color: var(--text); }
+.view-b-block-sub { font-size: 13px; color: var(--text-mute); font-style: italic; }
+.view-b-block-tags { display: flex; align-items: center; gap: 10px; }
+.view-b-block-code {
+  font-family: var(--condensed);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: var(--text-mute);
+}
+.view-b-block-kind {
+  font-family: var(--condensed);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.view-b-block-status {
+  font-family: var(--condensed);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 2px 7px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+.view-b-block-status[data-status="ready"] { color: var(--built); border-color: var(--built); }
+.view-b-block-status[data-status="draft"] { color: var(--partial); border-color: var(--partial); }
+.view-b-block-status[data-status="stub"]  { color: var(--blank);   border-color: var(--rule-strong); }
+
+.view-b-empty {
+  padding: 40px 0;
+  color: var(--text-mute);
+  font-size: 15px;
+}
 </style>
 </head>
 <body>
@@ -1950,6 +2113,9 @@ body.detail-open .slide-controls { display: none !important; }
   </section>
 
 </main>
+
+<!-- View B — Day view (Phase 1.0). Hidden unless ?view=day&d=wN-day. -->
+<section class="view-b" id="viewB" aria-label="Day view"></section>
 
 <!-- Detail slide overlay (block + activity slides) -->
 <div class="detail-slide" id="detailSlide" role="dialog" aria-modal="true" aria-label="Slide detail">
@@ -3809,12 +3975,122 @@ function bindEvents() {
 }
 
 /* ════════════════════════════════════════════════════════════
+   VIEW B — Day view (Phase 1.0)
+   Reads SCHEDULE.weeks[i].days[j] + DAYS; renders one day's
+   AM + PM items chronologically. Click on a block logs its id.
+   No detail panel, no filters — that lands in later phases.
+   ════════════════════════════════════════════════════════════ */
+const VIEW_B_DAY_TOKENS = { mon: 0, tue: 1, wed: 2, thu: 3, fri: 4 };
+const VIEW_B_DAY_NAMES = ["mon", "tue", "wed", "thu", "fri"];
+
+function parseViewBDayParam(token) {
+  const m = (token || "").match(/^w([12])-(mon|tue|wed|thu|fri)$/);
+  if (!m) return null;
+  return { weekIdx: parseInt(m[1], 10) - 1, dayIdx: VIEW_B_DAY_TOKENS[m[2]] };
+}
+
+function viewBBlockId(weekIdx, dayIdx, lane, block, fallbackIdx) {
+  const wTag = `w${weekIdx + 1}`;
+  const dTag = VIEW_B_DAY_NAMES[dayIdx];
+  const seed = block.code || block.label || `item-${fallbackIdx + 1}`;
+  const slug = String(seed).toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 40) || `item-${fallbackIdx + 1}`;
+  return `${wTag}-${dTag}-${lane}-${slug}`;
+}
+
+function renderViewBLane(weekIdx, dayIdx, laneKey, laneItems, laneSub) {
+  const laneLabel = laneKey.toUpperCase();
+  let position = 0;
+  const parts = (laneItems || []).map((item, idx) => {
+    if (item.groupLabel) {
+      return `<div class="view-b-phase">${escapeText(item.groupLabel)}</div>`;
+    }
+    position += 1;
+    const id = viewBBlockId(weekIdx, dayIdx, laneKey, item, idx);
+    const status = item._slideStatus || (item.slide && item.slide.status) || (item.kind === "track" ? "draft" : "stub");
+    const code = item.code ? `<span class="view-b-block-code">${escapeText(item.code)}</span>` : "";
+    const kind = item.kind ? `<span class="view-b-block-kind">${escapeText(item.kind)}</span>` : "";
+    const sub = item.sub ? `<div class="view-b-block-sub">${escapeText(item.sub)}</div>` : "";
+    const statusBadge = `<span class="view-b-block-status" data-status="${status}">${status}</span>`;
+    const slot = `${laneLabel} · ${String(position).padStart(2, "0")}`;
+    return `<div class="view-b-block" data-block-id="${id}" tabindex="0" role="button" aria-label="${escapeText(item.label || "")}">
+      <div class="view-b-block-slot">${slot}</div>
+      <div class="view-b-block-body">
+        <div class="view-b-block-label">${escapeText(item.label || "")}</div>
+        ${sub}
+      </div>
+      <div class="view-b-block-tags">${code}${kind}${statusBadge}</div>
+    </div>`;
+  }).join("");
+
+  return `<div class="view-b-lane">
+    <div class="view-b-lane-head">
+      <span class="view-b-lane-label">${laneLabel}</span>
+      ${laneSub ? `<span class="view-b-lane-sub">${escapeText(laneSub)}</span>` : ""}
+    </div>
+    <div class="view-b-timeline">${parts}</div>
+  </div>`;
+}
+
+function renderViewB(weekIdx, dayIdx) {
+  const host = document.getElementById("viewB");
+  if (!host) return;
+  const week = SCHEDULE.weeks[weekIdx];
+  const day = week && week.days[dayIdx];
+  const meta = DAYS.find(d => d.weekIdx === weekIdx && d.dayIdx === dayIdx);
+
+  if (!day || !meta) {
+    host.innerHTML = `
+      <div class="view-b-crumbs"><a href="?">Workbench</a></div>
+      <div class="view-b-empty">No day at w${weekIdx + 1}/${VIEW_B_DAY_NAMES[dayIdx] || "?"}.</div>`;
+    return;
+  }
+
+  host.innerHTML = `
+    <div class="view-b-crumbs">
+      <a href="?">Workbench</a><span class="sep">/</span><span>${escapeText(week.tag)}</span><span class="sep">/</span><span class="here">${escapeText(day.name)}</span>
+    </div>
+    <div class="view-b-section">
+      <div class="view-b-section-head"><span class="num">01</span><h2>Today</h2><span class="meta">Wk${weekIdx + 1} · ${escapeText(day.name)}</span></div>
+      <div class="view-b-day-theme">${escapeText(meta.theme)}</div>
+      <div class="view-b-day-lead">${escapeText(meta.lead)}</div>
+      <div class="view-b-day-takeaway">${escapeText(meta.takeaway)}</div>
+    </div>
+    <div class="view-b-section">
+      <div class="view-b-section-head"><span class="num">02</span><h2>Timeline</h2><span class="meta">AM + PM</span></div>
+      ${renderViewBLane(weekIdx, dayIdx, "am", day.am, day.amSub)}
+      ${renderViewBLane(weekIdx, dayIdx, "pm", day.pm, day.pmSub)}
+    </div>`;
+
+  host.querySelectorAll(".view-b-block").forEach(el => {
+    const fire = () => console.log(el.dataset.blockId);
+    el.addEventListener("click", fire);
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fire(); }
+    });
+  });
+}
+
+function tryRenderViewB() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("view") !== "day") return false;
+  const coord = parseViewBDayParam(params.get("d"));
+  if (!coord) return false;
+  document.body.classList.add("view-b-active");
+  renderViewB(coord.weekIdx, coord.dayIdx);
+  return true;
+}
+
+/* ════════════════════════════════════════════════════════════
    INIT
    ════════════════════════════════════════════════════════════ */
 document.addEventListener("DOMContentLoaded", () => {
   const { errors, warnings } = validateData();
   showValidationBanner(errors, warnings);
   buildDetailIndex();   // assigns _detailKey to blocks; must run before renderSchedule
+  if (tryRenderViewB()) return;
   renderSchedule();
   renderActivities();
   renderLayers();
