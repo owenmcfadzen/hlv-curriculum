@@ -2023,55 +2023,18 @@ body.view-b-active .view-b {
 :root { --vb-cal-px-per-min: 1.1; }   /* 09:00–17:00 = 480 min ~= 528px tall */
 
 .vb-cal-shell {
-  padding: 14px 14px 64px;
+  padding: 6px 12px 56px;
   background: var(--bg);
   overflow-x: auto;
 }
-.vb-cal-program-head {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  margin-bottom: 18px;
-}
-.vb-cal-program-head h1 {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin: 0;
-}
-.vb-cal-program-head .sub {
-  font-family: var(--condensed);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
-.vb-cal-weekrow {
-  display: grid;
-  grid-template-columns: 48px repeat(var(--vb-cal-cols, 10), minmax(150px, 1fr));
-  align-items: center;
-  margin-bottom: 4px;
-}
-.vb-cal-weekrow .vb-cal-weekspan {
-  font-family: var(--condensed);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  padding: 4px 8px 4px;
-  border-bottom: 1px solid var(--rule);
-}
-.vb-cal-weekrow .vb-cal-weekspan strong { color: var(--text); margin-right: 6px; font-weight: 700; }
 
 .vb-cal-headerrow {
   display: grid;
   grid-template-columns: 48px repeat(var(--vb-cal-cols, 10), minmax(150px, 1fr));
-  margin-bottom: 6px;
+  margin-bottom: 2px;
 }
 .vb-cal-dayhead {
-  padding: 8px 8px 10px;
+  padding: 6px 8px 8px;
   text-align: left;
   background: none;
   border: none;
@@ -2082,7 +2045,7 @@ body.view-b-active .view-b {
   color: inherit;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 .vb-cal-dayhead:hover { background: var(--bg-alt); }
 .vb-cal-dayhead .dh-name {
@@ -2233,8 +2196,14 @@ body.view-b-active .view-b {
 .vb-edit-toolbar {
   display: flex;
   gap: 8px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   align-items: center;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  padding: 4px 0 8px;
+  z-index: 2;
+  border-bottom: 1px solid var(--rule);
 }
 .vb-edit-btn {
   font-family: var(--sans);
@@ -2288,6 +2257,41 @@ body.view-b-active .view-b {
 }
 .vb-edit-input[data-error="true"] { border-color: #D85050; }
 .vb-edit-help { font-size: 11px; color: var(--text-faint); font-style: italic; }
+
+.vb-edit-textarea {
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 8px 10px;
+  width: 100%;
+  resize: vertical;
+  box-sizing: border-box;
+  min-height: 56px;
+}
+.vb-edit-textarea:focus { outline: none; border-color: var(--text); }
+.vb-edit-textarea.tall { min-height: 110px; }
+
+.vb-edit-section {
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.vb-edit-section:first-of-type { border-top: 0; padding-top: 4px; }
+.vb-edit-section h4 {
+  font-family: var(--condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0;
+}
 
 .vb-slides-iframe-wrap {
   position: relative;
@@ -4547,8 +4551,7 @@ function renderViewBFilterBar() {
       data-active="${VIEW_B_STATE.filters.role === r.id}"
       title="Highlight blocks where ${r.label} is involved. Defaults: student+alumni on every block, F1 on every block, sponsor on kind:sponsor, guest on kind:panel. Edit a block to override.">${escapeText(r.label)}</button>`).join("");
   const viewSwitch = `
-    <div class="vb-filter-group" style="margin-left:auto">
-      <span class="vb-filter-label">View</span>
+    <div class="vb-filter-group">
       <button class="vb-filter-btn" data-nav="program" data-active="${VIEW_B_STATE.view === 'program'}">Program</button>
       <button class="vb-filter-btn" data-nav="week" data-w="0" data-active="${VIEW_B_STATE.view === 'week' && VIEW_B_STATE.weekOnlyIdx === 0}">Wk 1</button>
       <button class="vb-filter-btn" data-nav="week" data-w="1" data-active="${VIEW_B_STATE.view === 'week' && VIEW_B_STATE.weekOnlyIdx === 1}">Wk 2</button>
@@ -4556,10 +4559,10 @@ function renderViewBFilterBar() {
   const anyActive = VIEW_B_STATE.filters.track || VIEW_B_STATE.filters.role;
   return `
     <div class="vb-filterbar">
+      ${viewSwitch}
       <div class="vb-filter-group"><span class="vb-filter-label">Track</span>${tracks}</div>
       <div class="vb-filter-group"><span class="vb-filter-label">Roles</span>${roles}</div>
-      <button class="vb-clear" id="vbClear" ${anyActive ? "" : "disabled"}>Clear</button>
-      ${viewSwitch}
+      <button class="vb-clear" id="vbClear" ${anyActive ? "" : "disabled"} style="margin-left:auto">Clear</button>
     </div>
     ${renderKindLegend()}`;
 }
@@ -4749,8 +4752,12 @@ function renderViewBDetail() {
     <div class="vb-tabpanel">${tabContent}</div>`;
 }
 
+function joinLines(arr) { return (arr || []).join("\n"); }
+function parseLines(text) { return (text || "").split("\n").map(s => s.trim()).filter(Boolean); }
+
 function renderViewBEdit(entry) {
   const block = entry.block;
+  const slide = block.slide || {};
   const effAuds = effectiveAudiences(block);
   const effFacs = effectiveFacilitators(block);
   const effSpon = effectiveSponsorPresent(block);
@@ -4767,6 +4774,16 @@ function renderViewBEdit(entry) {
     facilitators: effFacs,
     sponsor_present: effSpon,
     guest_present: effGuest,
+    prep_buffer_minutes: (block.prep_buffer_minutes != null) ? String(block.prep_buffer_minutes) : "",
+    debrief_buffer_minutes: (block.debrief_buffer_minutes != null) ? String(block.debrief_buffer_minutes) : "",
+    produces_artifact: block.produces_artifact || "",
+    feeds_into: joinLines(block.feeds_into),
+    success_criteria: joinLines(block.success_criteria),
+    notes_facilitator: block.notes_facilitator || "",
+    foundation: slide.foundation || "",
+    students: joinLines(slide.students),
+    facilitator_notes: slide.facilitator || "",
+    references: joinLines(slide.references),
   };
   VIEW_B_STATE.editDraft = draft;
 
@@ -4782,64 +4799,143 @@ function renderViewBEdit(entry) {
       <button class="vb-edit-btn vb-edit-btn--ghost" id="vbEditCancel" type="button">Cancel</button>
       <span class="vb-edit-foot">edits persist to this browser's localStorage</span>
     </div>
-    <div class="vb-detail-eyebrow">${escapeText(entry.lane.toUpperCase())} · editing</div>
+    <div class="vb-detail-eyebrow">${escapeText(entry.lane.toUpperCase())} · editing · ${escapeText(block.label || "")}</div>
     <form class="vb-edit-form" id="vbEditForm" onsubmit="return false">
-      <div class="vb-edit-row">
-        <span class="vb-edit-label">Label</span>
-        <input class="vb-edit-input" type="text" name="label" value="${escapeText(draft.label)}" />
-      </div>
-      <div class="vb-edit-row vb-edit-row--double">
-        <div class="vb-edit-field">
-          <span class="vb-edit-label">Kind</span>
-          <select class="vb-edit-select" name="kind">${kindOpts}</select>
+
+      <div class="vb-edit-section">
+        <h4>Basics</h4>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Label</span>
+          <input class="vb-edit-input" type="text" name="label" value="${escapeText(draft.label)}" />
         </div>
-        <div class="vb-edit-field">
-          <span class="vb-edit-label">Track</span>
-          <select class="vb-edit-select" name="track">${trackOpts}</select>
+        <div class="vb-edit-row vb-edit-row--double">
+          <div class="vb-edit-field">
+            <span class="vb-edit-label">Kind</span>
+            <select class="vb-edit-select" name="kind">${kindOpts}</select>
+          </div>
+          <div class="vb-edit-field">
+            <span class="vb-edit-label">Track</span>
+            <select class="vb-edit-select" name="track">${trackOpts}</select>
+          </div>
         </div>
-      </div>
-      <div class="vb-edit-row vb-edit-row--double">
-        <div class="vb-edit-field">
-          <span class="vb-edit-label">Time start</span>
-          <input class="vb-edit-input" type="text" name="time_start" value="${escapeText(draft.time_start)}" placeholder="HH:MM" />
+        <div class="vb-edit-row vb-edit-row--double">
+          <div class="vb-edit-field">
+            <span class="vb-edit-label">Time start</span>
+            <input class="vb-edit-input" type="text" name="time_start" value="${escapeText(draft.time_start)}" placeholder="HH:MM" />
+          </div>
+          <div class="vb-edit-field">
+            <span class="vb-edit-label">Time end</span>
+            <input class="vb-edit-input" type="text" name="time_end" value="${escapeText(draft.time_end)}" placeholder="HH:MM" />
+          </div>
         </div>
-        <div class="vb-edit-field">
-          <span class="vb-edit-label">Time end</span>
-          <input class="vb-edit-input" type="text" name="time_end" value="${escapeText(draft.time_end)}" placeholder="HH:MM" />
-        </div>
-      </div>
-      <div class="vb-edit-row">
-        <span class="vb-edit-label">Audiences (who's in the room)</span>
-        <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <label><input type="checkbox" name="aud_student" ${audChk("student")} /> Student</label>
-          <label><input type="checkbox" name="aud_alumni"  ${audChk("alumni")} /> Alumni</label>
-        </div>
-        <span class="vb-edit-help">If a block is for one audience only, uncheck the other and use a separate block record for the parallel session.</span>
-      </div>
-      <div class="vb-edit-row">
-        <span class="vb-edit-label">Facilitators</span>
-        <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <label><input type="checkbox" name="fac_f1" ${facChk("f1")} /> Facilitator 1</label>
-          <label><input type="checkbox" name="fac_f2" ${facChk("f2")} /> Facilitator 2</label>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Sub-line</span>
+          <input class="vb-edit-input" type="text" name="sub" value="${escapeText(draft.sub)}" />
         </div>
       </div>
-      <div class="vb-edit-row">
-        <span class="vb-edit-label">Other roles in the room</span>
-        <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <label><input type="checkbox" name="sponsor_present" ${checked(draft.sponsor_present)} /> Sponsor</label>
-          <label><input type="checkbox" name="guest_present"   ${checked(draft.guest_present)} /> Guest</label>
+
+      <div class="vb-edit-section">
+        <h4>Who's in the room</h4>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Audiences</span>
+          <div style="display:flex;gap:14px;flex-wrap:wrap">
+            <label><input type="checkbox" name="aud_student" ${audChk("student")} /> Student</label>
+            <label><input type="checkbox" name="aud_alumni"  ${audChk("alumni")} /> Alumni</label>
+          </div>
+          <span class="vb-edit-help">If a block is for one audience only, uncheck the other; use a separate block record at the same time for a parallel session.</span>
+        </div>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Facilitators</span>
+          <div style="display:flex;gap:14px;flex-wrap:wrap">
+            <label><input type="checkbox" name="fac_f1" ${facChk("f1")} /> Facilitator 1</label>
+            <label><input type="checkbox" name="fac_f2" ${facChk("f2")} /> Facilitator 2</label>
+          </div>
+        </div>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Other roles</span>
+          <div style="display:flex;gap:14px;flex-wrap:wrap">
+            <label><input type="checkbox" name="sponsor_present" ${checked(draft.sponsor_present)} /> Sponsor</label>
+            <label><input type="checkbox" name="guest_present"   ${checked(draft.guest_present)} /> Guest</label>
+          </div>
         </div>
       </div>
-      <div class="vb-edit-row">
-        <span class="vb-edit-label">Sub</span>
-        <input class="vb-edit-input" type="text" name="sub" value="${escapeText(draft.sub)}" />
+
+      <div class="vb-edit-section">
+        <h4>Pacing</h4>
+        <div class="vb-edit-row vb-edit-row--double">
+          <div class="vb-edit-field">
+            <span class="vb-edit-label">Prep buffer (min)</span>
+            <input class="vb-edit-input" type="number" min="0" step="5" name="prep_buffer_minutes" value="${escapeText(draft.prep_buffer_minutes)}" placeholder="0" />
+          </div>
+          <div class="vb-edit-field">
+            <span class="vb-edit-label">Debrief buffer (min)</span>
+            <input class="vb-edit-input" type="number" min="0" step="5" name="debrief_buffer_minutes" value="${escapeText(draft.debrief_buffer_minutes)}" placeholder="0" />
+          </div>
+        </div>
       </div>
-      <div class="vb-edit-row">
-        <span class="vb-edit-label">Slides link (Google Slides URL)</span>
-        <input class="vb-edit-input" type="text" name="slides_link_or_embed" value="${escapeText(draft.slides_link_or_embed)}"
-          placeholder="https://docs.google.com/presentation/d/.../edit" />
-        <span class="vb-edit-help">Paste a Slides edit URL — the Slides tab will embed it.</span>
+
+      <div class="vb-edit-section">
+        <h4>Slides + foundation</h4>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Slides link (Google Slides URL)</span>
+          <input class="vb-edit-input" type="text" name="slides_link_or_embed" value="${escapeText(draft.slides_link_or_embed)}"
+            placeholder="https://docs.google.com/presentation/d/.../edit" />
+          <span class="vb-edit-help">Paste a Slides edit URL — the Slides tab will embed it.</span>
+        </div>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Foundation — the concept</span>
+          <textarea class="vb-edit-textarea tall" name="foundation" rows="4">${escapeText(draft.foundation)}</textarea>
+          <span class="vb-edit-help">1–3 sentences: what is this session, in plain language.</span>
+        </div>
       </div>
+
+      <div class="vb-edit-section">
+        <h4>Students</h4>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">What students do (one bullet per line)</span>
+          <textarea class="vb-edit-textarea tall" name="students" rows="5">${escapeText(draft.students)}</textarea>
+        </div>
+      </div>
+
+      <div class="vb-edit-section">
+        <h4>Facilitator</h4>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Facilitator notes (slide-card content)</span>
+          <textarea class="vb-edit-textarea tall" name="facilitator_notes" rows="4">${escapeText(draft.facilitator_notes)}</textarea>
+        </div>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">References (one per line)</span>
+          <textarea class="vb-edit-textarea" name="references" rows="3">${escapeText(draft.references)}</textarea>
+        </div>
+      </div>
+
+      <div class="vb-edit-section">
+        <h4>Outputs and dependencies</h4>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Produces (artifact)</span>
+          <input class="vb-edit-input" type="text" name="produces_artifact" value="${escapeText(draft.produces_artifact)}" placeholder="e.g. filled Canvas Lite worksheet" />
+        </div>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Feeds into (one per line)</span>
+          <textarea class="vb-edit-textarea" name="feeds_into" rows="3">${escapeText(draft.feeds_into)}</textarea>
+          <span class="vb-edit-help">Block ids or free text — what consumes this block's output.</span>
+        </div>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Success criteria (one per line)</span>
+          <textarea class="vb-edit-textarea" name="success_criteria" rows="4">${escapeText(draft.success_criteria)}</textarea>
+          <span class="vb-edit-help">"What 'this block worked' looks like."</span>
+        </div>
+      </div>
+
+      <div class="vb-edit-section">
+        <h4>Context</h4>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Longer context / free notes</span>
+          <textarea class="vb-edit-textarea tall" name="notes_facilitator" rows="6">${escapeText(draft.notes_facilitator)}</textarea>
+          <span class="vb-edit-help">Anything that doesn't fit above — running notes, edge cases, references, links.</span>
+        </div>
+      </div>
+
     </form>`;
 }
 
@@ -4886,6 +4982,9 @@ function renderViewBOverview(block) {
   const sponsorVal = effectiveSponsorPresent(block) ? "Sponsor present" : "—";
   const guestVal = effectiveGuestPresent(block) ? "Guest present" : "—";
 
+  const prep = (block.prep_buffer_minutes != null) ? `${block.prep_buffer_minutes} min` : "—";
+  const debrief = (block.debrief_buffer_minutes != null) ? `${block.debrief_buffer_minutes} min` : "—";
+
   return `
     <div class="vb-panel-grid">
       ${vbSection("Audiences", audienceLabels.join(" + "))}
@@ -4895,15 +4994,21 @@ function renderViewBOverview(block) {
       ${vbSection("Sponsor", sponsorVal)}
       ${vbSection("Guest", guestVal)}
     </div>
-    ${vbPlaceholder("Prep / debrief buffer", "prep_buffer_minutes / debrief_buffer_minutes — not yet editable.")}
-    ${vbPlaceholder("Produces / Feeds / Success", "Outputs and dependencies — not yet editable.")}
+    <div class="vb-panel-grid">
+      ${vbSection("Prep buffer", prep)}
+      ${vbSection("Debrief buffer", debrief)}
+    </div>
+    ${block.produces_artifact ? vbSection("Produces (artifact)", block.produces_artifact) : ""}
+    ${vbSectionList("Feeds into", block.feeds_into)}
+    ${vbSectionList("Success criteria", block.success_criteria)}
     <div class="vb-detail-divider"></div>
     ${vbSection("Foundation", slide.foundation)}
     ${vbSectionList("Students", slide.students)}
     ${vbSection("Facilitator notes", slide.facilitator)}
     ${vbSectionList("References", slide.references)}
+    ${block.notes_facilitator ? `<div class="vb-detail-divider"></div>${vbSection("Context", block.notes_facilitator)}` : ""}
     ${activity ? renderViewBActivityFold(activity) : ""}
-    ${hasContent || activity ? "" : `<div class="vb-panel-body is-muted">No slide content yet — block status: stub.</div>`}
+    ${hasContent || activity || block.notes_facilitator ? "" : `<div class="vb-panel-body is-muted">No content populated yet — click Edit to add.</div>`}
   `;
 }
 
@@ -5030,11 +5135,6 @@ function renderViewA() {
   VIEW_B_STATE.weekBlocks = allBlocks;
 
   const colCount = cols.length;
-  const weekSpan = weeks.map(({ week }) => `
-    <div class="vb-cal-weekspan" style="grid-column: span 5;">
-      <strong>${escapeText(week.tag)}</strong>${escapeText(week.label || "")}${week.sub ? " · " + escapeText(week.sub) : ""}
-    </div>`).join("");
-
   const dayHeads = cols.map(c => `
     <button class="vb-cal-dayhead" type="button" data-w="${c.wIdx}" data-d="${c.dIdx}">
       <span class="dh-name">${escapeText(c.day.name)} · Wk${c.wIdx + 1}</span>
@@ -5045,21 +5145,9 @@ function renderViewA() {
   const compact = VIEW_B_STATE.view === "program";
   const dayCols = cols.map(c => renderCalendarDayColumn(c.day, c.wIdx, c.dIdx, { compact })).join("");
 
-  const headerLabel = VIEW_B_STATE.view === "week"
-    ? `One-week view · ${escapeText(weeks[0].week.tag)}`
-    : "Two-week program";
-
   host.innerHTML = `
     ${renderViewBFilterBar()}
     <div class="vb-cal-shell" style="--vb-cal-cols: ${colCount};">
-      <div class="vb-cal-program-head">
-        <h1>Curriculum</h1>
-        <span class="sub">${headerLabel}</span>
-      </div>
-      <div class="vb-cal-weekrow">
-        <div></div>
-        ${weekSpan}
-      </div>
       <div class="vb-cal-headerrow">
         <div></div>
         ${dayHeads}
@@ -5200,11 +5288,19 @@ function wireViewBEvents() {
     if (!form) return;
     const fd = new FormData(form);
     const patch = {};
-    ["label", "kind", "track", "sub", "time_start", "time_end", "slides_link_or_embed"].forEach(k => {
+    ["label", "kind", "track", "sub", "time_start", "time_end",
+     "slides_link_or_embed", "produces_artifact", "notes_facilitator"].forEach(k => {
       const v = (fd.get(k) || "").toString().trim();
-      if (v !== "") patch[k] = v; else patch[k] = "";
+      patch[k] = v;
     });
-    // Audiences + facilitators come from checkboxes — assemble arrays.
+    // Integers for pacing.
+    ["prep_buffer_minutes", "debrief_buffer_minutes"].forEach(k => {
+      const v = (fd.get(k) || "").toString().trim();
+      if (v === "") { patch[k] = null; return; }
+      const n = parseInt(v, 10);
+      patch[k] = (Number.isFinite(n) && n >= 0) ? n : null;
+    });
+    // Audiences + facilitators from checkboxes.
     const auds = [];
     if (fd.get("aud_student")) auds.push("student");
     if (fd.get("aud_alumni"))  auds.push("alumni");
@@ -5215,8 +5311,19 @@ function wireViewBEvents() {
     patch.facilitators = facs;
     patch.sponsor_present = !!fd.get("sponsor_present");
     patch.guest_present   = !!fd.get("guest_present");
+    // List fields from textareas (split on newlines).
+    patch.feeds_into       = parseLines(fd.get("feeds_into"));
+    patch.success_criteria = parseLines(fd.get("success_criteria"));
+    // Slide sub-object (foundation, students, facilitator, references).
+    const slidePatch = {
+      foundation: (fd.get("foundation") || "").toString().trim(),
+      students:   parseLines(fd.get("students")),
+      facilitator: (fd.get("facilitator_notes") || "").toString().trim(),
+      references: parseLines(fd.get("references")),
+    };
+    patch.slide = slidePatch;
 
-    // Validate times (if either set, both must parse and end > start)
+    // Validate times (if either set, both must parse and end > start).
     if (patch.time_start || patch.time_end) {
       const s = parseHHMM(patch.time_start), e = parseHHMM(patch.time_end);
       if (s == null || e == null || e <= s) {
@@ -5225,17 +5332,27 @@ function wireViewBEvents() {
         return;
       }
     }
-    // Remove fields that are still "empty string" so they don't override.
-    // Arrays and booleans always get written.
+    // Clean: drop empty strings, empty arrays, empty slide.* fields.
+    const cleanSlide = {};
+    Object.keys(slidePatch).forEach(k => {
+      const v = slidePatch[k];
+      if (v === "" || v == null) return;
+      if (Array.isArray(v) && v.length === 0) return;
+      cleanSlide[k] = v;
+    });
     const cleaned = {};
     Object.keys(patch).forEach(k => {
+      if (k === "slide") return;
       const v = patch[k];
       if (v === "" || v == null) return;
+      if (Array.isArray(v) && v.length === 0) return;
       cleaned[k] = v;
     });
+    if (Object.keys(cleanSlide).length) cleaned.slide = cleanSlide;
+
     const id = VIEW_B_STATE.selectedBlockId;
     if (Object.keys(cleaned).length) {
-      VIEW_B_OVERRIDES[id] = Object.assign({}, VIEW_B_OVERRIDES[id] || {}, cleaned);
+      VIEW_B_OVERRIDES[id] = cleaned;
     } else {
       delete VIEW_B_OVERRIDES[id];
     }

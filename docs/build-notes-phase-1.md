@@ -8,6 +8,13 @@ Initial Phase 1.0 brief was deliberately minimal: a single-day chronological lis
 
 **Round 2.** Owen redirected with a reference image (master-detail + filter bar + parallel-track columns + Overview/Slides/Analog tabs) and the note that the redo should not match the existing workbench aesthetic. Rebuilt as `feat(view-b): destination master-detail shape`.
 
+**Round 6.** Owen asked to lift the calendar higher in the viewport, rearrange the filter bar, and finish out the editor:
+
+- Drop the "Curriculum / Two-week program" header and the week-tag row (day headers like "MON · WK1 / The brief" already carry the week info). Shell padding pulled in to `6px 12px`. Result: calendar now starts ~80–100 px higher; the full 09:00–17:00 day axis fits in the viewport.
+- Filter bar reorder: View tabs (Program / Wk 1 / Wk 2) move to the leftmost position as primary nav; Track and Roles follow; `Clear` floats right with `margin-left:auto`.
+- Edit form expanded to 8 sections — **Basics**, **Who's in the room**, **Pacing** (prep_buffer_minutes, debrief_buffer_minutes), **Slides + foundation**, **Students**, **Facilitator** (slide.facilitator + references), **Outputs and dependencies** (produces_artifact, feeds_into[], success_criteria[]), **Context** (notes_facilitator). Textareas with `parseLines`/`joinLines` helpers for the array-shaped fields. The Save toolbar is `position:sticky` so it stays visible as the form scrolls. Cancel discards the draft.
+- Overview tab now renders the populated values (Prep/Debrief buffer as "15 min" / "10 min", Produces, Feeds into, Success criteria as bulleted lists, plus a Context block at the bottom). Muted-italic placeholder copy retired — the panel shows actual content when populated, hides the section when empty.
+
 **Round 5.** Owen reshaped the role taxonomy and asked for more readable density:
 
 - Calendar should take more room — labels were too cramped in the two-week view.
