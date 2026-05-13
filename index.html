@@ -1824,8 +1824,8 @@ body.view-b-active .view-b {
 .vb-filterbar {
   display: flex;
   align-items: center;
-  gap: 28px;
-  padding: 12px 24px;
+  gap: 20px;
+  padding: 10px 16px;
   border-bottom: 1px solid var(--rule);
   background: var(--bg);
   position: sticky;
@@ -2023,7 +2023,7 @@ body.view-b-active .view-b {
 :root { --vb-cal-px-per-min: 1.1; }   /* 09:00–17:00 = 480 min ~= 528px tall */
 
 .vb-cal-shell {
-  padding: 20px 24px 64px;
+  padding: 14px 14px 64px;
   background: var(--bg);
   overflow-x: auto;
 }
@@ -2049,7 +2049,7 @@ body.view-b-active .view-b {
 
 .vb-cal-weekrow {
   display: grid;
-  grid-template-columns: 56px repeat(var(--vb-cal-cols, 10), minmax(132px, 1fr));
+  grid-template-columns: 48px repeat(var(--vb-cal-cols, 10), minmax(150px, 1fr));
   align-items: center;
   margin-bottom: 4px;
 }
@@ -2067,7 +2067,7 @@ body.view-b-active .view-b {
 
 .vb-cal-headerrow {
   display: grid;
-  grid-template-columns: 56px repeat(var(--vb-cal-cols, 10), minmax(132px, 1fr));
+  grid-template-columns: 48px repeat(var(--vb-cal-cols, 10), minmax(150px, 1fr));
   margin-bottom: 6px;
 }
 .vb-cal-dayhead {
@@ -2101,7 +2101,7 @@ body.view-b-active .view-b {
 
 .vb-cal-grid {
   display: grid;
-  grid-template-columns: 56px repeat(var(--vb-cal-cols, 10), minmax(132px, 1fr));
+  grid-template-columns: 48px repeat(var(--vb-cal-cols, 10), minmax(150px, 1fr));
   position: relative;
 }
 .vb-cal-rail {
@@ -2191,14 +2191,14 @@ body.view-b-active .view-b {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
-  padding: 6px 24px 8px;
+  gap: 12px;
+  padding: 5px 16px 6px;
   border-bottom: 1px solid var(--rule);
   background: var(--bg);
   font-family: var(--condensed);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-mute);
 }
@@ -2308,7 +2308,7 @@ body.view-b-active .view-b {
 }
 .vb-cal-block .cb-time {
   font-family: var(--condensed);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--text-faint);
@@ -2316,7 +2316,7 @@ body.view-b-active .view-b {
 }
 .vb-cal-block .cb-code {
   font-family: var(--condensed);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--text-mute);
@@ -2324,15 +2324,31 @@ body.view-b-active .view-b {
   margin-right: 4px;
 }
 .vb-cal-block .cb-label {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--text);
-  line-height: 1.25;
+  line-height: 1.3;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.vb-cal-block .cb-audience {
+  position: absolute;
+  top: 4px; right: 4px;
+  font-family: var(--condensed);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  padding: 1px 4px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--bg);
+}
+.vb-cal-block .cb-audience[data-aud="alumni"]  { color: #5C2E91; border-color: #C5B7E8; background: #F2EDFA; }
+.vb-cal-block .cb-audience[data-aud="student"] { color: #1F4B86; border-color: #C0D2EA; background: #EEF3FB; }
 .vb-cal-block .cb-kind {
   font-family: var(--condensed);
   font-size: 9px;
@@ -4469,24 +4485,67 @@ function formatMin(min) {
   return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
 }
 
+/* Default audience set when a block has no override.
+   Sponsor-kind blocks have a sponsor present by default; panel-kind blocks have a guest. */
+function effectiveAudiences(block) {
+  if (Array.isArray(block.audiences) && block.audiences.length) return block.audiences;
+  return ["student", "alumni"];
+}
+function effectiveFacilitators(block) {
+  if (Array.isArray(block.facilitators) && block.facilitators.length) return block.facilitators;
+  return ["f1"];
+}
+function effectiveSponsorPresent(block) {
+  if (typeof block.sponsor_present === "boolean") return block.sponsor_present;
+  return block.kind === "sponsor";
+}
+function effectiveGuestPresent(block) {
+  if (typeof block.guest_present === "boolean") return block.guest_present;
+  return block.kind === "panel";
+}
+
+function blockMatchesRole(block, roleId) {
+  switch (roleId) {
+    case "student":  return effectiveAudiences(block).includes("student");
+    case "alumni":   return effectiveAudiences(block).includes("alumni");
+    case "f1":       return effectiveFacilitators(block).includes("f1");
+    case "f2":       return effectiveFacilitators(block).includes("f2");
+    case "sponsor":  return effectiveSponsorPresent(block);
+    case "guest":    return effectiveGuestPresent(block);
+    default:         return true;
+  }
+}
+
 function isViewBDimmed(block) {
   const t = VIEW_B_STATE.filters.track;
-  if (!t) return false;
-  if (block.track === t) return false;
-  if (block.kind !== "track" && !block.track) return true;
-  return true;
+  const r = VIEW_B_STATE.filters.role;
+  let dimmed = false;
+  if (t) {
+    if (block.track !== t) dimmed = true;
+  }
+  if (r) {
+    if (!blockMatchesRole(block, r)) dimmed = true;
+  }
+  return dimmed;
 }
+
+const VIEW_B_ROLES = [
+  { id: "student",  label: "Student" },
+  { id: "alumni",   label: "Alumni" },
+  { id: "f1",       label: "Facilitator 1" },
+  { id: "f2",       label: "Facilitator 2" },
+  { id: "sponsor",  label: "Sponsor" },
+  { id: "guest",    label: "Guest" },
+];
 
 function renderViewBFilterBar() {
   const tracks = TRACK_LEGEND.map(t => `
     <button class="vb-filter-btn" data-filter="track" data-value="${t.track}"
       data-active="${VIEW_B_STATE.filters.track === t.track}">${escapeText(t.label || t.track)}</button>`).join("");
-  const roleStubs = ["lead", "assistant", "specialist", "guest", "sponsor rep"].map(r => `
-    <button class="vb-filter-btn" data-filter="role" data-value="${r}" data-disabled="true"
-      title="No role data on blocks yet — schema field facilitator_roles lands in Phase 6.">${escapeText(r)}</button>`).join("");
-  const momentStubs = ["plenary", "workshop", "reality check", "sponsor", "social"].map(m => `
-    <button class="vb-filter-btn" data-filter="moment" data-value="${m}" data-disabled="true"
-      title="No moment-type bucketing on blocks yet — wires up once Phase 6 content lands.">${escapeText(m)}</button>`).join("");
+  const roles = VIEW_B_ROLES.map(r => `
+    <button class="vb-filter-btn" data-filter="role" data-value="${r.id}"
+      data-active="${VIEW_B_STATE.filters.role === r.id}"
+      title="Highlight blocks where ${r.label} is involved. Defaults: student+alumni on every block, F1 on every block, sponsor on kind:sponsor, guest on kind:panel. Edit a block to override.">${escapeText(r.label)}</button>`).join("");
   const viewSwitch = `
     <div class="vb-filter-group" style="margin-left:auto">
       <span class="vb-filter-label">View</span>
@@ -4494,12 +4553,11 @@ function renderViewBFilterBar() {
       <button class="vb-filter-btn" data-nav="week" data-w="0" data-active="${VIEW_B_STATE.view === 'week' && VIEW_B_STATE.weekOnlyIdx === 0}">Wk 1</button>
       <button class="vb-filter-btn" data-nav="week" data-w="1" data-active="${VIEW_B_STATE.view === 'week' && VIEW_B_STATE.weekOnlyIdx === 1}">Wk 2</button>
     </div>`;
-  const anyActive = VIEW_B_STATE.filters.track;
+  const anyActive = VIEW_B_STATE.filters.track || VIEW_B_STATE.filters.role;
   return `
     <div class="vb-filterbar">
       <div class="vb-filter-group"><span class="vb-filter-label">Track</span>${tracks}</div>
-      <div class="vb-filter-group"><span class="vb-filter-label">Role</span>${roleStubs}</div>
-      <div class="vb-filter-group"><span class="vb-filter-label">Moment</span>${momentStubs}</div>
+      <div class="vb-filter-group"><span class="vb-filter-label">Roles</span>${roles}</div>
       <button class="vb-clear" id="vbClear" ${anyActive ? "" : "disabled"}>Clear</button>
       ${viewSwitch}
     </div>
@@ -4596,6 +4654,10 @@ function renderCalendarDayColumn(day, weekIdx, dayIdx, opts) {
   const isSel = id => VIEW_B_STATE.selectedBlockId === id;
   const blockHtml = layout.entries.map(e => {
     const dim = isViewBDimmed(e.block);
+    const auds = effectiveAudiences(e.block);
+    let audBadge = "";
+    if (auds.length === 1 && auds[0] === "alumni")  audBadge = `<span class="cb-audience" data-aud="alumni">Alumni</span>`;
+    else if (auds.length === 1 && auds[0] === "student") audBadge = `<span class="cb-audience" data-aud="student">Student</span>`;
     return `<button class="vb-cal-block" type="button"
       data-block-id="${e.id}"
       data-w="${weekIdx}" data-d="${dayIdx}"
@@ -4605,7 +4667,8 @@ function renderCalendarDayColumn(day, weekIdx, dayIdx, opts) {
       data-dim="${dim}"
       style="top:${e.top.toFixed(1)}px;height:${Math.max(e.height - 2, 22).toFixed(1)}px;left:calc(${e.leftPct.toFixed(2)}% + 2px);width:calc(${e.widthPct.toFixed(2)}% - 4px);"
       title="${escapeText(e.block.label || '')}">
-      <span class="cb-time">${e.slotStart}${opts && opts.compact ? "" : ` · ${e.block.kind || ""}`}</span>
+      ${audBadge}
+      <span class="cb-time">${e.slotStart}</span>
       <span class="cb-label">${e.block.code ? `<span class="cb-code">${escapeText(e.block.code)}</span>` : ''}${escapeText(e.block.label || '')}</span>
     </button>`;
   }).join("");
@@ -4688,6 +4751,10 @@ function renderViewBDetail() {
 
 function renderViewBEdit(entry) {
   const block = entry.block;
+  const effAuds = effectiveAudiences(block);
+  const effFacs = effectiveFacilitators(block);
+  const effSpon = effectiveSponsorPresent(block);
+  const effGuest = effectiveGuestPresent(block);
   const draft = VIEW_B_STATE.editDraft || {
     label: block.label || "",
     kind: block.kind || "",
@@ -4696,11 +4763,18 @@ function renderViewBEdit(entry) {
     time_start: block.time_start || entry.slotStart || "",
     time_end:   block.time_end   || entry.slotEnd   || "",
     slides_link_or_embed: block.slides_link_or_embed || "",
+    audiences: effAuds,
+    facilitators: effFacs,
+    sponsor_present: effSpon,
+    guest_present: effGuest,
   };
   VIEW_B_STATE.editDraft = draft;
 
   const kindOpts = KIND_LEGEND.map(k => `<option value="${k.kind}" ${draft.kind === k.kind ? "selected" : ""}>${escapeText(k.label || k.kind)}</option>`).join("");
   const trackOpts = `<option value="">— none —</option>` + TRACK_LEGEND.map(t => `<option value="${t.track}" ${draft.track === t.track ? "selected" : ""}>${escapeText(t.label || t.track)}</option>`).join("");
+  const checked = v => v ? "checked" : "";
+  const audChk = id => checked((draft.audiences || []).includes(id));
+  const facChk = id => checked((draft.facilitators || []).includes(id));
 
   return `
     <div class="vb-edit-toolbar">
@@ -4732,6 +4806,28 @@ function renderViewBEdit(entry) {
         <div class="vb-edit-field">
           <span class="vb-edit-label">Time end</span>
           <input class="vb-edit-input" type="text" name="time_end" value="${escapeText(draft.time_end)}" placeholder="HH:MM" />
+        </div>
+      </div>
+      <div class="vb-edit-row">
+        <span class="vb-edit-label">Audiences (who's in the room)</span>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <label><input type="checkbox" name="aud_student" ${audChk("student")} /> Student</label>
+          <label><input type="checkbox" name="aud_alumni"  ${audChk("alumni")} /> Alumni</label>
+        </div>
+        <span class="vb-edit-help">If a block is for one audience only, uncheck the other and use a separate block record for the parallel session.</span>
+      </div>
+      <div class="vb-edit-row">
+        <span class="vb-edit-label">Facilitators</span>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <label><input type="checkbox" name="fac_f1" ${facChk("f1")} /> Facilitator 1</label>
+          <label><input type="checkbox" name="fac_f2" ${facChk("f2")} /> Facilitator 2</label>
+        </div>
+      </div>
+      <div class="vb-edit-row">
+        <span class="vb-edit-label">Other roles in the room</span>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <label><input type="checkbox" name="sponsor_present" ${checked(draft.sponsor_present)} /> Sponsor</label>
+          <label><input type="checkbox" name="guest_present"   ${checked(draft.guest_present)} /> Guest</label>
         </div>
       </div>
       <div class="vb-edit-row">
@@ -4785,18 +4881,22 @@ function renderViewBOverview(block) {
   const activity = block.code ? ACTIVITIES.find(a => a.code === block.code) : null;
   const hasContent = slide.foundation || (slide.students && slide.students.length) || slide.facilitator || (slide.references && slide.references.length);
 
+  const audienceLabels = effectiveAudiences(block).map(a => a === "alumni" ? "Alumni" : "Student");
+  const facLabels = effectiveFacilitators(block).map(f => f === "f1" ? "Facilitator 1" : "Facilitator 2");
+  const sponsorVal = effectiveSponsorPresent(block) ? "Sponsor present" : "—";
+  const guestVal = effectiveGuestPresent(block) ? "Guest present" : "—";
+
   return `
     <div class="vb-panel-grid">
-      ${vbPlaceholder("Lead facilitator", "Role enum lands in Phase 6 (facilitator_roles).")}
-      ${vbPlaceholder("Assistant", "Role enum lands in Phase 6.")}
+      ${vbSection("Audiences", audienceLabels.join(" + "))}
+      ${vbSection("Facilitators", facLabels.join(" + "))}
     </div>
     <div class="vb-panel-grid">
-      ${vbPlaceholder("Prep buffer", "prep_buffer_minutes — Phase 6.")}
-      ${vbPlaceholder("Debrief buffer", "debrief_buffer_minutes — Phase 6.")}
+      ${vbSection("Sponsor", sponsorVal)}
+      ${vbSection("Guest", guestVal)}
     </div>
-    ${vbPlaceholder("Produces (artifact)", "produces_artifact — Phase 6.")}
-    ${vbPlaceholder("Feeds into", "feeds_into — Phase 6.")}
-    ${vbPlaceholder("Success criteria", "success_criteria — Phase 6.")}
+    ${vbPlaceholder("Prep / debrief buffer", "prep_buffer_minutes / debrief_buffer_minutes — not yet editable.")}
+    ${vbPlaceholder("Produces / Feeds / Success", "Outputs and dependencies — not yet editable.")}
     <div class="vb-detail-divider"></div>
     ${vbSection("Foundation", slide.foundation)}
     ${vbSectionList("Students", slide.students)}
@@ -5104,6 +5204,18 @@ function wireViewBEvents() {
       const v = (fd.get(k) || "").toString().trim();
       if (v !== "") patch[k] = v; else patch[k] = "";
     });
+    // Audiences + facilitators come from checkboxes — assemble arrays.
+    const auds = [];
+    if (fd.get("aud_student")) auds.push("student");
+    if (fd.get("aud_alumni"))  auds.push("alumni");
+    patch.audiences = auds;
+    const facs = [];
+    if (fd.get("fac_f1")) facs.push("f1");
+    if (fd.get("fac_f2")) facs.push("f2");
+    patch.facilitators = facs;
+    patch.sponsor_present = !!fd.get("sponsor_present");
+    patch.guest_present   = !!fd.get("guest_present");
+
     // Validate times (if either set, both must parse and end > start)
     if (patch.time_start || patch.time_end) {
       const s = parseHHMM(patch.time_start), e = parseHHMM(patch.time_end);
@@ -5113,9 +5225,14 @@ function wireViewBEvents() {
         return;
       }
     }
-    // Remove empty fields so we don't override with blanks.
+    // Remove fields that are still "empty string" so they don't override.
+    // Arrays and booleans always get written.
     const cleaned = {};
-    Object.keys(patch).forEach(k => { if (patch[k] !== "") cleaned[k] = patch[k]; });
+    Object.keys(patch).forEach(k => {
+      const v = patch[k];
+      if (v === "" || v == null) return;
+      cleaned[k] = v;
+    });
     const id = VIEW_B_STATE.selectedBlockId;
     if (Object.keys(cleaned).length) {
       VIEW_B_OVERRIDES[id] = Object.assign({}, VIEW_B_OVERRIDES[id] || {}, cleaned);

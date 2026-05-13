@@ -8,6 +8,19 @@ Initial Phase 1.0 brief was deliberately minimal: a single-day chronological lis
 
 **Round 2.** Owen redirected with a reference image (master-detail + filter bar + parallel-track columns + Overview/Slides/Analog tabs) and the note that the redo should not match the existing workbench aesthetic. Rebuilt as `feat(view-b): destination master-detail shape`.
 
+**Round 5.** Owen reshaped the role taxonomy and asked for more readable density:
+
+- Calendar should take more room — labels were too cramped in the two-week view.
+- The filter list was missing Alumni as a primary role. The right taxonomy is **Roles**: Student / Alumni / Facilitator 1 / Facilitator 2 / Sponsor / Guest. Alumni and Student are audience types (orthogonal to Tracks); both can carry a Product/Business/Market track.
+
+Result this commit:
+
+- Density: filter-bar + kind-legend padding pulled in; calendar shell padding reduced to 14×14; day columns bumped from 132 → 150 px min-width; card label up to 12 px with 4 lines clamp; redundant "·kind" text dropped from the time eyebrow since the color already encodes it. The two-week view now flows wider than the viewport on narrow screens (horizontal scroll on the outer shell), trading edge-clipping for readability.
+- Filter bar Role group replaced by the six roles above. Audiences default to `["student", "alumni"]` on every block; facilitator default is `["f1"]`; sponsor defaults true on `kind: "sponsor"` blocks; guest defaults true on `kind: "panel"`. Filter dim works against those defaults — clicking Alumni doesn't dim anything by default (everyone is alumni-capable), but clicking Student dims any block you've explicitly set to `audiences: ["alumni"]`.
+- Edit form gains checkbox groups for Audiences (Student, Alumni), Facilitators (F1, F2), and one-off booleans for Sponsor / Guest. Save merges arrays + booleans into the localStorage patch.
+- Each calendar block can render a small `ALUMNI` or `STUDENT` chip in its corner when audiences is constrained to one side, so single-audience blocks are visible without opening the panel.
+- The Overview tab in the detail panel replaces the Lead-facilitator / Assistant Phase-6 placeholders with the actual computed Audiences / Facilitators / Sponsor / Guest values. Buffers and Produces/Feeds/Success stay as muted placeholders for now (not yet editable — flagged for next round).
+
 **Round 4.** Owen pulled five improvements from the calendar version:
 
 - Drop People filter (roles capture the same dimension).
