@@ -1923,99 +1923,6 @@ body.view-b-active .view-b {
 }
 .vb-day-lead { font-size: 13px; color: var(--text-mute); margin-bottom: 28px; max-width: 540px; line-height: 1.5; }
 
-/* Timeline */
-.vb-timeline { display: flex; flex-direction: column; gap: 4px; }
-.vb-lane + .vb-lane { margin-top: 28px; }
-.vb-lane-head {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--rule);
-  margin-bottom: 10px;
-}
-.vb-lane-label {
-  font-family: var(--condensed);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text);
-}
-.vb-lane-sub { font-size: 11px; color: var(--text-faint); font-style: italic; }
-.vb-slot {
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 14px;
-  padding: 4px 0;
-}
-.vb-slot-time {
-  font-family: var(--condensed);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--text-faint);
-  font-feature-settings: "tnum";
-  padding-top: 14px;
-  white-space: nowrap;
-}
-.vb-slot-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: stretch; }
-.vb-phase {
-  font-family: var(--condensed);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--text-faint);
-  text-transform: uppercase;
-  padding: 14px 0 2px 78px;
-}
-.vb-block {
-  flex: 1 1 0;
-  min-width: 180px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 10px 12px;
-  border: 1px solid var(--rule);
-  border-radius: 3px;
-  background: var(--bg);
-  cursor: pointer;
-  transition: border-color 0.12s, box-shadow 0.12s, opacity 0.18s;
-  text-align: left;
-  font: inherit;
-  color: inherit;
-}
-.vb-block:hover { border-color: var(--rule-strong); }
-.vb-block[data-selected="true"] {
-  border-color: var(--text);
-  box-shadow: inset 0 0 0 1px var(--text);
-}
-.vb-block[data-dim="true"] { opacity: 0.32; }
-.vb-block-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 14px; }
-.vb-block-code {
-  font-family: var(--condensed);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--text-mute);
-}
-.vb-block-status {
-  font-family: var(--condensed);
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-.vb-block-status[data-status="ready"] { color: var(--built); }
-.vb-block-status[data-status="draft"] { color: var(--partial); }
-.vb-block-label {
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.3;
-  color: var(--text);
-}
-.vb-block-sub { font-size: 11px; color: var(--text-mute); font-style: italic; }
-.vb-block-tags { display: flex; gap: 4px; margin-top: 2px; flex-wrap: wrap; }
 .vb-tag {
   font-family: var(--condensed);
   font-size: 10px;
@@ -2111,6 +2018,217 @@ body.view-b-active .view-b {
 .vb-wireframe-host svg { max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 3px; background: white; }
 .vb-detail-divider { border-top: 1px solid var(--rule); margin: 28px 0; }
 .vb-detail-foot { font-size: 11px; color: var(--text-faint); font-style: italic; }
+
+/* ─── Calendar grid (shared by View A 2-week + View B day) ─── */
+:root { --vb-cal-px-per-min: 1.1; }   /* 09:00–17:00 = 480 min ~= 528px tall */
+
+.vb-cal-shell {
+  padding: 20px 24px 64px;
+  background: var(--bg);
+  overflow-x: auto;
+}
+.vb-cal-program-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.vb-cal-program-head h1 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.vb-cal-program-head .sub {
+  font-family: var(--condensed);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.vb-cal-weekrow {
+  display: grid;
+  grid-template-columns: 56px repeat(var(--vb-cal-cols, 10), minmax(132px, 1fr));
+  align-items: center;
+  margin-bottom: 4px;
+}
+.vb-cal-weekrow .vb-cal-weekspan {
+  font-family: var(--condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 4px 8px 4px;
+  border-bottom: 1px solid var(--rule);
+}
+.vb-cal-weekrow .vb-cal-weekspan strong { color: var(--text); margin-right: 6px; font-weight: 700; }
+
+.vb-cal-headerrow {
+  display: grid;
+  grid-template-columns: 56px repeat(var(--vb-cal-cols, 10), minmax(132px, 1fr));
+  margin-bottom: 6px;
+}
+.vb-cal-dayhead {
+  padding: 8px 8px 10px;
+  text-align: left;
+  background: none;
+  border: none;
+  border-left: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  cursor: pointer;
+  font-family: var(--sans);
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.vb-cal-dayhead:hover { background: var(--bg-alt); }
+.vb-cal-dayhead .dh-name {
+  font-family: var(--condensed);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.vb-cal-dayhead .dh-theme {
+  font-size: 12px;
+  color: var(--text-mute);
+  line-height: 1.25;
+}
+
+.vb-cal-grid {
+  display: grid;
+  grid-template-columns: 56px repeat(var(--vb-cal-cols, 10), minmax(132px, 1fr));
+  position: relative;
+}
+.vb-cal-rail {
+  position: relative;
+  border-right: 1px solid var(--rule);
+}
+.vb-cal-rail-tick {
+  position: absolute;
+  right: 8px;
+  font-family: var(--condensed);
+  font-size: 10px;
+  font-feature-settings: "tnum";
+  color: var(--text-faint);
+  transform: translateY(-50%);
+  background: var(--bg);
+  padding: 0 2px;
+}
+.vb-cal-rail-lunchband {
+  position: absolute;
+  left: 0; right: 0;
+  background: repeating-linear-gradient(45deg, rgba(0,0,0,0.025) 0 4px, transparent 4px 8px);
+  pointer-events: none;
+}
+
+.vb-cal-day-col {
+  position: relative;
+  border-left: 1px solid var(--rule);
+}
+.vb-cal-day-col + .vb-cal-day-col { /* no-op, kept for future tuning */ }
+.vb-cal-hour-line {
+  position: absolute;
+  left: 0; right: 0;
+  border-top: 1px solid var(--rule);
+  pointer-events: none;
+}
+.vb-cal-hour-line.faint { border-top: 1px dashed rgba(0,0,0,0.06); }
+.vb-cal-lunchband {
+  position: absolute;
+  left: 0; right: 0;
+  background: repeating-linear-gradient(45deg, rgba(0,0,0,0.025) 0 4px, transparent 4px 8px);
+  pointer-events: none;
+}
+
+.vb-cal-block {
+  position: absolute;
+  background: var(--bg);
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  padding: 5px 7px 6px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+  transition: box-shadow 0.12s, border-color 0.12s, opacity 0.18s;
+  box-sizing: border-box;
+}
+.vb-cal-block:hover { border-color: var(--text); }
+.vb-cal-block[data-selected="true"] {
+  border-color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--text);
+}
+.vb-cal-block[data-dim="true"] { opacity: 0.28; }
+.vb-cal-block[data-track="product"]  { border-left: 3px solid #E46C41; }
+.vb-cal-block[data-track="business"] { border-left: 3px solid #34C759; }
+.vb-cal-block[data-track="market"]   { border-left: 3px solid #3B7DD8; }
+.vb-cal-block .cb-time {
+  font-family: var(--condensed);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+  font-feature-settings: "tnum";
+}
+.vb-cal-block .cb-code {
+  font-family: var(--condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-mute);
+  display: inline-block;
+  margin-right: 4px;
+}
+.vb-cal-block .cb-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.vb-cal-block .cb-kind {
+  font-family: var(--condensed);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.vb-cal-phasebanner {
+  font-family: var(--condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  text-align: left;
+  padding: 0 4px;
+  background: var(--bg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* View B (day) layout when calendar is on the left */
+.vb-body.vb-body--day {
+  grid-template-columns: minmax(420px, 1.1fr) minmax(420px, 1fr);
+}
+.vb-master.vb-master--cal { padding: 20px 24px 48px; overflow-y: auto; }
+.vb-master--cal .vb-cal-shell { padding: 0; }
 </style>
 </head>
 <body>
@@ -4128,24 +4246,43 @@ function bindEvents() {
 }
 
 /* ════════════════════════════════════════════════════════════
-   VIEW B — Day view (curriculum-building interface)
-   Activated by ?view=day&d=wN-(mon|tue|wed|thu|fri).
-   Filter bar + master/detail split. Reads SCHEDULE/DAYS/ACTIVITIES;
-   degrades on missing Phase-6 schema fields (roles, audiences,
-   time_start, buffers, success_criteria, etc.).
+   CURRICULUM-BUILDER INTERFACE — standalone tool layered on top of the
+   workbench data. Two views share a filter bar and a master/detail shell:
+     View A (?view=week)            two-week calendar grid (entry point)
+     View B (?view=day&d=wN-day)    single-day calendar + block detail
+   Calendar is rendered with time on the y-axis. Block positions use a
+   hardcoded uniform spread inside the AM (09:00–12:00) and PM (13:00–17:00)
+   windows until the Phase 6 schema adds real time_start / time_end.
+   Degrades on every missing Phase 6 field (roles, audiences, buffers,
+   produces, feeds, success_criteria); UI surfaces are present and stubbed.
    ════════════════════════════════════════════════════════════ */
 const VIEW_B_DAY_TOKENS = { mon: 0, tue: 1, wed: 2, thu: 3, fri: 4 };
 const VIEW_B_DAY_NAMES = ["mon", "tue", "wed", "thu", "fri"];
 const VIEW_B_AM_RANGE = [9 * 60, 12 * 60];       // 09:00–12:00
 const VIEW_B_PM_RANGE = [13 * 60, 17 * 60];      // 13:00–17:00
+const VIEW_B_CAL_START = 9 * 60;                  // calendar top
+const VIEW_B_CAL_END = 17 * 60;                   // calendar bottom
+const VIEW_B_PX_PER_MIN = 1.1;                    // see :root --vb-cal-px-per-min
+
+/* Roster lives outside SCHEDULE per PRD §04 (people-agnostic schema).
+   Stub seed: names from PROJECT.md so the People filter has chips visible
+   even before block-level role assignments exist. `blocks` is empty until
+   the assignment surface is wired; clicking a chip is currently a no-op. */
+const ROSTER = [
+  { id: "owen",   name: "Owen",   role: "lead",      blocks: [] },
+  { id: "stacey", name: "Stacey", role: "lead",      blocks: [] },
+  { id: "cate",   name: "Cate",   role: "alumni",    blocks: [] },
+];
+
 const VIEW_B_STATE = {
+  view: "week",                                   // "week" | "day"
   weekIdx: 0,
   dayIdx: 0,
   selectedBlockId: null,
   activeTab: "overview",
-  filters: { track: null, role: null, moment: null },
-  allBlocks: [],
-  rowsByLane: {},
+  filters: { track: null, role: null, moment: null, person: null },
+  allBlocks: [],                                   // current day's blocks (View B only)
+  weekBlocks: [],                                  // all 80 blocks (View A or shared)
 };
 
 function parseViewBDayParam(token) {
@@ -4171,70 +4308,11 @@ function formatMin(min) {
   return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
 }
 
-// Walk a lane (am or pm) into a list of "rows".
-// Row is either {type:'phase', label} or {type:'slot', time, blocks:[...]}.
-// Consecutive `kind:'track'` blocks fold into one parallel-slot.
-function buildLaneRows(weekIdx, dayIdx, laneKey, items, range) {
-  const rows = [];
-  const blocks = [];
-  let trackGroup = [];
-  const flushTracks = () => {
-    if (trackGroup.length) {
-      rows.push({ type: "slot", blocks: trackGroup.slice() });
-      trackGroup.length = 0;
-    }
-  };
-  (items || []).forEach((item, idx) => {
-    if (item.groupLabel) {
-      flushTracks();
-      rows.push({ type: "phase", label: item.groupLabel });
-      return;
-    }
-    const entry = {
-      block: item,
-      id: viewBBlockId(weekIdx, dayIdx, laneKey, item, idx),
-      lane: laneKey,
-      idx,
-    };
-    blocks.push(entry);
-    if (item.kind === "track") {
-      trackGroup.push(entry);
-    } else {
-      flushTracks();
-      rows.push({ type: "slot", blocks: [entry] });
-    }
-  });
-  flushTracks();
-
-  // Hardcoded uniform time spread across slots (PRD §07 — no time_start yet).
-  const slots = rows.filter(r => r.type === "slot");
-  const N = Math.max(slots.length, 1);
-  const total = range[1] - range[0];
-  const slotDur = total / N;
-  slots.forEach((s, i) => {
-    const a = range[0] + Math.round(i * slotDur);
-    const b = range[0] + Math.round((i + 1) * slotDur);
-    s.timeStart = a;
-    s.timeEnd = b;
-    s.time = `${formatMin(a)}–${formatMin(b)}`;
-  });
-  // Attach the owning slot to each entry so the detail panel can read time.
-  rows.forEach(r => {
-    if (r.type !== "slot") return;
-    r.blocks.forEach(e => { e.slotTime = r.time; e.slotStart = formatMin(r.timeStart); e.slotEnd = formatMin(r.timeEnd); });
-  });
-
-  return { rows, blocks };
-}
-
 function isViewBDimmed(block) {
   const t = VIEW_B_STATE.filters.track;
   if (!t) return false;
   if (block.track === t) return false;
-  if (block.kind !== "track" && !block.track) {
-    // Non-track blocks dim when a track filter is active (per "highlight, not remove").
-    return true;
-  }
+  if (block.kind !== "track" && !block.track) return true;
   return true;
 }
 
@@ -4242,72 +4320,146 @@ function renderViewBFilterBar() {
   const tracks = TRACK_LEGEND.map(t => `
     <button class="vb-filter-btn" data-filter="track" data-value="${t.track}"
       data-active="${VIEW_B_STATE.filters.track === t.track}">${escapeText(t.label || t.track)}</button>`).join("");
+  const people = ROSTER.length ? ROSTER.map(p => `
+    <button class="vb-filter-btn" data-filter="person" data-value="${escapeText(p.id)}"
+      data-active="${VIEW_B_STATE.filters.person === p.id}"
+      data-disabled="${p.blocks && p.blocks.length ? "false" : "true"}"
+      title="${p.blocks && p.blocks.length ? "Highlight " + p.name + "'s path" : "No block assignments yet for " + p.name + " — populate ROSTER[i].blocks to light up."}">${escapeText(p.name)}</button>`).join("") : "";
   const roleStubs = ["lead", "assistant", "specialist", "guest", "sponsor rep"].map(r => `
     <button class="vb-filter-btn" data-filter="role" data-value="${r}" data-disabled="true"
       title="No role data on blocks yet — schema field facilitator_roles lands in Phase 6.">${escapeText(r)}</button>`).join("");
   const momentStubs = ["plenary", "workshop", "reality check", "sponsor", "social"].map(m => `
     <button class="vb-filter-btn" data-filter="moment" data-value="${m}" data-disabled="true"
       title="No moment-type bucketing on blocks yet — wires up once Phase 6 content lands.">${escapeText(m)}</button>`).join("");
-  const anyActive = VIEW_B_STATE.filters.track;
+  const anyActive = VIEW_B_STATE.filters.track || VIEW_B_STATE.filters.person;
   return `
     <div class="vb-filterbar">
       <div class="vb-filter-group"><span class="vb-filter-label">Track</span>${tracks}</div>
+      <div class="vb-filter-group"><span class="vb-filter-label">People</span>${people}</div>
       <div class="vb-filter-group"><span class="vb-filter-label">Role</span>${roleStubs}</div>
       <div class="vb-filter-group"><span class="vb-filter-label">Moment</span>${momentStubs}</div>
       <button class="vb-clear" id="vbClear" ${anyActive ? "" : "disabled"}>Clear filters</button>
     </div>`;
 }
 
-function renderViewBDayHeader(week, day, meta) {
-  return `
-    <div class="vb-crumbs">
-      <a href="?">Workbench</a><span class="sep">/</span><span>${escapeText(week.tag)}</span><span class="sep">/</span><span class="here">${escapeText(day.name)}</span>
-    </div>
-    <div class="vb-day-title">${escapeText(day.name)} · ${escapeText(meta.theme)}</div>
-    <div class="vb-day-lead">${escapeText(meta.lead)}</div>`;
+/* ─── Calendar primitive — single day column on the time axis ─── */
+/* Returns:
+   - blocks: positioned entries with {id, block, lane, slotStart/slotEnd/slotTime, top, height, leftPct, widthPct}
+   - phases: phase markers tagged with their owning slot's top
+   plus collapsed-parallel-track folding for kind:"track" runs.       */
+function computeDayCalendar(day, weekIdx, dayIdx) {
+  const walk = (items, laneKey, range) => {
+    const slots = [];
+    const phaseMarks = [];
+    let trackGroup = [];
+    const flush = () => {
+      if (trackGroup.length) { slots.push({ blocks: trackGroup.slice() }); trackGroup.length = 0; }
+    };
+    (items || []).forEach((item, idx) => {
+      if (item.groupLabel) {
+        flush();
+        phaseMarks.push({ label: item.groupLabel, slotAfter: slots.length });
+        return;
+      }
+      if (item.kind === "track") {
+        trackGroup.push({ block: item, idx });
+      } else {
+        flush();
+        slots.push({ blocks: [{ block: item, idx }] });
+      }
+    });
+    flush();
+    const N = Math.max(slots.length, 1);
+    const total = range[1] - range[0];
+    const slotDur = total / N;
+    const entries = [];
+    slots.forEach((s, sIdx) => {
+      const start = range[0] + sIdx * slotDur;
+      const end = range[0] + (sIdx + 1) * slotDur;
+      const M = s.blocks.length;
+      s.blocks.forEach((bw, bi) => {
+        const id = viewBBlockId(weekIdx, dayIdx, laneKey, bw.block, bw.idx);
+        const widthPct = M > 1 ? (100 / M) : 100;
+        const leftPct = M > 1 ? (bi * widthPct) : 0;
+        const top = (start - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN;
+        const height = (end - start) * VIEW_B_PX_PER_MIN;
+        entries.push({
+          id, block: bw.block, lane: laneKey,
+          slotStart: formatMin(start), slotEnd: formatMin(end),
+          slotTime: `${formatMin(start)}–${formatMin(end)}`,
+          startMin: start, endMin: end,
+          top, height, leftPct, widthPct,
+        });
+      });
+      s.startMin = start;
+      s.top = (start - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN;
+    });
+    const phaseRows = phaseMarks.map(pm => {
+      const owning = slots[pm.slotAfter];
+      const top = owning ? owning.top : ((range[0] - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN);
+      return { label: pm.label, top };
+    });
+    return { entries, phaseRows };
+  };
+
+  const am = walk(day.am || [], "am", VIEW_B_AM_RANGE);
+  const pm = walk(day.pm || [], "pm", VIEW_B_PM_RANGE);
+  return {
+    entries: am.entries.concat(pm.entries),
+    phaseRows: am.phaseRows.concat(pm.phaseRows),
+  };
 }
 
-function renderViewBLane(label, lane, sub) {
-  const rowsHtml = lane.rows.map(row => {
-    if (row.type === "phase") {
-      return `<div class="vb-phase">${escapeText(row.label)}</div>`;
-    }
-    const cards = row.blocks.map(entry => renderViewBBlockCard(entry.block, entry.id)).join("");
-    return `<div class="vb-slot">
-      <div class="vb-slot-time">${escapeText(row.time || "")}</div>
-      <div class="vb-slot-row">${cards}</div>
-    </div>`;
+function renderCalendarDayColumn(day, weekIdx, dayIdx, opts) {
+  const layout = computeDayCalendar(day, weekIdx, dayIdx);
+  const isSel = id => VIEW_B_STATE.selectedBlockId === id;
+  const blockHtml = layout.entries.map(e => {
+    const dim = isViewBDimmed(e.block);
+    return `<button class="vb-cal-block" type="button"
+      data-block-id="${e.id}"
+      data-w="${weekIdx}" data-d="${dayIdx}"
+      data-track="${e.block.track || ''}"
+      data-kind="${e.block.kind || ''}"
+      data-selected="${isSel(e.id)}"
+      data-dim="${dim}"
+      style="top:${e.top.toFixed(1)}px;height:${Math.max(e.height - 2, 22).toFixed(1)}px;left:calc(${e.leftPct.toFixed(2)}% + 2px);width:calc(${e.widthPct.toFixed(2)}% - 4px);"
+      title="${escapeText(e.block.label || '')}">
+      <span class="cb-time">${e.slotStart}${opts && opts.compact ? "" : ` · ${e.block.kind || ""}`}</span>
+      <span class="cb-label">${e.block.code ? `<span class="cb-code">${escapeText(e.block.code)}</span>` : ''}${escapeText(e.block.label || '')}</span>
+    </button>`;
   }).join("");
-  return `<div class="vb-lane">
-    <div class="vb-lane-head">
-      <span class="vb-lane-label">${label}</span>
-      ${sub ? `<span class="vb-lane-sub">${escapeText(sub)}</span>` : ""}
-    </div>
-    ${rowsHtml}
+  const phaseHtml = (opts && opts.compact) ? "" : layout.phaseRows.map(p => `
+    <div class="vb-cal-phasebanner" style="top:${Math.max(p.top - 16, -16).toFixed(1)}px">${escapeText(p.label)}</div>`).join("");
+  const hourLines = [];
+  for (let h = 9; h <= 17; h++) {
+    const top = (h - 9) * 60 * VIEW_B_PX_PER_MIN;
+    hourLines.push(`<div class="vb-cal-hour-line${h % 2 === 0 ? '' : ' faint'}" style="top:${top.toFixed(1)}px"></div>`);
+  }
+  // Lunch band 12:00–13:00
+  const lunchTop = (12 * 60 - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN;
+  const lunchH = 60 * VIEW_B_PX_PER_MIN;
+  const lunch = `<div class="vb-cal-lunchband" style="top:${lunchTop.toFixed(1)}px;height:${lunchH.toFixed(1)}px"></div>`;
+
+  return `<div class="vb-cal-day-col" data-w="${weekIdx}" data-d="${dayIdx}">
+    ${hourLines.join("")}
+    ${lunch}
+    ${blockHtml}
+    ${phaseHtml}
   </div>`;
 }
 
-function renderViewBBlockCard(block, id) {
-  const dim = isViewBDimmed(block);
-  const status = block._slideStatus || (block.slide && block.slide.status) || (block.kind === "track" ? "draft" : "stub");
-  const code = block.code ? `<span class="vb-block-code">${escapeText(block.code)}</span>` : `<span></span>`;
-  const sub = block.sub ? `<div class="vb-block-sub">${escapeText(block.sub)}</div>` : "";
-  const trackTag = block.track ? `<span class="vb-tag" data-track="${block.track}">${escapeText(block.track)}</span>` : "";
-  const kindTag = block.kind ? `<span class="vb-tag">${escapeText(block.kind)}</span>` : "";
-  const selected = VIEW_B_STATE.selectedBlockId === id;
-  return `<button class="vb-block" type="button"
-      data-block-id="${id}"
-      data-selected="${selected}"
-      data-dim="${dim}"
-      aria-label="${escapeText(block.label || "")}">
-    <div class="vb-block-top">
-      ${code}
-      <span class="vb-block-status" data-status="${status}">${status}</span>
-    </div>
-    <div class="vb-block-label">${escapeText(block.label || "")}</div>
-    ${sub}
-    <div class="vb-block-tags">${trackTag}${kindTag}</div>
-  </button>`;
+function renderCalendarTimeRail() {
+  const ticks = [];
+  for (let h = 9; h <= 17; h++) {
+    const top = (h - 9) * 60 * VIEW_B_PX_PER_MIN;
+    ticks.push(`<div class="vb-cal-rail-tick" style="top:${top.toFixed(1)}px">${String(h).padStart(2, "0")}:00</div>`);
+  }
+  const lunchTop = (12 * 60 - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN;
+  const lunchH = 60 * VIEW_B_PX_PER_MIN;
+  return `<div class="vb-cal-rail" style="height:${((VIEW_B_CAL_END - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN).toFixed(1)}px">
+    <div class="vb-cal-rail-lunchband" style="top:${lunchTop.toFixed(1)}px;height:${lunchH.toFixed(1)}px"></div>
+    ${ticks.join("")}
+  </div>`;
 }
 
 function renderViewBDetail() {
@@ -4437,6 +4589,93 @@ function renderViewBAnalog(block) {
   `;
 }
 
+function viewBNavigateToDay(weekIdx, dayIdx, blockId) {
+  VIEW_B_STATE.view = "day";
+  VIEW_B_STATE.weekIdx = weekIdx;
+  VIEW_B_STATE.dayIdx = dayIdx;
+  if (blockId) {
+    VIEW_B_STATE.selectedBlockId = blockId;
+    VIEW_B_STATE.activeTab = "overview";
+  } else {
+    VIEW_B_STATE.selectedBlockId = null;
+  }
+  const tag = `w${weekIdx + 1}-${VIEW_B_DAY_NAMES[dayIdx]}`;
+  const url = `?view=day&d=${tag}`;
+  if (window.history && window.history.pushState) {
+    window.history.pushState({ view: "day", weekIdx, dayIdx, blockId }, "", url);
+  }
+  renderViewB(weekIdx, dayIdx);
+}
+
+function viewBNavigateToWeek() {
+  VIEW_B_STATE.view = "week";
+  VIEW_B_STATE.selectedBlockId = null;
+  const url = `?view=week`;
+  if (window.history && window.history.pushState) {
+    window.history.pushState({ view: "week" }, "", url);
+  }
+  renderViewA();
+}
+
+/* ─── View A — Two-week calendar (entry point) ─── */
+function renderViewA() {
+  const host = document.getElementById("viewB");
+  if (!host) return;
+
+  // Walk all 10 days; collect block layout and metadata.
+  const cols = [];
+  const allBlocks = [];
+  SCHEDULE.weeks.forEach((week, wIdx) => {
+    week.days.forEach((day, dIdx) => {
+      const meta = DAYS.find(d => d.weekIdx === wIdx && d.dayIdx === dIdx);
+      const layout = computeDayCalendar(day, wIdx, dIdx);
+      layout.entries.forEach(e => allBlocks.push(e));
+      cols.push({ week, day, meta, wIdx, dIdx, key: `w${wIdx + 1}-${VIEW_B_DAY_NAMES[dIdx]}` });
+    });
+  });
+  VIEW_B_STATE.weekBlocks = allBlocks;
+
+  // Header row — week spans (5 columns each)
+  const weekSpan = SCHEDULE.weeks.map((w, i) => `
+    <div class="vb-cal-weekspan" style="grid-column: span 5;">
+      <strong>${escapeText(w.tag)}</strong>${escapeText(w.label || "")}${w.sub ? " · " + escapeText(w.sub) : ""}
+    </div>`).join("");
+
+  // Day headers
+  const dayHeads = cols.map(c => `
+    <button class="vb-cal-dayhead" type="button" data-w="${c.wIdx}" data-d="${c.dIdx}">
+      <span class="dh-name">${escapeText(c.day.name)} · Wk${c.wIdx + 1}</span>
+      <span class="dh-theme">${escapeText(c.meta && c.meta.theme || "")}</span>
+    </button>`).join("");
+
+  // Day columns
+  const dayCols = cols.map(c => renderCalendarDayColumn(c.day, c.wIdx, c.dIdx, { compact: true })).join("");
+
+  host.innerHTML = `
+    ${renderViewBFilterBar()}
+    <div class="vb-cal-shell" style="--vb-cal-cols: 10;">
+      <div class="vb-cal-program-head">
+        <h1>Curriculum</h1>
+        <span class="sub">Two-week view · calendar entry</span>
+      </div>
+      <div class="vb-cal-weekrow">
+        <div></div>
+        ${weekSpan}
+      </div>
+      <div class="vb-cal-headerrow">
+        <div></div>
+        ${dayHeads}
+      </div>
+      <div class="vb-cal-grid">
+        ${renderCalendarTimeRail()}
+        ${dayCols}
+      </div>
+    </div>`;
+
+  wireViewBEvents();
+}
+
+/* ─── View B — Single day calendar + detail panel ─── */
 function renderViewB(weekIdx, dayIdx) {
   const host = document.getElementById("viewB");
   if (!host) return;
@@ -4448,24 +4687,29 @@ function renderViewB(weekIdx, dayIdx) {
     return;
   }
 
+  VIEW_B_STATE.view = "day";
   VIEW_B_STATE.weekIdx = weekIdx;
   VIEW_B_STATE.dayIdx = dayIdx;
-  const am = buildLaneRows(weekIdx, dayIdx, "am", day.am || [], VIEW_B_AM_RANGE);
-  const pm = buildLaneRows(weekIdx, dayIdx, "pm", day.pm || [], VIEW_B_PM_RANGE);
-  VIEW_B_STATE.allBlocks = am.blocks.concat(pm.blocks);
-  VIEW_B_STATE.rowsByLane = { am, pm };
-  if (!VIEW_B_STATE.selectedBlockId && VIEW_B_STATE.allBlocks.length) {
-    VIEW_B_STATE.selectedBlockId = VIEW_B_STATE.allBlocks[0].id;
+  const layout = computeDayCalendar(day, weekIdx, dayIdx);
+  VIEW_B_STATE.allBlocks = layout.entries;
+  if (!VIEW_B_STATE.selectedBlockId && layout.entries.length) {
+    VIEW_B_STATE.selectedBlockId = layout.entries[0].id;
   }
 
   host.innerHTML = `
     ${renderViewBFilterBar()}
-    <div class="vb-body">
-      <section class="vb-master" aria-label="Day timeline">
-        ${renderViewBDayHeader(week, day, meta)}
-        <div class="vb-timeline">
-          ${renderViewBLane("AM", am, day.amSub)}
-          ${renderViewBLane("PM", pm, day.pmSub)}
+    <div class="vb-body vb-body--day">
+      <section class="vb-master vb-master--cal" aria-label="Day calendar">
+        <div class="vb-crumbs">
+          <a href="?view=week" data-nav="week">Two-week</a><span class="sep">/</span><span class="here">${escapeText(week.tag)} · ${escapeText(day.name)}</span>
+        </div>
+        <div class="vb-day-title">${escapeText(day.name)} · ${escapeText(meta.theme)}</div>
+        <div class="vb-day-lead">${escapeText(meta.lead)}</div>
+        <div class="vb-cal-shell" style="--vb-cal-cols: 1;">
+          <div class="vb-cal-grid">
+            ${renderCalendarTimeRail()}
+            ${renderCalendarDayColumn(day, weekIdx, dayIdx, { compact: false })}
+          </div>
         </div>
       </section>
       <aside class="vb-detail" id="vbDetail" aria-label="Block detail">
@@ -4477,16 +4721,34 @@ function renderViewB(weekIdx, dayIdx) {
 }
 
 function wireViewBEvents() {
-  document.querySelectorAll(".vb-block").forEach(el => {
+  // Calendar blocks (View A + View B): click drills to View B with that block selected.
+  document.querySelectorAll(".vb-cal-block").forEach(el => {
     el.addEventListener("click", () => {
       const id = el.dataset.blockId;
-      if (!id) return;
+      const w = parseInt(el.dataset.w, 10);
+      const d = parseInt(el.dataset.d, 10);
+      if (!id || Number.isNaN(w) || Number.isNaN(d)) return;
       console.log(id);
-      VIEW_B_STATE.selectedBlockId = id;
-      VIEW_B_STATE.activeTab = "overview";
-      renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
+      viewBNavigateToDay(w, d, id);
     });
   });
+  // Day header (View A): click goes to View B for that day.
+  document.querySelectorAll(".vb-cal-dayhead").forEach(el => {
+    el.addEventListener("click", () => {
+      const w = parseInt(el.dataset.w, 10);
+      const d = parseInt(el.dataset.d, 10);
+      if (Number.isNaN(w) || Number.isNaN(d)) return;
+      viewBNavigateToDay(w, d, null);
+    });
+  });
+  // Crumb back to View A.
+  document.querySelectorAll('[data-nav="week"]').forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      viewBNavigateToWeek();
+    });
+  });
+  // Detail panel tabs.
   document.querySelectorAll(".vb-tab").forEach(el => {
     if (el.dataset.disabled === "true") return;
     el.addEventListener("click", () => {
@@ -4494,31 +4756,48 @@ function wireViewBEvents() {
       renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
     });
   });
+  // Filter buttons.
   document.querySelectorAll(".vb-filter-btn").forEach(el => {
     if (el.dataset.disabled === "true") return;
     el.addEventListener("click", () => {
       const dim = el.dataset.filter;
       const val = el.dataset.value;
       VIEW_B_STATE.filters[dim] = (VIEW_B_STATE.filters[dim] === val) ? null : val;
-      renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
+      if (VIEW_B_STATE.view === "week") renderViewA();
+      else renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
     });
   });
   const clear = document.getElementById("vbClear");
   if (clear) clear.addEventListener("click", () => {
-    VIEW_B_STATE.filters = { track: null, role: null, moment: null };
-    renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
+    VIEW_B_STATE.filters = { track: null, role: null, moment: null, person: null };
+    if (VIEW_B_STATE.view === "week") renderViewA();
+    else renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
   });
 }
 
 function tryRenderViewB() {
   const params = new URLSearchParams(window.location.search);
-  if (params.get("view") !== "day") return false;
-  const coord = parseViewBDayParam(params.get("d"));
-  if (!coord) return false;
+  const view = params.get("view");
+  if (view !== "day" && view !== "week") return false;
   document.body.classList.add("view-b-active");
+  if (view === "week") {
+    renderViewA();
+    return true;
+  }
+  const coord = parseViewBDayParam(params.get("d"));
+  if (!coord) {
+    // Missing/invalid d → fall back to two-week entry.
+    renderViewA();
+    return true;
+  }
   renderViewB(coord.weekIdx, coord.dayIdx);
   return true;
 }
+
+window.addEventListener("popstate", () => {
+  if (!document.body.classList.contains("view-b-active")) return;
+  tryRenderViewB();
+});
 
 /* ════════════════════════════════════════════════════════════
    INIT

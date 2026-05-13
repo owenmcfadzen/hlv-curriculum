@@ -2,9 +2,23 @@
 
 Ambiguities and small calls made while building View B for Wk2 Tue. Capturing here so Owen can review without me blocking on him during the session.
 
-## Mid-session scope shift: minimal list → destination master-detail
+## Mid-session scope shifts (three rounds)
 
-Initial Phase 1.0 brief was deliberately minimal: a single-day chronological list with click-logs-id. Shipped that as `feat(view-b): minimal day view for Wk2 Tue (phase 1.0)`. Owen then redirected with a reference image (master-detail + filter bar + parallel-track columns + Overview/Slides/Analog tabs) and the note that the redo should not match the existing workbench aesthetic.
+Initial Phase 1.0 brief was deliberately minimal: a single-day chronological list with click-logs-id. Shipped that as `feat(view-b): minimal day view for Wk2 Tue (phase 1.0)`.
+
+**Round 2.** Owen redirected with a reference image (master-detail + filter bar + parallel-track columns + Overview/Slides/Analog tabs) and the note that the redo should not match the existing workbench aesthetic. Rebuilt as `feat(view-b): destination master-detail shape`.
+
+**Round 3.** Owen reframed the whole tool:
+- Two-week calendar is the **entry point**, not the day view.
+- The "calendar has to be more like a calendar" — time on the y-axis, blocks positioned by clock, not slot indices.
+- A **People** filter at the top, capable of highlighting one person's path through the whole program.
+- This is a standalone tool for facilitator team, not a Workbench extension — no Decisions/Layers/Flow language carries over.
+
+Current state delivers all four:
+- `?view=week` (now the default entry for the tool) renders a 10-day calendar grid with time rail on the left and one column per day. Blocks position via the hardcoded uniform spread (PRD §07) until Phase 6 adds real `time_start`.
+- `?view=day&d=wN-day` renders the same calendar primitive as a single tall column on the left, with the detail panel on the right.
+- Both views share one filter bar. Track is live; People shows Owen/Stacey/Cate (stub seed from PROJECT.md) and dashed/disabled until `ROSTER[i].blocks` is populated; Role and Moment also dashed/stubbed.
+- Phase markers (`groupLabel` entries) suppress in the compact 2-week view (too dense) and render as small banners in the day view at their slot boundary.
 
 Result: the View B in `index.html` is now the destination shape from PRD §02/§03/§06, populated with what data exists today:
 
