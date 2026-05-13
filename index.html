@@ -1797,167 +1797,320 @@ body.detail-open .slide-controls { display: none !important; }
 }
 
 /* ─────────────────────────────────────────────────────────── */
-/* VIEW B — Day View (Phase 1.0)                               */
-/* Reads SCHEDULE.weeks[i].days[j]; renders one day in a       */
-/* chronological AM/PM list. Activated by ?view=day&d=wN-day.  */
+/* VIEW B — Day view (curriculum-building interface)           */
+/* Activated by ?view=day&d=wN-(mon|tue|wed|thu|fri).           */
+/* Filter bar + master-detail split: timeline left, detail right. */
+/* Tool feel: dense, neutral, sans-serif. Distinct from the    */
+/* workbench artifact aesthetic on purpose.                    */
 /* ─────────────────────────────────────────────────────────── */
 body.view-b-active .topbar,
 body.view-b-active .masthead,
 body.view-b-active main,
 body.view-b-active .detail-slide,
 body.view-b-active .slide-controls { display: none !important; }
+body.view-b-active { background: #FAFAFB; }
 
 .view-b { display: none; }
 body.view-b-active .view-b {
-  display: block;
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 64px 36px 120px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: var(--sans);
   color: var(--text);
+  font-size: 14px;
 }
 
-.view-b-crumbs {
+/* Filter bar */
+.vb-filterbar {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+.vb-filter-group { display: flex; align-items: center; gap: 6px; }
+.vb-filter-label {
   font-family: var(--condensed);
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-faint);
-  margin-bottom: 40px;
+  margin-right: 6px;
 }
-.view-b-crumbs a { color: var(--text-mute); text-decoration: none; }
-.view-b-crumbs a:hover { color: var(--text); }
-.view-b-crumbs .sep { margin: 0 10px; color: var(--text-faint); }
-.view-b-crumbs .here { color: var(--text); }
-
-.view-b-section + .view-b-section { margin-top: 72px; }
-.view-b-section-head {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  margin-bottom: 28px;
-}
-.view-b-section-head .num {
-  font-family: var(--condensed);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--text-faint);
-  font-feature-settings: "tnum";
-}
-.view-b-section-head h2 {
+.vb-filter-btn {
   font-family: var(--sans);
-  font-size: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-mute);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  padding: 4px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: border-color 0.12s, color 0.12s, background 0.12s;
+  text-transform: capitalize;
+}
+.vb-filter-btn:hover { border-color: var(--rule-strong); color: var(--text); }
+.vb-filter-btn[data-active="true"] {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+.vb-filter-btn[data-disabled="true"] {
+  color: var(--text-faint);
+  cursor: help;
+  opacity: 0.55;
+  border-style: dashed;
+}
+.vb-filter-btn[data-disabled="true"]:hover { border-color: var(--rule); color: var(--text-faint); }
+.vb-clear {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--text-mute);
+  font-size: 12px;
+  font-family: var(--sans);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.vb-clear:hover { color: var(--text); }
+.vb-clear[disabled] { color: var(--text-faint); cursor: default; text-decoration: none; }
+
+/* Body — master/detail split */
+.vb-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(380px, 1fr) minmax(440px, 1.15fr);
+  min-height: 0;
+}
+.vb-master {
+  border-right: 1px solid var(--rule);
+  padding: 28px 28px 64px;
+  background: var(--bg);
+  overflow-y: auto;
+}
+.vb-detail {
+  padding: 28px 36px 64px;
+  background: #FAFAFB;
+  overflow-y: auto;
+}
+
+/* Day header */
+.vb-crumbs {
+  font-family: var(--condensed);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 12px;
+}
+.vb-crumbs a { color: var(--text-mute); text-decoration: none; }
+.vb-crumbs a:hover { color: var(--text); }
+.vb-crumbs .sep { margin: 0 6px; color: var(--text-faint); }
+.vb-crumbs .here { color: var(--text); }
+.vb-day-title {
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  margin: 0;
+  margin-bottom: 4px;
 }
-.view-b-section-head .meta {
-  margin-left: auto;
-  font-size: 12px;
-  color: var(--text-mute);
-}
+.vb-day-lead { font-size: 13px; color: var(--text-mute); margin-bottom: 28px; max-width: 540px; line-height: 1.5; }
 
-.view-b-day-theme {
-  font-size: 36px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 18px;
-}
-.view-b-day-lead { font-size: 17px; color: var(--text-mute); margin-bottom: 14px; max-width: 680px; }
-.view-b-day-takeaway { font-size: 15px; color: var(--text-mute); max-width: 680px; }
-
-.view-b-lane + .view-b-lane { margin-top: 48px; }
-.view-b-lane-head {
+/* Timeline */
+.vb-timeline { display: flex; flex-direction: column; gap: 4px; }
+.vb-lane + .vb-lane { margin-top: 28px; }
+.vb-lane-head {
   display: flex;
   align-items: baseline;
-  gap: 12px;
-  padding-bottom: 10px;
-  margin-bottom: 18px;
+  gap: 10px;
+  padding-bottom: 8px;
   border-bottom: 1px solid var(--rule);
+  margin-bottom: 10px;
 }
-.view-b-lane-label {
-  font-family: var(--condensed);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text);
-}
-.view-b-lane-sub { font-size: 13px; color: var(--text-faint); font-style: italic; }
-
-.view-b-timeline { display: flex; flex-direction: column; gap: 8px; }
-
-.view-b-phase {
-  padding: 22px 0 4px;
+.vb-lane-label {
   font-family: var(--condensed);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: var(--text-faint);
   text-transform: uppercase;
+  color: var(--text);
 }
-.view-b-phase:first-child { padding-top: 4px; }
-
-.view-b-block {
+.vb-lane-sub { font-size: 11px; color: var(--text-faint); font-style: italic; }
+.vb-slot {
   display: grid;
-  grid-template-columns: 56px 1fr auto;
-  align-items: baseline;
-  gap: 18px;
-  padding: 14px 18px;
-  background: var(--bg);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: border-color 0.12s ease, background 0.12s ease;
+  grid-template-columns: 64px 1fr;
+  gap: 14px;
+  padding: 4px 0;
 }
-.view-b-block:hover { border-color: var(--rule-strong); background: var(--bg-alt); }
-.view-b-block:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
-.view-b-block-slot {
+.vb-slot-time {
   font-family: var(--condensed);
   font-size: 11px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   color: var(--text-faint);
   font-feature-settings: "tnum";
+  padding-top: 14px;
+  white-space: nowrap;
 }
-.view-b-block-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-.view-b-block-label { font-size: 16px; font-weight: 500; color: var(--text); }
-.view-b-block-sub { font-size: 13px; color: var(--text-mute); font-style: italic; }
-.view-b-block-tags { display: flex; align-items: center; gap: 10px; }
-.view-b-block-code {
+.vb-slot-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: stretch; }
+.vb-phase {
   font-family: var(--condensed);
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  padding: 14px 0 2px 78px;
+}
+.vb-block {
+  flex: 1 1 0;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--bg);
+  cursor: pointer;
+  transition: border-color 0.12s, box-shadow 0.12s, opacity 0.18s;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+.vb-block:hover { border-color: var(--rule-strong); }
+.vb-block[data-selected="true"] {
+  border-color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--text);
+}
+.vb-block[data-dim="true"] { opacity: 0.32; }
+.vb-block-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 14px; }
+.vb-block-code {
+  font-family: var(--condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: var(--text-mute);
 }
-.view-b-block-kind {
+.vb-block-status {
   font-family: var(--condensed);
-  font-size: 11px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.vb-block-status[data-status="ready"] { color: var(--built); }
+.vb-block-status[data-status="draft"] { color: var(--partial); }
+.vb-block-label {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text);
+}
+.vb-block-sub { font-size: 11px; color: var(--text-mute); font-style: italic; }
+.vb-block-tags { display: flex; gap: 4px; margin-top: 2px; flex-wrap: wrap; }
+.vb-tag {
+  font-family: var(--condensed);
+  font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-mute);
+  padding: 1px 6px;
+  background: var(--bg-shade);
+  border-radius: 2px;
+  white-space: nowrap;
 }
-.view-b-block-status {
+.vb-tag[data-track="product"]  { color: #8a3a18; background: rgba(228, 108, 65, 0.14); }
+.vb-tag[data-track="business"] { color: #156a28; background: rgba(52, 199, 89, 0.16); }
+.vb-tag[data-track="market"]   { color: #1f4b86; background: rgba(59, 125, 216, 0.16); }
+.vb-tag[data-status="ready"] { color: var(--built); background: rgba(45, 168, 75, 0.12); }
+.vb-tag[data-status="draft"] { color: var(--partial); background: rgba(230, 149, 0, 0.14); }
+.vb-tag[data-status="stub"]  { color: var(--blank); background: var(--bg-shade); }
+
+/* Detail panel */
+.vb-detail-empty { color: var(--text-faint); font-size: 13px; padding-top: 40px; }
+.vb-detail-eyebrow {
   font-family: var(--condensed);
-  font-size: 10px;
-  letter-spacing: 0.08em;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-faint);
-  padding: 2px 7px;
-  border: 1px solid var(--rule);
-  border-radius: 2px;
+  margin-bottom: 6px;
+  font-feature-settings: "tnum";
 }
-.view-b-block-status[data-status="ready"] { color: var(--built); border-color: var(--built); }
-.view-b-block-status[data-status="draft"] { color: var(--partial); border-color: var(--partial); }
-.view-b-block-status[data-status="stub"]  { color: var(--blank);   border-color: var(--rule-strong); }
-
-.view-b-empty {
-  padding: 40px 0;
+.vb-detail-title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.vb-detail-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
+.vb-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 24px;
+}
+.vb-tab {
+  font-family: var(--condensed);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--text-mute);
-  font-size: 15px;
+  background: none;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
 }
+.vb-tab:hover { color: var(--text); }
+.vb-tab[data-active="true"] { color: var(--text); border-bottom-color: var(--text); }
+.vb-tab[data-disabled="true"] { color: var(--text-faint); cursor: not-allowed; }
+.vb-tab[data-disabled="true"]:hover { color: var(--text-faint); }
+
+.vb-panel-section { margin-bottom: 22px; }
+.vb-panel-label {
+  font-family: var(--condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 6px;
+}
+.vb-panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.vb-panel-body { font-size: 14px; line-height: 1.55; color: var(--text); }
+.vb-panel-body.is-muted { color: var(--text-faint); font-style: italic; font-size: 13px; }
+.vb-panel-list { list-style: none; margin: 0; padding: 0; }
+.vb-panel-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.55;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+.vb-panel-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+}
+.vb-wireframe-host { padding: 8px 0; }
+.vb-wireframe-host svg { max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 3px; background: white; }
+.vb-detail-divider { border-top: 1px solid var(--rule); margin: 28px 0; }
+.vb-detail-foot { font-size: 11px; color: var(--text-faint); font-style: italic; }
 </style>
 </head>
 <body>
@@ -3975,13 +4128,25 @@ function bindEvents() {
 }
 
 /* ════════════════════════════════════════════════════════════
-   VIEW B — Day view (Phase 1.0)
-   Reads SCHEDULE.weeks[i].days[j] + DAYS; renders one day's
-   AM + PM items chronologically. Click on a block logs its id.
-   No detail panel, no filters — that lands in later phases.
+   VIEW B — Day view (curriculum-building interface)
+   Activated by ?view=day&d=wN-(mon|tue|wed|thu|fri).
+   Filter bar + master/detail split. Reads SCHEDULE/DAYS/ACTIVITIES;
+   degrades on missing Phase-6 schema fields (roles, audiences,
+   time_start, buffers, success_criteria, etc.).
    ════════════════════════════════════════════════════════════ */
 const VIEW_B_DAY_TOKENS = { mon: 0, tue: 1, wed: 2, thu: 3, fri: 4 };
 const VIEW_B_DAY_NAMES = ["mon", "tue", "wed", "thu", "fri"];
+const VIEW_B_AM_RANGE = [9 * 60, 12 * 60];       // 09:00–12:00
+const VIEW_B_PM_RANGE = [13 * 60, 17 * 60];      // 13:00–17:00
+const VIEW_B_STATE = {
+  weekIdx: 0,
+  dayIdx: 0,
+  selectedBlockId: null,
+  activeTab: "overview",
+  filters: { track: null, role: null, moment: null },
+  allBlocks: [],
+  rowsByLane: {},
+};
 
 function parseViewBDayParam(token) {
   const m = (token || "").match(/^w([12])-(mon|tue|wed|thu|fri)$/);
@@ -4000,38 +4165,276 @@ function viewBBlockId(weekIdx, dayIdx, lane, block, fallbackIdx) {
   return `${wTag}-${dTag}-${lane}-${slug}`;
 }
 
-function renderViewBLane(weekIdx, dayIdx, laneKey, laneItems, laneSub) {
-  const laneLabel = laneKey.toUpperCase();
-  let position = 0;
-  const parts = (laneItems || []).map((item, idx) => {
-    if (item.groupLabel) {
-      return `<div class="view-b-phase">${escapeText(item.groupLabel)}</div>`;
+function formatMin(min) {
+  const h = Math.floor(min / 60);
+  const m = min % 60;
+  return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
+}
+
+// Walk a lane (am or pm) into a list of "rows".
+// Row is either {type:'phase', label} or {type:'slot', time, blocks:[...]}.
+// Consecutive `kind:'track'` blocks fold into one parallel-slot.
+function buildLaneRows(weekIdx, dayIdx, laneKey, items, range) {
+  const rows = [];
+  const blocks = [];
+  let trackGroup = [];
+  const flushTracks = () => {
+    if (trackGroup.length) {
+      rows.push({ type: "slot", blocks: trackGroup.slice() });
+      trackGroup.length = 0;
     }
-    position += 1;
-    const id = viewBBlockId(weekIdx, dayIdx, laneKey, item, idx);
-    const status = item._slideStatus || (item.slide && item.slide.status) || (item.kind === "track" ? "draft" : "stub");
-    const code = item.code ? `<span class="view-b-block-code">${escapeText(item.code)}</span>` : "";
-    const kind = item.kind ? `<span class="view-b-block-kind">${escapeText(item.kind)}</span>` : "";
-    const sub = item.sub ? `<div class="view-b-block-sub">${escapeText(item.sub)}</div>` : "";
-    const statusBadge = `<span class="view-b-block-status" data-status="${status}">${status}</span>`;
-    const slot = `${laneLabel} · ${String(position).padStart(2, "0")}`;
-    return `<div class="view-b-block" data-block-id="${id}" tabindex="0" role="button" aria-label="${escapeText(item.label || "")}">
-      <div class="view-b-block-slot">${slot}</div>
-      <div class="view-b-block-body">
-        <div class="view-b-block-label">${escapeText(item.label || "")}</div>
-        ${sub}
-      </div>
-      <div class="view-b-block-tags">${code}${kind}${statusBadge}</div>
+  };
+  (items || []).forEach((item, idx) => {
+    if (item.groupLabel) {
+      flushTracks();
+      rows.push({ type: "phase", label: item.groupLabel });
+      return;
+    }
+    const entry = {
+      block: item,
+      id: viewBBlockId(weekIdx, dayIdx, laneKey, item, idx),
+      lane: laneKey,
+      idx,
+    };
+    blocks.push(entry);
+    if (item.kind === "track") {
+      trackGroup.push(entry);
+    } else {
+      flushTracks();
+      rows.push({ type: "slot", blocks: [entry] });
+    }
+  });
+  flushTracks();
+
+  // Hardcoded uniform time spread across slots (PRD §07 — no time_start yet).
+  const slots = rows.filter(r => r.type === "slot");
+  const N = Math.max(slots.length, 1);
+  const total = range[1] - range[0];
+  const slotDur = total / N;
+  slots.forEach((s, i) => {
+    const a = range[0] + Math.round(i * slotDur);
+    const b = range[0] + Math.round((i + 1) * slotDur);
+    s.timeStart = a;
+    s.timeEnd = b;
+    s.time = `${formatMin(a)}–${formatMin(b)}`;
+  });
+  // Attach the owning slot to each entry so the detail panel can read time.
+  rows.forEach(r => {
+    if (r.type !== "slot") return;
+    r.blocks.forEach(e => { e.slotTime = r.time; e.slotStart = formatMin(r.timeStart); e.slotEnd = formatMin(r.timeEnd); });
+  });
+
+  return { rows, blocks };
+}
+
+function isViewBDimmed(block) {
+  const t = VIEW_B_STATE.filters.track;
+  if (!t) return false;
+  if (block.track === t) return false;
+  if (block.kind !== "track" && !block.track) {
+    // Non-track blocks dim when a track filter is active (per "highlight, not remove").
+    return true;
+  }
+  return true;
+}
+
+function renderViewBFilterBar() {
+  const tracks = TRACK_LEGEND.map(t => `
+    <button class="vb-filter-btn" data-filter="track" data-value="${t.track}"
+      data-active="${VIEW_B_STATE.filters.track === t.track}">${escapeText(t.label || t.track)}</button>`).join("");
+  const roleStubs = ["lead", "assistant", "specialist", "guest", "sponsor rep"].map(r => `
+    <button class="vb-filter-btn" data-filter="role" data-value="${r}" data-disabled="true"
+      title="No role data on blocks yet — schema field facilitator_roles lands in Phase 6.">${escapeText(r)}</button>`).join("");
+  const momentStubs = ["plenary", "workshop", "reality check", "sponsor", "social"].map(m => `
+    <button class="vb-filter-btn" data-filter="moment" data-value="${m}" data-disabled="true"
+      title="No moment-type bucketing on blocks yet — wires up once Phase 6 content lands.">${escapeText(m)}</button>`).join("");
+  const anyActive = VIEW_B_STATE.filters.track;
+  return `
+    <div class="vb-filterbar">
+      <div class="vb-filter-group"><span class="vb-filter-label">Track</span>${tracks}</div>
+      <div class="vb-filter-group"><span class="vb-filter-label">Role</span>${roleStubs}</div>
+      <div class="vb-filter-group"><span class="vb-filter-label">Moment</span>${momentStubs}</div>
+      <button class="vb-clear" id="vbClear" ${anyActive ? "" : "disabled"}>Clear filters</button>
+    </div>`;
+}
+
+function renderViewBDayHeader(week, day, meta) {
+  return `
+    <div class="vb-crumbs">
+      <a href="?">Workbench</a><span class="sep">/</span><span>${escapeText(week.tag)}</span><span class="sep">/</span><span class="here">${escapeText(day.name)}</span>
+    </div>
+    <div class="vb-day-title">${escapeText(day.name)} · ${escapeText(meta.theme)}</div>
+    <div class="vb-day-lead">${escapeText(meta.lead)}</div>`;
+}
+
+function renderViewBLane(label, lane, sub) {
+  const rowsHtml = lane.rows.map(row => {
+    if (row.type === "phase") {
+      return `<div class="vb-phase">${escapeText(row.label)}</div>`;
+    }
+    const cards = row.blocks.map(entry => renderViewBBlockCard(entry.block, entry.id)).join("");
+    return `<div class="vb-slot">
+      <div class="vb-slot-time">${escapeText(row.time || "")}</div>
+      <div class="vb-slot-row">${cards}</div>
     </div>`;
   }).join("");
-
-  return `<div class="view-b-lane">
-    <div class="view-b-lane-head">
-      <span class="view-b-lane-label">${laneLabel}</span>
-      ${laneSub ? `<span class="view-b-lane-sub">${escapeText(laneSub)}</span>` : ""}
+  return `<div class="vb-lane">
+    <div class="vb-lane-head">
+      <span class="vb-lane-label">${label}</span>
+      ${sub ? `<span class="vb-lane-sub">${escapeText(sub)}</span>` : ""}
     </div>
-    <div class="view-b-timeline">${parts}</div>
+    ${rowsHtml}
   </div>`;
+}
+
+function renderViewBBlockCard(block, id) {
+  const dim = isViewBDimmed(block);
+  const status = block._slideStatus || (block.slide && block.slide.status) || (block.kind === "track" ? "draft" : "stub");
+  const code = block.code ? `<span class="vb-block-code">${escapeText(block.code)}</span>` : `<span></span>`;
+  const sub = block.sub ? `<div class="vb-block-sub">${escapeText(block.sub)}</div>` : "";
+  const trackTag = block.track ? `<span class="vb-tag" data-track="${block.track}">${escapeText(block.track)}</span>` : "";
+  const kindTag = block.kind ? `<span class="vb-tag">${escapeText(block.kind)}</span>` : "";
+  const selected = VIEW_B_STATE.selectedBlockId === id;
+  return `<button class="vb-block" type="button"
+      data-block-id="${id}"
+      data-selected="${selected}"
+      data-dim="${dim}"
+      aria-label="${escapeText(block.label || "")}">
+    <div class="vb-block-top">
+      ${code}
+      <span class="vb-block-status" data-status="${status}">${status}</span>
+    </div>
+    <div class="vb-block-label">${escapeText(block.label || "")}</div>
+    ${sub}
+    <div class="vb-block-tags">${trackTag}${kindTag}</div>
+  </button>`;
+}
+
+function renderViewBDetail() {
+  const id = VIEW_B_STATE.selectedBlockId;
+  if (!id) return `<div class="vb-detail-empty">Pick a block on the left to see details.</div>`;
+  const entry = VIEW_B_STATE.allBlocks.find(e => e.id === id);
+  if (!entry) return `<div class="vb-detail-empty">Block not found.</div>`;
+  const block = entry.block;
+  const status = block._slideStatus || (block.slide && block.slide.status) || "stub";
+
+  const metaTags = [];
+  if (block.code) metaTags.push(`<span class="vb-tag">${escapeText(block.code)}</span>`);
+  if (block.track) metaTags.push(`<span class="vb-tag" data-track="${block.track}">${escapeText(block.track)}</span>`);
+  if (block.kind) metaTags.push(`<span class="vb-tag">${escapeText(block.kind)}</span>`);
+  metaTags.push(`<span class="vb-tag" data-status="${status}">${status}</span>`);
+
+  const tabs = [
+    { key: "overview", label: "Overview", disabled: false },
+    { key: "slides",   label: "Slides",   disabled: false },
+    { key: "analog",   label: "Analog",   disabled: !block.code },
+  ];
+
+  const tabContent = renderViewBDetailTab(VIEW_B_STATE.activeTab, block);
+
+  return `
+    <div class="vb-detail-eyebrow">${escapeText(entry.slotTime || entry.lane.toUpperCase())}</div>
+    <div class="vb-detail-title">${escapeText(block.label || "")}</div>
+    <div class="vb-detail-meta">${metaTags.join("")}</div>
+    <div class="vb-tabs">
+      ${tabs.map(t => `<button class="vb-tab" type="button"
+        data-tab="${t.key}"
+        data-active="${VIEW_B_STATE.activeTab === t.key}"
+        data-disabled="${t.disabled}">${escapeText(t.label)}</button>`).join("")}
+    </div>
+    <div class="vb-tabpanel">${tabContent}</div>`;
+}
+
+function renderViewBDetailTab(tab, block) {
+  if (tab === "analog") return renderViewBAnalog(block);
+  if (tab === "slides") return renderViewBSlides(block);
+  return renderViewBOverview(block);
+}
+
+function vbSection(label, value) {
+  if (!value) return "";
+  return `<div class="vb-panel-section">
+    <div class="vb-panel-label">${escapeText(label)}</div>
+    <div class="vb-panel-body">${escapeText(value)}</div>
+  </div>`;
+}
+function vbSectionList(label, items) {
+  if (!items || !items.length) return "";
+  return `<div class="vb-panel-section">
+    <div class="vb-panel-label">${escapeText(label)}</div>
+    <ul class="vb-panel-list">${items.map(it => `<li>${escapeText(it)}</li>`).join("")}</ul>
+  </div>`;
+}
+function vbPlaceholder(label, copy) {
+  return `<div class="vb-panel-section">
+    <div class="vb-panel-label">${escapeText(label)}</div>
+    <div class="vb-panel-body is-muted">${escapeText(copy)}</div>
+  </div>`;
+}
+
+function renderViewBOverview(block) {
+  const slide = block.slide || {};
+  const activity = block.code ? ACTIVITIES.find(a => a.code === block.code) : null;
+  const hasContent = slide.foundation || (slide.students && slide.students.length) || slide.facilitator || (slide.references && slide.references.length);
+
+  return `
+    <div class="vb-panel-grid">
+      ${vbPlaceholder("Lead facilitator", "Role enum lands in Phase 6 (facilitator_roles).")}
+      ${vbPlaceholder("Assistant", "Role enum lands in Phase 6.")}
+    </div>
+    <div class="vb-panel-grid">
+      ${vbPlaceholder("Prep buffer", "prep_buffer_minutes — Phase 6.")}
+      ${vbPlaceholder("Debrief buffer", "debrief_buffer_minutes — Phase 6.")}
+    </div>
+    ${vbPlaceholder("Produces (artifact)", "produces_artifact — Phase 6.")}
+    ${vbPlaceholder("Feeds into", "feeds_into — Phase 6.")}
+    ${vbPlaceholder("Success criteria", "success_criteria — Phase 6.")}
+    <div class="vb-detail-divider"></div>
+    ${vbSection("Foundation", slide.foundation)}
+    ${vbSectionList("Students", slide.students)}
+    ${vbSection("Facilitator notes", slide.facilitator)}
+    ${vbSectionList("References", slide.references)}
+    ${activity ? renderViewBActivityFold(activity) : ""}
+    ${hasContent || activity ? "" : `<div class="vb-panel-body is-muted">No slide content yet — block status: stub.</div>`}
+  `;
+}
+
+function renderViewBActivityFold(activity) {
+  return `
+    <div class="vb-detail-divider"></div>
+    <div class="vb-panel-section">
+      <div class="vb-panel-label">Activity · ${escapeText(activity.code)}</div>
+      <div class="vb-panel-body"><strong>${escapeText(activity.name || "")}</strong>${activity.when ? " · " + escapeText(activity.when) : ""}</div>
+    </div>
+    ${vbSection("Shape", activity.shape)}
+    ${vbSectionList("Feeds", activity.feeds)}
+    ${vbSection("Open question", activity.open)}
+  `;
+}
+
+function renderViewBSlides(block) {
+  const slide = block.slide || {};
+  return `
+    ${vbPlaceholder("Slides link", "slides_link_or_embed — Phase 6. Showing the schedule-side slide outline as fallback.")}
+    ${vbSection("Foundation", slide.foundation)}
+    ${vbSectionList("Students", slide.students)}
+    ${vbSection("Facilitator notes", slide.facilitator)}
+    ${vbSectionList("References", slide.references)}
+    ${!slide.foundation && !(slide.students && slide.students.length) ? `<div class="vb-panel-body is-muted">No outline yet — block is a stub.</div>` : ""}
+  `;
+}
+
+function renderViewBAnalog(block) {
+  if (!block.code) return `<div class="vb-panel-body is-muted">No analog spec — this block has no linked activity.</div>`;
+  const activity = ACTIVITIES.find(a => a.code === block.code);
+  if (!activity || !activity.wireframe) return `<div class="vb-panel-body is-muted">No wireframe defined for ${escapeText(block.code)}.</div>`;
+  return `
+    <div class="vb-panel-section">
+      <div class="vb-panel-label">Wireframe · ${escapeText(activity.code)} ${escapeText(activity.name || "")}</div>
+    </div>
+    <div class="vb-wireframe-host">${renderWireframe(activity.wireframe)}</div>
+    <div class="vb-detail-foot">analog_assets list (worksheet PDFs, props, materials) — Phase 6 field.</div>
+  `;
 }
 
 function renderViewB(weekIdx, dayIdx) {
@@ -4040,36 +4443,70 @@ function renderViewB(weekIdx, dayIdx) {
   const week = SCHEDULE.weeks[weekIdx];
   const day = week && week.days[dayIdx];
   const meta = DAYS.find(d => d.weekIdx === weekIdx && d.dayIdx === dayIdx);
-
   if (!day || !meta) {
-    host.innerHTML = `
-      <div class="view-b-crumbs"><a href="?">Workbench</a></div>
-      <div class="view-b-empty">No day at w${weekIdx + 1}/${VIEW_B_DAY_NAMES[dayIdx] || "?"}.</div>`;
+    host.innerHTML = `<div class="vb-detail-empty" style="padding:40px">No day at w${weekIdx + 1}/${VIEW_B_DAY_NAMES[dayIdx] || "?"}.</div>`;
     return;
   }
 
+  VIEW_B_STATE.weekIdx = weekIdx;
+  VIEW_B_STATE.dayIdx = dayIdx;
+  const am = buildLaneRows(weekIdx, dayIdx, "am", day.am || [], VIEW_B_AM_RANGE);
+  const pm = buildLaneRows(weekIdx, dayIdx, "pm", day.pm || [], VIEW_B_PM_RANGE);
+  VIEW_B_STATE.allBlocks = am.blocks.concat(pm.blocks);
+  VIEW_B_STATE.rowsByLane = { am, pm };
+  if (!VIEW_B_STATE.selectedBlockId && VIEW_B_STATE.allBlocks.length) {
+    VIEW_B_STATE.selectedBlockId = VIEW_B_STATE.allBlocks[0].id;
+  }
+
   host.innerHTML = `
-    <div class="view-b-crumbs">
-      <a href="?">Workbench</a><span class="sep">/</span><span>${escapeText(week.tag)}</span><span class="sep">/</span><span class="here">${escapeText(day.name)}</span>
-    </div>
-    <div class="view-b-section">
-      <div class="view-b-section-head"><span class="num">01</span><h2>Today</h2><span class="meta">Wk${weekIdx + 1} · ${escapeText(day.name)}</span></div>
-      <div class="view-b-day-theme">${escapeText(meta.theme)}</div>
-      <div class="view-b-day-lead">${escapeText(meta.lead)}</div>
-      <div class="view-b-day-takeaway">${escapeText(meta.takeaway)}</div>
-    </div>
-    <div class="view-b-section">
-      <div class="view-b-section-head"><span class="num">02</span><h2>Timeline</h2><span class="meta">AM + PM</span></div>
-      ${renderViewBLane(weekIdx, dayIdx, "am", day.am, day.amSub)}
-      ${renderViewBLane(weekIdx, dayIdx, "pm", day.pm, day.pmSub)}
+    ${renderViewBFilterBar()}
+    <div class="vb-body">
+      <section class="vb-master" aria-label="Day timeline">
+        ${renderViewBDayHeader(week, day, meta)}
+        <div class="vb-timeline">
+          ${renderViewBLane("AM", am, day.amSub)}
+          ${renderViewBLane("PM", pm, day.pmSub)}
+        </div>
+      </section>
+      <aside class="vb-detail" id="vbDetail" aria-label="Block detail">
+        ${renderViewBDetail()}
+      </aside>
     </div>`;
 
-  host.querySelectorAll(".view-b-block").forEach(el => {
-    const fire = () => console.log(el.dataset.blockId);
-    el.addEventListener("click", fire);
-    el.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fire(); }
+  wireViewBEvents();
+}
+
+function wireViewBEvents() {
+  document.querySelectorAll(".vb-block").forEach(el => {
+    el.addEventListener("click", () => {
+      const id = el.dataset.blockId;
+      if (!id) return;
+      console.log(id);
+      VIEW_B_STATE.selectedBlockId = id;
+      VIEW_B_STATE.activeTab = "overview";
+      renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
     });
+  });
+  document.querySelectorAll(".vb-tab").forEach(el => {
+    if (el.dataset.disabled === "true") return;
+    el.addEventListener("click", () => {
+      VIEW_B_STATE.activeTab = el.dataset.tab;
+      renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
+    });
+  });
+  document.querySelectorAll(".vb-filter-btn").forEach(el => {
+    if (el.dataset.disabled === "true") return;
+    el.addEventListener("click", () => {
+      const dim = el.dataset.filter;
+      const val = el.dataset.value;
+      VIEW_B_STATE.filters[dim] = (VIEW_B_STATE.filters[dim] === val) ? null : val;
+      renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
+    });
+  });
+  const clear = document.getElementById("vbClear");
+  if (clear) clear.addEventListener("click", () => {
+    VIEW_B_STATE.filters = { track: null, role: null, moment: null };
+    renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
   });
 }
 
