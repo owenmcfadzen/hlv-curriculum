@@ -23,3 +23,7 @@ sources/worksheets/
 data/schedule.json
 data/activities.json
 data/days.json
+
+# Private-only files — must not land in public repo (see ARCHITECTURE.md file-layout table)
+PROJECT.md
+HANDOFF.md
