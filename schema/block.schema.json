@@ -30,7 +30,34 @@
           "description": "Optional — links to ACTIVITIES entry by code"
         },
         "track": { "$ref": "#/definitions/track" },
-        "slide": { "$ref": "#/definitions/slide" }
+        "slide": { "$ref": "#/definitions/slide" },
+        "audiences": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["student", "alumni"] },
+          "description": "Who's in the room. Default audiences when omitted: [student, alumni]."
+        },
+        "facilitator_roles": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["f1", "f2"] },
+          "description": "Which facilitator slots own the block. Default when omitted: [f1]."
+        },
+        "ai_loop": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "description": "AI-methodology loop metadata. Populate only on blocks where the AI loop applies.",
+              "properties": {
+                "analog": { "type": ["string", "null"], "description": "The analog input (sketches, notes, brief)" },
+                "structure": { "type": ["string", "null"], "description": "How AI structures the analog input" },
+                "output": { "type": ["string", "null"], "description": "The working artifact" },
+                "final": { "type": ["string", "null"], "description": "The final shipped output" },
+                "reality_check": { "type": ["string", "null"], "description": "How the loop output is tested" },
+                "uses_prd_lab": { "type": "boolean", "description": "Does it use prd-lab-production.up.railway.app" }
+              }
+            }
+          ]
+        }
       }
     }
   ],
