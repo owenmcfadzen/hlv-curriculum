@@ -1883,6 +1883,80 @@ body.view-b-active .view-b {
 .vb-clear:hover { color: var(--text); }
 .vb-clear[disabled] { color: var(--text-faint); cursor: default; text-decoration: none; }
 
+/* Sync status pill (Git remote indicator) */
+.vb-sync {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.vb-sync-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--condensed);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+  color: var(--text-mute);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+.vb-sync-pill:hover { background: var(--bg-alt); }
+.vb-sync-pill[data-state="loading"] { color: var(--text-faint); }
+.vb-sync-pill[data-state="synced"]  { color: var(--built); border-color: rgba(45, 168, 75, 0.45); background: rgba(45, 168, 75, 0.08); }
+.vb-sync-pill[data-state="ahead"]   { color: var(--partial); border-color: rgba(230, 149, 0, 0.55); background: rgba(230, 149, 0, 0.10); }
+.vb-sync-pill[data-state="error"]   { color: #B5391C; border-color: #E89580; background: rgba(232, 149, 128, 0.14); }
+.vb-sync-push {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--bg);
+  background: var(--text);
+  border: 1px solid var(--text);
+  padding: 4px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: opacity 0.12s;
+}
+.vb-sync-push:hover { opacity: 0.88; }
+.vb-sync-push[disabled] { opacity: 0.32; cursor: not-allowed; }
+.vb-sync-push[data-state="pushing"] { opacity: 0.7; cursor: progress; }
+
+/* Toast for sync results */
+.vb-toast-host {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 100;
+  pointer-events: none;
+}
+.vb-toast {
+  pointer-events: auto;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 13px;
+  max-width: 380px;
+  background: var(--text);
+  color: var(--bg);
+  box-shadow: 0 4px 12px rgba(24, 45, 83, 0.18);
+  animation: vb-toast-in 0.18s ease-out;
+}
+.vb-toast[data-tone="success"] { background: var(--built); }
+.vb-toast[data-tone="error"]   { background: #B5391C; }
+@keyframes vb-toast-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Body — master/detail split */
 .vb-body {
   flex: 1;
@@ -2557,6 +2631,9 @@ details.vb-edit-ailoop > .vb-edit-row { margin-top: 12px; }
 
 <!-- View B — Day view (Phase 1.0). Hidden unless ?view=day&d=wN-day. -->
 <section class="view-b" id="viewB" aria-label="Day view"></section>
+
+<!-- Toast host for sync results (rendered in view-b only) -->
+<div class="vb-toast-host" id="vbToastHost" aria-live="polite"></div>
 
 <!-- Detail slide overlay (block + activity slides) -->
 <div class="detail-slide" id="detailSlide" role="dialog" aria-modal="true" aria-label="Slide detail">
@@ -4901,6 +4978,10 @@ function renderViewBFilterBar() {
       <div class="vb-filter-group"><span class="vb-filter-label">Track</span>${tracks}</div>
       <div class="vb-filter-group"><span class="vb-filter-label">Roles</span>${roles}</div>
       <button class="vb-clear" id="vbClear" ${anyActive ? "" : "disabled"} style="margin-left:auto">Clear</button>
+      <div class="vb-sync">
+        <span class="vb-sync-pill" id="vbSyncPill" data-state="loading" title="Click to refresh">… checking</span>
+        <button class="vb-sync-push" id="vbSyncPush" type="button" disabled>Push</button>
+      </div>
     </div>
     ${renderKindLegend()}`;
 }
@@ -5669,6 +5750,81 @@ function rerenderCurrentView() {
   else renderViewA();
 }
 
+/* ─── Sync with GitHub (status pill + push) ──────────────────────
+   Talks to the companion sidecar started via:
+     node tools/sync-server.mjs       (default port 4174)
+   Browser fetches across origins; sidecar has wide-open CORS for
+   localhost. If the sidecar isn't running the pill flips to
+   "error" — the workbench keeps working. */
+const VB_SYNC_URL = "http://127.0.0.1:4174";
+
+function vbToast(message, tone) {
+  const host = document.getElementById("vbToastHost");
+  if (!host) return;
+  const el = document.createElement("div");
+  el.className = "vb-toast";
+  if (tone) el.dataset.tone = tone;
+  el.textContent = message;
+  host.appendChild(el);
+  setTimeout(() => { el.style.opacity = "0"; el.style.transition = "opacity 0.3s"; }, 4200);
+  setTimeout(() => { el.remove(); }, 4600);
+}
+
+function paintSyncPill(state, label) {
+  const pill = document.getElementById("vbSyncPill");
+  const push = document.getElementById("vbSyncPush");
+  if (!pill) return;
+  pill.dataset.state = state;
+  pill.textContent = label;
+  if (push) push.disabled = (state !== "ahead");
+}
+
+async function refreshSyncStatus() {
+  paintSyncPill("loading", "… checking");
+  try {
+    const res = await fetch(`${VB_SYNC_URL}/sync-status`, { cache: "no-store" });
+    const data = await res.json();
+    if (!data.ok) {
+      paintSyncPill("error", "⚠ sync error");
+      return data;
+    }
+    if (data.unpushed === 0) paintSyncPill("synced", "✓ synced");
+    else paintSyncPill("ahead", `⇡ ${data.unpushed} unpushed`);
+    return data;
+  } catch (err) {
+    paintSyncPill("error", "⚠ server off");
+    return { ok: false, error: String(err) };
+  }
+}
+
+async function doSyncPush() {
+  const push = document.getElementById("vbSyncPush");
+  if (push) { push.disabled = true; push.dataset.state = "pushing"; push.textContent = "Pushing…"; }
+  try {
+    const res = await fetch(`${VB_SYNC_URL}/sync-push`, { method: "POST" });
+    const data = await res.json();
+    if (data.ok) {
+      vbToast(`Pushed ${data.pushed} commit${data.pushed === 1 ? "" : "s"}`, "success");
+    } else {
+      vbToast(`Push failed: ${(data.error || "").split("\n")[0].slice(0, 240)}`, "error");
+    }
+  } catch (err) {
+    vbToast(`Push failed: ${err.message || err}`, "error");
+  } finally {
+    if (push) { push.dataset.state = ""; push.textContent = "Push"; }
+    await refreshSyncStatus();
+  }
+}
+
+function wireSyncEvents() {
+  const pill = document.getElementById("vbSyncPill");
+  if (pill) pill.addEventListener("click", refreshSyncStatus);
+  const push = document.getElementById("vbSyncPush");
+  if (push) push.addEventListener("click", doSyncPush);
+  // Kick off initial fetch (don't block render).
+  refreshSyncStatus();
+}
+
 function wireViewBEvents() {
   // Calendar blocks (View A + View B): click drills to View B with that block selected.
   document.querySelectorAll(".vb-cal-block").forEach(el => {
@@ -5726,6 +5882,8 @@ function wireViewBEvents() {
     VIEW_B_STATE.filters = { track: null, role: null, moment: null };
     rerenderCurrentView();
   });
+
+  wireSyncEvents();
 
   // Edit toolbar (View B detail panel only).
   const editBtn = document.getElementById("vbEditBtn");
