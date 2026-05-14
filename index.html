@@ -2694,6 +2694,14 @@ const SCHEDULE = {
             { label: "Alumni: Deepen 1", kind: "work", sub: "AI-assisted research → Specialist Brief v1",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-tue-pm-m-problem-validation",
               time_start: "15:00", time_end: "16:00",
+              ai_loop: {
+                analog: "Quick scan of last year's track materials + this year's challenge brief",
+                structure: "Structured prompt via PRD Lab (or copy-paste fallback) — research specialty topic against Sonae challenge",
+                output: "Specialist Brief v1 — one page in their own words",
+                final: "Specialist Brief v2 (after Wed AM rewrite)",
+                reality_check: "Thu AM teach-back to cohort + F2 feedback",
+                uses_prd_lab: true
+              },
               slide: {
                 status: "draft",
                 foundation: "Pulled during M: Problem validation. Laptops out. Research the intersection of your specialty and this year's Sonae challenge. By end of block, every alumnus has a one-page Specialist Brief v1 in their own words.",
@@ -2925,7 +2933,15 @@ const SCHEDULE = {
             },
             { label: "Product: Prototype", kind: "track", track: "product",
               time_start: "09:30", time_end: "12:30",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              ai_loop: {
+                analog: "Crazy 8s + 8-frame customer journey from Fri PM Wk1 (SA2)",
+                structure: "Photograph sketches, upload to PRD Lab with structured prompt, AI generates PRD draft",
+                output: "PRD draft — solid enough for prototype work",
+                final: "Digital prototype (landing page / wireframe / mockup) by Wed PM",
+                reality_check: "Wed PM Out in Market #2 — show prototype to real users",
+                uses_prd_lab: true
+              }
             },
             { label: "Business: Biz Model", kind: "track", track: "business",
               time_start: "09:30", time_end: "12:30",
@@ -2943,7 +2959,15 @@ const SCHEDULE = {
             },
             { label: "Product: deep user journey", kind: "track", track: "product",
               time_start: "14:30", time_end: "15:30",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              ai_loop: {
+                analog: null,
+                structure: null,
+                output: null,
+                final: null,
+                reality_check: null,
+                uses_prd_lab: true
+              }
             },
             { label: "Business: Biz Model Canvas", kind: "track", track: "business",
               time_start: "14:30", time_end: "15:30",
