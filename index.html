@@ -2962,19 +2962,19 @@ const SCHEDULE = {
           name: "Mon",
           am: [
             { label: "Welcome", kind: "welcome",
-              time_start: "09:00", time_end: "09:30",
+              time_start: "09:00", time_end: "09:15",
               audiences: ["student", "alumni"]
             },
-            { label: "Game (teams + designer)", kind: "game",
-              time_start: "09:30", time_end: "10:00",
+            { label: "Game", kind: "game",
+              time_start: "09:15", time_end: "09:45",
               audiences: ["student", "alumni"]
             },
             { label: "Week 2 Flow (PRD)", kind: "lpp", sub: "How the week works, PRD walkthrough",
-              time_start: "10:00", time_end: "10:45",
+              time_start: "09:45", time_end: "10:30",
               audiences: ["student", "alumni"]
             },
             { label: "SA2.5 · Realigning around customer journey", kind: "work", sub: "Re-anchor on the user experience after weekend gap",
-              time_start: "10:45", time_end: "11:30",
+              time_start: "10:30", time_end: "11:15",
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
@@ -2982,21 +2982,25 @@ const SCHEDULE = {
               }
             },
             { label: "Guest: Product", kind: "panel",
-              time_start: "11:30", time_end: "12:00",
+              time_start: "11:15", time_end: "12:00",
               audiences: ["student", "alumni"]
             },
-            { label: "SA3 · How is it solved now?", kind: "work", sub: "Map current solutions before designing new ones",
+            { label: "Team prep for Phase 1", kind: "work", sub: "What does each team need from each specialty?",
               time_start: "12:00", time_end: "12:30",
+              audiences: ["student", "alumni"]
+            },
+          ],
+          pm: [
+            { label: "SA3 · How is it solved now?", kind: "work", sub: "Map current solutions before designing new ones",
+              time_start: "13:30", time_end: "14:15",
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
                 foundation: "Third Solution Alignment moment. Each team maps what currently exists in their problem space — competitors, workarounds, status quo. Output frames why a new solution is needed."
               }
             },
-          ],
-          pm: [
             { label: "SA4 · Team Aligned on V1 Solution", kind: "work", sub: "Lock the V1 before specialty work begins",
-              time_start: "13:30", time_end: "14:15",
+              time_start: "14:15", time_end: "14:45",
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
@@ -3004,7 +3008,7 @@ const SCHEDULE = {
               }
             },
             { label: "Product: Prototype", kind: "track", track: "product",
-              time_start: "14:15", time_end: "17:00",
+              time_start: "14:45", time_end: "16:15",
               audiences: ["student", "alumni"],
               ai_loop: {
                 analog: "Crazy 8s + 8-frame customer journey from Fri PM Wk1 (SA2)",
@@ -3016,11 +3020,15 @@ const SCHEDULE = {
               }
             },
             { label: "Business: Biz Model", kind: "track", track: "business",
-              time_start: "14:15", time_end: "17:00",
+              time_start: "14:45", time_end: "16:15",
               audiences: ["student", "alumni"]
             },
             { label: "Market: Experiments", kind: "track", track: "market",
-              time_start: "14:15", time_end: "17:00",
+              time_start: "14:45", time_end: "16:15",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Team Synthesis", kind: "teamteach", sub: "Specialists report back what they built",
+              time_start: "16:15", time_end: "17:00",
               audiences: ["student", "alumni"]
             },
           ],
