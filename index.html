@@ -4834,22 +4834,98 @@ const VIEW_B_CAL_START = 9 * 60;                  // calendar top
 const VIEW_B_CAL_END = 22 * 60;                   // calendar bottom (evening blocks land here)
 const VIEW_B_PX_PER_MIN = 2.0;                    // see :root --vb-cal-px-per-min
 
-/* User-overrides written via the edit form, persisted to localStorage.
-   Shape: { [blockId]: { label?, kind?, track?, sub?, time_start?, time_end?,
-                         slides_link_or_embed?, ... } }
-   These layer on top of SCHEDULE at render-time; SCHEDULE itself stays pristine. */
+/* User-overrides written via the edit form. Persisted to:
+   1. server (/api/overrides on the host serving this page) — durable, shared
+   2. localStorage — instant cache; survives if the server is unreachable
+   Server is authoritative when both have content; localStorage fills in when the
+   server is down. POSTs require an X-Edit-Token header if EDIT_TOKEN is set in
+   the server env.
+   Shape: { [blockId]: { label?, kind?, track?, sub?, time_start?, ... } } */
 const VIEW_B_STORAGE_KEY = "hlv-vb-overrides-v1";
-function loadOverrides() {
+const VIEW_B_TOKEN_KEY   = "hlv-vb-edit-token";
+const VIEW_B_OVERRIDES_URL = "/api/overrides";
+
+function loadOverridesLocal() {
   try {
     const raw = localStorage.getItem(VIEW_B_STORAGE_KEY);
     return raw ? JSON.parse(raw) : {};
   } catch (_) { return {}; }
 }
-function saveOverrides(obj) {
+function saveOverridesLocal(obj) {
   try { localStorage.setItem(VIEW_B_STORAGE_KEY, JSON.stringify(obj)); }
   catch (_) { /* ignore quota / private mode */ }
 }
-const VIEW_B_OVERRIDES = loadOverrides();
+async function fetchOverridesRemote() {
+  try {
+    const res = await fetch(VIEW_B_OVERRIDES_URL, { cache: "no-store" });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return (data && typeof data === "object" && !Array.isArray(data)) ? data : null;
+  } catch (_) { return null; }
+}
+async function pushOverridesRemote(obj, token) {
+  const headers = { "Content-Type": "application/json" };
+  if (token) headers["X-Edit-Token"] = token;
+  const res = await fetch(VIEW_B_OVERRIDES_URL, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(obj),
+  });
+  if (res.status === 401) return { ok: false, needToken: true };
+  let body = null;
+  try { body = await res.json(); } catch (_) {}
+  if (!res.ok) return { ok: false, error: (body && body.error) || `HTTP ${res.status}` };
+  return { ok: true };
+}
+
+const VIEW_B_OVERRIDES = loadOverridesLocal();
+let VIEW_B_REMOTE_AVAILABLE = false; // flips true once a fetch succeeds
+
+async function syncOverridesFromRemote() {
+  const remote = await fetchOverridesRemote();
+  if (remote === null) return false;
+  VIEW_B_REMOTE_AVAILABLE = true;
+  // Server is authoritative. Replace in-memory + cache.
+  for (const k of Object.keys(VIEW_B_OVERRIDES)) delete VIEW_B_OVERRIDES[k];
+  Object.assign(VIEW_B_OVERRIDES, remote);
+  saveOverridesLocal(VIEW_B_OVERRIDES);
+  if (document.body.classList.contains("view-b-active")) {
+    rerenderCurrentView();
+  }
+  return true;
+}
+
+async function persistOverrides() {
+  // Always cache locally for instant fallback.
+  saveOverridesLocal(VIEW_B_OVERRIDES);
+  // Fire async POST. If 401, prompt for token, retry once.
+  let token = localStorage.getItem(VIEW_B_TOKEN_KEY) || "";
+  let result = await pushOverridesRemote(VIEW_B_OVERRIDES, token);
+  if (result.needToken) {
+    const entered = window.prompt("Edit token required to save to server:");
+    if (!entered) return { ok: false, error: "no token entered" };
+    localStorage.setItem(VIEW_B_TOKEN_KEY, entered);
+    result = await pushOverridesRemote(VIEW_B_OVERRIDES, entered);
+    if (result.needToken) {
+      localStorage.removeItem(VIEW_B_TOKEN_KEY);
+      return { ok: false, error: "invalid token" };
+    }
+  }
+  return result;
+}
+
+// Back-compat shim: existing call sites use saveOverrides(...) synchronously.
+// Treat it as a fire-and-forget that writes localStorage now + server async.
+function saveOverrides(obj) {
+  saveOverridesLocal(obj);
+  persistOverrides().then(result => {
+    if (!result.ok) {
+      if (typeof vbToast === "function") vbToast(`Save failed (server): ${result.error}. Cached locally.`, "error");
+    } else if (VIEW_B_REMOTE_AVAILABLE) {
+      if (typeof vbToast === "function") vbToast("Saved to server", "success");
+    }
+  });
+}
 
 function effectiveBlock(blockId, block) {
   const ov = VIEW_B_OVERRIDES[blockId];
@@ -6004,6 +6080,8 @@ function tryRenderViewB() {
   const view = params.get("view") || (params.get("legacy") ? null : "week");
   if (view !== "day" && view !== "week") return false;
   document.body.classList.add("view-b-active");
+  // Fire off remote-overrides fetch; re-renders when it lands.
+  syncOverridesFromRemote().catch(() => {});
   if (view === "week") {
     const wRaw = params.get("w");
     if (wRaw === "1" || wRaw === "2") {

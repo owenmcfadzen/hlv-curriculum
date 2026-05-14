@@ -27,3 +27,6 @@ data/days.json
 # Private-only files — must not land in public repo (see ARCHITECTURE.md file-layout table)
 PROJECT.md
 HANDOFF.md
+
+# Local persistent state — written by server.mjs when running locally
+overrides.json

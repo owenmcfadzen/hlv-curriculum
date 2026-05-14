@@ -17,12 +17,31 @@ no backend state — edits live in browser localStorage.
    `Deploy from GitHub repo` → pick `owenmcfadzen/hlv-curriculum`. Railway
    reads `package.json`, runs `npm install`, then `npm start`.
 
-2. **No env vars required.** Railway sets `PORT` automatically; the server
-   listens on whatever it's given. The static site has no secrets.
+2. **`PORT` is auto.** Railway sets it; `server.mjs` reads it. Static site
+   needs nothing else to come up.
 
-3. **First deploy completes.** Open the Railway-assigned URL — should land on
-   the workbench. The sync pill will read `⚠ server off` (expected — sync
-   sidecar is local-only, see below).
+3. **Volume + env vars (needed if you want edits to persist server-side).**
+
+   By default the workbench's Edit form saves only to the visitor's browser
+   localStorage. To make edits durable across browsers (and survive
+   redeploys), set these in the Railway service:
+
+   a. `Settings → Volumes → New Volume` → mount path `/data`. ~1 GB is
+      plenty; the overrides file is tiny JSON.
+
+   b. `Variables` tab → add:
+      - `OVERRIDES_PATH=/data/overrides.json` (so the server writes to the
+        Volume, not the container's ephemeral filesystem)
+      - `EDIT_TOKEN=<some-shared-password>` (any string; treat it like a
+        password — anyone with it can edit. Without this var set, writes
+        are open to anyone visiting the URL.)
+
+   Trigger a redeploy after adding these. Inspector saves now POST to
+   `/api/overrides` and persist in the Volume.
+
+4. **First deploy completes.** Open the Railway-assigned URL — should land on
+   the workbench. The sync pill (git status, separate from the save flow)
+   will read `⚠ server off` — expected, the git-sync sidecar is local-only.
 
 ## Custom domain
 
@@ -42,6 +61,28 @@ git push origin main
 
 A redeploy takes ~30s. Workbench HTML is served with `Cache-Control:
 no-cache` so the new version shows up immediately on refresh.
+
+## How edits actually work in production
+
+Two saves happen when you click Save in the Edit form:
+
+1. **localStorage** (instant). The cache the workbench reads on every boot
+   so the view comes up with the last-known state even when offline.
+2. **POST `/api/overrides`** (async). The server writes the full overrides
+   JSON to `OVERRIDES_PATH`. If `EDIT_TOKEN` is set, the browser must send
+   `X-Edit-Token: <token>` matching it. The token is prompted once per
+   browser and cached in localStorage at `hlv-vb-edit-token`.
+
+Reads (`GET /api/overrides`) are always open — no token. Same access
+level the static HTML already has.
+
+On boot, the workbench:
+- Renders immediately from localStorage cache.
+- Async-fetches `/api/overrides`. If the server has content, it wins —
+  the in-memory overrides get replaced and the calendar re-renders.
+- If the server is unreachable (404 / network error / no Volume yet),
+  the localStorage cache stands. Saves fall back to localStorage-only;
+  a toast tells you the server save failed.
 
 ## What does NOT deploy to Railway
 
