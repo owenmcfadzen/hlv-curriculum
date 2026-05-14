@@ -2353,6 +2353,7 @@ body.view-b-active .view-b {
 }
 .vb-cal-block .cb-audience[data-aud="alumni"]  { color: #5C2E91; border-color: #C5B7E8; background: #F2EDFA; }
 .vb-cal-block .cb-audience[data-aud="student"] { color: #1F4B86; border-color: #C0D2EA; background: #EEF3FB; }
+.vb-cal-block .cb-audience[data-aud="f2"]      { color: #8A6700; border-color: #E6CB7A; background: #FBF4DC; }
 .vb-cal-block .cb-kind {
   font-family: var(--condensed);
   font-size: 9px;
@@ -2823,9 +2824,9 @@ const SCHEDULE = {
           name: "Tue",
           am: [
             { groupLabel: "PHASE 1 · RECONNAISSANCE" },
-            { label: "Solution Blueprint", kind: "track", track: "product", code: "P1" },
-            { label: "The Case", kind: "track", track: "business", code: "B1" },
-            { label: "Landscape Map", kind: "track", track: "market", code: "M1" },
+            { label: "Landscape Map", kind: "track", track: "market", code: "M1", time_start: "10:30", time_end: "12:00" },
+            { label: "The Case", kind: "track", track: "business", code: "B1", time_start: "11:00", time_end: "12:00" },
+            { label: "Solution Blueprint", kind: "track", track: "product", code: "P1", time_start: "11:30", time_end: "12:00" },
           ],
           amSub: "30-min intro stagger",
           pm: [
@@ -4742,9 +4743,11 @@ function renderCalendarDayColumn(day, weekIdx, dayIdx, opts) {
   const blockHtml = layout.entries.map(e => {
     const dim = isViewBDimmed(e.block);
     const auds = effectiveAudiences(e.block);
+    const facs = effectiveFacilitators(e.block);
     let audBadge = "";
     if (auds.length === 1 && auds[0] === "alumni")  audBadge = `<span class="cb-audience" data-aud="alumni">Alumni</span>`;
     else if (auds.length === 1 && auds[0] === "student") audBadge = `<span class="cb-audience" data-aud="student">Student</span>`;
+    else if (facs.length === 1 && facs[0] === "f2") audBadge = `<span class="cb-audience" data-aud="f2">F2</span>`;
     return `<button class="vb-cal-block" type="button"
       data-block-id="${e.id}"
       data-w="${weekIdx}" data-d="${dayIdx}"
