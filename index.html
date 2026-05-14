@@ -5999,7 +5999,9 @@ function wireViewBEvents() {
 
 function tryRenderViewB() {
   const params = new URLSearchParams(window.location.search);
-  const view = params.get("view");
+  // Default to the new calendar interface when no view param is set.
+  // Use ?legacy=1 to fall through to the original Plan/Schedule workbench.
+  const view = params.get("view") || (params.get("legacy") ? null : "week");
   if (view !== "day" && view !== "week") return false;
   document.body.classList.add("view-b-active");
   if (view === "week") {
