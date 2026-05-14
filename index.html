@@ -2611,6 +2611,7 @@ const SCHEDULE = {
           name: "Mon",
           am: [
             { label: "Welcome", kind: "welcome",
+              time_start: "09:00", time_end: "09:30",
               slide: {
                 status: "draft",
                 foundation: "Day 1 opener. The first ten minutes set the tone for two weeks. Warm, direct, no corporate energy. Keep it short — they'll be sitting a lot today.",
@@ -2623,8 +2624,12 @@ const SCHEDULE = {
                 references: ["Day 1 facilitator script (TBD)", "Schedule overview (this view)"],
               }
             },
-            { label: "Intro game", kind: "game" },
-            { label: "Entrepreneurship intro", kind: "work" },
+            { label: "Intro game", kind: "game",
+              time_start: "09:30", time_end: "10:00"
+            },
+            { label: "Entrepreneurship intro", kind: "work",
+              time_start: "10:00", time_end: "11:15"
+            },
             { label: "Alumni: Orient", kind: "work", sub: "Why You're Back · pick specialty",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-mon-am-entrepreneurship-intro",
               time_start: "10:30", time_end: "11:15",
@@ -2640,10 +2645,13 @@ const SCHEDULE = {
                 references: ["flow-stacey-2026-05-14.html · Alumni window list"]
               }
             },
-            { label: "AI tooling, PRD, intro pitch", kind: "work" },
+            { label: "AI tooling, PRD, intro pitch", kind: "work",
+              time_start: "11:15", time_end: "12:00"
+            },
           ],
           pm: [
             { label: "Sponsor briefing", kind: "sponsor",
+              time_start: "13:00", time_end: "13:45",
               slide: {
                 status: "draft",
                 foundation: "The sponsor names the real-world challenge. This is the seed for everything Week 1 students do. Sponsor must be specific and human — not a corporate brief. Students should leave knowing what frustrates the sponsor's customers, not the sponsor's strategy.",
@@ -2656,18 +2664,32 @@ const SCHEDULE = {
                 references: ["Sponsor brief template (TBD)", "Lisbon: Sonae · Porto: TBD · NYC: IKEA · Seoul: Coupang"],
               }
             },
-            { label: "Challenge Q&A", kind: "panel" },
-            { label: "Game", kind: "game" },
-            { label: "Customer panel", kind: "panel" },
-            { label: "Debrief: problems", kind: "work" },
-            { label: "Swag challenge intro", kind: "sponsor" },
+            { label: "Challenge Q&A", kind: "panel",
+              time_start: "13:45", time_end: "14:30"
+            },
+            { label: "Game", kind: "game",
+              time_start: "14:30", time_end: "15:00"
+            },
+            { label: "Customer panel", kind: "panel",
+              time_start: "15:00", time_end: "16:00"
+            },
+            { label: "Debrief: problems", kind: "work",
+              time_start: "16:00", time_end: "16:30"
+            },
+            { label: "Swag challenge intro", kind: "sponsor",
+              time_start: "16:30", time_end: "17:00"
+            },
           ],
         },
         {
           name: "Tue",
           am: [
-            { label: "Swag pitch", kind: "module" },
-            { label: "M: Opportunity ID", kind: "module" },
+            { label: "Swag pitch", kind: "module",
+              time_start: "09:00", time_end: "09:45"
+            },
+            { label: "M: Opportunity ID", kind: "module",
+              time_start: "09:45", time_end: "10:30"
+            },
             { label: "Alumni: Anchor", kind: "work", sub: "Read your LPP slide",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-tue-am-m-opportunity-id",
               time_start: "09:45", time_end: "10:45",
@@ -2683,14 +2705,26 @@ const SCHEDULE = {
                 references: ["flow-stacey-2026-05-14.html · Alumni window list", "LPP slide deck (per specialty)"]
               }
             },
-            { label: "Revisit panel", kind: "panel" },
-            { label: "User journey", kind: "work" },
+            { label: "Revisit panel", kind: "panel",
+              time_start: "10:30", time_end: "11:15"
+            },
+            { label: "User journey", kind: "work",
+              time_start: "11:15", time_end: "12:00"
+            },
           ],
           pm: [
-            { label: "Problems", kind: "work" },
-            { label: "Top problems", kind: "work" },
-            { label: "Game", kind: "game" },
-            { label: "M: Problem validation", kind: "module" },
+            { label: "Problems", kind: "work",
+              time_start: "13:00", time_end: "13:45"
+            },
+            { label: "Top problems", kind: "work",
+              time_start: "13:45", time_end: "14:30"
+            },
+            { label: "Game", kind: "game",
+              time_start: "14:30", time_end: "15:00"
+            },
+            { label: "M: Problem validation", kind: "module",
+              time_start: "15:00", time_end: "15:45"
+            },
             { label: "Alumni: Deepen 1", kind: "work", sub: "AI-assisted research → Specialist Brief v1",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-tue-pm-m-problem-validation",
               time_start: "15:00", time_end: "16:00",
@@ -2714,18 +2748,26 @@ const SCHEDULE = {
                 references: ["flow-stacey-2026-05-14.html · Alumni window list", "Sonae challenge brief"]
               }
             },
-            { label: "Panel: validation", kind: "panel" },
-            { label: "Top problems revisit", kind: "work" },
+            { label: "Panel: validation", kind: "panel",
+              time_start: "15:45", time_end: "16:30"
+            },
+            { label: "Top problems revisit", kind: "work",
+              time_start: "16:30", time_end: "17:00"
+            },
           ],
         },
         {
           name: "Wed",
           am: [
-            { label: "Welcome", kind: "welcome" },
-            { label: "M: Solutions", kind: "module" },
+            { label: "Welcome", kind: "welcome",
+              time_start: "09:00", time_end: "09:15"
+            },
+            { label: "M: Solutions", kind: "module",
+              time_start: "09:15", time_end: "10:00"
+            },
             { label: "Alumni: Deepen 2", kind: "work", sub: "Pressure-test + rewrite brief",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-wed-am-m-solutions",
-              time_start: "09:36", time_end: "10:36",
+              time_start: "09:30", time_end: "10:30",
               slide: {
                 status: "draft",
                 foundation: "Pulled during M: Solutions. F2 pressure-tests each Specialist Brief — where's the hand-wave, where's the borrowed phrase, where's the part you can't defend. One rewrite pass produces v2.",
@@ -2738,24 +2780,46 @@ const SCHEDULE = {
                 references: ["flow-stacey-2026-05-14.html · Alumni window list"]
               }
             },
-            { label: "Solutions", kind: "work" },
-            { label: "Guest: valuable idea?", kind: "panel" },
-            { label: "Top solutions", kind: "work" },
+            { label: "Solutions", kind: "work",
+              time_start: "10:00", time_end: "11:00"
+            },
+            { label: "Guest: valuable idea?", kind: "panel",
+              time_start: "11:00", time_end: "11:30"
+            },
+            { label: "Top solutions", kind: "work",
+              time_start: "11:30", time_end: "12:00"
+            },
           ],
           pm: [
-            { label: "Panel: solution validation", kind: "panel" },
-            { label: "Pick solution", kind: "work" },
-            { label: "Game", kind: "game" },
-            { label: "Pitch game", kind: "pitch" },
-            { label: "Pitch template", kind: "work" },
-            { label: "Pitch prep", kind: "work" },
+            { label: "Panel: solution validation", kind: "panel",
+              time_start: "13:00", time_end: "13:45"
+            },
+            { label: "Pick solution", kind: "work",
+              time_start: "13:45", time_end: "14:30"
+            },
+            { label: "Game", kind: "game",
+              time_start: "14:30", time_end: "15:00"
+            },
+            { label: "Pitch game", kind: "pitch",
+              time_start: "15:00", time_end: "15:30"
+            },
+            { label: "Pitch template", kind: "work",
+              time_start: "15:30", time_end: "16:15"
+            },
+            { label: "Pitch prep", kind: "work",
+              time_start: "16:15", time_end: "17:00"
+            },
           ],
         },
         {
           name: "Thu",
           am: [
-            { label: "Welcome", kind: "welcome" },
-            { label: "Pitch prep", kind: "work" },
+            { label: "Welcome", kind: "welcome",
+              time_start: "09:00", time_end: "09:15"
+            },
+            { label: "Pitch prep", kind: "work",
+              time_start: "09:15", time_end: "10:30"
+            },
             { label: "Alumni: Rehearse", kind: "work", sub: "First teach-back · F2 owns room",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-thu-am-pitch-prep",
               time_start: "09:45", time_end: "10:30",
@@ -2772,6 +2836,7 @@ const SCHEDULE = {
               }
             },
             { label: "RC: Pitch speed dating", kind: "rc",
+              time_start: "10:30", time_end: "11:15",
               slide: {
                 status: "ready",
                 foundation: "First Reality Check of the program. The principle: an idea isn't ready until someone outside your team can hear it cold and tell you what they think it is. Speed dating format strips away preamble — you have 90 seconds. If you can't land it in 90 seconds, the pitch isn't there yet.",
@@ -2784,13 +2849,23 @@ const SCHEDULE = {
                 references: ["Reality Check methodology (TBD chapter)", "Audience tier scoring decision — see §4"],
               }
             },
-            { label: "Pitches", kind: "pitch" },
+            { label: "Pitches", kind: "pitch",
+              time_start: "11:15", time_end: "12:00"
+            },
           ],
           pm: [
-            { label: "Pitches", kind: "pitch" },
-            { label: "Game", kind: "game" },
-            { label: "Pitches", kind: "pitch" },
-            { label: "Voting", kind: "work" },
+            { label: "Pitches", kind: "pitch",
+              time_start: "13:00", time_end: "14:00"
+            },
+            { label: "Game", kind: "game",
+              time_start: "14:00", time_end: "14:30"
+            },
+            { label: "Pitches", kind: "pitch",
+              time_start: "14:30", time_end: "15:30"
+            },
+            { label: "Voting", kind: "work",
+              time_start: "15:30", time_end: "16:30"
+            },
             { label: "Dinner", kind: "social",
               time_start: "18:00", time_end: "20:00",
               audiences: ["student", "alumni"],
@@ -2804,10 +2879,18 @@ const SCHEDULE = {
         {
           name: "Fri",
           am: [
-            { label: "Welcome", kind: "welcome" },
-            { label: "Pitch selection — 3 tracks intro", kind: "work" },
-            { label: "Repitch the 5", kind: "pitch" },
-            { label: "Preferences", kind: "work" },
+            { label: "Welcome", kind: "welcome",
+              time_start: "09:00", time_end: "09:15"
+            },
+            { label: "Pitch selection — 3 tracks intro", kind: "work",
+              time_start: "09:15", time_end: "10:15"
+            },
+            { label: "Repitch the 5", kind: "pitch",
+              time_start: "10:15", time_end: "11:00"
+            },
+            { label: "Preferences", kind: "work",
+              time_start: "11:00", time_end: "12:00"
+            },
             { label: "Alumni: Run", kind: "work", sub: "Dress rehearsal of Wk2 intro",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-fri-am-preferences",
               time_start: "11:00", time_end: "12:00",
@@ -2826,12 +2909,15 @@ const SCHEDULE = {
           ],
           pm: [
             { label: "LPP Flow / PRD WK2", kind: "lpp", sub: "Introduction to the Lean Product Plan and PRD structure for Week 2",
+              time_start: "13:00", time_end: "13:45",
               audiences: ["student", "alumni"]
             },
             { label: "Team allocation", kind: "work",
+              time_start: "13:45", time_end: "14:30",
               audiences: ["student", "alumni"]
             },
             { label: "SA1 · Who's it for?", kind: "work", sub: "Problem/Solution + Persona definition",
+              time_start: "14:30", time_end: "15:30",
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
@@ -2839,6 +2925,7 @@ const SCHEDULE = {
               }
             },
             { label: "SA2 · 8 frames customer journey", kind: "work", sub: "Crazy 8s on the user experience",
+              time_start: "15:30", time_end: "16:30",
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
@@ -2846,9 +2933,11 @@ const SCHEDULE = {
               }
             },
             { label: "External team activity", kind: "social",
+              time_start: "16:30", time_end: "17:30",
               audiences: ["student", "alumni"]
             },
             { label: "ISEG Sign Off / location solution", kind: "work", sub: "Venue logistics confirmation",
+              time_start: "17:30", time_end: "18:00",
               audiences: ["student", "alumni"]
             },
             { label: "Big evening activity", kind: "social", sub: "Cohort-wide social",
