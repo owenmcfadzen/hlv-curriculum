@@ -2823,6 +2823,25 @@ const SCHEDULE = {
         {
           name: "Tue",
           am: [
+            { label: "Welcome", kind: "welcome", sub: "Morning check-in",
+              time_start: "09:00", time_end: "09:30",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Team prep for Phase 1", kind: "work", sub: "What does your team need each specialty to bring back?",
+              time_start: "09:30", time_end: "10:30",
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Before specialists peel off into Phase 1, the team aligns on what they need from each specialty. Each specialist takes one prompt from their team into their breakout. Sets up the Team Teach hinge to be a real synthesis, not a download.",
+                students: [
+                  "10 min: each team lists the three things they most need to know from Product, Business, Market.",
+                  "Specialists pick the single prompt they'll carry into their breakout.",
+                  "Write each prompt on the team's shared Phase-1 brief — it's what Team Teach lands against."
+                ],
+                facilitator: "Don't let teams pick generic prompts. Push for specifics: \"what's the risky assumption you most want tested?\" If the prompt would apply to any startup, it's not specific enough.",
+                references: ["April 29 audio walk · Phase 1 / Team Teach synthesis", "Team Teach (synthesis hinge) block"]
+              }
+            },
             { groupLabel: "PHASE 1 · RECONNAISSANCE" },
             { label: "Landscape Map", kind: "track", track: "market", code: "M1", time_start: "10:30", time_end: "12:00" },
             { label: "The Case", kind: "track", track: "business", code: "B1", time_start: "11:00", time_end: "12:00" },
