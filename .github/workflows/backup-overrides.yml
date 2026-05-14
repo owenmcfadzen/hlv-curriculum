@@ -1,0 +1,58 @@
+# Periodic snapshot of /api/overrides → commits to data/backups/ in this repo.
+# OPT-IN. To enable:
+#   1. Add a repo secret BACKUP_URL = the public /api/overrides URL,
+#      e.g. https://hlv-curriculum-production.up.railway.app/api/overrides
+#   2. Make sure the workflow has write permission to contents (Settings →
+#      Actions → General → Workflow permissions → Read and write).
+#   3. Enable the workflow in the Actions tab.
+#
+# Cadence: daily at 06:00 UTC, plus manual trigger. Adjust the cron line
+# if you want more or less frequent snapshots.
+#
+# The committed JSON is byte-equivalent to whatever the server returned.
+# If the file is unchanged since the last snapshot, the workflow skips
+# the commit so the history doesn't fill with no-op commits.
+#
+# This commit lands on main and triggers Railway's auto-redeploy. If
+# you'd rather it didn't, change the branch below to a dedicated `backups`
+# branch (and adjust Railway's Watch Paths to ignore data/backups/).
+
+name: backup-overrides
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch latest overrides from production
+        env:
+          BACKUP_URL: ${{ secrets.BACKUP_URL }}
+        run: |
+          if [ -z "$BACKUP_URL" ]; then
+            echo "BACKUP_URL secret not set; skipping."
+            exit 0
+          fi
+          mkdir -p data/backups
+          curl -sf "$BACKUP_URL" > data/backups/latest.json
+          # Pretty-print so diffs are readable
+          python3 -c 'import json,sys; d=json.load(open("data/backups/latest.json")); json.dump(d, open("data/backups/latest.json","w"), indent=2, sort_keys=True)'
+          ts=$(date -u +'%Y-%m-%dT%H-%M-%SZ')
+          cp data/backups/latest.json "data/backups/overrides-${ts}.json"
+      - name: Commit if changed
+        run: |
+          git config user.name  "hlv-backup-bot"
+          git config user.email "hlv-backup-bot@users.noreply.github.com"
+          git add data/backups/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "backup(overrides): snapshot $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push

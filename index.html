@@ -1926,6 +1926,12 @@ body.view-b-active .view-b {
 .vb-sync-push:hover { opacity: 0.88; }
 .vb-sync-push[disabled] { opacity: 0.32; cursor: not-allowed; }
 .vb-sync-push[data-state="pushing"] { opacity: 0.7; cursor: progress; }
+.vb-sync-backup {
+  background: var(--bg);
+  color: var(--text-mute);
+  border: 1px solid var(--rule);
+}
+.vb-sync-backup:hover { color: var(--text); border-color: var(--rule-strong); opacity: 1; }
 
 /* Toast for sync results */
 .vb-toast-host {
@@ -3653,9 +3659,11 @@ function validateData() {
   codesInSchedule.forEach(c => {
     if (!codesInActivities.has(c)) errors.push(`SCHEDULE references code '${c}' but no ACTIVITIES entry`);
   });
-  codesInActivities.forEach(c => {
-    if (!codesInSchedule.has(c)) warnings.push(`ACTIVITIES code '${c}' not referenced in SCHEDULE`);
-  });
+  // Orphaned ACTIVITIES (codes not referenced from SCHEDULE) are no longer
+  // flagged. Owen's Wk2 rebuild dropped all `code` linkages by design; the
+  // worksheet content stays in ACTIVITIES for reference and gets re-linked
+  // if/when a block gets a code field again. The real validation (broken
+  // link in the other direction) still fires above.
 
   const seen = new Set();
   DAYS.forEach((d, i) => {
@@ -5057,6 +5065,7 @@ function renderViewBFilterBar() {
       <div class="vb-sync">
         <span class="vb-sync-pill" id="vbSyncPill" data-state="loading" title="Click to refresh">… checking</span>
         <button class="vb-sync-push" id="vbSyncPush" type="button" disabled>Push</button>
+        <button class="vb-sync-push vb-sync-backup" id="vbSyncBackup" type="button" title="Download a JSON backup of all overrides">Backup</button>
       </div>
     </div>
     ${renderKindLegend()}`;
@@ -5892,11 +5901,37 @@ async function doSyncPush() {
   }
 }
 
+async function doBackupDownload() {
+  try {
+    const remote = await fetchOverridesRemote();
+    // Prefer server snapshot. Fall back to local cache if server unreachable —
+    // a backup of the cache is still better than no backup.
+    const payload = remote != null ? remote : VIEW_B_OVERRIDES;
+    const source = remote != null ? "server" : "local cache";
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    const ts = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+    a.download = `hlv-overrides-${ts}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    const n = Object.keys(payload || {}).length;
+    vbToast(`Downloaded backup (${n} block${n === 1 ? "" : "s"}, from ${source})`, "success");
+  } catch (err) {
+    vbToast(`Backup failed: ${err.message || err}`, "error");
+  }
+}
+
 function wireSyncEvents() {
   const pill = document.getElementById("vbSyncPill");
   if (pill) pill.addEventListener("click", refreshSyncStatus);
   const push = document.getElementById("vbSyncPush");
   if (push) push.addEventListener("click", doSyncPush);
+  const backup = document.getElementById("vbSyncBackup");
+  if (backup) backup.addEventListener("click", doBackupDownload);
   // Kick off initial fetch (don't block render).
   refreshSyncStatus();
 }

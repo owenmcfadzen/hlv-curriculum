@@ -161,11 +161,10 @@ codesInSchedule.forEach(code => {
     err(`SCHEDULE references code '${code}' but no ACTIVITIES entry has it`);
   }
 });
-codesInActivities.forEach(code => {
-  if (!codesInSchedule.has(code)) {
-    warn(`ACTIVITIES has code '${code}' but no SCHEDULE block references it`);
-  }
-});
+// Orphaned ACTIVITIES (codes not referenced from SCHEDULE) intentionally
+// not flagged — the Wk2 whiteboard rebuild dropped all code linkages by
+// design; the worksheet content stays for reference. The opposite direction
+// (SCHEDULE pointing at a missing ACTIVITY) still errors above.
 
 // --- DAYS ---
 const seenDays = new Set();

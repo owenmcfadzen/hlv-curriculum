@@ -62,6 +62,29 @@ git push origin main
 A redeploy takes ~30s. Workbench HTML is served with `Cache-Control:
 no-cache` so the new version shows up immediately on refresh.
 
+## Backups
+
+Two layers, both opt-in:
+
+1. **Manual: Backup button.** In the filter bar (next to Push) there's a
+   Backup button. Click → downloads a timestamped JSON file with the full
+   current overrides. Stash in iCloud / Dropbox / wherever. Works whether
+   the server is up or not (falls back to the local cache).
+
+2. **Automatic: GitHub Action.** `.github/workflows/backup-overrides.yml`
+   fetches `/api/overrides` once a day and commits the JSON into
+   `data/backups/` on `main`. Opt in by:
+     a. Setting a repo secret `BACKUP_URL` = the public overrides URL,
+        e.g. `https://hlv-curriculum-production.up.railway.app/api/overrides`
+     b. Enabling write permission for Actions:
+        Settings → Actions → General → Workflow permissions → Read and write
+     c. The workflow shows up under the Actions tab; you can also trigger
+        it manually any time.
+
+   Note: each successful snapshot lands a commit on `main`, which triggers
+   a Railway redeploy. If that's noisy, change the branch in the workflow
+   (or add `data/backups/` to Railway's Watch-Paths-to-ignore).
+
 ## How edits actually work in production
 
 Two saves happen when you click Save in the Edit form:
