@@ -2842,19 +2842,57 @@ const SCHEDULE = {
         {
           name: "Mon",
           am: [
-            { label: "Welcome", kind: "welcome" },
-            { label: "Game (teams + designer)", kind: "game" },
-            { label: "PRD", kind: "work" },
-            { label: "LPP: who's it for?", kind: "lpp" },
-            { label: "Crazy 8s: journey", kind: "lpp" },
-            { label: "Team alignment on solution", kind: "work" },
+            { label: "Welcome", kind: "welcome",
+              time_start: "09:00", time_end: "09:30",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Game (teams + designer)", kind: "game",
+              time_start: "09:30", time_end: "10:00",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Week 2 Flow (PRD)", kind: "lpp", sub: "How the week works, PRD walkthrough",
+              time_start: "10:00", time_end: "10:30",
+              audiences: ["student", "alumni"]
+            },
+            { label: "SA2.5 · Realigning around customer journey", kind: "work", sub: "Re-anchor on the user experience after weekend gap",
+              time_start: "10:30", time_end: "11:00",
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Bridge between Wk1 Fri SA2 (customer journey) and the Wk2 build. Re-anchor the team on the same 8-frame journey they sketched on Friday — what's still true, what shifted over the weekend."
+              }
+            },
+            { label: "Guest: Product", kind: "panel",
+              time_start: "11:00", time_end: "11:30",
+              audiences: ["student", "alumni"]
+            },
+            { label: "SA3 · How is it solved now?", kind: "work", sub: "Map current solutions before designing new ones",
+              time_start: "11:30", time_end: "12:00",
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Third Solution Alignment moment. Each team maps what currently exists in their problem space — competitors, workarounds, status quo. Output frames why a new solution is needed."
+              }
+            },
+            { label: "SA4 · Team Aligned on V1 Solution", kind: "work", sub: "Lock the V1 before specialty work begins",
+              time_start: "12:00", time_end: "12:30",
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Fourth Solution Alignment moment. Each team commits to a V1 solution. Locks the target so specialty work in Tue/Wed has a stable anchor. Output feeds into Tuesday's Phase 1 specialty kickoff."
+              }
+            },
           ],
           pm: [
-            { label: "Alignment / continuation", kind: "work" },
-            { label: "Team prep for Tuesday", kind: "work" },
-            { label: "Improv game / destination", kind: "game" },
+            { label: "Team Synthesis", kind: "teamteach", sub: "Teams consolidate Monday into a shared frame",
+              time_start: "13:30", time_end: "16:30",
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Whole-afternoon synthesis block. Teams consolidate the morning's four SA moments into a single coherent frame for Wk2. Sparse on purpose — this is reflection and lock-in, not new content."
+              }
+            },
           ],
-          pmSub: "No track work yet",
         },
         {
           name: "Tue",
