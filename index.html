@@ -2846,6 +2846,20 @@ const SCHEDULE = {
             { groupLabel: "PHASE 2 · BUILD & SCOPE" },
             { label: "MVP Scoping", kind: "track", track: "product", code: "P2", time_start: "14:00", time_end: "15:30" },
             { label: "Canvas Lite", kind: "track", track: "business", code: "B2", time_start: "14:00", time_end: "15:30" },
+            { label: "Team validation huddle", kind: "work", sub: "What do we need to validate Wednesday?",
+              time_start: "15:30", time_end: "15:45", audiences: ["student"],
+              slide: {
+                status: "draft",
+                foundation: "Mid-block pause in Phase 2. Each team's three specialists (P + B + M) huddle for 15 min. P2 and B2 surface what they need tested; M2 redesigns the validation protocol in response. Turns parallel work into a shared brief instead of three silos.",
+                students: [
+                  "P + B: name the two riskiest assumptions you'd want tested overnight.",
+                  "M: write down what you'd need from each side to design a clean test.",
+                  "Reconvene for 5 min — agree the shared brief; M2 rewrites the protocol from there."
+                ],
+                facilitator: "Hard time-box at 15 min. Don't let it slide into a full team meeting — the point is a focused handoff to M2.",
+                references: ["April 29 audio walk · Phase 2 dependencies", "M2 Validation Design worksheet"]
+              }
+            },
             { label: "Validation Design", kind: "track", track: "market", code: "M2", time_start: "14:00", time_end: "16:30" },
           ],
           pmSub: "Mid-block team huddle",
