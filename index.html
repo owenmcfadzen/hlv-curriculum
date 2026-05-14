@@ -2830,7 +2830,7 @@ const SCHEDULE = {
           ],
           amSub: "30-min intro stagger",
           pm: [
-            { label: "Team Teach (synthesis hinge)", kind: "teamteach",
+            { label: "Team Teach (synthesis hinge)", kind: "teamteach", time_start: "13:00", time_end: "14:00",
               slide: {
                 status: "ready",
                 foundation: "The synthesis hinge. Each specialist returns to their team and teaches what they found. This is where Phase 1 (reconnaissance) becomes Phase 2 (build) — the team can only scope what they understand, and they can only understand what's been taught back.",
@@ -2844,9 +2844,9 @@ const SCHEDULE = {
               }
             },
             { groupLabel: "PHASE 2 · BUILD & SCOPE" },
-            { label: "MVP Scoping", kind: "track", track: "product", code: "P2" },
-            { label: "Canvas Lite", kind: "track", track: "business", code: "B2" },
-            { label: "Validation Design", kind: "track", track: "market", code: "M2" },
+            { label: "MVP Scoping", kind: "track", track: "product", code: "P2", time_start: "14:00", time_end: "15:30" },
+            { label: "Canvas Lite", kind: "track", track: "business", code: "B2", time_start: "14:00", time_end: "15:30" },
+            { label: "Validation Design", kind: "track", track: "market", code: "M2", time_start: "14:00", time_end: "16:30" },
           ],
           pmSub: "Mid-block team huddle",
         },
