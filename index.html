@@ -2843,9 +2843,15 @@ const SCHEDULE = {
               }
             },
             { groupLabel: "PHASE 1 · RECONNAISSANCE" },
-            { label: "Landscape Map", kind: "track", track: "market", code: "M1", time_start: "10:30", time_end: "12:00" },
-            { label: "The Case", kind: "track", track: "business", code: "B1", time_start: "11:00", time_end: "12:00" },
-            { label: "Solution Blueprint", kind: "track", track: "product", code: "P1", time_start: "11:30", time_end: "12:00" },
+            { label: "Landscape Map", kind: "track", track: "market", code: "M1", time_start: "10:30", time_end: "12:00",
+              notes_facilitator: "Lead facilitator opens M1 at 10:30 (5 min intro), then moves to B1 at 10:45, then P1 at 11:00. M1 specialists work the full 90 minutes."
+            },
+            { label: "The Case", kind: "track", track: "business", code: "B1", time_start: "10:30", time_end: "12:00",
+              notes_facilitator: "Lead facilitator opens B1 at 10:45 after introducing M1. B1 specialists wait 15 min after 10:30 — use it to read alumni Anchor brief. Work full block after intro."
+            },
+            { label: "Solution Blueprint", kind: "track", track: "product", code: "P1", time_start: "10:30", time_end: "12:00",
+              notes_facilitator: "Lead facilitator opens P1 at 11:00. P1 specialists wait 30 min — use it to absorb what M1 and B1 are surfacing in their rooms (low-stakes observation). Then full block."
+            },
           ],
           amSub: "30-min intro stagger",
           pm: [
