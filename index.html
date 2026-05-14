@@ -2787,27 +2787,49 @@ const SCHEDULE = {
             { label: "Pitch selection — 3 tracks intro", kind: "work" },
             { label: "Repitch the 5", kind: "pitch" },
             { label: "Preferences", kind: "work" },
-          ],
-          pm: [
-            { label: "LPP intro", kind: "lpp" },
-            { label: "Team allocation", kind: "work" },
             { label: "Alumni: Run", kind: "work", sub: "Dress rehearsal of Wk2 intro",
-              audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-fri-pm-team-allocation",
-              time_start: "14:00", time_end: "15:00",
+              audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-fri-am-preferences",
+              time_start: "11:00", time_end: "12:00",
               slide: {
                 status: "draft",
-                foundation: "Pulled during Team allocation. Final pass at the actual Wk2 Tuesday introduction — not a rehearsal of a rehearsal, the real thing one day early. By Monday every alumnus is delivering, not learning.",
+                foundation: "Final pass at the actual Wk2 Tuesday introduction — not a rehearsal of a rehearsal, the real thing one day early. Pulled out of the AM preferences / allocation flow. By Monday every alumnus is delivering, not learning.",
                 students: [
                   "Run the real Wk2 intro, in full, to the cohort.",
                   "Refine on the spot — last chance before Monday.",
                   "Pair off with the alumnus of your same specialty; trade notes."
                 ],
-                facilitator: "F2 owns end-to-end. By the end of this block, the room is locked — no more changes.",
+                facilitator: "F2 owns end-to-end. By the end of this block, the room is locked — no more changes. F1 stays with the student room running preferences.",
                 references: ["flow-stacey-2026-05-14.html · Alumni window list"]
               }
             },
-            { label: "Team building", kind: "social" },
-            { label: "External team activity", kind: "social" },
+          ],
+          pm: [
+            { label: "LPP Flow / PRD WK2", kind: "lpp", sub: "Introduction to the Lean Product Plan and PRD structure for Week 2",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Team allocation", kind: "work",
+              audiences: ["student", "alumni"]
+            },
+            { label: "SA1 · Who's it for?", kind: "work", sub: "Problem/Solution + Persona definition",
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "First Solution Alignment moment. Each team aligns on who they're solving for — the persona. Pink card on the whiteboard. Output feeds into LPP draft."
+              }
+            },
+            { label: "SA2 · 8 frames customer journey", kind: "work", sub: "Crazy 8s on the user experience",
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Second Solution Alignment moment. Each team sketches 8 frames of the user experience (Crazy 8s format). Feeds into Week 2 prototype work."
+              }
+            },
+            { label: "External team activity", kind: "social",
+              audiences: ["student", "alumni"]
+            },
+            { label: "ISEG Sign Off / location solution", kind: "work", sub: "Venue logistics confirmation",
+              audiences: ["student", "alumni"]
+            },
           ],
         },
       ],
