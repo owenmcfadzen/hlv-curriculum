@@ -2020,7 +2020,7 @@ body.view-b-active .view-b {
 .vb-detail-foot { font-size: 11px; color: var(--text-faint); font-style: italic; }
 
 /* ─── Calendar grid (shared by View A 2-week + View B day) ─── */
-:root { --vb-cal-px-per-min: 2.0; }   /* 09:00–17:00 = 480 min = 960px tall */
+:root { --vb-cal-px-per-min: 2.0; }   /* 09:00–22:00 = 780 min = 1560px tall (evening blocks land here) */
 
 .vb-cal-shell {
   padding: 6px 12px 56px;
@@ -2777,7 +2777,14 @@ const SCHEDULE = {
             { label: "Game", kind: "game" },
             { label: "Pitches", kind: "pitch" },
             { label: "Voting", kind: "work" },
-            { label: "Dinner", kind: "social" },
+            { label: "Dinner", kind: "social",
+              time_start: "18:00", time_end: "20:00",
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Team dinner. Off-site. Decompress after pitch day."
+              }
+            },
           ],
         },
         {
@@ -2829,6 +2836,15 @@ const SCHEDULE = {
             },
             { label: "ISEG Sign Off / location solution", kind: "work", sub: "Venue logistics confirmation",
               audiences: ["student", "alumni"]
+            },
+            { label: "Big evening activity", kind: "social", sub: "Cohort-wide social",
+              time_start: "19:00", time_end: "22:00",
+              audiences: ["student", "alumni"],
+              facilitator_roles: ["f2"],
+              slide: {
+                status: "draft",
+                foundation: "End of Week 1. Marks transition into Week 2 specialty work. Format TBD — themed evening, off-site activity, or local moment. F2 + Leadership alumni co-host."
+              }
             },
           ],
         },
@@ -3016,6 +3032,15 @@ const SCHEDULE = {
             { label: "LPP TIME — Narrative Time", kind: "lpp", sub: "Assemble the final story",
               time_start: "13:30", time_end: "17:00",
               audiences: ["student", "alumni"]
+            },
+            { label: "LPP late work session", kind: "work", sub: "Teams push through narrative + prototype",
+              time_start: "17:00", time_end: "21:00",
+              audiences: ["student", "alumni"],
+              facilitator_roles: ["f1", "f2"],
+              slide: {
+                status: "draft",
+                foundation: "Optional extended work session. Teams that need more time on LPP narrative or prototype stay. F1 + F2 present for support. Food provided."
+              }
             },
           ],
         },
@@ -4650,7 +4675,7 @@ const VIEW_B_DAY_NAMES = ["mon", "tue", "wed", "thu", "fri"];
 const VIEW_B_AM_RANGE = [9 * 60, 12 * 60];       // 09:00–12:00
 const VIEW_B_PM_RANGE = [13 * 60, 17 * 60];      // 13:00–17:00
 const VIEW_B_CAL_START = 9 * 60;                  // calendar top
-const VIEW_B_CAL_END = 17 * 60;                   // calendar bottom
+const VIEW_B_CAL_END = 22 * 60;                   // calendar bottom (evening blocks land here)
 const VIEW_B_PX_PER_MIN = 2.0;                    // see :root --vb-cal-px-per-min
 
 /* User-overrides written via the edit form, persisted to localStorage.
@@ -4988,7 +5013,7 @@ function renderCalendarDayColumn(day, weekIdx, dayIdx, opts) {
   const phaseHtml = (opts && opts.compact) ? "" : layout.phaseRows.map(p => `
     <div class="vb-cal-phasebanner" style="top:${Math.max(p.top - 16, -16).toFixed(1)}px">${escapeText(p.label)}</div>`).join("");
   const hourLines = [];
-  for (let h = 9; h <= 17; h++) {
+  for (let h = 9; h <= 22; h++) {
     const top = (h - 9) * 60 * VIEW_B_PX_PER_MIN;
     hourLines.push(`<div class="vb-cal-hour-line${h % 2 === 0 ? '' : ' faint'}" style="top:${top.toFixed(1)}px"></div>`);
   }
@@ -5007,7 +5032,7 @@ function renderCalendarDayColumn(day, weekIdx, dayIdx, opts) {
 
 function renderCalendarTimeRail() {
   const ticks = [];
-  for (let h = 9; h <= 17; h++) {
+  for (let h = 9; h <= 22; h++) {
     const top = (h - 9) * 60 * VIEW_B_PX_PER_MIN;
     ticks.push(`<div class="vb-cal-rail-tick" style="top:${top.toFixed(1)}px">${String(h).padStart(2, "0")}:00</div>`);
   }
