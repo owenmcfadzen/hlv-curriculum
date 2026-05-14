@@ -2131,6 +2131,14 @@ body.view-b-active .view-b {
   box-shadow: inset 0 0 0 1px var(--text);
 }
 .vb-cal-block[data-dim="true"] { opacity: 0.28; }
+/* Team-moment blocks that span all columns of an overlap zone — render on top
+   of the track columns they cross so the band reads as a horizontal interrupt. */
+.vb-cal-block[data-full-width="true"] {
+  z-index: 2;
+  background: var(--bg);
+  border-style: dashed;
+  border-color: var(--text-mute);
+}
 /* Color-by-kind — the 12 KIND_LEGEND classifications visible at a glance */
 .vb-cal-block[data-kind="welcome"]   { background: #FBE7C840; border-left: 3px solid #C5A462; }
 .vb-cal-block[data-kind="work"]      { background: #E8E9EC55; border-left: 3px solid #8A95A8; }
@@ -2878,7 +2886,7 @@ const SCHEDULE = {
             { label: "MVP Scoping", kind: "track", track: "product", code: "P2", time_start: "14:00", time_end: "15:30" },
             { label: "Canvas Lite", kind: "track", track: "business", code: "B2", time_start: "14:00", time_end: "15:30" },
             { label: "Team validation huddle", kind: "work", sub: "What do we need to validate Wednesday?",
-              time_start: "15:30", time_end: "15:45", audiences: ["student"],
+              time_start: "15:30", time_end: "15:45", audiences: ["student", "alumni"], force_full_width: true,
               slide: {
                 status: "draft",
                 foundation: "Mid-block pause in Phase 2. Each team's three specialists (P + B + M) huddle for 15 min. P2 and B2 surface what they need tested; M2 redesigns the validation protocol in response. Turns parallel work into a shared brief instead of three silos.",
@@ -4781,8 +4789,17 @@ function computeDayCalendar(day, weekIdx, dayIdx) {
       }
     });
 
+    // force_full_width blocks (team moments overlapping track lanes) are layered
+    // outside the column-coloring pass: they always render at 100% width and don't
+    // consume columns from the surrounding overlap group.
+    const colorable = blocks.filter(b => !b.block.force_full_width);
+    blocks.filter(b => b.block.force_full_width).forEach(b => {
+      b.colIdx = 0;
+      b.totalCols = 1;
+    });
+
     // Group by overlapping time intervals. Sort by startMin (stable on arrayIdx).
-    const sorted = blocks.slice().sort((a, b) => a.startMin - b.startMin || a.arrayIdx - b.arrayIdx);
+    const sorted = colorable.slice().sort((a, b) => a.startMin - b.startMin || a.arrayIdx - b.arrayIdx);
     const groups = [];
     let current = null;
     sorted.forEach(b => {
@@ -4868,6 +4885,7 @@ function renderCalendarDayColumn(day, weekIdx, dayIdx, opts) {
       data-kind="${e.block.kind || ''}"
       data-selected="${isSel(e.id)}"
       data-dim="${dim}"
+      data-full-width="${e.block.force_full_width ? 'true' : 'false'}"
       style="top:${e.top.toFixed(1)}px;height:${Math.max(e.height - 2, 22).toFixed(1)}px;left:calc(${e.leftPct.toFixed(2)}% + 2px);width:calc(${e.widthPct.toFixed(2)}% - 4px);"
       title="${escapeText(e.block.label || '')}">
       ${audBadge}
