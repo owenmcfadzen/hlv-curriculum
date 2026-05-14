@@ -2020,7 +2020,7 @@ body.view-b-active .view-b {
 .vb-detail-foot { font-size: 11px; color: var(--text-faint); font-style: italic; }
 
 /* ─── Calendar grid (shared by View A 2-week + View B day) ─── */
-:root { --vb-cal-px-per-min: 1.1; }   /* 09:00–17:00 = 480 min ~= 528px tall */
+:root { --vb-cal-px-per-min: 2.0; }   /* 09:00–17:00 = 480 min = 960px tall */
 
 .vb-cal-shell {
   padding: 6px 12px 56px;
@@ -2612,7 +2612,7 @@ const SCHEDULE = {
             { label: "Intro game", kind: "game" },
             { label: "Entrepreneurship intro", kind: "work" },
             { label: "Alumni: Orient", kind: "work", sub: "Why You're Back · pick specialty",
-              audiences: ["alumni"], facilitators: ["f2"],
+              audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-mon-am-entrepreneurship-intro",
               slide: {
                 status: "draft",
                 foundation: "Pulled during the Entrepreneurship intro. This block is the brief for the Week 1 alumni arc plus a specialty pick. By end of block, every alumnus knows which specialty they're delivering on Wk2 Tuesday.",
@@ -2654,7 +2654,7 @@ const SCHEDULE = {
             { label: "Swag pitch", kind: "module" },
             { label: "M: Opportunity ID", kind: "module" },
             { label: "Alumni: Anchor", kind: "work", sub: "Read your LPP slide",
-              audiences: ["alumni"], facilitators: ["f2"],
+              audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-tue-am-m-opportunity-id",
               slide: {
                 status: "draft",
                 foundation: "Pulled during M: Opportunity ID. Read the actual LPP slide for your chosen specialty. Pin down the vocabulary, the framing questions, and what \"expert\" looks like for the track you picked.",
@@ -2676,7 +2676,7 @@ const SCHEDULE = {
             { label: "Game", kind: "game" },
             { label: "M: Problem validation", kind: "module" },
             { label: "Alumni: Deepen 1", kind: "work", sub: "AI-assisted research → Specialist Brief v1",
-              audiences: ["alumni"], facilitators: ["f2"],
+              audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-tue-pm-m-problem-validation",
               slide: {
                 status: "draft",
                 foundation: "Pulled during M: Problem validation. Laptops out. Research the intersection of your specialty and this year's Sonae challenge. By end of block, every alumnus has a one-page Specialist Brief v1 in their own words.",
@@ -2699,7 +2699,7 @@ const SCHEDULE = {
             { label: "Welcome", kind: "welcome" },
             { label: "M: Solutions", kind: "module" },
             { label: "Alumni: Deepen 2", kind: "work", sub: "Pressure-test + rewrite brief",
-              audiences: ["alumni"], facilitators: ["f2"],
+              audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-wed-am-m-solutions",
               slide: {
                 status: "draft",
                 foundation: "Pulled during M: Solutions. F2 pressure-tests each Specialist Brief — where's the hand-wave, where's the borrowed phrase, where's the part you can't defend. One rewrite pass produces v2.",
@@ -2731,7 +2731,7 @@ const SCHEDULE = {
             { label: "Welcome", kind: "welcome" },
             { label: "Pitch prep", kind: "work" },
             { label: "Alumni: Rehearse", kind: "work", sub: "First teach-back · F2 owns room",
-              audiences: ["alumni"], facilitators: ["f2"],
+              audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-thu-am-pitch-prep",
               slide: {
                 status: "draft",
                 foundation: "Pulled during student pitch prep. First full teach-back of the Specialist Brief — 5 minutes each, to the alumni cohort and F2. Hard feedback. The brief gets one more refine overnight. Runs parallel to the student pitch prep — F2 owns the alumni room.",
@@ -2779,7 +2779,7 @@ const SCHEDULE = {
             { label: "LPP intro", kind: "lpp" },
             { label: "Team allocation", kind: "work" },
             { label: "Alumni: Run", kind: "work", sub: "Dress rehearsal of Wk2 intro",
-              audiences: ["alumni"], facilitators: ["f2"],
+              audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-fri-pm-team-allocation",
               slide: {
                 status: "draft",
                 foundation: "Pulled during Team allocation. Final pass at the actual Wk2 Tuesday introduction — not a rehearsal of a rehearsal, the real thing one day early. By Monday every alumnus is delivering, not learning.",
@@ -4502,7 +4502,7 @@ const VIEW_B_AM_RANGE = [9 * 60, 12 * 60];       // 09:00–12:00
 const VIEW_B_PM_RANGE = [13 * 60, 17 * 60];      // 13:00–17:00
 const VIEW_B_CAL_START = 9 * 60;                  // calendar top
 const VIEW_B_CAL_END = 17 * 60;                   // calendar bottom
-const VIEW_B_PX_PER_MIN = 1.1;                    // see :root --vb-cal-px-per-min
+const VIEW_B_PX_PER_MIN = 2.0;                    // see :root --vb-cal-px-per-min
 
 /* User-overrides written via the edit form, persisted to localStorage.
    Shape: { [blockId]: { label?, kind?, track?, sub?, time_start?, time_end?,
@@ -4668,69 +4668,132 @@ function renderKindLegend() {
    - blocks: positioned entries with {id, block, lane, slotStart/slotEnd/slotTime, top, height, leftPct, widthPct}
    - phases: phase markers tagged with their owning slot's top
    plus collapsed-parallel-track folding for kind:"track" runs.       */
+/* Time-based layout — blocks overlapping in time stack side-by-side as columns.
+   Steps per lane:
+     1. Walk items, collect blocks + phase markers (with array index for ordering).
+     2. Anchor pass: blocks without parallel_to get times — explicit time_start/end
+        if present, else uniform spread across "auto" anchors. parallel_to blocks
+        inherit times from their referenced block.
+     3. Sort by startMin, group into intervals of overlap.
+     4. Within each overlap group, run interval-coloring to assign each block a
+        column (leftPct / widthPct).
+     5. Phase markers position at the top of the first block they precede in
+        array order.                                                              */
 function computeDayCalendar(day, weekIdx, dayIdx) {
-  const walk = (items, laneKey, range) => {
-    const slots = [];
-    const phaseMarks = [];
-    let trackGroup = [];
-    const flush = () => {
-      if (trackGroup.length) { slots.push({ blocks: trackGroup.slice() }); trackGroup.length = 0; }
-    };
+  const processLane = (items, laneKey, range) => {
+    const blocks = [];
+    const phases = [];
     (items || []).forEach((item, idx) => {
       if (item.groupLabel) {
-        flush();
-        phaseMarks.push({ label: item.groupLabel, slotAfter: slots.length });
+        phases.push({ label: item.groupLabel, arrayIdx: idx });
         return;
       }
-      if (item.kind === "track") {
-        trackGroup.push({ block: item, idx });
+      const id = viewBBlockId(weekIdx, dayIdx, laneKey, item, idx);
+      const eff = effectiveBlock(id, item);
+      blocks.push({ id, block: eff, lane: laneKey, arrayIdx: idx });
+    });
+
+    // Anchor blocks first — those WITHOUT parallel_to.
+    const anchors = blocks.filter(b => !b.block.parallel_to);
+    const followers = blocks.filter(b => b.block.parallel_to);
+
+    // Among anchors: split into explicit-time and auto-positioned.
+    const autoAnchors = anchors.filter(b => parseHHMM(b.block.time_start) == null);
+    const total = range[1] - range[0];
+    const autoCount = Math.max(autoAnchors.length, 1);
+    const slotDur = total / autoCount;
+    let autoIdx = 0;
+    anchors.forEach(b => {
+      const explicitStart = parseHHMM(b.block.time_start);
+      if (explicitStart != null) {
+        const explicitEnd = parseHHMM(b.block.time_end);
+        b.startMin = explicitStart;
+        b.endMin = (explicitEnd != null && explicitEnd > explicitStart) ? explicitEnd : explicitStart + 60;
       } else {
-        flush();
-        slots.push({ blocks: [{ block: item, idx }] });
+        b.startMin = range[0] + autoIdx * slotDur;
+        b.endMin = range[0] + (autoIdx + 1) * slotDur;
+        autoIdx++;
       }
     });
-    flush();
-    const N = Math.max(slots.length, 1);
-    const total = range[1] - range[0];
-    const slotDur = total / N;
-    const entries = [];
-    slots.forEach((s, sIdx) => {
-      const defStart = range[0] + sIdx * slotDur;
-      const defEnd = range[0] + (sIdx + 1) * slotDur;
-      const M = s.blocks.length;
-      s.blocks.forEach((bw, bi) => {
-        const id = viewBBlockId(weekIdx, dayIdx, laneKey, bw.block, bw.idx);
-        const eff = effectiveBlock(id, bw.block);
-        // Override time_start/time_end if present; else fall back to uniform spread.
-        const ovStart = parseHHMM(eff.time_start);
-        const ovEnd = parseHHMM(eff.time_end);
-        const start = (ovStart != null) ? ovStart : defStart;
-        const end = (ovEnd != null && ovEnd > start) ? ovEnd : (ovStart != null ? ovStart + 60 : defEnd);
-        const widthPct = M > 1 ? (100 / M) : 100;
-        const leftPct = M > 1 ? (bi * widthPct) : 0;
-        const top = (start - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN;
-        const height = (end - start) * VIEW_B_PX_PER_MIN;
-        entries.push({
-          id, block: eff, rawBlock: bw.block, lane: laneKey,
-          slotStart: formatMin(start), slotEnd: formatMin(end),
-          slotTime: `${formatMin(start)}–${formatMin(end)}`,
-          startMin: start, endMin: end,
-          top, height, leftPct, widthPct,
-        });
+
+    // Followers inherit times from their referenced block.
+    const byId = {};
+    blocks.forEach(b => { byId[b.id] = b; });
+    followers.forEach(b => {
+      const ref = byId[b.block.parallel_to];
+      if (ref && ref.startMin != null) {
+        b.startMin = ref.startMin;
+        b.endMin = ref.endMin;
+      } else {
+        // Unresolved — fall back to range start, 60-min duration.
+        b.startMin = range[0];
+        b.endMin = range[0] + 60;
+      }
+    });
+
+    // Group by overlapping time intervals. Sort by startMin (stable on arrayIdx).
+    const sorted = blocks.slice().sort((a, b) => a.startMin - b.startMin || a.arrayIdx - b.arrayIdx);
+    const groups = [];
+    let current = null;
+    sorted.forEach(b => {
+      if (current && b.startMin < current.endMin) {
+        current.blocks.push(b);
+        current.endMin = Math.max(current.endMin, b.endMin);
+      } else {
+        if (current) groups.push(current);
+        current = { blocks: [b], endMin: b.endMin };
+      }
+    });
+    if (current) groups.push(current);
+
+    // Interval-coloring within each group: assign each block the smallest col
+    // index whose previous occupant has already ended.
+    groups.forEach(g => {
+      const colsEnd = []; // end time of last occupant of each column
+      g.blocks.forEach(b => {
+        let col = -1;
+        for (let c = 0; c < colsEnd.length; c++) {
+          if (colsEnd[c] <= b.startMin) { col = c; break; }
+        }
+        if (col === -1) { col = colsEnd.length; colsEnd.push(0); }
+        colsEnd[col] = b.endMin;
+        b.colIdx = col;
       });
-      s.startMin = defStart;
-      s.top = (defStart - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN;
+      g.totalCols = colsEnd.length;
+      g.blocks.forEach(b => { b.totalCols = g.totalCols; });
     });
-    const phaseRows = phaseMarks.map(pm => {
-      const owning = slots[pm.slotAfter];
-      const top = owning ? owning.top : ((range[0] - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN);
-      return { label: pm.label, top };
+
+    // Compute final positions + assemble entries (preserve original array order).
+    blocks.forEach(b => {
+      b.top = (b.startMin - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN;
+      b.height = (b.endMin - b.startMin) * VIEW_B_PX_PER_MIN;
+      b.widthPct = 100 / Math.max(b.totalCols || 1, 1);
+      b.leftPct = (b.colIdx || 0) * b.widthPct;
     });
+    const entries = blocks.map(b => ({
+      id: b.id,
+      block: b.block,
+      lane: b.lane,
+      slotStart: formatMin(b.startMin),
+      slotEnd: formatMin(b.endMin),
+      slotTime: `${formatMin(b.startMin)}–${formatMin(b.endMin)}`,
+      startMin: b.startMin, endMin: b.endMin,
+      top: b.top, height: b.height,
+      leftPct: b.leftPct, widthPct: b.widthPct,
+    }));
+
+    // Phase rows: position at the top of the first block whose arrayIdx > phase's.
+    const phaseRows = phases.map(p => {
+      const next = blocks.find(b => b.arrayIdx > p.arrayIdx);
+      const top = next ? next.top : ((range[0] - VIEW_B_CAL_START) * VIEW_B_PX_PER_MIN);
+      return { label: p.label, top };
+    });
+
     return { entries, phaseRows };
   };
 
-  const am = walk(day.am || [], "am", VIEW_B_AM_RANGE);
-  const pm = walk(day.pm || [], "pm", VIEW_B_PM_RANGE);
+  const am = processLane(day.am || [], "am", VIEW_B_AM_RANGE);
+  const pm = processLane(day.pm || [], "pm", VIEW_B_PM_RANGE);
   return {
     entries: am.entries.concat(pm.entries),
     phaseRows: am.phaseRows.concat(pm.phaseRows),
