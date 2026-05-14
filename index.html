@@ -2300,6 +2300,12 @@ body.view-b-active .view-b {
   color: var(--text-faint);
   margin: 0;
 }
+details.vb-edit-ailoop { gap: 12px; }
+details.vb-edit-ailoop summary { cursor: pointer; list-style: none; padding: 4px 0; }
+details.vb-edit-ailoop summary::-webkit-details-marker { display: none; }
+details.vb-edit-ailoop summary::before { content: "▸"; display: inline-block; margin-right: 8px; color: var(--text-faint); transition: transform 0.12s; }
+details.vb-edit-ailoop[open] summary::before { transform: rotate(90deg); }
+details.vb-edit-ailoop > .vb-edit-row { margin-top: 12px; }
 
 .vb-slides-iframe-wrap {
   position: relative;
@@ -5119,8 +5125,15 @@ function renderViewBEdit(entry) {
     students: joinLines(slide.students),
     facilitator_notes: slide.facilitator || "",
     references: joinLines(slide.references),
+    ai_loop_analog: (block.ai_loop && block.ai_loop.analog) || "",
+    ai_loop_structure: (block.ai_loop && block.ai_loop.structure) || "",
+    ai_loop_output: (block.ai_loop && block.ai_loop.output) || "",
+    ai_loop_final: (block.ai_loop && block.ai_loop.final) || "",
+    ai_loop_reality_check: (block.ai_loop && block.ai_loop.reality_check) || "",
+    ai_loop_uses_prd_lab: !!(block.ai_loop && block.ai_loop.uses_prd_lab),
   };
   VIEW_B_STATE.editDraft = draft;
+  const hasAiLoop = !!block.ai_loop;
 
   const kindOpts = KIND_LEGEND.map(k => `<option value="${k.kind}" ${draft.kind === k.kind ? "selected" : ""}>${escapeText(k.label || k.kind)}</option>`).join("");
   const trackOpts = `<option value="">— none —</option>` + TRACK_LEGEND.map(t => `<option value="${t.track}" ${draft.track === t.track ? "selected" : ""}>${escapeText(t.label || t.track)}</option>`).join("");
@@ -5271,6 +5284,33 @@ function renderViewBEdit(entry) {
         </div>
       </div>
 
+      <details class="vb-edit-section vb-edit-ailoop" ${hasAiLoop ? "open" : ""}>
+        <summary><h4 style="display:inline">AI loop</h4><span class="vb-edit-help" style="margin-left:8px">Fill in only if this block uses AI in a structured way.</span></summary>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Analog input</span>
+          <textarea class="vb-edit-textarea" name="ai_loop_analog" rows="2">${escapeText(draft.ai_loop_analog)}</textarea>
+        </div>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Structure</span>
+          <textarea class="vb-edit-textarea" name="ai_loop_structure" rows="2">${escapeText(draft.ai_loop_structure)}</textarea>
+        </div>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Output (working artifact)</span>
+          <textarea class="vb-edit-textarea" name="ai_loop_output" rows="2">${escapeText(draft.ai_loop_output)}</textarea>
+        </div>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Final output</span>
+          <textarea class="vb-edit-textarea" name="ai_loop_final" rows="2">${escapeText(draft.ai_loop_final)}</textarea>
+        </div>
+        <div class="vb-edit-row">
+          <span class="vb-edit-label">Reality check</span>
+          <textarea class="vb-edit-textarea" name="ai_loop_reality_check" rows="2">${escapeText(draft.ai_loop_reality_check)}</textarea>
+        </div>
+        <div class="vb-edit-row">
+          <label><input type="checkbox" name="ai_loop_uses_prd_lab" ${checked(draft.ai_loop_uses_prd_lab)} /> Uses PRD Lab (prd-lab-production.up.railway.app)</label>
+        </div>
+      </details>
+
     </form>`;
 }
 
@@ -5342,9 +5382,19 @@ function renderViewBOverview(block) {
     ${vbSection("Facilitator notes", slide.facilitator)}
     ${vbSectionList("References", slide.references)}
     ${block.notes_facilitator ? `<div class="vb-detail-divider"></div>${vbSection("Context", block.notes_facilitator)}` : ""}
+    ${block.ai_loop ? renderViewBAiLoop(block.ai_loop) : ""}
     ${activity ? renderViewBActivityFold(activity) : ""}
-    ${hasContent || activity || block.notes_facilitator ? "" : `<div class="vb-panel-body is-muted">No content populated yet — click Edit to add.</div>`}
+    ${hasContent || activity || block.notes_facilitator || block.ai_loop ? "" : `<div class="vb-panel-body is-muted">No content populated yet — click Edit to add.</div>`}
   `;
+}
+
+function renderViewBAiLoop(loop) {
+  const labelMap = { analog: "Analog input", structure: "Structure", output: "Output", final: "Final", reality_check: "Reality check" };
+  const rows = Object.keys(labelMap).map(k => loop[k] ? vbSection(labelMap[k], loop[k]) : "").join("");
+  const lab = loop.uses_prd_lab ? `<div class="vb-panel-body">Uses PRD Lab — <code>prd-lab-production.up.railway.app</code></div>` : "";
+  return `<div class="vb-detail-divider"></div>
+    <div class="vb-panel-section"><div class="vb-panel-label">AI loop</div>${lab}</div>
+    ${rows}`;
 }
 
 function renderViewBActivityFold(activity) {
@@ -5649,6 +5699,17 @@ function wireViewBEvents() {
     // List fields from textareas (split on newlines).
     patch.feeds_into       = parseLines(fd.get("feeds_into"));
     patch.success_criteria = parseLines(fd.get("success_criteria"));
+    // AI loop — assemble nested object; null if every field is empty + checkbox is off.
+    const aiPatch = {
+      analog:        (fd.get("ai_loop_analog")        || "").toString().trim() || null,
+      structure:     (fd.get("ai_loop_structure")     || "").toString().trim() || null,
+      output:        (fd.get("ai_loop_output")        || "").toString().trim() || null,
+      final:         (fd.get("ai_loop_final")         || "").toString().trim() || null,
+      reality_check: (fd.get("ai_loop_reality_check") || "").toString().trim() || null,
+      uses_prd_lab:  !!fd.get("ai_loop_uses_prd_lab"),
+    };
+    const aiHasContent = aiPatch.analog || aiPatch.structure || aiPatch.output || aiPatch.final || aiPatch.reality_check || aiPatch.uses_prd_lab;
+    patch.ai_loop = aiHasContent ? aiPatch : null;
     // Slide sub-object (foundation, students, facilitator, references).
     const slidePatch = {
       foundation: (fd.get("foundation") || "").toString().trim(),
