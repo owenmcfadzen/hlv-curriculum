@@ -2613,6 +2613,7 @@ const SCHEDULE = {
             { label: "Entrepreneurship intro", kind: "work" },
             { label: "Alumni: Orient", kind: "work", sub: "Why You're Back · pick specialty",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-mon-am-entrepreneurship-intro",
+              time_start: "10:30", time_end: "11:15",
               slide: {
                 status: "draft",
                 foundation: "Pulled during the Entrepreneurship intro. This block is the brief for the Week 1 alumni arc plus a specialty pick. By end of block, every alumnus knows which specialty they're delivering on Wk2 Tuesday.",
@@ -2655,6 +2656,7 @@ const SCHEDULE = {
             { label: "M: Opportunity ID", kind: "module" },
             { label: "Alumni: Anchor", kind: "work", sub: "Read your LPP slide",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-tue-am-m-opportunity-id",
+              time_start: "09:45", time_end: "10:45",
               slide: {
                 status: "draft",
                 foundation: "Pulled during M: Opportunity ID. Read the actual LPP slide for your chosen specialty. Pin down the vocabulary, the framing questions, and what \"expert\" looks like for the track you picked.",
@@ -2677,6 +2679,7 @@ const SCHEDULE = {
             { label: "M: Problem validation", kind: "module" },
             { label: "Alumni: Deepen 1", kind: "work", sub: "AI-assisted research → Specialist Brief v1",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-tue-pm-m-problem-validation",
+              time_start: "15:00", time_end: "16:00",
               slide: {
                 status: "draft",
                 foundation: "Pulled during M: Problem validation. Laptops out. Research the intersection of your specialty and this year's Sonae challenge. By end of block, every alumnus has a one-page Specialist Brief v1 in their own words.",
@@ -2700,6 +2703,7 @@ const SCHEDULE = {
             { label: "M: Solutions", kind: "module" },
             { label: "Alumni: Deepen 2", kind: "work", sub: "Pressure-test + rewrite brief",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-wed-am-m-solutions",
+              time_start: "09:36", time_end: "10:36",
               slide: {
                 status: "draft",
                 foundation: "Pulled during M: Solutions. F2 pressure-tests each Specialist Brief — where's the hand-wave, where's the borrowed phrase, where's the part you can't defend. One rewrite pass produces v2.",
@@ -2732,6 +2736,7 @@ const SCHEDULE = {
             { label: "Pitch prep", kind: "work" },
             { label: "Alumni: Rehearse", kind: "work", sub: "First teach-back · F2 owns room",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-thu-am-pitch-prep",
+              time_start: "09:45", time_end: "10:30",
               slide: {
                 status: "draft",
                 foundation: "Pulled during student pitch prep. First full teach-back of the Specialist Brief — 5 minutes each, to the alumni cohort and F2. Hard feedback. The brief gets one more refine overnight. Runs parallel to the student pitch prep — F2 owns the alumni room.",
@@ -2780,6 +2785,7 @@ const SCHEDULE = {
             { label: "Team allocation", kind: "work" },
             { label: "Alumni: Run", kind: "work", sub: "Dress rehearsal of Wk2 intro",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-fri-pm-team-allocation",
+              time_start: "14:00", time_end: "15:00",
               slide: {
                 status: "draft",
                 foundation: "Pulled during Team allocation. Final pass at the actual Wk2 Tuesday introduction — not a rehearsal of a rehearsal, the real thing one day early. By Monday every alumnus is delivering, not learning.",
@@ -4732,9 +4738,10 @@ function computeDayCalendar(day, weekIdx, dayIdx) {
       blocks.push({ id, block: eff, lane: laneKey, arrayIdx: idx });
     });
 
-    // Anchor blocks first — those WITHOUT parallel_to.
-    const anchors = blocks.filter(b => !b.block.parallel_to);
-    const followers = blocks.filter(b => b.block.parallel_to);
+    // Anchor blocks first — those WITHOUT parallel_to, plus any block with an
+    // explicit time_start (explicit always wins over inheritance).
+    const anchors = blocks.filter(b => !b.block.parallel_to || parseHHMM(b.block.time_start) != null);
+    const followers = blocks.filter(b => b.block.parallel_to && parseHHMM(b.block.time_start) == null);
 
     // Among anchors: split into explicit-time and auto-positioned.
     const autoAnchors = anchors.filter(b => parseHHMM(b.block.time_start) == null);
