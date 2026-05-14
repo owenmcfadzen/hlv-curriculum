@@ -3037,21 +3037,11 @@ const SCHEDULE = {
           name: "Tue",
           am: [
             { label: "Welcome", kind: "welcome", sub: "Morning check-in",
-              time_start: "09:00", time_end: "09:30",
+              time_start: "09:00", time_end: "09:15",
               audiences: ["student", "alumni"]
             },
-            { label: "Team Alignment / Team Teaches", kind: "teamteach", sub: "Specialists report back, team integrates",
-              time_start: "09:30", time_end: "11:00",
-              audiences: ["student", "alumni"]
-            },
-            { label: "Team work session", kind: "work", sub: "Integrate specialty findings into shared frame",
-              time_start: "11:00", time_end: "12:30",
-              audiences: ["student", "alumni"]
-            },
-          ],
-          pm: [
             { label: "Product: deep user journey", kind: "track", track: "product",
-              time_start: "13:30", time_end: "14:30",
+              time_start: "09:15", time_end: "11:00",
               audiences: ["student", "alumni"],
               ai_loop: {
                 analog: null,
@@ -3063,27 +3053,33 @@ const SCHEDULE = {
               }
             },
             { label: "Business: Biz Model Canvas", kind: "track", track: "business",
-              time_start: "13:30", time_end: "14:30",
+              time_start: "09:15", time_end: "11:00",
               audiences: ["student", "alumni"]
             },
             { label: "Market: Design Experiments", kind: "track", track: "market",
-              time_start: "13:30", time_end: "14:30",
+              time_start: "09:15", time_end: "11:00",
               audiences: ["student", "alumni"]
             },
+            { label: "Team Alignment", kind: "teamteach", sub: "Lock the team frame before market validation",
+              time_start: "11:00", time_end: "12:00",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Team Synthesis", kind: "teamteach", sub: "Quick integration before lunch",
+              time_start: "12:00", time_end: "12:30",
+              audiences: ["student", "alumni"]
+            },
+          ],
+          pm: [
             { label: "Out in Market", kind: "work", sub: "Teams leave the facility to validate with real users",
-              time_start: "14:30", time_end: "17:30",
+              time_start: "13:30", time_end: "16:00",
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
-                foundation: "First Out in Market field session. Teams leave the facility cleanly after the specialty columns end at 14:30. Three full hours in the wild gathering real signal from users."
+                foundation: "First Out in Market field session. 2.5 hours in the wild gathering real signal from users."
               }
             },
-            { label: "Reality Check", kind: "rc", sub: "What did the market tell us?",
-              time_start: "17:30", time_end: "18:00",
-              audiences: ["student", "alumni"]
-            },
-            { label: "Debrief: Team Processes Feedback", kind: "work",
-              time_start: "18:00", time_end: "18:30",
+            { label: "Out in Market Debrief", kind: "rc", sub: "Reality Check + team debrief — back at our location",
+              time_start: "16:00", time_end: "17:00",
               audiences: ["student", "alumni"]
             },
           ],
