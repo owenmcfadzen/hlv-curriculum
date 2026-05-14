@@ -2863,67 +2863,8 @@ const SCHEDULE = {
               time_start: "09:00", time_end: "09:30",
               audiences: ["student", "alumni"]
             },
-            { label: "Team prep for Phase 1", kind: "work", sub: "What does your team need each specialty to bring back?",
-              time_start: "09:30", time_end: "10:30",
-              audiences: ["student", "alumni"],
-              slide: {
-                status: "draft",
-                foundation: "Before specialists peel off into Phase 1, the team aligns on what they need from each specialty. Each specialist takes one prompt from their team into their breakout. Sets up the Team Teach hinge to be a real synthesis, not a download.",
-                students: [
-                  "10 min: each team lists the three things they most need to know from Product, Business, Market.",
-                  "Specialists pick the single prompt they'll carry into their breakout.",
-                  "Write each prompt on the team's shared Phase-1 brief — it's what Team Teach lands against."
-                ],
-                facilitator: "Don't let teams pick generic prompts. Push for specifics: \"what's the risky assumption you most want tested?\" If the prompt would apply to any startup, it's not specific enough.",
-                references: ["April 29 audio walk · Phase 1 / Team Teach synthesis", "Team Teach (synthesis hinge) block"]
-              }
-            },
-            { groupLabel: "PHASE 1 · RECONNAISSANCE" },
-            { label: "Landscape Map", kind: "track", track: "market", code: "M1", time_start: "10:30", time_end: "12:00",
-              notes_facilitator: "Lead facilitator opens M1 at 10:30 (5 min intro), then moves to B1 at 10:45, then P1 at 11:00. M1 specialists work the full 90 minutes."
-            },
-            { label: "The Case", kind: "track", track: "business", code: "B1", time_start: "10:30", time_end: "12:00",
-              notes_facilitator: "Lead facilitator opens B1 at 10:45 after introducing M1. B1 specialists wait 15 min after 10:30 — use it to read alumni Anchor brief. Work full block after intro."
-            },
-            { label: "Solution Blueprint", kind: "track", track: "product", code: "P1", time_start: "10:30", time_end: "12:00",
-              notes_facilitator: "Lead facilitator opens P1 at 11:00. P1 specialists wait 30 min — use it to absorb what M1 and B1 are surfacing in their rooms (low-stakes observation). Then full block."
-            },
           ],
-          amSub: "30-min intro stagger",
-          pm: [
-            { label: "Team Teach (synthesis hinge)", kind: "teamteach", time_start: "13:00", time_end: "14:00",
-              slide: {
-                status: "ready",
-                foundation: "The synthesis hinge. Each specialist returns to their team and teaches what they found. This is where Phase 1 (reconnaissance) becomes Phase 2 (build) — the team can only scope what they understand, and they can only understand what's been taught back.",
-                students: [
-                  "5 minutes: walk your team through your artifact (P1 / B1 / M1).",
-                  "10 minutes: the hardest decision you made and why.",
-                  "10 minutes: what you need from your teammates — they bring qualifying questions.",
-                ],
-                facilitator: "This is teach-back, not show-and-tell. The \"what I need from you\" prompt is what makes it work — easy to lose. Coach teams to ask hard questions, not polite ones. The team's Phase 2 quality depends on this 25 minutes landing.",
-                references: ["Team Teach mechanic — see §3, layer 05", "5/10/10 brief"],
-              }
-            },
-            { groupLabel: "PHASE 2 · BUILD & SCOPE" },
-            { label: "MVP Scoping", kind: "track", track: "product", code: "P2", time_start: "14:00", time_end: "15:30" },
-            { label: "Canvas Lite", kind: "track", track: "business", code: "B2", time_start: "14:00", time_end: "15:30" },
-            { label: "Team validation huddle", kind: "work", sub: "What do we need to validate Wednesday?",
-              time_start: "15:30", time_end: "15:45", audiences: ["student", "alumni"], force_full_width: true,
-              slide: {
-                status: "draft",
-                foundation: "Mid-block pause in Phase 2. Each team's three specialists (P + B + M) huddle for 15 min. P2 and B2 surface what they need tested; M2 redesigns the validation protocol in response. Turns parallel work into a shared brief instead of three silos.",
-                students: [
-                  "P + B: name the two riskiest assumptions you'd want tested overnight.",
-                  "M: write down what you'd need from each side to design a clean test.",
-                  "Reconvene for 5 min — agree the shared brief; M2 rewrites the protocol from there."
-                ],
-                facilitator: "Hard time-box at 15 min. Don't let it slide into a full team meeting — the point is a focused handoff to M2.",
-                references: ["April 29 audio walk · Phase 2 dependencies", "M2 Validation Design worksheet"]
-              }
-            },
-            { label: "Validation Design", kind: "track", track: "market", code: "M2", time_start: "14:00", time_end: "16:30" },
-          ],
-          pmSub: "Mid-block team huddle",
+          pm: [],
         },
         {
           name: "Wed",
@@ -2932,10 +2873,6 @@ const SCHEDULE = {
               time_start: "09:00", time_end: "09:30",
               audiences: ["student", "alumni"]
             },
-            { groupLabel: "PHASE 3 · BUILD & PLAN" },
-            { label: "Prototype Build", kind: "track", track: "product", code: "P3", time_start: "09:30", time_end: "12:00" },
-            { label: "100-Day Plan", kind: "track", track: "business", code: "B3", time_start: "09:30", time_end: "12:00" },
-            { label: "First Moves", kind: "track", track: "market", code: "M3", time_start: "09:30", time_end: "12:00" },
           ],
           pm: [
             { label: "Sponsor feedback", kind: "panel" },
