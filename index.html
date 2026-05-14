@@ -3088,45 +3088,45 @@ const SCHEDULE = {
           name: "Wed",
           am: [
             { label: "Welcome", kind: "welcome", sub: "Morning check-in",
-              time_start: "09:00", time_end: "09:30",
+              time_start: "09:00", time_end: "09:15",
               audiences: ["student", "alumni"]
             },
             { label: "Sponsor Feedback Sessions", kind: "sponsor", sub: "Sponsor reviews team work in progress",
-              time_start: "09:30", time_end: "11:30",
+              time_start: "09:15", time_end: "10:00",
               audiences: ["student", "alumni"]
             },
-            { label: "Team Alignment (structure) / Team", kind: "teamteach",
-              time_start: "11:30", time_end: "12:30",
+            { label: "Team Alignment", kind: "teamteach", sub: "Integrate sponsor input",
+              time_start: "10:00", time_end: "10:45",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Product", kind: "track", track: "product",
+              time_start: "10:45", time_end: "12:30",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Business", kind: "track", track: "business",
+              time_start: "10:45", time_end: "12:30",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Market", kind: "track", track: "market",
+              time_start: "10:45", time_end: "12:30",
               audiences: ["student", "alumni"]
             },
           ],
           pm: [
-            { label: "Product", kind: "track", track: "product",
-              time_start: "13:30", time_end: "14:30",
-              audiences: ["student", "alumni"]
-            },
-            { label: "Business", kind: "track", track: "business",
-              time_start: "13:30", time_end: "14:30",
-              audiences: ["student", "alumni"]
-            },
-            { label: "Market", kind: "track", track: "market",
-              time_start: "13:30", time_end: "14:30",
+            { label: "Team Alignment", kind: "teamteach", sub: "Lock the frame before going to market",
+              time_start: "13:30", time_end: "14:00",
               audiences: ["student", "alumni"]
             },
             { label: "Out in Market", kind: "work",
-              time_start: "14:30", time_end: "17:30",
+              time_start: "14:00", time_end: "16:00",
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
-                foundation: "Second Out in Market field session. Teams leave the facility cleanly after the specialty columns end at 14:30. By now teams have a sharper validation protocol and a clearer set of unknowns from the first field trip."
+                foundation: "Second Out in Market field session. 2 hours in the field — sharper validation protocol after the first trip."
               }
             },
-            { label: "Reality Check", kind: "rc",
-              time_start: "17:30", time_end: "18:00",
-              audiences: ["student", "alumni"]
-            },
-            { label: "Debrief: Team Processes Feedback", kind: "work",
-              time_start: "18:00", time_end: "18:30",
+            { label: "Out in Market Debrief", kind: "rc", sub: "Reality Check + team debrief — back at our location",
+              time_start: "16:00", time_end: "17:00",
               audiences: ["student", "alumni"]
             },
           ],
