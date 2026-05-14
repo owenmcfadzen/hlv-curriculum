@@ -2956,24 +2956,43 @@ const SCHEDULE = {
               time_start: "09:00", time_end: "09:30",
               audiences: ["student", "alumni"]
             },
+            { label: "Sponsor Feedback Sessions", kind: "sponsor", sub: "Sponsor reviews team work in progress",
+              time_start: "09:30", time_end: "11:30",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Team Alignment (structure) / Team", kind: "teamteach",
+              time_start: "11:30", time_end: "12:30",
+              audiences: ["student", "alumni"]
+            },
           ],
           pm: [
-            { label: "Sponsor feedback", kind: "panel" },
-            { label: "Guest perspective", kind: "panel" },
-            { label: "Team integration (P + B)", kind: "work" },
-            { label: "RC: Market executes", kind: "rc", sub: "interviews + survey · async overnight",
+            { label: "Product", kind: "track", track: "product",
+              time_start: "13:30", time_end: "14:30",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Business", kind: "track", track: "business",
+              time_start: "13:30", time_end: "14:30",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Market", kind: "track", track: "market",
+              time_start: "13:30", time_end: "14:30",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Out in Market", kind: "work",
+              time_start: "13:30", time_end: "16:30",
+              audiences: ["student", "alumni"], force_full_width: true,
               slide: {
-                status: "ready",
-                foundation: "The big Reality Check. Market specialists run the field test — interviews and survey designed in M2 — to validate the team's hypotheses. Async overnight means the team comes in Thursday morning to data, not opinions. The principle: the market doesn't lie if you ask it the right questions.",
-                students: [
-                  "Market specialists: deploy the validation design from M2 — interviews, survey, observation.",
-                  "Use the shared Field Kit: every team's risky-est question consolidated.",
-                  "Capture raw — quotes verbatim, numbers exact. Resist analyzing in the field.",
-                  "Survey runs overnight; team consumes findings Thu AM.",
-                ],
-                facilitator: "Market specialists own this. Other tracks support — go with them, don't dilute the market's lead. Hard rule from M2: never describe your product. Past tense, not future. Watch for teams who came back with \"everyone loved it\" — that's a sign they led the witness.",
-                references: ["M2 Validation Design (worksheet)", "Shared Field Kit — combined questions", "Reality Check tier scoring decision — see §4"],
+                status: "draft",
+                foundation: "Second Out in Market field session. Same pattern as Tuesday — teams leave during the specialty columns to validate further. By now teams have a sharper validation protocol and a clearer set of unknowns from the first field trip."
               }
+            },
+            { label: "Reality Check", kind: "rc",
+              time_start: "16:30", time_end: "17:00",
+              audiences: ["student", "alumni"]
+            },
+            { label: "Debrief: Team Processes Feedback", kind: "work",
+              time_start: "17:00", time_end: "17:30",
+              audiences: ["student", "alumni"]
             },
           ],
         },
