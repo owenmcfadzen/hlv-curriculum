@@ -1,0 +1,15 @@
+{
+  "name": "hlv-curriculum-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HLV curriculum workbench — single-file HTML viewer + planning tool.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "sync": "node tools/sync-server.mjs",
+    "validate": "node tools/validate.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
