@@ -3,91 +3,150 @@
 Running scratchpad of items where Cowork hit a decision that should not be made unilaterally. Owen triages.
 
 Created: 2026-05-15
-Last update: 2026-05-15 (Phase 1: ADAPT vocab + working agreement)
+Last update: 2026-05-15 (post overnight run, flushed)
 
 ---
 
-## Resolved (kept here for audit trail)
+## Overnight commit log
 
-### ADAPT vs. the canonical micro-cycle — RESOLVED
+Owen: commit these in order when you wake up. Each is staged on disk, ready for `git add` + `git commit` + `git push`. Validate before each.
 
-- **Decision**: ADAPT (Analog → Dialogue → Adjust → Produce → Test) is the locked student-facing brand. `ai_loop` fields keep the canonical Stacey names (analog / structure / output / final / reality_check). Mapping documented in the AI tooling block's notes.
-- **Action item for Owen**: discuss the mnemonic with Stacey on Monday. ADAPT one-pager needs creation before delivery (referenced as TBD in the AI tooling block).
+1. [ ] **Commit 5: `content: Wk1 Tue (problems, modules, panels)`**
+   - Files touched: index.html, data/needs-owen.md
+   - Notable: 10 blocks. Swag pitch gets first solo `ai_loop` per Owen's brief. Game slot uses Go Bananas (post-lunch energizer). Customer panelists carry through Mon PM → Tue AM → Tue PM (same people, third encounter).
+
+2. [ ] **Commit 6: `content: Wk1 Wed (solutions, top solutions, pitch prep)`**
+   - Files touched: index.html
+   - Notable: 11 blocks. Problem Reframing (Notion gold) carries the morning. Pitch template + prep set up Thu's RC: Pitch speed dating (already ready).
+
+3. [ ] **Commit 7: `content: Wk1 Thu/Fri (pitches, voting, allocation)`**
+   - Files touched: index.html
+   - Notable: 14 blocks. Three Pitches blocks Thu (AM + PM x2) deliberately differentiated by audience tier (peers / mentors-staff / external-alumni-sponsor). Fri AM populates 3-tracks intro → Repitch the 5 → Preferences pipeline. Dinner + External team activity already drafted, left alone.
+
+4. [ ] **Commit 8: `content: Wk1 Mon PM remaining + Wk1 remaining Welcome/Game blocks`**
+   - Files touched: index.html
+   - Notable: Wk1 Mon PM 5 blocks (Challenge Q&A, Game, Customer panel, Debrief: problems, Swag challenge intro). All other Welcome/Game blocks across Wk1 already drafted in prior commits. Alumni Wk1 arc untouched (already drafted).
+
+5. [ ] **Commit 9: `docs: session-summary-2026-05-15 + final needs-owen.md flush + cleanup`**
+   - Files touched: data/needs-owen.md, data/session-summary-2026-05-15.md (new), data/block-drafts/ deletions
+   - Notable: Session summary covers full overnight run. Cleanup: `git rm data/block-drafts/w2-fri-pm-final-pitches.md` (explicitly superseded). Other block-drafts can also be removed at Owen's discretion (see session summary).
+
+After all 5 commits land:
+```bash
+git push
+```
+
+---
+
+## Open items — by priority
+
+### P0 — block delivery prep (sponsor confirms by 8 Jun hard floor)
+
+**1. Sponsor selection** (Sonae vs. JdM)
+- Status: hard floor 8 Jun.
+- Used as `[SPONSOR — TBD between Sonae and JdM, hard floor 8 Jun]` placeholder in references throughout. ~6 blocks reference the placeholder.
+- Action: confirm sponsor, replace placeholder via global find/replace.
+
+**2. Customer panelist recruitment**
+- Status: 4 panel encounters across Wk1 reference `[CUSTOMER PANELISTS — TBD]`.
+- Same panelists across all 4 (Mon PM Customer panel, Tue AM Revisit panel, Tue PM Panel: validation, Wed PM Panel: solution validation).
+- Action: confirm recruitment + brief.
+
+### P1 — block facilitator prep
+
+**3. Guest: Product** (Wk2 Mon AM 11:15-12:00)
+- Status: [INVENTED] foundation, guest TBD.
+- Drafted angle: product practitioner who runs an ADAPT-style loop in their day job. Focus on the Adjust step (pushing back on AI).
+- Action: confirm guest, name in references, possibly tweak framing.
+
+**4. Guest: How to pitch** (Wk2 Thu AM 11:00-12:00)
+- Status: [INVENTED] foundation, guest TBD.
+- Drafted angle: pitch coach. Focus on opens, anti-patterns, "one thing they wish more pitches answered."
+- Action: confirm guest, name in references, possibly tweak angle.
+
+**5. Guest: valuable idea?** (Wk1 Wed AM 11:00-11:30)
+- Status: [INVENTED] foundation, guest TBD.
+- Drafted angle: practitioner on "interesting vs. valuable" distinction. 30 min. Focus on failure-mode stories.
+- Action: confirm guest, name in references.
+
+**6. ADAPT methodology one-pager** — needs creation before delivery
+- Status: TBD, referenced in 4 blocks (Mon AM AI tooling, Tue AM Swag pitch, Wk2 Mon AM Week 2 Flow, Wk2 Thu PM Narrative Time).
+- Action: write a one-page student handout that introduces ADAPT (Analog/Dialogue/Adjust/Produce/Test) with the canonical mapping note for facilitators.
+
+### P2 — content surface alignment
+
+**7. Notion "HLV Curriculum — Active Design" page** still says "GTM"
+- Status: stale (last updated April 21).
+- PROJECT.md retired GTM in favor of Market. Workbench schema and SCHEDULE both use Market.
+- Action: update Notion page (5 min edit). Onboarding doc for new Claude instances.
+
+**8. ADAPT vs. canonical micro-cycle** — for Stacey discussion Monday
+- Status: locked decision but worth confirming with Stacey.
+- Decision: ADAPT (Analog/Dialogue/Adjust/Produce/Test) is the student-facing brand. ai_loop fields keep canonical Stacey names (analog/structure/output/final/reality_check).
+- Mapping documented in AI tooling block notes + STANDARDS.md.
+- Action: Stacey conversation Monday. If she pushes back, the rename is reversible.
+
+### P3 — deferred workstreams
+
+**9. Schema rename for `ai_loop` field semantics**
+- Status: deferred per Owen's decision #3.
+- Issue: `output: "The working artifact"` field receives process-language ("Iterate with AI until the pitch sounds like you"). Reads weird.
+- Action: separate schema rename workstream, post-Monday.
+
+### P4 — verifications (low urgency)
+
+**10. Audience tier scoring decision** (Wk1 Thu pitches)
+- Status: drafted the 3 Pitch rounds as escalating audience tiers (cohort peers → mentors/staff → external/alumni/sponsor) per contextual logic.
+- The existing `ready` RC block references "Audience tier scoring decision — see §4" but §4 isn't accessible to Cowork.
+- Action: verify tier composition matches actual scoring methodology.
+
+**11. Customer panelist continuity** (Wk1 panel encounters)
+- Status: drafted on assumption that same panelists carry through 4 encounters (Mon PM → Tue AM → Tue PM → Wed PM).
+- Action: confirm with whoever recruits panelists.
+
+---
+
+## Resolved (audit trail)
+
+### ADAPT vs. canonical micro-cycle — RESOLVED
+
+- **Decision (2026-05-15)**: ADAPT is the locked student-facing brand. ai_loop fields keep canonical Stacey names. Mapping documented.
 
 ### Specialty track names — RESOLVED (action remains)
 
-- **Decision**: Market (per PROJECT.md, confirmed). All slide content uses Market.
-- **Action item for Owen**: update the Notion "HLV Curriculum — Active Design" page from "GTM" to "Market" post-Monday. Onboarding doc for new Claude instances.
+- **Decision (2026-05-15)**: Market (per PROJECT.md, confirmed). All slide content uses Market.
+- **Action item**: update Notion Active Design page (item #7 above).
 
 ### Working agreement — RESOLVED
 
-- **Decision**: lives as a single student bullet in Entrepreneurship intro (BE PRESENT, EXPRESS POV, WRITE INSIGHTS, OPEN-MINDED, MOVE FORWARD WITH CONSENSUS, plus ELMO). Also produce as a physical wall artifact at the venue per the block's notes.
+- **Decision (2026-05-15)**: lives as a single student bullet in Entrepreneurship intro (BE PRESENT, EXPRESS POV, WRITE INSIGHTS, OPEN-MINDED, MOVE FORWARD WITH CONSENSUS, plus ELMO). Also produce as a physical wall artifact at the venue.
+
+### Specialty round labels (rename mismatch) — RESOLVED
+
+- **Decision (2026-05-15)**: Option A. Schedule blocks adopt ACTIVITIES names. P3=Prototype Spec Sheet, B1=Canvas Lite, B2=Back-of-Napkin Economics. The 3 stated rename mismatches in Owen's brief came from stale `blocks-needing-content.md`.
+- **Action item**: none (resolved by following ACTIVITIES truth).
+
+### Specialty round display labels (code duplication bug) — RESOLVED
+
+- **Decision (2026-05-15)**: stripped `code · ` prefix from labels (e.g., "P1 · Solution Blueprint" → "Solution Blueprint"). Code field stays for grid badge linkage. Cleaner data/display separation.
+
+### Notes UI scope (edit/delete) — RESOLVED
+
+- **Decision (2026-05-15)**: append-only insufficient for Stacey's collaborative use. Edit + delete shipped. Author preserved across edits. ts updates. `edited: true` flag added.
+
+### Migration timestamp future-dating bug — RESOLVED
+
+- **Decision (2026-05-15)**: backdated migration ts from `22:00:00Z` to `18:00:00Z` so future edits sort newer.
+- **Standard**: new notes use realistic current ts (`2026-05-15T22:30:00Z` for this session). Documented in STANDARDS.md.
+
+### Empty-state notes affordance — RESOLVED
+
+- **Decision (2026-05-15)**: subtle `+ Add note` button on every block (no notes section header until first note). Click expands inline form. Submit transitions block to populated state.
 
 ---
 
-## Schema / workbench
+## Companion files
 
-### `ai_loop.output` field semantics
-
-- **Status**: deferred per Owen's call (decision #3).
-- **Issue**: Schema field description says `output: "The working artifact"`. Owen's brief mapping puts process-language ("Iterate with AI until the pitch sounds like you") into this field. Reads weird.
-- **What I did**: populated as Owen specified, flagged in block notes.
-- **Decision needed**: separate schema rename workstream, post-Monday.
-
-### Track block labels — RENAME during priority batch (BLOCKED on name discrepancy)
-
-- **Status**: blocked, needs Owen call before priority batch can proceed.
-- **Original decision (Owen's #5)**:
-  - Product: Solution Blueprint → MVP Scoping → **Prototype Build** (Mon PM / Tue AM / Wed AM Wk2)
-  - Business: **The Case** → **Canvas Lite** → 100-Day Plan
-  - Market: Landscape Map → Validation Design → First Moves
-- **Discrepancy discovered (2026-05-15 priority batch prep)**: 3 of the 9 names don't match the actual built worksheets in `ACTIVITIES`.
-
-| Code | Owen's stated rename | Actual `ACTIVITIES.name` |
-|---|---|---|
-| P1 | Solution Blueprint | Solution Blueprint ✓ |
-| P2 | MVP Scoping | MVP Scoping ✓ |
-| P3 | Prototype Build | **Prototype Spec Sheet** |
-| B1 | The Case | **Canvas Lite** |
-| B2 | Canvas Lite | **Back-of-Napkin Economics** |
-| B3 | 100-Day Plan | The 100-Day Plan ✓ |
-| M1 | Landscape Map | Landscape Map ✓ |
-| M2 | Validation Design | Validation Design ✓ |
-| M3 | First Moves | First Moves ✓ |
-
-- **Root cause**: Owen's stated rename list came from the stale `blocks-needing-content.md` (generated 2026-05-01 from a stale blocks-index). `ACTIVITIES` is the current truth.
-- **What I did**: paused the priority batch. Did NOT apply mismatched names. Need Owen to decide:
-  - **Option A**: keep ACTIVITIES names as-is (P3=Prototype Spec Sheet, B1=Canvas Lite, B2=Back-of-Napkin Economics). Schedule blocks adopt these labels via `code` linkage.
-  - **Option B**: rename ACTIVITIES worksheets to match Owen's intent (P3→Prototype Build, B1→The Case, B2→Canvas Lite). This is a content edit on the worksheets, not just labels.
-  - **Option C**: keep ACTIVITIES names AND keep generic schedule block labels (no rename), let students discover worksheet names when they open them.
-- **Recommendation**: Option A. The worksheets are built and the names are in the wireframes. Renaming them mid-flight creates churn.
-
----
-
-## Sponsor / guest format
-
-### Guest: Product (Wk2 Mon AM)
-
-- **Status**: [INVENTED] foundation, needs guest selection.
-- **Block**: `Wk2 Mon AM` 11:15-12:00, 45 min.
-- **What I did**: drafted a generic "guest practitioner from a product role talks about their working process, focus on the Adjust step" framing. Format spec: 5 min intro, 20 min talk, 20 min Q&A. Pre-brief asks the guest to speak about real working process, not portfolio.
-- **What's needed from Owen**: confirm guest, name in references, possibly tweak framing if guest's actual angle is different.
-
-### Guest: How to pitch (Wk2 Thu AM)
-
-- **Status**: [INVENTED] foundation, needs guest selection.
-- **Block**: `Wk2 Thu AM` 11:00-12:00, 60 min.
-- **What I did**: drafted a generic "pitch coach who pitches for a living" framing. Angle: opens, anti-patterns, "one thing they wish more pitches answered." Format spec: 25 min talk, 25 min Q&A. Pre-brief asks the guest to focus on what students can apply tomorrow, not theory.
-- **What's needed from Owen**: confirm guest, name in references, possibly tweak angle if their natural pitch is different.
-
----
-
-## 2026 blocks without 2025 source AND no obvious draft path
-
-(Empty — flag here as encountered during weekend run)
-
----
-
-## Other ambiguities
-
-(Empty — flag here as encountered during weekend run)
+- `data/STANDARDS.md` — locked content standards (voice, field shape, ai_loop, em-dash rule, emoji rule, drafted/INVENTED tagging)
+- `data/session-summary-2026-05-15.md` — full overnight run summary (block counts, commits, patterns, triage order)
+- `block-drafts/*.md` — superseded but retained for reference. Removable per session summary §"Anything skipped or flagged for next iteration".
