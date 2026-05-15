@@ -3371,11 +3371,49 @@ const SCHEDULE = {
           am: [
             { label: "Welcome", kind: "welcome",
               time_start: "09:00", time_end: "09:30",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Day 6 opener. Welcome them back from the weekend. Quick energy check, frame Week 2 as the build week. Different shape than Week 1: teams now lock and ship.",
+                students: [
+                  "Take your seat with your team for the first time.",
+                  "Name one thing you noticed about your project over the weekend.",
+                  "Quick walk through the Week 2 shape: Mon SA spine, Tue/Wed specialty rounds + Out in Market, Thu LPP, Fri pitches."
+                ],
+                facilitator: "30 min. 5 min welcome back plus energy check, 10 min team-seating shuffle (first time at team tables), 15 min Week 2 shape walkthrough. Different posture than Week 1: less individual ideation, more team execution. The PRD walkthrough comes next block, this is just orientation.",
+                references: [
+                  "Participant Expectations (Notion: Knowledge)",
+                  "Four Circles (Notion: Knowledge / Template)",
+                  "Wk2 schedule overview (this view)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Templated from Wk1 Mon AM Welcome pattern. Adjusted for Week 2 reset framing (returning from weekend, team-first vs. individual)." }
+                ]
+              }
             },
             { label: "Week 2 Flow (PRD)", kind: "lpp", sub: "How the week works, PRD walkthrough",
               time_start: "09:30", time_end: "10:30",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Walk students through the Week 2 process: SA spine to specialty rounds to Out in Market to LPP. Introduce PRD Lab as the working tool for Product specialty work. Frame ADAPT as the methodology for everything that follows.",
+                students: [
+                  "See the Week 2 process diagram. Discover, Refine, Develop, Define.",
+                  "Walk through what's expected at each step (SA / specialty / OOM / LPP).",
+                  "PRD Lab demo: how to upload analog inputs and get structured output.",
+                  "Confirm your team has access. Test login."
+                ],
+                facilitator: "60 min. 15 min Week 2 process diagram (Discover/Refine/Develop/Define lifted from Day 6 deck), 15 min ADAPT recap (Mon AM Wk1 reminder, lock the 5 letters), 20 min PRD Lab demo plus team login test, 10 min Q&A. Output: every team has PRD Lab access confirmed. Don't skip the login test. Blockers surface here, not Mon PM.",
+                references: [
+                  "HLV Curriculum: Active Design (Notion: canonical micro-cycle)",
+                  "Lean Product Plan (Notion: Knowledge / Foundation)",
+                  "PRD Lab (prd-lab-production.up.railway.app)",
+                  "ADAPT methodology one-pager (TBD: needs creation before delivery)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Notion source: Lean Product Plan entry plus the canonical micro-cycle from Active Design. ADAPT recap callback to Mon AM Wk1 introduces continuity. PRD Lab login test is a deliberate gate so blockers surface in this block, not Mon PM specialty work." }
+                ]
+              }
             },
             { label: "SA2.5 · Realigning around customer journey", kind: "work", sub: "Re-anchor on the user experience after weekend gap",
               time_start: "10:30", time_end: "11:15",
@@ -3401,7 +3439,25 @@ const SCHEDULE = {
             },
             { label: "Guest: Product", kind: "panel",
               time_start: "11:15", time_end: "12:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "[INVENTED] Guest practitioner from a product role talks about how they actually work. Format spec only, guest TBD. Goal: students hear from someone who runs the Analog to Dialogue to Adjust to Produce to Test loop in their day job.",
+                students: [
+                  "Listen first 20 min. No notes.",
+                  "Capture: what surprised you about how they work?",
+                  "Q&A 20 min. Ask about the Adjust step specifically.",
+                  "Surface one thing you'll try in your specialty work this week."
+                ],
+                facilitator: "45 min. 5 min guest intro, 20 min talk, 20 min Q&A. Pre-brief guest: speak about your real working process, not your portfolio. Push them on the Adjust step (when AI suggests something you have to push back on). That's where students need a model. Guest TBD.",
+                references: [
+                  "[GUEST — TBD] briefing",
+                  "ADAPT methodology one-pager (TBD: needs creation before delivery)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "[INVENTED] foundation, guest TBD per needs-owen.md. Format spec drafted from established Wk1 panel/guest patterns. Logged for Owen to confirm guest selection and adjust framing." }
+                ]
+              }
             },
           ],
           pm: [
@@ -3487,7 +3543,25 @@ const SCHEDULE = {
             },
             { label: "Team Synthesis", kind: "teamteach", sub: "Specialists report back what they built",
               time_start: "16:00", time_end: "16:30",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "End of Mon PM specialty round 1. Each specialist returns to their team and teaches what they built. This is where the synthesis hinge from Stacey's micro-cycle starts: teams can only scope what they understand.",
+                students: [
+                  "Each specialist: 5 min teach-back to your team. What did you build, what's the artifact, what's the cliff?",
+                  "Team listens, asks clarifying questions only.",
+                  "Capture: where do the three specialty outputs contradict each other?",
+                  "Exit with one team-level question for tomorrow."
+                ],
+                facilitator: "30 min total. 15 min teach-back round (3 specialists times 5 min each), 10 min contradictions surface, 5 min team-question exit. Don't let the team interrupt with solutions. The point is hearing what the specialist learned, not redesigning their work.",
+                references: [
+                  "Team Teach (Tue PM Wk2 synthesis hinge: same pattern, bigger stakes)",
+                  "P1 / B1 / M1 outputs (Mon PM specialty work)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Templated as a smaller version of the Tue PM synthesis hinge (which is already marked ready). Format scales: 30 min Mon PM = 3 specialists times 5 min teach-back. Contradictions surface as the unit of integration." }
+                ]
+              }
             },
           ],
         },
@@ -3496,7 +3570,24 @@ const SCHEDULE = {
           am: [
             { label: "Welcome", kind: "welcome", sub: "Morning check-in",
               time_start: "09:00", time_end: "09:15",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Day 7 morning check-in. After Mon's specialty round 1 plus team synthesis, what's the energy? Quick Rollercoaster pulse before the next round.",
+                students: [
+                  "Find your team.",
+                  "30-second team check: where are we, what's the next move?",
+                  "Quick Rollercoaster pulse: where are you on the curve right now?"
+                ],
+                facilitator: "15 min total. Tighter than Mon AM. Skip orientation, go straight to team check. Use the Rollercoaster from Day 1 as the visual reference. Don't debrief, just register the data and move.",
+                references: [
+                  "Rollercoaster Check-in (Notion Knowledge / Activity)",
+                  "Daily Standup (Notion Knowledge)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "15-min slot is tight. Templated as a quick standup, not a full welcome. Rollercoaster reuse keeps the framing consistent across the program." }
+                ]
+              }
             },
             { label: "P2 · MVP Scoping", kind: "track", track: "product", code: "P2",
               time_start: "09:15", time_end: "11:30",
@@ -3536,7 +3627,26 @@ const SCHEDULE = {
             },
             { label: "Team Synthesis", kind: "teamteach", sub: "Specialists report back, team integrates findings",
               time_start: "11:30", time_end: "12:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "End of Tue AM specialty round 2. Same pattern as Mon PM: each specialist teach-back, team integrates, contradictions surface. Stakes higher because Out in Market #1 is right after.",
+                students: [
+                  "5 min teach-back per specialist. What did you produce in Round 2?",
+                  "Team listens, no interruptions.",
+                  "Capture: which Round 2 outputs depend on each other? Which contradict?",
+                  "Exit with the question your team needs answered before going Out in Market this afternoon."
+                ],
+                facilitator: "30 min total. Same shape as Mon PM Team Synthesis. Stakes higher because Out in Market #1 is right after. Don't let teams skip the contradictions surfacing. That's what they need to test in the field.",
+                references: [
+                  "Team Synthesis (Mon PM Wk2: same pattern, prerequisite muscle)",
+                  "Tue PM Out in Market (immediate downstream)",
+                  "P2 / B2 / M2 outputs (Tue AM specialty work)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Templated. Added the Out in Market downstream callback because it's immediately next and teams should leave this block knowing what they need to test." }
+                ]
+              }
             },
           ],
           pm: [
@@ -3594,7 +3704,24 @@ const SCHEDULE = {
           am: [
             { label: "Welcome", kind: "welcome", sub: "Morning check-in",
               time_start: "09:00", time_end: "09:15",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Day 8 morning check-in. The last full build day before Out in Market #2 and the prototype reveal Friday. Tone matters more than usual.",
+                students: [
+                  "Find your team.",
+                  "30-second team check: state of the prototype, state of the team.",
+                  "Rollercoaster pulse."
+                ],
+                facilitator: "15 min. Same shape as Tue AM. The shift today: teams head into Sponsor Feedback Sessions next, then specialty round 3, then Out in Market #2. Lots of pressure events. Set the tone calmly. Don't transmit anxiety.",
+                references: [
+                  "Rollercoaster Check-in (Notion Knowledge / Activity)",
+                  "Daily Standup (Notion Knowledge)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Templated. Note about facilitator tone added because Wed packs the most pressure events of the week (Sponsor Feedback + Round 3 + OOM #2 in one day)." }
+                ]
+              }
             },
             { label: "Sponsor Feedback Sessions", kind: "sponsor", sub: "Sponsor reviews team work in progress",
               time_start: "09:15", time_end: "10:15",
@@ -3660,7 +3787,26 @@ const SCHEDULE = {
           pm: [
             { label: "Team Alignment", kind: "teamteach", sub: "Lock the frame before going to market",
               time_start: "13:00", time_end: "13:45",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "After Sponsor Feedback Sessions, before Out in Market #2. Teams lock the frame they'll test in the field. Last alignment moment before final pitch prep starts Thursday.",
+                students: [
+                  "Pull together: SA outputs plus specialty round 1+2+3 plus sponsor feedback.",
+                  "Write the team's working answer to: 'For [persona], we built [X] that solves [gap], proven by [evidence].'",
+                  "Identify the one piece of evidence still missing. That's what Out in Market #2 tests.",
+                  "Lock the frame. No more pivots after this block."
+                ],
+                facilitator: "45 min. 5 min frame (this is the last alignment), 30 min team work, 10 min round (each team reads their working answer aloud, names the missing evidence). Output: every team knows exactly what they're testing in OOM #2. Don't let teams open new questions. This block converges, doesn't diverge.",
+                references: [
+                  "SA1, SA2, SA3, SA4 outputs (Wk1 Fri PM + Wk2 Mon)",
+                  "Specialty round outputs (P1-3, B1-3, M1-3)",
+                  "Sponsor Feedback notes (Wed AM)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Designed as the convergence block: pulls together SA spine + 3 specialty rounds + sponsor feedback. Output is a single sentence per team plus the missing-evidence call. Tight scope keeps it from becoming a re-design session." }
+                ]
+              }
             },
             { label: "Out in Market", kind: "work", sub: "Second field test, prototype in hand",
               time_start: "13:45", time_end: "16:00",

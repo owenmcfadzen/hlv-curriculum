@@ -66,7 +66,12 @@ Last update: 2026-05-15 (Phase 1: ADAPT vocab + working agreement)
 
 ## Sponsor / guest format
 
-(Empty — flag here as encountered during weekend run)
+### Guest: Product (Wk2 Mon AM)
+
+- **Status**: [INVENTED] foundation, needs guest selection.
+- **Block**: `Wk2 Mon AM` 11:15-12:00, 45 min.
+- **What I did**: drafted a generic "guest practitioner from a product role talks about their working process, focus on the Adjust step" framing. Format spec: 5 min intro, 20 min talk, 20 min Q&A. Pre-brief asks the guest to speak about real working process, not portfolio.
+- **What's needed from Owen**: confirm guest, name in references, possibly tweak framing if guest's actual angle is different.
 
 ---
 
