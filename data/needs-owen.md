@@ -3,36 +3,25 @@
 Running scratchpad of items where Cowork hit a decision that should not be made unilaterally. Owen triages.
 
 Created: 2026-05-15
-Last update: 2026-05-15 (Wk1 Mon AM rebuild)
+Last update: 2026-05-15 (Phase 1: ADAPT vocab + working agreement)
 
 ---
 
-## Methodology / branding
+## Resolved (kept here for audit trail)
 
-### ADAPT vs. the canonical micro-cycle
+### ADAPT vs. the canonical micro-cycle — RESOLVED
 
-- **Status**: open, blocking nothing immediately but cascades across all AI-loop blocks.
-- **Issue**: Owen's original brief introduced ADAPT (Analog → Dialogue → Adjust → Produce → Test) as a 5-letter mnemonic for student-facing teaching. The canonical Notion source ("HLV Curriculum — Active Design", co-authored with Stacey) uses a 4-step micro-cycle: **Analog → Structure → Output → Reality Check**. The schema's `ai_loop` field names match the canonical 4-step. ADAPT does not appear in any Notion document.
-- **What I did**: used the canonical Notion language in slide content (foundation, students, facilitator). Populated `ai_loop` per Owen's brief with the dialogue → structure / adjust → output / produce → final mapping from decision #3.
-- **Decision needed**: keep ADAPT as the student-facing brand on top of the canonical 4-step, OR drop ADAPT in favor of the canonical names. If keeping ADAPT, write a short ADAPT one-pager and add to References. If dropping, all my "ADAPT" references in slide content should be replaced with the canonical names.
+- **Decision**: ADAPT (Analog → Dialogue → Adjust → Produce → Test) is the locked student-facing brand. `ai_loop` fields keep the canonical Stacey names (analog / structure / output / final / reality_check). Mapping documented in the AI tooling block's notes.
+- **Action item for Owen**: discuss the mnemonic with Stacey on Monday. ADAPT one-pager needs creation before delivery (referenced as TBD in the AI tooling block).
 
-### Specialty track names — Active Design page is stale
+### Specialty track names — RESOLVED (action remains)
 
-- **Status**: resolved by precedence, flag for Notion update.
-- **Issue**: "HLV Curriculum — Active Design" (last updated April 21) still says "Product / Business / **GTM**". `PROJECT.md` (private repo) explicitly retired GTM in favor of Market. The workbench schema and SCHEDULE both use Market.
-- **What I did**: followed PROJECT.md as the more recent local source of truth. Slide content and references say Market.
-- **Decision needed**: update Notion Active Design page to say Market. Low priority but the page is the canonical onboarding doc for new Claude instances.
+- **Decision**: Market (per PROJECT.md, confirmed). All slide content uses Market.
+- **Action item for Owen**: update the Notion "HLV Curriculum — Active Design" page from "GTM" to "Market" post-Monday. Onboarding doc for new Claude instances.
 
----
+### Working agreement — RESOLVED
 
-## Cultural / pedagogical
-
-### Working agreement (BE PRESENT etc.) — where does it live in 2026?
-
-- **Status**: open, low-stakes.
-- **Issue**: 2025 Day 1 deck had a 5-bullet working agreement (BE PRESENT, EXPRESS YOUR POINT OF VIEW, WRITE DOWN INSIGHTS, OPEN-MINDED CONVERSATIONS, MOVE FORWARD WITH CONSENSUS). The Notion "What is Entrepreneurship?" Module doesn't include it. Notion Cultural Practices may have it elsewhere.
-- **What I did**: did NOT include the working agreement in the Entrepreneurship intro block. Recommended in slide.notes that it lives as a separate visible artifact (wall poster) rather than inline in any single block.
-- **Decision needed**: confirm whether the working agreement is a wall artifact (own deliverable) or whether one specific block owns it.
+- **Decision**: lives as a single student bullet in Entrepreneurship intro (BE PRESENT, EXPRESS POV, WRITE INSIGHTS, OPEN-MINDED, MOVE FORWARD WITH CONSENSUS, plus ELMO). Also produce as a physical wall artifact at the venue per the block's notes.
 
 ---
 
@@ -44,6 +33,34 @@ Last update: 2026-05-15 (Wk1 Mon AM rebuild)
 - **Issue**: Schema field description says `output: "The working artifact"`. Owen's brief mapping puts process-language ("Iterate with AI until the pitch sounds like you") into this field. Reads weird.
 - **What I did**: populated as Owen specified, flagged in block notes.
 - **Decision needed**: separate schema rename workstream, post-Monday.
+
+### Track block labels — RENAME during priority batch (BLOCKED on name discrepancy)
+
+- **Status**: blocked, needs Owen call before priority batch can proceed.
+- **Original decision (Owen's #5)**:
+  - Product: Solution Blueprint → MVP Scoping → **Prototype Build** (Mon PM / Tue AM / Wed AM Wk2)
+  - Business: **The Case** → **Canvas Lite** → 100-Day Plan
+  - Market: Landscape Map → Validation Design → First Moves
+- **Discrepancy discovered (2026-05-15 priority batch prep)**: 3 of the 9 names don't match the actual built worksheets in `ACTIVITIES`.
+
+| Code | Owen's stated rename | Actual `ACTIVITIES.name` |
+|---|---|---|
+| P1 | Solution Blueprint | Solution Blueprint ✓ |
+| P2 | MVP Scoping | MVP Scoping ✓ |
+| P3 | Prototype Build | **Prototype Spec Sheet** |
+| B1 | The Case | **Canvas Lite** |
+| B2 | Canvas Lite | **Back-of-Napkin Economics** |
+| B3 | 100-Day Plan | The 100-Day Plan ✓ |
+| M1 | Landscape Map | Landscape Map ✓ |
+| M2 | Validation Design | Validation Design ✓ |
+| M3 | First Moves | First Moves ✓ |
+
+- **Root cause**: Owen's stated rename list came from the stale `blocks-needing-content.md` (generated 2026-05-01 from a stale blocks-index). `ACTIVITIES` is the current truth.
+- **What I did**: paused the priority batch. Did NOT apply mismatched names. Need Owen to decide:
+  - **Option A**: keep ACTIVITIES names as-is (P3=Prototype Spec Sheet, B1=Canvas Lite, B2=Back-of-Napkin Economics). Schedule blocks adopt these labels via `code` linkage.
+  - **Option B**: rename ACTIVITIES worksheets to match Owen's intent (P3→Prototype Build, B1→The Case, B2→Canvas Lite). This is a content edit on the worksheets, not just labels.
+  - **Option C**: keep ACTIVITIES names AND keep generic schedule block labels (no rename), let students discover worksheet names when they open them.
+- **Recommendation**: Option A. The worksheets are built and the names are in the wireframes. Renaming them mid-flight creates churn.
 
 ---
 
