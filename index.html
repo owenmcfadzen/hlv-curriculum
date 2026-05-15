@@ -2479,6 +2479,156 @@ details.vb-edit-ailoop > .vb-edit-row { margin-top: 12px; }
 }
 .vb-master.vb-master--cal { padding: 20px 24px 48px; overflow-y: auto; }
 .vb-master--cal .vb-cal-shell { padding: 0; }
+
+/* ─── Notes (slide.notes) ─────────────────────────────────────── */
+.notes-section {
+  margin-top: 12px;
+  padding: 8px 12px 10px;
+  background: var(--bg-shade);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.notes-section[open] { padding-bottom: 12px; }
+.notes-section summary {
+  cursor: pointer;
+  font-family: var(--condensed);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  list-style: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.notes-section summary::-webkit-details-marker { display: none; }
+.notes-section summary::before {
+  content: "›";
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+.notes-section[open] summary::before { transform: rotate(90deg); }
+.notes-section .notes-count {
+  display: inline-block;
+  padding: 0 6px;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-mute);
+}
+.notes-list {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.notes-item {
+  padding: 8px 0;
+  border-top: 1px solid var(--rule);
+}
+.notes-item:first-child {
+  border-top: 0;
+  padding-top: 4px;
+}
+.notes-meta {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-bottom: 3px;
+}
+.notes-meta .notes-author {
+  color: var(--text-mute);
+  font-weight: 500;
+}
+.notes-text {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+  white-space: pre-wrap;
+}
+.notes-form {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.notes-form input,
+.notes-form textarea {
+  font-family: var(--sans);
+  font-size: 12px;
+  padding: 5px 8px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--bg);
+  color: var(--text);
+  resize: vertical;
+}
+.notes-form input:focus,
+.notes-form textarea:focus {
+  outline: none;
+  border-color: var(--text-mute);
+}
+.notes-form button {
+  align-self: flex-start;
+  font-family: var(--condensed);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  background: var(--text);
+  color: var(--bg);
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.notes-form button:hover { background: var(--text-mute); }
+.notes-form button:disabled { background: var(--text-faint); cursor: not-allowed; }
+
+/* Empty-state: subtle "+ Add note" affordance shown on blocks with no notes yet. */
+.notes-section--empty {
+  background: transparent;
+  border: 1px dashed var(--rule);
+  padding: 6px 12px;
+}
+.notes-section--empty summary {
+  font-family: var(--sans);
+  font-size: 11px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-faint);
+  font-weight: 400;
+}
+.notes-section--empty summary:hover { color: var(--text-mute); }
+.notes-section--empty summary::before {
+  content: "+";
+  font-size: 14px;
+  line-height: 1;
+  margin-right: 4px;
+  transition: transform 0.15s ease;
+}
+.notes-section--empty[open] {
+  background: var(--bg-shade);
+  border: 1px solid var(--rule);
+  padding: 8px 12px 12px;
+}
+.notes-section--empty[open] summary { margin-bottom: 8px; }
+.notes-section--empty[open] summary::before {
+  content: "›";
+  transform: rotate(90deg);
+}
+.notes-section--empty .notes-form {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 0;
+}
 </style>
 </head>
 <body>
@@ -2708,10 +2858,29 @@ const SCHEDULE = {
               }
             },
             { label: "Intro game", kind: "game",
-              time_start: "09:30", time_end: "10:00"
+              time_start: "09:30", time_end: "10:00",
+              slide: {
+                status: "stub",
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "Picked Rollercoaster for this slot. Low-risk, gets them on their feet, surfaces real state. Go Bananas would also work but is higher-energy — better for the post-lunch Mon PM Game slot than the cold open. Swap if preferred." },
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "The 10 reference points (Curious / Bored / Nervous / Trying to fit in / etc.) are verbatim from the Day 1 deck. Kept them because they give shy students cover — they can pick a label rather than improvise." },
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "No ai_loop on this block. Meatspace warm-up." },
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "Rollercoaster as a framing device (program-arc visualization) also lives in the Entrepreneurship intro block right after this. Same diagram, two uses: here is personal weather, next is program weather." }
+                ]
+              }
             },
             { label: "Entrepreneurship intro", kind: "work",
-              time_start: "10:00", time_end: "11:15"
+              time_start: "10:00", time_end: "11:15",
+              slide: {
+                status: "stub",
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "Voice question: drafted compressed-and-directive ('notice problems, make solutions, scale impact'). 2025 deck used a flowery framing ('identifying problems and finding solutions that have impact and can scale'). Pick." },
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "Trimmed the 8 entrepreneurial traits slide (Day 1 slide 39) and the Future of Work deck (Day 1 slides 40-46). Both feel like 2025 content overtaken by 2026. Working method is now ADAPT, not a trait list. AI/automation framing belongs in the next block. Flag if you want them back." },
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "Problem Spotters exercise lifted from 2025 slide 35. The three sub-prompts (Where were you? What was frustrating? Who else might feel this?) are verbatim." },
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "Working agreement (BE PRESENT, EXPRESS YOUR POINT OF VIEW, WRITE DOWN INSIGHTS, OPEN-MINDED CONVERSATIONS, MOVE FORWARD WITH CONSENSUS) carried forward verbatim from Day 1 deck." },
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "Rollercoaster as a framing device (program goes high and low, you'll feel lost mid-week) lives here. Rollercoaster as a check-in activity lives in the Intro game block. Two different things, same name in 2025." }
+                ]
+              }
             },
             { label: "Alumni: Orient", kind: "work", sub: "Why You're Back · pick specialty",
               audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-mon-am-entrepreneurship-intro",
@@ -2729,7 +2898,17 @@ const SCHEDULE = {
               }
             },
             { label: "AI tooling, PRD, intro pitch", kind: "work",
-              time_start: "11:15", time_end: "12:00"
+              time_start: "11:15", time_end: "12:00",
+              slide: {
+                status: "stub",
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "First ADAPT exposure for students. Framing question: teach methodology cold (5-letter overview, then run loop) or run-first / reveal-second. Drafted cold-teach because lower facilitator-skill and easier for Stacey to run Monday. 30-sec rewrite if you want to flip." },
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "'Test' in ADAPT here = peer feedback in room. Soft test, fine for a 30-sec pitch. Real Reality Check methodology arrives Thu AM (RC: Pitch speed dating). Possible callback line in facilitator notes — flagged not added." },
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "ai_loop populated per Owen's brief with the dialogue→structure / adjust→output / produce→final mapping. Friction point: 'Iterate with AI until the pitch sounds like you' reads as process not artifact, but schema says output is the working artifact. Left as-is pending the deferred schema rename." },
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "Skipped lifting Day 1 slides 40-46 (Future of Work / AI themes). 2025 framed AI as 'what's coming'; 2026 frames AI as 'a tool you're using right now in this block'. Different posture." },
+                  { author: "Cowork", ts: "2026-05-15T22:00:00Z", text: "No sponsor placeholder needed in this block. No sponsor reference." }
+                ]
+              }
             },
           ],
           pm: [
@@ -4701,8 +4880,16 @@ function synthesizeKindDefault(b) {
 
 function renderBlockSlide(entry) {
   const b = entry.ref;
-  const slide = b.slide || synthesizeKindDefault(b);
-  const isDefault = !b.slide;
+  // A slide may exist with only meta (status + notes) and no real content.
+  // In that case fall back to the kind-default for foundation/students/facilitator/references,
+  // but preserve any notes that were authored on the block.
+  const hasRealSlideContent = !!(b.slide && (b.slide.foundation || (b.slide.students && b.slide.students.length) || b.slide.facilitator || (b.slide.references && b.slide.references.length)));
+  const slide = hasRealSlideContent
+    ? b.slide
+    : (b.slide && Array.isArray(b.slide.notes) && b.slide.notes.length
+        ? Object.assign({}, synthesizeKindDefault(b), { notes: b.slide.notes })
+        : synthesizeKindDefault(b));
+  const isDefault = !hasRealSlideContent;
   const titleHTML = `
     <header class="detail-header" style="grid-template-columns: 1fr;">
       <div>
@@ -4731,6 +4918,7 @@ function renderBlockSlide(entry) {
           <div class="panel-label">Facilitator notes</div>
           <p>${escapeText(slide.facilitator || "")}</p>
         </div>
+        <div style="grid-column: 1 / -1;">${notesRenderSection(slide, b._detailKey)}</div>
         ${slide.references && slide.references.length ? `
           <div class="panel feeds" style="grid-column: 1 / -1;">
             <div class="panel-label">References</div>
@@ -5589,7 +5777,7 @@ function vbPlaceholder(label, copy) {
 function renderViewBOverview(block) {
   const slide = block.slide || {};
   const activity = block.code ? ACTIVITIES.find(a => a.code === block.code) : null;
-  const hasContent = slide.foundation || (slide.students && slide.students.length) || slide.facilitator || (slide.references && slide.references.length);
+  const hasContent = slide.foundation || (slide.students && slide.students.length) || slide.facilitator || (slide.references && slide.references.length) || (slide.notes && slide.notes.length);
 
   const audienceLabels = effectiveAudiences(block).map(a => a === "alumni" ? "Alumni" : "Student");
   const facLabels = effectiveFacilitators(block).map(f => f === "f1" ? "Facilitator 1" : "Facilitator 2");
@@ -5619,6 +5807,7 @@ function renderViewBOverview(block) {
     ${vbSection("Foundation", slide.foundation)}
     ${vbSectionList("Students", slide.students)}
     ${vbSection("Facilitator notes", slide.facilitator)}
+    ${notesRenderSection(slide, block._detailKey)}
     ${vbSectionList("References", slide.references)}
     ${block.notes_facilitator ? `<div class="vb-detail-divider"></div>${vbSection("Context", block.notes_facilitator)}` : ""}
     ${block.ai_loop ? renderViewBAiLoop(block.ai_loop) : ""}
@@ -5678,6 +5867,7 @@ function renderViewBSlides(block) {
     ${vbSection("Foundation", slide.foundation)}
     ${vbSectionList("Students", slide.students)}
     ${vbSection("Facilitator notes", slide.facilitator)}
+    ${notesRenderSection(slide, block._detailKey)}
     ${vbSectionList("References", slide.references)}
     ${!slide.foundation && !(slide.students && slide.students.length) ? `<div class="vb-panel-body is-muted">No outline yet — block is a stub.</div>` : ""}
   `;
@@ -5833,6 +6023,144 @@ function renderViewB(weekIdx, dayIdx) {
 function rerenderCurrentView() {
   if (VIEW_B_STATE.view === "day") renderViewB(VIEW_B_STATE.weekIdx, VIEW_B_STATE.dayIdx);
   else renderViewA();
+}
+
+/* ════════════════════════════════════════════════════════════
+   NOTES (slide.notes)
+   Append-only meta notes per block. Persisted via the standard
+   override mechanism (localStorage + remote sync).
+   ════════════════════════════════════════════════════════════ */
+
+const NOTES_AUTHOR_KEY = "hlv-notes-author";
+
+function notesGetDefaultAuthor() {
+  try { return localStorage.getItem(NOTES_AUTHOR_KEY) || ""; }
+  catch (_) { return ""; }
+}
+function notesSetDefaultAuthor(author) {
+  try { localStorage.setItem(NOTES_AUTHOR_KEY, author); } catch (_) { /* ignore quota */ }
+}
+
+function notesRelativeTime(iso) {
+  if (!iso) return "";
+  const then = new Date(iso);
+  if (isNaN(then.getTime())) return iso;
+  const now = new Date();
+  const diffMs = now - then;
+  const diffMin = Math.round(diffMs / 60000);
+  if (diffMin < 1) return "just now";
+  if (diffMin < 60) return `${diffMin} min ago`;
+  const diffHr = Math.round(diffMin / 60);
+  if (diffHr < 24) return `${diffHr} hr ago`;
+  const diffDay = Math.round(diffHr / 24);
+  if (diffDay === 1) return "yesterday";
+  if (diffDay < 7) return `${diffDay} days ago`;
+  return then.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+}
+
+function notesEffective(slide) {
+  return Array.isArray(slide && slide.notes) ? slide.notes.slice() : [];
+}
+
+function notesRenderItem(note) {
+  const author = escapeText(note.author || "Anonymous");
+  const when   = escapeText(notesRelativeTime(note.ts));
+  const text   = escapeText(note.text || "");
+  return `<li class="notes-item">
+    <div class="notes-meta"><span class="notes-author">${author}</span> · ${when}</div>
+    <div class="notes-text">${text}</div>
+  </li>`;
+}
+
+function notesRenderSection(slide, blockId) {
+  // Consult overrides directly so notes are consistent across all views,
+  // including drill-down which bypasses the upstream effectiveBlock merge.
+  const baseNotes = notesEffective(slide);
+  const ov = blockId ? VIEW_B_OVERRIDES[blockId] : null;
+  const ovNotes = (ov && ov.slide && Array.isArray(ov.slide.notes)) ? ov.slide.notes : null;
+  const notes = (ovNotes !== null) ? ovNotes : baseNotes;
+  const idAttr = escapeText(blockId || "");
+  const defaultAuthor = escapeText(notesGetDefaultAuthor());
+  const formHtml = `<form class="notes-form" onsubmit="return notesSubmitForm(event, '${idAttr}')">
+      <input type="text" name="author" placeholder="Your name" value="${defaultAuthor}" required maxlength="40" autocomplete="off" />
+      <textarea name="text" placeholder="Add a note" rows="3" required></textarea>
+      <button type="submit">Add note</button>
+    </form>`;
+
+  // Empty state: subtle "+ Add note" affordance. Same form reveals on click.
+  if (!notes.length) {
+    return `<details class="notes-section notes-section--empty" data-block-id="${idAttr}">
+      <summary>Add note</summary>
+      ${formHtml}
+    </details>`;
+  }
+
+  // Populated state: collapsible section with newest-first list.
+  const sorted = notes.slice().sort((a, b) => (b.ts || "").localeCompare(a.ts || ""));
+  const items = sorted.map(notesRenderItem).join("");
+  return `<details class="notes-section" data-block-id="${idAttr}">
+    <summary>Notes <span class="notes-count">${notes.length}</span></summary>
+    <ul class="notes-list">${items}</ul>
+    ${formHtml}
+  </details>`;
+}
+
+function notesFindBlockByDetailKey(blockId) {
+  if (!blockId) return null;
+  for (const week of SCHEDULE.weeks) {
+    for (const day of week.days) {
+      for (const half of ["am", "pm"]) {
+        const arr = day[half] || [];
+        for (const b of arr) {
+          if (b._detailKey === blockId) return b;
+        }
+      }
+    }
+  }
+  return null;
+}
+
+function notesAdd(blockId, author, text) {
+  if (!blockId || !text) return;
+  const cleanAuthor = (author || "Anonymous").trim().slice(0, 40) || "Anonymous";
+  const cleanText = text.trim();
+  if (!cleanText) return;
+  notesSetDefaultAuthor(cleanAuthor);
+
+  // Effective notes per the override merge rule (line 4942):
+  // override.slide replaces base slide field-by-field, so override.slide.notes
+  // (when set) replaces base.slide.notes entirely. Compute effective list.
+  const baseBlock = notesFindBlockByDetailKey(blockId);
+  const baseNotes = (baseBlock && baseBlock.slide && Array.isArray(baseBlock.slide.notes))
+    ? baseBlock.slide.notes : [];
+  const ov = VIEW_B_OVERRIDES[blockId];
+  const ovNotes = (ov && ov.slide && Array.isArray(ov.slide.notes)) ? ov.slide.notes : null;
+  const existing = (ovNotes !== null) ? ovNotes : baseNotes;
+
+  const newNote = {
+    author: cleanAuthor,
+    ts: new Date().toISOString(),
+    text: cleanText
+  };
+  const updated = existing.concat([newNote]);
+
+  // Build override patch: preserve any existing override slide fields.
+  const slideOv = (ov && ov.slide) ? Object.assign({}, ov.slide) : {};
+  slideOv.notes = updated;
+  VIEW_B_OVERRIDES[blockId] = Object.assign({}, ov || {}, { slide: slideOv });
+  saveOverrides(VIEW_B_OVERRIDES);
+  rerenderCurrentView();
+}
+
+function notesSubmitForm(event, blockId) {
+  event.preventDefault();
+  const form = event.target;
+  const authorEl = form.querySelector("input[name='author']");
+  const textEl   = form.querySelector("textarea[name='text']");
+  const author = authorEl ? authorEl.value : "";
+  const text   = textEl ? textEl.value : "";
+  notesAdd(blockId, author, text);
+  return false;
 }
 
 /* ─── Sync with GitHub (status pill + push) ──────────────────────
