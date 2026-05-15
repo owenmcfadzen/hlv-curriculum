@@ -31,7 +31,11 @@ Owen: commit these in order when you wake up. Each is staged on disk, ready for 
    - Files touched: data/needs-owen.md, data/session-summary-2026-05-15.md (new), data/block-drafts/ deletions
    - Notable: Session summary covers full overnight run. Cleanup: `git rm data/block-drafts/w2-fri-pm-final-pitches.md` (explicitly superseded). Other block-drafts can also be removed at Owen's discretion (see session summary).
 
-After all 5 commits land:
+6. [ ] **Commit 10: `content: guest framing per Cate brief (3 blocks)`**
+   - Files touched: index.html, data/needs-owen.md
+   - Notable: 3 Guest blocks reframed per Owen's evening Cate brief. Wk1 Wed AM renamed `Guest: valuable idea?` → `Entrepreneur Story` (founder narrative). Wk2 Mon AM renamed `Guest: Product` → `Guest Talk` (last year's Lisbon product guy returning). Wk2 Thu AM `Guest: How to pitch` keeps label, gains interactive-beat requirement. All `[INVENTED]` tags removed. Guest selection stays open (contacts pending).
+
+After all 6 commits land:
 ```bash
 git push
 ```
@@ -54,20 +58,21 @@ git push
 
 ### P1 — block facilitator prep
 
-**3. Guest: Product** (Wk2 Mon AM 11:15-12:00)
-- Status: [INVENTED] foundation, guest TBD.
-- Drafted angle: product practitioner who runs an ADAPT-style loop in their day job. Focus on the Adjust step (pushing back on AI).
-- Action: confirm guest, name in references, possibly tweak framing.
+**3. Guest Talk** (Wk2 Mon AM 11:15-12:00) — was "Guest: Product"
+- Status: framing locked per Owen's Cate brief. Contact pending.
+- Drafted angle: same product guy from Lisbon 2025 (local, Stanford grad, gave the strong product talk). Owen is pulling his contact.
+- Action: confirm contact, replace `[GUEST — Lisbon 2025 product guy, contact pending Owen]` placeholder in references.
 
 **4. Guest: How to pitch** (Wk2 Thu AM 11:00-12:00)
-- Status: [INVENTED] foundation, guest TBD.
-- Drafted angle: pitch coach. Focus on opens, anti-patterns, "one thing they wish more pitches answered."
-- Action: confirm guest, name in references, possibly tweak angle.
+- Status: framing locked per Owen's Cate brief. Guest TBD.
+- Drafted angle: pitch coach, comms person, storyteller, or founder known for clarity. Focus on story structure plus what makes the problem land in 3 minutes. Not slide design, not investor decks. Interactive: students bring real material, guest reacts.
+- Time slot is 60 min vs. Owen's 30-45 spec — extra time accommodates interactive segment; can compress if guest is shorter form.
+- Action: identify guest, replace `[GUEST — TBD: pitch coach, comms, storyteller, or clarity-known founder]` placeholder.
 
-**5. Guest: valuable idea?** (Wk1 Wed AM 11:00-11:30)
-- Status: [INVENTED] foundation, guest TBD.
-- Drafted angle: practitioner on "interesting vs. valuable" distinction. 30 min. Focus on failure-mode stories.
-- Action: confirm guest, name in references.
+**5. Entrepreneur Story** (Wk1 Wed AM 11:00-11:30) — was "Guest: valuable idea?"
+- Status: framing locked per Owen's Cate brief. Guest TBD.
+- Drafted angle: early-stage founder telling actual journey (first users, validation, what nearly broke). Bar is narrative over expertise. Last year's product guy worked because he could tell the story.
+- Action: identify founder, replace `[GUEST — TBD: early-stage founder, narrative-strong]` placeholder.
 
 **6. ADAPT methodology one-pager** — needs creation before delivery
 - Status: TBD, referenced in 4 blocks (Mon AM AI tooling, Tue AM Swag pitch, Wk2 Mon AM Week 2 Flow, Wk2 Thu PM Narrative Time).
