@@ -2629,6 +2629,88 @@ details.vb-edit-ailoop > .vb-edit-row { margin-top: 12px; }
   margin-top: 0;
   padding-top: 0;
 }
+
+/* ─── Notes: edit / delete actions ────────────────────────────── */
+.notes-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.notes-edited {
+  color: var(--text-faint);
+  font-style: italic;
+  font-size: 10px;
+  margin-left: 4px;
+}
+.notes-actions {
+  margin-left: auto;
+  display: inline-flex;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+.notes-item:hover .notes-actions,
+.notes-item:focus-within .notes-actions {
+  opacity: 1;
+}
+.notes-action-btn {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 1px 6px;
+  background: transparent;
+  color: var(--text-faint);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 1.4;
+}
+.notes-action-btn:hover {
+  color: var(--text-mute);
+  background: var(--bg);
+  border-color: var(--rule);
+}
+.notes-action-btn--primary {
+  color: var(--bg);
+  background: var(--text);
+  border-color: var(--text);
+  font-family: var(--condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+}
+.notes-action-btn--primary:hover {
+  background: var(--text-mute);
+  border-color: var(--text-mute);
+  color: var(--bg);
+}
+.notes-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+.notes-edit-form textarea {
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 6px 8px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--bg);
+  color: var(--text);
+  resize: vertical;
+}
+.notes-edit-form textarea:focus {
+  outline: none;
+  border-color: var(--text-mute);
+}
+.notes-edit-actions {
+  display: flex;
+  gap: 6px;
+}
 </style>
 </head>
 <body>
@@ -6115,12 +6197,20 @@ function notesEffective(slide) {
   return Array.isArray(slide && slide.notes) ? slide.notes.slice() : [];
 }
 
-function notesRenderItem(note) {
+function notesRenderItem(note, idx, blockId) {
   const author = escapeText(note.author || "Anonymous");
   const when   = escapeText(notesRelativeTime(note.ts));
   const text   = escapeText(note.text || "");
-  return `<li class="notes-item">
-    <div class="notes-meta"><span class="notes-author">${author}</span> · ${when}</div>
+  const idAttr = escapeText(blockId || "");
+  const editedTag = note.edited ? `<span class="notes-edited">(edited)</span>` : "";
+  return `<li class="notes-item" data-note-idx="${idx}">
+    <div class="notes-meta">
+      <span class="notes-author">${author}</span> · ${when}${editedTag}
+      <span class="notes-actions">
+        <button type="button" class="notes-action-btn" title="Edit note" onclick="notesStartEdit('${idAttr}', ${idx})">edit</button>
+        <button type="button" class="notes-action-btn" title="Delete note" onclick="notesDelete('${idAttr}', ${idx})">delete</button>
+      </span>
+    </div>
     <div class="notes-text">${text}</div>
   </li>`;
 }
@@ -6149,8 +6239,11 @@ function notesRenderSection(slide, blockId) {
   }
 
   // Populated state: collapsible section with newest-first list.
-  const sorted = notes.slice().sort((a, b) => (b.ts || "").localeCompare(a.ts || ""));
-  const items = sorted.map(notesRenderItem).join("");
+  // Preserve original-array index per item so edit/delete handlers can
+  // address the correct note even after display sorting.
+  const indexed = notes.map((n, i) => ({ note: n, idx: i }));
+  indexed.sort((a, b) => (b.note.ts || "").localeCompare(a.note.ts || ""));
+  const items = indexed.map(({ note, idx }) => notesRenderItem(note, idx, blockId)).join("");
   return `<details class="notes-section" data-block-id="${idAttr}">
     <summary>Notes <span class="notes-count">${notes.length}</span></summary>
     <ul class="notes-list">${items}</ul>
@@ -6214,6 +6307,89 @@ function notesSubmitForm(event, blockId) {
   const text   = textEl ? textEl.value : "";
   notesAdd(blockId, author, text);
   return false;
+}
+
+// Read the effective notes array for a block (override.slide.notes wins,
+// otherwise base SCHEDULE.slide.notes). Returns a fresh slice for safe mutation.
+function notesGetEffectiveArray(blockId) {
+  const baseBlock = notesFindBlockByDetailKey(blockId);
+  const baseNotes = (baseBlock && baseBlock.slide && Array.isArray(baseBlock.slide.notes))
+    ? baseBlock.slide.notes : [];
+  const ov = VIEW_B_OVERRIDES[blockId];
+  const ovNotes = (ov && ov.slide && Array.isArray(ov.slide.notes)) ? ov.slide.notes : null;
+  return (ovNotes !== null) ? ovNotes.slice() : baseNotes.slice();
+}
+
+// Persist a full notes array as the override slide.notes, preserving any
+// other override slide fields. Then save + re-render.
+function notesPersistArray(blockId, updatedArray) {
+  const ov = VIEW_B_OVERRIDES[blockId];
+  const slideOv = (ov && ov.slide) ? Object.assign({}, ov.slide) : {};
+  slideOv.notes = updatedArray;
+  VIEW_B_OVERRIDES[blockId] = Object.assign({}, ov || {}, { slide: slideOv });
+  saveOverrides(VIEW_B_OVERRIDES);
+  rerenderCurrentView();
+}
+
+function notesStartEdit(blockId, idx) {
+  // Find the rendered <li> for this note in the live DOM and swap its text
+  // div for an inline edit form. No re-render needed for opening the editor;
+  // the form submit handler triggers the re-render after save.
+  const detailsEl = document.querySelector(`details[data-block-id="${blockId}"]`);
+  if (!detailsEl) return;
+  const liEl = detailsEl.querySelector(`.notes-item[data-note-idx="${idx}"]`);
+  if (!liEl) return;
+  const notes = notesGetEffectiveArray(blockId);
+  const note = notes[idx];
+  if (!note) return;
+  const textDiv = liEl.querySelector(".notes-text");
+  if (!textDiv) return;
+  // Hide the inline action buttons while editing
+  const actions = liEl.querySelector(".notes-actions");
+  if (actions) actions.style.display = "none";
+  const safeBlockId = blockId.replace(/'/g, "\\'");
+  const formHtml = `<form class="notes-edit-form" onsubmit="return notesSaveEdit(event, '${escapeText(safeBlockId)}', ${idx})">
+    <textarea name="text" rows="3" required>${escapeText(note.text || "")}</textarea>
+    <div class="notes-edit-actions">
+      <button type="submit" class="notes-action-btn notes-action-btn--primary">Save</button>
+      <button type="button" class="notes-action-btn" onclick="rerenderCurrentView()">Cancel</button>
+    </div>
+  </form>`;
+  textDiv.outerHTML = formHtml;
+  // Focus the textarea for immediate typing
+  const newTextarea = liEl.querySelector("textarea[name='text']");
+  if (newTextarea) {
+    newTextarea.focus();
+    // Place cursor at end
+    const len = newTextarea.value.length;
+    newTextarea.setSelectionRange(len, len);
+  }
+}
+
+function notesSaveEdit(event, blockId, idx) {
+  event.preventDefault();
+  const form = event.target;
+  const textEl = form.querySelector("textarea[name='text']");
+  const newText = textEl ? textEl.value.trim() : "";
+  if (!newText) return false;
+  const notes = notesGetEffectiveArray(blockId);
+  if (idx < 0 || idx >= notes.length) return false;
+  const old = notes[idx];
+  notes[idx] = Object.assign({}, old, {
+    text: newText,
+    ts: new Date().toISOString(),
+    edited: true,
+  });
+  notesPersistArray(blockId, notes);
+  return false;
+}
+
+function notesDelete(blockId, idx) {
+  if (!window.confirm("Delete this note?")) return;
+  const notes = notesGetEffectiveArray(blockId);
+  if (idx < 0 || idx >= notes.length) return;
+  notes.splice(idx, 1);
+  notesPersistArray(blockId, notes);
 }
 
 /* ─── Sync with GitHub (status pill + push) ──────────────────────
