@@ -73,6 +73,13 @@ Last update: 2026-05-15 (Phase 1: ADAPT vocab + working agreement)
 - **What I did**: drafted a generic "guest practitioner from a product role talks about their working process, focus on the Adjust step" framing. Format spec: 5 min intro, 20 min talk, 20 min Q&A. Pre-brief asks the guest to speak about real working process, not portfolio.
 - **What's needed from Owen**: confirm guest, name in references, possibly tweak framing if guest's actual angle is different.
 
+### Guest: How to pitch (Wk2 Thu AM)
+
+- **Status**: [INVENTED] foundation, needs guest selection.
+- **Block**: `Wk2 Thu AM` 11:00-12:00, 60 min.
+- **What I did**: drafted a generic "pitch coach who pitches for a living" framing. Angle: opens, anti-patterns, "one thing they wish more pitches answered." Format spec: 25 min talk, 25 min Q&A. Pre-brief asks the guest to focus on what students can apply tomorrow, not theory.
+- **What's needed from Owen**: confirm guest, name in references, possibly tweak angle if their natural pitch is different.
+
 ---
 
 ## 2026 blocks without 2025 source AND no obvious draft path

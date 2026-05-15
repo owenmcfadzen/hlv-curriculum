@@ -3860,21 +3860,108 @@ const SCHEDULE = {
           am: [
             { label: "Welcome", kind: "welcome",
               time_start: "09:00", time_end: "09:15",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Day 9 morning check-in. The last full work day. LPP TIME starts in 15 min. Surface the team's state: are you converging or still diverging?",
+                students: [
+                  "Find your team.",
+                  "30-second team check: what's locked, what's still open?",
+                  "Rollercoaster pulse."
+                ],
+                facilitator: "15 min. Same shape as Tue/Wed AM. The shift today: LPP TIME is the work block that pulls everything together. If a team is still diverging on V1, surface it now and grab them for a side conversation.",
+                references: [
+                  "Rollercoaster Check-in (Notion Knowledge / Activity)",
+                  "Daily Standup (Notion Knowledge)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Templated. Note about diverging teams added because LPP TIME assumes V1 is locked. Last chance to catch a team that hasn't converged." }
+                ]
+              }
             },
             { label: "LPP TIME", kind: "lpp",
               time_start: "09:15", time_end: "11:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Open work block. Teams assemble the Lean Product Plan: pulling SA outputs, all 9 specialty round outputs, sponsor feedback, and OOM evidence into a single coherent artifact. This is convergence work, not new work.",
+                students: [
+                  "Open the LPP template (provided).",
+                  "Section by section: Problem, Persona, Solution, Market, Business Model, Validation.",
+                  "Each section: pull from the existing artifact. Don't write from scratch.",
+                  "Where you find a gap, mark it. Don't paper over it.",
+                  "By 11:00 you have a draft LPP, not a polished one."
+                ],
+                facilitator: "105 min. 5 min framing (LPP = synthesis, not invention), 90 min team work, 10 min round-robin status check (what section is each team weakest on). Output: every team has a draft LPP. Don't expect polish, expect coverage. The narrative pass is Thu PM. Walk between teams, push on gaps, don't write for them.",
+                references: [
+                  "Lean Product Plan (Notion: Knowledge / Foundation, gold standard)",
+                  "All Wk2 specialty round outputs (P1-3, B1-3, M1-3)",
+                  "SA1-4 outputs (Wk1 Fri PM + Wk2 Mon)",
+                  "Sponsor Feedback notes (Wed AM)",
+                  "OOM #1 + #2 evidence (Tue PM + Wed PM)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "LPP is the gold-standard Notion methodology Owen flagged for full lift. This block frames LPP as synthesis (pulling existing artifacts together) not invention. Polish comes Thu PM Narrative Time, this is coverage." }
+                ]
+              }
             },
             { label: "Guest: How to pitch", kind: "panel",
               time_start: "11:00", time_end: "12:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "[INVENTED] Guest pitch coach talks about what makes a pitch land. Not theoretical. Specific: openings, structure, anti-patterns. Students hear from someone who pitches for a living and can show what works.",
+                students: [
+                  "Listen first 25 min. No notes.",
+                  "Capture: what's their definition of a strong open?",
+                  "Q&A 25 min. Ask about the question they wish more pitches answered.",
+                  "Surface one thing you'll change about your pitch tomorrow."
+                ],
+                facilitator: "60 min. 5 min guest intro, 25 min talk, 25 min Q&A, 5 min synthesis. Pre-brief guest: focus on what students can apply tomorrow, not theory. Push them on the failure modes they see most often. Guest TBD.",
+                references: [
+                  "Storytelling & Pitch (Notion: Knowledge / Foundation)",
+                  "Pitch Practice (Notion: Knowledge / Method)",
+                  "[GUEST — TBD] briefing"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "[INVENTED] foundation, guest TBD. Format spec drafted from established panel/guest patterns. Logged in needs-owen.md. Angle: opens + anti-patterns + 'one thing they wish more pitches answered.'" }
+                ]
+              }
             },
           ],
           pm: [
             { label: "LPP TIME — Narrative Time", kind: "lpp", sub: "Assemble the final story",
               time_start: "13:00", time_end: "17:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              ai_loop: {
+                analog: "All week's artifacts plus the morning's draft LPP",
+                structure: "AI helps structure LPP sections from raw analog inputs into a coherent narrative",
+                output: "Refine narrative flow through iteration",
+                final: "Final LPP slides, locked by 17:00",
+                reality_check: "Friday Final Pitches",
+                uses_prd_lab: true
+              },
+              slide: {
+                status: "draft",
+                foundation: "Final ADAPT loop of the program. Teams have a draft LPP from this morning. Now: structure it as a narrative. Analog (raw artifacts), Dialogue (AI helps structure LPP sections), Adjust (refine narrative flow), Produce (final LPP slides), Test (Friday Final Pitches). This is the longest single work block of the program. Use it.",
+                students: [
+                  "Analog: lay out everything. SA outputs, specialty work, sponsor notes, OOM evidence, draft LPP from this morning.",
+                  "Dialogue: use AI to help structure LPP sections. Paste your raw artifacts in. Get back a structure proposal.",
+                  "Adjust: push back. Cut anything that doesn't earn its place. The narrative has to be tight.",
+                  "Produce: final LPP slides. Locked content, no more rewrites after 17:00.",
+                  "Test: Final Pitches Friday afternoon. Real audience, real judgment."
+                ],
+                facilitator: "240 min total. Suggested split: 30 min framing plus narrative structure intro, 60 min Analog plus Dialogue (gather plus first AI pass), 90 min Adjust loops (real iteration), 45 min Produce (slide assembly), 15 min round of share-back (each team reads their open). Output: every team has locked LPP slides by 17:00. Optional late session 17:00-21:00 for teams that need more. Don't let teams over-redesign. Narrative time is for narrative, not new content.",
+                references: [
+                  "Lean Product Plan (Notion: Knowledge / Foundation, gold standard)",
+                  "Storytelling & Pitch (Notion: Knowledge / Foundation)",
+                  "ADAPT methodology one-pager (TBD: needs creation before delivery)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Final ADAPT loop of the program. ai_loop populated per Owen's original brief verbatim. Lean Product Plan is the gold-standard Notion methodology, lifted in full per Owen's source map." },
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "240 min is the longest single block. Designed as the convergence-to-shipped-artifact arc. Late session option (Thu PM 17:00-21:00) is a separate already-drafted block for teams that need more." }
+                ]
+              }
             },
             { label: "LPP late work session", kind: "work", sub: "Teams push through narrative + prototype",
               time_start: "17:00", time_end: "21:00",
@@ -3892,25 +3979,118 @@ const SCHEDULE = {
           am: [
             { label: "Welcome", kind: "welcome",
               time_start: "09:00", time_end: "09:15",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Day 10 morning check-in. Pitch day. Teams have locked LPPs. Today is execution: practice runs, refinement, then live pitches in the afternoon. Energy is the variable to manage.",
+                students: [
+                  "Find your team.",
+                  "30-second check: how do you feel about the pitch?",
+                  "Rollercoaster pulse, last time."
+                ],
+                facilitator: "15 min. Same shape. The shift: this is performance day. Energy management matters more than content tweaks. Spot anyone who looks frozen and grab them privately.",
+                references: [
+                  "Rollercoaster Check-in (Notion Knowledge / Activity)",
+                  "Daily Standup (Notion Knowledge)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Templated. Note about freeze/anxiety added because Day 10 mornings are the highest-stakes check-in of the program." }
+                ]
+              }
             },
             { label: "LPP practice", kind: "pitch",
               time_start: "09:15", time_end: "12:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Practice runs of the locked LPP pitch. Each team runs the pitch start-to-finish, gets feedback, runs it again. The bar shifts from 'is the content right?' to 'does it land in front of a real audience?'",
+                students: [
+                  "Run the pitch. Full-length, no stops.",
+                  "Get feedback from facilitator plus at least one other team.",
+                  "Run it again, with the changes integrated.",
+                  "By noon you've run it 3 times minimum."
+                ],
+                facilitator: "165 min. Round-robin format: 20 min per team (10 min pitch, 10 min feedback). With 5 teams, 2 cycles fit. Extra time goes to teams that need it. Push hard on opens (first 30 sec is everything) and on the riskiest claim (panel will hit it). Don't accept 'we'll fix that later.'",
+                references: [
+                  "Pitch Practice (Notion: Knowledge / Method)",
+                  "Storytelling & Pitch (Notion: Knowledge / Foundation)",
+                  "Final Pitches (this afternoon, target audience)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted from Notion's Pitch Practice plus Storytelling & Pitch entries. The 'open + riskiest claim' framing is the practical attention split for facilitator coaching." }
+                ]
+              }
             },
           ],
           pm: [
             { label: "Final practice", kind: "pitch",
               time_start: "13:00", time_end: "14:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Last run before live pitches. Tight focus: opens, transitions, the risky-claim defense. No more content changes.",
+                students: [
+                  "Last full run of the pitch. Time it.",
+                  "If you go over, cut. Don't talk faster.",
+                  "Practice the panel-question response. Pick the riskiest claim and rehearse the defense.",
+                  "Stop at 14:00. Whatever you have is what you pitch."
+                ],
+                facilitator: "60 min. Tight: 1 full run per team plus 1 round of question-defense rehearsal. Hard cut at 14:00. Pre-brief teams: changes after this block don't make it into the live pitch. The room shifts at 14:00, no more practice.",
+                references: [
+                  "Pitch Practice (Notion: Knowledge / Method)",
+                  "Storytelling & Pitch (Notion: Knowledge / Foundation)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted as the convergence-before-execution block. Hard 14:00 cut framing is deliberate: prevents last-minute panic edits that break the flow teams just rehearsed." }
+                ]
+              }
             },
             { label: "Final Pitches", kind: "pitch",
               time_start: "14:00", time_end: "16:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Terminal moment of the program. Teams pitch their work to a panel of 2-3 judges, a mix of sponsor leadership and UFL leadership. Reception follows. The audience is the people whose judgment matters. The room knows it.",
+                students: [
+                  "Pitch the work. Not the journey, not the team. The work.",
+                  "Be ready for the panel to challenge the riskiest claim.",
+                  "Stay for the reception. The conversations after are part of the program.",
+                  "Photograph your panel moment."
+                ],
+                facilitator: "120 min total. With 5 teams: ~20 min per team (10 min pitch + 10 min Q&A). Panel of 2-3, sponsor side plus UFL side. Pre-brief judges: be direct, ask the hard question, don't soften the room. Reception immediately after, no debrief in between, let the moment land. Internal debrief is later.",
+                references: [
+                  "Pitch Practice (Notion: Knowledge / Method)",
+                  "Storytelling & Pitch (Notion: Knowledge / Foundation)",
+                  "[SPONSOR — TBD between Sonae and JdM, hard floor 8 Jun] panel briefing",
+                  "Owen's brief to Cate (May 13 2026)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted from the prior block-drafts/w2-fri-pm-final-pitches.md (Owen's May 13 canonical email to Cate). Time corrected from 13:00-14:00 (1hr in old draft) to 14:00-16:00 (2hr per current schedule). Em-dashes stripped from prior content." },
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Sponsor + UFL panel composition is the locked decision per Owen's brief. Pre-brief judges to ask the hard question. Reception immediately after, no debrief gap." }
+                ]
+              }
             },
             { label: "Reception", kind: "social",
               time_start: "16:00", time_end: "17:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Cohort, sponsors, panel, alumni, and HLV staff. Informal. The conversations after the pitches are where the long-tail relationships start.",
+                students: [
+                  "Stay through. Don't bolt to your phone.",
+                  "Find one panelist or sponsor and ask them one question about their work.",
+                  "Trade contact info with the alumni who consulted with you.",
+                  "If you have a friend on another team, congratulate them properly."
+                ],
+                facilitator: "60 min. Light touch. Drinks plus food provided. Facilitator role: introduce students to panelists they wouldn't otherwise meet. Watch for students who isolate, gently surface them. The reception is part of the program, not a tail.",
+                references: [
+                  "[SPONSOR — TBD between Sonae and JdM, hard floor 8 Jun] reception attendance",
+                  "Final Pitches (immediate prerequisite, this afternoon)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted as a low-key but intentional close. Facilitator role is connector, not host. The 'find one panelist and ask one question' bullet is the active student bullet, prevents passive standing-around." }
+                ]
+              }
             },
           ],
         },
