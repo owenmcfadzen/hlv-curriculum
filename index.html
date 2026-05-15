@@ -3378,25 +3378,41 @@ const SCHEDULE = {
                 foundation: "Fourth Solution Alignment moment. Each team commits to a V1 solution. Locks the target so specialty work this afternoon has a stable anchor."
               }
             },
-            { label: "Product: Prototype", kind: "track", track: "product",
+            { label: "P1 · Solution Blueprint", kind: "track", track: "product", code: "P1",
               time_start: "14:15", time_end: "16:00",
               audiences: ["student", "alumni"],
               ai_loop: {
-                analog: "Crazy 8s + 8-frame customer journey from Fri PM Wk1 (SA2)",
+                analog: "Crazy 8s plus 8-frame customer journey from Fri PM Wk1 (SA2)",
                 structure: "Photograph sketches, upload to PRD Lab with structured prompt, AI generates PRD draft",
-                output: "PRD draft — solid enough for prototype work",
-                final: "Digital prototype (landing page / wireframe / mockup) by Wed PM",
-                reality_check: "Wed PM Out in Market #2 — show prototype to real users",
+                output: "PRD draft solid enough for prototype work",
+                final: "Digital prototype (landing page, wireframe, or mockup) by Wed PM",
+                reality_check: "Wed PM Out in Market #2 (show prototype to real users)",
                 uses_prd_lab: true
               }
             },
-            { label: "Business: Biz Model", kind: "track", track: "business",
+            { label: "B1 · Canvas Lite", kind: "track", track: "business", code: "B1",
               time_start: "14:15", time_end: "16:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              ai_loop: {
+                analog: "SA1 Persona plus SA4 V1 Solution",
+                structure: "AI helps frame pricing models and customer hooks for the six-box Canvas Lite",
+                output: "Iterate the Canvas Lite worksheet (Who pays / What for / How much / How often / How they hear / Why they stay)",
+                final: "First-draft six-box Canvas Lite",
+                reality_check: "Stress-test against Tue PM Out in Market #1 findings",
+                uses_prd_lab: false
+              }
             },
-            { label: "Market: Experiments", kind: "track", track: "market",
+            { label: "M1 · Landscape Map", kind: "track", track: "market", code: "M1",
               time_start: "14:15", time_end: "16:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              ai_loop: {
+                analog: "SA3 'how is it solved now' plus the team's V1 Solution",
+                structure: "AI surfaces competitive landscape and who already plays in the space",
+                output: "Refine the assumption list (what we believe vs. what we need to test)",
+                final: "Landscape map plus assumption list ready for validation design",
+                reality_check: "Tue PM Out in Market #1 (test top assumptions with real users)",
+                uses_prd_lab: false
+              }
             },
             { label: "Team Synthesis", kind: "teamteach", sub: "Specialists report back what they built",
               time_start: "16:00", time_end: "16:30",
@@ -3411,25 +3427,41 @@ const SCHEDULE = {
               time_start: "09:00", time_end: "09:15",
               audiences: ["student", "alumni"]
             },
-            { label: "Product: deep user journey", kind: "track", track: "product",
+            { label: "P2 · MVP Scoping", kind: "track", track: "product", code: "P2",
               time_start: "09:15", time_end: "11:30",
               audiences: ["student", "alumni"],
               ai_loop: {
-                analog: null,
-                structure: null,
-                output: null,
-                final: null,
-                reality_check: null,
+                analog: "P1 Solution Blueprint plus Mon PM PRD draft",
+                structure: "AI helps cut the feature list down to MVP, ranking by user value vs. build cost",
+                output: "MVP scope iterations on the worksheet",
+                final: "MVP scope locked, ready for prototype build Wed AM",
+                reality_check: "Wed PM Out in Market #2 (does the MVP actually move users)",
                 uses_prd_lab: true
               }
             },
-            { label: "Business: Biz Model Canvas", kind: "track", track: "business",
+            { label: "B2 · Back-of-Napkin Economics", kind: "track", track: "business", code: "B2",
               time_start: "09:15", time_end: "11:30",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              ai_loop: {
+                analog: "B1 Canvas Lite (six boxes filled in)",
+                structure: "AI helps frame unit economics: rough cost, rough price, rough volume to break even",
+                output: "Iterate cost / price / volume estimates until they don't break the model",
+                final: "Back-of-napkin numbers that hold up to a stress test",
+                reality_check: "Wed AM Sponsor Feedback Sessions (sponsor probes the math)",
+                uses_prd_lab: false
+              }
             },
-            { label: "Market: Design Experiments", kind: "track", track: "market",
+            { label: "M2 · Validation Design", kind: "track", track: "market", code: "M2",
               time_start: "09:15", time_end: "11:30",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              ai_loop: {
+                analog: "M1 Landscape Map plus the assumption list",
+                structure: "AI helps design experiment protocols for the top 3 assumptions",
+                output: "Validation experiment design (who to talk to, what to ask, what 'positive signal' looks like)",
+                final: "Designed experiment ready to run in Out in Market this afternoon",
+                reality_check: "Tue PM Out in Market #1 (run the experiments, gather signal)",
+                uses_prd_lab: false
+              }
             },
             { label: "Team Synthesis", kind: "teamteach", sub: "Specialists report back, team integrates findings",
               time_start: "11:30", time_end: "12:00",
@@ -3442,12 +3474,47 @@ const SCHEDULE = {
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
-                foundation: "First Out in Market field session. 3 hours in the wild gathering real signal from users."
+                foundation: "First field test. Teams leave the facility to validate hypotheses with real users, running the experiment M2 designed this morning. Designed to be uncomfortable. The market doesn't lie if you ask it the right questions.",
+                students: [
+                  "Pick 5 people you'll talk to in the next 3 hours. Real targets, not fillers.",
+                  "Run the empathy interview protocol M2 designed: open question first, then probe.",
+                  "Capture contradicting evidence. The 'this won't work because...' is the gold.",
+                  "Photograph the conversations (with permission). Notes only as backup.",
+                  "Back at the facility for debrief at 16:00 sharp."
+                ],
+                facilitator: "3 hours total. Field session. Market specialist owns the brief on each team. F1 stays at the facility for any team that bails early. Pre-brief: targets are real users, not friends. Hard target: 5 conversations per team. Anything less is a no-show. Coach teams pre-departure on what good signal looks like (contradicting evidence beats confirming feedback).",
+                references: [
+                  "Empathy Interview Protocol (Notion: Knowledge / Method)",
+                  "Customer Discovery & Validation (Notion: Knowledge / Foundation)",
+                  "M2 Validation Design (Tue AM specialist work)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted from Notion's Empathy Interview Protocol plus Customer Discovery & Validation entries. The 'contradicting evidence is gold' framing comes from Notion's Customer Discovery page (highlight: 'You're not asking is my idea good, you're asking what')." },
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "5 conversations per team is a hard floor. Owen's brief framed this as 'designed to be uncomfortable' for a reason. If teams come back with 2 conversations and a long story about why, that's the signal Owen wants surfaced." }
+                ]
               }
             },
-            { label: "Out in Market Debrief", kind: "rc", sub: "Reality Check + team debrief — back at our location",
+            { label: "Out in Market Debrief", kind: "rc", sub: "Reality Check + team debrief, back at our location",
               time_start: "16:00", time_end: "17:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Reality Check on what the market said. Teams come back with field notes. This block is structured contradiction-mining. The principle: the market doesn't lie. What did teams hear that contradicts their assumption set?",
+                students: [
+                  "Group by team. Pull out the field notes.",
+                  "Sort: confirming evidence pile, contradicting evidence pile, surprises pile.",
+                  "Surprises pile gets first attention. Why didn't you predict this?",
+                  "One sentence per team: what's the biggest assumption that needs to change?"
+                ],
+                facilitator: "1 hour total. Don't let teams smooth over the contradicting evidence, that's where the learning is. Push the 'why didn't you predict this?' question hard. Output: each team has a sharper assumption set going into Wed AM specialty work.",
+                references: [
+                  "Testing & Validation (Notion: Knowledge)",
+                  "Problem Reframing (Notion: Knowledge / Method)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Format borrows from Problem Reframing: separate confirming vs. contradicting evidence so teams can't ignore the latter. The 'why didn't you predict this' question is the contradiction-miner." }
+                ]
+              }
             },
           ],
         },
@@ -3460,19 +3527,63 @@ const SCHEDULE = {
             },
             { label: "Sponsor Feedback Sessions", kind: "sponsor", sub: "Sponsor reviews team work in progress",
               time_start: "09:15", time_end: "10:15",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Sponsor reviews team work in progress. Not a pitch, not a presentation. Working session: teams show what they have, sponsor reacts, sponsor pushes on the parts that wouldn't survive their own customers. Sponsor is in the role of stakeholder, not judge.",
+                students: [
+                  "Bring your work-in-progress: SA outputs, specialty drafts, prototype sketches.",
+                  "Don't pitch. Show. 5 minutes per team.",
+                  "Take the sponsor's pushback at face value. Don't defend, capture.",
+                  "After: 5 minutes to triage what the sponsor surfaced. One action item per team."
+                ],
+                facilitator: "1 hour total. Pre-brief the sponsor: this is a stakeholder review, not a judgment session. They should push hard on customer-relevance and feasibility, not score teams. Format: round-robin, 5 min show plus 5 min sponsor reaction per team. Don't let teams pre-polish, raw work in progress is the point.",
+                references: [
+                  "[SPONSOR — TBD between Sonae and JdM, hard floor 8 Jun] briefing",
+                  "Stakeholder Mapping (Notion: Knowledge / Foundation)",
+                  "Customer Discovery & Validation (Notion: Knowledge)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted from Notion's Stakeholder Mapping (sponsor as stakeholder, not judge) plus Customer Discovery & Validation. Sponsor placeholder used per Owen's standard." },
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Format question: 5 teams x 10 min = 50 min, leaves 10 min slack. If the cohort is larger than 5 teams, this block needs more time. Flag for delivery planning." }
+                ]
+              }
             },
-            { label: "Product", kind: "track", track: "product",
+            { label: "P3 · Prototype Spec Sheet", kind: "track", track: "product", code: "P3",
               time_start: "10:15", time_end: "12:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              ai_loop: {
+                analog: "P2 MVP scope plus Tue PM Out in Market #1 findings",
+                structure: "AI translates MVP scope into a prototype build spec (what to build, in what order, with what materials)",
+                output: "Prototype spec iterations (cuts and additions based on field feedback)",
+                final: "Prototype spec sheet ready for build this afternoon",
+                reality_check: "Wed PM Out in Market #2 (test the prototype on real users)",
+                uses_prd_lab: true
+              }
             },
-            { label: "Business", kind: "track", track: "business",
+            { label: "B3 · The 100-Day Plan", kind: "track", track: "business", code: "B3",
               time_start: "10:15", time_end: "12:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              ai_loop: {
+                analog: "B2 Back-of-Napkin Economics plus this morning's Sponsor Feedback",
+                structure: "AI helps sequence the first 100 days post-pilot (week-by-week milestones)",
+                output: "Iterate the plan to remove anything you can't credibly do in 100 days",
+                final: "100-Day Plan with concrete milestones and decision points",
+                reality_check: "Final pitch panel and sponsor judgment Friday",
+                uses_prd_lab: false
+              }
             },
-            { label: "Market", kind: "track", track: "market",
+            { label: "M3 · First Moves", kind: "track", track: "market", code: "M3",
               time_start: "10:15", time_end: "12:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              ai_loop: {
+                analog: "M2 Validation Design plus Tue PM Out in Market #1 results",
+                structure: "AI helps prioritize the first 3 marketing moves (which channels, which audiences first)",
+                output: "Iterate the first-moves list down to 3 concrete actions you could start Monday",
+                final: "First Moves plan: 3 actions, each with a target audience and a success signal",
+                reality_check: "Final pitch panel critiques the go-to-market story Friday",
+                uses_prd_lab: false
+              }
             },
           ],
           pm: [
@@ -3480,17 +3591,50 @@ const SCHEDULE = {
               time_start: "13:00", time_end: "13:45",
               audiences: ["student", "alumni"]
             },
-            { label: "Out in Market", kind: "work",
+            { label: "Out in Market", kind: "work", sub: "Second field test, prototype in hand",
               time_start: "13:45", time_end: "16:00",
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
-                foundation: "Second Out in Market field session. 2 hours in the field — sharper validation protocol after the first trip."
+                foundation: "Second field test. 2 hours, sharper. Teams now test prototypes (P3 outputs) against real users, not just hypotheses. Bar is higher: did the prototype move the user, or did they shrug?",
+                students: [
+                  "Bring the prototype plus 3 questions you need answered.",
+                  "Show, don't tell. Hand the prototype to the user. Watch what they actually do.",
+                  "Ask: what would make this work for you? What's missing?",
+                  "5 conversations per team minimum.",
+                  "Back at 16:00."
+                ],
+                facilitator: "2 hours, tighter than Tue PM because teams know the drill. Market specialist owns the protocol. F1 should drift among teams that struggled Tue PM. The shift here is from interview to demo: students show the prototype and watch reactions, not just listen.",
+                references: [
+                  "Testing & Validation (Notion: Knowledge)",
+                  "Empathy Interview Protocol (Notion: Knowledge / Method)",
+                  "P3 Prototype Spec Sheet (Wed AM specialist work)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted as a sharper Tue PM. Key shift: 'show don't tell' framing means students hand over the prototype and watch what users do (action) vs. what they say (words). The action-vs-words gap is the gold." }
+                ]
               }
             },
-            { label: "Out in Market Debrief", kind: "rc", sub: "Reality Check + team debrief — back at our location",
+            { label: "Out in Market Debrief", kind: "rc", sub: "Reality Check + team debrief, back at our location",
               time_start: "16:00", time_end: "17:00",
-              audiences: ["student", "alumni"]
+              audiences: ["student", "alumni"],
+              slide: {
+                status: "draft",
+                foundation: "Second Reality Check. Now teams have prototype-feedback to reckon with, not just opinion. This block surfaces what the prototype taught them about whether they built the right thing.",
+                students: [
+                  "Pull the prototype-feedback notes.",
+                  "Sort by: what users did vs. what they said.",
+                  "When users said 'I love it' but didn't actually use it, that's a gap. Surface it.",
+                  "One sentence per team: what changes about the prototype before final pitches Friday?"
+                ],
+                facilitator: "1 hour. Push hard on the action-vs-words gap. This is the last hard reality check before final pitch prep Thursday. Teams should leave with concrete revision items, not vague 'we'll iterate' commitments.",
+                references: [
+                  "Testing & Validation (Notion: Knowledge)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Designed as the last hard reality check before Thursday LPP work. Push the 'concrete revision item' close to force teams off vague commitments." }
+                ]
+              }
             },
           ],
         },
