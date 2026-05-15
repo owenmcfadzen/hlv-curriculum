@@ -107,6 +107,30 @@
         "references": {
           "type": "array",
           "items": { "type": "string" }
+        },
+        "notes": {
+          "type": "array",
+          "description": "Append-only meta notes about this block. Author + ISO timestamp + text. Optional, default empty array.",
+          "items": {
+            "type": "object",
+            "required": ["author", "ts", "text"],
+            "additionalProperties": false,
+            "properties": {
+              "author": {
+                "type": "string",
+                "description": "Note author (e.g. 'Owen', 'Claude', 'Cowork', 'Anonymous')"
+              },
+              "ts": {
+                "type": "string",
+                "format": "date-time",
+                "description": "ISO 8601 datetime"
+              },
+              "text": {
+                "type": "string",
+                "description": "Note body"
+              }
+            }
+          }
         }
       }
     },
