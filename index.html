@@ -3308,7 +3308,21 @@ const SCHEDULE = {
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
-                foundation: "First Solution Alignment moment. Each team aligns on who they're solving for — the persona. Pink card on the whiteboard. Output feeds into LPP draft."
+                foundation: "First Solution Alignment moment. Each team aligns on who they're solving for: the persona. Pink card on the whiteboard. Output feeds into LPP draft.",
+                students: [
+                  "Pick your team's user. The actual person, not 'people who...'",
+                  "Name them. Age. What they do all day. What they're frustrated by.",
+                  "Pink card on the whiteboard. One persona per team.",
+                  "Defend it: why this person, not someone else?"
+                ],
+                facilitator: "60 min. 15 min teach (what a useful persona is vs. a useless one), 30 min team work, 15 min defend rounds (each team's persona gets one challenge from another team). Output: pink persona card per team feeds SA2. Don't accept 'small business owners' or 'students' as personas. Push for one specific human.",
+                references: [
+                  "Stakeholder Mapping (Notion: Knowledge / Foundation)",
+                  "Stakeholder Map Template (Notion: Knowledge / Template)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted students/facilitator/references from Notion's Stakeholder Mapping entry. Foundation kept as Owen wrote it (em-dash punctuation cleaned, no word changes). Pink persona card is the analog artifact." }
+                ]
               }
             },
             { label: "SA2 · 8 frames customer journey", kind: "work", sub: "Crazy 8s on the user experience",
@@ -3316,7 +3330,22 @@ const SCHEDULE = {
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
-                foundation: "Second Solution Alignment moment. Each team sketches 8 frames of the user experience (Crazy 8s format). Feeds into Week 2 prototype work."
+                foundation: "Second Solution Alignment moment. Each team sketches 8 frames of the user experience (Crazy 8s format). Feeds into Week 2 prototype work.",
+                students: [
+                  "Take your SA1 persona. Walk their experience in 8 frames.",
+                  "Crazy 8s format: stick figures fine. Annotate user does / system does.",
+                  "Frame 1 = entry point (how they discover the problem). Frame 8 = resolution (or what's missing).",
+                  "Circle the friction frame. That's where your solution lives."
+                ],
+                facilitator: "60 min. 5 min Crazy 8s template intro, 30 min team sketching, 15 min friction-circle round (each team identifies and defends their circled frame), 10 min synthesis. Output: 8-frame journey per team, one circled frame. Feeds Wk2 SA2.5 reanchor and the prototype build (P1 Solution Blueprint cites this 8-frame journey explicitly). Push teams away from happy paths. The friction frame is the gold.",
+                references: [
+                  "Journey Mapping (Notion: Knowledge / Foundation)",
+                  "P1 Solution Blueprint worksheet (Mon PM Wk2 references this 8-frame journey)",
+                  "SA1 Persona (prerequisite: persona card)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted from Notion's Journey Mapping entry. Crazy 8s is the canonical sketch protocol. The 8-frame journey is also the explicit input to P1 Solution Blueprint, reinforced in P1's ai_loop.analog field." }
+                ]
               }
             },
             { label: "External team activity", kind: "social",
@@ -3353,7 +3382,21 @@ const SCHEDULE = {
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
-                foundation: "Bridge between Wk1 Fri SA2 (customer journey) and the Wk2 build. Re-anchor the team on the same 8-frame journey they sketched on Friday — what's still true, what shifted over the weekend."
+                foundation: "Bridge between Wk1 Fri SA2 (customer journey) and the Wk2 build. Re-anchor the team on the same 8-frame journey they sketched on Friday: what's still true, what shifted over the weekend.",
+                students: [
+                  "Pull out Friday's 8-frame journey.",
+                  "Re-walk it: what's still true after the weekend? What shifted?",
+                  "Mark anything stale. Decide if you re-sketch or just adjust.",
+                  "Confirm the friction frame still holds. If not, re-circle."
+                ],
+                facilitator: "45 min. 5 min reorient (where we left off Friday), 25 min team rework, 15 min round of share-back (each team flags what changed). Output: refreshed 8-frame journey ready for Mon PM specialty work. Push teams not to redo everything. The point is calibration, not restart.",
+                references: [
+                  "SA2 outputs (Wk1 Fri PM team artifacts)",
+                  "Journey Mapping (Notion: Knowledge / Foundation)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Foundation kept as Owen wrote it (em-dash punctuation cleaned). Students/facilitator drafted to match the 'calibration not restart' framing already in the foundation." }
+                ]
               }
             },
             { label: "Guest: Product", kind: "panel",
@@ -3367,7 +3410,21 @@ const SCHEDULE = {
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
-                foundation: "Third Solution Alignment moment. Each team maps what currently exists in their problem space — competitors, workarounds, status quo. Output frames why a new solution is needed."
+                foundation: "Third Solution Alignment moment. Each team maps what currently exists in their problem space: competitors, workarounds, status quo. Output frames why a new solution is needed.",
+                students: [
+                  "List what already exists in your problem space: competitors, workarounds, the do-nothing option.",
+                  "For each, name what they get right and where they fall short.",
+                  "Map them on the whiteboard. Group by approach.",
+                  "Surface the gap your V1 fills that nothing else does."
+                ],
+                facilitator: "45 min. 10 min teach (why mapping current solutions matters), 25 min team work, 10 min round (each team names their gap). Output: landscape sketch per team plus a one-sentence gap statement. Feeds SA4 V1 lock and M1 Landscape Map (which cites SA3 as ai_loop.analog). Don't accept 'no one is solving this'. Something is, even if it's a workaround or doing nothing.",
+                references: [
+                  "Customer Discovery & Validation (Notion: Knowledge / Foundation)",
+                  "M1 Landscape Map (Mon PM Wk2 specialist work, ai_loop.analog references SA3)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Foundation kept as Owen wrote it (em-dash punctuation cleaned). Reinforced the SA3 → M1 chain in the facilitator notes since M1's ai_loop.analog cites SA3 explicitly." }
+                ]
               }
             },
             { label: "SA4 · Team Aligned on V1 Solution", kind: "work", sub: "Lock the V1 before specialty work begins",
@@ -3375,7 +3432,21 @@ const SCHEDULE = {
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
-                foundation: "Fourth Solution Alignment moment. Each team commits to a V1 solution. Locks the target so specialty work this afternoon has a stable anchor."
+                foundation: "Fourth Solution Alignment moment. Each team commits to a V1 solution. Locks the target so specialty work this afternoon has a stable anchor.",
+                students: [
+                  "Combine SA1 (who) plus SA2 (their journey) plus SA3 (the gap).",
+                  "Write your V1 solution in one sentence: 'For [persona], we build [X] that solves [gap].'",
+                  "Sanity-check it against the friction frame from SA2. Does the V1 actually address it?",
+                  "Lock it. Specialty work this afternoon assumes V1 is stable."
+                ],
+                facilitator: "30 min. 5 min frame (V1 is a working hypothesis, not the final answer), 20 min team work, 5 min round (each team reads V1 aloud). Output: one-sentence V1 per team, written and posted. Feeds B1 Canvas Lite (cited in B1 ai_loop.analog as SA1 plus SA4) and the Mon PM specialty work generally. Don't let teams overspecify V1. One sentence is the cap.",
+                references: [
+                  "SA1, SA2, SA3 outputs (this morning's work)",
+                  "B1 Canvas Lite (Mon PM Wk2 specialist work, ai_loop.analog references SA1+SA4)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Foundation kept as Owen wrote it. Reinforced the SA4 → B1 chain in facilitator notes since B1's ai_loop.analog cites SA1+SA4 explicitly. The one-sentence cap is a deliberate constraint: overspecified V1s break the specialty work that follows." }
+                ]
               }
             },
             { label: "P1 · Solution Blueprint", kind: "track", track: "product", code: "P1",
