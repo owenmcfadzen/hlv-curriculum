@@ -1,0 +1,24 @@
+{
+  "schema": {
+    "fields": ["slug", "code", "name", "day", "deckId", "url", "status", "slideCount", "openFlags"]
+  },
+  "decks": [
+    {
+      "slug": "p2-mvp-scoping",
+      "code": "P2",
+      "name": "MVP Scoping",
+      "day": "W2D2 AM",
+      "deckId": "1HOYdAINN2AO8M33guoO8FMTgUpVkhQJjQLAPB5SITjg",
+      "url": "https://docs.google.com/presentation/d/1HOYdAINN2AO8M33guoO8FMTgUpVkhQJjQLAPB5SITjg/edit",
+      "status": "draft",
+      "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 2h 15min block — inferred allocations, not in source" },
+        { "type": "NEEDS_OWEN", "note": "AI step (photo → PRD via custom platform) not yet designed; activity status: partial" },
+        { "type": "CONFLICT",   "note": "Activities entry says 'Tue PM · Phase 2'; schedule block places P2 at Tue AM 09:15–11:30. Slides use schedule." },
+        { "type": "INFERRED",   "note": "'Party feature auto-fills slot 1' carries from P1 wireframe; not separately documented for P2" },
+        { "type": "NEEDS_OWEN", "note": "Drive folder 'HLV2026 — Curriculum Decks' — deck created at root; this MCP can't move files to a folder" }
+      ]
+    }
+  ]
+}

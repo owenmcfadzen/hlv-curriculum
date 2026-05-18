@@ -2404,6 +2404,103 @@ details.vb-edit-ailoop > .vb-edit-row { margin-top: 12px; }
   height: 100%;
   border: 0;
 }
+
+/* ─────────────────────────────────────────────────────────── */
+/* SLIDE-DECK EMBED (manifest-driven, used in renderBlockSlide) */
+/* Sits at the top of the detail overlay. In Slide mode shows  */
+/* the Google Slides iframe; in Page mode shows just the       */
+/* name + open-link affordance (no iframe → no 35× page load). */
+/* ─────────────────────────────────────────────────────────── */
+.slide-deck-embed {
+  margin: 0 0 28px;
+}
+.slide-deck-embed .deck-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid #1d1d1b;        /* Studio Owen near-black */
+  background: #faf9f7;              /* Studio Owen warm white */
+  display: block;
+}
+.slide-deck-embed .deck-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.01em;
+}
+.slide-deck-embed .deck-name {
+  font-weight: 600;
+  color: var(--text);
+}
+.slide-deck-embed .deck-name .deck-code {
+  font-family: var(--condensed);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  margin-right: 6px;
+}
+.slide-deck-embed .deck-open {
+  color: var(--text-mute);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+.slide-deck-embed .deck-open:hover {
+  color: var(--text);
+  border-bottom-color: var(--rule-strong);
+}
+.slide-deck-embed .deck-status {
+  font-family: var(--condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Page-mode affordance — slim strip, no iframe */
+.slide-deck-affordance {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 22px;
+  padding: 8px 12px;
+  border: 1px solid var(--rule);
+  border-left: 3px solid #1d1d1b;
+  background: #faf9f7;
+  font-family: var(--sans);
+  font-size: 12.5px;
+}
+.slide-deck-affordance .deck-code {
+  font-family: var(--condensed);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+.slide-deck-affordance .deck-name {
+  font-weight: 600;
+  color: var(--text);
+  flex: 1;
+}
+.slide-deck-affordance .deck-open {
+  color: var(--text-mute);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+.slide-deck-affordance .deck-open:hover {
+  color: var(--text);
+  border-bottom-color: var(--rule-strong);
+}
+@media print {
+  .slide-deck-embed .deck-frame { display: none; }
+}
 .vb-cal-block .cb-time {
   font-family: var(--condensed);
   font-size: 10px;
@@ -2926,6 +3023,7 @@ const SCHEDULE = {
           name: "Mon",
           am: [
             { label: "Welcome", kind: "welcome",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1VLeUeBe5V2Z445ARVnWz9scpl6xCmv3b8tryVFMQjW4/edit",
               time_start: "09:00", time_end: "09:30",
               slide: {
                 status: "draft",
@@ -2965,6 +3063,7 @@ const SCHEDULE = {
               }
             },
             { label: "Entrepreneurship intro", kind: "work",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1ebqGoQsMDJMmwDRygdH18xZsexVVG7GqbaRyI8DZBO8/edit",
               time_start: "10:00", time_end: "11:15",
               slide: {
                 status: "draft",
@@ -3050,6 +3149,7 @@ const SCHEDULE = {
           ],
           pm: [
             { label: "Sponsor briefing", kind: "sponsor",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1ytRhPSLZIrm_ymh0qNF7ZGf4PfdVnDHgapH2Tg6KesE/edit",
               time_start: "13:00", time_end: "13:45",
               slide: {
                 status: "draft",
@@ -3130,6 +3230,7 @@ const SCHEDULE = {
               }
             },
             { label: "Debrief: problems", kind: "work",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1Rf-fSmOdVLRKAxwEfnYCn0EKuwjB5s-0v0_p4vkXzcI/edit",
               time_start: "16:00", time_end: "16:30",
               slide: {
                 status: "draft",
@@ -3208,6 +3309,7 @@ const SCHEDULE = {
               }
             },
             { label: "M: Opportunity ID", kind: "module",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1OsC3s35ZNqoCTkch3jBQHhiMFWwviVCpVBb3sUafFNs/edit",
               time_start: "09:45", time_end: "10:30",
               slide: {
                 status: "draft",
@@ -3292,6 +3394,9 @@ const SCHEDULE = {
             { label: "Problems", kind: "work",
               time_start: "13:00", time_end: "13:45",
               slide: {
+                companion_decks: [
+                  { name: "Problem Mapping (W1D2)", url: "https://docs.google.com/presentation/d/137gWfX4oQsBMBP3uIj01RrL1Oicf_e1oye4uKb90uFo/edit", why: "Stick-figure map: triggers, makes-worse, workarounds, holes. Useful framework to overlay." }
+                ],
                 status: "draft",
                 foundation: "From friction to defined problem. Students take their worst-frame from User journey and write a problem statement. Specific. Bounded. About a real person.",
                 students: [
@@ -3357,6 +3462,10 @@ const SCHEDULE = {
             { label: "M: Problem validation", kind: "module",
               time_start: "15:00", time_end: "15:45",
               slide: {
+                companion_decks: [
+                  { name: "Interview Prep (W1D2)", url: "https://docs.google.com/presentation/d/10D2hf7E6Gpf9UhjA0E8SiesfO-iWmqWP3UrzfwNF68A/edit", why: "Writing an interview guide — 3 open Qs × 2 follow-ups, past-tense framings." },
+                  { name: "Interviews (W1D3)", url: "https://docs.google.com/presentation/d/140gViXVY1Zy6d_TwFfMU1hc_AxdOqT0IuNIvNKF-qfc/edit", why: "Field interview run — pairs, verbatim capture, 5 per pair. Use when extending into actual interviews." }
+                ],
                 status: "draft",
                 foundation: "Teach: a problem isn't real until someone outside your head agrees. Module covers 5 Whys (drilling causes), Active Listening (hearing what's said vs. what's meant), and the empathy interview opener. Sets up the panel that follows.",
                 students: [
@@ -3474,6 +3583,10 @@ const SCHEDULE = {
             { label: "M: Solutions", kind: "module",
               time_start: "09:15", time_end: "10:00",
               slide: {
+                companion_decks: [
+                  { name: "Problem Reframing (W1D3)", url: "https://docs.google.com/presentation/d/1M-d8wVkQr_k_a8v9VvS0idgFYuvn7bDa3imBSs8KPQw/edit", why: "HMW statements from interview surprises. Bridges from problems → solutions." },
+                  { name: "Reframing Checklist (W1D3)", url: "https://docs.google.com/presentation/d/1CnqD0uH1IUDsVEigXHOM5-KhN-uGWDEcEdpAMhXNvYw/edit", why: "4-point quality check on HMW statements — Audience / Context / Verb / Scope." }
+                ],
                 status: "draft",
                 foundation: "Module teach. From a validated problem to a candidate solution. The Reframing move: turn 'how do I solve this' into 'what if the problem were different?' Generates more solutions than direct attack.",
                 students: [
@@ -3595,8 +3708,12 @@ const SCHEDULE = {
               }
             },
             { label: "Pick solution", kind: "work",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/14H4jaPfEPF1OLY_Ab0FybRSOil1i8z3Gnnh08L3jwjk/edit",
               time_start: "13:45", time_end: "14:30",
               slide: {
+                companion_decks: [
+                  { name: "Synthesis (W1D3)", url: "https://docs.google.com/presentation/d/1wiryrC6v7XPK7p3k36SYajNxOqQhMadQBvFLd8TW5DU/edit", why: "One-page synthesis: HMW + problem + quotes + direction. Feeds the picking decision." }
+                ],
                 status: "draft",
                 foundation: "Refine or replace the solution based on panel feedback. Some students will need to swap candidates. Some will need to sharpen. The choice is theirs but the bar is: defendable in tomorrow's pitch.",
                 students: [
@@ -3764,6 +3881,7 @@ const SCHEDULE = {
               }
             },
             { label: "RC: Pitch speed dating", kind: "rc",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/175VzFjLm7QrqypN1oHn3j15AZYxWfX8-nFWlEmBuiMA/edit",
               time_start: "10:30", time_end: "11:15",
               slide: {
                 status: "ready",
@@ -3864,6 +3982,7 @@ const SCHEDULE = {
               }
             },
             { label: "Voting", kind: "work",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1rkryN0YzQji4GQR_9W2kESsNJYWPVD6AA0YsklQV10k/edit",
               time_start: "15:30", time_end: "16:30",
               slide: {
                 status: "draft",
@@ -3937,6 +4056,7 @@ const SCHEDULE = {
               }
             },
             { label: "Pitch selection — 3 tracks intro", kind: "work",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1nQVQj0bt-nXqDGq2aET6HY91gTIdI2vHKExOUyi_tqs/edit",
               time_start: "09:15", time_end: "10:15",
               slide: {
                 status: "draft",
@@ -3959,6 +4079,7 @@ const SCHEDULE = {
               }
             },
             { label: "Repitch the 5", kind: "pitch",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1LWPyngNBheA4EbLA56GQ8i4OrpFVc-Ysp0AN9tdL_rk/edit",
               time_start: "10:15", time_end: "11:00",
               slide: {
                 status: "draft",
@@ -3979,6 +4100,7 @@ const SCHEDULE = {
               }
             },
             { label: "Preferences", kind: "work",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1RIO1WCkPMDn7wNEnDUrZ0pw1uEWfa6OOOFgKSUiI2kM/edit",
               time_start: "11:00", time_end: "12:00",
               slide: {
                 status: "draft",
@@ -4002,7 +4124,8 @@ const SCHEDULE = {
             },
           ],
           pm: [
-            { label: "LPP Flow / PRD WK2", kind: "lpp", sub: "Introduction to the Lean Product Plan and PRD structure for Week 2",
+            { label: "LPP Flow / PRD WK2", kind: "lpp",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1sqU1FmOye5CCxIrVui6vZKxEw-0uZLcccM-bT9tb1hQ/edit", sub: "Introduction to the Lean Product Plan and PRD structure for Week 2",
               time_start: "13:00", time_end: "13:45",
               audiences: ["student", "alumni"],
               slide: {
@@ -4030,6 +4153,9 @@ const SCHEDULE = {
               time_start: "13:45", time_end: "14:30",
               audiences: ["student", "alumni"],
               slide: {
+                companion_decks: [
+                  { name: "Track Confirmation (W2D1)", url: "https://docs.google.com/presentation/d/1QrDp5eonmPQV2XGciYxCRHl2td54GuARMsFnYa-kxUo/edit", why: "Per-team P/B/M assignment ritual. Use during allocation to lock who's doing what." }
+                ],
                 status: "draft",
                 foundation: "Reveal team assignments. Each student now knows their project + track + teammates. The first conversation between teammates happens here.",
                 students: [
@@ -4070,7 +4196,8 @@ const SCHEDULE = {
                 ]
               }
             },
-            { label: "SA2 · 8 frames customer journey", kind: "work", sub: "Crazy 8s on the user experience",
+            { label: "SA2 · 8 frames customer journey", kind: "work",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1Qi2R4FViztvTu6UyzsDuZPQJvo1PmuLC1HY4qDY4w9w/edit", sub: "Crazy 8s on the user experience",
               time_start: "15:30", time_end: "16:30",
               audiences: ["student", "alumni"],
               slide: {
@@ -4098,6 +4225,9 @@ const SCHEDULE = {
               audiences: ["student", "alumni"],
               facilitator_roles: ["f2"],
               slide: {
+                companion_decks: [
+                  { name: "Team Building (W1D1)", url: "https://docs.google.com/presentation/d/1TR1Uirk4MBB82LwZ8nUVtihs0za2QUKuVBIenxp3GTo/edit", why: "Energy game + group challenge + debrief. Companion concept for the closing social block." }
+                ],
                 status: "draft",
                 foundation: "End of Week 1. Cohort-wide evening — marks transition into Week 2 specialty work. F2 + Leadership alumni co-host."
               }
@@ -4115,9 +4245,13 @@ const SCHEDULE = {
           name: "Mon",
           am: [
             { label: "Welcome", kind: "welcome",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1AqE7xDTKd6RES9m_6bLKPduR1jTFKBEFGm-bYj0IYNc/edit",
               time_start: "09:00", time_end: "09:30",
               audiences: ["student", "alumni"],
               slide: {
+                companion_decks: [
+                  { name: "Improv (W2D1)", url: "https://docs.google.com/presentation/d/1EQN_AQp9y81Ku69_HUfhcaCYntAg7hz3UCMgtmcSZRA/edit", why: "30-min improv warmup — yes-and, scene game. Use as an energy block on day 1." }
+                ],
                 status: "draft",
                 foundation: "Day 6 opener. Welcome them back from the weekend. Quick energy check, frame Week 2 as the build week. Different shape than Week 1: teams now lock and ship.",
                 students: [
@@ -4136,7 +4270,8 @@ const SCHEDULE = {
                 ]
               }
             },
-            { label: "Week 2 Flow (PRD)", kind: "lpp", sub: "How the week works, PRD walkthrough",
+            { label: "Week 2 Flow (PRD)", kind: "lpp",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/11EqCmMhiTEhkpdO2dGfYIOhlb4zO1796ToJh2aj3AU4/edit", sub: "How the week works, PRD walkthrough",
               time_start: "09:30", time_end: "10:30",
               audiences: ["student", "alumni"],
               slide: {
@@ -4228,7 +4363,8 @@ const SCHEDULE = {
                 ]
               }
             },
-            { label: "SA4 · Team Aligned on V1 Solution", kind: "work", sub: "Lock the V1 before specialty work begins",
+            { label: "SA4 · Team Aligned on V1 Solution", kind: "work",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1XYTFsNE_gliwx-1uQJkxwwjrTFg4FBVjmgPfVndIcbg/edit", sub: "Lock the V1 before specialty work begins",
               time_start: "13:45", time_end: "14:15",
               audiences: ["student", "alumni"],
               slide: {
@@ -4262,7 +4398,8 @@ const SCHEDULE = {
                 uses_prd_lab: true
               }
             },
-            { label: "Canvas Lite", kind: "track", track: "business", code: "B1",
+            { label: "Canvas Lite", kind: "track",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1Y-yLHUZTtlhDnoSvKuNwFa7mc1edDR8eaCTPREZYb4U/edit", track: "business", code: "B1",
               time_start: "14:15", time_end: "16:00",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4274,7 +4411,8 @@ const SCHEDULE = {
                 uses_prd_lab: false
               }
             },
-            { label: "Landscape Map", kind: "track", track: "market", code: "M1",
+            { label: "Landscape Map", kind: "track",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1qz7r0MnRXohST1Kn1W4vw_OJjFLAMw3s7aXAEOe2sKs/edit", track: "market", code: "M1",
               time_start: "14:15", time_end: "16:00",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4286,10 +4424,14 @@ const SCHEDULE = {
                 uses_prd_lab: false
               }
             },
-            { label: "Team Synthesis", kind: "teamteach", sub: "Specialists report back what they built",
+            { label: "Team Synthesis", kind: "teamteach",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1JCdymOmEtp5pdmUM6cpmEB5T5DJ98EKMlV0xXCxVDfY/edit", sub: "Specialists report back what they built",
               time_start: "16:00", time_end: "16:30",
               audiences: ["student", "alumni"],
               slide: {
+                companion_decks: [
+                  { name: "Joint Work (W2D2)", url: "https://docs.google.com/presentation/d/1BuRU0WR45XawSMSvvQ1svk3usS-jcgikFrSgxfC3kMI/edit", why: "Phase 1 worksheets running in parallel (P1/B1/M1). Context for what each specialist brings to the hinge." }
+                ],
                 status: "draft",
                 foundation: "End of Mon PM specialty round 1. Each specialist returns to their team and teaches what they built. This is where the synthesis hinge from Stacey's micro-cycle starts: teams can only scope what they understand.",
                 students: [
@@ -4317,6 +4459,10 @@ const SCHEDULE = {
               time_start: "09:00", time_end: "09:15",
               audiences: ["student", "alumni"],
               slide: {
+                companion_decks: [
+                  { name: "Team Alignment (W2D2)", url: "https://docs.google.com/presentation/d/1OzNoe-qd5sdC3ajxEiCex6RyaHfpIAQbZ8ZKIvDgAXs/edit", why: "08:45 pre-stagger huddle — solution sentence + PRD + room confirm." },
+                  { name: "Track Intro Stagger (W2D2)", url: "https://docs.google.com/presentation/d/1WfYtn2oo3E7xOJOv5txZqdsxO7hrSEGXWeiaJkprBMM/edit", why: "30-min parallel intros — Product, Business, Market each open their room." }
+                ],
                 status: "draft",
                 foundation: "Day 7 morning check-in. After Mon's specialty round 1 plus team synthesis, what's the energy? Quick Rollercoaster pulse before the next round.",
                 students: [
@@ -4334,7 +4480,8 @@ const SCHEDULE = {
                 ]
               }
             },
-            { label: "MVP Scoping", kind: "track", track: "product", code: "P2",
+            { label: "MVP Scoping", kind: "track",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1HOYdAINN2AO8M33guoO8FMTgUpVkhQJjQLAPB5SITjg/edit", track: "product", code: "P2",
               time_start: "09:15", time_end: "11:30",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4346,7 +4493,8 @@ const SCHEDULE = {
                 uses_prd_lab: true
               }
             },
-            { label: "Back-of-Napkin Economics", kind: "track", track: "business", code: "B2",
+            { label: "Back-of-Napkin Economics", kind: "track",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1i0nZGThGedpI4wqgQWtjMkerCvM2-bJ0WyRRXYz0QFQ/edit", track: "business", code: "B2",
               time_start: "09:15", time_end: "11:30",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4358,7 +4506,8 @@ const SCHEDULE = {
                 uses_prd_lab: false
               }
             },
-            { label: "Validation Design", kind: "track", track: "market", code: "M2",
+            { label: "Validation Design", kind: "track",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1u_4bookVYIxezmFKcoFHhTLGbkBDJX-NNT19tvgXBdw/edit", track: "market", code: "M2",
               time_start: "09:15", time_end: "11:30",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4399,6 +4548,9 @@ const SCHEDULE = {
               time_start: "13:00", time_end: "16:00",
               audiences: ["student", "alumni"],
               slide: {
+                companion_decks: [
+                  { name: "Reality Check Rules (W2D3)", url: "https://docs.google.com/presentation/d/1HaD3-aqU1lXI1QHRH-ff14rLdVKdclzXBUHBwC_oxU8/edit", why: "5 non-negotiables for the field test. Read aloud before deploying." }
+                ],
                 status: "draft",
                 foundation: "First field test. Teams leave the facility to validate hypotheses with real users, running the experiment M2 designed this morning. Designed to be uncomfortable. The market doesn't lie if you ask it the right questions.",
                 students: [
@@ -4468,7 +4620,8 @@ const SCHEDULE = {
                 ]
               }
             },
-            { label: "Sponsor Feedback Sessions", kind: "sponsor", sub: "Sponsor reviews team work in progress",
+            { label: "Sponsor Feedback Sessions", kind: "sponsor",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/17Gf0pj547bqFpTYrJrJcJxvJVl4y3WoJs6MKKdOkWbs/edit", sub: "Sponsor reviews team work in progress",
               time_start: "09:15", time_end: "10:15",
               audiences: ["student", "alumni"],
               slide: {
@@ -4492,7 +4645,8 @@ const SCHEDULE = {
                 ]
               }
             },
-            { label: "Prototype Spec Sheet", kind: "track", track: "product", code: "P3",
+            { label: "Prototype Spec Sheet", kind: "track",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1fX37QQ72CPLQu-jL5qjMecYQnePzPHLlTWEPWE7XCFo/edit", track: "product", code: "P3",
               time_start: "10:15", time_end: "12:00",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4504,7 +4658,8 @@ const SCHEDULE = {
                 uses_prd_lab: true
               }
             },
-            { label: "The 100-Day Plan", kind: "track", track: "business", code: "B3",
+            { label: "The 100-Day Plan", kind: "track",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1wAnx8uL8X-KTEoSpaDDC23gEy_B5Zpw_wUXpFN1ScwU/edit", track: "business", code: "B3",
               time_start: "10:15", time_end: "12:00",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4516,7 +4671,8 @@ const SCHEDULE = {
                 uses_prd_lab: false
               }
             },
-            { label: "First Moves", kind: "track", track: "market", code: "M3",
+            { label: "First Moves", kind: "track",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1HLOZYc4OOSgv1RdHr0JszhOsLrehyG7IUG_HeOQ1DF8/edit", track: "market", code: "M3",
               time_start: "10:15", time_end: "12:00",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4553,7 +4709,8 @@ const SCHEDULE = {
                 ]
               }
             },
-            { label: "Out in Market", kind: "work", sub: "Second field test, prototype in hand",
+            { label: "Out in Market", kind: "work",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1bL-ovRKAAIpJllPFGditWIDh6aTD9yQtqvRb3RJ1wLg/edit", sub: "Second field test, prototype in hand",
               time_start: "13:45", time_end: "16:00",
               audiences: ["student", "alumni"],
               slide: {
@@ -4625,6 +4782,7 @@ const SCHEDULE = {
               }
             },
             { label: "LPP TIME", kind: "lpp",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/13sj34pD9o4nqdHeGH2klfR-uB3tiz_orCxTIxhuOCfA/edit",
               time_start: "09:15", time_end: "11:00",
               audiences: ["student", "alumni"],
               slide: {
@@ -4651,6 +4809,7 @@ const SCHEDULE = {
               }
             },
             { label: "Guest: How to pitch", kind: "panel",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1sFvPxdpjP89fRn5KVuh2PxXKqkTA5UN-ZmOnjYlJqyU/edit",
               time_start: "11:00", time_end: "12:00",
               audiences: ["student", "alumni"],
               slide: {
@@ -4675,7 +4834,8 @@ const SCHEDULE = {
             },
           ],
           pm: [
-            { label: "LPP TIME — Narrative Time", kind: "lpp", sub: "Assemble the final story",
+            { label: "LPP TIME — Narrative Time", kind: "lpp",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1dyLYCTSEdDT3aLVX2Thr4-JtZ0MwXsd0grgmBqwQ5JU/edit", sub: "Assemble the final story",
               time_start: "13:00", time_end: "17:00",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4744,9 +4904,13 @@ const SCHEDULE = {
               }
             },
             { label: "LPP practice", kind: "pitch",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1T-n9nKGa4GWM5WfAKJcUqFa_DQwTt4jafwn85Aiplh0/edit",
               time_start: "09:15", time_end: "12:00",
               audiences: ["student", "alumni"],
               slide: {
+                companion_decks: [
+                  { name: "Pitch Practice R1 (W2D4)", url: "https://docs.google.com/presentation/d/1jB3Sik67elBLsvFrzFZ_jZHWQpwUuVGHkWVVcdyZNjo/edit", why: "Thu PM first pitch attempt. Useful for review when refining the Fri practice." }
+                ],
                 status: "draft",
                 foundation: "Practice runs of the locked LPP pitch. Each team runs the pitch start-to-finish, gets feedback, runs it again. The bar shifts from 'is the content right?' to 'does it land in front of a real audience?'",
                 students: [
@@ -4769,6 +4933,7 @@ const SCHEDULE = {
           ],
           pm: [
             { label: "Final practice", kind: "pitch",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1eosYAOnwFN6qBLXb-JzK2_XZJJU7mreacJZxhWNYHjI/edit",
               time_start: "13:00", time_end: "14:00",
               audiences: ["student", "alumni"],
               slide: {
@@ -4791,6 +4956,7 @@ const SCHEDULE = {
               }
             },
             { label: "Final Pitches", kind: "pitch",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1VB1KG7XX7d0tUMZoPLOPhvIPTfRdK-QENvq_wJZFb70/edit",
               time_start: "14:00", time_end: "16:00",
               audiences: ["student", "alumni"],
               slide: {
@@ -4816,6 +4982,7 @@ const SCHEDULE = {
               }
             },
             { label: "Reception", kind: "social",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1g1klcj8GAr4sXZcF8G_bC0bQZitBvgIKFLqxSiuNCiM/edit",
               time_start: "16:00", time_end: "17:00",
               audiences: ["student", "alumni"],
               slide: {
@@ -5203,6 +5370,111 @@ const SECTIONS = [
   "day-w2-mon", "day-w2-tue", "day-w2-wed", "day-w2-thu", "day-w2-fri",
   "activities", "layers", "decisions", "flow",
 ];
+
+/* ════════════════════════════════════════════════════════════
+   SLIDE DECK MANIFEST
+   Cross-repo manifest: source-of-truth is in the PRIVATE companion
+   repo at hlv-workbench-private/data/slide-decks.json. The workbench
+   (this PUBLIC repo) needs to consume it. Two strategies considered:
+
+     Option A — Build-time copy (DEFAULT).
+       tools/sync-slide-manifest.mjs copies the private file into
+       hlv-Workbench/data/slide-decks.json. Workbench reads from its
+       own data/. Works in GitHub Pages / Netlify / any static host.
+       Cost: must remember to re-run the sync after every manifest edit.
+
+     Option B — Runtime fetch of a sibling-relative path
+       (../hlv-workbench-private/data/slide-decks.json). Cleaner — no
+       sync step. Works locally where both repos sit side by side,
+       but fails in published context (the private repo isn't there).
+
+   Chose A. To switch to B, point SLIDE_MANIFEST_URL at the relative
+   path and drop the sync script. Owen — flip this if you want.
+   ════════════════════════════════════════════════════════════ */
+const SLIDE_MANIFEST_URL = "data/slide-decks.json";
+
+/* Code → deck entry. Populated by loadSlideManifest() at init.
+   Empty object until the fetch resolves; callers must tolerate misses. */
+window.SLIDES = Object.create(null);
+
+async function loadSlideManifest() {
+  try {
+    const res = await fetch(SLIDE_MANIFEST_URL, { cache: "no-store" });
+    if (!res.ok) {
+      console.warn(`[SLIDES] manifest fetch failed: ${res.status} ${res.statusText} — slide embedding disabled.`);
+      return;
+    }
+    const json = await res.json();
+    const decks = Array.isArray(json && json.decks) ? json.decks : [];
+    const map = Object.create(null);
+    const orphans = [];
+    // Codes the manifest can legitimately reference: SCHEDULE block codes
+    // and ACTIVITIES codes. Either is fine — both come from the same
+    // canonical set.
+    const knownCodes = new Set();
+    SCHEDULE.weeks.forEach(w => w.days.forEach(d => ["am", "pm"].forEach(half => {
+      (d[half] || []).forEach(b => { if (b.code) knownCodes.add(b.code); });
+    })));
+    ACTIVITIES.forEach(a => { if (a.code) knownCodes.add(a.code); });
+
+    decks.forEach(deck => {
+      if (!deck || !deck.code) return;
+      map[deck.code] = deck;
+      if (!knownCodes.has(deck.code)) orphans.push(deck.code);
+    });
+    window.SLIDES = map;
+    const count = Object.keys(map).length;
+    console.info(`[SLIDES] loaded ${count} deck${count === 1 ? "" : "s"} from manifest.`);
+    if (orphans.length) {
+      console.warn(`[SLIDES] manifest contains ${orphans.length} orphan code(s) not found in SCHEDULE/ACTIVITIES: ${orphans.join(", ")}. These won't embed.`);
+    }
+    // If the detail overlay happens to be open when the manifest lands
+    // (race on a cold load), re-render it so the iframe appears.
+    if (typeof CURRENT_DETAIL !== "undefined" && CURRENT_DETAIL >= 0) {
+      try { openDetail(CURRENT_DETAIL, SCOPE_INDICES); } catch (_) { /* noop */ }
+    }
+  } catch (err) {
+    console.warn("[SLIDES] manifest load error — slide embedding disabled:", err);
+  }
+}
+
+/* Render helpers used by renderBlockSlide. Mode-aware: in slide mode the
+   iframe is the headline; in page mode (detail overlay opened from a
+   block tile) we render only a slim affordance so we don't drop 35
+   iframes on the workbench when someone scrolls through. */
+function slideDeckEmbedHTML(deck) {
+  if (!deck || !deck.deckId) return "";
+  const embedSrc = `https://docs.google.com/presentation/d/${escapeText(deck.deckId)}/embed?start=false&loop=false&delayms=3000`;
+  const openUrl = deck.url || `https://docs.google.com/presentation/d/${deck.deckId}/edit`;
+  const status = deck.status ? `<span class="deck-status">${escapeText(deck.status)}</span>` : "";
+  return `
+    <div class="slide-deck-embed">
+      <iframe class="deck-frame"
+        src="${embedSrc}"
+        frameborder="0"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer"
+        title="Google Slides — ${escapeText(deck.name || deck.code)}"></iframe>
+      <div class="deck-meta">
+        <span class="deck-name"><span class="deck-code">${escapeText(deck.code)}</span>${escapeText(deck.name || "")}</span>
+        ${status}
+        <a class="deck-open" href="${escapeText(openUrl)}" target="_blank" rel="noopener">Open in Google Slides ↗</a>
+      </div>
+    </div>
+  `;
+}
+function slideDeckAffordanceHTML(deck) {
+  if (!deck || !deck.deckId) return "";
+  const openUrl = deck.url || `https://docs.google.com/presentation/d/${deck.deckId}/edit`;
+  return `
+    <div class="slide-deck-affordance">
+      <span class="deck-code">${escapeText(deck.code)}</span>
+      <span class="deck-name">${escapeText(deck.name || "")}</span>
+      <a class="deck-open" href="${escapeText(openUrl)}" target="_blank" rel="noopener">Open in Google Slides ↗</a>
+    </div>
+  `;
+}
 
 /* ════════════════════════════════════════════════════════════
    VALIDATION — runs at load. Shows red banner on data malformation.
@@ -5899,6 +6171,11 @@ function setMode(mode) {
     document.body.classList.remove("slide-mode");
     document.querySelectorAll("section").forEach(s => s.classList.remove("current"));
   }
+  // If the detail overlay is open while the user toggles modes, re-render
+  // so the slide-deck embed/affordance flips between iframe and slim strip.
+  if (typeof CURRENT_DETAIL !== "undefined" && CURRENT_DETAIL >= 0) {
+    openDetail(CURRENT_DETAIL, SCOPE_INDICES);
+  }
 }
 
 // Map slide h-id → top-nav link target (since nav has 6 links but slide has 16)
@@ -6322,10 +6599,24 @@ function renderBlockSlide(entry) {
       </div>
     </header>
   `;
+
+  // Manifest-driven slide deck embed. If this block has a `code` and the
+  // manifest has a matching deck, render an embed (slide mode) or a slim
+  // affordance (page mode). Falls through silently when no deck — the
+  // existing foundation/students/facilitator content carries the block.
+  const deck = (b.code && window.SLIDES) ? window.SLIDES[b.code] : null;
+  let deckHTML = "";
+  if (deck) {
+    deckHTML = (STATE.mode === "slide")
+      ? slideDeckEmbedHTML(deck)
+      : slideDeckAffordanceHTML(deck);
+  }
+
   // Authored slide (or synthesized default)
   return `
     <div class="detail-inner">
       ${titleHTML}
+      ${deckHTML}
       <div class="detail-grid">
         <div class="panel">
           <div class="panel-label">Foundation</div>
@@ -7287,6 +7578,7 @@ function renderViewBSlides(block) {
   }
   return `
     ${slidesBlock}
+    ${renderViewBCompanionDecks(slide.companion_decks)}
     ${vbSection("Foundation", slide.foundation)}
     ${vbSectionList("Students", slide.students)}
     ${vbSection("Facilitator notes", slide.facilitator)}
@@ -7294,6 +7586,24 @@ function renderViewBSlides(block) {
     ${vbSectionList("References", slide.references)}
     ${!slide.foundation && !(slide.students && slide.students.length) ? `<div class="vb-panel-body is-muted">No outline yet — block is a stub.</div>` : ""}
   `;
+}
+
+/* Companion decks — decks that are useful at this point in the flow but
+   aren't the primary teach for the block. Rendered below the embed so
+   they can be considered alongside the main session. */
+function renderViewBCompanionDecks(decks) {
+  if (!Array.isArray(decks) || decks.length === 0) return "";
+  const items = decks.map(d => `
+    <li style="margin: 6px 0;">
+      <strong>${escapeText(d.name || "")}</strong>${d.why ? ` <span class="is-muted">— ${escapeText(d.why)}</span>` : ""}
+      &nbsp;·&nbsp;
+      <a href="${escapeText(d.url)}" target="_blank" rel="noopener">Open ↗</a>
+    </li>`).join("");
+  return `
+    <div class="vb-panel-section">
+      <div class="vb-panel-label">Companion decks</div>
+      <ul class="vb-companion-decks" style="margin: 4px 0 0; padding-left: 18px;">${items}</ul>
+    </div>`;
 }
 
 function renderViewBAnalog(block) {
@@ -8016,6 +8326,10 @@ document.addEventListener("DOMContentLoaded", () => {
   applyView();
   STATE.mode = "page";
   document.querySelectorAll(".mode-btn").forEach(b => b.classList.toggle("active", b.dataset.mode === "page"));
+  // Fire-and-forget; embedding kicks in when the manifest lands. If the
+  // detail overlay is already open at that point, loadSlideManifest()
+  // re-renders it so the iframe appears without a user action.
+  loadSlideManifest();
 });
 </script>
 </body>
