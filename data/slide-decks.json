@@ -2,7 +2,603 @@
   "schema": {
     "fields": ["slug", "code", "name", "day", "deckId", "url", "status", "slideCount", "openFlags"]
   },
+  "design_tokens": {
+    "source": "owen-site skill (Studio Owen)",
+    "colors": {
+      "bg": "#faf9f7",
+      "fg_primary": "#1d1d1b",
+      "body_88": "rgba(29,29,27,0.88)",
+      "muted_55": "rgba(29,29,27,0.55)",
+      "rgb_primary_float": [0.1137, 0.1137, 0.1059],
+      "rgb_body_blend_float": [0.218, 0.215, 0.207],
+      "rgb_muted_blend_float": [0.504, 0.502, 0.493]
+    },
+    "type": {
+      "font": "Inter",
+      "weights_used": [400, 600, 700],
+      "scale_pt": {
+        "divider_title": 64,
+        "section_title": 44,
+        "body_one_statement": 26,
+        "body_list": 22,
+        "body_steps_or_flags": 13,
+        "divider_subtitle": 18,
+        "footer": 11
+      },
+      "line_spacing": { "single_statement": 150, "list": 160, "steps": 140, "flags": 145 }
+    }
+  },
   "decks": [
+    {
+      "slug": "w1d5-track-preferences",
+      "code": "W1D5-TRACK-PREFERENCES",
+      "name": "Track Preferences",
+      "day": "W1D5 AM→PM",
+      "deckId": "1RIO1WCkPMDn7wNEnDUrZ0pw1uEWfa6OOOFgKSUiI2kM",
+      "url": "https://docs.google.com/presentation/d/1RIO1WCkPMDn7wNEnDUrZ0pw1uEWfa6OOOFgKSUiI2kM/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Allocation algorithm — Porto did manual + preference-respecting. Same for Lisbon?" }
+      ]
+    },
+    {
+      "slug": "w1d5-lpp-intro",
+      "code": "W1D5-LPP-INTRO",
+      "name": "LPP Intro",
+      "day": "W1D5 PM",
+      "deckId": "1sqU1FmOye5CCxIrVui6vZKxEw-0uZLcccM-bT9tb1hQ",
+      "url": "https://docs.google.com/presentation/d/1sqU1FmOye5CCxIrVui6vZKxEw-0uZLcccM-bT9tb1hQ/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "LPP template version for Lisbon 2026 — Porto current or revised?" }
+      ]
+    },
+    {
+      "slug": "w1d5-voting",
+      "code": "W1D5-VOTING",
+      "name": "Voting",
+      "day": "W1D5 AM",
+      "deckId": "1rkryN0YzQji4GQR_9W2kESsNJYWPVD6AA0YsklQV10k",
+      "url": "https://docs.google.com/presentation/d/1rkryN0YzQji4GQR_9W2kESsNJYWPVD6AA0YsklQV10k/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w1d5-track-intro",
+      "code": "W1D5-TRACK-INTRO",
+      "name": "Track Intro",
+      "day": "W1D5 AM",
+      "deckId": "1nQVQj0bt-nXqDGq2aET6HY91gTIdI2vHKExOUyi_tqs",
+      "url": "https://docs.google.com/presentation/d/1nQVQj0bt-nXqDGq2aET6HY91gTIdI2vHKExOUyi_tqs/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Port content from existing Friday deck — confirm Porto Day 5 is source." },
+        { "type": "NEEDS_OWEN", "note": "Confirm no 'GTM' drift downstream — Lisbon 2026 lock as Product/Business/Market." }
+      ]
+    },
+    {
+      "slug": "w1d4-solution-selection",
+      "code": "W1D4-SOLUTION-SELECTION",
+      "name": "Solution Selection",
+      "day": "W1D4 late PM",
+      "deckId": "14H4jaPfEPF1OLY_Ab0FybRSOil1i8z3Gnnh08L3jwjk",
+      "url": "https://docs.google.com/presentation/d/14H4jaPfEPF1OLY_Ab0FybRSOil1i8z3Gnnh08L3jwjk/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Selection criteria for '5' — cohort size assumption for Lisbon 2026." }
+      ]
+    },
+    {
+      "slug": "w1d4-re-pitch",
+      "code": "W1D4-RE-PITCH",
+      "name": "Re-pitch",
+      "day": "W1D4 PM",
+      "deckId": "1LWPyngNBheA4EbLA56GQ8i4OrpFVc-Ysp0AN9tdL_rk",
+      "url": "https://docs.google.com/presentation/d/1LWPyngNBheA4EbLA56GQ8i4OrpFVc-Ysp0AN9tdL_rk/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w1d4-pitch-prep",
+      "code": "W1D4-PITCH-PREP",
+      "name": "Pitch Prep",
+      "day": "W1D4 AM",
+      "deckId": "1ZB3D31xuUVl53Kwwl5a5xXpq9RMjnBMp-JjWWhbpRXo",
+      "url": "https://docs.google.com/presentation/d/1ZB3D31xuUVl53Kwwl5a5xXpq9RMjnBMp-JjWWhbpRXo/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w1d4-speed-dating",
+      "code": "W1D4-SPEED-DATING",
+      "name": "Speed Dating",
+      "day": "W1D4 AM",
+      "deckId": "175VzFjLm7QrqypN1oHn3j15AZYxWfX8-nFWlEmBuiMA",
+      "url": "https://docs.google.com/presentation/d/175VzFjLm7QrqypN1oHn3j15AZYxWfX8-nFWlEmBuiMA/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Tier scoring rule — peer vs cross-team weighting for W1 speed dating." }
+      ]
+    },
+    {
+      "slug": "w1d3-synthesis",
+      "code": "W1D3-SYNTHESIS",
+      "name": "Synthesis",
+      "day": "W1D3 late PM",
+      "deckId": "1wiryrC6v7XPK7p3k36SYajNxOqQhMadQBvFLd8TW5DU",
+      "url": "https://docs.google.com/presentation/d/1wiryrC6v7XPK7p3k36SYajNxOqQhMadQBvFLd8TW5DU/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w1d3-reframing-checklist",
+      "code": "W1D3-REFRAMING-CHECKLIST",
+      "name": "Reframing Checklist",
+      "day": "W1D3 PM",
+      "deckId": "1CnqD0uH1IUDsVEigXHOM5-KhN-uGWDEcEdpAMhXNvYw",
+      "url": "https://docs.google.com/presentation/d/1CnqD0uH1IUDsVEigXHOM5-KhN-uGWDEcEdpAMhXNvYw/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w1d3-problem-reframing",
+      "code": "W1D3-PROBLEM-REFRAMING",
+      "name": "Problem Reframing",
+      "day": "W1D3 PM",
+      "deckId": "1M-d8wVkQr_k_a8v9VvS0idgFYuvn7bDa3imBSs8KPQw",
+      "url": "https://docs.google.com/presentation/d/1M-d8wVkQr_k_a8v9VvS0idgFYuvn7bDa3imBSs8KPQw/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w1d3-interviews",
+      "code": "W1D3-INTERVIEWS",
+      "name": "Interviews",
+      "day": "W1D3 AM→early PM",
+      "deckId": "140gViXVY1Zy6d_TwFfMU1hc_AxdOqT0IuNIvNKF-qfc",
+      "url": "https://docs.google.com/presentation/d/140gViXVY1Zy6d_TwFfMU1hc_AxdOqT0IuNIvNKF-qfc/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Lisbon foot-traffic area — Porto used Avenida dos Aliados." },
+        { "type": "NEEDS_OWEN", "note": "Chaperone protocol for off-site teams — Lisbon legal/insurance." }
+      ]
+    },
+    {
+      "slug": "w1d2-interview-prep",
+      "code": "W1D2-INTERVIEW-PREP",
+      "name": "Interview Prep",
+      "day": "W1D2 PM",
+      "deckId": "10D2hf7E6Gpf9UhjA0E8SiesfO-iWmqWP3UrzfwNF68A",
+      "url": "https://docs.google.com/presentation/d/10D2hf7E6Gpf9UhjA0E8SiesfO-iWmqWP3UrzfwNF68A/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w1d2-problem-mapping",
+      "code": "W1D2-PROBLEM-MAPPING",
+      "name": "Problem Mapping",
+      "day": "W1D2 AM",
+      "deckId": "137gWfX4oQsBMBP3uIj01RrL1Oicf_e1oye4uKb90uFo",
+      "url": "https://docs.google.com/presentation/d/137gWfX4oQsBMBP3uIj01RrL1Oicf_e1oye4uKb90uFo/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w1d2-opportunity-id",
+      "code": "W1D2-OPPORTUNITY-ID",
+      "name": "Opportunity ID",
+      "day": "W1D2 AM",
+      "deckId": "1OsC3s35ZNqoCTkch3jBQHhiMFWwviVCpVBb3sUafFNs",
+      "url": "https://docs.google.com/presentation/d/1OsC3s35ZNqoCTkch3jBQHhiMFWwviVCpVBb3sUafFNs/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w1d1-team-building",
+      "code": "W1D1-TEAM-BUILDING",
+      "name": "Team Building",
+      "day": "W1D1 late PM",
+      "deckId": "1TR1Uirk4MBB82LwZ8nUVtihs0za2QUKuVBIenxp3GTo",
+      "url": "https://docs.google.com/presentation/d/1TR1Uirk4MBB82LwZ8nUVtihs0za2QUKuVBIenxp3GTo/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Facilitator activity choice — confirm kit + options memo for Lisbon." }
+      ]
+    },
+    {
+      "slug": "w1d1-problem-identification",
+      "code": "W1D1-PROBLEM-ID",
+      "name": "Problem Identification",
+      "day": "W1D1 late AM",
+      "deckId": "1Rf-fSmOdVLRKAxwEfnYCn0EKuwjB5s-0v0_p4vkXzcI",
+      "url": "https://docs.google.com/presentation/d/1Rf-fSmOdVLRKAxwEfnYCn0EKuwjB5s-0v0_p4vkXzcI/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w1d1-challenge-intro",
+      "code": "W1D1-CHALLENGE-INTRO",
+      "name": "Challenge Intro",
+      "day": "W1D1 PM",
+      "deckId": "1ytRhPSLZIrm_ymh0qNF7ZGf4PfdVnDHgapH2Tg6KesE",
+      "url": "https://docs.google.com/presentation/d/1ytRhPSLZIrm_ymh0qNF7ZGf4PfdVnDHgapH2Tg6KesE/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Sponsor brief format — Sonae 2026." },
+        { "type": "NEEDS_OWEN", "note": "25-min hard cap — Porto sponsor ran over." }
+      ]
+    },
+    {
+      "slug": "w1d1-what-is-entrepreneurship",
+      "code": "W1D1-WHAT-IS-ENTR",
+      "name": "What is Entrepreneurship",
+      "day": "W1D1 AM",
+      "deckId": "1ebqGoQsMDJMmwDRygdH18xZsexVVG7GqbaRyI8DZBO8",
+      "url": "https://docs.google.com/presentation/d/1ebqGoQsMDJMmwDRygdH18xZsexVVG7GqbaRyI8DZBO8/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Updated track briefs for 2026 — Porto versions still apply?" }
+      ]
+    },
+    {
+      "slug": "w1d1-welcome",
+      "code": "W1D1-WELCOME",
+      "name": "Welcome",
+      "day": "W1D1 09:00",
+      "deckId": "1VLeUeBe5V2Z445ARVnWz9scpl6xCmv3b8tryVFMQjW4",
+      "url": "https://docs.google.com/presentation/d/1VLeUeBe5V2Z445ARVnWz9scpl6xCmv3b8tryVFMQjW4/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Specific opener phrase for Lisbon cohort." }
+      ]
+    },
+    {
+      "slug": "w2d5-reception",
+      "code": "W2D5-RECEPTION",
+      "name": "Reception",
+      "day": "W2D5 PM",
+      "deckId": "1g1klcj8GAr4sXZcF8G_bC0bQZitBvgIKFLqxSiuNCiM",
+      "url": "https://docs.google.com/presentation/d/1g1klcj8GAr4sXZcF8G_bC0bQZitBvgIKFLqxSiuNCiM/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Venue + catering for Lisbon 2026." },
+        { "type": "NEEDS_OWEN", "note": "Families invited — Porto did not; Lisbon TBC." }
+      ]
+    },
+    {
+      "slug": "w2d5-final-pitches",
+      "code": "W2D5-FINAL-PITCHES",
+      "name": "Final Pitches",
+      "day": "W2D5 PM",
+      "deckId": "1VB1KG7XX7d0tUMZoPLOPhvIPTfRdK-QENvq_wJZFb70",
+      "url": "https://docs.google.com/presentation/d/1VB1KG7XX7d0tUMZoPLOPhvIPTfRdK-QENvq_wJZFb70/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Pitch order — random vs. curated arc." },
+        { "type": "NEEDS_OWEN", "note": "Recording logistics." }
+      ]
+    },
+    {
+      "slug": "w2d5-pitch-practice-r2",
+      "code": "W2D5-PITCH-R2",
+      "name": "Pitch Practice R2",
+      "day": "W2D5 late AM",
+      "deckId": "1eosYAOnwFN6qBLXb-JzK2_XZJJU7mreacJZxhWNYHjI",
+      "url": "https://docs.google.com/presentation/d/1eosYAOnwFN6qBLXb-JzK2_XZJJU7mreacJZxhWNYHjI/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w2d5-pitch-prep",
+      "code": "W2D5-PITCH-PREP",
+      "name": "Pitch Prep",
+      "day": "W2D5 AM",
+      "deckId": "1T-n9nKGa4GWM5WfAKJcUqFa_DQwTt4jafwn85Aiplh0",
+      "url": "https://docs.google.com/presentation/d/1T-n9nKGa4GWM5WfAKJcUqFa_DQwTt4jafwn85Aiplh0/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w2d4-pitch-practice-r1",
+      "code": "W2D4-PITCH-R1",
+      "name": "Pitch Practice R1",
+      "day": "W2D4 late PM",
+      "deckId": "1jB3Sik67elBLsvFrzFZ_jZHWQpwUuVGHkWVVcdyZNjo",
+      "url": "https://docs.google.com/presentation/d/1jB3Sik67elBLsvFrzFZ_jZHWQpwUuVGHkWVVcdyZNjo/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w2d4-lpp-narrative-time",
+      "code": "W2D4-LPP-NARRATIVE",
+      "name": "LPP Narrative Time",
+      "day": "W2D4 PM",
+      "deckId": "1dyLYCTSEdDT3aLVX2Thr4-JtZ0MwXsd0grgmBqwQ5JU",
+      "url": "https://docs.google.com/presentation/d/1dyLYCTSEdDT3aLVX2Thr4-JtZ0MwXsd0grgmBqwQ5JU/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w2d4-how-to-pitch",
+      "code": "W2D4-HOW-TO-PITCH",
+      "name": "How to Pitch",
+      "day": "W2D4 late AM",
+      "deckId": "1sFvPxdpjP89fRn5KVuh2PxXKqkTA5UN-ZmOnjYlJqyU",
+      "url": "https://docs.google.com/presentation/d/1sFvPxdpjP89fRn5KVuh2PxXKqkTA5UN-ZmOnjYlJqyU/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Specific guest for Lisbon 2026 TBC — name + bio." }
+      ]
+    },
+    {
+      "slug": "w2d4-lpp-time",
+      "code": "W2D4-LPP-TIME",
+      "name": "LPP Time",
+      "day": "W2D4 AM",
+      "deckId": "13sj34pD9o4nqdHeGH2klfR-uB3tiz_orCxTIxhuOCfA",
+      "url": "https://docs.google.com/presentation/d/13sj34pD9o4nqdHeGH2klfR-uB3tiz_orCxTIxhuOCfA/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "INFERRED", "note": "90-min duration inferred from Thu AM block order." }
+      ]
+    },
+    {
+      "slug": "w2d3-sponsor-feedback",
+      "code": "W2D3-SPONSOR-FEEDBACK",
+      "name": "Sponsor Feedback",
+      "day": "W2D3 PM",
+      "deckId": "17Gf0pj547bqFpTYrJrJcJxvJVl4y3WoJs6MKKdOkWbs",
+      "url": "https://docs.google.com/presentation/d/17Gf0pj547bqFpTYrJrJcJxvJVl4y3WoJs6MKKdOkWbs/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Sponsor availability window — Sonae PM, 1h sufficient?" }
+      ]
+    },
+    {
+      "slug": "w2d3-reality-check-rules",
+      "code": "W2D3-RC-RULES",
+      "name": "Reality Check Rules",
+      "day": "W2D3 early PM",
+      "deckId": "1HaD3-aqU1lXI1QHRH-ff14rLdVKdclzXBUHBwC_oxU8",
+      "url": "https://docs.google.com/presentation/d/1HaD3-aqU1lXI1QHRH-ff14rLdVKdclzXBUHBwC_oxU8/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w2d3-out-in-market-brief",
+      "code": "W2D3-OUT-IN-MARKET-BRIEF",
+      "name": "Out-in-Market Brief",
+      "day": "W2D3 early PM",
+      "deckId": "1bL-ovRKAAIpJllPFGditWIDh6aTD9yQtqvRb3RJ1wLg",
+      "url": "https://docs.google.com/presentation/d/1bL-ovRKAAIpJllPFGditWIDh6aTD9yQtqvRb3RJ1wLg/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Lisbon field-test location — Sonae equivalent of Porto Continente TBC." }
+      ]
+    },
+    {
+      "slug": "w2d2-team-teaches",
+      "code": "W2D2-TEAM-TEACHES",
+      "name": "Team Teaches",
+      "day": "W2D2 early PM",
+      "deckId": "1JCdymOmEtp5pdmUM6cpmEB5T5DJ98EKMlV0xXCxVDfY",
+      "url": "https://docs.google.com/presentation/d/1JCdymOmEtp5pdmUM6cpmEB5T5DJ98EKMlV0xXCxVDfY/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Whether 5/10/10 brief is locked or facilitator can flex." }
+      ]
+    },
+    {
+      "slug": "w2d2-joint-work",
+      "code": "W2D2-JOINT-WORK",
+      "name": "Joint Work",
+      "day": "W2D2 AM",
+      "deckId": "1BuRU0WR45XawSMSvvQ1svk3usS-jcgikFrSgxfC3kMI",
+      "url": "https://docs.google.com/presentation/d/1BuRU0WR45XawSMSvvQ1svk3usS-jcgikFrSgxfC3kMI/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "INFERRED", "note": "105-min block derived from Tue AM schedule." }
+      ]
+    },
+    {
+      "slug": "w2d2-track-intro-stagger",
+      "code": "W2D2-TRACK-INTRO-STAGGER",
+      "name": "Track Intro Stagger",
+      "day": "W2D2 AM",
+      "deckId": "1WfYtn2oo3E7xOJOv5txZqdsxO7hrSEGXWeiaJkprBMM",
+      "url": "https://docs.google.com/presentation/d/1WfYtn2oo3E7xOJOv5txZqdsxO7hrSEGXWeiaJkprBMM/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w2d2-team-alignment",
+      "code": "W2D2-TEAM-ALIGNMENT",
+      "name": "Team Alignment",
+      "day": "W2D2 08:45",
+      "deckId": "1OzNoe-qd5sdC3ajxEiCex6RyaHfpIAQbZ8ZKIvDgAXs",
+      "url": "https://docs.google.com/presentation/d/1OzNoe-qd5sdC3ajxEiCex6RyaHfpIAQbZ8ZKIvDgAXs/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "INFERRED", "note": "08:45 start — no clock times in workbench." }
+      ]
+    },
+    {
+      "slug": "w2d1-track-confirmation",
+      "code": "W2D1-TRACK-CONFIRMATION",
+      "name": "Track Confirmation",
+      "day": "W2D1 PM",
+      "deckId": "1QrDp5eonmPQV2XGciYxCRHl2td54GuARMsFnYa-kxUo",
+      "url": "https://docs.google.com/presentation/d/1QrDp5eonmPQV2XGciYxCRHl2td54GuARMsFnYa-kxUo/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Facilitator-assigns fallback if team can't agree — escalation rule." }
+      ]
+    },
+    {
+      "slug": "w2d1-improv",
+      "code": "W2D1-IMPROV",
+      "name": "Improv",
+      "day": "W2D1 PM",
+      "deckId": "1EQN_AQp9y81Ku69_HUfhcaCYntAg7hz3UCMgtmcSZRA",
+      "url": "https://docs.google.com/presentation/d/1EQN_AQp9y81Ku69_HUfhcaCYntAg7hz3UCMgtmcSZRA/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Facilitator chooses games — list is one option, not prescribed." }
+      ]
+    },
+    {
+      "slug": "w2d1-solution-alignment",
+      "code": "W2D1-SOLUTION-ALIGNMENT",
+      "name": "Solution Alignment",
+      "day": "W2D1 AM → PM",
+      "deckId": "1XYTFsNE_gliwx-1uQJkxwwjrTFg4FBVjmgPfVndIcbg",
+      "url": "https://docs.google.com/presentation/d/1XYTFsNE_gliwx-1uQJkxwwjrTFg4FBVjmgPfVndIcbg/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Escalation path if a team can't agree by lunch." }
+      ]
+    },
+    {
+      "slug": "w2d1-crazy-8s",
+      "code": "W2D1-CRAZY-8S",
+      "name": "Crazy 8s",
+      "day": "W2D1 AM",
+      "deckId": "1Qi2R4FViztvTu6UyzsDuZPQJvo1PmuLC1HY4qDY4w9w",
+      "url": "https://docs.google.com/presentation/d/1Qi2R4FViztvTu6UyzsDuZPQJvo1PmuLC1HY4qDY4w9w/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+    },
+    {
+      "slug": "w2d1-prd-problem-solution",
+      "code": "W2D1-PRD",
+      "name": "PRD Problem/Solution",
+      "day": "W2D1 AM",
+      "deckId": "11EqCmMhiTEhkpdO2dGfYIOhlb4zO1796ToJh2aj3AU4",
+      "url": "https://docs.google.com/presentation/d/11EqCmMhiTEhkpdO2dGfYIOhlb4zO1796ToJh2aj3AU4/edit",
+      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "openFlags": [
+        { "type": "INFERRED", "note": "8-minute write windows derived from 60-min block." }
+      ]
+    },
+    {
+      "slug": "w2d1-welcome-back",
+      "code": "W2D1-WELCOME-BACK",
+      "name": "Welcome Back",
+      "day": "W2D1 AM",
+      "deckId": "1AqE7xDTKd6RES9m_6bLKPduR1jTFKBEFGm-bYj0IYNc",
+      "url": "https://docs.google.com/presentation/d/1AqE7xDTKd6RES9m_6bLKPduR1jTFKBEFGm-bYj0IYNc/edit",
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Exact start time — assumed 09:00." },
+        { "type": "NEEDS_OWEN", "note": "Fold in latest Stacey/Cate context if any." }
+      ]
+    },
+    {
+      "slug": "m3-first-moves",
+      "code": "M3",
+      "name": "First Moves",
+      "day": "W2D3 AM",
+      "deckId": "1HLOZYc4OOSgv1RdHr0JszhOsLrehyG7IUG_HeOQ1DF8",
+      "url": "https://docs.google.com/presentation/d/1HLOZYc4OOSgv1RdHr0JszhOsLrehyG7IUG_HeOQ1DF8/edit",
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 1h 45min block" },
+        { "type": "NEEDS_OWEN", "note": "Worksheet PDF still labelled 'Channel Strategy' + 'GTM Track' — needs rename" },
+        { "type": "INFERRED",   "note": "'8 weeks for first 100 users' — time horizon implied" },
+        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root" }
+      ]
+    },
+    {
+      "slug": "m2-validation-design",
+      "code": "M2",
+      "name": "Validation Design",
+      "day": "W2D2 AM",
+      "deckId": "1u_4bookVYIxezmFKcoFHhTLGbkBDJX-NNT19tvgXBdw",
+      "url": "https://docs.google.com/presentation/d/1u_4bookVYIxezmFKcoFHhTLGbkBDJX-NNT19tvgXBdw/edit",
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 2h 15min block" },
+        { "type": "NEEDS_OWEN", "note": "Worksheet PDF still tagged 'GTM Track' — needs rename to Market" },
+        { "type": "CONFLICT",   "note": "Activities entry says 'Tue PM · Phase 2'; schedule places M2 at Tue AM 09:15–11:30" },
+        { "type": "INFERRED",   "note": "Audience tier points (1/3/5) carried from P3 spec — not explicit in M2 source" },
+        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root" }
+      ]
+    },
+    {
+      "slug": "m1-landscape-map",
+      "code": "M1",
+      "name": "Landscape Map",
+      "day": "W2D1 PM",
+      "deckId": "1qz7r0MnRXohST1Kn1W4vw_OJjFLAMw3s7aXAEOe2sKs",
+      "url": "https://docs.google.com/presentation/d/1qz7r0MnRXohST1Kn1W4vw_OJjFLAMw3s7aXAEOe2sKs/edit",
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 1h 45min block" },
+        { "type": "NEEDS_OWEN", "note": "Worksheet PDF still tagged 'GTM Track' — needs rename to Market" },
+        { "type": "CONFLICT",   "note": "Activities entry says 'Tue AM · Phase 1'; schedule places M1 in Mon PM 14:15–16:00" },
+        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root" }
+      ]
+    },
+    {
+      "slug": "b3-100-day-plan",
+      "code": "B3",
+      "name": "The 100-Day Plan",
+      "day": "W2D3 AM",
+      "deckId": "1wAnx8uL8X-KTEoSpaDDC23gEy_B5Zpw_wUXpFN1ScwU",
+      "url": "https://docs.google.com/presentation/d/1wAnx8uL8X-KTEoSpaDDC23gEy_B5Zpw_wUXpFN1ScwU/edit",
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 1h 45min block" },
+        { "type": "INFERRED",   "note": "'9 actions total' derived from 3 actions × 3 phases" },
+        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root" }
+      ]
+    },
+    {
+      "slug": "b2-back-of-napkin-economics",
+      "code": "B2",
+      "name": "Back-of-Napkin Economics",
+      "day": "W2D2 AM",
+      "deckId": "1i0nZGThGedpI4wqgQWtjMkerCvM2-bJ0WyRRXYz0QFQ",
+      "url": "https://docs.google.com/presentation/d/1i0nZGThGedpI4wqgQWtjMkerCvM2-bJ0WyRRXYz0QFQ/edit",
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 2h 15min block" },
+        { "type": "CONFLICT",   "note": "Activities entry says 'Tue PM · Phase 2'; schedule places B2 at Tue AM 09:15–11:30" },
+        { "type": "CONFLICT",   "note": "ai_loop refs B1 'six boxes' — B1 worksheet is 4 boxes + accessories" },
+        { "type": "INFERRED",   "note": "Phone calculator not explicitly listed in materials" },
+        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root" }
+      ]
+    },
+    {
+      "slug": "b1-canvas-lite",
+      "code": "B1",
+      "name": "Canvas Lite",
+      "day": "W2D1 PM",
+      "deckId": "1Y-yLHUZTtlhDnoSvKuNwFa7mc1edDR8eaCTPREZYb4U",
+      "url": "https://docs.google.com/presentation/d/1Y-yLHUZTtlhDnoSvKuNwFa7mc1edDR8eaCTPREZYb4U/edit",
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 1h 45min block" },
+        { "type": "CONFLICT",   "note": "ai_loop says 'six-box'; worksheet wireframe is 4 boxes + accessories. Slides use 4-box." },
+        { "type": "CONFLICT",   "note": "Activities entry says 'Tue AM · Phase 1'; schedule places B1 in Mon PM 14:15–16:00. Slides use schedule." },
+        { "type": "NEEDS_OWEN", "note": "Cross-team collaborative A2 phase — open question on worksheet" },
+        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root" }
+      ]
+    },
+    {
+      "slug": "p3-prototype-spec-sheet",
+      "code": "P3",
+      "name": "Prototype Spec Sheet",
+      "day": "W2D3 AM",
+      "deckId": "1fX37QQ72CPLQu-jL5qjMecYQnePzPHLlTWEPWE7XCFo",
+      "url": "https://docs.google.com/presentation/d/1fX37QQ72CPLQu-jL5qjMecYQnePzPHLlTWEPWE7XCFo/edit",
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": [
+        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 1h 45min block" },
+        { "type": "NEEDS_OWEN", "note": "Laptop logistics by format — activity entry open question" },
+        { "type": "INFERRED",   "note": "'90-second opening line' derived from audience-tier framing, not on worksheet" },
+        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root; MCP can't move" }
+      ]
+    },
     {
       "slug": "p2-mvp-scoping",
       "code": "P2",
@@ -11,6 +607,7 @@
       "deckId": "1HOYdAINN2AO8M33guoO8FMTgUpVkhQJjQLAPB5SITjg",
       "url": "https://docs.google.com/presentation/d/1HOYdAINN2AO8M33guoO8FMTgUpVkhQJjQLAPB5SITjg/edit",
       "status": "draft",
+      "designVersion": "v3",
       "slideCount": 8,
       "openFlags": [
         { "type": "NEEDS_OWEN", "note": "Time-per-step within the 2h 15min block — inferred allocations, not in source" },
