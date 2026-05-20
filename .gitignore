@@ -34,5 +34,8 @@ data/external-involvement-lisbon-2026.md
 data/ufl-follow-up-email-*.md
 docs/spring-*-send-batch-*.md
 
+# Pre-session block drafts — local reference only (mostly superseded by index.html SCHEDULE content)
+data/block-drafts/
+
 # Local persistent state — written by server.mjs when running locally
 overrides.json
