@@ -28,5 +28,11 @@ data/days.json
 PROJECT.md
 HANDOFF.md
 
+# Project-instance docs with sponsor/contact PII or student data — keep local, sync to private repo if needed
+data/external-involvement-framework.md
+data/external-involvement-lisbon-2026.md
+data/ufl-follow-up-email-*.md
+docs/spring-*-send-batch-*.md
+
 # Local persistent state — written by server.mjs when running locally
 overrides.json
