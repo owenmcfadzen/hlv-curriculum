@@ -110,8 +110,17 @@ SCHEDULE.weeks.forEach((week, wi) => {
         if (b.track && !VALID_TRACKS.has(b.track)) {
           err(`${loc} track='${b.track}' not in TRACK_LEGEND`);
         }
-        if (b.kind === 'track' && !b.track) {
-          err(`${loc} kind='track' but no track field`);
+        if (b.tracks) {
+          if (!Array.isArray(b.tracks) || b.tracks.length < 1) {
+            err(`${loc} tracks must be a non-empty array`);
+          } else {
+            b.tracks.forEach((t, ti) => {
+              if (!VALID_TRACKS.has(t)) err(`${loc} tracks[${ti}]='${t}' not in TRACK_LEGEND`);
+            });
+          }
+        }
+        if (b.kind === 'track' && !b.track && !b.tracks) {
+          err(`${loc} kind='track' but no track or tracks field`);
         }
         if (b.code) {
           if (codesInSchedule.has(b.code)) {

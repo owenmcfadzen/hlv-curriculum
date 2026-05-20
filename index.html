@@ -416,6 +416,19 @@ section:first-child { border-top: none; padding-top: 24px; }
 .block.track.product  { border-color: var(--product); }
 .block.track.business { border-color: var(--business); }
 .block.track.market   { border-color: var(--market); }
+/* joint blocks span two tracks — split the left bar via a gradient strip in the (transparent) border-left area */
+.block.track.joint {
+  border-left-color: transparent;
+  background-image: linear-gradient(180deg, var(--business) 0 50%, var(--market) 50% 100%);
+  background-repeat: no-repeat;
+  background-size: 3px 100%;
+  background-position: left top;
+  background-origin: border-box;
+  background-clip: border-box;
+}
+.block.track.joint:hover {
+  background-color: white;
+}
 .block.track:hover    { background: white; box-shadow: 0 1px 4px rgba(24,45,83,0.10); }
 .block .code {
   font-family: var(--condensed);
@@ -2236,6 +2249,25 @@ body.view-b-active .view-b {
 .vb-cal-block[data-track="product"]  { border-left: 3px solid #E46C41; }
 .vb-cal-block[data-track="business"] { border-left: 3px solid #34C759; }
 .vb-cal-block[data-track="market"]   { border-left: 3px solid #3B7DD8; }
+/* joint (multi-track) blocks: split the left bar to show both track colors */
+.vb-cal-block[data-joint="true"][data-tracks="business,market"] {
+  border-left-color: transparent;
+  background-image: linear-gradient(180deg, #34C759 0 50%, #3B7DD8 50% 100%);
+  background-repeat: no-repeat;
+  background-size: 3px 100%;
+  background-position: left top;
+  background-origin: border-box;
+  background-clip: border-box;
+}
+.vb-cal-block[data-joint="true"][data-tracks="market,business"] {
+  border-left-color: transparent;
+  background-image: linear-gradient(180deg, #3B7DD8 0 50%, #34C759 50% 100%);
+  background-repeat: no-repeat;
+  background-size: 3px 100%;
+  background-position: left top;
+  background-origin: border-box;
+  background-clip: border-box;
+}
 
 /* Kind legend (small strip below filter bar) */
 .vb-kindlegend {
@@ -4480,16 +4512,16 @@ const SCHEDULE = {
                 ]
               }
             },
-            { label: "MVP Scoping", kind: "track",
+            { label: "Product Definition", kind: "track",
               slides_link_or_embed: "https://docs.google.com/presentation/d/1HOYdAINN2AO8M33guoO8FMTgUpVkhQJjQLAPB5SITjg/edit", track: "product", code: "P2",
               time_start: "09:15", time_end: "11:30",
               audiences: ["student", "alumni"],
               ai_loop: {
                 analog: "P1 Solution Blueprint plus Mon PM PRD draft",
-                structure: "AI helps cut the feature list down to MVP, ranking by user value vs. build cost",
-                output: "MVP scope iterations on the worksheet",
-                final: "MVP scope locked, ready for prototype build Wed AM",
-                reality_check: "Wed PM Out in Market #2 (does the MVP actually move users)",
+                structure: "AI helps articulate what the product IS as a product — functionality, scope, what's in and out — not just a journey",
+                output: "Product definition iterations on the worksheet (regenerate the PRD when the definition shifts materially)",
+                final: "First product description locked: functionality + scope + the party feature. Ready for P3 prototype build Wed AM.",
+                reality_check: "Wed PM Out in Market #2 (does the product, built and shown, actually move users)",
                 uses_prd_lab: true
               }
             },
@@ -4552,7 +4584,7 @@ const SCHEDULE = {
                   { name: "Reality Check Rules (W2D3)", url: "https://docs.google.com/presentation/d/1HaD3-aqU1lXI1QHRH-ff14rLdVKdclzXBUHBwC_oxU8/edit", why: "5 non-negotiables for the field test. Read aloud before deploying." }
                 ],
                 status: "draft",
-                foundation: "First field test. Teams leave the facility to validate hypotheses with real users, running the experiment M2 designed this morning. Designed to be uncomfortable. The market doesn't lie if you ask it the right questions.",
+                foundation: "First field test. Teams leave the facility to validate hypotheses with real users, running the experiment M2 designed this morning. Designed to be uncomfortable. The market doesn't lie if you ask it the right questions. Counts as one of the three Reality Check collected inputs — the OOM #1 findings get synthesised in the next block and fed into Wed AM specialty work + the joint 100-Day Plan, not just discussed.",
                 students: [
                   "Pick 5 people you'll talk to in the next 3 hours. Real targets, not fillers.",
                   "Run the empathy interview protocol M2 designed: open question first, then probe.",
@@ -4577,20 +4609,23 @@ const SCHEDULE = {
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
-                foundation: "Reality Check on what the market said. Teams come back with field notes. This block is structured contradiction-mining. The principle: the market doesn't lie. What did teams hear that contradicts their assumption set?",
+                foundation: "Reality Check on what the market said. Teams come back with field notes. This block is structured contradiction-mining and input collection: the synthesise step that turns field signal into a captured input the team can carry into tomorrow. The principle: the market doesn't lie. What did teams hear that contradicts their assumption set?",
                 students: [
                   "Group by team. Pull out the field notes.",
                   "Sort: confirming evidence pile, contradicting evidence pile, surprises pile.",
                   "Surprises pile gets first attention. Why didn't you predict this?",
-                  "One sentence per team: what's the biggest assumption that needs to change?"
+                  "Capture the inputs on stickies → canvas. These are inputs to revise activities and feed the 100-Day Plan, not loose observations.",
+                  "One sentence per team: what's the biggest assumption that needs to change? Carry it into Wed AM."
                 ],
-                facilitator: "1 hour total. Don't let teams smooth over the contradicting evidence, that's where the learning is. Push the 'why didn't you predict this?' question hard. Output: each team has a sharper assumption set going into Wed AM specialty work.",
+                facilitator: "1 hour total. Don't let teams smooth over the contradicting evidence, that's where the learning is. Push the 'why didn't you predict this?' question hard. Watch for over-weighting one critical comment (Flow Map §4 facilitation risk) — help teams interpret signal, not just absorb the loudest voice. Output: captured inputs (stickies → canvas) ready to plug into Wed AM specialty work, the joint 100-Day Plan, and the PRD regeneration loop in the Workbench.",
                 references: [
                   "Testing & Validation (Notion: Knowledge)",
-                  "Problem Reframing (Notion: Knowledge / Method)"
+                  "Problem Reframing (Notion: Knowledge / Method)",
+                  "Downstream: P3 Prototype Build (Wed AM), Joint 100-Day Plan (Wed AM), Workbench / PRD regen"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Format borrows from Problem Reframing: separate confirming vs. contradicting evidence so teams can't ignore the latter. The 'why didn't you predict this' question is the contradiction-miner." }
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Format borrows from Problem Reframing: separate confirming vs. contradicting evidence so teams can't ignore the latter. The 'why didn't you predict this' question is the contradiction-miner." },
+                  { author: "Cowork", ts: "2026-05-20T13:00:00Z", text: "Reframed per Flow Map rev 3 §4: debrief is the synthesise step (stickies → canvas) that converts field signal into captured Reality Check inputs. These inputs feed Wed AM (P3 + 100-Day Plan) and the Workbench/PRD regen, not just the team's mental model." }
                 ]
               }
             },
@@ -4626,62 +4661,67 @@ const SCHEDULE = {
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
-                foundation: "Sponsor reviews team work in progress. Not a pitch, not a presentation. Working session: teams show what they have, sponsor reacts, sponsor pushes on the parts that wouldn't survive their own customers. Sponsor is in the role of stakeholder, not judge.",
+                foundation: "Sponsor reviews team work in progress. Not a pitch, not a presentation. Working session: teams show what they have, sponsor reacts, sponsor pushes on the parts that wouldn't survive their own customers. Sponsor is in the role of stakeholder, not judge. Counts as one of the three Reality Check collected inputs (alongside OOM #1 + OOM #2) — captured this morning, fed into the 100-Day Plan immediately after and into the Workbench / PRD regeneration on Thu.",
                 students: [
                   "Bring your work-in-progress: SA outputs, specialty drafts, prototype sketches.",
                   "Don't pitch. Show. 5 minutes per team.",
                   "Take the sponsor's pushback at face value. Don't defend, capture.",
-                  "After: 5 minutes to triage what the sponsor surfaced. One action item per team."
+                  "After: 5 minutes to triage what the sponsor surfaced. Capture concrete sponsor-input items on stickies — these go into the 100-Day Plan inputs and the PRD regeneration loop, not just a team to-do list.",
+                  "One action item per team for the 100-Day Plan (next block)."
                 ],
-                facilitator: "1 hour total. Pre-brief the sponsor: this is a stakeholder review, not a judgment session. They should push hard on customer-relevance and feasibility, not score teams. Format: round-robin, 5 min show plus 5 min sponsor reaction per team. Don't let teams pre-polish, raw work in progress is the point.",
+                facilitator: "1 hour total. Pre-brief the sponsor: this is a stakeholder review, not a judgment session. They should push hard on customer-relevance and feasibility, not score teams. Format: round-robin, 5 min show plus 5 min sponsor reaction per team. Don't let teams pre-polish, raw work in progress is the point. After: this is a Reality Check input collection — teams should leave with sponsor pushback captured as discrete inputs (not opinions to weigh), ready to plug into the joint 100-Day Plan and the PRD regeneration in the Workbench.",
                 references: [
                   "[SPONSOR — TBD between Sonae and JdM, hard floor 8 Jun] briefing",
                   "Stakeholder Mapping (Notion: Knowledge / Foundation)",
-                  "Customer Discovery & Validation (Notion: Knowledge)"
+                  "Customer Discovery & Validation (Notion: Knowledge)",
+                  "Downstream: 100-Day Plan (Wed AM 10:15), LPP TIME (Thu), PRD regen in Workbench"
                 ],
                 notes: [
                   { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted from Notion's Stakeholder Mapping (sponsor as stakeholder, not judge) plus Customer Discovery & Validation. Sponsor placeholder used per Owen's standard." },
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Format question: 5 teams x 10 min = 50 min, leaves 10 min slack. If the cohort is larger than 5 teams, this block needs more time. Flag for delivery planning." }
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Format question: 5 teams x 10 min = 50 min, leaves 10 min slack. If the cohort is larger than 5 teams, this block needs more time. Flag for delivery planning." },
+                  { author: "Cowork", ts: "2026-05-20T13:00:00Z", text: "Reframed per Flow Map rev 3 §4: this session is one of three Reality Check collected inputs. Output is captured input, not just discussion — feeds the immediately-following 100-Day Plan and the Workbench/PRD regeneration. Facilitation risk per Flow Map: teams may over-weight one critical sponsor comment; help them interpret, not just absorb." }
                 ]
               }
             },
-            { label: "Prototype Spec Sheet", kind: "track",
+            { label: "Prototype Build (A → B)", kind: "track",
               slides_link_or_embed: "https://docs.google.com/presentation/d/1fX37QQ72CPLQu-jL5qjMecYQnePzPHLlTWEPWE7XCFo/edit", track: "product", code: "P3",
               time_start: "10:15", time_end: "12:00",
               audiences: ["student", "alumni"],
               ai_loop: {
-                analog: "P2 MVP scope plus Tue PM Out in Market #1 findings",
-                structure: "AI translates MVP scope into a prototype build spec (what to build, in what order, with what materials)",
-                output: "Prototype spec iterations (cuts and additions based on field feedback)",
-                final: "Prototype spec sheet ready for build this afternoon",
+                analog: "P2 Product Definition plus Tue PM Out in Market #1 findings",
+                structure: "AI translates the product definition into a prototype build (what to build first, what to cut, what to test next)",
+                output: "Prototype A → test → Prototype B. Each iteration changes one thing based on field feedback.",
+                final: "Prototype B (or further) ready for Wed PM Out in Market #2",
                 reality_check: "Wed PM Out in Market #2 (test the prototype on real users)",
                 uses_prd_lab: true
               }
             },
             { label: "The 100-Day Plan", kind: "track",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1wAnx8uL8X-KTEoSpaDDC23gEy_B5Zpw_wUXpFN1ScwU/edit", track: "business", code: "B3",
+              sub: "Business + Market join forces",
+              tracks: ["business", "market"],
               time_start: "10:15", time_end: "12:00",
               audiences: ["student", "alumni"],
-              ai_loop: {
-                analog: "B2 Back-of-Napkin Economics plus this morning's Sponsor Feedback",
-                structure: "AI helps sequence the first 100 days post-pilot (week-by-week milestones)",
-                output: "Iterate the plan to remove anything you can't credibly do in 100 days",
-                final: "100-Day Plan with concrete milestones and decision points",
-                reality_check: "Final pitch panel and sponsor judgment Friday",
-                uses_prd_lab: false
-              }
-            },
-            { label: "First Moves", kind: "track",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1HLOZYc4OOSgv1RdHr0JszhOsLrehyG7IUG_HeOQ1DF8/edit", track: "market", code: "M3",
-              time_start: "10:15", time_end: "12:00",
-              audiences: ["student", "alumni"],
-              ai_loop: {
-                analog: "M2 Validation Design plus Tue PM Out in Market #1 results",
-                structure: "AI helps prioritize the first 3 marketing moves (which channels, which audiences first)",
-                output: "Iterate the first-moves list down to 3 concrete actions you could start Monday",
-                final: "First Moves plan: 3 actions, each with a target audience and a success signal",
-                reality_check: "Final pitch panel critiques the go-to-market story Friday",
-                uses_prd_lab: false
+              slide: {
+                status: "draft",
+                foundation: "Business and Market specialists converge for the first time this week. The 100-Day Plan is the team's answer to: 'If a sponsor said yes Friday, what would the first 100 days actually look like?' Validation, experimentation, the initial proof toward launching — lo-fi, interaction-driven, get-outside (Prehype-style signal mining, not desk research). Draws on the Reality Check collection: Out in Market #1 findings plus the morning's Sponsor Feedback.",
+                students: [
+                  "Pull together: B1 Canvas Lite, B2 Napkin Economics, M1 Landscape Map, M2 Validation Design, OOM #1 notes, Sponsor Feedback notes.",
+                  "Frame the first 100 days as three blocks: validate (what's still unproven), experiment (what cheap lo-fi tests run next), prove (what evidence the sponsor would need to commit).",
+                  "Pick lo-fi over polished. A flyer, a waitlist, a borrowed counter, a Saturday-morning interview run — get-outside actions, not market reports.",
+                  "Sequence week-by-week. Each milestone has a target audience and a success signal.",
+                  "Cut anything you couldn't credibly start Monday. If it needs permission you don't have, it's not in the 100 days."
+                ],
+                facilitator: "105 min total. 15 min frame (what 100 days is and isn't — show the Prehype lo-fi examples), 75 min team work (Business and Market specialists co-author; the rest of the team feeds inputs as asked), 15 min round (each team reads three milestones aloud). The convergence is the point — Business' math meets Market's signal here, and the team finds out whether they survive contact. Watch for over-engineering: any team writing a 'launch plan' has missed it. Bar is the first concrete, interaction-driven thing they'd do Monday morning.",
+                references: [
+                  "B2 Back-of-Napkin Economics output (Tue AM)",
+                  "M2 Validation Design output (Tue AM)",
+                  "Tue PM Out in Market #1 findings",
+                  "Wed AM Sponsor Feedback notes",
+                  "Prehype lo-fi signal-mining reference (TBD)"
+                ],
+                notes: [
+                  { author: "Cowork", ts: "2026-05-20T13:00:00Z", text: "Joint block replacing previous B3 \"The 100-Day Plan\" + M3 \"First Moves\". Drafted from Flow Map rev 3 §3 + §4 (B+M joined → 100-Day Plan, draws on Reality Check collection). No code (previous B3/M3 ACTIVITIES entries left as-is for now; the workbench-side ACTIVITIES merge is the deferred next step per the brief)." }
+                ]
               }
             },
           ],
@@ -4715,19 +4755,20 @@ const SCHEDULE = {
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
-                foundation: "Second field test. 2 hours, sharper. Teams now test prototypes (P3 outputs) against real users, not just hypotheses. Bar is higher: did the prototype move the user, or did they shrug?",
+                foundation: "Second field test. 2 hours, sharper. Teams now test prototypes (P3 outputs) against real users, not just hypotheses. Bar is higher: did the prototype move the user, or did they shrug? Counts as the third Reality Check collected input (with OOM #1 + Sponsor Feedback) — captured tonight in the debrief, fed into Thu AM LPP TIME and the PRD regeneration loop in the Workbench.",
                 students: [
                   "Bring the prototype plus 3 questions you need answered.",
                   "Show, don't tell. Hand the prototype to the user. Watch what they actually do.",
                   "Ask: what would make this work for you? What's missing?",
                   "5 conversations per team minimum.",
-                  "Back at 16:00."
+                  "Back at 16:00 — the debrief is where today's signal becomes tomorrow's input."
                 ],
-                facilitator: "2 hours, tighter than Tue PM because teams know the drill. Market specialist owns the protocol. F1 should drift among teams that struggled Tue PM. The shift here is from interview to demo: students show the prototype and watch reactions, not just listen.",
+                facilitator: "2 hours, tighter than Tue PM because teams know the drill. Market specialist owns the protocol. F1 should drift among teams that struggled Tue PM. The shift here is from interview to demo: students show the prototype and watch reactions, not just listen. Frame this as input collection for tomorrow's LPP and the next prototype iteration, not just 'go test'.",
                 references: [
                   "Testing & Validation (Notion: Knowledge)",
                   "Empathy Interview Protocol (Notion: Knowledge / Method)",
-                  "P3 Prototype Spec Sheet (Wed AM specialist work)"
+                  "P3 Prototype Build (Wed AM specialist work)",
+                  "Downstream: LPP TIME (Thu), PRD regen in Workbench, Lovable build (artifact)"
                 ],
                 notes: [
                   { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted as a sharper Tue PM. Key shift: 'show don't tell' framing means students hand over the prototype and watch what users do (action) vs. what they say (words). The action-vs-words gap is the gold." }
@@ -4739,19 +4780,22 @@ const SCHEDULE = {
               audiences: ["student", "alumni"],
               slide: {
                 status: "draft",
-                foundation: "Second Reality Check. Now teams have prototype-feedback to reckon with, not just opinion. This block surfaces what the prototype taught them about whether they built the right thing.",
+                foundation: "Second Reality Check. Now teams have prototype-feedback to reckon with, not just opinion. The synthesise step that turns OOM #2 signal into captured input for tomorrow. This block surfaces what the prototype taught them and converts it into discrete inputs to plug into Thu AM LPP TIME, the next PRD regeneration in the Workbench, and the next prototype iteration in Lovable.",
                 students: [
                   "Pull the prototype-feedback notes.",
                   "Sort by: what users did vs. what they said.",
                   "When users said 'I love it' but didn't actually use it, that's a gap. Surface it.",
-                  "One sentence per team: what changes about the prototype before final pitches Friday?"
+                  "Capture inputs on stickies → canvas. Each sticky is a discrete input, not a vague impression.",
+                  "One sentence per team: what changes about the prototype before final pitches Friday? Plus what changes in the PRD when you regen it tomorrow morning?"
                 ],
-                facilitator: "1 hour. Push hard on the action-vs-words gap. This is the last hard reality check before final pitch prep Thursday. Teams should leave with concrete revision items, not vague 'we'll iterate' commitments.",
+                facilitator: "1 hour. Push hard on the action-vs-words gap. This is the last hard reality check before final pitch prep Thursday. Output is captured Reality Check inputs (stickies → canvas) ready to feed Thu AM LPP TIME and the PRD regeneration in the Workbench — not vague 'we'll iterate' commitments. Same facilitation risk as Tue PM debrief: don't let teams over-weight one critical comment; help them interpret signal patterns.",
                 references: [
-                  "Testing & Validation (Notion: Knowledge)"
+                  "Testing & Validation (Notion: Knowledge)",
+                  "Downstream: LPP TIME (Thu AM), PRD regen in Workbench, Lovable iteration, Final pitches Fri"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Designed as the last hard reality check before Thursday LPP work. Push the 'concrete revision item' close to force teams off vague commitments." }
+                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Designed as the last hard reality check before Thursday LPP work. Push the 'concrete revision item' close to force teams off vague commitments." },
+                  { author: "Cowork", ts: "2026-05-20T13:00:00Z", text: "Reframed per Flow Map rev 3 §4: debrief is the synthesise step (stickies → canvas) for the third and final Reality Check input. Feeds Thu AM LPP TIME, PRD regen, Lovable iteration. Same facilitation risk as Tue PM debrief — over-weighting one comment." }
                 ]
               }
             },
@@ -5106,10 +5150,10 @@ const ACTIVITIES = [
       ],
     },
   },
-  { code: "P2", track: "product", name: "MVP Scoping",
+  { code: "P2", track: "product", name: "Product Definition",
     when: "Tue PM · Phase 2", status: "partial", slideStatus: "ready",
     shape: "5-frame must-haves — feature per frame, V2 backlog, success criterion, biggest risk. Photo → AI → PRD via custom platform.",
-    feeds: ["LPP \"What will it take?\"", "PRD MVP Section", "Prototype Spec", "B3 100-Day Plan"],
+    feeds: ["LPP \"What will it take?\"", "PRD", "P3 Prototype Build", "B3 100-Day Plan"],
     open: "AI step (photo of completed worksheet → PRD via custom platform) still to be designed and added. Quadrants version retired.",
     wireframe: {
       viewBox: "0 0 640 380",
@@ -5171,7 +5215,7 @@ const ACTIVITIES = [
       ],
     },
   },
-  { code: "P3", track: "product", name: "Prototype Spec Sheet",
+  { code: "P3", track: "product", name: "Prototype Build (A → B)",
     when: "Wed AM · Phase 3", status: "partial", slideStatus: "draft",
     shape: "Choose format (Paper Screens / Service Blueprint / Sketch + Sell Sheet) → 3 test questions + success/worry per question → tiered audience (Peer 1pt · Stranger 3pt · Domain-adjacent 5pt).",
     feeds: ["Field Kit", "LPP", "PRD"],
@@ -5499,7 +5543,16 @@ function validateData() {
           if (!b.kind) errors.push(`${loc} missing kind`);
           else if (!VALID_KINDS.has(b.kind)) errors.push(`${loc} kind='${b.kind}' not in KIND_LEGEND`);
           if (b.track && !VALID_TRACKS.has(b.track)) errors.push(`${loc} track='${b.track}' not in TRACK_LEGEND`);
-          if (b.kind === "track" && !b.track) errors.push(`${loc} kind='track' but no track field`);
+          if (b.tracks) {
+            if (!Array.isArray(b.tracks) || b.tracks.length < 1) {
+              errors.push(`${loc} tracks must be a non-empty array`);
+            } else {
+              b.tracks.forEach((t, ti) => {
+                if (!VALID_TRACKS.has(t)) errors.push(`${loc} tracks[${ti}]='${t}' not in TRACK_LEGEND`);
+              });
+            }
+          }
+          if (b.kind === "track" && !b.track && !b.tracks) errors.push(`${loc} kind='track' but no track or tracks field`);
           if (b.code) {
             if (codesInSchedule.has(b.code)) errors.push(`${loc} duplicate code '${b.code}'`);
             codesInSchedule.add(b.code);
@@ -5680,11 +5733,19 @@ function makeCell(blocks, cellSub) {
     }
     const block = document.createElement("div");
     let cls = "block " + (b.kind || "");
-    if (b.kind === "track" && b.track) cls += " " + b.track;
+    if (b.kind === "track") {
+      if (b.tracks && b.tracks.length) {
+        cls += " " + b.tracks.join(" ");
+        if (b.tracks.length > 1) cls += " joint";
+      } else if (b.track) {
+        cls += " " + b.track;
+      }
+    }
     if (b._detailKey) cls += " has-slide";
     block.className = cls;
     block.dataset.kind = b.kind || "";
     if (b.track) block.dataset.track = b.track;
+    if (b.tracks && b.tracks.length) block.dataset.tracks = b.tracks.join(",");
     if (b.code) block.dataset.code = b.code;
     if (b._detailKey) block.dataset.detailKey = b._detailKey;
 
@@ -5770,9 +5831,11 @@ function applyView() {
     // Non-track blocks stay full opacity to preserve weekly context.
     blocks.forEach(b => {
       const isTrackBlock = b.dataset.kind === "track";
-      if (isTrackBlock && b.dataset.track !== view) {
-        b.classList.add("dimmed");
-      }
+      if (!isTrackBlock) return;
+      const tracks = b.dataset.tracks
+        ? b.dataset.tracks.split(",")
+        : (b.dataset.track ? [b.dataset.track] : []);
+      if (!tracks.includes(view)) b.classList.add("dimmed");
     });
     return;
   }
@@ -6926,7 +6989,8 @@ function isViewBDimmed(block) {
   const r = VIEW_B_STATE.filters.role;
   let dimmed = false;
   if (t) {
-    if (block.track !== t) dimmed = true;
+    const tracks = (block.tracks && block.tracks.length) ? block.tracks : (block.track ? [block.track] : []);
+    if (!tracks.includes(t)) dimmed = true;
   }
   if (r) {
     if (!blockMatchesRole(block, r)) dimmed = true;
@@ -7142,10 +7206,14 @@ function renderCalendarDayColumn(day, weekIdx, dayIdx, opts) {
     if (auds.length === 1 && auds[0] === "alumni")  audBadge = `<span class="cb-audience" data-aud="alumni">Alumni</span>`;
     else if (auds.length === 1 && auds[0] === "student") audBadge = `<span class="cb-audience" data-aud="student">Student</span>`;
     else if (facs.length === 1 && facs[0] === "f2") audBadge = `<span class="cb-audience" data-aud="f2">F2</span>`;
+    const _tracks = (e.block.tracks && e.block.tracks.length) ? e.block.tracks : (e.block.track ? [e.block.track] : []);
+    const _isJoint = _tracks.length > 1;
     return `<button class="vb-cal-block" type="button"
       data-block-id="${e.id}"
       data-w="${weekIdx}" data-d="${dayIdx}"
-      data-track="${e.block.track || ''}"
+      data-track="${_tracks[0] || ''}"
+      data-tracks="${_tracks.join(',')}"
+      data-joint="${_isJoint ? 'true' : 'false'}"
       data-kind="${e.block.kind || ''}"
       data-selected="${isSel(e.id)}"
       data-dim="${dim}"
@@ -7204,7 +7272,11 @@ function renderViewBDetail() {
 
   const metaTags = [];
   if (block.code) metaTags.push(`<span class="vb-tag">${escapeText(block.code)}</span>`);
-  if (block.track) metaTags.push(`<span class="vb-tag" data-track="${block.track}">${escapeText(block.track)}</span>`);
+  if (block.tracks && block.tracks.length) {
+    block.tracks.forEach(tr => metaTags.push(`<span class="vb-tag" data-track="${tr}">${escapeText(tr)}</span>`));
+  } else if (block.track) {
+    metaTags.push(`<span class="vb-tag" data-track="${block.track}">${escapeText(block.track)}</span>`);
+  }
   if (block.kind) metaTags.push(`<span class="vb-tag">${escapeText(block.kind)}</span>`);
   metaTags.push(`<span class="vb-tag" data-status="${status}">${status}</span>`);
 

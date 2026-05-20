@@ -30,6 +30,12 @@
           "description": "Optional — links to ACTIVITIES entry by code"
         },
         "track": { "$ref": "#/definitions/track" },
+        "tracks": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/track" },
+          "description": "Optional alternative to 'track' for blocks spanning multiple specialty tracks (e.g. Business+Market joint sessions). When set, the renderer applies all listed track styles and the track filter shows the block for any matching view."
+        },
         "slide": { "$ref": "#/definitions/slide" },
         "audiences": {
           "type": "array",
