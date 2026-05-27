@@ -5089,7 +5089,7 @@ const ACTIVITIES = [
   { code: "P1", track: "product", name: "Solution Blueprint",
     when: "Tue AM · Phase 1", status: "built", slideStatus: "ready",
     shape: "8-frame user journey. Sketch each step (stick figures fine). Annotate user does / system does. Circle the party feature.",
-    feeds: ["LPP \"How does it work?\"", "PRD Product", "Prototype Spec"],
+    feeds: ["LPP \"How does it work?\"", "PRD Product", "P3 Prototype Build"],
     open: null,
     note: "Canonical template — every other activity follows this spec format.",
     wireframe: {
@@ -5151,28 +5151,28 @@ const ACTIVITIES = [
     },
   },
   { code: "P2", track: "product", name: "Product Definition",
-    when: "Tue PM · Phase 2", status: "partial", slideStatus: "ready",
-    shape: "5-frame must-haves — feature per frame, V2 backlog, success criterion, biggest risk. Photo → AI → PRD via custom platform.",
-    feeds: ["LPP \"What will it take?\"", "PRD", "P3 Prototype Build", "B3 100-Day Plan"],
-    open: "AI step (photo of completed worksheet → PRD via custom platform) still to be designed and added. Quadrants version retired.",
+    when: "Tue PM · Phase 2", status: "partial", slideStatus: "draft",
+    shape: "Name what the product IS in one line, then the core functions it must do — one per frame (★ = party feature). Mark what's in V1 and what waits. Success criterion + biggest assumption. Photo → AI → PRD via custom platform.",
+    feeds: ["LPP \"What will it take?\"", "PRD (functionality + scope)", "P3 Prototype Build", "B3 100-Day Plan"],
+    open: "[Cowork draft for Stacey] Reframed from MVP-scoping to product definition (what it is + scope) per Flow Map rev 3 — name was already settled; this aligns the worksheet content. AI step (photo → PRD via custom platform) still to be designed. Confirm the worksheet shift with Stacey.",
     wireframe: {
       viewBox: "0 0 640 380",
       zones: [
-        { x:8,   y:8,   w:624, h:170, fill:"alt", tag:"MVP — MUST-HAVES" },
-        { x:24,  y:36,  w:592, h:24, num:"★", sub:"Party feature — auto-included" },
+        { x:8,   y:8,   w:624, h:170, fill:"alt", tag:"WHAT IT IS · CORE FUNCTIONS" },
+        { x:24,  y:36,  w:592, h:24, num:"★", sub:"Party feature — the one thing people tell friends about" },
         { x:24,  y:64,  w:592, h:24, num:"2" },
         { x:24,  y:92,  w:592, h:24, num:"3" },
         { x:24,  y:120, w:592, h:24, num:"4" },
         { x:24,  y:148, w:592, h:24, num:"5" },
-        { x:8,   y:198, w:200, h:74, fill:"cream", title:"CUT 1", sub:"Why · comes back?" },
-        { x:212, y:198, w:200, h:74, fill:"cream", title:"CUT 2", sub:"Why · comes back?" },
-        { x:416, y:198, w:216, h:74, fill:"cream", title:"CUT 3", sub:"Why · comes back?" },
-        { x:8,   y:282, w:404, h:50, fill:"dark", title:"SUCCESS CRITERION", sub:"The MVP is a success if ___", dark:true },
-        { x:8,   y:336, w:404, h:36, fill:"coral", title:"BIGGEST RISK", sub:"The MVP fails if ___", dark:true },
-        { x:416, y:282, w:216, h:90, fill:"alt", title:"PRD TRANSFER", sub:"Contains · does not · success · risk" },
+        { x:8,   y:198, w:200, h:74, fill:"cream", title:"LATER, NOT V1", sub:"What · why it waits" },
+        { x:212, y:198, w:200, h:74, fill:"cream", title:"LATER, NOT V1", sub:"What · why it waits" },
+        { x:416, y:198, w:216, h:74, fill:"cream", title:"LATER, NOT V1", sub:"What · why it waits" },
+        { x:8,   y:282, w:404, h:50, fill:"dark", title:"SUCCESS CRITERION", sub:"The product works if ___", dark:true },
+        { x:8,   y:336, w:404, h:36, fill:"coral", title:"BIGGEST ASSUMPTION", sub:"It falls apart if ___ isn't true", dark:true },
+        { x:416, y:282, w:216, h:90, fill:"alt", title:"PRD TRANSFER", sub:"What it is · core functions · scope (in/out) · success · risk" },
       ],
       lines: [
-        { x1:8, y1:185, x2:632, y2:185, dashed:true, label:"✂ THE LINE" },
+        { x1:8, y1:185, x2:632, y2:185, dashed:true, label:"✂ V1 SCOPE LINE" },
       ],
     },
   },
@@ -5201,7 +5201,7 @@ const ACTIVITIES = [
   { code: "M2", track: "market", name: "Validation Design",
     when: "Tue PM · Phase 2", status: "partial", slideStatus: "draft",
     shape: "3 hypotheses × {We believe / Currently / Because / If true}. Opening Q (no product mention, past tense). Follow-up. Tier. Validated/invalidated criteria.",
-    feeds: ["Shared Field Kit", "Market RC", "PRD", "M3 Channel Strategy"],
+    feeds: ["Shared Field Kit", "Market RC", "PRD", "M3 First Moves"],
     open: "PDF worksheet still carries the old track tag — owner action: align footer tag to \"Market\". Workbench data is already aligned.",
     wireframe: {
       viewBox: "0 0 640 380",
@@ -5217,31 +5217,32 @@ const ACTIVITIES = [
   },
   { code: "P3", track: "product", name: "Prototype Build (A → B)",
     when: "Wed AM · Phase 3", status: "partial", slideStatus: "draft",
-    shape: "Choose format (Paper Screens / Service Blueprint / Sketch + Sell Sheet) → 3 test questions + success/worry per question → tiered audience (Peer 1pt · Stranger 3pt · Domain-adjacent 5pt).",
-    feeds: ["Field Kit", "LPP", "PRD"],
-    open: "Spec sheet built. Three of four open decisions resolved (formats, fidelity, sheet structure). Laptop logistics still undecided — driven by which format the team picks.",
+    shape: "PRD → build Prototype A (Lovable for digital; paper/sketch for physical) → test with the Field Kit → iterate to Prototype B. Each loop: keep building in Lovable, or regenerate the PRD.",
+    feeds: ["Field Kit", "LPP", "PRD (regenerated each loop)"],
+    open: "[Cowork draft for Stacey] Reframed from 'spec sheet' to the build → test → iterate loop with the PRD-regeneration branch. Format choice folded into the build step (Lovable vs paper/sketch) rather than a separate taxonomy. Laptop logistics still depend on format. Confirm the worksheet shift with Stacey.",
     wireframe: {
       viewBox: "0 0 640 380",
       zones: [
-        { x:8,   y:8,   w:202, h:78, fill:"alt", title:"Paper Screens", sub:"Digital products — 4–6 hand-drawn screens" },
-        { x:214, y:8,   w:202, h:78, fill:"alt", title:"Service Blueprint", sub:"Services — poster + flyer" },
-        { x:420, y:8,   w:212, h:78, fill:"alt", title:"Sketch + Sell Sheet", sub:"Physical — drawing + one-page sell" },
-        { x:8,   y:92,  w:624, h:24, fill:"cream", title:"WHAT ARE YOU TESTING?", sub:"Concept clarity · specific feature · user flow" },
-        { x:8,   y:122, w:202, h:54, fill:"alt", tag:"PEER · 1 PT", sub:"Who? Where?" },
-        { x:214, y:122, w:202, h:54, fill:"alt", tag:"STRANGER · 3 PT", sub:"Where to find? Opening line?" },
-        { x:420, y:122, w:212, h:54, fill:"alt", tag:"DOMAIN · 5 PT", sub:"Who? Plan B?" },
-        { x:8,   y:184, w:624, h:32, fill:"dark", title:"YOUR 3 TEST QUESTIONS", sub:"These feed into the shared Field Kit", dark:true },
-        { x:8,   y:222, w:624, h:46, num:"1", sub:"Question · success · worry" },
-        { x:8,   y:272, w:624, h:46, num:"2", sub:"Question · success · worry" },
-        { x:8,   y:322, w:624, h:46, fill:"alt", num:"3", sub:"Question · PRD transfer" },
+        { x:8,   y:8,   w:624, h:46, fill:"dark", title:"PRD → BUILD", sub:"Generate from P2 · build in Lovable (digital) or paper/sketch (physical)", dark:true },
+        { x:8,   y:62,  w:202, h:78, fill:"alt", title:"PROTOTYPE A", sub:"First build — rough is fine" },
+        { x:214, y:62,  w:202, h:78, fill:"cream", title:"TEST", sub:"Field Kit · real people" },
+        { x:420, y:62,  w:212, h:78, fill:"alt", title:"PROTOTYPE B", sub:"What you changed · why" },
+        { x:8,   y:148, w:624, h:40, fill:"coral", title:"THE LOOP", sub:"(a) iterate in Lovable   ·   (b) regenerate the PRD", dark:true },
+        { x:8,   y:196, w:202, h:54, fill:"alt", tag:"PEER · 1 PT", sub:"Who? Where?" },
+        { x:214, y:196, w:202, h:54, fill:"alt", tag:"STRANGER · 3 PT", sub:"Where? Opening line?" },
+        { x:420, y:196, w:212, h:54, fill:"alt", tag:"DOMAIN · 5 PT", sub:"Who? Plan B?" },
+        { x:8,   y:258, w:624, h:24, fill:"dark", title:"YOUR 3 TEST QUESTIONS", sub:"These feed the shared Field Kit", dark:true },
+        { x:8,   y:286, w:624, h:40, num:"1", sub:"Question · success · worry" },
+        { x:8,   y:330, w:308, h:42, num:"2", sub:"Question · success · worry" },
+        { x:324, y:330, w:308, h:42, fill:"alt", num:"3", sub:"Question · PRD transfer" },
       ],
     },
   },
   { code: "B3", track: "business", name: "The 100-Day Plan",
     when: "Wed AM · Phase 3", status: "built", slideStatus: "draft",
     shape: "Three phases — Validate (1–30) · Build (31–60) · Grow (61–100). Each: goal, 3 actions, north-star metric. MVP budget. Day 100 scorecard.",
-    feeds: ["LPP", "PRD (4 transfer sentences explicit on the worksheet)"],
-    open: null,
+    feeds: ["Joint 100-Day Plan (Wed AM)", "LPP", "PRD (4 transfer sentences explicit on the worksheet)"],
+    open: "[Cowork] Converges with M3 First Moves into the joint 100-Day Plan block (Wed AM, B+M). This card is the business spine (validate/build/grow + budget + scorecard); M3 supplies the market first-moves inputs. Whether to merge the two into one joint worksheet is the open call for Stacey.",
     wireframe: {
       viewBox: "0 0 640 380",
       zones: [
@@ -5257,8 +5258,8 @@ const ACTIVITIES = [
   { code: "M3", track: "market", name: "First Moves",
     when: "Wed AM · Phase 3", status: "partial", slideStatus: "draft",
     shape: "Brainstorm 6 channels → score (reach × effort) → sequence first 100 users over 8 weeks → growth signals.",
-    feeds: ["LPP \"Channels\"", "LPP \"Growth Strategy\"", "LPP \"Signals\"", "PRD", "Business cost structure"],
-    open: "PDF worksheet still labelled \"Channel Strategy\" and carries the old track tag — owner action: rename header to \"First Moves\" and align footer tag to \"Market\". Workbench data is already aligned.",
+    feeds: ["Joint 100-Day Plan (Wed AM)", "LPP \"Channels\"", "LPP \"Growth Strategy\"", "LPP \"Signals\"", "PRD", "Business cost structure"],
+    open: "PDF worksheet still labelled \"Channel Strategy\" and carries the old track tag — owner action: rename header to \"First Moves\" and align footer tag to \"Market\". Workbench data is already aligned. [Cowork] Converges with B3 into the joint 100-Day Plan block (Wed AM); merge-into-one-worksheet is the open call for Stacey.",
     wireframe: {
       viewBox: "0 0 640 380",
       zones: [
@@ -5487,10 +5488,17 @@ async function loadSlideManifest() {
    block tile) we render only a slim affordance so we don't drop 35
    iframes on the workbench when someone scrolls through. */
 function slideDeckEmbedHTML(deck) {
-  if (!deck || !deck.deckId) return "";
-  const embedSrc = `https://docs.google.com/presentation/d/${escapeText(deck.deckId)}/embed?start=false&loop=false&delayms=3000`;
-  const openUrl = deck.url || `https://docs.google.com/presentation/d/${deck.deckId}/edit`;
+  if (!deck || (!deck.deckId && !deck.pdfUrl)) return "";
+  const isPdf = !!deck.pdfUrl;
+  const embedSrc = isPdf
+    ? escapeText(deck.pdfUrl)
+    : `https://docs.google.com/presentation/d/${escapeText(deck.deckId)}/embed?start=false&loop=false&delayms=3000`;
+  const openUrl = isPdf
+    ? escapeText(deck.pdfUrl)
+    : (deck.url || `https://docs.google.com/presentation/d/${deck.deckId}/edit`);
   const status = deck.status ? `<span class="deck-status">${escapeText(deck.status)}</span>` : "";
+  const openLabel = isPdf ? 'Open PDF ↗' : 'Open in Google Slides ↗';
+  const titleTxt = isPdf ? `PDF — ${escapeText(deck.name || deck.code)}` : `Google Slides — ${escapeText(deck.name || deck.code)}`;
   return `
     <div class="slide-deck-embed">
       <iframe class="deck-frame"
@@ -5499,23 +5507,27 @@ function slideDeckEmbedHTML(deck) {
         allowfullscreen
         loading="lazy"
         referrerpolicy="no-referrer"
-        title="Google Slides — ${escapeText(deck.name || deck.code)}"></iframe>
+        title="${titleTxt}"></iframe>
       <div class="deck-meta">
         <span class="deck-name"><span class="deck-code">${escapeText(deck.code)}</span>${escapeText(deck.name || "")}</span>
         ${status}
-        <a class="deck-open" href="${escapeText(openUrl)}" target="_blank" rel="noopener">Open in Google Slides ↗</a>
+        <a class="deck-open" href="${escapeText(openUrl)}" target="_blank" rel="noopener">${openLabel}</a>
       </div>
     </div>
   `;
 }
 function slideDeckAffordanceHTML(deck) {
-  if (!deck || !deck.deckId) return "";
-  const openUrl = deck.url || `https://docs.google.com/presentation/d/${deck.deckId}/edit`;
+  if (!deck || (!deck.deckId && !deck.pdfUrl)) return "";
+  const isPdf = !!deck.pdfUrl;
+  const openUrl = isPdf
+    ? escapeText(deck.pdfUrl)
+    : (deck.url || `https://docs.google.com/presentation/d/${deck.deckId}/edit`);
+  const openLabel = isPdf ? 'Open PDF ↗' : 'Open in Google Slides ↗';
   return `
     <div class="slide-deck-affordance">
       <span class="deck-code">${escapeText(deck.code)}</span>
       <span class="deck-name">${escapeText(deck.name || "")}</span>
-      <a class="deck-open" href="${escapeText(openUrl)}" target="_blank" rel="noopener">Open in Google Slides ↗</a>
+      <a class="deck-open" href="${escapeText(openUrl)}" target="_blank" rel="noopener">${openLabel}</a>
     </div>
   `;
 }

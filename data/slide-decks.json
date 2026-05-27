@@ -1,6 +1,16 @@
 {
   "schema": {
-    "fields": ["slug", "code", "name", "day", "deckId", "url", "status", "slideCount", "openFlags"]
+    "fields": [
+      "slug",
+      "code",
+      "name",
+      "day",
+      "deckId",
+      "url",
+      "status",
+      "slideCount",
+      "openFlags"
+    ]
   },
   "design_tokens": {
     "source": "owen-site skill (Studio Owen)",
@@ -9,13 +19,29 @@
       "fg_primary": "#1d1d1b",
       "body_88": "rgba(29,29,27,0.88)",
       "muted_55": "rgba(29,29,27,0.55)",
-      "rgb_primary_float": [0.1137, 0.1137, 0.1059],
-      "rgb_body_blend_float": [0.218, 0.215, 0.207],
-      "rgb_muted_blend_float": [0.504, 0.502, 0.493]
+      "rgb_primary_float": [
+        0.1137,
+        0.1137,
+        0.1059
+      ],
+      "rgb_body_blend_float": [
+        0.218,
+        0.215,
+        0.207
+      ],
+      "rgb_muted_blend_float": [
+        0.504,
+        0.502,
+        0.493
+      ]
     },
     "type": {
       "font": "Inter",
-      "weights_used": [400, 600, 700],
+      "weights_used": [
+        400,
+        600,
+        700
+      ],
       "scale_pt": {
         "divider_title": 64,
         "section_title": 44,
@@ -25,7 +51,12 @@
         "divider_subtitle": 18,
         "footer": 11
       },
-      "line_spacing": { "single_statement": 150, "list": 160, "steps": 140, "flags": 145 }
+      "line_spacing": {
+        "single_statement": 150,
+        "list": 160,
+        "steps": 140,
+        "flags": 145
+      }
     }
   },
   "decks": [
@@ -33,12 +64,17 @@
       "slug": "w1d5-track-preferences",
       "code": "W1D5-TRACK-PREFERENCES",
       "name": "Track Preferences",
-      "day": "W1D5 AM→PM",
+      "day": "W1D5 AM\u2192PM",
       "deckId": "1RIO1WCkPMDn7wNEnDUrZ0pw1uEWfa6OOOFgKSUiI2kM",
       "url": "https://docs.google.com/presentation/d/1RIO1WCkPMDn7wNEnDUrZ0pw1uEWfa6OOOFgKSUiI2kM/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Allocation algorithm — Porto did manual + preference-respecting. Same for Lisbon?" }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Allocation algorithm \u2014 Porto did manual + preference-respecting. Same for Lisbon?"
+        }
       ]
     },
     {
@@ -48,9 +84,14 @@
       "day": "W1D5 PM",
       "deckId": "1sqU1FmOye5CCxIrVui6vZKxEw-0uZLcccM-bT9tb1hQ",
       "url": "https://docs.google.com/presentation/d/1sqU1FmOye5CCxIrVui6vZKxEw-0uZLcccM-bT9tb1hQ/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "LPP template version for Lisbon 2026 — Porto current or revised?" }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "LPP template version for Lisbon 2026 \u2014 Porto current or revised?"
+        }
       ]
     },
     {
@@ -60,7 +101,10 @@
       "day": "W1D5 AM",
       "deckId": "1rkryN0YzQji4GQR_9W2kESsNJYWPVD6AA0YsklQV10k",
       "url": "https://docs.google.com/presentation/d/1rkryN0YzQji4GQR_9W2kESsNJYWPVD6AA0YsklQV10k/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w1d5-track-intro",
@@ -69,10 +113,18 @@
       "day": "W1D5 AM",
       "deckId": "1nQVQj0bt-nXqDGq2aET6HY91gTIdI2vHKExOUyi_tqs",
       "url": "https://docs.google.com/presentation/d/1nQVQj0bt-nXqDGq2aET6HY91gTIdI2vHKExOUyi_tqs/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Port content from existing Friday deck — confirm Porto Day 5 is source." },
-        { "type": "NEEDS_OWEN", "note": "Confirm no 'GTM' drift downstream — Lisbon 2026 lock as Product/Business/Market." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Port content from existing Friday deck \u2014 confirm Porto Day 5 is source."
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Confirm no 'GTM' drift downstream \u2014 Lisbon 2026 lock as Product/Business/Market."
+        }
       ]
     },
     {
@@ -82,9 +134,14 @@
       "day": "W1D4 late PM",
       "deckId": "14H4jaPfEPF1OLY_Ab0FybRSOil1i8z3Gnnh08L3jwjk",
       "url": "https://docs.google.com/presentation/d/14H4jaPfEPF1OLY_Ab0FybRSOil1i8z3Gnnh08L3jwjk/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Selection criteria for '5' — cohort size assumption for Lisbon 2026." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Selection criteria for '5' \u2014 cohort size assumption for Lisbon 2026."
+        }
       ]
     },
     {
@@ -94,7 +151,10 @@
       "day": "W1D4 PM",
       "deckId": "1LWPyngNBheA4EbLA56GQ8i4OrpFVc-Ysp0AN9tdL_rk",
       "url": "https://docs.google.com/presentation/d/1LWPyngNBheA4EbLA56GQ8i4OrpFVc-Ysp0AN9tdL_rk/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w1d4-pitch-prep",
@@ -103,7 +163,10 @@
       "day": "W1D4 AM",
       "deckId": "1ZB3D31xuUVl53Kwwl5a5xXpq9RMjnBMp-JjWWhbpRXo",
       "url": "https://docs.google.com/presentation/d/1ZB3D31xuUVl53Kwwl5a5xXpq9RMjnBMp-JjWWhbpRXo/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w1d4-speed-dating",
@@ -112,9 +175,14 @@
       "day": "W1D4 AM",
       "deckId": "175VzFjLm7QrqypN1oHn3j15AZYxWfX8-nFWlEmBuiMA",
       "url": "https://docs.google.com/presentation/d/175VzFjLm7QrqypN1oHn3j15AZYxWfX8-nFWlEmBuiMA/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Tier scoring rule — peer vs cross-team weighting for W1 speed dating." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Tier scoring rule \u2014 peer vs cross-team weighting for W1 speed dating."
+        }
       ]
     },
     {
@@ -124,7 +192,10 @@
       "day": "W1D3 late PM",
       "deckId": "1wiryrC6v7XPK7p3k36SYajNxOqQhMadQBvFLd8TW5DU",
       "url": "https://docs.google.com/presentation/d/1wiryrC6v7XPK7p3k36SYajNxOqQhMadQBvFLd8TW5DU/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w1d3-reframing-checklist",
@@ -133,7 +204,10 @@
       "day": "W1D3 PM",
       "deckId": "1CnqD0uH1IUDsVEigXHOM5-KhN-uGWDEcEdpAMhXNvYw",
       "url": "https://docs.google.com/presentation/d/1CnqD0uH1IUDsVEigXHOM5-KhN-uGWDEcEdpAMhXNvYw/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w1d3-problem-reframing",
@@ -142,19 +216,30 @@
       "day": "W1D3 PM",
       "deckId": "1M-d8wVkQr_k_a8v9VvS0idgFYuvn7bDa3imBSs8KPQw",
       "url": "https://docs.google.com/presentation/d/1M-d8wVkQr_k_a8v9VvS0idgFYuvn7bDa3imBSs8KPQw/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w1d3-interviews",
       "code": "W1D3-INTERVIEWS",
       "name": "Interviews",
-      "day": "W1D3 AM→early PM",
+      "day": "W1D3 AM\u2192early PM",
       "deckId": "140gViXVY1Zy6d_TwFfMU1hc_AxdOqT0IuNIvNKF-qfc",
       "url": "https://docs.google.com/presentation/d/140gViXVY1Zy6d_TwFfMU1hc_AxdOqT0IuNIvNKF-qfc/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Lisbon foot-traffic area — Porto used Avenida dos Aliados." },
-        { "type": "NEEDS_OWEN", "note": "Chaperone protocol for off-site teams — Lisbon legal/insurance." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Lisbon foot-traffic area \u2014 Porto used Avenida dos Aliados."
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Chaperone protocol for off-site teams \u2014 Lisbon legal/insurance."
+        }
       ]
     },
     {
@@ -164,7 +249,10 @@
       "day": "W1D2 PM",
       "deckId": "10D2hf7E6Gpf9UhjA0E8SiesfO-iWmqWP3UrzfwNF68A",
       "url": "https://docs.google.com/presentation/d/10D2hf7E6Gpf9UhjA0E8SiesfO-iWmqWP3UrzfwNF68A/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w1d2-problem-mapping",
@@ -173,7 +261,10 @@
       "day": "W1D2 AM",
       "deckId": "137gWfX4oQsBMBP3uIj01RrL1Oicf_e1oye4uKb90uFo",
       "url": "https://docs.google.com/presentation/d/137gWfX4oQsBMBP3uIj01RrL1Oicf_e1oye4uKb90uFo/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w1d2-opportunity-id",
@@ -182,7 +273,10 @@
       "day": "W1D2 AM",
       "deckId": "1OsC3s35ZNqoCTkch3jBQHhiMFWwviVCpVBb3sUafFNs",
       "url": "https://docs.google.com/presentation/d/1OsC3s35ZNqoCTkch3jBQHhiMFWwviVCpVBb3sUafFNs/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w1d1-team-building",
@@ -191,9 +285,14 @@
       "day": "W1D1 late PM",
       "deckId": "1TR1Uirk4MBB82LwZ8nUVtihs0za2QUKuVBIenxp3GTo",
       "url": "https://docs.google.com/presentation/d/1TR1Uirk4MBB82LwZ8nUVtihs0za2QUKuVBIenxp3GTo/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Facilitator activity choice — confirm kit + options memo for Lisbon." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Facilitator activity choice \u2014 confirm kit + options memo for Lisbon."
+        }
       ]
     },
     {
@@ -203,7 +302,10 @@
       "day": "W1D1 late AM",
       "deckId": "1Rf-fSmOdVLRKAxwEfnYCn0EKuwjB5s-0v0_p4vkXzcI",
       "url": "https://docs.google.com/presentation/d/1Rf-fSmOdVLRKAxwEfnYCn0EKuwjB5s-0v0_p4vkXzcI/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w1d1-challenge-intro",
@@ -212,10 +314,18 @@
       "day": "W1D1 PM",
       "deckId": "1ytRhPSLZIrm_ymh0qNF7ZGf4PfdVnDHgapH2Tg6KesE",
       "url": "https://docs.google.com/presentation/d/1ytRhPSLZIrm_ymh0qNF7ZGf4PfdVnDHgapH2Tg6KesE/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Sponsor brief format — Sonae 2026." },
-        { "type": "NEEDS_OWEN", "note": "25-min hard cap — Porto sponsor ran over." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Sponsor brief format \u2014 Sonae 2026."
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "25-min hard cap \u2014 Porto sponsor ran over."
+        }
       ]
     },
     {
@@ -225,9 +335,14 @@
       "day": "W1D1 AM",
       "deckId": "1ebqGoQsMDJMmwDRygdH18xZsexVVG7GqbaRyI8DZBO8",
       "url": "https://docs.google.com/presentation/d/1ebqGoQsMDJMmwDRygdH18xZsexVVG7GqbaRyI8DZBO8/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Updated track briefs for 2026 — Porto versions still apply?" }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Updated track briefs for 2026 \u2014 Porto versions still apply?"
+        }
       ]
     },
     {
@@ -237,9 +352,14 @@
       "day": "W1D1 09:00",
       "deckId": "1VLeUeBe5V2Z445ARVnWz9scpl6xCmv3b8tryVFMQjW4",
       "url": "https://docs.google.com/presentation/d/1VLeUeBe5V2Z445ARVnWz9scpl6xCmv3b8tryVFMQjW4/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Specific opener phrase for Lisbon cohort." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Specific opener phrase for Lisbon cohort."
+        }
       ]
     },
     {
@@ -249,10 +369,18 @@
       "day": "W2D5 PM",
       "deckId": "1g1klcj8GAr4sXZcF8G_bC0bQZitBvgIKFLqxSiuNCiM",
       "url": "https://docs.google.com/presentation/d/1g1klcj8GAr4sXZcF8G_bC0bQZitBvgIKFLqxSiuNCiM/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Venue + catering for Lisbon 2026." },
-        { "type": "NEEDS_OWEN", "note": "Families invited — Porto did not; Lisbon TBC." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Venue + catering for Lisbon 2026."
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Families invited \u2014 Porto did not; Lisbon TBC."
+        }
       ]
     },
     {
@@ -262,10 +390,18 @@
       "day": "W2D5 PM",
       "deckId": "1VB1KG7XX7d0tUMZoPLOPhvIPTfRdK-QENvq_wJZFb70",
       "url": "https://docs.google.com/presentation/d/1VB1KG7XX7d0tUMZoPLOPhvIPTfRdK-QENvq_wJZFb70/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Pitch order — random vs. curated arc." },
-        { "type": "NEEDS_OWEN", "note": "Recording logistics." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Pitch order \u2014 random vs. curated arc."
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Recording logistics."
+        }
       ]
     },
     {
@@ -275,7 +411,10 @@
       "day": "W2D5 late AM",
       "deckId": "1eosYAOnwFN6qBLXb-JzK2_XZJJU7mreacJZxhWNYHjI",
       "url": "https://docs.google.com/presentation/d/1eosYAOnwFN6qBLXb-JzK2_XZJJU7mreacJZxhWNYHjI/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w2d5-pitch-prep",
@@ -284,7 +423,10 @@
       "day": "W2D5 AM",
       "deckId": "1T-n9nKGa4GWM5WfAKJcUqFa_DQwTt4jafwn85Aiplh0",
       "url": "https://docs.google.com/presentation/d/1T-n9nKGa4GWM5WfAKJcUqFa_DQwTt4jafwn85Aiplh0/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w2d4-pitch-practice-r1",
@@ -293,7 +435,10 @@
       "day": "W2D4 late PM",
       "deckId": "1jB3Sik67elBLsvFrzFZ_jZHWQpwUuVGHkWVVcdyZNjo",
       "url": "https://docs.google.com/presentation/d/1jB3Sik67elBLsvFrzFZ_jZHWQpwUuVGHkWVVcdyZNjo/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w2d4-lpp-narrative-time",
@@ -302,7 +447,10 @@
       "day": "W2D4 PM",
       "deckId": "1dyLYCTSEdDT3aLVX2Thr4-JtZ0MwXsd0grgmBqwQ5JU",
       "url": "https://docs.google.com/presentation/d/1dyLYCTSEdDT3aLVX2Thr4-JtZ0MwXsd0grgmBqwQ5JU/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w2d4-how-to-pitch",
@@ -311,9 +459,14 @@
       "day": "W2D4 late AM",
       "deckId": "1sFvPxdpjP89fRn5KVuh2PxXKqkTA5UN-ZmOnjYlJqyU",
       "url": "https://docs.google.com/presentation/d/1sFvPxdpjP89fRn5KVuh2PxXKqkTA5UN-ZmOnjYlJqyU/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Specific guest for Lisbon 2026 TBC — name + bio." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Specific guest for Lisbon 2026 TBC \u2014 name + bio."
+        }
       ]
     },
     {
@@ -323,9 +476,14 @@
       "day": "W2D4 AM",
       "deckId": "13sj34pD9o4nqdHeGH2klfR-uB3tiz_orCxTIxhuOCfA",
       "url": "https://docs.google.com/presentation/d/13sj34pD9o4nqdHeGH2klfR-uB3tiz_orCxTIxhuOCfA/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "INFERRED", "note": "90-min duration inferred from Thu AM block order." }
+        {
+          "type": "INFERRED",
+          "note": "90-min duration inferred from Thu AM block order."
+        }
       ]
     },
     {
@@ -335,9 +493,14 @@
       "day": "W2D3 PM",
       "deckId": "17Gf0pj547bqFpTYrJrJcJxvJVl4y3WoJs6MKKdOkWbs",
       "url": "https://docs.google.com/presentation/d/17Gf0pj547bqFpTYrJrJcJxvJVl4y3WoJs6MKKdOkWbs/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Sponsor availability window — Sonae PM, 1h sufficient?" }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Sponsor availability window \u2014 Sonae PM, 1h sufficient?"
+        }
       ]
     },
     {
@@ -347,7 +510,10 @@
       "day": "W2D3 early PM",
       "deckId": "1HaD3-aqU1lXI1QHRH-ff14rLdVKdclzXBUHBwC_oxU8",
       "url": "https://docs.google.com/presentation/d/1HaD3-aqU1lXI1QHRH-ff14rLdVKdclzXBUHBwC_oxU8/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w2d3-out-in-market-brief",
@@ -356,9 +522,14 @@
       "day": "W2D3 early PM",
       "deckId": "1bL-ovRKAAIpJllPFGditWIDh6aTD9yQtqvRb3RJ1wLg",
       "url": "https://docs.google.com/presentation/d/1bL-ovRKAAIpJllPFGditWIDh6aTD9yQtqvRb3RJ1wLg/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Lisbon field-test location — Sonae equivalent of Porto Continente TBC." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Lisbon field-test location \u2014 Sonae equivalent of Porto Continente TBC."
+        }
       ]
     },
     {
@@ -368,9 +539,14 @@
       "day": "W2D2 early PM",
       "deckId": "1JCdymOmEtp5pdmUM6cpmEB5T5DJ98EKMlV0xXCxVDfY",
       "url": "https://docs.google.com/presentation/d/1JCdymOmEtp5pdmUM6cpmEB5T5DJ98EKMlV0xXCxVDfY/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Whether 5/10/10 brief is locked or facilitator can flex." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Whether 5/10/10 brief is locked or facilitator can flex."
+        }
       ]
     },
     {
@@ -380,9 +556,14 @@
       "day": "W2D2 AM",
       "deckId": "1BuRU0WR45XawSMSvvQ1svk3usS-jcgikFrSgxfC3kMI",
       "url": "https://docs.google.com/presentation/d/1BuRU0WR45XawSMSvvQ1svk3usS-jcgikFrSgxfC3kMI/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "INFERRED", "note": "105-min block derived from Tue AM schedule." }
+        {
+          "type": "INFERRED",
+          "note": "105-min block derived from Tue AM schedule."
+        }
       ]
     },
     {
@@ -392,7 +573,10 @@
       "day": "W2D2 AM",
       "deckId": "1WfYtn2oo3E7xOJOv5txZqdsxO7hrSEGXWeiaJkprBMM",
       "url": "https://docs.google.com/presentation/d/1WfYtn2oo3E7xOJOv5txZqdsxO7hrSEGXWeiaJkprBMM/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w2d2-team-alignment",
@@ -401,9 +585,14 @@
       "day": "W2D2 08:45",
       "deckId": "1OzNoe-qd5sdC3ajxEiCex6RyaHfpIAQbZ8ZKIvDgAXs",
       "url": "https://docs.google.com/presentation/d/1OzNoe-qd5sdC3ajxEiCex6RyaHfpIAQbZ8ZKIvDgAXs/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "INFERRED", "note": "08:45 start — no clock times in workbench." }
+        {
+          "type": "INFERRED",
+          "note": "08:45 start \u2014 no clock times in workbench."
+        }
       ]
     },
     {
@@ -413,9 +602,14 @@
       "day": "W2D1 PM",
       "deckId": "1QrDp5eonmPQV2XGciYxCRHl2td54GuARMsFnYa-kxUo",
       "url": "https://docs.google.com/presentation/d/1QrDp5eonmPQV2XGciYxCRHl2td54GuARMsFnYa-kxUo/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Facilitator-assigns fallback if team can't agree — escalation rule." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Facilitator-assigns fallback if team can't agree \u2014 escalation rule."
+        }
       ]
     },
     {
@@ -425,21 +619,31 @@
       "day": "W2D1 PM",
       "deckId": "1EQN_AQp9y81Ku69_HUfhcaCYntAg7hz3UCMgtmcSZRA",
       "url": "https://docs.google.com/presentation/d/1EQN_AQp9y81Ku69_HUfhcaCYntAg7hz3UCMgtmcSZRA/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Facilitator chooses games — list is one option, not prescribed." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Facilitator chooses games \u2014 list is one option, not prescribed."
+        }
       ]
     },
     {
       "slug": "w2d1-solution-alignment",
       "code": "W2D1-SOLUTION-ALIGNMENT",
       "name": "Solution Alignment",
-      "day": "W2D1 AM → PM",
+      "day": "W2D1 AM \u2192 PM",
       "deckId": "1XYTFsNE_gliwx-1uQJkxwwjrTFg4FBVjmgPfVndIcbg",
       "url": "https://docs.google.com/presentation/d/1XYTFsNE_gliwx-1uQJkxwwjrTFg4FBVjmgPfVndIcbg/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Escalation path if a team can't agree by lunch." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Escalation path if a team can't agree by lunch."
+        }
       ]
     },
     {
@@ -449,7 +653,10 @@
       "day": "W2D1 AM",
       "deckId": "1Qi2R4FViztvTu6UyzsDuZPQJvo1PmuLC1HY4qDY4w9w",
       "url": "https://docs.google.com/presentation/d/1Qi2R4FViztvTu6UyzsDuZPQJvo1PmuLC1HY4qDY4w9w/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8, "openFlags": []
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
+      "openFlags": []
     },
     {
       "slug": "w2d1-prd-problem-solution",
@@ -458,9 +665,14 @@
       "day": "W2D1 AM",
       "deckId": "11EqCmMhiTEhkpdO2dGfYIOhlb4zO1796ToJh2aj3AU4",
       "url": "https://docs.google.com/presentation/d/11EqCmMhiTEhkpdO2dGfYIOhlb4zO1796ToJh2aj3AU4/edit",
-      "status": "draft", "designVersion": "v4", "slideCount": 8,
+      "status": "draft",
+      "designVersion": "v4",
+      "slideCount": 8,
       "openFlags": [
-        { "type": "INFERRED", "note": "8-minute write windows derived from 60-min block." }
+        {
+          "type": "INFERRED",
+          "note": "8-minute write windows derived from 60-min block."
+        }
       ]
     },
     {
@@ -474,8 +686,14 @@
       "designVersion": "v4",
       "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Exact start time — assumed 09:00." },
-        { "type": "NEEDS_OWEN", "note": "Fold in latest Stacey/Cate context if any." }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Exact start time \u2014 assumed 09:00."
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Fold in latest Stacey/Cate context if any."
+        }
       ]
     },
     {
@@ -489,10 +707,22 @@
       "designVersion": "v4",
       "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 1h 45min block" },
-        { "type": "NEEDS_OWEN", "note": "Worksheet PDF still labelled 'Channel Strategy' + 'GTM Track' — needs rename" },
-        { "type": "INFERRED",   "note": "'8 weeks for first 100 users' — time horizon implied" },
-        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root" }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Time-per-step within the 1h 45min block"
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Worksheet PDF still labelled 'Channel Strategy' + 'GTM Track' \u2014 needs rename"
+        },
+        {
+          "type": "INFERRED",
+          "note": "'8 weeks for first 100 users' \u2014 time horizon implied"
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Drive folder \u2014 deck at root"
+        }
       ]
     },
     {
@@ -506,11 +736,26 @@
       "designVersion": "v4",
       "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 2h 15min block" },
-        { "type": "NEEDS_OWEN", "note": "Worksheet PDF still tagged 'GTM Track' — needs rename to Market" },
-        { "type": "CONFLICT",   "note": "Activities entry says 'Tue PM · Phase 2'; schedule places M2 at Tue AM 09:15–11:30" },
-        { "type": "INFERRED",   "note": "Audience tier points (1/3/5) carried from P3 spec — not explicit in M2 source" },
-        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root" }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Time-per-step within the 2h 15min block"
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Worksheet PDF still tagged 'GTM Track' \u2014 needs rename to Market"
+        },
+        {
+          "type": "CONFLICT",
+          "note": "Activities entry says 'Tue PM \u00b7 Phase 2'; schedule places M2 at Tue AM 09:15\u201311:30"
+        },
+        {
+          "type": "INFERRED",
+          "note": "Audience tier points (1/3/5) carried from P3 spec \u2014 not explicit in M2 source"
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Drive folder \u2014 deck at root"
+        }
       ]
     },
     {
@@ -524,11 +769,24 @@
       "designVersion": "v4",
       "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 1h 45min block" },
-        { "type": "NEEDS_OWEN", "note": "Worksheet PDF still tagged 'GTM Track' — needs rename to Market" },
-        { "type": "CONFLICT",   "note": "Activities entry says 'Tue AM · Phase 1'; schedule places M1 in Mon PM 14:15–16:00" },
-        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root" }
-      ]
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Time-per-step within the 1h 45min block"
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Worksheet PDF still tagged 'GTM Track' \u2014 needs rename to Market"
+        },
+        {
+          "type": "CONFLICT",
+          "note": "Activities entry says 'Tue AM \u00b7 Phase 1'; schedule places M1 in Mon PM 14:15\u201316:00"
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Drive folder \u2014 deck at root"
+        }
+      ],
+      "pdfUrl": "/decks/HLV-M1-Landscape-Map-v6_1.pdf"
     },
     {
       "slug": "b3-100-day-plan",
@@ -541,9 +799,18 @@
       "designVersion": "v4",
       "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 1h 45min block" },
-        { "type": "INFERRED",   "note": "'9 actions total' derived from 3 actions × 3 phases" },
-        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root" }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Time-per-step within the 1h 45min block"
+        },
+        {
+          "type": "INFERRED",
+          "note": "'9 actions total' derived from 3 actions \u00d7 3 phases"
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Drive folder \u2014 deck at root"
+        }
       ]
     },
     {
@@ -557,11 +824,26 @@
       "designVersion": "v4",
       "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 2h 15min block" },
-        { "type": "CONFLICT",   "note": "Activities entry says 'Tue PM · Phase 2'; schedule places B2 at Tue AM 09:15–11:30" },
-        { "type": "CONFLICT",   "note": "ai_loop refs B1 'six boxes' — B1 worksheet is 4 boxes + accessories" },
-        { "type": "INFERRED",   "note": "Phone calculator not explicitly listed in materials" },
-        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root" }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Time-per-step within the 2h 15min block"
+        },
+        {
+          "type": "CONFLICT",
+          "note": "Activities entry says 'Tue PM \u00b7 Phase 2'; schedule places B2 at Tue AM 09:15\u201311:30"
+        },
+        {
+          "type": "CONFLICT",
+          "note": "ai_loop refs B1 'six boxes' \u2014 B1 worksheet is 4 boxes + accessories"
+        },
+        {
+          "type": "INFERRED",
+          "note": "Phone calculator not explicitly listed in materials"
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Drive folder \u2014 deck at root"
+        }
       ]
     },
     {
@@ -575,12 +857,39 @@
       "designVersion": "v4",
       "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 1h 45min block" },
-        { "type": "CONFLICT",   "note": "ai_loop says 'six-box'; worksheet wireframe is 4 boxes + accessories. Slides use 4-box." },
-        { "type": "CONFLICT",   "note": "Activities entry says 'Tue AM · Phase 1'; schedule places B1 in Mon PM 14:15–16:00. Slides use schedule." },
-        { "type": "NEEDS_OWEN", "note": "Cross-team collaborative A2 phase — open question on worksheet" },
-        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root" }
-      ]
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Time-per-step within the 1h 45min block"
+        },
+        {
+          "type": "CONFLICT",
+          "note": "ai_loop says 'six-box'; worksheet wireframe is 4 boxes + accessories. Slides use 4-box."
+        },
+        {
+          "type": "CONFLICT",
+          "note": "Activities entry says 'Tue AM \u00b7 Phase 1'; schedule places B1 in Mon PM 14:15\u201316:00. Slides use schedule."
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Cross-team collaborative A2 phase \u2014 open question on worksheet"
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Drive folder \u2014 deck at root"
+        }
+      ],
+      "pdfUrl": "/decks/HLV-B1-Canvas-Lite-v1_1.pdf"
+    },
+    {
+      "slug": "p1-solution-blueprint",
+      "code": "P1",
+      "name": "Solution Blueprint",
+      "day": "W2D1 PM",
+      "status": "ready",
+      "designVersion": "v1.5",
+      "slideCount": 17,
+      "openFlags": [],
+      "pdfUrl": "/decks/HLV-P1-Solution-Blueprint-v1_5.pdf"
     },
     {
       "slug": "p3-prototype-spec-sheet",
@@ -593,10 +902,22 @@
       "designVersion": "v4",
       "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 1h 45min block" },
-        { "type": "NEEDS_OWEN", "note": "Laptop logistics by format — activity entry open question" },
-        { "type": "INFERRED",   "note": "'90-second opening line' derived from audience-tier framing, not on worksheet" },
-        { "type": "NEEDS_OWEN", "note": "Drive folder — deck at root; MCP can't move" }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Time-per-step within the 1h 45min block"
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Laptop logistics by format \u2014 activity entry open question"
+        },
+        {
+          "type": "INFERRED",
+          "note": "'90-second opening line' derived from audience-tier framing, not on worksheet"
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Drive folder \u2014 deck at root; MCP can't move"
+        }
       ]
     },
     {
@@ -610,11 +931,26 @@
       "designVersion": "v3",
       "slideCount": 8,
       "openFlags": [
-        { "type": "NEEDS_OWEN", "note": "Time-per-step within the 2h 15min block — inferred allocations, not in source" },
-        { "type": "NEEDS_OWEN", "note": "AI step (photo → PRD via custom platform) not yet designed; activity status: partial" },
-        { "type": "CONFLICT",   "note": "Activities entry says 'Tue PM · Phase 2'; schedule block places P2 at Tue AM 09:15–11:30. Slides use schedule." },
-        { "type": "INFERRED",   "note": "'Party feature auto-fills slot 1' carries from P1 wireframe; not separately documented for P2" },
-        { "type": "NEEDS_OWEN", "note": "Drive folder 'HLV2026 — Curriculum Decks' — deck created at root; this MCP can't move files to a folder" }
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Time-per-step within the 2h 15min block \u2014 inferred allocations, not in source"
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "AI step (photo \u2192 PRD via custom platform) not yet designed; activity status: partial"
+        },
+        {
+          "type": "CONFLICT",
+          "note": "Activities entry says 'Tue PM \u00b7 Phase 2'; schedule block places P2 at Tue AM 09:15\u201311:30. Slides use schedule."
+        },
+        {
+          "type": "INFERRED",
+          "note": "'Party feature auto-fills slot 1' carries from P1 wireframe; not separately documented for P2"
+        },
+        {
+          "type": "NEEDS_OWEN",
+          "note": "Drive folder 'HLV2026 \u2014 Curriculum Decks' \u2014 deck created at root; this MCP can't move files to a folder"
+        }
       ]
     }
   ]
