@@ -39,6 +39,7 @@ const MIME = {
   '.jpeg': 'image/jpeg',
   '.ico':  'image/x-icon',
   '.txt':  'text/plain; charset=utf-8',
+  '.pdf':  'application/pdf',
 };
 
 function safePath(urlPath) {
