@@ -4419,6 +4419,7 @@ const SCHEDULE = {
               }
             },
             { label: "Solution Blueprint", kind: "track", track: "product", code: "P1",
+              slides_link_or_embed: "decks-html/P1-solution-blueprint.html",
               time_start: "14:15", time_end: "16:00",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4431,7 +4432,7 @@ const SCHEDULE = {
               }
             },
             { label: "Canvas Lite", kind: "track",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1Y-yLHUZTtlhDnoSvKuNwFa7mc1edDR8eaCTPREZYb4U/edit", track: "business", code: "B1",
+              slides_link_or_embed: "decks-html/B1-canvas-lite.html", track: "business", code: "B1",
               time_start: "14:15", time_end: "16:00",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4444,7 +4445,7 @@ const SCHEDULE = {
               }
             },
             { label: "Landscape Map", kind: "track",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1qz7r0MnRXohST1Kn1W4vw_OJjFLAMw3s7aXAEOe2sKs/edit", track: "market", code: "M1",
+              slides_link_or_embed: "decks-html/M1-landscape-map.html", track: "market", code: "M1",
               time_start: "14:15", time_end: "16:00",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4513,7 +4514,7 @@ const SCHEDULE = {
               }
             },
             { label: "Product Definition", kind: "track",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1HOYdAINN2AO8M33guoO8FMTgUpVkhQJjQLAPB5SITjg/edit", track: "product", code: "P2",
+              slides_link_or_embed: "decks-html/P2-product-definition.html", track: "product", code: "P2",
               time_start: "09:15", time_end: "11:30",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4526,7 +4527,7 @@ const SCHEDULE = {
               }
             },
             { label: "Back-of-Napkin Economics", kind: "track",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1i0nZGThGedpI4wqgQWtjMkerCvM2-bJ0WyRRXYz0QFQ/edit", track: "business", code: "B2",
+              slides_link_or_embed: "decks-html/B2-napkin-economics.html", track: "business", code: "B2",
               time_start: "09:15", time_end: "11:30",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4539,7 +4540,7 @@ const SCHEDULE = {
               }
             },
             { label: "Validation Design", kind: "track",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1u_4bookVYIxezmFKcoFHhTLGbkBDJX-NNT19tvgXBdw/edit", track: "market", code: "M2",
+              slides_link_or_embed: "decks-html/M2-validation-design.html", track: "market", code: "M2",
               time_start: "09:15", time_end: "11:30",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4684,7 +4685,7 @@ const SCHEDULE = {
               }
             },
             { label: "Prototype Build (A → B)", kind: "track",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1fX37QQ72CPLQu-jL5qjMecYQnePzPHLlTWEPWE7XCFo/edit", track: "product", code: "P3",
+              slides_link_or_embed: "decks-html/P3-prototype-build.html", track: "product", code: "P3",
               time_start: "10:15", time_end: "12:00",
               audiences: ["student", "alumni"],
               ai_loop: {
@@ -4699,6 +4700,7 @@ const SCHEDULE = {
             { label: "The 100-Day Plan", kind: "track",
               sub: "Business + Market join forces",
               tracks: ["business", "market"],
+              slides_link_or_embed: "decks-html/B3M3-joint-100-day-plan.html",
               time_start: "10:15", time_end: "12:00",
               audiences: ["student", "alumni"],
               slide: {
@@ -7642,12 +7644,20 @@ function renderViewBSlides(block) {
   let slidesBlock = "";
   if (url) {
     const embed = googleSlidesEmbedUrl(url);
+    const isLocalDeck = /\.html(?:\?|#|$)/.test(url) && !/^https?:\/\//.test(url);
     if (embed) {
       slidesBlock = `
         <div class="vb-panel-section">
           <div class="vb-panel-label">Embedded deck</div>
           <div class="vb-panel-body"><a href="${escapeText(url)}" target="_blank" rel="noopener">Open in Google Slides ↗</a></div>
           <div class="vb-slides-iframe-wrap"><iframe src="${escapeText(embed)}" allowfullscreen referrerpolicy="no-referrer"></iframe></div>
+        </div>`;
+    } else if (isLocalDeck) {
+      slidesBlock = `
+        <div class="vb-panel-section">
+          <div class="vb-panel-label">Embedded deck</div>
+          <div class="vb-panel-body"><a href="${escapeText(url)}" target="_blank" rel="noopener">Present full-screen ↗</a></div>
+          <div class="vb-slides-iframe-wrap"><iframe src="${escapeText(url)}" allowfullscreen></iframe></div>
         </div>`;
     } else {
       slidesBlock = `
