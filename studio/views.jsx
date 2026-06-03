@@ -298,8 +298,39 @@ function SessionDetail({ s, onBack, onOpenDay }) {
   );
 }
 
-/* embedded slide viewer with presenter notes */
+/* turn a deck record into an embeddable src: local HTML decks load directly,
+   Google Slides links become their /embed form so the real slides render inline */
+function deckEmbedSrc(deck) {
+  if (!deck || !deck.url) return null;
+  if (deck.isLocal) return deck.url;
+  const m = deck.url.match(/\/presentation\/d\/([A-Za-z0-9_-]+)/);
+  if (m) return `https://docs.google.com/presentation/d/${m[1]}/embed?start=false&loop=false&rm=minimal`;
+  return deck.url;
+}
+
+/* session deck \u2014 embeds the real deck; falls back to the outline scaffold only
+   when a session has a deck record but no embeddable URL */
 function DeckViewer({ slides, track, status, deck }) {
+  const t = D.TRACKS[track];
+  const present = () => { if (deck && deck.url) window.open(deck.url, "_blank"); };
+  const openPdf = () => { if (deck && deck.pdfUrl) window.open(deck.pdfUrl, "_blank"); };
+  const embed = deckEmbedSrc(deck);
+  return (
+    <div className="dv">
+      <div className="dv-head">
+        <span className="sec-label" style={{ margin: 0 }}>Session deck <span className="ct">&middot; {status}</span></span>
+        <span className="grow"></span>
+        {deck && deck.pdfUrl && <button className="tbtn" onClick={openPdf}><Ic.pdf width="15" height="15" />PDF</button>}
+        {deck && deck.url && <button className="tbtn" onClick={present} style={{ background: t.accent, color: "#fff", borderColor: t.accent }}><Ic.present width="15" height="15" />Open full</button>}
+      </div>
+      {embed
+        ? <div className="dv-embed"><iframe src={embed} title="Session deck" allowFullScreen loading="lazy"></iframe></div>
+        : <OutlineViewer slides={slides} track={track} />}
+    </div>
+  );
+}
+
+function OutlineViewer({ slides, track }) {
   const [idx, setIdx] = React.useState(0);
   const t = D.TRACKS[track];
   const total = slides.length;
@@ -309,16 +340,8 @@ function DeckViewer({ slides, track, status, deck }) {
     window.addEventListener("keydown", onKey); return () => window.removeEventListener("keydown", onKey);
   }, [idx, total]);
   const sl = slides[idx];
-  const present = () => { if (deck && deck.url) window.open(deck.url, "_blank"); };
-  const openPdf = () => { if (deck && deck.pdfUrl) window.open(deck.pdfUrl, "_blank"); };
   return (
-    <div className="dv">
-      <div className="dv-head">
-        <span className="sec-label" style={{ margin: 0 }}>Session deck <span className="ct">&middot; outline preview &middot; {status}</span></span>
-        <span className="grow"></span>
-        {deck && deck.pdfUrl && <button className="tbtn" onClick={openPdf}><Ic.pdf width="15" height="15" />PDF</button>}
-        {deck && deck.url && <button className="tbtn" onClick={present} style={{ background: t.accent, color: "#fff", borderColor: t.accent }}><Ic.present width="15" height="15" />Present</button>}
-      </div>
+    <>
       <SlideFrame slide={sl} track={track} n={idx + 1} total={total} />
       <div className="dv-nav">
         <button className="tbtn icon" onClick={() => go(idx - 1)} disabled={idx === 0}><Ic.chevL /></button>
@@ -344,7 +367,7 @@ function DeckViewer({ slides, track, status, deck }) {
           </button>
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
