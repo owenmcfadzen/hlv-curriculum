@@ -78,6 +78,13 @@ function App() {
   const [filters, setFilters] = useState({ tracks: new Set(), aspects: new Set() });
   const [rev, setRev] = useState(0);            // bump to re-render after edits
   const [apiOn, setApiOn] = useState(true);     // false when no write server (static host)
+  const [editToken, setEditTokenState] = useState(() => {
+    try { return localStorage.getItem("hlv_edit_token") || ""; } catch { return ""; }
+  });
+  const setEditToken = (v) => {
+    setEditTokenState(v || "");
+    try { if (v) localStorage.setItem("hlv_edit_token", v); else localStorage.removeItem("hlv_edit_token"); } catch {}
+  };
   const ovRef = useRef({});                     // current overrides map, keyed by sid
 
   useEffect(() => {
@@ -106,8 +113,10 @@ function App() {
     if (s) Object.assign(s, patch);
     setRev(r => r + 1);
     return fetch("/api/overrides", {
-      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(merged),
-    }).then(r => { if (!r.ok) throw new Error("save failed"); return r.json(); });
+      method: "POST",
+      headers: { "Content-Type": "application/json", ...(editToken ? { "X-Edit-Token": editToken } : {}) },
+      body: JSON.stringify(merged),
+    }).then(r => { if (!r.ok) { const e = new Error(r.status === 401 ? "unauthorized" : "save failed"); e.status = r.status; throw e; } return r.json(); });
   };
 
   const toggle = (group, key) => setFilters(f => {
@@ -131,7 +140,7 @@ function App() {
     <div className="app">
       <Rail view={view} setView={goView} />
       <div className="main">
-        <Topbar view={view} setView={goView} />
+        <Topbar view={view} setView={goView} editToken={editToken} setEditToken={setEditToken} apiOn={apiOn} />
         {(view === "week" || view === "plan" || view === "day") &&
           <FilterBar filters={filters} toggle={toggle} clear={clear} counts={counts} />}
         {view === "week" && <WeekSwitch weekIdx={weekIdx} setWeekIdx={setWeekIdx} />}
@@ -143,7 +152,7 @@ function App() {
         </div>
       </div>
 
-      <Inspector s={sel} rev={rev} apiOn={apiOn} onSave={saveSession} onClose={() => setSel(null)} onOpenSession={openSession} />
+      <Inspector s={sel} rev={rev} apiOn={apiOn} editToken={editToken} onSave={saveSession} onClose={() => setSel(null)} onOpenSession={openSession} />
     </div>
   );
 }

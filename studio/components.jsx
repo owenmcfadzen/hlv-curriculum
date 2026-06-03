@@ -37,6 +37,8 @@ const Ic = {
   sheet:  (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...p}><rect x="4" y="3" width="16" height="18"/><path d="M4 9h16M4 15h16M12 3v18"/></svg>,
   deckIc: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...p}><rect x="3" y="4" width="18" height="12"/><path d="M12 16v4M8 20h8"/></svg>,
   download:(p)=> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...p}><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>,
+  key:    (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...p}><circle cx="8" cy="8" r="5"/><path d="M11.5 11.5L21 21M17 17l2-2M14 14l2-2"/></svg>,
+  lock:   (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...p}><rect x="5" y="11" width="14" height="9"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>,
 };
 
 /* ── helpers ───────────────────────────────────────────────────────────── */
@@ -79,13 +81,14 @@ function Rail({ view, setView }) {
 }
 
 /* ═══════════════ TOPBAR ═══════════════ */
-function Topbar({ view, setView }) {
+function Topbar({ view, setView, editToken, setEditToken, apiOn }) {
   const tabs = [
     { k: "week", label: "1 week",  ic: Ic.cal },
     { k: "plan", label: "2 weeks", ic: Ic.grid },
     { k: "day",  label: "Day",     ic: Ic.day },
   ];
   const active = view === "session" ? "week" : view;
+  const unlocked = !!editToken;
   return (
     <header className="topbar">
       <div className="prog">
@@ -100,9 +103,50 @@ function Topbar({ view, setView }) {
           </button>
         ))}
       </div>
+      {setEditToken && <AdminMenu editToken={editToken} setEditToken={setEditToken} apiOn={apiOn} unlocked={unlocked} />}
       <button className="tbtn" onClick={() => window.open("https://prd-lab-production.up.railway.app/", "_blank")}><Ic.deckIc />PRD Lab</button>
       <button className="tbtn" onClick={() => window.open("workbench.html", "_blank")}><Ic.layers />Workbench</button>
     </header>
+  );
+}
+
+/* Admin / editing-access menu. Holds the edit token used to authorize writes
+   (sent as X-Edit-Token). Stored in localStorage by the App; this is the seed
+   of a fuller Admin view. */
+function AdminMenu({ editToken, setEditToken, apiOn, unlocked }) {
+  const [open, setOpen] = React.useState(false);
+  const [draft, setDraft] = React.useState(editToken || "");
+  const ref = React.useRef(null);
+  React.useEffect(() => { setDraft(editToken || ""); }, [editToken]);
+  React.useEffect(() => {
+    if (!open) return;
+    const onDoc = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, [open]);
+  const save = () => { setEditToken(draft.trim()); setOpen(false); };
+  const clear = () => { setEditToken(""); setDraft(""); setOpen(false); };
+  return (
+    <div className="admin-wrap" ref={ref}>
+      <button className={"tbtn" + (unlocked ? " unlocked" : "")} onClick={() => setOpen(o => !o)}
+              title={unlocked ? "Editing unlocked" : "Set editing key"}>
+        {unlocked ? <Ic.key /> : <Ic.lock />}Admin
+      </button>
+      {open && (
+        <div className="admin-pop">
+          <div className="ap-ttl">Editing access</div>
+          <div className="ap-sub">{apiOn ? "Enter the edit key to save changes on this site." : "Write server is offline — edits won’t persist."}</div>
+          <input className="ap-in" type="password" value={draft} placeholder="edit key"
+                 onChange={e => setDraft(e.target.value)} onKeyDown={e => { if (e.key === "Enter") save(); }} autoFocus />
+          <div className="ap-row">
+            <span className={"ap-state" + (unlocked ? " on" : "")}>{unlocked ? "Unlocked" : "Locked"}</span>
+            <span className="grow"></span>
+            {unlocked && <button className="ap-clear" onClick={clear}>Clear</button>}
+            <button className="ap-save" onClick={save}>Save</button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 

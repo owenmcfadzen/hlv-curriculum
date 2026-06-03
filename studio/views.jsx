@@ -381,13 +381,13 @@ function SlideFrame({ slide, track, n, total }) {
 }
 
 /* ═══════════════ INSPECTOR (quick peek + edit) ═══════════════ */
-function Inspector({ s, rev, apiOn, onSave, onClose, onOpenSession }) {
+function Inspector({ s, rev, apiOn, editToken, onSave, onClose, onOpenSession }) {
   const open = !!s;
   return (
     <>
       <div className={"scrim" + (open ? " on" : "")} onClick={onClose}></div>
       <aside className={"inspector" + (open ? " open" : "")} style={s ? trackStyle(s.track) : {}}>
-        {s ? <InspectorBody key={s.sid} s={s} apiOn={apiOn} onSave={onSave} onClose={onClose} onOpenSession={onOpenSession} /> :
+        {s ? <InspectorBody key={s.sid} s={s} apiOn={apiOn} editToken={editToken} onSave={onSave} onClose={onClose} onOpenSession={onOpenSession} /> :
           <div className="insp-empty">
             <div className="motif"><span className="asterisk" style={{ "--ast": "72px" }}><i></i></span></div>
             <p>Select a session for its breakdown, deck, and materials.</p>
@@ -397,11 +397,11 @@ function Inspector({ s, rev, apiOn, onSave, onClose, onOpenSession }) {
   );
 }
 
-function InspectorBody({ s, apiOn, onSave, onClose, onOpenSession }) {
+function InspectorBody({ s, apiOn, editToken, onSave, onClose, onOpenSession }) {
   const [editing, setEditing] = React.useState(false);
   const t = D.TRACKS[s.track];
   const d = D.DAYS[s.day];
-  if (editing) return <EditForm s={s} apiOn={apiOn} onSave={onSave} onClose={onClose} onDone={() => setEditing(false)} />;
+  if (editing) return <EditForm s={s} apiOn={apiOn} editToken={editToken} onSave={onSave} onClose={onClose} onDone={() => setEditing(false)} />;
   return (
     <>
       <div className="insp-head">
@@ -470,7 +470,7 @@ function InspectorBody({ s, apiOn, onSave, onClose, onOpenSession }) {
 const minToHM = (mins) => `${pad(Math.floor(mins / 60))}:${pad(mins % 60)}`;
 const hmToMin = (hm) => { const [h, m] = String(hm || "").split(":").map(Number); return (h || 0) * 60 + (m || 0); };
 
-function EditForm({ s, apiOn, onSave, onClose, onDone }) {
+function EditForm({ s, apiOn, editToken, onSave, onClose, onDone }) {
   const [f, setF] = React.useState({
     title: s.title || "",
     day: s.day,
@@ -500,9 +500,10 @@ function EditForm({ s, apiOn, onSave, onClose, onDone }) {
     try {
       const res = await fetch("/api/upload", {
         method: "POST",
-        headers: { "Content-Type": "application/octet-stream", "X-Filename": file.name },
+        headers: { "Content-Type": "application/octet-stream", "X-Filename": file.name, ...(editToken ? { "X-Edit-Token": editToken } : {}) },
         body: file,
       });
+      if (res.status === 401) throw new Error("Editing key rejected — set it in the top-bar Admin menu.");
       const j = await res.json();
       if (!res.ok || !j.ok) throw new Error(j.error || "upload failed");
       setF(prev => ({ ...prev, assets: [...prev.assets, { t: file.name, k: "pdf", url: j.url }] }));
@@ -535,7 +536,9 @@ function EditForm({ s, apiOn, onSave, onClose, onDone }) {
       await onSave(s.sid, patch);
       onDone();
     } catch (e) {
-      setErr("Save failed — is the local server running?");
+      setErr(e && e.status === 401
+        ? "Editing key rejected — set it in the top-bar Admin menu."
+        : "Save failed — is the write server reachable?");
       setBusy(false);
     }
   };

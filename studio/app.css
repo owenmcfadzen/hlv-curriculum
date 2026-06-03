@@ -104,6 +104,26 @@ body {
 .tbtn:hover { background: var(--hover); }
 .tbtn svg { width: 15px; height: 15px; }
 .tbtn.icon { width: 38px; padding: 0; justify-content: center; }
+.tbtn.unlocked { border-color: #0A8C3D; color: #0A8C3D; background: #E3F6EC; }
+
+/* admin / editing-access menu */
+.admin-wrap { position: relative; }
+.admin-pop { position: absolute; top: 46px; right: 0; z-index: 80; width: 268px;
+  background: var(--chrome); border: 1px solid var(--line-2); border-radius: var(--r);
+  box-shadow: 0 14px 36px rgba(30,30,30,.16); padding: 16px; }
+.ap-ttl { font: 700 14px/1 var(--type-display); letter-spacing: -.01em; color: var(--INK); }
+.ap-sub { font: 500 11.5px/1.45 var(--type-body); color: var(--SEC); margin: 6px 0 12px; }
+.ap-in { width: 100%; box-sizing: border-box; height: 36px; padding: 0 11px; border: 1px solid var(--line-2);
+  border-radius: var(--r); background: var(--chrome); color: var(--INK); font: 500 13px/1 var(--type-mono); letter-spacing: .04em; }
+.ap-in:focus { outline: none; border-color: var(--INK); box-shadow: 0 0 0 3px var(--hover); }
+.ap-row { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
+.ap-state { font: 600 11px/1 var(--type-body); letter-spacing: .04em; text-transform: uppercase; color: var(--MUTE); }
+.ap-state.on { color: #0A8C3D; }
+.ap-clear, .ap-save { height: 32px; padding: 0 13px; border-radius: var(--r); cursor: pointer; font: 600 12.5px/1 var(--type-body); }
+.ap-clear { border: 1px solid var(--line-2); background: var(--chrome); color: var(--SEC); }
+.ap-clear:hover { background: var(--hover); color: var(--INK); }
+.ap-save { border: 0; background: var(--INK); color: #fff; }
+.ap-save:hover { filter: brightness(1.15); }
 
 /* avatar — square initials tile, track-coloured */
 .avatar {
