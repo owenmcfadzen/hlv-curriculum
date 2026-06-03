@@ -53,11 +53,15 @@
 <script type="text/babel" src="studio/views.jsx"></script>
 
 <script type="text/babel">
-const { useState, useEffect } = React;
+const { useState, useEffect, useRef } = React;
 const { Rail, Topbar, FilterBar, WeekSwitch, D } = window.StudioUI;
 const { PlanView, DayView, SessionDetail, Inspector } = window.StudioViews;
 
 const HOUR_PX = 64;
+
+// Fields a user may edit; merged from /api/overrides onto the static sessions.
+const EDITABLE = ["title", "day", "start", "end", "track", "group", "kind", "room", "note", "aspects", "assets", "facils", "sub"];
+function applyOverride(s, ov) { if (!ov) return; for (const k of EDITABLE) if (k in ov) s[k] = ov[k]; }
 
 // Pick a "today" — first day whose date matches now, else first day in range, else 0.
 function pickToday() {
@@ -72,12 +76,39 @@ function App() {
   const [dayI, setDayI] = useState(pickToday());
   const [weekIdx, setWeekIdx] = useState(0);
   const [filters, setFilters] = useState({ tracks: new Set(), aspects: new Set() });
+  const [rev, setRev] = useState(0);            // bump to re-render after edits
+  const [apiOn, setApiOn] = useState(true);     // false when no write server (static host)
+  const ovRef = useRef({});                     // current overrides map, keyed by sid
 
   useEffect(() => {
     const r = document.documentElement;
     r.style.setProperty("--r", "0px");
     r.style.setProperty("--hour", HOUR_PX + "px");
   }, []);
+
+  // Load persisted edits once and merge onto the static sessions.
+  useEffect(() => {
+    fetch("/api/overrides")
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(ov => {
+        ovRef.current = ov || {};
+        D.SESSIONS.forEach(s => applyOverride(s, ovRef.current[s.sid]));
+        setRev(r => r + 1);
+      })
+      .catch(() => setApiOn(false));
+  }, []);
+
+  // Persist a patch for one session: mutate in memory, bump, POST the full map.
+  const saveSession = (sid, patch) => {
+    const merged = { ...ovRef.current, [sid]: { ...(ovRef.current[sid] || {}), ...patch } };
+    ovRef.current = merged;
+    const s = D.SESSIONS.find(x => x.sid === sid);
+    if (s) Object.assign(s, patch);
+    setRev(r => r + 1);
+    return fetch("/api/overrides", {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(merged),
+    }).then(r => { if (!r.ok) throw new Error("save failed"); return r.json(); });
+  };
 
   const toggle = (group, key) => setFilters(f => {
     const next = new Set(f[group]);
@@ -112,7 +143,7 @@ function App() {
         </div>
       </div>
 
-      <Inspector s={sel} onClose={() => setSel(null)} onOpenSession={openSession} />
+      <Inspector s={sel} rev={rev} apiOn={apiOn} onSave={saveSession} onClose={() => setSel(null)} onOpenSession={openSession} />
     </div>
   );
 }

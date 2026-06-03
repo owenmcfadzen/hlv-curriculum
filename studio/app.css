@@ -318,6 +318,10 @@ body {
 .insp-head .ttl { font: 800 24px/1.15 var(--type-display); letter-spacing: -.02em; }
 .insp-head .when { font: 500 13px/1 var(--type-mono); letter-spacing: .06em; color: var(--SEC); margin-top: 10px;
   display: flex; align-items: center; gap: 10px; }
+.insp-edit { position: absolute; top: 18px; right: 56px; height: 30px; padding: 0 12px; border-radius: var(--r);
+  border: 1px solid var(--blk-accent); background: var(--chrome); color: var(--blk-ink); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px; font: 600 12.5px/1 var(--type-body); }
+.insp-edit:hover { background: var(--blk-tint); }
 .insp-body { flex: 1; overflow: auto; padding: 22px 24px 40px; }
 .insp-body::-webkit-scrollbar { width: 10px; }
 .insp-body::-webkit-scrollbar-thumb { background: #DEDBD6; border: 3px solid var(--chrome); border-radius: 6px; }
@@ -505,6 +509,48 @@ body {
   font: 700 14px/1 var(--type-display); letter-spacing: -.005em; }
 .open-session .grow { flex: 1; }
 .open-session:hover { filter: brightness(.94); }
+.asset-mini:hover { border-color: var(--blk-accent); color: var(--blk-ink); }
+a.asset-mini { text-decoration: none; cursor: pointer; }
+
+/* ═══════════════ EDIT FORM ═══════════════ */
+.insp-body.ef { padding-top: 18px; }
+.ef-warn { font: 500 12px/1.4 var(--type-body); color: #8A6400; background: #FBF1D6;
+  border: 1px solid #E8D7A6; border-radius: var(--r); padding: 9px 11px; margin-bottom: 16px; }
+.ef-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; flex: 1; }
+.ef-field.sm { flex: 0 0 92px; }
+.ef-lbl { font: 600 11.5px/1 var(--type-body); letter-spacing: .02em; color: var(--SEC); text-transform: uppercase; }
+.ef-row { display: flex; gap: 10px; align-items: flex-end; }
+.ef-in { width: 100%; box-sizing: border-box; height: 38px; padding: 0 11px; border: 1px solid var(--line-2);
+  border-radius: var(--r); background: var(--chrome); color: var(--INK); font: 500 14px/1 var(--type-body); }
+.ef-in:focus { outline: none; border-color: var(--blk-accent); box-shadow: 0 0 0 3px var(--blk-tint); }
+select.ef-in { appearance: none; cursor: pointer; }
+.ef-area { height: auto; padding: 9px 11px; line-height: 1.45; resize: vertical; font-family: var(--type-body); }
+.ef-aspects { display: flex; flex-wrap: wrap; gap: 7px; margin: 4px 0 16px; }
+.ef-asp { display: inline-flex; align-items: center; gap: 5px; padding: 6px 10px; border-radius: var(--r);
+  border: 1px solid; background: var(--chrome); cursor: pointer; font: 600 11.5px/1 var(--type-body); }
+.ef-assets { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+.ef-asset { display: inline-flex; align-items: center; gap: 6px; padding: 5px 6px 5px 9px; border: 1px solid var(--line-2);
+  border-radius: var(--r); font-size: 11px; letter-spacing: .02em; color: var(--SEC); }
+.ef-asset a { color: var(--blk-ink); text-decoration: none; }
+.ef-asset a:hover { text-decoration: underline; }
+.ef-asset-x { border: 0; background: none; cursor: pointer; color: var(--MUTE); display: grid; place-items: center; padding: 2px; }
+.ef-asset-x:hover { color: #C2342B; }
+.ef-file { display: none; }
+.ef-upload { display: inline-flex; align-items: center; gap: 6px; padding: 8px 13px; border-radius: var(--r);
+  border: 1px dashed var(--line-2); background: var(--chrome); color: var(--INK); cursor: pointer;
+  font: 600 12.5px/1 var(--type-body); }
+.ef-upload:hover:not(:disabled) { border-color: var(--blk-accent); color: var(--blk-ink); }
+.ef-upload:disabled { opacity: .5; cursor: not-allowed; }
+.ef-err { font: 500 12.5px/1.4 var(--type-body); color: #C2342B; background: #FBE9E7;
+  border: 1px solid #F2C9C4; border-radius: var(--r); padding: 9px 11px; margin-top: 16px; }
+.ef-actions { display: flex; gap: 10px; margin-top: 24px; }
+.ef-cancel, .ef-save { flex: 1; height: 44px; border-radius: var(--r); cursor: pointer;
+  font: 700 14px/1 var(--type-display); letter-spacing: -.005em; }
+.ef-cancel { border: 1px solid var(--line-2); background: var(--chrome); color: var(--INK); }
+.ef-cancel:hover { background: var(--hover); }
+.ef-save { border: 0; background: var(--blk-accent); color: #fff; }
+.ef-save:hover:not(:disabled) { filter: brightness(.94); }
+.ef-save:disabled, .ef-cancel:disabled { opacity: .55; cursor: not-allowed; }
 
 /* ═══════════════ RESPONSIVE ═══════════════ */
 @media (max-width: 1024px) {

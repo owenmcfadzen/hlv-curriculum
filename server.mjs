@@ -23,6 +23,8 @@ const HOST = process.env.HOST || '0.0.0.0';
 // Persistent overrides store. On Railway: set OVERRIDES_PATH=/data/overrides.json
 // and mount a Railway Volume at /data. Locally: defaults to ./overrides.json.
 const OVERRIDES_PATH = process.env.OVERRIDES_PATH || resolve(here, 'overrides.json');
+// Uploaded session files. On Railway: set UPLOADS_PATH=/data/uploads (volume).
+const UPLOADS_DIR = process.env.UPLOADS_PATH || resolve(here, 'uploads');
 // Optional shared-password gate for writes. Reads always public.
 const EDIT_TOKEN = process.env.EDIT_TOKEN || null;
 
@@ -118,10 +120,69 @@ async function handleOverridesApi(req, res) {
   res.end('method not allowed');
 }
 
+// Sanitize an upload filename: keep base name, strip path + unsafe chars, prefix a
+// short timestamp so re-uploads of the same name don't collide.
+function safeUploadName(raw) {
+  const base = String(raw || 'file').split(/[\\/]/).pop();
+  const cleaned = base.replace(/[^A-Za-z0-9._-]+/g, '_').replace(/^\.+/, '').slice(0, 100) || 'file';
+  return `${Date.now().toString(36)}-${cleaned}`;
+}
+
+async function handleUploadApi(req, res) {
+  setApiCors(res);
+  if (req.method === 'OPTIONS') { res.statusCode = 204; res.end(); return; }
+  if (req.method !== 'POST') { res.statusCode = 405; res.end('method not allowed'); return; }
+  if (EDIT_TOKEN && req.headers['x-edit-token'] !== EDIT_TOKEN) {
+    res.statusCode = 401;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({ error: 'invalid or missing edit token' }));
+    return;
+  }
+  const name = safeUploadName(req.headers['x-filename']);
+  const chunks = [];
+  let size = 0, tooBig = false;
+  req.on('data', chunk => {
+    size += chunk.length;
+    if (size > 25_000_000) { tooBig = true; req.destroy(); return; }
+    chunks.push(chunk);
+  });
+  req.on('end', async () => {
+    if (tooBig) { res.statusCode = 413; res.end('file too large (25MB max)'); return; }
+    try {
+      await mkdir(UPLOADS_DIR, { recursive: true }).catch(() => {});
+      await writeFile(resolve(UPLOADS_DIR, name), Buffer.concat(chunks));
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify({ ok: true, url: `/uploads/${name}`, name, size }));
+    } catch (err) {
+      res.statusCode = 500;
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify({ ok: false, error: String(err.message || err) }));
+    }
+  });
+}
+
+async function serveUpload(req, res, clean) {
+  const name = clean.slice('uploads/'.length);
+  if (!name || name.includes('/') || name.includes('..')) { res.statusCode = 400; res.end('bad path'); return; }
+  try {
+    const data = await readFile(resolve(UPLOADS_DIR, name));
+    res.setHeader('Content-Type', MIME[extname(name).toLowerCase()] || 'application/octet-stream');
+    res.setHeader('Content-Length', data.length);
+    res.setHeader('Cache-Control', 'public, max-age=300');
+    if (req.method === 'HEAD') { res.end(); return; }
+    res.end(data);
+  } catch {
+    res.statusCode = 404; res.end('not found');
+  }
+}
+
 const server = http.createServer(async (req, res) => {
   // API routes
   if (req.url && req.url.split('?')[0] === '/api/overrides') {
     return handleOverridesApi(req, res);
+  }
+  if (req.url && req.url.split('?')[0] === '/api/upload') {
+    return handleUploadApi(req, res);
   }
 
   if (req.method !== 'GET' && req.method !== 'HEAD') {
@@ -134,6 +195,11 @@ const server = http.createServer(async (req, res) => {
     res.statusCode = 400;
     res.end('bad path');
     return;
+  }
+  // Uploaded session files live outside the repo root on Railway (a volume) —
+  // serve them from UPLOADS_DIR rather than the static root.
+  if (clean.startsWith('uploads/')) {
+    return serveUpload(req, res, clean);
   }
   let target = clean === '' ? 'index.html' : clean;
   let full = resolve(here, target);

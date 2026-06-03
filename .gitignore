@@ -39,3 +39,4 @@ data/block-drafts/
 
 # Local persistent state — written by server.mjs when running locally
 overrides.json
+uploads/

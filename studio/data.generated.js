@@ -179,6 +179,7 @@ window.STUDIO = {
   "SESSIONS": [
     {
       "id": "s0",
+      "sid": "0-am-welcome",
       "day": 0,
       "start": 540,
       "end": 570,
@@ -238,6 +239,7 @@ window.STUDIO = {
     },
     {
       "id": "s1",
+      "sid": "0-am-intro-game",
       "day": 0,
       "start": 570,
       "end": 600,
@@ -294,6 +296,7 @@ window.STUDIO = {
     },
     {
       "id": "s2",
+      "sid": "0-am-entrepreneurship-intro",
       "day": 0,
       "start": 600,
       "end": 675,
@@ -375,6 +378,7 @@ window.STUDIO = {
     },
     {
       "id": "s3",
+      "sid": "0-am-alumni-orient",
       "day": 0,
       "start": 600,
       "end": 675,
@@ -421,6 +425,7 @@ window.STUDIO = {
     },
     {
       "id": "s4",
+      "sid": "0-am-ai-tooling-prd-intro-pitch",
       "day": 0,
       "start": 675,
       "end": 720,
@@ -493,6 +498,7 @@ window.STUDIO = {
     },
     {
       "id": "s5",
+      "sid": "0-pm-sponsor-briefing",
       "day": 0,
       "start": 780,
       "end": 825,
@@ -554,6 +560,7 @@ window.STUDIO = {
     },
     {
       "id": "s6",
+      "sid": "0-pm-challenge-q-a",
       "day": 0,
       "start": 825,
       "end": 870,
@@ -616,6 +623,7 @@ window.STUDIO = {
     },
     {
       "id": "s7",
+      "sid": "0-pm-game",
       "day": 0,
       "start": 870,
       "end": 900,
@@ -672,6 +680,7 @@ window.STUDIO = {
     },
     {
       "id": "s8",
+      "sid": "0-pm-active-listening-interviews",
       "day": 0,
       "start": 900,
       "end": 960,
@@ -738,6 +747,7 @@ window.STUDIO = {
     },
     {
       "id": "s9",
+      "sid": "0-pm-debrief-problems",
       "day": 0,
       "start": 960,
       "end": 990,
@@ -785,7 +795,7 @@ window.STUDIO = {
       "note": "End-of-day capture. Take what you heard from sponsor + customers and surface initial problem candidates. Not problem statements yet (that's Tue), just raw friction notes.",
       "assets": [
         {
-          "t": "Sponsor briefing + Challenge Q&A + Customer panel (today's inputs)",
+          "t": "Sponsor briefing + Challenge Q&A + Active listening & interviews (today's inputs)",
           "k": "pdf"
         },
         {
@@ -803,6 +813,7 @@ window.STUDIO = {
     },
     {
       "id": "s10",
+      "sid": "0-pm-swag-challenge-intro",
       "day": 0,
       "start": 990,
       "end": 1020,
@@ -861,6 +872,7 @@ window.STUDIO = {
     },
     {
       "id": "s11",
+      "sid": "1-am-swag-pitch",
       "day": 1,
       "start": 540,
       "end": 585,
@@ -927,6 +939,7 @@ window.STUDIO = {
     },
     {
       "id": "s12",
+      "sid": "1-am-m-opportunity-id",
       "day": 1,
       "start": 585,
       "end": 630,
@@ -992,6 +1005,7 @@ window.STUDIO = {
     },
     {
       "id": "s13",
+      "sid": "1-am-alumni-anchor",
       "day": 1,
       "start": 585,
       "end": 645,
@@ -1042,6 +1056,7 @@ window.STUDIO = {
     },
     {
       "id": "s14",
+      "sid": "1-am-revisit-panel",
       "day": 1,
       "start": 630,
       "end": 675,
@@ -1086,7 +1101,7 @@ window.STUDIO = {
           "k": "pdf"
         },
         {
-          "t": "Mon PM Customer panel (prerequisite)",
+          "t": "Mon PM Active listening & interviews (prerequisite)",
           "k": "pdf"
         },
         {
@@ -1104,6 +1119,7 @@ window.STUDIO = {
     },
     {
       "id": "s15",
+      "sid": "1-am-user-journey",
       "day": 1,
       "start": 675,
       "end": 720,
@@ -1164,6 +1180,7 @@ window.STUDIO = {
     },
     {
       "id": "s16",
+      "sid": "1-pm-problems",
       "day": 1,
       "start": 780,
       "end": 825,
@@ -1230,6 +1247,7 @@ window.STUDIO = {
     },
     {
       "id": "s17",
+      "sid": "1-pm-top-problems",
       "day": 1,
       "start": 825,
       "end": 870,
@@ -1286,6 +1304,7 @@ window.STUDIO = {
     },
     {
       "id": "s18",
+      "sid": "1-pm-game",
       "day": 1,
       "start": 870,
       "end": 900,
@@ -1342,6 +1361,7 @@ window.STUDIO = {
     },
     {
       "id": "s19",
+      "sid": "1-pm-m-problem-validation",
       "day": 1,
       "start": 900,
       "end": 945,
@@ -1406,6 +1426,7 @@ window.STUDIO = {
     },
     {
       "id": "s20",
+      "sid": "1-pm-alumni-deepen-1",
       "day": 1,
       "start": 900,
       "end": 960,
@@ -1456,6 +1477,7 @@ window.STUDIO = {
     },
     {
       "id": "s21",
+      "sid": "1-pm-panel-validation",
       "day": 1,
       "start": 945,
       "end": 990,
@@ -1528,6 +1550,7 @@ window.STUDIO = {
     },
     {
       "id": "s22",
+      "sid": "1-pm-top-problems-revisit",
       "day": 1,
       "start": 990,
       "end": 1020,
@@ -1588,6 +1611,7 @@ window.STUDIO = {
     },
     {
       "id": "s23",
+      "sid": "2-am-welcome",
       "day": 2,
       "start": 540,
       "end": 555,
@@ -1638,6 +1662,7 @@ window.STUDIO = {
     },
     {
       "id": "s24",
+      "sid": "2-am-m-solutions",
       "day": 2,
       "start": 555,
       "end": 600,
@@ -1698,6 +1723,7 @@ window.STUDIO = {
     },
     {
       "id": "s25",
+      "sid": "2-am-alumni-deepen-2",
       "day": 2,
       "start": 555,
       "end": 600,
@@ -1744,6 +1770,7 @@ window.STUDIO = {
     },
     {
       "id": "s26",
+      "sid": "2-am-solutions",
       "day": 2,
       "start": 600,
       "end": 660,
@@ -1800,6 +1827,7 @@ window.STUDIO = {
     },
     {
       "id": "s27",
+      "sid": "2-am-entrepreneur-story",
       "day": 2,
       "start": 660,
       "end": 690,
@@ -1852,6 +1880,7 @@ window.STUDIO = {
     },
     {
       "id": "s28",
+      "sid": "2-am-top-solutions",
       "day": 2,
       "start": 690,
       "end": 720,
@@ -1908,6 +1937,7 @@ window.STUDIO = {
     },
     {
       "id": "s29",
+      "sid": "2-pm-panel-solution-validation",
       "day": 2,
       "start": 780,
       "end": 825,
@@ -1970,6 +2000,7 @@ window.STUDIO = {
     },
     {
       "id": "s30",
+      "sid": "2-pm-pick-solution",
       "day": 2,
       "start": 825,
       "end": 870,
@@ -2035,6 +2066,7 @@ window.STUDIO = {
     },
     {
       "id": "s31",
+      "sid": "2-pm-game",
       "day": 2,
       "start": 870,
       "end": 900,
@@ -2091,6 +2123,7 @@ window.STUDIO = {
     },
     {
       "id": "s32",
+      "sid": "2-pm-pitch-game",
       "day": 2,
       "start": 900,
       "end": 930,
@@ -2149,6 +2182,7 @@ window.STUDIO = {
     },
     {
       "id": "s33",
+      "sid": "2-pm-pitch-template",
       "day": 2,
       "start": 930,
       "end": 975,
@@ -2209,6 +2243,7 @@ window.STUDIO = {
     },
     {
       "id": "s34",
+      "sid": "2-pm-pitch-prep",
       "day": 2,
       "start": 975,
       "end": 1020,
@@ -2269,6 +2304,7 @@ window.STUDIO = {
     },
     {
       "id": "s35",
+      "sid": "3-am-welcome",
       "day": 3,
       "start": 540,
       "end": 555,
@@ -2319,6 +2355,7 @@ window.STUDIO = {
     },
     {
       "id": "s36",
+      "sid": "3-am-pitch-prep",
       "day": 3,
       "start": 555,
       "end": 630,
@@ -2379,6 +2416,7 @@ window.STUDIO = {
     },
     {
       "id": "s37",
+      "sid": "3-am-alumni-rehearse",
       "day": 3,
       "start": 585,
       "end": 630,
@@ -2425,6 +2463,7 @@ window.STUDIO = {
     },
     {
       "id": "s38",
+      "sid": "3-am-rc-pitch-speed-dating",
       "day": 3,
       "start": 630,
       "end": 675,
@@ -2486,6 +2525,7 @@ window.STUDIO = {
     },
     {
       "id": "s39",
+      "sid": "3-am-pitches",
       "day": 3,
       "start": 675,
       "end": 720,
@@ -2542,6 +2582,7 @@ window.STUDIO = {
     },
     {
       "id": "s40",
+      "sid": "3-pm-pitches",
       "day": 3,
       "start": 780,
       "end": 840,
@@ -2598,6 +2639,7 @@ window.STUDIO = {
     },
     {
       "id": "s41",
+      "sid": "3-pm-game",
       "day": 3,
       "start": 840,
       "end": 870,
@@ -2654,6 +2696,7 @@ window.STUDIO = {
     },
     {
       "id": "s42",
+      "sid": "3-pm-pitches-2",
       "day": 3,
       "start": 870,
       "end": 930,
@@ -2710,6 +2753,7 @@ window.STUDIO = {
     },
     {
       "id": "s43",
+      "sid": "3-pm-voting",
       "day": 3,
       "start": 930,
       "end": 990,
@@ -2769,6 +2813,7 @@ window.STUDIO = {
     },
     {
       "id": "s44",
+      "sid": "3-pm-reflection",
       "day": 3,
       "start": 990,
       "end": 1020,
@@ -2819,6 +2864,7 @@ window.STUDIO = {
     },
     {
       "id": "s45",
+      "sid": "3-pm-dinner",
       "day": 3,
       "start": 1080,
       "end": 1200,
@@ -2840,6 +2886,7 @@ window.STUDIO = {
     },
     {
       "id": "s46",
+      "sid": "4-am-welcome",
       "day": 4,
       "start": 540,
       "end": 555,
@@ -2890,6 +2937,7 @@ window.STUDIO = {
     },
     {
       "id": "s47",
+      "sid": "4-am-pitch-selection-3-tracks-intro",
       "day": 4,
       "start": 555,
       "end": 615,
@@ -2959,6 +3007,7 @@ window.STUDIO = {
     },
     {
       "id": "s48",
+      "sid": "4-am-repitch-the-5",
       "day": 4,
       "start": 615,
       "end": 660,
@@ -3020,6 +3069,7 @@ window.STUDIO = {
     },
     {
       "id": "s49",
+      "sid": "4-am-preferences",
       "day": 4,
       "start": 660,
       "end": 720,
@@ -3089,6 +3139,7 @@ window.STUDIO = {
     },
     {
       "id": "s50",
+      "sid": "4-pm-lpp-flow-prd-wk2",
       "day": 4,
       "start": 780,
       "end": 825,
@@ -3162,6 +3213,7 @@ window.STUDIO = {
     },
     {
       "id": "s51",
+      "sid": "4-pm-team-allocation",
       "day": 4,
       "start": 825,
       "end": 870,
@@ -3218,6 +3270,7 @@ window.STUDIO = {
     },
     {
       "id": "s52",
+      "sid": "4-pm-sa1-who-s-it-for",
       "day": 4,
       "start": 870,
       "end": 930,
@@ -3274,6 +3327,7 @@ window.STUDIO = {
     },
     {
       "id": "s53",
+      "sid": "4-pm-sa2-8-frames-customer-journey",
       "day": 4,
       "start": 930,
       "end": 990,
@@ -3343,6 +3397,7 @@ window.STUDIO = {
     },
     {
       "id": "s54",
+      "sid": "4-pm-external-team-activity",
       "day": 4,
       "start": 1020,
       "end": 1260,
@@ -3364,6 +3419,7 @@ window.STUDIO = {
     },
     {
       "id": "s55",
+      "sid": "5-am-welcome",
       "day": 5,
       "start": 540,
       "end": 570,
@@ -3427,6 +3483,7 @@ window.STUDIO = {
     },
     {
       "id": "s56",
+      "sid": "5-am-week-2-flow-prd",
       "day": 5,
       "start": 570,
       "end": 630,
@@ -3500,6 +3557,7 @@ window.STUDIO = {
     },
     {
       "id": "s57",
+      "sid": "5-am-sa2-5-realigning-around-customer",
       "day": 5,
       "start": 630,
       "end": 675,
@@ -3556,6 +3614,7 @@ window.STUDIO = {
     },
     {
       "id": "s58",
+      "sid": "5-am-guest-talk",
       "day": 5,
       "start": 675,
       "end": 720,
@@ -3614,6 +3673,7 @@ window.STUDIO = {
     },
     {
       "id": "s59",
+      "sid": "5-pm-sa3-how-is-it-solved-now",
       "day": 5,
       "start": 780,
       "end": 825,
@@ -3670,6 +3730,7 @@ window.STUDIO = {
     },
     {
       "id": "s60",
+      "sid": "5-pm-sa4-team-aligned-on-v1-solution",
       "day": 5,
       "start": 825,
       "end": 855,
@@ -3735,6 +3796,7 @@ window.STUDIO = {
     },
     {
       "id": "s61",
+      "sid": "5-pm-solution-blueprint",
       "day": 5,
       "start": 855,
       "end": 960,
@@ -3760,6 +3822,7 @@ window.STUDIO = {
     },
     {
       "id": "s62",
+      "sid": "5-pm-canvas-lite",
       "day": 5,
       "start": 855,
       "end": 960,
@@ -3785,6 +3848,7 @@ window.STUDIO = {
     },
     {
       "id": "s63",
+      "sid": "5-pm-landscape-map",
       "day": 5,
       "start": 855,
       "end": 960,
@@ -3810,6 +3874,7 @@ window.STUDIO = {
     },
     {
       "id": "s64",
+      "sid": "5-pm-team-synthesis",
       "day": 5,
       "start": 960,
       "end": 990,
@@ -3875,6 +3940,7 @@ window.STUDIO = {
     },
     {
       "id": "s65",
+      "sid": "6-am-welcome",
       "day": 6,
       "start": 540,
       "end": 555,
@@ -3925,6 +3991,7 @@ window.STUDIO = {
     },
     {
       "id": "s66",
+      "sid": "6-am-product-definition",
       "day": 6,
       "start": 555,
       "end": 690,
@@ -3950,6 +4017,7 @@ window.STUDIO = {
     },
     {
       "id": "s67",
+      "sid": "6-am-back-of-napkin-economics",
       "day": 6,
       "start": 555,
       "end": 690,
@@ -3975,6 +4043,7 @@ window.STUDIO = {
     },
     {
       "id": "s68",
+      "sid": "6-am-validation-design",
       "day": 6,
       "start": 555,
       "end": 690,
@@ -4000,6 +4069,7 @@ window.STUDIO = {
     },
     {
       "id": "s69",
+      "sid": "6-am-team-synthesis",
       "day": 6,
       "start": 690,
       "end": 720,
@@ -4060,6 +4130,7 @@ window.STUDIO = {
     },
     {
       "id": "s70",
+      "sid": "6-pm-out-in-market",
       "day": 6,
       "start": 780,
       "end": 960,
@@ -4126,6 +4197,7 @@ window.STUDIO = {
     },
     {
       "id": "s71",
+      "sid": "6-pm-out-in-market-debrief",
       "day": 6,
       "start": 960,
       "end": 1020,
@@ -4194,6 +4266,7 @@ window.STUDIO = {
     },
     {
       "id": "s72",
+      "sid": "7-am-welcome",
       "day": 7,
       "start": 540,
       "end": 555,
@@ -4244,6 +4317,7 @@ window.STUDIO = {
     },
     {
       "id": "s73",
+      "sid": "7-am-sponsor-feedback-sessions",
       "day": 7,
       "start": 555,
       "end": 615,
@@ -4325,6 +4399,7 @@ window.STUDIO = {
     },
     {
       "id": "s74",
+      "sid": "7-am-prototype-build-a-b",
       "day": 7,
       "start": 615,
       "end": 720,
@@ -4350,6 +4425,7 @@ window.STUDIO = {
     },
     {
       "id": "s75",
+      "sid": "7-am-the-100-day-plan",
       "day": 7,
       "start": 615,
       "end": 720,
@@ -4433,6 +4509,7 @@ window.STUDIO = {
     },
     {
       "id": "s76",
+      "sid": "7-pm-team-alignment",
       "day": 7,
       "start": 780,
       "end": 825,
@@ -4493,6 +4570,7 @@ window.STUDIO = {
     },
     {
       "id": "s77",
+      "sid": "7-pm-out-in-market",
       "day": 7,
       "start": 825,
       "end": 960,
@@ -4572,6 +4650,7 @@ window.STUDIO = {
     },
     {
       "id": "s78",
+      "sid": "7-pm-out-in-market-debrief",
       "day": 7,
       "start": 960,
       "end": 1020,
@@ -4636,6 +4715,7 @@ window.STUDIO = {
     },
     {
       "id": "s79",
+      "sid": "8-am-welcome",
       "day": 8,
       "start": 540,
       "end": 555,
@@ -4686,6 +4766,7 @@ window.STUDIO = {
     },
     {
       "id": "s80",
+      "sid": "8-am-lpp-time",
       "day": 8,
       "start": 555,
       "end": 660,
@@ -4769,6 +4850,7 @@ window.STUDIO = {
     },
     {
       "id": "s81",
+      "sid": "8-am-guest-how-to-pitch",
       "day": 8,
       "start": 660,
       "end": 720,
@@ -4840,6 +4922,7 @@ window.STUDIO = {
     },
     {
       "id": "s82",
+      "sid": "8-pm-lpp-time-narrative-time",
       "day": 8,
       "start": 780,
       "end": 1020,
@@ -4915,6 +4998,7 @@ window.STUDIO = {
     },
     {
       "id": "s83",
+      "sid": "8-pm-lpp-late-work-session",
       "day": 8,
       "start": 1020,
       "end": 1260,
@@ -4934,6 +5018,7 @@ window.STUDIO = {
     },
     {
       "id": "s84",
+      "sid": "9-am-welcome",
       "day": 9,
       "start": 540,
       "end": 555,
@@ -4984,6 +5069,7 @@ window.STUDIO = {
     },
     {
       "id": "s85",
+      "sid": "9-am-lpp-practice",
       "day": 9,
       "start": 555,
       "end": 720,
@@ -5055,6 +5141,7 @@ window.STUDIO = {
     },
     {
       "id": "s86",
+      "sid": "9-pm-final-practice",
       "day": 9,
       "start": 780,
       "end": 840,
@@ -5122,6 +5209,7 @@ window.STUDIO = {
     },
     {
       "id": "s87",
+      "sid": "9-pm-final-pitches",
       "day": 9,
       "start": 840,
       "end": 960,
@@ -5197,6 +5285,7 @@ window.STUDIO = {
     },
     {
       "id": "s88",
+      "sid": "9-pm-reception",
       "day": 9,
       "start": 960,
       "end": 1020,

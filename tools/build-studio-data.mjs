@@ -64,6 +64,18 @@ function inferAspects(blk) {
 const decksByCode = {};
 slideDecks.decks.forEach(d => { if (d.code) decksByCode[d.code] = d; });
 
+// Stable per-session key, derived from source block attributes (NOT the editable
+// fields), so user edits stored in overrides.json survive a rebuild. Deduped.
+const slug = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 32);
+const usedSids = new Set();
+function makeSid(di, half, label) {
+  let base = `${di}-${half}-${slug(label) || "x"}`;
+  let sid = base, n = 2;
+  while (usedSids.has(sid)) sid = `${base}-${n++}`;
+  usedSids.add(sid);
+  return sid;
+}
+
 const SESSIONS = [];
 let nextId = 0;
 schedule.schedule.weeks.forEach((wk, wkIdx) => {
@@ -124,6 +136,7 @@ schedule.schedule.weeks.forEach((wk, wkIdx) => {
         }
         SESSIONS.push({
           id: "s" + (nextId++),
+          sid: makeSid(di, half, blk.label),
           day: di,
           start, end,
           track,
