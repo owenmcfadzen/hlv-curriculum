@@ -76,7 +76,10 @@ schedule.schedule.weeks.forEach((wk, wkIdx) => {
         if (!blk.time_start || !blk.time_end) return;
         const start = m(blk.time_start), end = m(blk.time_end);
         if (start == null || end == null || end <= start) return;
-        const track = KIND_TO_TRACK[blk.kind] || "core";
+        // Alumni sessions run as a parallel cohort (titled "Alumni: …") — give
+        // them their own track so they read distinctly and can be filtered.
+        const isAlumni = /^Alumni:/i.test(blk.label || "");
+        const track = isAlumni ? "alumni" : (KIND_TO_TRACK[blk.kind] || "core");
         const aspects = inferAspects(blk);
         let micro = null;
         if (blk.slide && Array.isArray(blk.slide.students) && blk.slide.students.length) {
@@ -151,8 +154,17 @@ const TRACKS = {
   core:    { label: "Core",     accent: "#0A8C3D", tint: "#E3F6EC", ink: "#0A8C3D" },
   build:   { label: "Studio",   accent: "#0B5FB0", tint: "#E4F0FC", ink: "#0B5FB0" },
   talks:   { label: "Talks",    accent: "#7649C2", tint: "#EFE6FB", ink: "#7649C2" },
+  alumni:  { label: "Alumni",   accent: "#0E8C86", tint: "#E1F3F1", ink: "#0B6E69" },
   ops:     { label: "Ops",      accent: "#939393", tint: "#F1F0EE", ink: "#565656" },
   evening: { label: "Evening",  accent: "#C98A00", tint: "#FBF1D6", ink: "#8A6400" },
+};
+
+// Week-2 specialty streams share the Studio (blue) identity but are told apart
+// by a P/B/M badge in shades of blue — keeps the locked palette, adds legibility.
+const GROUPS_META = {
+  Product:  { letter: "P", label: "Product",  color: "#0B5FB0" },
+  Business: { letter: "B", label: "Business", color: "#2E86E0" },
+  Market:   { letter: "M", label: "Market",   color: "#06366A" },
 };
 
 const ASPECTS = {
@@ -188,7 +200,7 @@ const DAY_START = 8 * 60;
 const DAY_END   = 19 * 60;
 
 const PAYLOAD = {
-  TRACKS, PEOPLE, GROUPS, DAYS, SESSIONS,
+  TRACKS, PEOPLE, GROUPS, GROUPS_META, DAYS, SESSIONS,
   DAY_START, DAY_END, ASPECTS,
   ACTIVITIES: activities.activities || [],
 };

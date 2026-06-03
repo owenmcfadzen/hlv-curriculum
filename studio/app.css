@@ -219,6 +219,19 @@ body {
 .block.ops-blk { background: var(--fill-mode-bg, var(--blk-tint)); }
 .block.ops-blk .bt { font-weight: 600; color: var(--SEC); }
 
+/* specialty-stream badge: P/B/M letter chip (Product/Business/Market) */
+.grp-badge { display: inline-flex; align-items: center; gap: 5px; vertical-align: middle;
+  min-width: 15px; height: 15px; padding: 0 3px; border-radius: var(--r); margin-right: 5px;
+  font: 700 10px/1 var(--type-mono); color: #fff; letter-spacing: .02em; }
+.grp-badge .gb-label { font: 600 11px/1 var(--type-body); letter-spacing: 0; padding-right: 2px; }
+.block .bm .grp-badge { margin-right: 4px; }
+
+/* concurrent sessions split into side-by-side lanes (alumni 2-up, Wk-2 specialty 3-up) */
+.block.split { box-shadow: inset 0 0 0 1px var(--line-2); }
+.block.split .bt { font-size: 11px; }
+.block.split .bm { font-size: 9px; }
+.dtl-card.split { box-shadow: inset 0 0 0 1px var(--line-2); }
+
 /* fill-mode = hairline-only override */
 .hairline-fills .block { background: var(--chrome); border-color: var(--line-2); }
 .hairline-fills .block .bm { color: var(--SEC); }

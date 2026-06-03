@@ -5,6 +5,49 @@ const { Ic, Avatar, fmt, fmtShort, dur, trackStyle, pad, buildSlides, D } = wind
 
 const TODAY = 6; // pretend "today" is Day 6 (Tue, Week 2) for the now-line + accents
 
+/* Lane packing for concurrent sessions (alumni 2-up, Week-2 specialty 3-up).
+   Builds clusters of transitively-overlapping blocks, assigns each the leftmost
+   free lane, and reports the cluster's max concurrency so callers can size columns.
+   Returns Map<id, {lane, lanes}>. Singletons get {lane:0, lanes:1} → render full-width. */
+function packLanes(items) {
+  const sorted = [...items].sort((a, b) => a.start - b.start || a.end - b.end);
+  const out = new Map();
+  let i = 0;
+  while (i < sorted.length) {
+    let clusterEnd = sorted[i].end;
+    const cluster = [sorted[i]];
+    let j = i + 1;
+    while (j < sorted.length && sorted[j].start < clusterEnd) {
+      clusterEnd = Math.max(clusterEnd, sorted[j].end);
+      cluster.push(sorted[j]);
+      j++;
+    }
+    const laneEnds = [];
+    for (const b of cluster) {
+      let p = laneEnds.findIndex(e => e <= b.start);
+      if (p === -1) { p = laneEnds.length; laneEnds.push(b.end); }
+      else laneEnds[p] = b.end;
+      out.set(b.id, { lane: p, lanes: 0 });
+    }
+    for (const b of cluster) out.get(b.id).lanes = laneEnds.length;
+    i = j;
+  }
+  return out;
+}
+
+/* Inline left/right for a lane, staying inside the same insets a full-width block
+   uses (so split blocks align edge-to-edge with stacked single blocks — no spill).
+   leftBase/rightBase are the px insets of the un-split block; gap separates lanes. */
+function laneStyle(ln, leftBase, rightBase, gap) {
+  if (!ln || ln.lanes <= 1) return null;
+  const { lane, lanes } = ln;
+  const g = gap / 2;
+  const span = `(100% - ${leftBase + rightBase}px)`;
+  const left = `calc(${leftBase}px + ${lane} * ${span} / ${lanes}${lane > 0 ? ` + ${g}px` : ""})`;
+  const right = `calc(${rightBase}px + ${lanes - 1 - lane} * ${span} / ${lanes}${lane < lanes - 1 ? ` + ${g}px` : ""})`;
+  return { left, right, width: "auto" };
+}
+
 /* aspect tag chips (read-only, used across views) */
 function AspectTags({ aspects, sm }) {
   if (!aspects || !aspects.length) return null;
@@ -14,6 +57,17 @@ function AspectTags({ aspects, sm }) {
         const a = D.ASPECTS[k]; const AIc = Ic[a.icon];
         return <span className="asp-tag" key={k} style={{ color: a.color, borderColor: a.color }}><AIc width="11" height="11" />{a.label}</span>;
       })}
+    </span>
+  );
+}
+
+/* specialty-stream badge (Product / Business / Market) — P/B/M in blue shades */
+function GroupBadge({ group, withLabel }) {
+  const g = D.GROUPS_META && D.GROUPS_META[group];
+  if (!g) return null;
+  return (
+    <span className="grp-badge" style={{ background: g.color }} title={g.label}>
+      {g.letter}{withLabel ? <span className="gb-label">{g.label}</span> : null}
     </span>
   );
 }
@@ -59,6 +113,7 @@ function PlanView({ hourPx, onSelect, selId, match, filtering, mode, weekIdx }) 
       </div>
       {days.map(d => {
         const blocks = D.SESSIONS.filter(s => s.day === d.i);
+        const lanes = packLanes(blocks);
         return (
           <div key={"lane" + d.i} className={"lane" + (!oneWeek && d.i === 5 ? " wkend-gap" : "")} style={{ height: totalH }}>
             {hours.map(h => (
@@ -74,12 +129,14 @@ function PlanView({ hourPx, onSelect, selId, match, filtering, mode, weekIdx }) 
               const tiny = h < 42;
               const ok = match(s);
               const lead = s.aspects[0] ? D.ASPECTS[s.aspects[0]] : null;
+              const ln = lanes.get(s.id);
+              const split = laneStyle(ln, 5, 5, 6);
               return (
                 <div key={s.id}
-                     className={"block" + (s.track === "ops" ? " ops-blk" : "") + (tiny ? " tiny" : "") + (selId === s.id ? " sel" : "") + (filtering && !ok ? " dim" : "") + (filtering && ok ? " hit" : "")}
-                     style={{ top: top + 1, height: h - 2, ...trackStyle(s.track), ...(filtering && ok && lead ? { "--hit": lead.color } : {}) }}
+                     className={"block" + (s.track === "ops" ? " ops-blk" : "") + (tiny ? " tiny" : "") + (split ? " split" : "") + (selId === s.id ? " sel" : "") + (filtering && !ok ? " dim" : "") + (filtering && ok ? " hit" : "")}
+                     style={{ top: top + 1, height: h - 2, ...trackStyle(s.track), ...(split || {}), ...(filtering && ok && lead ? { "--hit": lead.color } : {}) }}
                      onClick={() => onSelect(s)}>
-                  <div className="bt">{s.title}</div>
+                  <div className="bt">{s.group && D.GROUPS_META[s.group] && <GroupBadge group={s.group} />}{s.title}</div>
                   <div className="bm">{fmtShort(s.start)}&ndash;{fmtShort(s.end)}{s.room && s.track !== "ops" ? " \u00b7 " + s.room : ""}</div>
                   {s.aspects.length > 0 && !tiny && (
                     <div className="b-asp">{s.aspects.map(k => <span key={k} className="ba-dot" style={{ background: D.ASPECTS[k].color }} title={D.ASPECTS[k].label}></span>)}</div>
@@ -99,6 +156,7 @@ function PlanView({ hourPx, onSelect, selId, match, filtering, mode, weekIdx }) 
 function DayView({ onSelect, selId, match, filtering, dayI, setDayI }) {
   const d = D.DAYS[dayI];
   const blocks = D.SESSIONS.filter(s => s.day === dayI).sort((a, b) => a.start - b.start);
+  const dayLanes = packLanes(blocks);
   const PPM = 1.7;
   const tlStart = Math.floor(blocks[0].start / 60) * 60;
   const tlEnd = Math.ceil(blocks[blocks.length - 1].end / 60) * 60;
@@ -136,14 +194,16 @@ function DayView({ onSelect, selId, match, filtering, dayI, setDayI }) {
             const t = D.TRACKS[s.track];
             const top = (s.start - tlStart) * PPM;
             const h = (s.end - s.start) * PPM;
-            const compact = h < 58;
+            const ln = dayLanes.get(s.id);
+            const split = laneStyle(ln, 18, 0, 8);
+            const compact = h < 58 || split;
             const mini = h < 30;
             const ok = match(s);
             return (
-              <div className={"dtl-card" + (s.track === "ops" ? " ops" : "") + (compact ? " compact" : "") + (filtering && !ok ? " dim" : "")}
-                   key={s.id} style={{ top, height: h - 4, ...trackStyle(s.track) }} onClick={() => onSelect(s)}>
+              <div className={"dtl-card" + (s.track === "ops" ? " ops" : "") + (compact ? " compact" : "") + (split ? " split" : "") + (filtering && !ok ? " dim" : "")}
+                   key={s.id} style={{ top, height: h - 4, ...trackStyle(s.track), ...(split || {}) }} onClick={() => onSelect(s)}>
                 <div className="tc-top">
-                  <span className="tc-ttl">{s.title}</span>
+                  <span className="tc-ttl">{s.group && D.GROUPS_META[s.group] && <GroupBadge group={s.group} />}{s.title}</span>
                   {!mini && <span className="tc-right">
                     <span className="tc-time">{fmt(s.start)} &ndash; {fmt(s.end)} &middot; {dur(s.start, s.end)}</span>
                   </span>}
@@ -352,6 +412,9 @@ function InspectorBody({ s, onClose, onOpenSession }) {
       <div className="insp-body">
         <div className="kvrow"><span className="kk">Day</span><span className="vv">{d.dow}, {d.date} &middot; Week {d.wk}</span></div>
         <div className="kvrow"><span className="kk">Room</span><span className="vv"><Ic.pin width="14" height="14" />{s.room}</span></div>
+        {s.group && D.GROUPS_META[s.group] && (
+          <div className="kvrow"><span className="kk">Stream</span><span className="vv"><GroupBadge group={s.group} withLabel /></span></div>
+        )}
         {s.aspects.length > 0 && (
           <div className="kvrow"><span className="kk">Aspects</span><span className="vv"><AspectTags aspects={s.aspects} sm /></span></div>
         )}

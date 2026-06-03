@@ -131,7 +131,7 @@ function WeekSwitch({ weekIdx, setWeekIdx }) {
 
 /* ═══════════════ FILTER BAR — tracks + aspects (replaces People) ═══════ */
 function FilterBar({ filters, toggle, clear, counts }) {
-  const trackOrder = ["core", "build", "talks", "ops", "evening"];
+  const trackOrder = ["core", "build", "talks", "alumni", "ops"];
   const aspectOrder = Object.keys(D.ASPECTS);
   const any = filters.tracks.size > 0 || filters.aspects.size > 0;
   return (

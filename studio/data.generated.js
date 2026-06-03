@@ -20,6 +20,12 @@ window.STUDIO = {
       "tint": "#EFE6FB",
       "ink": "#7649C2"
     },
+    "alumni": {
+      "label": "Alumni",
+      "accent": "#0E8C86",
+      "tint": "#E1F3F1",
+      "ink": "#0B6E69"
+    },
     "ops": {
       "label": "Ops",
       "accent": "#939393",
@@ -51,6 +57,23 @@ window.STUDIO = {
     "Business",
     "Market"
   ],
+  "GROUPS_META": {
+    "Product": {
+      "letter": "P",
+      "label": "Product",
+      "color": "#0B5FB0"
+    },
+    "Business": {
+      "letter": "B",
+      "label": "Business",
+      "color": "#2E86E0"
+    },
+    "Market": {
+      "letter": "M",
+      "label": "Market",
+      "color": "#06366A"
+    }
+  },
   "DAYS": [
     {
       "i": 0,
@@ -355,7 +378,7 @@ window.STUDIO = {
       "day": 0,
       "start": 600,
       "end": 675,
-      "track": "core",
+      "track": "alumni",
       "title": "Alumni: Orient",
       "room": "",
       "facils": [],
@@ -653,7 +676,7 @@ window.STUDIO = {
       "start": 900,
       "end": 960,
       "track": "talks",
-      "title": "Customer panel",
+      "title": "Active listening & interviews",
       "room": "",
       "facils": [],
       "group": "All",
@@ -972,7 +995,7 @@ window.STUDIO = {
       "day": 1,
       "start": 585,
       "end": 645,
-      "track": "core",
+      "track": "alumni",
       "title": "Alumni: Anchor",
       "room": "",
       "facils": [],
@@ -1386,7 +1409,7 @@ window.STUDIO = {
       "day": 1,
       "start": 900,
       "end": 960,
-      "track": "core",
+      "track": "alumni",
       "title": "Alumni: Deepen 1",
       "room": "",
       "facils": [],
@@ -1678,7 +1701,7 @@ window.STUDIO = {
       "day": 2,
       "start": 555,
       "end": 600,
-      "track": "core",
+      "track": "alumni",
       "title": "Alumni: Deepen 2",
       "room": "",
       "facils": [],
@@ -2359,7 +2382,7 @@ window.STUDIO = {
       "day": 3,
       "start": 585,
       "end": 630,
-      "track": "core",
+      "track": "alumni",
       "title": "Alumni: Rehearse",
       "room": "",
       "facils": [],
