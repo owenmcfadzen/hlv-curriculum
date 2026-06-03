@@ -312,12 +312,21 @@ function deckEmbedSrc(deck) {
    when a session has a deck record but no embeddable URL */
 function DeckViewer({ slides, track, status, deck }) {
   const t = D.TRACKS[track];
-  const present = () => { if (deck && deck.url) window.open(deck.url, "_blank"); };
   const openPdf = () => { if (deck && deck.pdfUrl) window.open(deck.pdfUrl, "_blank"); };
   const embed = deckEmbedSrc(deck);
   const frameRef = React.useRef(null);
   const [notes, setNotes] = React.useState(null);
   const [noteIdx, setNoteIdx] = React.useState(0);
+  const [full, setFull] = React.useState(false);
+
+  // open the embedded deck full-bleed, resuming at the slide currently shown
+  const fullSrc = embed ? (deck && deck.isLocal ? embed + "#" + (noteIdx + 1) : embed) : null;
+  React.useEffect(() => {
+    if (!full) return;
+    const onKey = (e) => { if (e.key === "Escape") setFull(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [full]);
 
   // local HTML decks carry positional speaker notes + a slidechange event;
   // read them out of the (same-origin) iframe and sync the panel to the deck
@@ -344,7 +353,7 @@ function DeckViewer({ slides, track, status, deck }) {
         <span className="sec-label" style={{ margin: 0 }}>Session deck <span className="ct">&middot; {status}</span></span>
         <span className="grow"></span>
         {deck && deck.pdfUrl && <button className="tbtn" onClick={openPdf}><Ic.pdf width="15" height="15" />PDF</button>}
-        {deck && deck.url && <button className="tbtn" onClick={present} style={{ background: t.accent, color: "#fff", borderColor: t.accent }}><Ic.present width="15" height="15" />Open full</button>}
+        {embed && <button className="tbtn" onClick={() => setFull(true)} style={{ background: t.accent, color: "#fff", borderColor: t.accent }}><Ic.present width="15" height="15" />Open full</button>}
       </div>
       {embed
         ? <>
@@ -360,6 +369,14 @@ function DeckViewer({ slides, track, status, deck }) {
             )}
           </>
         : <OutlineViewer slides={slides} track={track} />}
+      {full && fullSrc && (
+        <div className="dv-full" role="dialog" aria-label="Deck fullscreen">
+          <button className="dv-full-x" onClick={() => setFull(false)} aria-label="Close fullscreen">
+            <Ic.close width="18" height="18" />Close<span className="dv-full-esc mono">Esc</span>
+          </button>
+          <iframe className="dv-full-frame" src={fullSrc} title="Session deck (full)" allowFullScreen></iframe>
+        </div>
+      )}
     </div>
   );
 }
