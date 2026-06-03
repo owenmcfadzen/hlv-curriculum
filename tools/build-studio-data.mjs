@@ -108,7 +108,7 @@ schedule.schedule.weeks.forEach((wk, wkIdx) => {
             title: blk.label,
             slides: 0,
             status: blk.slide ? blk.slide.status : "draft",
-            url: blk.slides_link_or_embed,
+            url: blk.slides_link_or_embed.startsWith("decks-html") ? "/" + blk.slides_link_or_embed : blk.slides_link_or_embed,
             isLocal: blk.slides_link_or_embed.startsWith("/") || blk.slides_link_or_embed.startsWith("decks-html"),
             pdfUrl: null,
             code: null,

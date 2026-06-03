@@ -84,7 +84,7 @@ function PlanView({ hourPx, onSelect, selId, match, filtering, mode, weekIdx }) 
                   {s.aspects.length > 0 && !tiny && (
                     <div className="b-asp">{s.aspects.map(k => <span key={k} className="ba-dot" style={{ background: D.ASPECTS[k].color }} title={D.ASPECTS[k].label}></span>)}</div>
                   )}
-                  {s.deck && !tiny && <span className="deckdot" title={s.deck.slides + " slides"}></span>}
+                  {s.deck && !tiny && <span className="deckdot" title={s.deck.slides ? s.deck.slides + " slides" : "Has a deck"}></span>}
                 </div>
               );
             })}
@@ -152,7 +152,7 @@ function DayView({ onSelect, selId, match, filtering, dayI, setDayI }) {
                   <div className="tc-meta">
                     <span className="mi" style={{ color: t.ink, fontWeight: 600 }}>{t.label}</span>
                     {s.room && <span className="mi"><Ic.pin width="13" height="13" />{s.room}</span>}
-                    {s.deck && <span className="mi" style={{ color: t.ink, fontWeight: 600 }}><Ic.deckIc width="13" height="13" />{s.deck.slides} slides</span>}
+                    {s.deck && <span className="mi" style={{ color: t.ink, fontWeight: 600 }}><Ic.deckIc width="13" height="13" />{s.deck.slides ? s.deck.slides + " slides" : "Deck"}</span>}
                     {s.aspects.map(k => { const a = D.ASPECTS[k]; const AIc = Ic[a.icon];
                       return <span className="mi" key={k} style={{ color: a.color, fontWeight: 600 }}><AIc width="13" height="13" />{a.label}</span>; })}
                   </div>
@@ -357,7 +357,7 @@ function InspectorBody({ s, onClose, onOpenSession }) {
         )}
 
         <button className="open-session" style={{ background: t.accent }} onClick={() => onOpenSession(s)}>
-          <Ic.present width="16" height="16" />Open session {s.deck ? "\u00b7 " + s.deck.slides + " slides" : "detail"}<span className="grow"></span><Ic.chevR width="15" height="15" />
+          <Ic.present width="16" height="16" />Open session {s.deck ? (s.deck.slides ? "\u00b7 " + s.deck.slides + " slides" : "\u00b7 deck") : "detail"}<span className="grow"></span><Ic.chevR width="15" height="15" />
         </button>
 
         {s.note && (<><div className="sec-label">Note</div><div className="note">{s.note}</div></>)}

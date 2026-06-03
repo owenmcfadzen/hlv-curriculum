@@ -4371,7 +4371,7 @@ window.STUDIO = {
         "title": "The 100-Day Plan",
         "slides": 0,
         "status": "draft",
-        "url": "decks-html/B3M3-joint-100-day-plan.html",
+        "url": "/decks-html/B3M3-joint-100-day-plan.html",
         "isLocal": true,
         "pdfUrl": null,
         "code": null

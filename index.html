@@ -61,9 +61,8 @@ const HOUR_PX = 64;
 
 // Pick a "today" — first day whose date matches now, else first day in range, else 0.
 function pickToday() {
-  // Real date wiring later. Default to Wk2 Tue (day 6) so the now-line shows up nicely
-  // and the demo "today accent" lands on a sensible day.
-  return 6;
+  // Open on Day 1 (Mon Jul 6), the program start, for presenting front-to-back.
+  return 0;
 }
 
 function App() {
@@ -71,7 +70,7 @@ function App() {
   const [sel, setSel] = useState(null);
   const [session, setSession] = useState(null);
   const [dayI, setDayI] = useState(pickToday());
-  const [weekIdx, setWeekIdx] = useState(1);
+  const [weekIdx, setWeekIdx] = useState(0);
   const [filters, setFilters] = useState({ tracks: new Set(), aspects: new Set() });
 
   useEffect(() => {
