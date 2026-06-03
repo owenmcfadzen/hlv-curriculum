@@ -315,6 +315,29 @@ function DeckViewer({ slides, track, status, deck }) {
   const present = () => { if (deck && deck.url) window.open(deck.url, "_blank"); };
   const openPdf = () => { if (deck && deck.pdfUrl) window.open(deck.pdfUrl, "_blank"); };
   const embed = deckEmbedSrc(deck);
+  const frameRef = React.useRef(null);
+  const [notes, setNotes] = React.useState(null);
+  const [noteIdx, setNoteIdx] = React.useState(0);
+
+  // local HTML decks carry positional speaker notes + a slidechange event;
+  // read them out of the (same-origin) iframe and sync the panel to the deck
+  const onFrameLoad = () => {
+    if (!deck || !deck.isLocal) return;
+    try {
+      const doc = frameRef.current.contentDocument;
+      const tag = doc.getElementById("speaker-notes");
+      const arr = tag ? JSON.parse(tag.textContent) : null;
+      setNotes(Array.isArray(arr) && arr.length ? arr : null);
+      const stage = doc.querySelector("deck-stage");
+      const cur = doc.querySelector(".current");
+      const n = cur ? parseInt(cur.textContent, 10) : NaN;
+      setNoteIdx(isNaN(n) ? 0 : n - 1);
+      if (stage) stage.addEventListener("slidechange", (e) => {
+        if (e.detail && typeof e.detail.index === "number") setNoteIdx(e.detail.index);
+      });
+    } catch (err) { setNotes(null); }
+  };
+
   return (
     <div className="dv">
       <div className="dv-head">
@@ -324,7 +347,18 @@ function DeckViewer({ slides, track, status, deck }) {
         {deck && deck.url && <button className="tbtn" onClick={present} style={{ background: t.accent, color: "#fff", borderColor: t.accent }}><Ic.present width="15" height="15" />Open full</button>}
       </div>
       {embed
-        ? <div className="dv-embed"><iframe src={embed} title="Session deck" allowFullScreen loading="lazy"></iframe></div>
+        ? <>
+            <div className="dv-embed"><iframe ref={frameRef} src={embed} title="Session deck" allowFullScreen loading="lazy" onLoad={onFrameLoad}></iframe></div>
+            {notes && notes[noteIdx] && (
+              <div className="dv-notes" style={{ "--blk-accent": t.accent }}>
+                <div className="dvn-h">
+                  <span className="dvn-label">Presenter notes</span>
+                  <span className="dvn-time mono">Slide {noteIdx + 1} / {notes.length}</span>
+                </div>
+                <p className="dvn-body">{notes[noteIdx]}</p>
+              </div>
+            )}
+          </>
         : <OutlineViewer slides={slides} track={track} />}
     </div>
   );
