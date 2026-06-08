@@ -3864,7 +3864,7 @@ window.STUDIO = {
       "half": "pm",
       "deck": {
         "title": "Landscape Map",
-        "slides": 8,
+        "slides": 18,
         "status": "draft",
         "url": "/decks-html/M1-landscape-map.html",
         "isLocal": true,
