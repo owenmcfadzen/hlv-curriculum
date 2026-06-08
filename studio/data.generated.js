@@ -3868,7 +3868,7 @@ window.STUDIO = {
         "status": "draft",
         "url": "/decks-html/M1-landscape-map.html",
         "isLocal": true,
-        "pdfUrl": "/decks/HLV-M1-Landscape-Map-v6_1.pdf",
+        "pdfUrl": "/decks/HLV-M1-Landscape-Map.pdf",
         "code": "M1"
       }
     },
