@@ -4006,7 +4006,7 @@ window.STUDIO = {
       "aspects": [],
       "half": "am",
       "deck": {
-        "title": "MVP Scoping",
+        "title": "Product Definition",
         "slides": 15,
         "status": "draft",
         "url": "/decks-html/P2-product-definition.html",
@@ -4414,7 +4414,7 @@ window.STUDIO = {
       "aspects": [],
       "half": "am",
       "deck": {
-        "title": "Prototype Spec Sheet",
+        "title": "Prototype Build",
         "slides": 15,
         "status": "draft",
         "url": "/decks-html/P3-prototype-build.html",
