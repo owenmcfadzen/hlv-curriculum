@@ -19,12 +19,11 @@
   deck-stage:not(:defined){visibility:hidden}
   .pl-blue .el.k, .pl-blue .el.foot, .pl-blue .el.cred, .pl-blue .el.pc{color:#1E1E1E}
   .pl-blue .el.sub{color:#0B2A4A}
-  .voice-chip{display:inline-block;padding:2px 10px;margin-left:10px;border:1.5px solid currentColor;font-weight:700}
   /* DUAL ACCENT for B3M3 ONLY (sanctioned 2026-05-30): business green + market blue meeting */
   .dual-chip{display:inline-flex;align-items:center;gap:14px;font:var(--t-mono-22);letter-spacing:var(--ls-mono);text-transform:uppercase;color:inherit}
   .dual-chip .b{display:inline-block;width:18px;height:18px;background:#0A8C3D}
-  .dual-chip .m{display:inline-block;width:18px;height:18px;background:#0B5FB0}
-  .pl-ink .dual-chip .b{background:#00D967} .pl-ink .dual-chip .m{background:#1E9BFE}
+  .dual-chip .mk{display:inline-block;width:18px;height:18px;background:#0B5FB0}
+  .pl-ink .dual-chip .b{background:#00D967} .pl-ink .dual-chip .mk{background:#1E9BFE}
   /* hide all decorative square markers (kicker, page counter, checkpoint ticks) */
   .m, .tk, .tick{display:none !important}
 </style>
@@ -35,313 +34,277 @@
 
 <!-- 01 COVER -->
 <section class="s pl-blue" data-screen-label="01 Cover">
-  <div class="el k"><span class="m INK"></span><span>B3M3 &middot; JOINT 100-DAY PLAN &middot; WED PM &middot; 105 MIN</span></div>
+  <div class="el k"><span class="m INK"></span><span>JOINT &middot; SESSION 3 &middot; THE 100-DAY PLAN</span></div>
   <div class="el hero" style="top:312px">Plan the next<br>100 days, together.</div>
-  <div class="el sub" style="top:660px;width:1320px">Business and market plan the same 100 days as one. Validate, build, grow.</div>
+  <div class="el sub" style="top:660px;width:1440px">Your business and market specialists, planning the next hundred days as a pair.</div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk INK"></span><span>01 / 14</span></div>
+  <div class="el pc"><span class="tk INK"></span><span>01 / 12</span></div>
 </section>
 
-<!-- 02 STATEMENT -->
-<section class="s pl-paper" data-screen-label="02 Statement">
-  <div class="el k"><span class="m INK"></span><span>WHY BOTHER</span></div>
-  <div class="el state">One plan,<br>two specialists at the table.</div>
-  <div class="el" style="left:120px;top:540px;width:1560px">
-    <div class="t-body c-MUTE2">Business holds the budget. Market holds the channel. Both fund the same 100 days.</div>
+<!-- 02 STATEMENT · WHAT VALIDATION IS -->
+<section class="s pl-paper" data-screen-label="02 What validation is">
+  <div class="el k"><span class="m INK"></span><span>THE HABIT YOU BUILT</span></div>
+  <div class="el state">Validation is how you find<br>the truth behind your assumptions.</div>
+  <div class="el" style="left:120px;top:564px;width:1560px">
+    <div class="t-body c-MUTE2">You practised it all week, problem first. These hundred days are where you keep going, with your market specialist beside you.</div>
   </div>
-  <div class="el" style="left:120px;top:660px;width:1560px">
-    <div class="dual-chip"><span class="b"></span><span>BUSINESS</span><span class="m"></span><span>MARKET</span></div>
+  <div class="el" style="left:120px;top:708px;width:1560px">
+    <div class="dual-chip"><span class="b"></span><span>BUSINESS</span><span class="mk"></span><span>MARKET</span></div>
   </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk INK"></span><span>02 / 14</span></div>
+  <div class="el pc"><span class="tk INK"></span><span>02 / 12</span></div>
 </section>
 
-<!-- 03 COLLISION OF NUMBERS (ink, .collision) -->
-<section class="s pl-ink" data-screen-label="03 The two numbers meet">
-  <div class="el k"><span class="m GRN"></span><span>THE WORKED EXAMPLE &middot; ANYA'S PLAN</span></div>
-  <div class="el h1">The two numbers meet.</div>
-  <div class="el" style="left:120px;top:360px;width:1680px">
-    <div class="dgm ctx-hero">
-      <div class="collision">
-        <div class="cl-src" style="--c:#00D967">
-          <div class="cs-k">BUSINESS</div>
-          <div class="cs-n">&euro;4</div>
-          <div class="cs-cap">A parent can afford for one teen.</div>
-        </div>
-        <div class="cl-arrow"></div>
-        <div class="cl-out">
-          <div class="co-k">ALIGNED</div>
-          <div class="co-n" style="font-size:64px;white-space:nowrap">One number</div>
-        </div>
-        <div class="cl-arrow to-l"></div>
-        <div class="cl-src" style="--c:#1E9BFE">
-          <div class="cs-k">MARKET</div>
-          <div class="cs-n">&euro;10</div>
-          <div class="cs-cap">Paid social per teen acquired.</div>
-        </div>
-      </div>
+<!-- 03 THE CORE ASSUMPTIONS (ink, numlist) -->
+<section class="s pl-ink" data-screen-label="03 The core assumptions">
+  <div class="el k"><span class="m GRN"></span><span>WHAT VALIDATION TESTS</span></div>
+  <div class="el h1">The assumptions every idea stands on.</div>
+  <div class="el sub recede">In order. The problem comes before the solution.</div>
+  <div class="el" style="left:120px;top:432px;width:1680px">
+    <div class="numlist" style="--c:#00D967">
+      <div class="nli"><span class="nl-n" style="color:#00D967">1</span><span class="nl-t">The <span class="assert">problem is real</span>, in the form you think it is.</span></div>
+      <div class="nli"><span class="nl-n" style="color:#00D967">2</span><span class="nl-t">Your <span class="assert">solution is the one</span> people actually want.</span></div>
+      <div class="nli"><span class="nl-n" style="color:#00D967">3</span><span class="nl-t">The one who <span class="assert">pays</span> will pay what you ask.</span></div>
+    </div>
+  </div>
+  <div class="el" style="left:120px;top:744px;width:1620px">
+    <div class="t-body" style="color:#CECECE">The one who pays is often not the one who uses it. For Tomás, a parent pays while the teenager plays.</div>
+  </div>
+  <div class="el foot">HUDSON LAB VENTURES</div>
+  <div class="el pc"><span class="tk GRN"></span><span>03 / 12</span></div>
+</section>
+
+<!-- 04 THE CANVAS (paper, canvas primitive) -->
+<section class="s pl-paper" data-screen-label="04 The canvas">
+  <div class="el k"><span class="m INK"></span><span>YOUR SHARED SHEET</span></div>
+  <div class="el h1">The canvas you fill together.</div>
+  <div class="el sub recede">Everything you decide today lands on this one page.</div>
+  <div class="el" style="left:120px;top:396px;width:1680px">
+    <div class="canvas" style="grid-template-columns:repeat(6,1fr)">
+      <div class="cell" style="grid-column:span 3"><div class="cl-k">BUSINESS BRINGS</div><div class="cl-t">What you can afford to spend to win one paying customer.</div></div>
+      <div class="cell" style="grid-column:span 3"><div class="cl-k">MARKET BRINGS</div><div class="cl-t">Who pays, and how you reach them past today's alternatives.</div></div>
+      <div class="cell heart" style="grid-column:span 2"><div class="cl-k">DAYS 1-30 &middot; VALIDATE</div><div class="cl-t">Is the problem real? Does the solution land?</div></div>
+      <div class="cell heart" style="grid-column:span 2"><div class="cl-k">DAYS 30-70 &middot; BETA</div><div class="cl-t">First users signed up and paying.</div></div>
+      <div class="cell heart" style="grid-column:span 2"><div class="cl-k">DAYS 70-100 &middot; SCALE</div><div class="cl-t">One channel you can afford. Launch.</div></div>
+      <div class="cell" style="grid-column:span 4"><div class="cl-k">BUDGET</div><div class="cl-t">The money you spend across the hundred days, and on what.</div></div>
+      <div class="cell" style="grid-column:span 2"><div class="cl-k">DAY-100 SIGNAL</div><div class="cl-t">How you know it worked.</div></div>
     </div>
   </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRN"></span><span>03 / 14</span></div>
+  <div class="el pc"><span class="tk INK"></span><span>04 / 12</span></div>
 </section>
 
-<!-- 04 DO THESE ALIGN (ink, DO) -->
-<section class="s pl-ink" data-screen-label="04 Do these align">
-  <div class="el k"><span class="m GRN"></span><span>PREDICT &middot; 90 SECONDS &middot; TEAM CALL</span></div>
-  <div class="el drill" style="top:168px">Do these two numbers<br>align?</div>
-  <div class="el" style="left:120px;top:660px;width:1560px">
-    <div class="t-body" style="color:#CECECE">Most teams see it: four euros to spend, ten euros to acquire. The fix is the next slide.</div>
+<!-- 05 THE ARC IN ONE LINE (paper, formula) -->
+<section class="s pl-paper" data-screen-label="05 The arc in one line">
+  <div class="el k"><span class="m INK"></span><span>THE PLAN, AS ONE LINE</span></div>
+  <div class="el h1">The whole hundred days, in one line.</div>
+  <div class="el" style="left:120px;top:384px;width:1680px">
+    <div class="formula" style="--fx:46px">
+      <span class="run-GRN">Validate</span>
+      <span>while you test, win your first</span>
+      <span class="run-BLU">paying users</span>
+      <span>, then scale one channel.</span>
+    </div>
   </div>
-  <div class="el chk"><span class="checkpoint" style="color:#00D967"><span class="tick" style="background:#00D967"></span>HOLD THE ANSWER &middot; ALIGN NEXT</span></div>
+  <div class="el" style="left:120px;top:612px;width:1680px">
+    <div class="callout" style="--c:#1E1E1E;--fill:#F4F3F1">
+      <div class="co-eb">NOT THREE LOCKED DOORS</div>
+      <div class="co-body" style="font:var(--t-body-small);color:#1E1E1E">You keep checking the problem is real even while you build. All the way through, you ask whether you can make it, reach the customer, and grow without each new customer costing too much.</div>
+    </div>
+  </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRN"></span><span>04 / 14</span></div>
+  <div class="el pc"><span class="tk INK"></span><span>05 / 12</span></div>
 </section>
 
-<!-- 05 METHOD · THREE PHASES (paper) -->
-<section class="s pl-paper" data-screen-label="05 Three phases">
-  <div class="el k"><span class="m INK"></span><span>THE METHOD &middot; A 100-DAY PLAN IN THREE PHASES</span></div>
-  <div class="el h1">Plan the next 100 days in three phases.</div>
-  <div class="el sub recede">Each phase has a goal and a few lo-fi moves to reach it.</div>
-  <div class="el" style="left:120px;top:540px;width:1680px">
+<!-- 06 PHASE 1 · VALIDATE (paper, green) -->
+<section class="s pl-paper" data-screen-label="06 Phase 1 validate">
+  <div class="el k"><span class="m GRNd"></span><span>PHASE 1 &middot; DAYS 1-30 &middot; VALIDATE</span></div>
+  <div class="el h1">Confirm the problem, then test your solution.</div>
+  <div class="el" style="left:120px;top:312px;width:1680px">
+    <div class="row2">
+      <div class="card rule-top t-GRNd">
+        <div class="c-eb c-GRNd">GOAL</div>
+        <div class="c-head">Confirm the problem is real, then see if your solution lands.</div>
+        <div class="c-body">Start with the problem. A solution to a problem nobody has is wasted work.</div>
+      </div>
+      <div class="card rule-top t-GRNd">
+        <div class="c-eb c-GRNd">HOW</div>
+        <div class="c-head">Put it in front of real people.</div>
+        <div class="c-body">Use the lo-fi tests from your market week. Watch what they do, not what they say.</div>
+      </div>
+    </div>
+  </div>
+  <div class="el" style="left:120px;top:708px;width:1680px">
+    <div class="callout" style="--c:#1E1E1E;--fill:#F4F3F1">
+      <div class="co-eb">TOMÁS, FILLED IN</div>
+      <div class="co-body" style="font:var(--t-body-small);color:#1E1E1E">Do parents agree their teen quits in the first month? Show ten of them the practice-streak idea and see who asks for it.</div>
+    </div>
+  </div>
+  <div class="el foot">HUDSON LAB VENTURES</div>
+  <div class="el pc"><span class="tk GRNd"></span><span>06 / 12</span></div>
+</section>
+
+<!-- 07 PHASE 2 · BETA (paper, ink) -->
+<section class="s pl-paper" data-screen-label="07 Phase 2 beta">
+  <div class="el k"><span class="m INK"></span><span>PHASE 2 &middot; DAYS 30-70 &middot; BETA</span></div>
+  <div class="el h1">Launch the beta and win your first paying users.</div>
+  <div class="el" style="left:120px;top:312px;width:1680px">
+    <div class="row2">
+      <div class="card rule-top t-INK">
+        <div class="c-eb">GOAL</div>
+        <div class="c-head">Get the MVP live and the first 25 users paying.</div>
+        <div class="c-body">It need not be full price, but it has to be real money. Paying is the proof it matters.</div>
+      </div>
+      <div class="card rule-top t-INK">
+        <div class="c-eb">HOW</div>
+        <div class="c-head">Sign people up one by one.</div>
+        <div class="c-body">Onboard them yourself, fix what breaks, and ask the ones who pay why they did.</div>
+      </div>
+    </div>
+  </div>
+  <div class="el" style="left:120px;top:708px;width:1680px">
+    <div class="callout" style="--c:#1E1E1E;--fill:#F4F3F1">
+      <div class="co-eb">TOMÁS, FILLED IN</div>
+      <div class="co-body" style="font:var(--t-body-small);color:#1E1E1E">Charge parents two euros a month for the beta. Twenty-five of them paying means the problem is worth solving.</div>
+    </div>
+  </div>
+  <div class="el foot">HUDSON LAB VENTURES</div>
+  <div class="el pc"><span class="tk INK"></span><span>07 / 12</span></div>
+</section>
+
+<!-- 08 PHASE 3 · SCALE (paper, blue) -->
+<section class="s pl-paper" data-screen-label="08 Phase 3 scale">
+  <div class="el k"><span class="m BLUd"></span><span>PHASE 3 &middot; DAYS 70-100 &middot; SCALE</span></div>
+  <div class="el h1">Find one channel you can afford, then launch.</div>
+  <div class="el" style="left:120px;top:312px;width:1680px">
+    <div class="row2">
+      <div class="card rule-top t-BLUd">
+        <div class="c-eb c-BLUd">GOAL</div>
+        <div class="c-head">Grow one channel and get the app fully launched.</div>
+        <div class="c-body">Move from people who tried it as a favour to customers who pay because they need it.</div>
+      </div>
+      <div class="card rule-top t-BLUd">
+        <div class="c-eb c-BLUd">HOW</div>
+        <div class="c-head">Test channels for cost, then commit.</div>
+        <div class="c-body">Keep the cost of winning a customer under what your business specialist can afford.</div>
+      </div>
+    </div>
+  </div>
+  <div class="el" style="left:120px;top:708px;width:1680px">
+    <div class="callout" style="--c:#1E1E1E;--fill:#F4F3F1">
+      <div class="co-eb">TOMÁS, FILLED IN</div>
+      <div class="co-body" style="font:var(--t-body-small);color:#1E1E1E">Try music-school partnerships and a couple of short video ads. Whichever brings parents in cheapest becomes the channel.</div>
+    </div>
+  </div>
+  <div class="el foot">HUDSON LAB VENTURES</div>
+  <div class="el pc"><span class="tk BLUd"></span><span>08 / 12</span></div>
+</section>
+
+<!-- 09 BUDGET, EXPLAINED (paper) -->
+<section class="s pl-paper" data-screen-label="09 Budget explained">
+  <div class="el k"><span class="m INK"></span><span>BUDGET</span></div>
+  <div class="el h1">What a budget is, and how to set one.</div>
+  <div class="el" style="left:120px;top:312px;width:1680px">
+    <div class="row2">
+      <div class="card rule-top t-INK">
+        <div class="c-eb">WHAT IT IS</div>
+        <div class="c-head">The money you spend across the hundred days.</div>
+        <div class="c-body">Plus what you spend it on. Most of it is small: a few tools, a landing page, a little ad test.</div>
+      </div>
+      <div class="card rule-top t-INK">
+        <div class="c-eb">HOW TO SET IT</div>
+        <div class="c-head">List each cost, then add it up.</div>
+        <div class="c-body">Keep it to money you can actually get. A tight budget forces sharper choices.</div>
+      </div>
+    </div>
+  </div>
+  <div class="el" style="left:120px;top:708px;width:1680px">
+    <div class="callout" style="--c:#0A8C3D;--fill:#F4F3F1">
+      <div class="co-eb" style="color:#0A8C3D">TOMÁS'S 100-DAY BUDGET</div>
+      <div class="co-body" style="font:var(--t-body-small);color:#1E1E1E">Nothing to talk to parents, forty euros for a landing page, sixty to test two ad videos. A hundred euros for the whole stretch.</div>
+    </div>
+  </div>
+  <div class="el foot">HUDSON LAB VENTURES</div>
+  <div class="el pc"><span class="tk INK"></span><span>09 / 12</span></div>
+</section>
+
+<!-- 10 SIGNALS SCORECARD (paper, sb) -->
+<section class="s pl-paper" data-screen-label="10 Signals scorecard">
+  <div class="el k"><span class="m INK"></span><span>THE SIGNALS</span></div>
+  <div class="el h1">How you know each phase worked.</div>
+  <div class="el sub recede">One signal per phase. These are what you measure at day 100.</div>
+  <div class="el" style="left:120px;top:516px;width:1680px">
     <div class="dgm ctx-band">
       <div class="sb">
-        <div class="fr"><div class="fr-tag" style="color:#0A8C3D">VALIDATE</div><div class="fr-body">Days 1-30.</div><div class="fr-note">Test the riskiest thing.</div></div>
-        <div class="fr peak" style="border-color:#1E1E1E"><div class="fr-tag" style="color:#1E1E1E">BUILD</div><div class="fr-body">Days 31-60.</div><div class="fr-note">The party feature, as a V1.</div></div>
-        <div class="fr"><div class="fr-tag" style="color:#0B5FB0">GROW</div><div class="fr-body">Days 61-100.</div><div class="fr-note">The first channel, at the aligned number.</div></div>
+        <div class="fr"><div class="fr-tag" style="color:#0A8C3D">VALIDATE</div><div class="fr-body">People recognise the problem and ask for the fix.</div><div class="fr-note">Days 1-30</div></div>
+        <div class="fr"><div class="fr-tag" style="color:#1E1E1E">BETA</div><div class="fr-body">25 users signed up and paying.</div><div class="fr-note">Days 30-70</div></div>
+        <div class="fr"><div class="fr-tag" style="color:#0B5FB0">SCALE</div><div class="fr-body">One channel at a cost you can afford.</div><div class="fr-note">Days 70-100</div></div>
       </div>
     </div>
   </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk INK"></span><span>05 / 14</span></div>
+  <div class="el pc"><span class="tk INK"></span><span>10 / 12</span></div>
 </section>
 
-<!-- 06 FORMULA · THE PLAN AS ONE LINE (paper) -->
-<section class="s pl-paper" data-screen-label="06 The plan as one line">
-  <div class="el k"><span class="m INK"></span><span>THE PLAN, AS ONE LINE</span></div>
-  <div class="el h1">Each phase feeds the next.</div>
-  <div class="el" style="left:120px;top:384px;width:1680px">
-    <div class="formula" style="--fx:48px">
-      <span class="run-GRN">Validate</span>
-      <span>the risk, then</span>
-      <span>build</span>
-      <span>the V1, then</span>
-      <span class="run-BLU">grow</span>
-      <span>on one channel.</span>
-    </div>
-  </div>
-  <div class="el" style="left:120px;top:600px;width:1680px">
-    <div class="callout" style="--c:#1E1E1E;--fill:#F4F3F1">
-      <div class="co-eb">ANYA, AS A WORKED FILL</div>
-      <div class="co-body" style="font:var(--t-body-small);color:#1E1E1E">Validate that teens really stop after three weeks. Build the wind-down ritual. Grow through schools that already buy.</div>
-    </div>
-  </div>
-  <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk INK"></span><span>06 / 14</span></div>
-</section>
-
-<!-- 07 YOUR TURN (blue divider, 5-block plan flow) -->
-<section class="s pl-blue" data-screen-label="07 Your turn">
-  <div class="el k"><span class="m INK"></span><span>YOUR TURN &middot; 85 MINUTES &middot; ONE WORKSHEET</span></div>
+<!-- 11 YOUR TURN (blue divider, work flow) -->
+<section class="s pl-blue" data-screen-label="11 Your turn">
+  <div class="el k"><span class="m INK"></span><span>YOUR TURN &middot; 75 MIN</span></div>
   <div class="el hero" style="top:240px">Your turn.</div>
   <div class="el" style="left:120px;top:540px;width:1680px">
     <div class="dgm ctx-band">
       <div class="sb">
-        <div class="fr"><div class="fr-tag" style="color:#1E1E1E">ALIGN</div><div class="fr-body">One number.</div><div class="fr-note">10 min &middot; together</div></div>
-        <div class="fr"><div class="fr-tag" style="color:#0A8C3D">VALIDATE</div><div class="fr-body">Days 1-30.</div><div class="fr-note">20 min</div></div>
-        <div class="fr peak"><div class="fr-tag" style="color:#1E1E1E">BUILD</div><div class="fr-body">Days 31-60.</div><div class="fr-note">20 min</div></div>
-        <div class="fr"><div class="fr-tag" style="color:#0B5FB0">GROW</div><div class="fr-body">Days 61-100.</div><div class="fr-note">20 min</div></div>
-        <div class="fr"><div class="fr-tag" style="color:#1E1E1E">ROUND</div><div class="fr-body">Three milestones, aloud.</div><div class="fr-note">15 min</div></div>
+        <div class="fr"><div class="fr-tag" style="color:#1E1E1E">TOGETHER</div><div class="fr-body">What each of you brings.</div><div class="fr-note">10 min</div></div>
+        <div class="fr"><div class="fr-tag" style="color:#0A8C3D">PHASE 1</div><div class="fr-body">Validate plan.</div><div class="fr-note">20 min</div></div>
+        <div class="fr peak"><div class="fr-tag" style="color:#1E1E1E">PHASE 2</div><div class="fr-body">Beta plan.</div><div class="fr-note">20 min</div></div>
+        <div class="fr"><div class="fr-tag" style="color:#0B5FB0">PHASE 3</div><div class="fr-body">Scale plan.</div><div class="fr-note">15 min</div></div>
+        <div class="fr"><div class="fr-tag" style="color:#1E1E1E">BUDGET</div><div class="fr-body">Cost it out.</div><div class="fr-note">10 min</div></div>
       </div>
     </div>
   </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk INK"></span><span>07 / 14</span></div>
+  <div class="el pc"><span class="tk INK"></span><span>11 / 12</span></div>
 </section>
 
-<!-- 08 ALIGN (paper, a quick check) -->
-<section class="s pl-paper" data-screen-label="08 Align the number">
-  <div class="el k"><span class="m INK"></span><span>STAGE 1 &middot; ALIGN &middot; 10 MIN</span></div>
-  <div class="el h1">Name the one acquisition number you both agree on.</div>
-  <div class="el sub recede">You may have already talked this through between sessions. This is just the moment to say it out loud.</div>
-  <div class="el" style="left:120px;top:540px;width:1680px">
-    <div class="numlist" style="--c:#1E1E1E">
-      <div class="nli"><span class="nl-n" style="color:#0A8C3D">B</span><span class="nl-t">Business says the <span class="assert">affordable cost per customer.</span></span></div>
-      <div class="nli"><span class="nl-n" style="color:#0B5FB0">M</span><span class="nl-t">Market says the <span class="assert">channel cost per customer acquired.</span></span></div>
-      <div class="nli"><span class="nl-n" style="color:#1E1E1E">=</span><span class="nl-t">Together: <span class="assert">one number to use as the floor</span> when growing.</span></div>
-    </div>
-  </div>
-  <div class="el chk"><span class="checkpoint" style="color:#1E1E1E"><span class="tick" style="background:#1E1E1E"></span>NUMBER NAMED &middot; PLAN THE PHASES NEXT</span></div>
-  <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk INK"></span><span>08 / 14</span></div>
-</section>
-
-<!-- 09 VALIDATE PHASE (paper) -->
-<section class="s pl-paper" data-screen-label="09 Validate phase">
-  <div class="el k"><span class="m GRNd"></span><span>STAGE 2 &middot; VALIDATE &middot; DAYS 1-30 &middot; 20 MIN</span></div>
-  <div class="el h1">Test the riskiest thing first.</div>
-  <div class="el sub recede">Three lo-fi moves that surface behaviour, not opinions.</div>
-  <div class="el" style="left:120px;top:540px;width:1680px">
-    <div class="row2">
-      <div class="card rule-top t-GRNd">
-        <div class="c-eb c-GRNd">GOAL</div>
-        <div class="c-head">Prove the riskiest assumption survives contact with reality.</div>
-        <div class="c-body">Pick the one that, if it fails, kills the plan.</div>
-      </div>
-      <div class="card rule-top t-GRNd">
-        <div class="c-eb c-GRNd">LO-FI MOVES</div>
-        <div class="c-head">Three small moves from M2.</div>
-        <div class="c-body">Put the assumption in front of real people. Watch what they do, not what they say.</div>
-      </div>
-    </div>
-  </div>
-  <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRNd"></span><span>09 / 14</span></div>
-</section>
-
-<!-- 10 BUILD PHASE (paper) -->
-<section class="s pl-paper" data-screen-label="10 Build phase">
-  <div class="el k"><span class="m INK"></span><span>STAGE 3 &middot; BUILD &middot; DAYS 31-60 &middot; 20 MIN</span></div>
-  <div class="el h1">Build a V1 of the party feature.</div>
-  <div class="el sub recede">What works for the killer use, and nothing else.</div>
-  <div class="el" style="left:120px;top:540px;width:1680px">
-    <div class="row2">
-      <div class="card rule-top t-INK">
-        <div class="c-eb">GOAL</div>
-        <div class="c-head">Ship a usable V1 of the party feature from P2.</div>
-        <div class="c-body">Cap the scope. If validation failed, you do not start.</div>
-      </div>
-      <div class="card rule-top t-INK">
-        <div class="c-eb">LO-FI MOVES</div>
-        <div class="c-head">Three build moves from P3.</div>
-        <div class="c-body">Build, test, change one thing. Repeat until the feature does its job.</div>
-      </div>
-    </div>
-  </div>
-  <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk INK"></span><span>10 / 14</span></div>
-</section>
-
-<!-- 11 GROW PHASE (paper) -->
-<section class="s pl-paper" data-screen-label="11 Grow phase">
-  <div class="el k"><span class="m BLUd"></span><span>STAGE 4 &middot; GROW &middot; DAYS 61-100 &middot; 20 MIN</span></div>
-  <div class="el h1">Find the channel that hits the aligned number.</div>
-  <div class="el sub recede">The aligned number from earlier is the floor.</div>
-  <div class="el" style="left:120px;top:540px;width:1680px">
-    <div class="row2">
-      <div class="card rule-top t-BLUd">
-        <div class="c-eb c-BLUd">GOAL</div>
-        <div class="c-head">Pick the channel that gets customers at or below the aligned number.</div>
-        <div class="c-body">If a channel costs more, pick a different one rather than burn the budget.</div>
-      </div>
-      <div class="card rule-top t-BLUd">
-        <div class="c-eb c-BLUd">LO-FI MOVES</div>
-        <div class="c-head">Three growth experiments on the chosen channel.</div>
-        <div class="c-body">Cheap tests of intent. Real behaviour, not just clicks.</div>
-      </div>
-    </div>
-  </div>
-  <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk BLUd"></span><span>11 / 14</span></div>
-</section>
-
-<!-- 11 BUDGET + SCORECARD -->
-<section class="s pl-paper" data-screen-label="11 Budget and scorecard">
-  <div class="el k"><span class="m INK"></span><span>BUDGET FUNDS THE MOVES &middot; SCORECARD IS REACHABLE</span></div>
-  <div class="el h1">The budget and the channels move together.</div>
-  <div class="el" style="left:120px;top:480px;width:1680px">
-    <div class="row2">
-      <div class="card rule-top" style="--c:#0A8C3D">
-        <div class="c-eb c-GRNd">MVP BUDGET</div>
-        <div class="c-head">What you actually have. Not what you wish.</div>
-        <div class="c-body">Phase by phase. Each move funded before it is planned.</div>
-      </div>
-      <div class="card rule-top" style="--c:#0B5FB0">
-        <div class="c-eb c-BLUd">DAY-100 SCORECARD</div>
-        <div class="c-head">A reachable end state. Not a hopeful one.</div>
-        <div class="c-body">One number per phase. The aligned acquisition number remains true.</div>
-      </div>
-    </div>
-  </div>
-  <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk INK"></span><span>12 / 14</span></div>
-</section>
-
-<!-- 13 RECAP -->
-<section class="s pl-paper" data-screen-label="13 What you take in">
-  <div class="el k"><span class="m INK"></span><span>WHAT YOU NOW HOLD</span></div>
-  <div class="el h1">One plan, ready to walk into the build day.</div>
-  <div class="el" style="left:120px;top:396px;width:1680px">
-    <div class="row4">
-      <div class="stat-card" style="--c:#1E1E1E">
-        <div class="sc-n">&euro;___</div>
-        <div class="sc-l">ALIGNED NUMBER</div>
-        <div class="sc-d">Afford meets channel cost. Or one side moved.</div>
-      </div>
-      <div class="stat-card" style="--c:#1E1E1E">
-        <div class="sc-n">3</div>
-        <div class="sc-l">SEQUENCED PHASES</div>
-        <div class="sc-d">Validate, build, grow. Each with one number.</div>
-      </div>
-      <div class="stat-card" style="--c:#0A8C3D">
-        <div class="sc-n">&euro;___</div>
-        <div class="sc-l">MVP BUDGET</div>
-        <div class="sc-d">What funds the moves.</div>
-      </div>
-      <div class="stat-card" style="--c:#0B5FB0">
-        <div class="sc-n">___</div>
-        <div class="sc-l">DAY-100 SCORECARD</div>
-        <div class="sc-d">Reachable. Not hopeful.</div>
-      </div>
-    </div>
-  </div>
-  <div class="el body-768" style="top:792px;width:1560px;color:#565656">One plan, ready for the build day and Friday's sponsor review.</div>
-  <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk INK"></span><span>13 / 14</span></div>
-</section>
-
-<!-- 14 HANDOFF -->
-<section class="s pl-ink" data-screen-label="13 Handoff">
+<!-- 12 HANDOFF (ink) -->
+<section class="s pl-ink" data-screen-label="12 Handoff">
   <div class="el motif mz-corner br" style="--mz-op:0.16"></div>
-  <div class="el k"><span class="m GRN"></span><span>NEXT &middot; ROUND &middot; INTO THE BUILD DAY</span></div>
-  <div class="el hero" style="top:288px">Three milestones,<br>read aloud.</div>
+  <div class="el k"><span class="m GRN"></span><span>NEXT &middot; BACK TO YOUR TEAM</span></div>
+  <div class="el hero" style="top:288px">Take this back<br>to your team.</div>
   <div class="el" style="left:120px;top:660px;width:1680px">
     <div class="row2">
       <div class="card rule-top" style="--c:#00D967">
-        <div class="c-eb" style="color:#00D967">ROUND &middot; END OF SESSION</div>
-        <div class="c-head">Three milestones. Spoken.</div>
-        <div class="c-body">If you cannot say them aloud, you have not committed.</div>
+        <div class="c-eb" style="color:#00D967">WHAT YOU HAVE NOW</div>
+        <div class="c-head">A hundred-day plan on one canvas.</div>
+        <div class="c-body">The assumptions to test, your three phases, and a budget.</div>
       </div>
       <div class="card rule-top t-MUTE">
-        <div class="c-eb">FEEDS</div>
-        <div class="c-head">LPP. Product brief.</div>
-        <div class="c-body">The aligned number and the first lo-fi move travel into the build day and Friday.</div>
+        <div class="c-eb">THE NEXT STEP</div>
+        <div class="c-head">Rejoin your product specialist.</div>
+        <div class="c-body">Together you turn this into the last pages of your Lean Product Plan.</div>
       </div>
     </div>
   </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRN"></span><span>14 / 14</span></div>
+  <div class="el pc"><span class="tk GRN"></span><span>12 / 12</span></div>
 </section>
 
 </deck-stage>
 
-<!-- Speaker notes: one entry per slide, positional (index 0 = slide 1). Read by export-pptx.js into the PPTX notes pane. DRAFT, voice pass pending. -->
+<!-- Speaker notes: one entry per slide, positional (index 0 = slide 1). Read by export-pptx.js into the PPTX notes pane. Voice pass: M2 spoken-delivery voice, corrected frame, 2026-06-08. -->
 <script id="speaker-notes" type="application/json">
 [
-"This is the first time the business and market specialists are back in the same room since Monday. The session is about planning the next hundred days together, with both halves at the table.",
-"Two specialists at one table. Business holds the budget, market holds the channel. They are about to plan the same hundred days as one plan.",
-"This is the worked example. The business side can afford about four euros to acquire a paying parent; the market side picked a channel that costs ten. Both numbers are now on the same table.",
-"Ask whether four euros and ten euros line up. Most teams see the gap. Hold the answer for the alignment check coming up.",
-"The plan runs in three phases. Validate is where the riskiest assumption gets tested. Build is the V1, scoped tight to the party feature from P2. Grow picks the first channel and tests it against the aligned acquisition number. The order matters: building before validating wastes time, and growing before building has nothing to grow.",
-"Three pieces in order. Validate proves the risk is small enough to keep going. Build is the smallest thing that tests the next assumption. Grow finds a channel that works at the cost the team can afford. Each piece feeds the next, so if validate fails, build does not start.",
-"Hand over to the activity. Five blocks, eighty-five minutes, one shared worksheet. Ten minutes to align the number out loud, then twenty minutes per phase planning validate, build, and grow, then fifteen minutes to read three milestones aloud.",
-"Quick alignment check. The two specialists may already have talked this through in the corridors; this is the moment to say it out loud and write one number down. Business names the affordable cost per customer, market names the channel cost, and together they pick the number to use as the floor when planning growth.",
-"First thirty days. The team picks the assumption from M2 that, if it fails, kills the plan. Three lo-fi moves that put it in front of real people. The thing to watch is behaviour, not opinions. If validate fails, the build phase does not start.",
-"Days thirty-one to sixty. Build the party feature from P2, scoped tight. No nice-to-haves. The team works through three build moves from P3: build, test, change one thing. The build is gated by what came out of validate.",
-"Days sixty-one to one hundred. Pick one channel, then run three growth experiments. The aligned number from earlier is the floor: if a channel costs more than that, it is the wrong channel. Better to pick a new one than burn the budget testing the same one.",
-"The budget and the scorecard travel together. The budget has to fund the channel plan, and the day-100 target has to be reachable through it, or neither is honest.",
-"This recaps what each team takes into the build day: the aligned number, the three sequenced phases, the budget that funds the moves, and a reachable end state for day one hundred. The plan is what they walk into Wednesday with.",
-"This is the handoff. Reading three milestones aloud is the test of whether they've committed. The aligned number and the first lo-fi move travel into the build day and into Friday's sponsor review."
+"Welcome back. This is the first time this week your business specialist and your market specialist sit down to plan together. All week you have been learning to validate, and today you turn that into a plan for the next hundred days. Let us start with what validation actually means.",
+"Validation is not guessing or hoping. It is doing what you can to find the truth behind the assumptions your idea rests on. You have practised it all week, and you always started with the problem, because a great solution to a problem nobody has is wasted work. For the next hundred days you keep doing the same thing, with your market specialist beside you.",
+"So what are these assumptions. There are three big ones, and the order matters. First, that the problem is real, in the form you think it is. Second, that your solution is the one people actually want. Third, that the person who pays will pay what you ask. And here is the one teams miss most often: the person who pays is not always the person who uses it. Tomás, our teenager learning guitar, plays the app every day, but it is a parent who pays for it. Miss that and you can build something people love and still make no money.",
+"Here is the sheet the two of you will fill in today. Across the top is what each of you brings. Business, you bring the number: the most you can afford to spend to win one paying customer. Market, you bring the route: who actually pays, and how you reach them past whatever they use today. In the middle are the three phases of your hundred days, and along the bottom is your budget. Everything you decide lands on this one page.",
+"Here is the whole hundred days in one line. You validate the problem while you test your solution, you win your first paying users, then you scale one channel. But do not read this as three locked doors where one has to finish before the next can open. You keep checking the problem is real even while you build. All the way through you are asking quiet questions: can we actually make this, can we reach the customer, and can we grow without each new customer costing us too much.",
+"Phase one, the first thirty days. Your goal is to confirm the problem is real, and then put a rough version of your solution in front of people. Start with the problem. The way you do this is cheap and simple: you talk to real people and you use the small tests from your market week. Watch what they do, not what they say, because people will tell you they love an idea and then never touch it. For Tomás, that means asking parents whether their teenager really does quit in the first month, and showing ten of them the practice-streak idea to see who asks for it.",
+"Phase two, roughly days thirty to seventy. Now you put your MVP live as a beta, your first real version, and you get your first users signed up and paying. Aim for about twenty-five. It does not have to be full price, but it has to be real money, because paying is the clearest proof that the problem is worth solving. You do this by hand: you sign people up one at a time, you fix what breaks, and you ask the ones who pay why they did. For Tomás, that might be charging parents two euros a month for the beta.",
+"Phase three, the last thirty days. Now you find one channel to bring people in, and you get the app properly launched. The shift here matters: you move from people who tried it as a favour to you, to customers who pay because they genuinely need it. You test a few channels for what they cost, then you put your effort behind the one that works, keeping the cost of winning a customer under the number your business specialist gave you. For Tomás, that might be partnering with music schools, or testing a couple of short video ads, and seeing which brings parents in most cheaply.",
+"A quick word on budget, because most of you have not had to think about one yet. A budget is simply the money you will spend across these hundred days, and what you will spend it on. Most of it is small. You list each thing, you guess what it costs, and you add it up, keeping it to money you can actually get your hands on. For Tomás that might be nothing to talk to parents, forty euros for a simple landing page, and sixty euros to test two ad videos, so a hundred euros for the whole stretch. A tight budget is a good thing, it forces sharper choices.",
+"Before you start, agree how you will know each phase worked. These are your signals. For phase one, people recognise the problem and ask you for the fix. For phase two, twenty-five users signed up and paying, and coming back. For phase three, one channel that brings paying users at a price you can afford. Write these on your canvas, because at the end of the hundred days these are what you measure yourselves against.",
+"Now it is your turn, seventy-five minutes. Start with ten minutes together, agreeing what each of you brings. Then twenty minutes on your validate plan, twenty on your beta plan, fifteen on your scale plan, and ten to cost out your budget. Fill the canvas as you go. I will keep time and come round.",
+"Last step. You now hold a hundred-day plan on one canvas: the assumptions to test, your three phases, and a budget. In a moment each pair reads their day one hundred signal aloud. Then you take this back to your full team, where your product specialist has been working on the build. Together you turn what you wrote today into the last pages of your Lean Product Plan, the part that says how this idea proves itself and reaches the people who will pay for it."
 ]
 </script>
 

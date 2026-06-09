@@ -3812,11 +3812,11 @@ window.STUDIO = {
       "half": "pm",
       "deck": {
         "title": "Solution Blueprint",
-        "slides": 17,
+        "slides": 15,
         "status": "ready",
         "url": "/decks-html/P1-solution-blueprint.html",
         "isLocal": true,
-        "pdfUrl": "/decks/HLV-P1-Solution-Blueprint-v1_5.pdf",
+        "pdfUrl": "/decks/HLV-P1-Solution-Blueprint.pdf",
         "code": "P1"
       }
     },
@@ -3838,11 +3838,11 @@ window.STUDIO = {
       "half": "pm",
       "deck": {
         "title": "Canvas Lite",
-        "slides": 8,
+        "slides": 17,
         "status": "draft",
         "url": "/decks-html/B1-canvas-lite.html",
         "isLocal": true,
-        "pdfUrl": "/decks/HLV-B1-Canvas-Lite-v1_1.pdf",
+        "pdfUrl": "/decks/HLV-B1-Canvas-Lite.pdf",
         "code": "B1"
       }
     },
@@ -4007,11 +4007,11 @@ window.STUDIO = {
       "half": "am",
       "deck": {
         "title": "MVP Scoping",
-        "slides": 8,
+        "slides": 15,
         "status": "draft",
         "url": "/decks-html/P2-product-definition.html",
         "isLocal": true,
-        "pdfUrl": null,
+        "pdfUrl": "/decks/HLV-P2-Product-Definition.pdf",
         "code": "P2"
       }
     },
@@ -4033,11 +4033,11 @@ window.STUDIO = {
       "half": "am",
       "deck": {
         "title": "Back-of-Napkin Economics",
-        "slides": 8,
+        "slides": 15,
         "status": "draft",
         "url": "/decks-html/B2-napkin-economics.html",
         "isLocal": true,
-        "pdfUrl": null,
+        "pdfUrl": "/decks/HLV-B2-Napkin-Economics.pdf",
         "code": "B2"
       }
     },
@@ -4059,11 +4059,11 @@ window.STUDIO = {
       "half": "am",
       "deck": {
         "title": "Validation Design",
-        "slides": 8,
+        "slides": 15,
         "status": "draft",
         "url": "/decks-html/M2-validation-design.html",
         "isLocal": true,
-        "pdfUrl": null,
+        "pdfUrl": "/decks/HLV-M2-Validation-Design.pdf",
         "code": "M2"
       }
     },
@@ -4415,11 +4415,11 @@ window.STUDIO = {
       "half": "am",
       "deck": {
         "title": "Prototype Spec Sheet",
-        "slides": 8,
+        "slides": 15,
         "status": "draft",
         "url": "/decks-html/P3-prototype-build.html",
         "isLocal": true,
-        "pdfUrl": null,
+        "pdfUrl": "/decks/HLV-P3-Prototype-Build.pdf",
         "code": "P3"
       }
     },
@@ -4468,11 +4468,11 @@ window.STUDIO = {
       ],
       "deck": {
         "title": "The 100-Day Plan",
-        "slides": 0,
+        "slides": 12,
         "status": "draft",
         "url": "/decks-html/B3M3-joint-100-day-plan.html",
         "isLocal": true,
-        "pdfUrl": null,
+        "pdfUrl": "/decks/HLV-B3M3-100-Day-Plan.pdf",
         "code": null
       },
       "note": "Business and Market specialists converge for the first time this week. The 100-Day Plan is the team's answer to: 'If a sponsor said yes Friday, what would the first 100 days actually look like?' Validation, experimentation, the initial proof toward launching — lo-fi, interaction-driven, get-outside (Prehype-style signal mining, not desk research). Draws on the Reality Check collection: Out in Market #1 findings plus the morning's Sponsor Feedback.",

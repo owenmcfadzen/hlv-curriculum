@@ -8,7 +8,7 @@
   window.addEventListener('error',function(e){if(e.message&&RE.test(e.message)){e.stopImmediatePropagation();e.preventDefault();return false;}},true);
   ['error','warn'].forEach(function(m){var o=console[m];console[m]=function(){for(var i=0;i<arguments.length;i++){if(typeof arguments[i]==='string'&&RE.test(arguments[i]))return;}return o.apply(console,arguments);};});})();
 </script>
-<title>HLV · B1 Canvas Lite</title>
+<title>HLV &middot; B1 Canvas &amp; Margin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -19,9 +19,6 @@
   deck-stage:not(:defined){visibility:hidden}
   .pl-blue .el.k, .pl-blue .el.foot, .pl-blue .el.cred, .pl-blue .el.pc{color:#1E1E1E}
   .pl-blue .el.sub{color:#0B2A4A}
-  .voice-chip{display:inline-block;padding:2px 10px;margin-left:10px;border:1.5px solid currentColor;font-weight:700}
-  /* a small "proposed" tag for unsettled coordination */
-  .prop-chip{display:inline-block;padding:4px 12px;margin-left:14px;border:1.5px dashed currentColor;font:var(--t-mono-22);letter-spacing:var(--ls-mono);text-transform:uppercase;color:var(--MUTE2);vertical-align:middle}
   /* hide all decorative square markers (kicker, page counter, checkpoint ticks) */
   .m, .tk, .tick{display:none !important}
 </style>
@@ -32,164 +29,188 @@
 
 <!-- ═══════════════════════ 01 · COVER ═══════════════════════ -->
 <section class="s pl-blue" data-screen-label="01 Cover">
-  <div class="el k"><span class="m INK"></span><span>BUSINESS &middot; SESSION 1 &middot; CANVAS LITE &middot; 105 MIN</span></div>
-  <div class="el hero" style="top:312px">Build a model<br>that holds up.</div>
-  <div class="el sub" style="top:660px;width:1320px">Who pays, what for, how much, and whether the price holds up.</div>
+  <div class="el k"><span class="m INK"></span><span>BUSINESS &middot; SESSION 1 &middot; CANVAS &amp; MARGIN</span></div>
+  <div class="el hero" style="top:312px">Build a business model<br>that works.</div>
+  <div class="el sub" style="top:660px;width:1320px">Who pays, what for, how much, how often, and where it could break.</div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk INK"></span><span>01 / 15</span></div>
+  <div class="el pc"><span class="tk INK"></span><span>01 / 17</span></div>
 </section>
 
-<!-- ═══════════════════════ 02 · THE LEAN CANVAS ═══════════════════════ -->
-<section class="s pl-paper" data-screen-label="02 The lean canvas">
-  <div class="el k"><span class="m GRNd"></span><span>THE TOOL</span></div>
-  <div class="el h1">A canvas puts the business model on one page.</div>
-  <div class="el sub recede" style="width:1680px">Founders use it to make every assumption visible and find what doesn't hold up. Our lean version keeps the four boxes that decide whether money flows at all.</div>
-  <div class="el" style="left:120px;top:540px;width:1680px">
-    <div class="dgm ctx-band">
-      <div class="canvas" style="grid-template-columns:1fr 1fr 1fr 1fr">
-        <div class="cell"><div class="cl-k">WHO PAYS</div><div class="cl-t recede">___</div></div>
-        <div class="cell"><div class="cl-k">WHAT FOR</div><div class="cl-t recede">___</div></div>
-        <div class="cell"><div class="cl-k">HOW MUCH</div><div class="cl-t recede">___</div></div>
-        <div class="cell"><div class="cl-k">HOW OFTEN</div><div class="cl-t recede">___</div></div>
-      </div>
+<!-- ═══════════════════════ 02 · WHY THIS SESSION (paper, statement + callout) ═══════════════════════ -->
+<section class="s pl-paper" data-screen-label="02 Why this session">
+  <div class="el k"><span class="m GRNd"></span><span>WHY THIS SESSION</span></div>
+  <div class="el h1">A good idea is not a business until you<br>know how it makes money.</div>
+  <div class="el" style="left:120px;top:600px;width:1680px">
+    <div class="callout" style="--c:var(--GRNd);--fill:var(--GRN-soft)">
+      <div class="co-eb">WHAT TODAY GIVES YOU</div>
+      <div class="co-body">By the end you can look at any idea, yours or one an AI hands you, and see how it actually makes money and where it could fall apart.</div>
     </div>
   </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRNd"></span><span>02 / 15</span></div>
+  <div class="el pc"><span class="tk GRNd"></span><span>02 / 17</span></div>
 </section>
 
-<!-- ═══════════════════════ 03 · SECTION · 2 CARDS ═══════════════════════ -->
-<section class="s pl-paper" data-screen-label="03 Two reasons">
-  <div class="el k"><span class="m GRNd"></span><span>WHY BOTHER</span></div>
-  <div class="el h1">Two reasons to build a Canvas.</div>
-  <div class="el" style="left:120px;top:540px;width:1680px">
-    <div class="row2">
-      <div class="card rule-top t-GRNd">
-        <div class="c-eb">DIRECTION</div>
-        <div class="c-head">How the money works.</div>
-        <div class="c-body">Who pays, what for, how much, how often. A frame, not a guess.</div>
-      </div>
-      <div class="card rule-top t-GRNd">
-        <div class="c-eb">DOUBT</div>
-        <div class="c-head">What is least defended.</div>
-        <div class="c-body">The price you cannot back up. The weakness your model hides.</div>
-      </div>
+<!-- ═══════════════════════ 03 · WHAT A BUSINESS MODEL IS (paper, deflist) ═══════════════════════ -->
+<section class="s pl-paper" data-screen-label="03 What a business model is">
+  <div class="el k"><span class="m GRNd"></span><span>START HERE</span></div>
+  <div class="el h1">A business model is just how the money flows.</div>
+  <div class="el sub recede">The full business model canvas has nine parts. The four about money are what we work today.</div>
+  <div class="el" style="left:120px;top:432px;width:1680px">
+    <div class="deflist" style="--dl-term:460px">
+      <div class="dl-row"><div class="dl-term c-GRNd">WHO PAYS</div><div class="dl-def">The person who actually opens their wallet. Not always the person who uses it.</div></div>
+      <div class="dl-row"><div class="dl-term c-GRNd">WHAT FOR</div><div class="dl-def">The thing they are paying to get.</div></div>
+      <div class="dl-row"><div class="dl-term c-GRNd">HOW MUCH</div><div class="dl-def">The price they pay each time.</div></div>
+      <div class="dl-row"><div class="dl-term c-GRNd">HOW OFTEN</div><div class="dl-def">Once, every month, or every time they use it.</div></div>
     </div>
   </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRNd"></span><span>03 / 15</span></div>
+  <div class="el pc"><span class="tk GRNd"></span><span>03 / 17</span></div>
 </section>
 
-<!-- ═══════════════════════ 04 · PREDICT THE PAYER (ink, DO) ═══════════════════════ -->
-<section class="s pl-ink" data-screen-label="04 Predict the payer">
-  <div class="el k"><span class="m GRN"></span><span>PREDICT &middot; 90 SECONDS &middot; TEAM CALL</span></div>
-  <div class="el drill" style="top:168px">Who pays for Anya's<br>sleep fix?</div>
-  <div class="el" style="left:120px;top:660px;width:1560px">
-    <div class="t-body" style="color:#CECECE">The group will guess Anya. Hold that answer, because the reveal comes next.</div>
+<!-- ═══════════════════════ 04 · MEET TOMÁS (ink, example intro) ═══════════════════════ -->
+<section class="s pl-ink" data-screen-label="04 Meet Tomas">
+  <div class="el k"><span class="m GRN"></span><span>THE EXAMPLE WE WILL USE</span></div>
+  <div class="el h1">Meet Tomás.</div>
+  <div class="el" style="left:120px;top:432px;width:1500px">
+    <div class="t-body-large" style="color:#E4E4E4">He is fifteen, learning guitar, and about to quit, because the scales bore him. An app turns those drills into the songs he wants to play, so he keeps going.</div>
   </div>
-  <div class="el chk c-GRN"><span class="checkpoint"><span class="tick"></span>HOLD THE ANSWER &middot; REVEAL NEXT</span></div>
+  <div class="el" style="left:120px;top:792px"><span class="tag" style="--c:var(--GRN)">GUITAR PRACTICE APP</span></div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRN"></span><span>04 / 15</span></div>
+  <div class="el pc"><span class="tk GRN"></span><span>04 / 17</span></div>
 </section>
 
-<!-- ═══════════════════════ 05 · USER / PAYER SPLIT (ink, pair) ═══════════════════════ -->
-<section class="s pl-ink" data-screen-label="05 User payer split">
-  <div class="el k"><span class="m GRN"></span><span>MEET ANYA &middot; A WORKED EXAMPLE</span></div>
-  <div class="el h1">Who you help is not who pays.</div>
-  <div class="el" style="left:120px;top:336px;width:1680px">
+<!-- ═══════════════════════ 05 · WHO ACTUALLY PAYS (ink, pair) ═══════════════════════ -->
+<section class="s pl-ink" data-screen-label="05 Who actually pays">
+  <div class="el k"><span class="m GRN"></span><span>WHO ACTUALLY PAYS</span></div>
+  <div class="el h1">Tomás uses the app. His parents are the ones who pay.</div>
+  <div class="el" style="left:120px;top:360px;width:1680px">
     <div class="dgm ctx-band">
       <div class="pair">
         <div class="ps faint">
           <div class="ps-tag">USER</div>
-          <div class="ps-claim">Anya, 16.</div>
-          <div class="ps-note">No money. Wants her phone and her freedom.</div>
+          <div class="ps-claim">Tomás, 15.</div>
+          <div class="ps-note">He opens the app every day, but he has no money of his own.</div>
         </div>
         <div class="hinge">
-          <div class="h-k">OPPOSITE WANTS</div>
-          <div class="h-delta">A revenue model has to bridge them.</div>
+          <div class="h-k">TWO PEOPLE, ONE APP</div>
+          <div class="h-delta">The app has to keep Tomás coming back, and be worth paying for to his parents.</div>
           <div class="h-arrow"></div>
         </div>
         <div class="ps figure">
           <div class="ps-tag">PAYER</div>
-          <div class="ps-claim">Her dad.</div>
-          <div class="ps-note">Wants her asleep by eleven. Will pay to make it happen.</div>
+          <div class="ps-claim">His parents.</div>
+          <div class="ps-note">They want him to stick with guitar, and they hold the money.</div>
         </div>
       </div>
     </div>
   </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRN"></span><span>05 / 15</span></div>
+  <div class="el pc"><span class="tk GRN"></span><span>05 / 17</span></div>
 </section>
 
-<!-- ═══════════════════════ 05 · THE PAYER FLIP + WEAKNESS (ink, peak) ═══════════════════════ -->
-<section class="s pl-ink" data-screen-label="05 Payer flip and weakness">
-  <div class="el k"><span class="m GRN"></span><span>THE PAYER FLIP</span></div>
-  <div class="el h1">Dad pays, but he wants what Anya resists.</div>
-  <div class="el" style="left:120px;top:312px;width:1680px">
+<!-- ═══════════════════════ 06 · THE EIGHT PATTERNS (paper, 4x2 canvas grid) ═══════════════════════ -->
+<section class="s pl-paper" data-screen-label="06 The eight patterns">
+  <div class="el k"><span class="m GRNd"></span><span>THE SHAPES A MODEL CAN TAKE</span></div>
+  <div class="el h1">Almost every model is one of eight shapes.</div>
+  <div class="el sub recede">Most ventures are just one or two of these. Guess the company before you read it.</div>
+  <div class="el" style="left:120px;top:420px;width:1680px">
     <div class="dgm ctx-band">
-      <div class="pair">
-        <div class="ps faint">
-          <div class="ps-tag">BEFORE &middot; NAIVE</div>
-          <div class="ps-claim">Anya pays.</div>
-          <div class="ps-note">No revenue. The model has no engine.</div>
-        </div>
-        <div class="hinge">
-          <div class="h-k">FLIP THE PAYER</div>
-          <div class="h-delta">Now the model carries a real risk.</div>
-          <div class="h-arrow"></div>
-        </div>
-        <div class="ps figure">
-          <div class="ps-tag">AFTER &middot; REAL</div>
-          <div class="ps-claim">Her dad pays a subscription.</div>
-          <div class="ps-note">A sleep tool for the teen who resists his rules.</div>
-        </div>
+      <div class="canvas" style="grid-template-columns:1fr 1fr 1fr 1fr;grid-template-rows:auto auto">
+        <div class="cell"><div class="cl-k">SUBSCRIPTION</div><div class="cl-t">Pay monthly to keep access. <span class="c-GRNd">Netflix.</span></div></div>
+        <div class="cell"><div class="cl-k">FREEMIUM</div><div class="cl-t">Free for most, pay for extra. <span class="c-GRNd">Spotify.</span></div></div>
+        <div class="cell"><div class="cl-k">MARKETPLACE</div><div class="cl-t">A cut of other people's sales. <span class="c-GRNd">Airbnb.</span></div></div>
+        <div class="cell"><div class="cl-k">TRANSACTION FEE</div><div class="cl-t">A slice of each payment. <span class="c-GRNd">App Store.</span></div></div>
+        <div class="cell"><div class="cl-k">ONE-TIME</div><div class="cl-t">Pay once, own it. <span class="c-GRNd">Minecraft.</span></div></div>
+        <div class="cell"><div class="cl-k">ADVERTISING</div><div class="cl-t">Users free, advertisers pay. <span class="c-GRNd">YouTube.</span></div></div>
+        <div class="cell"><div class="cl-k">PAY-PER-USE</div><div class="cl-t">Pay for what you use. <span class="c-GRNd">Uber.</span></div></div>
+        <div class="cell"><div class="cl-k">SPONSORSHIP</div><div class="cl-t">Another business pays. <span class="c-GRNd">Red Bull.</span></div></div>
       </div>
     </div>
   </div>
-  <div class="el" style="left:120px;top:684px;width:1680px">
+  <div class="el foot">HUDSON LAB VENTURES</div>
+  <div class="el pc"><span class="tk GRNd"></span><span>06 / 17</span></div>
+</section>
+
+<!-- ═══════════════════════ 07 · THE CANVAS, FILLED (paper, filled canvas) ═══════════════════════ -->
+<section class="s pl-paper" data-screen-label="07 The canvas filled">
+  <div class="el k"><span class="m GRNd"></span><span>THE CANVAS LITE</span></div>
+  <div class="el h1">The four boxes, filled in for Tomás.</div>
+  <div class="el sub recede">An AI can fill these boxes in seconds; telling whether they are right is the part that is yours.</div>
+  <div class="el" style="left:120px;top:420px;width:1680px">
+    <div class="dgm ctx-band">
+      <div class="canvas" style="grid-template-columns:1fr 1fr 1fr 1fr;grid-template-rows:auto">
+        <div class="cell"><div class="cl-k">WHO PAYS</div><div class="cl-t">His parents.</div></div>
+        <div class="cell"><div class="cl-k">WHAT FOR</div><div class="cl-t">A practice app he keeps opening.</div></div>
+        <div class="cell"><div class="cl-k">HOW MUCH</div><div class="cl-t">&euro;8.</div></div>
+        <div class="cell"><div class="cl-k">HOW OFTEN</div><div class="cl-t">Every month.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="el" style="left:120px;top:600px;width:1680px">
+    <div class="callout" style="--c:var(--GRNd);--fill:var(--GRN-soft)">
+      <div class="co-eb">WHERE THE JUDGMENT IS</div>
+      <div class="co-body">The payer is his parents, not Tomás, and the money comes monthly, because that is how parents budget. An AI fills the boxes, but those two calls are yours.</div>
+    </div>
+  </div>
+  <div class="el foot">HUDSON LAB VENTURES</div>
+  <div class="el pc"><span class="tk GRNd"></span><span>07 / 17</span></div>
+</section>
+
+<!-- ═══════════════════════ 08 · EVERY MODEL HAS A TRAP (paper, callout + dies-if) ═══════════════════════ -->
+<section class="s pl-paper" data-screen-label="08 Every model has a trap">
+  <div class="el k"><span class="m GRNd"></span><span>THE WEAKNESS</span></div>
+  <div class="el h1">Every business model has a built-in trap.</div>
+  <div class="el" style="left:120px;top:336px;width:1680px">
+    <div class="deflist" style="--dl-term:420px">
+      <div class="dl-row"><div class="dl-term c-GRNd">SUBSCRIPTION</div><div class="dl-def">Why keep paying every month when a free version exists?</div></div>
+      <div class="dl-row"><div class="dl-term c-GRNd">FREEMIUM</div><div class="dl-def">Everyone takes the free tier, and almost no one upgrades.</div></div>
+      <div class="dl-row"><div class="dl-term c-GRNd">MARKETPLACE</div><div class="dl-def">Empty at the start, with no buyers and no sellers yet.</div></div>
+    </div>
+  </div>
+  <div class="el" style="left:120px;top:672px;width:1680px">
     <div class="dies-if">
-      <div class="di-k">THE WEAKNESS</div>
-      <div class="di-body">The payer wants control. The user wants freedom. Build it as surveillance and she games it and churns.</div>
+      <div class="di-k">TOMÁS'S TRAP</div>
+      <div class="di-body">His parents want follow-through, but Tomás wants to play, not drill. The day it feels like a chore he stops opening it, and they cancel.</div>
     </div>
   </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRN"></span><span>06 / 15</span></div>
+  <div class="el pc"><span class="tk GRNd"></span><span>08 / 17</span></div>
 </section>
 
-<!-- ═══════════════════════ 06 · METHOD (paper, 3-step rows) ═══════════════════════ -->
-<section class="s pl-paper" data-screen-label="06 The method">
-  <div class="el k"><span class="m GRNd"></span><span>THE METHOD &middot; RUN IT ON YOUR OWN MODEL</span></div>
-  <div class="el h1">Check the payer, defend the price, and name the weakness.</div>
-  <div class="el" style="left:120px;top:540px;width:1680px">
-    <div class="dgm ctx-band">
-      <div class="sb rows">
-        <div class="fr">
-          <div class="fr-tag">STEP ONE</div>
-          <div class="fr-body">Check the payer.</div>
-          <div class="fr-note">Is who you help who pays? Often not.</div>
-        </div>
-        <div class="fr">
-          <div class="fr-tag">STEP TWO</div>
-          <div class="fr-body">Defend the price.</div>
-          <div class="fr-note">One real number: a competitor, a willingness, a cost.</div>
-        </div>
-        <div class="fr peak">
-          <div class="fr-tag">STEP THREE</div>
-          <div class="fr-body">Name the weakness.</div>
-          <div class="fr-note">Every pattern hides a failure mode. Name yours.</div>
-        </div>
+<!-- ═══════════════════════ 09 · DEFEND THE PRICE (paper, row3) ═══════════════════════ -->
+<section class="s pl-paper" data-screen-label="09 Defend the price">
+  <div class="el k"><span class="m GRNd"></span><span>DEFEND THE PRICE</span></div>
+  <div class="el h1">Your price can be wrong, but it cannot be random.</div>
+  <div class="el sub recede">Every price needs a reason. These are the three places a real one comes from.</div>
+  <div class="el" style="left:120px;top:492px;width:1680px">
+    <div class="row3">
+      <div class="card rule-top t-GRNd">
+        <div class="c-eb">OPTION A</div>
+        <div class="c-head">A competitor's price.</div>
+        <div class="c-body">What a similar product already charges for the same job.</div>
+      </div>
+      <div class="card rule-top t-GRNd">
+        <div class="c-eb">OPTION B</div>
+        <div class="c-head">Willingness to pay.</div>
+        <div class="c-body">What a real person has told you they would pay.</div>
+      </div>
+      <div class="card rule-top t-GRNd">
+        <div class="c-eb">OPTION C</div>
+        <div class="c-head">Cost plus a margin.</div>
+        <div class="c-body">What it costs you to serve one customer, plus a margin on top.</div>
       </div>
     </div>
   </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRNd"></span><span>07 / 15</span></div>
+  <div class="el pc"><span class="tk GRNd"></span><span>09 / 17</span></div>
 </section>
 
-<!-- ═══════════════════════ 07 · REVENUE SENTENCE (paper, formula) ═══════════════════════ -->
-<section class="s pl-paper" data-screen-label="07 Revenue sentence">
-  <div class="el k"><span class="m GRNd"></span><span>THE MODEL, AS ONE LINE</span></div>
-  <div class="el h1">Write the revenue sentence.</div>
-  <div class="el" style="left:120px;top:384px;width:1680px">
+<!-- ═══════════════════════ 10 · THE REVENUE SENTENCE (paper, formula) ═══════════════════════ -->
+<section class="s pl-paper" data-screen-label="10 The revenue sentence">
+  <div class="el k"><span class="m GRNd"></span><span>PUT IT IN ONE LINE</span></div>
+  <div class="el h1">The four boxes become one sentence.</div>
+  <div class="el sub recede">This sentence is not new work; it is your four boxes, said out loud.</div>
+  <div class="el" style="left:120px;top:420px;width:1680px">
     <div class="formula" style="--fx:56px">
       <span class="run-GRN">Payer</span>
       <span>pays</span>
@@ -201,90 +222,51 @@
       <span>.</span>
     </div>
   </div>
-  <div class="el" style="left:120px;top:552px;width:1680px">
+  <div class="el" style="left:120px;top:588px;width:1680px">
     <div class="callout" style="--c:var(--GRNd);--fill:var(--GRN-soft)">
-      <div class="co-eb">ANYA, AS A WORKED FILL</div>
-      <div class="co-body" style="font:var(--t-body-small);color:#1E1E1E">Anya's dad pays &euro;8 a month per teen for a sleep tool she will actually keep using.</div>
+      <div class="co-eb">THIS IS YOUR CANVAS, IN ONE LINE</div>
+      <div class="co-body" style="font:var(--t-body-small);color:#1E1E1E">Every blank came straight from your four boxes, so the model and the sentence are the same thing said two ways. For Tomás: his parents pay &euro;8 a month for an app he keeps opening.</div>
     </div>
   </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRNd"></span><span>08 / 15</span></div>
+  <div class="el pc"><span class="tk GRNd"></span><span>10 / 17</span></div>
 </section>
 
-<!-- ═══════════════════════ 08 · YOUR TURN (blue divider, 4-node sb) ═══════════════════════ -->
-<section class="s pl-blue" data-screen-label="08 Your turn">
-  <div class="el k"><span class="m INK"></span><span>YOUR TURN &middot; 1 HOUR</span></div>
+<!-- ═══════════════════════ 11 · YOUR TURN (blue divider, 3-stage sb) ═══════════════════════ -->
+<section class="s pl-blue" data-screen-label="11 Your turn">
+  <div class="el k"><span class="m INK"></span><span>THE ACTIVITY &middot; 40 MIN</span></div>
   <div class="el hero" style="top:240px">Your turn.</div>
+  <div class="el sub" style="top:432px;width:1560px">You work on your own here, alongside the other business specialists, and bring it to your team at the end.</div>
   <div class="el" style="left:120px;top:540px;width:1680px">
     <div class="dgm ctx-band">
       <div class="sb">
         <div class="fr">
-          <div class="fr-tag">FRAME</div>
-          <div class="fr-body">Pick a starting pattern.</div>
-          <div class="fr-note">10 min &middot; own team</div>
-        </div>
-        <div class="fr">
           <div class="fr-tag">FILL</div>
           <div class="fr-body">Your four boxes.</div>
-          <div class="fr-note">10 min &middot; own team</div>
+          <div class="fr-note">10 min</div>
         </div>
         <div class="fr peak">
           <div class="fr-tag">STRESS-TEST</div>
-          <div class="fr-body">Break the model.</div>
-          <div class="fr-note">20 min &middot; largest block</div>
+          <div class="fr-body">Test the model.</div>
+          <div class="fr-note">20 min</div>
         </div>
         <div class="fr">
-          <div class="fr-tag">SENTENCE</div>
-          <div class="fr-body">Write your model as one line.</div>
-          <div class="fr-note">10 min &middot; own team</div>
-        </div>
-        <div class="fr">
-          <div class="fr-tag">SHARE</div>
-          <div class="fr-body">With other specialists.</div>
-          <div class="fr-note">10 min &middot; cross-team</div>
+          <div class="fr-tag">LOCK IT IN</div>
+          <div class="fr-body">Pull it into one model you can defend.</div>
+          <div class="fr-note">10 min</div>
         </div>
       </div>
     </div>
   </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk INK"></span><span>09 / 15</span></div>
+  <div class="el pc"><span class="tk INK"></span><span>11 / 17</span></div>
 </section>
 
-<!-- ═══════════════════════ 09 · FRAME (paper, stage 1) ═══════════════════════ -->
-<section class="s pl-paper" data-screen-label="09 Frame">
-  <div class="el k"><span class="m GRNd"></span><span>STAGE 1 &middot; FRAME &middot; 10 MIN</span></div>
-  <div class="el h1">Pick a pattern to start from.</div>
-  <div class="el" style="left:120px;top:444px;width:1680px">
-    <div class="dgm ctx-band">
-      <div class="sb">
-        <div class="fr">
-          <div class="fr-tag">SEE THE PATTERNS</div>
-          <div class="fr-body">Common pricing models.</div>
-          <div class="fr-note">Freemium, subscription, ads, marketplace, licence.</div>
-        </div>
-        <div class="fr peak">
-          <div class="fr-tag">PICK ONE</div>
-          <div class="fr-body">Your starting hypothesis.</div>
-          <div class="fr-note">Best fit for the customer you have in mind.</div>
-        </div>
-        <div class="fr">
-          <div class="fr-tag">FRAME YOUR CANVAS</div>
-          <div class="fr-body">Set up the four boxes around it.</div>
-          <div class="fr-note">You will break this later.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="el chk c-GRNd"><span class="checkpoint"><span class="tick"></span>PATTERN PICKED &middot; CANVAS READY TO FILL</span></div>
-  <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRNd"></span><span>10 / 15</span></div>
-</section>
-
-<!-- ═══════════════════════ 10 · FILL (paper, provisional Canvas) ═══════════════════════ -->
-<section class="s pl-paper" data-screen-label="10 Fill the four boxes">
-  <div class="el k"><span class="m GRNd"></span><span>STAGE 2 &middot; FILL &middot; 10 MIN &middot; HARD STOP</span></div>
-  <div class="el h1">Fill the four boxes as a first pass.</div>
-  <div class="el sub recede">The AI suggests a pattern, you fill in the boxes, and the stress-test comes next.</div>
+<!-- ═══════════════════════ 12 · STAGE 1 FILL (paper, blank canvas) ═══════════════════════ -->
+<section class="s pl-paper" data-screen-label="12 Fill the four boxes">
+  <div class="el k"><span class="m GRNd"></span><span>STAGE 1</span></div>
+  <div class="el h1">Fill your four boxes as a first pass.</div>
+  <div class="el sub recede">List two or three patterns that could fit your idea. Then pick the best one.</div>
   <div class="el" style="left:120px;top:432px;width:1680px">
     <div class="dgm ctx-band">
       <div class="canvas" style="grid-template-columns:1fr 1fr 1fr 1fr;grid-template-rows:auto auto">
@@ -292,36 +274,37 @@
         <div class="cell"><div class="cl-k">WHAT FOR</div><div class="cl-t">___</div></div>
         <div class="cell"><div class="cl-k">HOW MUCH</div><div class="cl-t">___</div></div>
         <div class="cell"><div class="cl-k">HOW OFTEN</div><div class="cl-t">___</div></div>
-        <div class="cell heart" style="grid-column:span 4"><div class="cl-k">PATTERN &middot; AI FRAMED</div><div class="cl-t">Freemium / subscription / marketplace / ads / licence ...</div></div>
+        <div class="cell heart" style="grid-column:span 4"><div class="cl-k">PATTERN</div><div class="cl-t">Name two or three that fit, choose one, and know why it beats the others.</div></div>
       </div>
     </div>
   </div>
-  <div class="el chk" style="color:#8A6000"><span class="checkpoint" style="color:#8A6000"><span class="tick" style="background:#C99700"></span>NO DEFENDED PRICE YET &middot; NO NAMED WEAKNESS YET</span></div>
+  <div class="el chk" style="color:#8A6000"><span class="checkpoint" style="color:#8A6000"><span class="tick" style="background:#C99700"></span>NO DEFENDED PRICE YET &middot; NO NAMED TRAP YET</span></div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRNd"></span><span>11 / 15</span></div>
+  <div class="el pc"><span class="tk GRNd"></span><span>12 / 17</span></div>
 </section>
 
-<!-- ═══════════════════════ 11 · STRESS-TEST (paper, the spine) ═══════════════════════ -->
-<section class="s pl-paper" data-screen-label="11 Stress-test the model">
-  <div class="el k"><span class="m GRNd"></span><span>STAGE 3 &middot; STRESS-TEST &middot; 20 MIN</span></div>
-  <div class="el h1">Break the model in three moves.</div>
+<!-- ═══════════════════════ 13 · STAGE 2 STRESS-TEST (paper, numlist) ═══════════════════════ -->
+<section class="s pl-paper" data-screen-label="13 Stress-test the model">
+  <div class="el k"><span class="m GRNd"></span><span>STAGE 2</span></div>
+  <div class="el h1">Test the model in three moves.</div>
   <div class="el" style="left:120px;top:480px;width:1680px">
     <div class="numlist" style="--c:var(--GRNd)">
-      <div class="nli"><span class="nl-n c-GRNd">01</span><span class="nl-t"><span class="assert">Check the payer.</span> Is the user really the payer? If not, change box one.</span></div>
-      <div class="nli"><span class="nl-n c-GRNd">02</span><span class="nl-t"><span class="assert">Defend the price.</span> Against one real number: a competitor, a willingness, a cost.</span></div>
-      <div class="nli"><span class="nl-n c-GRNd">03</span><span class="nl-t"><span class="assert">Name the weakness.</span> The failure mode your pattern hides. Write it in one line.</span></div>
+      <div class="nli"><span class="nl-n c-GRNd">01</span><span class="nl-t">Is the person who pays really the user, or is it someone else? If it is someone else, fix box one.</span></div>
+      <div class="nli"><span class="nl-n c-GRNd">02</span><span class="nl-t">Find one real number your price can stand on, like a competitor's price or what someone told you they would pay.</span></div>
+      <div class="nli"><span class="nl-n c-GRNd">03</span><span class="nl-t">What is the one thing that could make this model stop working? Write the trap in your own words.</span></div>
     </div>
   </div>
-  <div class="el chk c-GRNd"><span class="checkpoint"><span class="tick"></span>PRICE DEFENDED &middot; WEAKNESS NAMED</span></div>
+  <div class="el chk c-GRNd"><span class="checkpoint"><span class="tick"></span>END OF STAGE 2</span></div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRNd"></span><span>12 / 15</span></div>
+  <div class="el pc"><span class="tk GRNd"></span><span>13 / 17</span></div>
 </section>
 
-<!-- ═══════════════════════ 12 · REVENUE SENTENCE LOCK (paper) ═══════════════════════ -->
-<section class="s pl-paper" data-screen-label="12 Lock the sentence">
-  <div class="el k"><span class="m GRNd"></span><span>STAGE 4 &middot; LOCK THE SENTENCE &middot; 10 MIN</span></div>
-  <div class="el h1">Write your model as one line.</div>
-  <div class="el" style="left:120px;top:432px;width:1680px">
+<!-- ═══════════════════════ 14 · STAGE 3 LOCK THE SENTENCE (paper, formula) ═══════════════════════ -->
+<section class="s pl-paper" data-screen-label="14 Lock the sentence">
+  <div class="el k"><span class="m GRNd"></span><span>STAGE 3</span></div>
+  <div class="el h1">Pull it into one model you can defend.</div>
+  <div class="el sub recede">You wrote the pieces in Stage 2. Now say them as one line, the shape you used for Tomás.</div>
+  <div class="el" style="left:120px;top:456px;width:1680px">
     <div class="formula" style="--fx:56px">
       <span class="run-GRN">Payer</span>
       <span>pays</span>
@@ -333,23 +316,40 @@
       <span>.</span>
     </div>
   </div>
-  <div class="el" style="left:120px;top:600px;width:1680px">
+  <div class="el" style="left:120px;top:624px;width:1680px">
     <div class="callout" style="--c:var(--GRNd);--fill:var(--GRN-soft)">
-      <div class="co-eb">THE TEST</div>
-      <div class="co-body">The payer is not the user. The price is defended. The weakness comes next.</div>
+      <div class="co-eb">THIS IS WHAT YOU TAKE BACK</div>
+      <div class="co-body">This one line is what your team takes out this afternoon, and the trap you named is the first thing you go and test on real payers.</div>
     </div>
   </div>
-  <div class="el chk c-GRNd"><span class="checkpoint"><span class="tick"></span>ONE SENTENCE &middot; OUT LOUD</span></div>
+  <div class="el chk c-GRNd"><span class="checkpoint"><span class="tick"></span>READY TO TAKE TO YOUR TEAM</span></div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRNd"></span><span>13 / 15</span></div>
+  <div class="el pc"><span class="tk GRNd"></span><span>14 / 17</span></div>
 </section>
 
-<!-- ═══════════════════════ 13 · RECAP · 4 STATS (paper) ═══════════════════════ -->
-<section class="s pl-paper" data-screen-label="13 What you now hold">
+<!-- ═══════════════════════ 15 · PITCH & CHALLENGE (ink, numlist · DO) ═══════════════════════ -->
+<section class="s pl-ink" data-screen-label="15 Pitch and challenge">
+  <div class="el k"><span class="m GRN"></span><span>PITCH &amp; CHALLENGE &middot; 15 MIN</span></div>
+  <div class="el h1">Say your model in four sentences.</div>
+  <div class="el sub recede">Then your partner tries to break it. Their job is to find the trap, with three questions to throw at you.</div>
+  <div class="el" style="left:120px;top:480px;width:1680px">
+    <div class="numlist" style="--c:var(--GRN)">
+      <div class="nli"><span class="nl-n c-GRN">01</span><span class="nl-t">Why wouldn't they just use the free version?</span></div>
+      <div class="nli"><span class="nl-n c-GRN">02</span><span class="nl-t">Is that price too high, or too low?</span></div>
+      <div class="nli"><span class="nl-n c-GRN">03</span><span class="nl-t">What if half your users never pay?</span></div>
+    </div>
+  </div>
+  <div class="el chk c-GRN"><span class="checkpoint"><span class="tick"></span>SWAP, THEN GO AGAIN</span></div>
+  <div class="el foot">HUDSON LAB VENTURES</div>
+  <div class="el pc"><span class="tk GRN"></span><span>15 / 17</span></div>
+</section>
+
+<!-- ═══════════════════════ 16 · WHAT YOU NOW HOLD (paper, row3 stats) ═══════════════════════ -->
+<section class="s pl-paper" data-screen-label="16 What you now hold">
   <div class="el k"><span class="m GRNd"></span><span>WHAT YOU NOW HOLD</span></div>
-  <div class="el h1">A model you can take out into the market.</div>
-  <div class="el" style="left:120px;top:396px;width:1680px">
-    <div class="row4">
+  <div class="el h1">A model you can take to real payers, in one line.</div>
+  <div class="el" style="left:120px;top:444px;width:1680px">
+    <div class="row3">
       <div class="stat-card" style="--c:var(--GRNd)">
         <div class="sc-n">1</div>
         <div class="sc-l">PAYER NAMED</div>
@@ -362,64 +362,61 @@
       </div>
       <div class="stat-card" style="--c:var(--REDd)">
         <div class="sc-n">!</div>
-        <div class="sc-l">THE WEAKNESS NAMED</div>
-        <div class="sc-d">The failure mode your pattern hides.</div>
-      </div>
-      <div class="stat-card" style="--c:var(--GRNd)">
-        <div class="sc-n">1</div>
-        <div class="sc-l">REVENUE SENTENCE</div>
-        <div class="sc-d">Payer, price, unit, value.</div>
+        <div class="sc-l">THE TRAP NAMED</div>
+        <div class="sc-d">The weak point your model has to manage.</div>
       </div>
     </div>
   </div>
-  <div class="el body-768" style="top:792px;width:1560px;color:#565656">A model without a named weakness is not done.</div>
+  <div class="el body-768" style="top:828px;width:1560px;color:#1E1E1E">Now bring your model to your team and shape one plan together.</div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRNd"></span><span>14 / 15</span></div>
+  <div class="el pc"><span class="tk GRNd"></span><span>16 / 17</span></div>
 </section>
 
-<!-- ═══════════════════════ 14 · HANDOFF (ink) ═══════════════════════ -->
-<section class="s pl-ink" data-screen-label="14 Handoff">
+<!-- ═══════════════════════ 17 · HANDOFF (ink, two parallel carries) ═══════════════════════ -->
+<section class="s pl-ink" data-screen-label="17 Handoff">
   <div class="el motif mz-corner br accent" style="--mz-op:0.18"></div>
-  <div class="el k"><span class="m GRN"></span><span>NEXT &middot; TUE PM &middot; OUT IN MARKET</span></div>
-  <div class="el hero" style="top:288px">Real customers<br>decide this.</div>
-  <div class="el" style="left:120px;top:660px;width:1680px">
+  <div class="el k"><span class="m GRN"></span><span>WHAT YOU TAKE FROM HERE</span></div>
+  <div class="el hero" style="top:240px">Two things you carry<br>from here.</div>
+  <div class="el" style="left:120px;top:540px;width:1680px">
     <div class="row2">
       <div class="card rule-top t-GRN">
-        <div class="c-eb c-GRN">OUT IN MARKET &middot; TUE PM</div>
-        <div class="c-head">Test the price on real people.</div>
-        <div class="c-body">The weakness is what you carry to test. Bring it yourself.</div>
+        <div class="c-eb c-GRN">THIS AFTERNOON &middot; OUT IN MARKET</div>
+        <div class="c-head">Make a real payer prove it.</div>
+        <div class="c-body">Do not ask friends if they like it. Ask real parents to put a little money down now, or compare your price to what they already pay for lessons. Money committed is the only real yes.</div>
       </div>
-      <div class="card rule-top t-MUTE">
-        <div class="c-eb">FEEDS</div>
-        <div class="c-head">B2 Napkin Economics. LPP business section.</div>
-        <div class="c-body">The revenue sentence is the seam to tomorrow morning.</div>
+      <div class="card rule-top t-GRN">
+        <div class="c-eb c-GRN">TOMORROW &middot; B2</div>
+        <div class="c-head">Turn the model into a margin.</div>
+        <div class="c-body">Bring your one-line model and find the break-even, where the money has to work.</div>
       </div>
     </div>
   </div>
   <div class="el foot">HUDSON LAB VENTURES</div>
-  <div class="el pc"><span class="tk GRN"></span><span>15 / 15</span></div>
+  <div class="el pc"><span class="tk GRN"></span><span>17 / 17</span></div>
 </section>
 
 </deck-stage>
 
-<!-- Speaker notes: one entry per slide, positional (index 0 = slide 1). Read by export-pptx.js into the PPTX notes pane. DRAFT, voice pass pending. -->
+<!-- Speaker notes: one entry per slide, positional (index 0 = slide 1). Read by export-pptx.js into the PPTX notes pane and narrated by build-review.js. VOICE: the spoken lecture the presenter delivers to the room. First person ("Let me start with", "I want one person we can follow"), addressing the students directly as "you" / "business specialists". These are NOT stage directions and NOT descriptions of the slide; they are the words a teacher actually says, verbatim-readable aloud. Blessed reference is the M2 deck's notes. Plain language for a moderate-English room. -->
 <script id="speaker-notes" type="application/json">
 [
-"Open by orienting: this is the first session of the business specialty track. An AI will hand them a confident-looking business model in seconds, so this session is learning to break it before they trust it. By the end they have a one-line revenue sentence with a named weakness, ready to take into the market tomorrow.",
-"A Business Model Canvas is a one-page sheet that puts the whole model in view. Founders use it because everything is forced into the open: who the customer is, what they pay for, how the money comes in. The standard version has nine boxes. Ours is the lean cut: the four that decide whether money flows at all, plus one more move, name the weakness. Today is filling these in, and then breaking them.",
-"The Canvas does two things: it shows how the money works, and it surfaces the parts of the model that are least defended.",
-"Ask the group who actually pays here. Most will say Anya, so hold that answer, because the next slide shows it's really the dad.",
-"Anya uses the sleep app but has no money of her own, so her dad pays for it. The two of them want different things, and that gap is the point.",
-"Because the dad pays, the model has to serve a payer whose interests pull against the user's. This is the tension they have to understand.",
-"This is the method they'll run on their own model: check who really pays, defend the price against a real number, then name the weakness.",
-"The revenue sentence forces them to say who pays. The payer goes in the first blank, and it can't be someone with no money of their own.",
-"Hand over to the activity here. The team picks a pricing pattern, fills the model in quickly, spends the real time stress-testing it, then shares with the specialist group at the end.",
-"First ten minutes is choosing where to start. The team looks at the common pricing patterns (freemium, subscription, ads, marketplace, licence), picks the one their model fits today, and frames the four boxes around it. This is a starting hypothesis, nothing more. They will break it in the stages that come next.",
-"They fill in the four boxes as a rough first pass. The defended price and the named weakness come in the next step, not yet.",
-"This is the main work: check who genuinely pays, defend the price against one real reference number, and name the weakness the model hides.",
-"They write out the revenue sentence. If it survives the three checks, the model has actually been tested rather than just filled in. The sentence should also hold as the business scales or changes over time.",
-"This recaps what each team now holds: a payer they've checked, a defended price, a named weakness, and one revenue sentence. A model with no weakness named isn't done.",
-"This is the handoff. Real customers decide this, and the weakness they named is what they carry into the market and into B2."
+"Welcome, business specialists. This is the first of your two sessions on the business side, and it is the one where we get underneath the idea to the money. By the time you leave this room each of you will hold a model written in one line, with a real person who pays, a price you can defend, and the one weak spot you already know you have to watch. Tomorrow, in B2, we turn that into a margin.",
+"Let me start with the thing people skip. A good idea is not a business. It only becomes one when you can say how it makes money, and most ideas fall apart the moment you ask that. These days an AI will hand you a polished business model in seconds, and it will look right, but looking right and being right are not the same. So today is about seeing the money underneath any idea, yours or one a tool gives you, and finding where it could fall apart before you bet on it.",
+"So what is a business model, really. Strip away the jargon and it is just how the money flows. There is a fuller tool, the business model canvas, with nine boxes that cover everything from your partners to your costs, and you will meet all of it across the programme. Today we work the four boxes that are about money, the ones most ideas get wrong. Who pays, what for, how much, and how often. If you can answer those four in one clear sentence each, you understand your model. If you cannot, that is exactly what this session is for.",
+"I want one person we can follow the whole way through, so meet Tomás. He is fifteen, he is learning guitar, and he is about to quit, because practice means dull scales instead of the songs he actually wants to play. Someone built him an app that turns those drills into his songs, so he keeps going. Hold on to Tomás, because every step from here lands back on him.",
+"Here is the first thing people get wrong. Tomás is the one using the app, but Tomás is fifteen and has no money of his own. The people who actually pay are his parents. So you have two different people to win. The app has to keep Tomás coming back, or he stops using it, and it has to be worth real money to his parents, or no one pays. And notice the parents want something Tomás does not really care about, which is for him to stick with the guitar. Keep that tension in mind, because it comes back as the weak spot in the model.",
+"Now, almost every business you can name is one of about eight shapes, and they are just different ways the money comes in. Before I read the company that goes with each, have a go yourself. Pay monthly to keep access, who is that. Free for most, pay for extra. Take a cut of other people's sales. Here are the answers: Netflix, Spotify, Airbnb, the App Store, Minecraft, YouTube, Uber, and a sponsor like Red Bull. Each one has a strength and a soft spot. A subscription gives you steady income, but people can always cancel. Freemium pulls a huge crowd, but most of them never pay a cent. Your job is not to invent a ninth shape, it is to spot which of these you already are.",
+"Here is Tomás's model on one page. His parents pay, eight euros, every month, for an app he keeps opening. Now, you are right to think an AI could fill these four boxes in seconds, and it can. So why are you the one in the room. Because the calls that matter are judgment, and a tool gets them wrong. The payer is his parents, even though Tomás is the one using it. The money comes every month, because that is how parents actually budget, not as a one-off purchase. Get those two calls wrong and the whole model is wrong, and no AI will tell you that. That part is yours.",
+"Every model has a trap, and I mean that precisely. It is not a mistake you made, it is a weak point built into the shape itself. A subscription's trap is that people ask why they keep paying when a free version exists. Freemium's trap is that everyone takes the free tier and almost nobody upgrades. A marketplace is empty at the start, because buyers will not come until there are sellers, and sellers will not come until there are buyers. And then Tomás's trap. His parents want him to stick with it, but Tomás just wants to play, not drill. The day the app feels like a chore, he stops opening it, and his parents cancel. If you cannot name your own trap as clearly as that, you have not thought hard enough about your model yet.",
+"A price can be wrong. What it cannot be is random, plucked out of the air. Every price needs a reason sitting behind it, and there are three honest places to find one. Look at what a competitor already charges for the same job. Or use what a real person actually told you they would pay. Or work out what it costs you to serve one customer, and add a margin on top. You only need one of these, but it has to be real, not a number you liked the look of.",
+"Watch what happens when we line the four boxes up. Payer pays price per unit for value. That is the whole thing. And it is not new work, it is your canvas said out loud, the same model in one breath. For Tomás it reads: his parents pay eight euros a month for an app he keeps opening. When your own sentence reads as cleanly as that, you know the four boxes underneath it are holding.",
+"Right, this is where you take over. You have forty minutes, and you work on your own, sitting with the other business specialists, and at the end you carry what you build back to your team. Three stages. First you fill your four boxes, fast. Then you spend the real time stress-testing the model, and that is the stage that matters most, so it gets the most time. Last you lock it into one line you can defend.",
+"Stage one, fill the four boxes, and keep it rough. The one thing I want you to push on here is the pattern. Do not grab the first shape that comes to mind. Name the two or three of the eight that could fit your idea, then choose the one that fits best, and be ready to say why it beats the others. The price and the trap are not this stage, so leave them for now.",
+"Stage two is the real work, so slow right down here. Three moves. First, look hard at who pays. Is it genuinely the person using it, or is it someone else, the way it turned out to be the parents for Tomás. If it is someone else, fix box one. Second, give your price one real number to stand on, a competitor's price or what someone told you they would pay. Third, find the one thing that could make your model stop working, and write that trap down in your own words. If you get through all three and the model still stands, it has earned its place.",
+"Stage three, and this is less about writing and more about pulling it together. You already wrote the pieces in stage two. Now say the whole thing as one line, the same shape you used for Tomás. Read it out loud once, because your ear catches what your eye slides past. This one line is exactly what you carry back to your team, and the trap you named is the very first thing you take out to test on real payers this afternoon.",
+"Pair up for this. One of you says your model in about four sentences, and the other one's only job is to break it, using the three questions on the slide to hunt for the trap. If your partner finds the weak spot before you have named it yourself, that is a gift, it tells you exactly where to go back and work. Then swap, and do it again the other way round.",
+"Look at what you are holding now. A payer you have actually checked against the user, a price with a real number behind it, and a trap you have named out loud. All three of those ride inside one short sentence. Now you bring it back to your team, where your business model meets their market work and their product work, and the three of you shape it into a single plan.",
+"Two things leave this room with you. This afternoon, with your team, you take this out and make a real payer prove it. And let me be clear about what testing actually means, because it is not asking a friend whether they like your idea. It is asking real parents to put a little money down now, even a small amount, or comparing your price to what they already pay for guitar lessons. Money that someone actually commits is the only yes that counts. Then tomorrow morning in B2 you bring this same one-line model and turn it into a margin, where you find the break-even and the money finally has to work. Both of those grow straight out of what you built today."
 ]
 </script>
 
