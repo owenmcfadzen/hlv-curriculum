@@ -2402,8 +2402,8 @@ window.STUDIO = {
       "id": "s45",
       "sid": "5-am-welcome",
       "day": 5,
-      "start": 540,
-      "end": 570,
+      "start": 570,
+      "end": 600,
       "track": "core",
       "title": "Welcome",
       "room": "",
@@ -2416,18 +2416,18 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:00",
-          "end": "09:10",
+          "t": "09:30",
+          "end": "09:40",
           "label": "Take your seat with your team for the first time."
         },
         {
-          "t": "09:10",
-          "end": "09:20",
+          "t": "09:40",
+          "end": "09:50",
           "label": "Name one thing you noticed about your project over the weekend."
         },
         {
-          "t": "09:20",
-          "end": "09:30",
+          "t": "09:50",
+          "end": "10:00",
           "label": "Quick walk through the Week 2 shape: Mon SA spine, Tue/Wed specialty rounds + Out in Market, Thu LPP, Fri pitches."
         }
       ],
@@ -2464,12 +2464,12 @@ window.STUDIO = {
     },
     {
       "id": "s46",
-      "sid": "5-am-week-2-flow-prd",
+      "sid": "5-am-intro-to-week-2",
       "day": 5,
-      "start": 570,
+      "start": 600,
       "end": 630,
       "track": "build",
-      "title": "Week 2 Flow (PRD)",
+      "title": "Intro to Week 2",
       "room": "",
       "facils": [],
       "group": "All",
@@ -2480,28 +2480,28 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:30",
-          "end": "09:45",
+          "t": "10:00",
+          "end": "10:08",
           "label": "See the Week 2 process diagram. Discover, Refine, Develop, Define."
         },
         {
-          "t": "09:45",
-          "end": "10:00",
+          "t": "10:08",
+          "end": "10:16",
           "label": "Walk through what's expected at each step (SA / specialty / OOM / LPP)."
         },
         {
-          "t": "10:00",
-          "end": "10:15",
+          "t": "10:16",
+          "end": "10:24",
           "label": "PRD Lab demo: how to upload analog inputs and get structured output."
         },
         {
-          "t": "10:15",
+          "t": "10:24",
           "end": "10:30",
           "label": "Confirm your team has access. Test login."
         }
       ],
       "deck": {
-        "title": "Week 2 Flow (PRD)",
+        "title": "Intro to Week 2",
         "slides": 0,
         "status": "draft",
         "url": "https://docs.google.com/presentation/d/11EqCmMhiTEhkpdO2dGfYIOhlb4zO1796ToJh2aj3AU4/edit",
@@ -2538,12 +2538,12 @@ window.STUDIO = {
     },
     {
       "id": "s47",
-      "sid": "5-am-sa2-5-realigning-around-customer",
+      "sid": "5-am-sa3-customer-journey",
       "day": 5,
       "start": 630,
       "end": 675,
       "track": "core",
-      "title": "SA2.5 · Realigning around customer journey",
+      "title": "SA3 · Customer journey",
       "room": "",
       "facils": [],
       "group": "All",
@@ -2595,128 +2595,12 @@ window.STUDIO = {
     },
     {
       "id": "s48",
-      "sid": "5-am-guest-talk",
+      "sid": "5-am-sa4-data-and-team-alignment",
       "day": 5,
       "start": 675,
-      "end": 720,
-      "track": "talks",
-      "title": "Guest Talk",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "panel",
-      "code": null,
-      "sub": null,
-      "aspects": [
-        "guest"
-      ],
-      "half": "am",
-      "micro": [
-        {
-          "t": "11:15",
-          "end": "11:26",
-          "label": "Listen first 25 min. No notes."
-        },
-        {
-          "t": "11:26",
-          "end": "11:37",
-          "label": "Capture: what surprised you about how they actually work?"
-        },
-        {
-          "t": "11:37",
-          "end": "11:48",
-          "label": "Q&A 15 min. Ask about a specific decision they made recently, not abstract advice."
-        },
-        {
-          "t": "11:48",
-          "end": "12:00",
-          "label": "Surface one thing you'll try in your specialty work this week."
-        }
-      ],
-      "note": "Last year's product guy returns. Lisbon-based, Stanford grad, gave the strong product talk in 2025. Same narrative-over-expertise bar as Wk1's Entrepreneur Story: a working practitioner saying what they actually do all day, not a methodology lecture.",
-      "assets": [
-        {
-          "t": "[GUEST — Lisbon 2025 product guy, contact pending Owen] briefing",
-          "k": "pdf"
-        },
-        {
-          "t": "Wk1 Wed Entrepreneur Story (precedent: narrative-first guest format)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "45 min. 5 min intro, 25 min talk, 15 min Q&A. Same guest as Lisbon 2025 (Owen pulling contact). Pre-brief: speak about real working process, not portfolio. Push for a recent specific decision over abstract advice. The strong-product-talk format from last year worked because it was concrete; same bar applies.",
-      "studentTasks": [
-        "Listen first 25 min. No notes.",
-        "Capture: what surprised you about how they actually work?",
-        "Q&A 15 min. Ask about a specific decision they made recently, not abstract advice.",
-        "Surface one thing you'll try in your specialty work this week."
-      ]
-    },
-    {
-      "id": "s49",
-      "sid": "5-pm-sa3-how-is-it-solved-now",
-      "day": 5,
-      "start": 780,
-      "end": 825,
+      "end": 735,
       "track": "core",
-      "title": "SA3 · How is it solved now?",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": "Map current solutions before designing new ones",
-      "aspects": [],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "13:00",
-          "end": "13:11",
-          "label": "List what already exists in your problem space: competitors, workarounds, the do-nothing option."
-        },
-        {
-          "t": "13:11",
-          "end": "13:22",
-          "label": "For each, name what they get right and where they fall short."
-        },
-        {
-          "t": "13:22",
-          "end": "13:33",
-          "label": "Map them on the whiteboard. Group by approach."
-        },
-        {
-          "t": "13:33",
-          "end": "13:45",
-          "label": "Surface the gap your V1 fills that nothing else does."
-        }
-      ],
-      "note": "Third Solution Alignment moment. Each team maps what currently exists in their problem space: competitors, workarounds, status quo. Output frames why a new solution is needed.",
-      "assets": [
-        {
-          "t": "Customer Discovery & Validation (Notion: Knowledge / Foundation)",
-          "k": "pdf"
-        },
-        {
-          "t": "M1 Landscape Map (Mon PM Wk2 specialist work, ai_loop.analog references SA3)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "45 min. 10 min teach (why mapping current solutions matters), 25 min team work, 10 min round (each team names their gap). Output: landscape sketch per team plus a one-sentence gap statement. Feeds SA4 V1 lock and M1 Landscape Map (which cites SA3 as ai_loop.analog). Don't accept 'no one is solving this'. Something is, even if it's a workaround or doing nothing.",
-      "studentTasks": [
-        "List what already exists in your problem space: competitors, workarounds, the do-nothing option.",
-        "For each, name what they get right and where they fall short.",
-        "Map them on the whiteboard. Group by approach.",
-        "Surface the gap your V1 fills that nothing else does."
-      ]
-    },
-    {
-      "id": "s50",
-      "sid": "5-pm-sa4-team-aligned-on-v1-solution",
-      "day": 5,
-      "start": 825,
-      "end": 855,
-      "track": "core",
-      "title": "SA4 · Team Aligned on V1 Solution",
+      "title": "SA4 · Data and team alignment",
       "room": "",
       "facils": [],
       "group": "All",
@@ -2724,31 +2608,31 @@ window.STUDIO = {
       "code": null,
       "sub": "Lock the V1 before specialty work begins",
       "aspects": [],
-      "half": "pm",
+      "half": "am",
       "micro": [
         {
-          "t": "13:45",
-          "end": "13:53",
+          "t": "11:15",
+          "end": "11:30",
           "label": "Combine SA1 (who) plus SA2 (their journey) plus SA3 (the gap)."
         },
         {
-          "t": "13:53",
-          "end": "14:01",
+          "t": "11:30",
+          "end": "11:45",
           "label": "Write your V1 solution in one sentence: 'For [persona], we build [X] that solves [gap].'"
         },
         {
-          "t": "14:01",
-          "end": "14:09",
+          "t": "11:45",
+          "end": "12:00",
           "label": "Sanity-check it against the friction frame from SA2. Does the V1 actually address it?"
         },
         {
-          "t": "14:09",
-          "end": "14:15",
+          "t": "12:00",
+          "end": "12:15",
           "label": "Lock it. Specialty work this afternoon assumes V1 is stable."
         }
       ],
       "deck": {
-        "title": "SA4 · Team Aligned on V1 Solution",
+        "title": "SA4 · Data and team alignment",
         "slides": 0,
         "status": "draft",
         "url": "https://docs.google.com/presentation/d/1XYTFsNE_gliwx-1uQJkxwwjrTFg4FBVjmgPfVndIcbg/edit",
@@ -2776,10 +2660,69 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s51",
+      "id": "s49",
+      "sid": "5-am-guest-talk",
+      "day": 5,
+      "start": 735,
+      "end": 780,
+      "track": "talks",
+      "title": "Guest Talk",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "panel",
+      "code": null,
+      "sub": null,
+      "aspects": [
+        "guest"
+      ],
+      "half": "am",
+      "micro": [
+        {
+          "t": "12:15",
+          "end": "12:26",
+          "label": "Listen first 25 min. No notes."
+        },
+        {
+          "t": "12:26",
+          "end": "12:37",
+          "label": "Capture: what surprised you about how they actually work?"
+        },
+        {
+          "t": "12:37",
+          "end": "12:48",
+          "label": "Q&A 15 min. Ask about a specific decision they made recently, not abstract advice."
+        },
+        {
+          "t": "12:48",
+          "end": "13:00",
+          "label": "Surface one thing you'll try in your specialty work this week."
+        }
+      ],
+      "note": "Last year's product guy returns. Lisbon-based, Stanford grad, gave the strong product talk in 2025. Same narrative-over-expertise bar as Wk1's Entrepreneur Story: a working practitioner saying what they actually do all day, not a methodology lecture.",
+      "assets": [
+        {
+          "t": "[GUEST — Lisbon 2025 product guy, contact pending Owen] briefing",
+          "k": "pdf"
+        },
+        {
+          "t": "Wk1 Wed Entrepreneur Story (precedent: narrative-first guest format)",
+          "k": "pdf"
+        }
+      ],
+      "facilitatorCue": "45 min. 5 min intro, 25 min talk, 15 min Q&A. Same guest as Lisbon 2025 (Owen pulling contact). Pre-brief: speak about real working process, not portfolio. Push for a recent specific decision over abstract advice. The strong-product-talk format from last year worked because it was concrete; same bar applies.",
+      "studentTasks": [
+        "Listen first 25 min. No notes.",
+        "Capture: what surprised you about how they actually work?",
+        "Q&A 15 min. Ask about a specific decision they made recently, not abstract advice.",
+        "Surface one thing you'll try in your specialty work this week."
+      ]
+    },
+    {
+      "id": "s50",
       "sid": "5-pm-solution-blueprint",
       "day": 5,
-      "start": 855,
+      "start": 840,
       "end": 960,
       "track": "build",
       "title": "Solution Blueprint",
@@ -2802,10 +2745,10 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s52",
+      "id": "s51",
       "sid": "5-pm-canvas-lite",
       "day": 5,
-      "start": 855,
+      "start": 840,
       "end": 960,
       "track": "build",
       "title": "Canvas Lite",
@@ -2828,10 +2771,10 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s53",
+      "id": "s52",
       "sid": "5-pm-landscape-map",
       "day": 5,
-      "start": 855,
+      "start": 840,
       "end": 960,
       "track": "build",
       "title": "Landscape Map",
@@ -2854,7 +2797,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s54",
+      "id": "s53",
       "sid": "5-pm-team-synthesis",
       "day": 5,
       "start": 960,
@@ -2920,11 +2863,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s55",
+      "id": "s54",
       "sid": "6-am-welcome",
       "day": 6,
-      "start": 540,
-      "end": 555,
+      "start": 570,
+      "end": 600,
       "track": "core",
       "title": "Welcome",
       "room": "",
@@ -2937,18 +2880,18 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:00",
-          "end": "09:05",
+          "t": "09:30",
+          "end": "09:40",
           "label": "Find your team."
         },
         {
-          "t": "09:05",
-          "end": "09:10",
+          "t": "09:40",
+          "end": "09:50",
           "label": "30-second team check: where are we, what's the next move?"
         },
         {
-          "t": "09:10",
-          "end": "09:15",
+          "t": "09:50",
+          "end": "10:00",
           "label": "Quick Rollercoaster pulse: where are you on the curve right now?"
         }
       ],
@@ -2971,11 +2914,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s56",
+      "id": "s55",
       "sid": "6-am-product-definition",
       "day": 6,
-      "start": 555,
-      "end": 690,
+      "start": 600,
+      "end": 750,
       "track": "build",
       "title": "Product Definition",
       "room": "",
@@ -2997,11 +2940,11 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s57",
+      "id": "s56",
       "sid": "6-am-back-of-napkin-economics",
       "day": 6,
-      "start": 555,
-      "end": 690,
+      "start": 600,
+      "end": 750,
       "track": "build",
       "title": "Back-of-Napkin Economics",
       "room": "",
@@ -3023,11 +2966,11 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s58",
+      "id": "s57",
       "sid": "6-am-validation-design",
       "day": 6,
-      "start": 555,
-      "end": 690,
+      "start": 600,
+      "end": 750,
       "track": "build",
       "title": "Validation Design",
       "room": "",
@@ -3049,11 +2992,11 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s59",
+      "id": "s58",
       "sid": "6-am-team-synthesis",
       "day": 6,
-      "start": 690,
-      "end": 720,
+      "start": 750,
+      "end": 780,
       "track": "build",
       "title": "Team Synthesis",
       "room": "",
@@ -3066,23 +3009,23 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "11:30",
-          "end": "11:38",
+          "t": "12:30",
+          "end": "12:38",
           "label": "5 min teach-back per specialist. What did you produce in Round 2?"
         },
         {
-          "t": "11:38",
-          "end": "11:46",
+          "t": "12:38",
+          "end": "12:46",
           "label": "Team listens, no interruptions."
         },
         {
-          "t": "11:46",
-          "end": "11:54",
+          "t": "12:46",
+          "end": "12:54",
           "label": "Capture: which Round 2 outputs depend on each other? Which contradict?"
         },
         {
-          "t": "11:54",
-          "end": "12:00",
+          "t": "12:54",
+          "end": "13:00",
           "label": "Exit with the question your team needs answered before going Out in Market this afternoon."
         }
       ],
@@ -3110,10 +3053,10 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s60",
+      "id": "s59",
       "sid": "6-pm-out-in-market",
       "day": 6,
-      "start": 780,
+      "start": 840,
       "end": 960,
       "track": "core",
       "title": "Out in Market",
@@ -3127,27 +3070,27 @@ window.STUDIO = {
       "half": "pm",
       "micro": [
         {
-          "t": "13:00",
-          "end": "13:36",
+          "t": "14:00",
+          "end": "14:24",
           "label": "Pick 5 people you'll talk to in the next 3 hours. Real targets, not fillers."
         },
         {
-          "t": "13:36",
-          "end": "14:12",
+          "t": "14:24",
+          "end": "14:48",
           "label": "Run the empathy interview protocol M2 designed: open question first, then probe."
         },
         {
-          "t": "14:12",
-          "end": "14:48",
+          "t": "14:48",
+          "end": "15:12",
           "label": "Capture contradicting evidence. The 'this won't work because...' is the gold."
         },
         {
-          "t": "14:48",
-          "end": "15:24",
+          "t": "15:12",
+          "end": "15:36",
           "label": "Photograph the conversations (with permission). Notes only as backup."
         },
         {
-          "t": "15:24",
+          "t": "15:36",
           "end": "16:00",
           "label": "Back at the facility for debrief at 16:00 sharp."
         }
@@ -3177,11 +3120,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s61",
+      "id": "s60",
       "sid": "6-pm-out-in-market-debrief",
       "day": 6,
       "start": 960,
-      "end": 1020,
+      "end": 990,
       "track": "talks",
       "title": "Out in Market Debrief",
       "room": "",
@@ -3197,27 +3140,27 @@ window.STUDIO = {
       "micro": [
         {
           "t": "16:00",
-          "end": "16:12",
+          "end": "16:06",
           "label": "Group by team. Pull out the field notes."
         },
         {
-          "t": "16:12",
-          "end": "16:24",
+          "t": "16:06",
+          "end": "16:12",
           "label": "Sort: confirming evidence pile, contradicting evidence pile, surprises pile."
         },
         {
-          "t": "16:24",
-          "end": "16:36",
+          "t": "16:12",
+          "end": "16:18",
           "label": "Surprises pile gets first attention. Why didn't you predict this?"
         },
         {
-          "t": "16:36",
-          "end": "16:48",
+          "t": "16:18",
+          "end": "16:24",
           "label": "Capture the inputs on stickies → canvas. These are inputs to revise activities and feed the 100-Day Plan, not loose observations."
         },
         {
-          "t": "16:48",
-          "end": "17:00",
+          "t": "16:24",
+          "end": "16:30",
           "label": "One sentence per team: what's the biggest assumption that needs to change? Carry it into Wed AM."
         }
       ],
@@ -3246,11 +3189,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s62",
+      "id": "s61",
       "sid": "7-am-welcome",
       "day": 7,
-      "start": 540,
-      "end": 555,
+      "start": 570,
+      "end": 600,
       "track": "core",
       "title": "Welcome",
       "room": "",
@@ -3263,18 +3206,18 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:00",
-          "end": "09:05",
+          "t": "09:30",
+          "end": "09:40",
           "label": "Find your team."
         },
         {
-          "t": "09:05",
-          "end": "09:10",
+          "t": "09:40",
+          "end": "09:50",
           "label": "30-second team check: state of the prototype, state of the team."
         },
         {
-          "t": "09:10",
-          "end": "09:15",
+          "t": "09:50",
+          "end": "10:00",
           "label": "Rollercoaster pulse."
         }
       ],
@@ -3297,11 +3240,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s63",
+      "id": "s62",
       "sid": "7-am-sponsor-feedback-sessions",
       "day": 7,
-      "start": 555,
-      "end": 615,
+      "start": 600,
+      "end": 750,
       "track": "talks",
       "title": "Sponsor Feedback Sessions",
       "room": "",
@@ -3316,28 +3259,28 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:15",
-          "end": "09:27",
+          "t": "10:00",
+          "end": "10:30",
           "label": "Bring your work-in-progress: SA outputs, specialty drafts, prototype sketches."
         },
         {
-          "t": "09:27",
-          "end": "09:39",
+          "t": "10:30",
+          "end": "11:00",
           "label": "Don't pitch. Show. 5 minutes per team."
         },
         {
-          "t": "09:39",
-          "end": "09:51",
+          "t": "11:00",
+          "end": "11:30",
           "label": "Take the sponsor's pushback at face value. Don't defend, capture."
         },
         {
-          "t": "09:51",
-          "end": "10:03",
+          "t": "11:30",
+          "end": "12:00",
           "label": "After: 5 minutes to triage what the sponsor surfaced. Capture concrete sponsor-input items on stickies — these go into the 100-Day Plan inputs and the PRD regeneration loop, not just a team to-do list."
         },
         {
-          "t": "10:03",
-          "end": "10:15",
+          "t": "12:00",
+          "end": "12:30",
           "label": "One action item per team for the 100-Day Plan (next block)."
         }
       ],
@@ -3379,11 +3322,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s64",
+      "id": "s63",
       "sid": "7-am-prototype-build-a-b",
       "day": 7,
-      "start": 615,
-      "end": 720,
+      "start": 600,
+      "end": 750,
       "track": "build",
       "title": "Prototype Build (A → B)",
       "room": "",
@@ -3405,95 +3348,65 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s65",
+      "id": "s64",
       "sid": "7-am-the-100-day-plan",
       "day": 7,
-      "start": 615,
-      "end": 720,
+      "start": 600,
+      "end": 750,
       "track": "build",
       "title": "The 100-Day Plan",
       "room": "",
       "facils": [],
-      "group": "All",
+      "group": "Business",
       "kind": "track",
-      "code": null,
+      "code": "B3",
       "sub": "Business + Market join forces",
       "aspects": [],
       "half": "am",
-      "micro": [
-        {
-          "t": "10:15",
-          "end": "10:36",
-          "label": "Pull together: B1 Canvas Lite, B2 Napkin Economics, M1 Landscape Map, M2 Validation Design, OOM #1 notes, Sponsor Feedback notes."
-        },
-        {
-          "t": "10:36",
-          "end": "10:57",
-          "label": "Frame the first 100 days as three blocks: validate (what's still unproven), experiment (what cheap lo-fi tests run next), prove (what evidence the sponsor would need to commit)."
-        },
-        {
-          "t": "10:57",
-          "end": "11:18",
-          "label": "Pick lo-fi over polished. A flyer, a waitlist, a borrowed counter, a Saturday-morning interview run — get-outside actions, not market reports."
-        },
-        {
-          "t": "11:18",
-          "end": "11:39",
-          "label": "Sequence week-by-week. Each milestone has a target audience and a success signal."
-        },
-        {
-          "t": "11:39",
-          "end": "12:00",
-          "label": "Cut anything you couldn't credibly start Monday. If it needs permission you don't have, it's not in the 100 days."
-        }
-      ],
       "deck": {
         "title": "The 100-Day Plan",
-        "slides": 0,
+        "slides": 8,
         "status": "draft",
         "url": "/decks-html/B3M3-joint-100-day-plan.html",
         "isLocal": true,
         "pdfUrl": null,
-        "code": null
+        "code": "B3"
       },
-      "note": "Business and Market specialists converge for the first time this week. The 100-Day Plan is the team's answer to: 'If a sponsor said yes Friday, what would the first 100 days actually look like?' Validation, experimentation, the initial proof toward launching — lo-fi, interaction-driven, get-outside (Prehype-style signal mining, not desk research). Draws on the Reality Check collection: Out in Market #1 findings plus the morning's Sponsor Feedback.",
-      "assets": [
-        {
-          "t": "B2 Back-of-Napkin Economics output (Tue AM)",
-          "k": "pdf"
-        },
-        {
-          "t": "M2 Validation Design output (Tue AM)",
-          "k": "pdf"
-        },
-        {
-          "t": "Tue PM Out in Market #1 findings",
-          "k": "pdf"
-        },
-        {
-          "t": "Wed AM Sponsor Feedback notes",
-          "k": "pdf"
-        },
-        {
-          "t": "Prehype lo-fi signal-mining reference (TBD)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "105 min total. 15 min frame (what 100 days is and isn't — show the Prehype lo-fi examples), 75 min team work (Business and Market specialists co-author; the rest of the team feeds inputs as asked), 15 min round (each team reads three milestones aloud). The convergence is the point — Business' math meets Market's signal here, and the team finds out whether they survive contact. Watch for over-engineering: any team writing a 'launch plan' has missed it. Bar is the first concrete, interaction-driven thing they'd do Monday morning.",
-      "studentTasks": [
-        "Pull together: B1 Canvas Lite, B2 Napkin Economics, M1 Landscape Map, M2 Validation Design, OOM #1 notes, Sponsor Feedback notes.",
-        "Frame the first 100 days as three blocks: validate (what's still unproven), experiment (what cheap lo-fi tests run next), prove (what evidence the sponsor would need to commit).",
-        "Pick lo-fi over polished. A flyer, a waitlist, a borrowed counter, a Saturday-morning interview run — get-outside actions, not market reports.",
-        "Sequence week-by-week. Each milestone has a target audience and a success signal.",
-        "Cut anything you couldn't credibly start Monday. If it needs permission you don't have, it's not in the 100 days."
-      ]
+      "note": "Business + Market join forces"
+    },
+    {
+      "id": "s65",
+      "sid": "7-am-the-100-day-plan-2",
+      "day": 7,
+      "start": 600,
+      "end": 750,
+      "track": "build",
+      "title": "The 100-Day Plan",
+      "room": "",
+      "facils": [],
+      "group": "Market",
+      "kind": "track",
+      "code": "M3",
+      "sub": "Business + Market join forces",
+      "aspects": [],
+      "half": "am",
+      "deck": {
+        "title": "First Moves",
+        "slides": 8,
+        "status": "draft",
+        "url": "/decks-html/B3M3-joint-100-day-plan.html",
+        "isLocal": true,
+        "pdfUrl": null,
+        "code": "M3"
+      },
+      "note": "Business + Market join forces"
     },
     {
       "id": "s66",
-      "sid": "7-pm-team-alignment",
+      "sid": "7-am-team-alignment",
       "day": 7,
-      "start": 780,
-      "end": 825,
+      "start": 750,
+      "end": 780,
       "track": "build",
       "title": "Team Alignment",
       "room": "",
@@ -3503,26 +3416,26 @@ window.STUDIO = {
       "code": null,
       "sub": "Lock the frame before going to market",
       "aspects": [],
-      "half": "pm",
+      "half": "am",
       "micro": [
         {
-          "t": "13:00",
-          "end": "13:11",
+          "t": "12:30",
+          "end": "12:38",
           "label": "Pull together: SA outputs plus specialty round 1+2+3 plus sponsor feedback."
         },
         {
-          "t": "13:11",
-          "end": "13:22",
+          "t": "12:38",
+          "end": "12:46",
           "label": "Write the team's working answer to: 'For [persona], we built [X] that solves [gap], proven by [evidence].'"
         },
         {
-          "t": "13:22",
-          "end": "13:33",
+          "t": "12:46",
+          "end": "12:54",
           "label": "Identify the one piece of evidence still missing. That's what Out in Market #2 tests."
         },
         {
-          "t": "13:33",
-          "end": "13:45",
+          "t": "12:54",
+          "end": "13:00",
           "label": "Lock the frame. No more pivots after this block."
         }
       ],
@@ -3553,7 +3466,7 @@ window.STUDIO = {
       "id": "s67",
       "sid": "7-pm-out-in-market",
       "day": 7,
-      "start": 825,
+      "start": 840,
       "end": 960,
       "track": "core",
       "title": "Out in Market",
@@ -3567,27 +3480,27 @@ window.STUDIO = {
       "half": "pm",
       "micro": [
         {
-          "t": "13:45",
-          "end": "14:12",
+          "t": "14:00",
+          "end": "14:24",
           "label": "Bring the prototype plus 3 questions you need answered."
         },
         {
-          "t": "14:12",
-          "end": "14:39",
+          "t": "14:24",
+          "end": "14:48",
           "label": "Show, don't tell. Hand the prototype to the user. Watch what they actually do."
         },
         {
-          "t": "14:39",
-          "end": "15:06",
+          "t": "14:48",
+          "end": "15:12",
           "label": "Ask: what would make this work for you? What's missing?"
         },
         {
-          "t": "15:06",
-          "end": "15:33",
+          "t": "15:12",
+          "end": "15:36",
           "label": "5 conversations per team minimum."
         },
         {
-          "t": "15:33",
+          "t": "15:36",
           "end": "16:00",
           "label": "Back at 16:00 — the debrief is where today's signal becomes tomorrow's input."
         }
@@ -3634,7 +3547,7 @@ window.STUDIO = {
       "sid": "7-pm-out-in-market-debrief",
       "day": 7,
       "start": 960,
-      "end": 1020,
+      "end": 990,
       "track": "talks",
       "title": "Out in Market Debrief",
       "room": "",
@@ -3650,27 +3563,27 @@ window.STUDIO = {
       "micro": [
         {
           "t": "16:00",
-          "end": "16:12",
+          "end": "16:06",
           "label": "Pull the prototype-feedback notes."
         },
         {
-          "t": "16:12",
-          "end": "16:24",
+          "t": "16:06",
+          "end": "16:12",
           "label": "Sort by: what users did vs. what they said."
         },
         {
-          "t": "16:24",
-          "end": "16:36",
+          "t": "16:12",
+          "end": "16:18",
           "label": "When users said 'I love it' but didn't actually use it, that's a gap. Surface it."
         },
         {
-          "t": "16:36",
-          "end": "16:48",
+          "t": "16:18",
+          "end": "16:24",
           "label": "Capture inputs on stickies → canvas. Each sticky is a discrete input, not a vague impression."
         },
         {
-          "t": "16:48",
-          "end": "17:00",
+          "t": "16:24",
+          "end": "16:30",
           "label": "One sentence per team: what changes about the prototype before final pitches Friday? Plus what changes in the PRD when you regen it tomorrow morning?"
         }
       ],
@@ -3698,8 +3611,8 @@ window.STUDIO = {
       "id": "s69",
       "sid": "8-am-welcome",
       "day": 8,
-      "start": 540,
-      "end": 555,
+      "start": 570,
+      "end": 600,
       "track": "core",
       "title": "Welcome",
       "room": "",
@@ -3712,18 +3625,18 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:00",
-          "end": "09:05",
+          "t": "09:30",
+          "end": "09:40",
           "label": "Find your team."
         },
         {
-          "t": "09:05",
-          "end": "09:10",
+          "t": "09:40",
+          "end": "09:50",
           "label": "30-second team check: what's locked, what's still open?"
         },
         {
-          "t": "09:10",
-          "end": "09:15",
+          "t": "09:50",
+          "end": "10:00",
           "label": "Rollercoaster pulse."
         }
       ],
@@ -3749,8 +3662,8 @@ window.STUDIO = {
       "id": "s70",
       "sid": "8-am-lpp-time",
       "day": 8,
-      "start": 555,
-      "end": 660,
+      "start": 600,
+      "end": 720,
       "track": "build",
       "title": "LPP TIME",
       "room": "",
@@ -3763,28 +3676,28 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:15",
-          "end": "09:36",
+          "t": "10:00",
+          "end": "10:24",
           "label": "Open the LPP template (provided)."
         },
         {
-          "t": "09:36",
-          "end": "09:57",
+          "t": "10:24",
+          "end": "10:48",
           "label": "Section by section: Problem, Persona, Solution, Market, Business Model, Validation."
         },
         {
-          "t": "09:57",
-          "end": "10:18",
+          "t": "10:48",
+          "end": "11:12",
           "label": "Each section: pull from the existing artifact. Don't write from scratch."
         },
         {
-          "t": "10:18",
-          "end": "10:39",
+          "t": "11:12",
+          "end": "11:36",
           "label": "Where you find a gap, mark it. Don't paper over it."
         },
         {
-          "t": "10:39",
-          "end": "11:00",
+          "t": "11:36",
+          "end": "12:00",
           "label": "By 11:00 you have a draft LPP, not a polished one."
         }
       ],
@@ -3833,8 +3746,8 @@ window.STUDIO = {
       "id": "s71",
       "sid": "8-am-guest-how-to-pitch",
       "day": 8,
-      "start": 660,
-      "end": 720,
+      "start": 720,
+      "end": 780,
       "track": "talks",
       "title": "Guest: How to pitch",
       "room": "",
@@ -3849,23 +3762,23 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "11:00",
-          "end": "11:15",
+          "t": "12:00",
+          "end": "12:15",
           "label": "Listen 20 min. Capture: what's their definition of a 'problem that lands'?"
         },
         {
-          "t": "11:15",
-          "end": "11:30",
+          "t": "12:15",
+          "end": "12:30",
           "label": "Bring your own pitch open (30 seconds). Guest reacts to 2-3 of them live."
         },
         {
-          "t": "11:30",
-          "end": "11:45",
+          "t": "12:30",
+          "end": "12:45",
           "label": "Q&A 15 min. Ask about a pitch you've seen recently that didn't land. What was missing?"
         },
         {
-          "t": "11:45",
-          "end": "12:00",
+          "t": "12:45",
+          "end": "13:00",
           "label": "Surface one structural change you'll try before tomorrow's practice."
         }
       ],
@@ -3905,8 +3818,8 @@ window.STUDIO = {
       "id": "s72",
       "sid": "8-pm-lpp-time-narrative-time",
       "day": 8,
-      "start": 780,
-      "end": 1020,
+      "start": 840,
+      "end": 1080,
       "track": "build",
       "title": "LPP TIME — Narrative Time",
       "room": "",
@@ -3919,28 +3832,28 @@ window.STUDIO = {
       "half": "pm",
       "micro": [
         {
-          "t": "13:00",
-          "end": "13:48",
+          "t": "14:00",
+          "end": "14:48",
           "label": "Analog: lay out everything. SA outputs, specialty work, sponsor notes, OOM evidence, draft LPP from this morning."
         },
         {
-          "t": "13:48",
-          "end": "14:36",
+          "t": "14:48",
+          "end": "15:36",
           "label": "Dialogue: use AI to help structure LPP sections. Paste your raw artifacts in. Get back a structure proposal."
         },
         {
-          "t": "14:36",
-          "end": "15:24",
+          "t": "15:36",
+          "end": "16:24",
           "label": "Adjust: push back. Cut anything that doesn't earn its place. The narrative has to be tight."
         },
         {
-          "t": "15:24",
-          "end": "16:12",
+          "t": "16:24",
+          "end": "17:12",
           "label": "Produce: final LPP slides. Locked content, no more rewrites after 17:00."
         },
         {
-          "t": "16:12",
-          "end": "17:00",
+          "t": "17:12",
+          "end": "18:00",
           "label": "Test: Final Pitches Friday afternoon. Real audience, real judgment."
         }
       ],
@@ -3981,8 +3894,8 @@ window.STUDIO = {
       "id": "s73",
       "sid": "8-pm-lpp-late-work-session",
       "day": 8,
-      "start": 1020,
-      "end": 1260,
+      "start": 1080,
+      "end": 1320,
       "track": "core",
       "title": "LPP late work session",
       "room": "",
@@ -4001,8 +3914,8 @@ window.STUDIO = {
       "id": "s74",
       "sid": "9-am-welcome",
       "day": 9,
-      "start": 540,
-      "end": 555,
+      "start": 570,
+      "end": 600,
       "track": "core",
       "title": "Welcome",
       "room": "",
@@ -4015,18 +3928,18 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:00",
-          "end": "09:05",
+          "t": "09:30",
+          "end": "09:40",
           "label": "Find your team."
         },
         {
-          "t": "09:05",
-          "end": "09:10",
+          "t": "09:40",
+          "end": "09:50",
           "label": "30-second check: how do you feel about the pitch?"
         },
         {
-          "t": "09:10",
-          "end": "09:15",
+          "t": "09:50",
+          "end": "10:00",
           "label": "Rollercoaster pulse, last time."
         }
       ],
@@ -4052,7 +3965,7 @@ window.STUDIO = {
       "id": "s75",
       "sid": "9-am-lpp-practice",
       "day": 9,
-      "start": 555,
+      "start": 600,
       "end": 720,
       "track": "build",
       "title": "LPP practice",
@@ -4068,22 +3981,22 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:15",
-          "end": "09:56",
+          "t": "10:00",
+          "end": "10:30",
           "label": "Run the pitch. Full-length, no stops."
         },
         {
-          "t": "09:56",
-          "end": "10:37",
+          "t": "10:30",
+          "end": "11:00",
           "label": "Get feedback from facilitator plus at least one other team."
         },
         {
-          "t": "10:37",
-          "end": "11:18",
+          "t": "11:00",
+          "end": "11:30",
           "label": "Run it again, with the changes integrated."
         },
         {
-          "t": "11:18",
+          "t": "11:30",
           "end": "12:00",
           "label": "By noon you've run it 3 times minimum."
         }
@@ -4122,10 +4035,10 @@ window.STUDIO = {
     },
     {
       "id": "s76",
-      "sid": "9-pm-final-practice",
+      "sid": "9-am-final-practice",
       "day": 9,
-      "start": 780,
-      "end": 840,
+      "start": 720,
+      "end": 780,
       "track": "build",
       "title": "Final practice",
       "room": "",
@@ -4137,26 +4050,26 @@ window.STUDIO = {
       "aspects": [
         "pitch"
       ],
-      "half": "pm",
+      "half": "am",
       "micro": [
         {
-          "t": "13:00",
-          "end": "13:15",
+          "t": "12:00",
+          "end": "12:15",
           "label": "Last full run of the pitch. Time it."
         },
         {
-          "t": "13:15",
-          "end": "13:30",
+          "t": "12:15",
+          "end": "12:30",
           "label": "If you go over, cut. Don't talk faster."
         },
         {
-          "t": "13:30",
-          "end": "13:45",
+          "t": "12:30",
+          "end": "12:45",
           "label": "Practice the panel-question response. Pick the riskiest claim and rehearse the defense."
         },
         {
-          "t": "13:45",
-          "end": "14:00",
+          "t": "12:45",
+          "end": "13:00",
           "label": "Stop at 14:00. Whatever you have is what you pitch."
         }
       ],
@@ -4193,7 +4106,7 @@ window.STUDIO = {
       "sid": "9-pm-final-pitches",
       "day": 9,
       "start": 840,
-      "end": 960,
+      "end": 930,
       "track": "build",
       "title": "Final Pitches",
       "room": "",
@@ -4209,22 +4122,22 @@ window.STUDIO = {
       "micro": [
         {
           "t": "14:00",
-          "end": "14:30",
+          "end": "14:23",
           "label": "Pitch the work. Not the journey, not the team. The work."
         },
         {
-          "t": "14:30",
-          "end": "15:00",
+          "t": "14:23",
+          "end": "14:46",
           "label": "Be ready for the panel to challenge the riskiest claim."
         },
         {
-          "t": "15:00",
-          "end": "15:30",
+          "t": "14:46",
+          "end": "15:09",
           "label": "Stay for the reception. The conversations after are part of the program."
         },
         {
-          "t": "15:30",
-          "end": "16:00",
+          "t": "15:09",
+          "end": "15:30",
           "label": "Photograph your panel moment."
         }
       ],
@@ -4268,8 +4181,8 @@ window.STUDIO = {
       "id": "s78",
       "sid": "9-pm-reception",
       "day": 9,
-      "start": 960,
-      "end": 1020,
+      "start": 930,
+      "end": 990,
       "track": "evening",
       "title": "Reception",
       "room": "",
@@ -4284,23 +4197,23 @@ window.STUDIO = {
       "half": "pm",
       "micro": [
         {
+          "t": "15:30",
+          "end": "15:45",
+          "label": "Stay through. Don't bolt to your phone."
+        },
+        {
+          "t": "15:45",
+          "end": "16:00",
+          "label": "Find one panelist or sponsor and ask them one question about their work."
+        },
+        {
           "t": "16:00",
           "end": "16:15",
-          "label": "Stay through. Don't bolt to your phone."
+          "label": "Trade contact info with the alumni who consulted with you."
         },
         {
           "t": "16:15",
           "end": "16:30",
-          "label": "Find one panelist or sponsor and ask them one question about their work."
-        },
-        {
-          "t": "16:30",
-          "end": "16:45",
-          "label": "Trade contact info with the alumni who consulted with you."
-        },
-        {
-          "t": "16:45",
-          "end": "17:00",
           "label": "If you have a friend on another team, congratulate them properly."
         }
       ],
