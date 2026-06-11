@@ -79,37 +79,37 @@ window.STUDIO = {
       "i": 0,
       "wk": 1,
       "dow": "Mon",
-      "date": "Jul 6",
+      "date": "Jun 29",
       "evening": null,
       "theme": "The brief",
-      "lead": "Day 1 of Discovery. Tone-set, hear the challenge, meet the customer.",
+      "lead": "Day 1 of Discovery. Tone-set, hear the challenge, run the first interviews.",
       "takeaway": "Students don't pitch yet — today they listen. The sponsor briefing and customer panel are the seed material for everything that follows in Week 1."
     },
     {
       "i": 1,
       "wk": 1,
       "dow": "Tue",
-      "date": "Jul 7",
+      "date": "Jun 30",
       "evening": null,
-      "theme": "Problems",
-      "lead": "Day 2 of Discovery. Find what frustrates the customer — not the sponsor.",
-      "takeaway": "Validation panel is the proof point. Top problems get carried into Wednesday's solutions work — without validation here, the rest of the week generates noise."
+      "theme": "Research",
+      "lead": "Day 2 of Discovery. Interview each other, build instruments, send them out.",
+      "takeaway": "The cohort is the customer. Instruments ship tonight; replies get worked tomorrow morning."
     },
     {
       "i": 2,
       "wk": 1,
       "dow": "Wed",
-      "date": "Jul 8",
+      "date": "Jul 1",
       "evening": null,
-      "theme": "Solutions",
-      "lead": "Day 3 of Discovery. Generate, validate, pick.",
-      "takeaway": "Solutions get tested against the same panel that validated the problems. The day ends with a pitch template ready for Thursday's first Reality Check."
+      "theme": "Problems → Solutions",
+      "lead": "Day 3 of Discovery. Work the replies into problems, then solutions.",
+      "takeaway": "Problems come from the cohort's own data. By close of day everyone has a solution and knows the pitch format."
     },
     {
       "i": 3,
       "wk": 1,
       "dow": "Thu",
-      "date": "Jul 9",
+      "date": "Jul 2",
       "evening": null,
       "theme": "Pitches",
       "lead": "Day 4 of Discovery. First Reality Check — pitch speed dating.",
@@ -119,7 +119,7 @@ window.STUDIO = {
       "i": 4,
       "wk": 1,
       "dow": "Fri",
-      "date": "Jul 10",
+      "date": "Jul 3",
       "evening": null,
       "theme": "Allocation",
       "lead": "Day 5 of Discovery. Top 5 ideas selected, students declare track preferences, teams form.",
@@ -129,7 +129,7 @@ window.STUDIO = {
       "i": 5,
       "wk": 2,
       "dow": "Mon",
-      "date": "Jul 13",
+      "date": "Jul 6",
       "evening": null,
       "theme": "Setup",
       "lead": "Day 6 (Wk2 Mon). Re-orient after the weekend, align on solution direction, prep for Tuesday.",
@@ -139,7 +139,7 @@ window.STUDIO = {
       "i": 6,
       "wk": 2,
       "dow": "Tue",
-      "date": "Jul 14",
+      "date": "Jul 7",
       "evening": null,
       "theme": "Reconnaissance + Hinge + Build",
       "lead": "Day 7 (Wk2 Tue). The synthesis day — Phase 1 specialty work, then 2pm Team Teach, then Phase 2 build.",
@@ -149,7 +149,7 @@ window.STUDIO = {
       "i": 7,
       "wk": 2,
       "dow": "Wed",
-      "date": "Jul 15",
+      "date": "Jul 8",
       "evening": null,
       "theme": "Plan + Market RC",
       "lead": "Day 8 (Wk2 Wed). Phase 3 build out. Late afternoon: Market specialists deploy validation.",
@@ -159,7 +159,7 @@ window.STUDIO = {
       "i": 8,
       "wk": 2,
       "dow": "Thu",
-      "date": "Jul 16",
+      "date": "Jul 9",
       "evening": "Final pitches",
       "theme": "LPP narrative",
       "lead": "Day 9 (Wk2 Thu). Findings in hand. Heads-down: write the Lean Product Plan as a narrative.",
@@ -169,7 +169,7 @@ window.STUDIO = {
       "i": 9,
       "wk": 2,
       "dow": "Fri",
-      "date": "Jul 17",
+      "date": "Jul 10",
       "evening": "Reception",
       "theme": "Final pitches",
       "lead": "Day 10 (Wk2 Fri). One practice run, then the real thing. Reception, partners arrive, wrap.",
@@ -181,8 +181,8 @@ window.STUDIO = {
       "id": "s0",
       "sid": "0-am-welcome",
       "day": 0,
-      "start": 540,
-      "end": 570,
+      "start": 570,
+      "end": 600,
       "track": "core",
       "title": "Welcome",
       "room": "",
@@ -195,18 +195,18 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:00",
-          "end": "09:10",
+          "t": "09:30",
+          "end": "09:40",
           "label": "Find a seat (any seat)."
         },
         {
-          "t": "09:10",
-          "end": "09:20",
+          "t": "09:40",
+          "end": "09:50",
           "label": "Name + one thing you're hoping to make this week."
         },
         {
-          "t": "09:20",
-          "end": "09:30",
+          "t": "09:50",
+          "end": "10:00",
           "label": "Quick orientation to the building, the schedule shape, the core promise."
         }
       ],
@@ -241,8 +241,8 @@ window.STUDIO = {
       "id": "s1",
       "sid": "0-am-intro-game",
       "day": 0,
-      "start": 570,
-      "end": 600,
+      "start": 600,
+      "end": 630,
       "track": "ops",
       "title": "Intro game",
       "room": "",
@@ -255,23 +255,23 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:30",
-          "end": "09:38",
+          "t": "10:00",
+          "end": "10:08",
           "label": "Take a sticky. Write your name."
         },
         {
-          "t": "09:38",
-          "end": "09:46",
+          "t": "10:08",
+          "end": "10:16",
           "label": "Place yourself on the rollercoaster: where you actually are right now, not where you think you should be."
         },
         {
-          "t": "09:46",
-          "end": "09:54",
+          "t": "10:16",
+          "end": "10:24",
           "label": "Reference points if you need them: Curious / Bored / Nervous / Trying to fit in / This is cool / Too much at once / Tired but here / Catching the wave / Whoa learning / Where did the time go."
         },
         {
-          "t": "09:54",
-          "end": "10:00",
+          "t": "10:24",
+          "end": "10:30",
           "label": "Quick share: name plus one sentence on where you placed yourself."
         }
       ],
@@ -298,8 +298,8 @@ window.STUDIO = {
       "id": "s2",
       "sid": "0-am-entrepreneurship-intro",
       "day": 0,
-      "start": 600,
-      "end": 675,
+      "start": 630,
+      "end": 705,
       "track": "core",
       "title": "Entrepreneurship intro",
       "room": "",
@@ -312,33 +312,33 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "10:00",
-          "end": "10:13",
+          "t": "10:30",
+          "end": "10:43",
           "label": "Open with what bugs you. Jot 3-5 small problems you've noticed recently at school, at home, online."
         },
         {
-          "t": "10:13",
-          "end": "10:26",
+          "t": "10:43",
+          "end": "10:56",
           "label": "List the entrepreneurs you know: famous, local, family, anywhere on the spectrum."
         },
         {
-          "t": "10:26",
-          "end": "10:39",
+          "t": "10:56",
+          "end": "11:09",
           "label": "Land on the working definition: entrepreneurship = problem, solution, scale."
         },
         {
-          "t": "10:39",
-          "end": "10:52",
+          "t": "11:09",
+          "end": "11:22",
           "label": "Map yourself against the four behaviors: Problem spotter / Experimenter / Gravity maker / Resilient learner. Which one feels most natural? Which feels hardest?"
         },
         {
-          "t": "10:52",
-          "end": "11:05",
+          "t": "11:22",
+          "end": "11:35",
           "label": "Write one sentence: 'This week I will practice being entrepreneurial by...'"
         },
         {
-          "t": "11:05",
-          "end": "11:15",
+          "t": "11:35",
+          "end": "11:45",
           "label": "Working agreement for the room: BE PRESENT, EXPRESS POV, WRITE INSIGHTS, OPEN-MINDED, MOVE FORWARD WITH CONSENSUS. Use ELMO (Enough, Let's Move On) if a discussion is going long."
         }
       ],
@@ -380,8 +380,8 @@ window.STUDIO = {
       "id": "s3",
       "sid": "0-am-alumni-orient",
       "day": 0,
-      "start": 600,
-      "end": 675,
+      "start": 630,
+      "end": 705,
       "track": "alumni",
       "title": "Alumni: Orient",
       "room": "",
@@ -394,18 +394,18 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "10:00",
-          "end": "10:25",
+          "t": "10:30",
+          "end": "10:55",
           "label": "Get the Week 1 alumni arc in 90 seconds: Orient → Anchor → Deepen × 2 → Rehearse → Run."
         },
         {
-          "t": "10:25",
-          "end": "10:50",
+          "t": "10:55",
+          "end": "11:20",
           "label": "Pick a specialty: Product / Business / Market / Leadership."
         },
         {
-          "t": "10:50",
-          "end": "11:15",
+          "t": "11:20",
+          "end": "11:45",
           "label": "Sign your name to the chart. The chart is the commitment."
         }
       ],
@@ -427,8 +427,8 @@ window.STUDIO = {
       "id": "s4",
       "sid": "0-am-ai-tooling-prd-intro-pitch",
       "day": 0,
-      "start": 675,
-      "end": 720,
+      "start": 705,
+      "end": 780,
       "track": "core",
       "title": "AI tooling, PRD, intro pitch",
       "room": "",
@@ -436,38 +436,38 @@ window.STUDIO = {
       "group": "All",
       "kind": "work",
       "code": null,
-      "sub": null,
+      "sub": "incl. swag challenge questions",
       "aspects": [],
       "half": "am",
       "micro": [
         {
-          "t": "11:15",
-          "end": "11:23",
+          "t": "11:45",
+          "end": "11:58",
           "label": "Read the ADAPT one-pager. Five letters. Five steps. You'll see them every day."
         },
         {
-          "t": "11:23",
-          "end": "11:31",
+          "t": "11:58",
+          "end": "12:11",
           "label": "Analog: scribble what you'd say if someone outside the program asked 'who are you and why are you here?' Paper or notes app. Your words. (3-5 min.)"
         },
         {
-          "t": "11:31",
-          "end": "11:39",
+          "t": "12:11",
+          "end": "12:24",
           "label": "Dialogue: open the AI of your choice. Paste your scribble plus the structured prompt we'll give you. Have a back-and-forth, not a one-shot."
         },
         {
-          "t": "11:39",
-          "end": "11:47",
+          "t": "12:24",
+          "end": "12:37",
           "label": "Adjust: push back on the AI. Cut the corporate phrases. Cut anything that doesn't sound like you."
         },
         {
-          "t": "11:47",
-          "end": "11:55",
+          "t": "12:37",
+          "end": "12:50",
           "label": "Produce: lock the 30-second intro pitch. No notes when you deliver."
         },
         {
-          "t": "11:55",
-          "end": "12:00",
+          "t": "12:50",
+          "end": "13:00",
           "label": "Test: five or six volunteers deliver to the room. The room calls out one thing that landed and one thing that didn't."
         }
       ],
@@ -500,8 +500,8 @@ window.STUDIO = {
       "id": "s5",
       "sid": "0-pm-sponsor-briefing",
       "day": 0,
-      "start": 780,
-      "end": 825,
+      "start": 840,
+      "end": 900,
       "track": "talks",
       "title": "Sponsor briefing",
       "room": "",
@@ -509,25 +509,25 @@ window.STUDIO = {
       "group": "All",
       "kind": "sponsor",
       "code": null,
-      "sub": null,
+      "sub": "incl. challenge brief",
       "aspects": [
         "sponsor"
       ],
       "half": "pm",
       "micro": [
         {
-          "t": "13:00",
-          "end": "13:15",
+          "t": "14:00",
+          "end": "14:20",
           "label": "Listen — no notes the first 5 minutes, just hear them."
         },
         {
-          "t": "13:15",
-          "end": "13:30",
+          "t": "14:20",
+          "end": "14:40",
           "label": "Capture: what frustrates the people they're trying to serve?"
         },
         {
-          "t": "13:30",
-          "end": "13:45",
+          "t": "14:40",
+          "end": "15:00",
           "label": "Q&A in the next block; hold questions, don't fire them."
         }
       ],
@@ -560,161 +560,39 @@ window.STUDIO = {
     },
     {
       "id": "s6",
-      "sid": "0-pm-challenge-q-a",
+      "sid": "0-pm-interviews-5-questions-5-whys",
       "day": 0,
-      "start": 825,
-      "end": 870,
-      "track": "talks",
-      "title": "Challenge Q&A",
+      "start": 900,
+      "end": 990,
+      "track": "core",
+      "title": "Interviews — 5 questions + 5 whys",
       "room": "",
       "facils": [],
       "group": "All",
-      "kind": "panel",
-      "code": null,
-      "sub": null,
-      "aspects": [
-        "guest"
-      ],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "13:45",
-          "end": "13:56",
-          "label": "Reread your notes from the briefing."
-        },
-        {
-          "t": "13:56",
-          "end": "14:07",
-          "label": "Write 3 questions you actually want answered."
-        },
-        {
-          "t": "14:07",
-          "end": "14:18",
-          "label": "Ask one out loud. Listen to others ask theirs."
-        },
-        {
-          "t": "14:18",
-          "end": "14:30",
-          "label": "Capture answers that contradict what you assumed."
-        }
-      ],
-      "note": "Students mine the sponsor brief from the previous block. Sponsor stays in the room for direct questions. Bar: every student asks at least one. The questions teach more than the brief did.",
-      "assets": [
-        {
-          "t": "Sponsor briefing (immediate prerequisite)",
-          "k": "pdf"
-        },
-        {
-          "t": "Stakeholder Mapping (Notion: Knowledge / Foundation)",
-          "k": "pdf"
-        },
-        {
-          "t": "[SPONSOR — TBD between Sonae and JdM, hard floor 8 Jun] panelist briefing",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "45 min. 5 min frame (questions teach more than briefs), 30 min Q&A (round-robin until everyone asks), 10 min debrief (what answer surprised you?). Sponsor pre-brief: be candid; if you don't know, say so.",
-      "studentTasks": [
-        "Reread your notes from the briefing.",
-        "Write 3 questions you actually want answered.",
-        "Ask one out loud. Listen to others ask theirs.",
-        "Capture answers that contradict what you assumed."
-      ]
-    },
-    {
-      "id": "s7",
-      "sid": "0-pm-game",
-      "day": 0,
-      "start": 870,
-      "end": 900,
-      "track": "ops",
-      "title": "Game",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "game",
+      "kind": "work",
       "code": null,
       "sub": null,
       "aspects": [],
       "half": "pm",
       "micro": [
         {
-          "t": "14:30",
-          "end": "14:38",
-          "label": "Pair up with someone you don't know."
-        },
-        {
-          "t": "14:38",
-          "end": "14:46",
-          "label": "Each tells the other 3 statements: 2 true, 1 false."
-        },
-        {
-          "t": "14:46",
-          "end": "14:54",
-          "label": "Partner guesses the lie."
-        },
-        {
-          "t": "14:54",
-          "end": "15:00",
-          "label": "Switch pairs after 3 rounds. Final: room shares the most surprising true thing they heard."
-        }
-      ],
-      "note": "[drafted] Mid-day Mon energizer. Picked: 'Two Truths and a Lie.' Cohort still finding each other; this surfaces personality fast.",
-      "assets": [
-        {
-          "t": "Activities deck (Porto 2025): Two Truths and a Lie variant",
-          "k": "pdf"
-        },
-        {
-          "t": "Mon AM Intro game (Rollercoaster, prior energizer)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "30 min. 5 min rules, 20 min pairs (3 rotations), 5 min surprise share-out. Don't rescue awkward statements. The cringe builds the room.",
-      "studentTasks": [
-        "Pair up with someone you don't know.",
-        "Each tells the other 3 statements: 2 true, 1 false.",
-        "Partner guesses the lie.",
-        "Switch pairs after 3 rounds. Final: room shares the most surprising true thing they heard."
-      ]
-    },
-    {
-      "id": "s8",
-      "sid": "0-pm-active-listening-interviews",
-      "day": 0,
-      "start": 900,
-      "end": 960,
-      "track": "talks",
-      "title": "Active listening & interviews",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "panel",
-      "code": null,
-      "sub": null,
-      "aspects": [
-        "guest"
-      ],
-      "half": "pm",
-      "micro": [
-        {
           "t": "15:00",
-          "end": "15:15",
+          "end": "15:23",
           "label": "Listen first 20 minutes. No notes."
         },
         {
-          "t": "15:15",
-          "end": "15:30",
+          "t": "15:23",
+          "end": "15:46",
           "label": "Then capture frustrations they named, in their words."
         },
         {
-          "t": "15:30",
-          "end": "15:45",
+          "t": "15:46",
+          "end": "16:09",
           "label": "Q&A 30 min: ask about specific situations, not opinions ('walk me through the last time...')."
         },
         {
-          "t": "15:45",
-          "end": "16:00",
+          "t": "16:09",
+          "end": "16:30",
           "label": "Don't pitch solutions. Today is listening."
         }
       ],
@@ -746,13 +624,32 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s9",
-      "sid": "0-pm-debrief-problems",
-      "day": 0,
-      "start": 960,
-      "end": 990,
+      "id": "s7",
+      "sid": "1-am-welcome",
+      "day": 1,
+      "start": 570,
+      "end": 600,
       "track": "core",
-      "title": "Debrief: problems",
+      "title": "Welcome",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "welcome",
+      "code": null,
+      "sub": null,
+      "aspects": [],
+      "half": "am",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s8",
+      "sid": "1-am-synthesis",
+      "day": 1,
+      "start": 600,
+      "end": 660,
+      "track": "core",
+      "title": "Synthesis",
       "room": "",
       "facils": [],
       "group": "All",
@@ -760,255 +657,38 @@ window.STUDIO = {
       "code": null,
       "sub": null,
       "aspects": [],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "16:00",
-          "end": "16:08",
-          "label": "List every friction you heard today (sponsor brief plus customer panel)."
-        },
-        {
-          "t": "16:08",
-          "end": "16:16",
-          "label": "Group similar ones."
-        },
-        {
-          "t": "16:16",
-          "end": "16:24",
-          "label": "Pick the 3 frictions that felt sharpest."
-        },
-        {
-          "t": "16:24",
-          "end": "16:30",
-          "label": "Bring them into Tue AM Opportunity ID."
-        }
-      ],
-      "deck": {
-        "title": "Debrief: problems",
-        "slides": 0,
-        "status": "draft",
-        "url": "https://docs.google.com/presentation/d/1Rf-fSmOdVLRKAxwEfnYCn0EKuwjB5s-0v0_p4vkXzcI/edit",
-        "isLocal": false,
-        "pdfUrl": null,
-        "code": null
-      },
-      "note": "End-of-day capture. Take what you heard from sponsor + customers and surface initial problem candidates. Not problem statements yet (that's Tue), just raw friction notes.",
-      "assets": [
-        {
-          "t": "Sponsor briefing + Challenge Q&A + Active listening & interviews (today's inputs)",
-          "k": "pdf"
-        },
-        {
-          "t": "Tue AM M: Opportunity ID (immediate downstream)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "30 min. 5 min frame (raw notes, not finished thinking), 20 min individual capture, 5 min round (each student names their top friction). Output: every student has 3 friction candidates ready for Tue.",
-      "studentTasks": [
-        "List every friction you heard today (sponsor brief plus customer panel).",
-        "Group similar ones.",
-        "Pick the 3 frictions that felt sharpest.",
-        "Bring them into Tue AM Opportunity ID."
-      ]
-    },
-    {
-      "id": "s10",
-      "sid": "0-pm-swag-challenge-intro",
-      "day": 0,
-      "start": 990,
-      "end": 1020,
-      "track": "talks",
-      "title": "Swag challenge intro",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "sponsor",
-      "code": null,
-      "sub": null,
-      "aspects": [
-        "sponsor"
-      ],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "16:30",
-          "end": "16:38",
-          "label": "Hear the swag challenge brief: design something the cohort would actually want."
-        },
-        {
-          "t": "16:38",
-          "end": "16:46",
-          "label": "Constraints: any medium, deliver as a sketch + 60-second pitch tomorrow at 9am."
-        },
-        {
-          "t": "16:46",
-          "end": "16:54",
-          "label": "This is your evening: 30 minutes max, then go decompress."
-        },
-        {
-          "t": "16:54",
-          "end": "17:00",
-          "label": "Tomorrow's first block (Swag pitch) is your delivery."
-        }
-      ],
-      "note": "Lightweight evening challenge: design swag for the program (sticker, tee, mug, anything). Why: low-stakes practice of the ADAPT loop they'll run on real stuff Tue AM. Submission tomorrow morning.",
-      "assets": [
-        {
-          "t": "Tue AM Swag pitch (immediate downstream, first solo ai_loop)",
-          "k": "pdf"
-        },
-        {
-          "t": "ADAPT methodology one-pager (TBD)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "30 min. 5 min frame (low-stakes, ADAPT practice in disguise), 15 min Q&A on constraints, 10 min team chats (informal, who's pairing up). Don't over-spec the brief; ambiguity is the point. Tomorrow's Swag pitch block is the delivery moment.",
-      "studentTasks": [
-        "Hear the swag challenge brief: design something the cohort would actually want.",
-        "Constraints: any medium, deliver as a sketch + 60-second pitch tomorrow at 9am.",
-        "This is your evening: 30 minutes max, then go decompress.",
-        "Tomorrow's first block (Swag pitch) is your delivery."
-      ]
-    },
-    {
-      "id": "s11",
-      "sid": "1-am-swag-pitch",
-      "day": 1,
-      "start": 540,
-      "end": 585,
-      "track": "core",
-      "title": "Swag pitch",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "module",
-      "code": null,
-      "sub": null,
-      "aspects": [],
       "half": "am",
       "micro": [
         {
-          "t": "09:00",
-          "end": "09:09",
-          "label": "Bring your swag sketch (Analog)."
+          "t": "10:00",
+          "end": "10:20",
+          "label": "Lay out Monday's interview notes."
         },
         {
-          "t": "09:09",
-          "end": "09:18",
-          "label": "Dialogue: pitch the swag idea via AI for refinement. Get back a sharper framing."
+          "t": "10:20",
+          "end": "10:40",
+          "label": "Cluster what repeats."
         },
         {
-          "t": "09:18",
-          "end": "09:27",
-          "label": "Adjust: cut anything that doesn't sound like you. AI's first draft is a starting point, not the answer."
-        },
-        {
-          "t": "09:27",
-          "end": "09:36",
-          "label": "Produce: 60-second swag pitch. Single hook, single image."
-        },
-        {
-          "t": "09:36",
-          "end": "09:45",
-          "label": "Test: pitch to the cohort. Capture the one bit of feedback that lands hardest."
+          "t": "10:40",
+          "end": "11:00",
+          "label": "Name the three strongest patterns."
         }
       ],
-      "note": "First solo ADAPT loop. Students take their swag concept (sketched after Mon PM Swag challenge intro), run it through Analog to Dialogue to Adjust to Produce to Test, and pitch to the cohort. Low-stakes practice of the loop they'll run all program.",
-      "assets": [
-        {
-          "t": "ADAPT methodology one-pager (TBD: needs creation before delivery)",
-          "k": "pdf"
-        },
-        {
-          "t": "Mon PM Swag challenge intro (prerequisite)",
-          "k": "pdf"
-        },
-        {
-          "t": "Quick Pitch Template (Notion: Knowledge)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "45 min. 5 min ADAPT recall (Mon AM Wk1 reminder, this is your second loop), 5 min sketch surface (each student shows their analog), 15 min Dialogue plus Adjust loop, 5 min Produce locked, 15 min Test (cohort pitches with quick feedback). Don't rescue students who go wrong. The failures here are cheap and instructive.",
+      "note": "Work Monday's interview notes into patterns. What did we actually hear?",
+      "facilitatorCue": "Keep them in the data, not in opinions. Patterns must trace to something someone said.",
       "studentTasks": [
-        "Bring your swag sketch (Analog).",
-        "Dialogue: pitch the swag idea via AI for refinement. Get back a sharper framing.",
-        "Adjust: cut anything that doesn't sound like you. AI's first draft is a starting point, not the answer.",
-        "Produce: 60-second swag pitch. Single hook, single image.",
-        "Test: pitch to the cohort. Capture the one bit of feedback that lands hardest."
+        "Lay out Monday's interview notes.",
+        "Cluster what repeats.",
+        "Name the three strongest patterns."
       ]
     },
     {
-      "id": "s12",
-      "sid": "1-am-m-opportunity-id",
-      "day": 1,
-      "start": 585,
-      "end": 630,
-      "track": "core",
-      "title": "M: Opportunity ID",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "module",
-      "code": null,
-      "sub": null,
-      "aspects": [],
-      "half": "am",
-      "micro": [
-        {
-          "t": "09:45",
-          "end": "09:56",
-          "label": "Note 3 frictions you've noticed in your own life. Last week, last month, last year."
-        },
-        {
-          "t": "09:56",
-          "end": "10:07",
-          "label": "For each: who else feels this?"
-        },
-        {
-          "t": "10:07",
-          "end": "10:18",
-          "label": "Pick the one that's most interesting to dig into."
-        },
-        {
-          "t": "10:18",
-          "end": "10:30",
-          "label": "That's your candidate for problem identification."
-        }
-      ],
-      "deck": {
-        "title": "M: Opportunity ID",
-        "slides": 0,
-        "status": "draft",
-        "url": "https://docs.google.com/presentation/d/1OsC3s35ZNqoCTkch3jBQHhiMFWwviVCpVBb3sUafFNs/edit",
-        "isLocal": false,
-        "pdfUrl": null,
-        "code": null
-      },
-      "note": "Module teach. Frame how opportunities show up: friction in your own life, friction at the edges of systems, friction nobody complains about because they've adapted. Set the lens for the rest of the day's problem work.",
-      "assets": [
-        {
-          "t": "Opportunity Identification Process (Notion: Knowledge / Foundation)",
-          "k": "pdf"
-        },
-        {
-          "t": "Active Listening (Day 1 deck, Mon PM customer panel reference)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "45 min. 25 min teach (opportunity = friction plus audience that feels it), 15 min individual capture, 5 min round (each student names their candidate). Output: every student has a friction-candidate to take into PM problem work. Don't accept 'I don't have any.' Push for the small, specific, human-scale frictions.",
-      "studentTasks": [
-        "Note 3 frictions you've noticed in your own life. Last week, last month, last year.",
-        "For each: who else feels this?",
-        "Pick the one that's most interesting to dig into.",
-        "That's your candidate for problem identification."
-      ]
-    },
-    {
-      "id": "s13",
+      "id": "s9",
       "sid": "1-am-alumni-anchor",
       "day": 1,
-      "start": 585,
-      "end": 645,
+      "start": 600,
+      "end": 660,
       "track": "alumni",
       "title": "Alumni: Anchor",
       "room": "",
@@ -1021,18 +701,18 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:45",
-          "end": "10:05",
+          "t": "10:00",
+          "end": "10:20",
           "label": "Read your specialty's LPP slide. Slowly. Twice."
         },
         {
-          "t": "10:05",
-          "end": "10:25",
+          "t": "10:20",
+          "end": "10:40",
           "label": "Mark up the framing questions you'd actually ask out loud."
         },
         {
-          "t": "10:25",
-          "end": "10:45",
+          "t": "10:40",
+          "end": "11:00",
           "label": "Note three concrete things you still don't understand — those are Deepen 1's brief."
         }
       ],
@@ -1055,13 +735,351 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s14",
-      "sid": "1-am-revisit-panel",
+      "id": "s10",
+      "sid": "1-am-build-interviews",
       "day": 1,
-      "start": 630,
-      "end": 675,
+      "start": 660,
+      "end": 720,
+      "track": "core",
+      "title": "Build interviews",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "work",
+      "code": null,
+      "sub": null,
+      "aspects": [],
+      "half": "am",
+      "micro": [
+        {
+          "t": "11:00",
+          "end": "11:20",
+          "label": "Pick the pattern worth digging into."
+        },
+        {
+          "t": "11:20",
+          "end": "11:40",
+          "label": "Write the next interview: 5 questions."
+        },
+        {
+          "t": "11:40",
+          "end": "12:00",
+          "label": "Trade with another pair and pressure-test."
+        }
+      ],
+      "note": "Turn the patterns into a sharper interview. Better questions come from what the first round surfaced.",
+      "facilitatorCue": null,
+      "studentTasks": [
+        "Pick the pattern worth digging into.",
+        "Write the next interview: 5 questions.",
+        "Trade with another pair and pressure-test."
+      ]
+    },
+    {
+      "id": "s11",
+      "sid": "1-am-interview-each-other",
+      "day": 1,
+      "start": 720,
+      "end": 780,
+      "track": "core",
+      "title": "Interview each other",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "work",
+      "code": null,
+      "sub": null,
+      "aspects": [],
+      "half": "am",
+      "note": "Run the new interviews across teams. Second round, better instrument.",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s12",
+      "sid": "1-pm-team-activity",
+      "day": 1,
+      "start": 840,
+      "end": 870,
+      "track": "ops",
+      "title": "Team activity",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "game",
+      "code": null,
+      "sub": null,
+      "aspects": [],
+      "half": "pm",
+      "micro": [
+        {
+          "t": "14:00",
+          "end": "14:08",
+          "label": "Stand up. Find a partner."
+        },
+        {
+          "t": "14:08",
+          "end": "14:16",
+          "label": "30 seconds: each tells the other a true 'I once did this absurd thing' story."
+        },
+        {
+          "t": "14:16",
+          "end": "14:24",
+          "label": "Switch partners. Repeat 3 rounds."
+        },
+        {
+          "t": "14:24",
+          "end": "14:30",
+          "label": "Final round: tell the whole room your favorite story you heard."
+        }
+      ],
+      "note": "[drafted] Go Bananas, picked per Owen's standard #8. Mid-day Tue energizer. Higher energy than the morning Rollercoaster check-in. Resets the room before the harder problem-validation work in the afternoon.",
+      "assets": [
+        {
+          "t": "Activities deck (Porto 2025): Go Bananas spec",
+          "k": "pdf"
+        },
+        {
+          "t": "Mon AM Intro game (Rollercoaster, prior energizer)",
+          "k": "pdf"
+        }
+      ],
+      "facilitatorCue": "30 min. 5 min set-up plus rules, 15 min partner rounds (3 rotations), 10 min favorite-story share-out. Don't rescue awkward pairings. The cringe is part of the energy reset. Picked because the room needs movement before the panel work.",
+      "studentTasks": [
+        "Stand up. Find a partner.",
+        "30 seconds: each tells the other a true 'I once did this absurd thing' story.",
+        "Switch partners. Repeat 3 rounds.",
+        "Final round: tell the whole room your favorite story you heard."
+      ]
+    },
+    {
+      "id": "s13",
+      "sid": "1-pm-synthesis-what-we-heard",
+      "day": 1,
+      "start": 870,
+      "end": 900,
+      "track": "core",
+      "title": "Synthesis — what we heard",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "work",
+      "code": null,
+      "sub": null,
+      "aspects": [],
+      "half": "pm",
+      "note": "Fold round two into the picture. What held, what broke, what's new?",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s14",
+      "sid": "1-pm-create-survey-interview-question",
+      "day": 1,
+      "start": 900,
+      "end": 960,
+      "track": "core",
+      "title": "Create survey / interview / questionnaire",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "work",
+      "code": null,
+      "sub": null,
+      "aspects": [],
+      "half": "pm",
+      "micro": [
+        {
+          "t": "15:00",
+          "end": "15:20",
+          "label": "Pick the format that fits your question."
+        },
+        {
+          "t": "15:20",
+          "end": "15:40",
+          "label": "Draft it."
+        },
+        {
+          "t": "15:40",
+          "end": "16:00",
+          "label": "Test it on one person in the room before it ships."
+        }
+      ],
+      "note": "Build an instrument to send beyond the room: survey, interview script, or questionnaire — for everyone you know who can offer insight on the challenge area.",
+      "facilitatorCue": "The instrument goes to their own networks tonight. Quality bar: would you answer it?",
+      "studentTasks": [
+        "Pick the format that fits your question.",
+        "Draft it.",
+        "Test it on one person in the room before it ships."
+      ]
+    },
+    {
+      "id": "s15",
+      "sid": "1-pm-send-out",
+      "day": 1,
+      "start": 960,
+      "end": 990,
+      "track": "core",
+      "title": "Send out",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "work",
+      "code": null,
+      "sub": null,
+      "aspects": [],
+      "half": "pm",
+      "note": "Ship the instrument to your network before you leave. Replies come back overnight; tomorrow morning we work them.",
+      "facilitatorCue": "Push for same-evening responses: group chats, a reply target per student. Thin data tomorrow means a thin morning.",
+      "studentTasks": null
+    },
+    {
+      "id": "s16",
+      "sid": "2-am-welcome",
+      "day": 2,
+      "start": 570,
+      "end": 600,
+      "track": "core",
+      "title": "Welcome",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "welcome",
+      "code": null,
+      "sub": null,
+      "aspects": [],
+      "half": "am",
+      "micro": [
+        {
+          "t": "09:30",
+          "end": "09:40",
+          "label": "Find your seat."
+        },
+        {
+          "t": "09:40",
+          "end": "09:50",
+          "label": "30-second check: how did your problem statement survive yesterday?"
+        },
+        {
+          "t": "09:50",
+          "end": "10:00",
+          "label": "Rollercoaster pulse."
+        }
+      ],
+      "note": "Day 3 morning check-in. Yesterday's problem work landed (or didn't). Quick pulse before solutions work begins.",
+      "assets": [
+        {
+          "t": "Rollercoaster Check-in (Notion Knowledge / Activity)",
+          "k": "pdf"
+        },
+        {
+          "t": "Daily Standup (Notion Knowledge)",
+          "k": "pdf"
+        }
+      ],
+      "facilitatorCue": "15 min. Tight standup. The shift today: from problems to solutions. If a student is still stuck on yesterday's validation, surface privately, don't let it derail the room.",
+      "studentTasks": [
+        "Find your seat.",
+        "30-second check: how did your problem statement survive yesterday?",
+        "Rollercoaster pulse."
+      ]
+    },
+    {
+      "id": "s17",
+      "sid": "2-am-review-replies-share-out",
+      "day": 2,
+      "start": 600,
+      "end": 660,
+      "track": "core",
+      "title": "Review replies → share-out",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "work",
+      "code": null,
+      "sub": null,
+      "aspects": [],
+      "half": "am",
+      "micro": [
+        {
+          "t": "10:00",
+          "end": "10:20",
+          "label": "Read your replies. Mark what surprised you."
+        },
+        {
+          "t": "10:20",
+          "end": "10:40",
+          "label": "Pull the three strongest signals."
+        },
+        {
+          "t": "10:40",
+          "end": "11:00",
+          "label": "Share-out: one round, whole group."
+        }
+      ],
+      "note": "Go through what came back, as groups. Then everything gets shared with the whole room.",
+      "facilitatorCue": null,
+      "studentTasks": [
+        "Read your replies. Mark what surprised you.",
+        "Pull the three strongest signals.",
+        "Share-out: one round, whole group."
+      ]
+    },
+    {
+      "id": "s18",
+      "sid": "2-am-alumni-deepen-2",
+      "day": 2,
+      "start": 600,
+      "end": 645,
+      "track": "alumni",
+      "title": "Alumni: Deepen 2",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "work",
+      "code": null,
+      "sub": "Pressure-test + rewrite brief",
+      "aspects": [],
+      "half": "am",
+      "micro": [
+        {
+          "t": "10:00",
+          "end": "10:15",
+          "label": "Read your v1 out loud to F2."
+        },
+        {
+          "t": "10:15",
+          "end": "10:30",
+          "label": "Take the hard feedback. Don't defend; rewrite."
+        },
+        {
+          "t": "10:30",
+          "end": "10:45",
+          "label": "Ship v2 — sharper, in your voice, defensible."
+        }
+      ],
+      "note": "Pulled during M: Solutions. F2 pressure-tests each Specialist Brief — where's the hand-wave, where's the borrowed phrase, where's the part you can't defend. One rewrite pass produces v2.",
+      "assets": [
+        {
+          "t": "flow-stacey-2026-05-14.html · Alumni window list",
+          "k": "pdf"
+        }
+      ],
+      "facilitatorCue": "F2 owns end-to-end. Push hard on the hand-wave; the brief is what they teach from on Tuesday.",
+      "studentTasks": [
+        "Read your v1 out loud to F2.",
+        "Take the hard feedback. Don't defend; rewrite.",
+        "Ship v2 — sharper, in your voice, defensible."
+      ]
+    },
+    {
+      "id": "s19",
+      "sid": "2-am-entrepreneur-story",
+      "day": 2,
+      "start": 660,
+      "end": 720,
       "track": "talks",
-      "title": "Revisit panel",
+      "title": "Entrepreneur Story",
       "room": "",
       "facils": [],
       "group": "All",
@@ -1074,57 +1092,47 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "10:30",
-          "end": "10:41",
-          "label": "Pull your Mon PM notes."
+          "t": "11:00",
+          "end": "11:20",
+          "label": "Listen first 20 min. No notes."
         },
         {
-          "t": "10:41",
-          "end": "10:52",
-          "label": "Pick 3 questions you wish you'd asked then."
+          "t": "11:20",
+          "end": "11:40",
+          "label": "Capture: what's the one moment where it almost didn't work?"
         },
         {
-          "t": "10:52",
-          "end": "11:03",
-          "label": "Pose them now. Listen for the one answer that contradicts your assumption set."
-        },
-        {
-          "t": "11:03",
-          "end": "11:15",
-          "label": "Capture the contradicting answer. That's the seed for tomorrow."
+          "t": "11:40",
+          "end": "12:00",
+          "label": "Q&A 10 min. Ask about the specific decision that made the difference."
         }
       ],
-      "note": "Same customers from Mon PM, sharpened questions. Students have had time to digest the Mon PM panel, surface what they missed, and ask better. The questions are the test.",
+      "note": "An early-stage founder tells their actual journey: first users, validation, what nearly broke. Bar is narrative over expertise. Students hear what it actually felt like to build something from nothing.",
       "assets": [
         {
-          "t": "Customer Discovery & Validation (Notion: Knowledge / Foundation)",
+          "t": "[GUEST — TBD: early-stage founder, narrative-strong] briefing",
           "k": "pdf"
         },
         {
-          "t": "Mon PM Active listening & interviews (prerequisite)",
-          "k": "pdf"
-        },
-        {
-          "t": "[CUSTOMER PANELISTS — TBD] briefing",
+          "t": "Past Quick Pitch Examples (Notion: Knowledge)",
           "k": "pdf"
         }
       ],
-      "facilitatorCue": "45 min. 5 min frame (better questions = better signal), 30 min panel Q&A (round-robin students), 10 min capture round. Pre-brief panelists: be candid, push back if a question is loaded. Don't let students rephrase questions to get the answer they want.",
+      "facilitatorCue": "30 min. 5 min intro, 20 min story, 5 min Q&A. Pre-brief guest: tell the actual story (first users, validation, near-misses), not lessons learned. Narrative over expertise. Last year's product guy worked because he could tell the story. Pick on that signal.",
       "studentTasks": [
-        "Pull your Mon PM notes.",
-        "Pick 3 questions you wish you'd asked then.",
-        "Pose them now. Listen for the one answer that contradicts your assumption set.",
-        "Capture the contradicting answer. That's the seed for tomorrow."
+        "Listen first 20 min. No notes.",
+        "Capture: what's the one moment where it almost didn't work?",
+        "Q&A 10 min. Ask about the specific decision that made the difference."
       ]
     },
     {
-      "id": "s15",
-      "sid": "1-am-user-journey",
-      "day": 1,
-      "start": 675,
-      "end": 720,
+      "id": "s20",
+      "sid": "2-am-problem-identification",
+      "day": 2,
+      "start": 720,
+      "end": 780,
       "track": "core",
-      "title": "User journey",
+      "title": "Problem identification",
       "room": "",
       "facils": [],
       "group": "All",
@@ -1135,89 +1143,28 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "11:15",
-          "end": "11:26",
-          "label": "Take your friction-candidate from M: Opportunity ID."
-        },
-        {
-          "t": "11:26",
-          "end": "11:37",
-          "label": "Sketch 8 frames of the user's experience: how they encounter the friction, what they try, where they give up."
-        },
-        {
-          "t": "11:37",
-          "end": "11:48",
-          "label": "Crazy 8s format. Stick figures, captions."
-        },
-        {
-          "t": "11:48",
-          "end": "12:00",
-          "label": "Circle the worst frame. That's where your problem lives."
-        }
-      ],
-      "note": "Sketch the journey of someone facing your friction-candidate. 8 frames, stick figures fine. This is the Wk1 individual version of what teams will do in SA2 with persona-and-team refinement. The point: see the experience as a sequence.",
-      "assets": [
-        {
-          "t": "Journey Mapping (Notion: Knowledge / Foundation)",
-          "k": "pdf"
-        },
-        {
-          "t": "M: Opportunity ID (prerequisite, Tue AM friction-candidate)",
-          "k": "pdf"
-        },
-        {
-          "t": "SA2 (Wk1 Fri PM, team-version with persona)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "45 min. 5 min Crazy 8s template, 30 min individual sketching, 10 min round (each student shows plus names worst frame). Output: every student has an 8-frame journey plus worst-frame circled. Feeds Tue PM Problems work. Don't let students pre-design solutions, this is observation.",
-      "studentTasks": [
-        "Take your friction-candidate from M: Opportunity ID.",
-        "Sketch 8 frames of the user's experience: how they encounter the friction, what they try, where they give up.",
-        "Crazy 8s format. Stick figures, captions.",
-        "Circle the worst frame. That's where your problem lives."
-      ]
-    },
-    {
-      "id": "s16",
-      "sid": "1-pm-problems",
-      "day": 1,
-      "start": 780,
-      "end": 825,
-      "track": "core",
-      "title": "Problems",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": null,
-      "aspects": [],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "13:00",
-          "end": "13:09",
+          "t": "12:00",
+          "end": "12:12",
           "label": "Pull your worst-frame from User journey."
         },
         {
-          "t": "13:09",
-          "end": "13:18",
+          "t": "12:12",
+          "end": "12:24",
           "label": "Write a problem statement: '[Persona] cannot [do X] because [Y].'"
         },
         {
-          "t": "13:18",
-          "end": "13:27",
+          "t": "12:24",
+          "end": "12:36",
           "label": "Sanity-check: is the persona specific (not 'people who...')?"
         },
         {
-          "t": "13:27",
-          "end": "13:36",
+          "t": "12:36",
+          "end": "12:48",
           "label": "Sanity-check: is the constraint specific (not 'lack of resources')?"
         },
         {
-          "t": "13:36",
-          "end": "13:45",
+          "t": "12:48",
+          "end": "13:00",
           "label": "Rewrite until both are sharp."
         }
       ],
@@ -1246,13 +1193,13 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s17",
-      "sid": "1-pm-top-problems",
-      "day": 1,
-      "start": 825,
-      "end": 870,
+      "id": "s21",
+      "sid": "2-pm-problem-selection-reframing",
+      "day": 2,
+      "start": 840,
+      "end": 900,
       "track": "core",
-      "title": "Top problems",
+      "title": "Problem selection + reframing",
       "room": "",
       "facils": [],
       "group": "All",
@@ -1263,23 +1210,23 @@ window.STUDIO = {
       "half": "pm",
       "micro": [
         {
-          "t": "13:45",
-          "end": "13:56",
+          "t": "14:00",
+          "end": "14:15",
           "label": "Read your problem statement to the room. 30 seconds max."
         },
         {
-          "t": "13:56",
-          "end": "14:07",
+          "t": "14:15",
+          "end": "14:30",
           "label": "Listen to others. Mark the 3 that feel sharpest."
         },
         {
-          "t": "14:07",
-          "end": "14:18",
+          "t": "14:30",
+          "end": "14:45",
           "label": "After all reads, room debriefs: which problems felt strongest, why?"
         },
         {
-          "t": "14:18",
-          "end": "14:30",
+          "t": "14:45",
+          "end": "15:00",
           "label": "Refine your own statement based on what you heard."
         }
       ],
@@ -1303,477 +1250,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s18",
-      "sid": "1-pm-game",
-      "day": 1,
-      "start": 870,
-      "end": 900,
-      "track": "ops",
-      "title": "Game",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "game",
-      "code": null,
-      "sub": null,
-      "aspects": [],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "14:30",
-          "end": "14:38",
-          "label": "Stand up. Find a partner."
-        },
-        {
-          "t": "14:38",
-          "end": "14:46",
-          "label": "30 seconds: each tells the other a true 'I once did this absurd thing' story."
-        },
-        {
-          "t": "14:46",
-          "end": "14:54",
-          "label": "Switch partners. Repeat 3 rounds."
-        },
-        {
-          "t": "14:54",
-          "end": "15:00",
-          "label": "Final round: tell the whole room your favorite story you heard."
-        }
-      ],
-      "note": "[drafted] Go Bananas, picked per Owen's standard #8. Mid-day Tue energizer. Higher energy than the morning Rollercoaster check-in. Resets the room before the harder problem-validation work in the afternoon.",
-      "assets": [
-        {
-          "t": "Activities deck (Porto 2025): Go Bananas spec",
-          "k": "pdf"
-        },
-        {
-          "t": "Mon AM Intro game (Rollercoaster, prior energizer)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "30 min. 5 min set-up plus rules, 15 min partner rounds (3 rotations), 10 min favorite-story share-out. Don't rescue awkward pairings. The cringe is part of the energy reset. Picked because the room needs movement before the panel work.",
-      "studentTasks": [
-        "Stand up. Find a partner.",
-        "30 seconds: each tells the other a true 'I once did this absurd thing' story.",
-        "Switch partners. Repeat 3 rounds.",
-        "Final round: tell the whole room your favorite story you heard."
-      ]
-    },
-    {
-      "id": "s19",
-      "sid": "1-pm-m-problem-validation",
-      "day": 1,
-      "start": 900,
-      "end": 945,
-      "track": "core",
-      "title": "M: Problem validation",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "module",
-      "code": null,
-      "sub": null,
-      "aspects": [],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "15:00",
-          "end": "15:11",
-          "label": "5 Whys: take your problem statement. Ask 'why does this happen?' five times. Each answer becomes the new question."
-        },
-        {
-          "t": "15:11",
-          "end": "15:22",
-          "label": "Active Listening: subject talks, listener asks open questions only, observer takes notes. Practice in trios."
-        },
-        {
-          "t": "15:22",
-          "end": "15:33",
-          "label": "Empathy Interview opener: 'Walk me through the last time this happened.' Get specific, get story."
-        },
-        {
-          "t": "15:33",
-          "end": "15:45",
-          "label": "Apply to a partner's problem statement. They get more useful answers than you do."
-        }
-      ],
-      "note": "Teach: a problem isn't real until someone outside your head agrees. Module covers 5 Whys (drilling causes), Active Listening (hearing what's said vs. what's meant), and the empathy interview opener. Sets up the panel that follows.",
-      "assets": [
-        {
-          "t": "5 Whys Exercise (Notion: Knowledge / Method)",
-          "k": "pdf"
-        },
-        {
-          "t": "Active Listening (Notion: Knowledge / Method)",
-          "k": "pdf"
-        },
-        {
-          "t": "Empathy Interview Protocol (Notion: Knowledge / Method)",
-          "k": "pdf"
-        },
-        {
-          "t": "Problems (immediate prerequisite)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "45 min. 15 min teach (5 Whys plus Active Listening plus empathy opener), 25 min trio practice (subject/listener/observer rotations), 5 min synthesis. Push back if listeners give advice instead of asking. The trio format is the working unit, not optional.",
-      "studentTasks": [
-        "5 Whys: take your problem statement. Ask 'why does this happen?' five times. Each answer becomes the new question.",
-        "Active Listening: subject talks, listener asks open questions only, observer takes notes. Practice in trios.",
-        "Empathy Interview opener: 'Walk me through the last time this happened.' Get specific, get story.",
-        "Apply to a partner's problem statement. They get more useful answers than you do."
-      ]
-    },
-    {
-      "id": "s20",
-      "sid": "1-pm-alumni-deepen-1",
-      "day": 1,
+      "id": "s22",
+      "sid": "2-pm-solutions",
+      "day": 2,
       "start": 900,
       "end": 960,
-      "track": "alumni",
-      "title": "Alumni: Deepen 1",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": "AI-assisted research → Specialist Brief v1",
-      "aspects": [],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "15:00",
-          "end": "15:20",
-          "label": "Open laptops. Open the Sonae brief. Open whatever AI you trust."
-        },
-        {
-          "t": "15:20",
-          "end": "15:40",
-          "label": "Research the intersection: your specialty × this sponsor × this challenge."
-        },
-        {
-          "t": "15:40",
-          "end": "16:00",
-          "label": "Draft a one-page Specialist Brief — your words, not a paste."
-        }
-      ],
-      "note": "Pulled during M: Problem validation. Laptops out. Research the intersection of your specialty and this year's Sonae challenge. By end of block, every alumnus has a one-page Specialist Brief v1 in their own words.",
-      "assets": [
-        {
-          "t": "flow-stacey-2026-05-14.html · Alumni window list",
-          "k": "pdf"
-        },
-        {
-          "t": "Sonae challenge brief",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "F2 owns end-to-end. AI-assisted research is the explicit method; this is not a writing test.",
-      "studentTasks": [
-        "Open laptops. Open the Sonae brief. Open whatever AI you trust.",
-        "Research the intersection: your specialty × this sponsor × this challenge.",
-        "Draft a one-page Specialist Brief — your words, not a paste."
-      ]
-    },
-    {
-      "id": "s21",
-      "sid": "1-pm-panel-validation",
-      "day": 1,
-      "start": 945,
-      "end": 990,
-      "track": "talks",
-      "title": "Panel: validation",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "panel",
-      "code": null,
-      "sub": null,
-      "aspects": [
-        "guest"
-      ],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "15:45",
-          "end": "15:54",
-          "label": "Take your problem statement to a panelist."
-        },
-        {
-          "t": "15:54",
-          "end": "16:03",
-          "label": "Open with the empathy interview: 'Walk me through the last time this happened.'"
-        },
-        {
-          "t": "16:03",
-          "end": "16:12",
-          "label": "If they say 'this isn't my problem,' that's data. Capture it."
-        },
-        {
-          "t": "16:12",
-          "end": "16:21",
-          "label": "Drill with 5 Whys when they describe a frustration."
-        },
-        {
-          "t": "16:21",
-          "end": "16:30",
-          "label": "Capture: what's the contradicting evidence to your problem statement?"
-        }
-      ],
-      "note": "Same panelists, harder questions. Students apply M: Problem validation tools (5 Whys, empathy opener, active listening) to test their problem statements with real customers. Validation is the test event for the morning's problem work.",
-      "assets": [
-        {
-          "t": "Customer Discovery & Validation (Notion: Knowledge / Foundation)",
-          "k": "pdf"
-        },
-        {
-          "t": "Empathy Interview Protocol (Notion: Knowledge / Method)",
-          "k": "pdf"
-        },
-        {
-          "t": "M: Problem validation (prerequisite tools)",
-          "k": "pdf"
-        },
-        {
-          "t": "[CUSTOMER PANELISTS — TBD] briefing",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "45 min. 5 min frame (validation = looking for disconfirmation), 30 min panel Q&A (round-robin, students drive), 10 min capture round. Pre-brief panelists: don't agree to be polite. Push back on problem statements that don't match their experience. The contradicting answer is the gold.",
-      "studentTasks": [
-        "Take your problem statement to a panelist.",
-        "Open with the empathy interview: 'Walk me through the last time this happened.'",
-        "If they say 'this isn't my problem,' that's data. Capture it.",
-        "Drill with 5 Whys when they describe a frustration.",
-        "Capture: what's the contradicting evidence to your problem statement?"
-      ]
-    },
-    {
-      "id": "s22",
-      "sid": "1-pm-top-problems-revisit",
-      "day": 1,
-      "start": 990,
-      "end": 1020,
-      "track": "core",
-      "title": "Top problems revisit",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": null,
-      "aspects": [],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "16:30",
-          "end": "16:38",
-          "label": "Pull your problem statement from this morning."
-        },
-        {
-          "t": "16:38",
-          "end": "16:46",
-          "label": "Mark: did the panel validate, contradict, or surprise?"
-        },
-        {
-          "t": "16:46",
-          "end": "16:54",
-          "label": "If contradicted: rewrite. If validated: sharpen. If surprised: pause and ask why."
-        },
-        {
-          "t": "16:54",
-          "end": "17:00",
-          "label": "Take refined statement into Wed solutions work."
-        }
-      ],
-      "note": "End-of-day synthesis. Re-read problem statements, mark which survived validation, mark which didn't. The point: problem definitions die in contact with reality. That's normal.",
-      "assets": [
-        {
-          "t": "Problems (Tue PM 13:00, original)",
-          "k": "pdf"
-        },
-        {
-          "t": "Panel: validation (Tue PM 15:45, validation event)",
-          "k": "pdf"
-        },
-        {
-          "t": "Problem Reframing (Notion: Knowledge / Method, used Wed)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "30 min. 5 min frame (problems die in contact with reality, normal), 20 min individual rework, 5 min round (each student names how their statement changed). Don't let students protect a dying problem. Data is data.",
-      "studentTasks": [
-        "Pull your problem statement from this morning.",
-        "Mark: did the panel validate, contradict, or surprise?",
-        "If contradicted: rewrite. If validated: sharpen. If surprised: pause and ask why.",
-        "Take refined statement into Wed solutions work."
-      ]
-    },
-    {
-      "id": "s23",
-      "sid": "2-am-welcome",
-      "day": 2,
-      "start": 540,
-      "end": 555,
-      "track": "core",
-      "title": "Welcome",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "welcome",
-      "code": null,
-      "sub": null,
-      "aspects": [],
-      "half": "am",
-      "micro": [
-        {
-          "t": "09:00",
-          "end": "09:05",
-          "label": "Find your seat."
-        },
-        {
-          "t": "09:05",
-          "end": "09:10",
-          "label": "30-second check: how did your problem statement survive yesterday?"
-        },
-        {
-          "t": "09:10",
-          "end": "09:15",
-          "label": "Rollercoaster pulse."
-        }
-      ],
-      "note": "Day 3 morning check-in. Yesterday's problem work landed (or didn't). Quick pulse before solutions work begins.",
-      "assets": [
-        {
-          "t": "Rollercoaster Check-in (Notion Knowledge / Activity)",
-          "k": "pdf"
-        },
-        {
-          "t": "Daily Standup (Notion Knowledge)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "15 min. Tight standup. The shift today: from problems to solutions. If a student is still stuck on yesterday's validation, surface privately, don't let it derail the room.",
-      "studentTasks": [
-        "Find your seat.",
-        "30-second check: how did your problem statement survive yesterday?",
-        "Rollercoaster pulse."
-      ]
-    },
-    {
-      "id": "s24",
-      "sid": "2-am-m-solutions",
-      "day": 2,
-      "start": 555,
-      "end": 600,
-      "track": "core",
-      "title": "M: Solutions",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "module",
-      "code": null,
-      "sub": null,
-      "aspects": [],
-      "half": "am",
-      "micro": [
-        {
-          "t": "09:15",
-          "end": "09:26",
-          "label": "Take your refined problem statement from yesterday."
-        },
-        {
-          "t": "09:26",
-          "end": "09:37",
-          "label": "Generate 6 reframings of it (use the Notion Reframing Checklist categories)."
-        },
-        {
-          "t": "09:37",
-          "end": "09:48",
-          "label": "For each reframing, sketch one candidate solution."
-        },
-        {
-          "t": "09:48",
-          "end": "10:00",
-          "label": "You leave with 6 problem-solution pairs, not a winner."
-        }
-      ],
-      "note": "Module teach. From a validated problem to a candidate solution. The Reframing move: turn 'how do I solve this' into 'what if the problem were different?' Generates more solutions than direct attack.",
-      "assets": [
-        {
-          "t": "Problem Reframing (Notion: Knowledge / Foundation, gold standard)",
-          "k": "pdf"
-        },
-        {
-          "t": "Reframing Checklist (Notion: Knowledge / Method)",
-          "k": "pdf"
-        },
-        {
-          "t": "Top problems revisit (Tue PM, prerequisite problem statement)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "45 min. 15 min teach (Reframing as the unlock for solution diversity, walk the 6 categories), 25 min individual generation, 5 min round (each student names their most surprising reframing). Don't let students collapse to one solution prematurely. Diversity now = better choice later.",
-      "studentTasks": [
-        "Take your refined problem statement from yesterday.",
-        "Generate 6 reframings of it (use the Notion Reframing Checklist categories).",
-        "For each reframing, sketch one candidate solution.",
-        "You leave with 6 problem-solution pairs, not a winner."
-      ]
-    },
-    {
-      "id": "s25",
-      "sid": "2-am-alumni-deepen-2",
-      "day": 2,
-      "start": 555,
-      "end": 600,
-      "track": "alumni",
-      "title": "Alumni: Deepen 2",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": "Pressure-test + rewrite brief",
-      "aspects": [],
-      "half": "am",
-      "micro": [
-        {
-          "t": "09:15",
-          "end": "09:30",
-          "label": "Read your v1 out loud to F2."
-        },
-        {
-          "t": "09:30",
-          "end": "09:45",
-          "label": "Take the hard feedback. Don't defend; rewrite."
-        },
-        {
-          "t": "09:45",
-          "end": "10:00",
-          "label": "Ship v2 — sharper, in your voice, defensible."
-        }
-      ],
-      "note": "Pulled during M: Solutions. F2 pressure-tests each Specialist Brief — where's the hand-wave, where's the borrowed phrase, where's the part you can't defend. One rewrite pass produces v2.",
-      "assets": [
-        {
-          "t": "flow-stacey-2026-05-14.html · Alumni window list",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "F2 owns end-to-end. Push hard on the hand-wave; the brief is what they teach from on Tuesday.",
-      "studentTasks": [
-        "Read your v1 out loud to F2.",
-        "Take the hard feedback. Don't defend; rewrite.",
-        "Ship v2 — sharper, in your voice, defensible."
-      ]
-    },
-    {
-      "id": "s26",
-      "sid": "2-am-solutions",
-      "day": 2,
-      "start": 600,
-      "end": 660,
       "track": "core",
       "title": "Solutions",
       "room": "",
@@ -1783,26 +1264,26 @@ window.STUDIO = {
       "code": null,
       "sub": null,
       "aspects": [],
-      "half": "am",
+      "half": "pm",
       "micro": [
         {
-          "t": "10:00",
-          "end": "10:15",
+          "t": "15:00",
+          "end": "15:15",
           "label": "Pick your 2 strongest problem-solution pairs from M: Solutions."
         },
         {
-          "t": "10:15",
-          "end": "10:30",
+          "t": "15:15",
+          "end": "15:30",
           "label": "For each: who's the user, what's the moment of value, what's the simplest version that delivers it?"
         },
         {
-          "t": "10:30",
-          "end": "10:45",
+          "t": "15:30",
+          "end": "15:45",
           "label": "Sketch one screen / interaction / artifact per solution."
         },
         {
-          "t": "10:45",
-          "end": "11:00",
+          "t": "15:45",
+          "end": "16:00",
           "label": "By 11:00 you have 2 candidate solutions ready to defend."
         }
       ],
@@ -1826,186 +1307,13 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s27",
-      "sid": "2-am-entrepreneur-story",
+      "id": "s23",
+      "sid": "2-pm-pitch-intro",
       "day": 2,
-      "start": 660,
-      "end": 690,
-      "track": "talks",
-      "title": "Entrepreneur Story",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "panel",
-      "code": null,
-      "sub": null,
-      "aspects": [
-        "guest"
-      ],
-      "half": "am",
-      "micro": [
-        {
-          "t": "11:00",
-          "end": "11:10",
-          "label": "Listen first 20 min. No notes."
-        },
-        {
-          "t": "11:10",
-          "end": "11:20",
-          "label": "Capture: what's the one moment where it almost didn't work?"
-        },
-        {
-          "t": "11:20",
-          "end": "11:30",
-          "label": "Q&A 10 min. Ask about the specific decision that made the difference."
-        }
-      ],
-      "note": "An early-stage founder tells their actual journey: first users, validation, what nearly broke. Bar is narrative over expertise. Students hear what it actually felt like to build something from nothing.",
-      "assets": [
-        {
-          "t": "[GUEST — TBD: early-stage founder, narrative-strong] briefing",
-          "k": "pdf"
-        },
-        {
-          "t": "Past Quick Pitch Examples (Notion: Knowledge)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "30 min. 5 min intro, 20 min story, 5 min Q&A. Pre-brief guest: tell the actual story (first users, validation, near-misses), not lessons learned. Narrative over expertise. Last year's product guy worked because he could tell the story. Pick on that signal.",
-      "studentTasks": [
-        "Listen first 20 min. No notes.",
-        "Capture: what's the one moment where it almost didn't work?",
-        "Q&A 10 min. Ask about the specific decision that made the difference."
-      ]
-    },
-    {
-      "id": "s28",
-      "sid": "2-am-top-solutions",
-      "day": 2,
-      "start": 690,
-      "end": 720,
+      "start": 960,
+      "end": 990,
       "track": "core",
-      "title": "Top solutions",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": null,
-      "aspects": [],
-      "half": "am",
-      "micro": [
-        {
-          "t": "11:30",
-          "end": "11:38",
-          "label": "Read both your candidate solutions to the room. 30 seconds each."
-        },
-        {
-          "t": "11:38",
-          "end": "11:46",
-          "label": "Listen to others."
-        },
-        {
-          "t": "11:46",
-          "end": "11:54",
-          "label": "Pick one of yours to take into PM panel work. Just one."
-        },
-        {
-          "t": "11:54",
-          "end": "12:00",
-          "label": "Refine the one you picked based on what you heard."
-        }
-      ],
-      "note": "Pick the one you'd actually pitch. The constraint forces commitment. Yesterday's exposure-not-ranking move applied to solutions: read aloud, see the range, pick the one you'll defend.",
-      "assets": [
-        {
-          "t": "Solutions (immediate prerequisite)",
-          "k": "pdf"
-        },
-        {
-          "t": "Top problems (Tue PM, same exposure-not-ranking pattern)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "30 min. 20 min round-robin reads, 5 min cohort debrief, 5 min individual pick + refinement. Push back if a student picks the easier candidate vs. the better one. The constraint is 'which one will you defend,' not 'which one is safer.'",
-      "studentTasks": [
-        "Read both your candidate solutions to the room. 30 seconds each.",
-        "Listen to others.",
-        "Pick one of yours to take into PM panel work. Just one.",
-        "Refine the one you picked based on what you heard."
-      ]
-    },
-    {
-      "id": "s29",
-      "sid": "2-pm-panel-solution-validation",
-      "day": 2,
-      "start": 780,
-      "end": 825,
-      "track": "talks",
-      "title": "Panel: solution validation",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "panel",
-      "code": null,
-      "sub": null,
-      "aspects": [
-        "guest"
-      ],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "13:00",
-          "end": "13:11",
-          "label": "Pitch your one solution to a panelist. 60 seconds."
-        },
-        {
-          "t": "13:11",
-          "end": "13:22",
-          "label": "Three questions: would you use it? Would you pay? Would you recommend?"
-        },
-        {
-          "t": "13:22",
-          "end": "13:33",
-          "label": "Capture the hesitation. The 'maybe' is more useful than the 'yes.'"
-        },
-        {
-          "t": "13:33",
-          "end": "13:45",
-          "label": "If they say no, ask why. The why is the data."
-        }
-      ],
-      "note": "Same panelists, fourth encounter. Now testing solution candidates instead of problem statements. Bar: would they actually use it? Would they pay for it? Would they recommend it?",
-      "assets": [
-        {
-          "t": "Customer Discovery & Validation (Notion: Knowledge / Foundation)",
-          "k": "pdf"
-        },
-        {
-          "t": "Top solutions (immediate prerequisite)",
-          "k": "pdf"
-        },
-        {
-          "t": "[CUSTOMER PANELISTS — TBD] briefing",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "45 min. 5 min frame (validation = hesitation hunt, not approval seeking), 30 min round-robin, 10 min capture. Pre-brief panelists: don't say yes to be polite. Surface the hesitation. Students need real signal.",
-      "studentTasks": [
-        "Pitch your one solution to a panelist. 60 seconds.",
-        "Three questions: would you use it? Would you pay? Would you recommend?",
-        "Capture the hesitation. The 'maybe' is more useful than the 'yes.'",
-        "If they say no, ask why. The why is the data."
-      ]
-    },
-    {
-      "id": "s30",
-      "sid": "2-pm-pick-solution",
-      "day": 2,
-      "start": 825,
-      "end": 870,
-      "track": "core",
-      "title": "Pick solution",
+      "title": "Pitch intro",
       "room": "",
       "facils": [],
       "group": "All",
@@ -2016,205 +1324,23 @@ window.STUDIO = {
       "half": "pm",
       "micro": [
         {
-          "t": "13:45",
-          "end": "13:56",
-          "label": "Pull panel feedback. Sort: validate, contradict, surprise."
-        },
-        {
-          "t": "13:56",
-          "end": "14:07",
-          "label": "Decide: keep this solution and sharpen it, or pivot to your second candidate."
-        },
-        {
-          "t": "14:07",
-          "end": "14:18",
-          "label": "Either way: write the V1 solution sentence. 'For [user], this [solution] solves [problem] by [mechanism].'"
-        },
-        {
-          "t": "14:18",
-          "end": "14:30",
-          "label": "Lock it. The pitch tomorrow assumes this V1."
-        }
-      ],
-      "deck": {
-        "title": "Pick solution",
-        "slides": 0,
-        "status": "draft",
-        "url": "https://docs.google.com/presentation/d/14H4jaPfEPF1OLY_Ab0FybRSOil1i8z3Gnnh08L3jwjk/edit",
-        "isLocal": false,
-        "pdfUrl": null,
-        "code": null
-      },
-      "note": "Refine or replace the solution based on panel feedback. Some students will need to swap candidates. Some will need to sharpen. The choice is theirs but the bar is: defendable in tomorrow's pitch.",
-      "assets": [
-        {
-          "t": "Panel: solution validation (immediate prerequisite)",
-          "k": "pdf"
-        },
-        {
-          "t": "M: Solutions (the original 6 reframings, fallback options)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "45 min. 5 min frame (pivot is fine, defending a dying solution is not), 30 min individual decide-and-write, 10 min round (each student reads V1 sentence). Don't let students stall on the pivot decision. Choose by 14:15 or default to refinement.",
-      "studentTasks": [
-        "Pull panel feedback. Sort: validate, contradict, surprise.",
-        "Decide: keep this solution and sharpen it, or pivot to your second candidate.",
-        "Either way: write the V1 solution sentence. 'For [user], this [solution] solves [problem] by [mechanism].'",
-        "Lock it. The pitch tomorrow assumes this V1."
-      ]
-    },
-    {
-      "id": "s31",
-      "sid": "2-pm-game",
-      "day": 2,
-      "start": 870,
-      "end": 900,
-      "track": "ops",
-      "title": "Game",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "game",
-      "code": null,
-      "sub": null,
-      "aspects": [],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "14:30",
-          "end": "14:38",
-          "label": "Form a circle. One person starts a story with 'Once...'"
-        },
-        {
-          "t": "14:38",
-          "end": "14:46",
-          "label": "Next person continues with 'Suddenly...' Next: 'Fortunately...' Next: 'Unfortunately...' (keep alternating)."
-        },
-        {
-          "t": "14:46",
-          "end": "14:54",
-          "label": "No planning ahead. Whatever's said is canon."
-        },
-        {
-          "t": "14:54",
-          "end": "15:00",
-          "label": "End when the story dies naturally or after 3 rounds."
-        }
-      ],
-      "note": "[drafted] Mid-afternoon energizer. Picked: Storytelling Roulette (improv-style, builds the muscle they'll use in pitch work right after).",
-      "assets": [
-        {
-          "t": "Activities deck (Porto 2025): improv variant",
-          "k": "pdf"
-        },
-        {
-          "t": "Pitch game (Wed PM, downstream)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "30 min. 5 min set-up plus rules, 20 min playing, 5 min synthesis (improv builds the same 'commit to what's said' muscle as pitching). Useful warm-up for pitch template work next.",
-      "studentTasks": [
-        "Form a circle. One person starts a story with 'Once...'",
-        "Next person continues with 'Suddenly...' Next: 'Fortunately...' Next: 'Unfortunately...' (keep alternating).",
-        "No planning ahead. Whatever's said is canon.",
-        "End when the story dies naturally or after 3 rounds."
-      ]
-    },
-    {
-      "id": "s32",
-      "sid": "2-pm-pitch-game",
-      "day": 2,
-      "start": 900,
-      "end": 930,
-      "track": "build",
-      "title": "Pitch game",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "pitch",
-      "code": null,
-      "sub": null,
-      "aspects": [
-        "pitch"
-      ],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "15:00",
-          "end": "15:08",
-          "label": "Pick something dumb to pitch: a banana, a stapler, your shoe."
-        },
-        {
-          "t": "15:08",
-          "end": "15:16",
-          "label": "60 seconds. Make it sound like the next big thing."
-        },
-        {
-          "t": "15:16",
-          "end": "15:24",
-          "label": "Listen to others. Steal the moves that work."
-        },
-        {
-          "t": "15:24",
-          "end": "15:30",
-          "label": "Note: what made the strong pitches strong? Open, hook, concrete?"
-        }
-      ],
-      "note": "Low-stakes pitch warm-up. Pitch a fake solution (not yours) for 60 seconds. The constraint flips ownership pressure off so students can practice the form before the real thing.",
-      "assets": [
-        {
-          "t": "Pitch Practice (Notion: Knowledge / Method)",
-          "k": "pdf"
-        },
-        {
-          "t": "Storytelling & Pitch (Notion: Knowledge / Foundation)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "30 min. 5 min frame (low-stakes, steal the moves), 20 min round-robin pitches, 5 min synthesis (which moves landed). Keep it loose. The muscle is what carries into the real pitch.",
-      "studentTasks": [
-        "Pick something dumb to pitch: a banana, a stapler, your shoe.",
-        "60 seconds. Make it sound like the next big thing.",
-        "Listen to others. Steal the moves that work.",
-        "Note: what made the strong pitches strong? Open, hook, concrete?"
-      ]
-    },
-    {
-      "id": "s33",
-      "sid": "2-pm-pitch-template",
-      "day": 2,
-      "start": 930,
-      "end": 975,
-      "track": "core",
-      "title": "Pitch template",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": null,
-      "aspects": [],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "15:30",
-          "end": "15:41",
+          "t": "16:00",
+          "end": "16:08",
           "label": "Read the Quick Pitch Template (provided)."
         },
         {
-          "t": "15:41",
-          "end": "15:52",
+          "t": "16:08",
+          "end": "16:16",
           "label": "Map your V1 solution into the 5 sections."
         },
         {
-          "t": "15:52",
-          "end": "16:03",
+          "t": "16:16",
+          "end": "16:24",
           "label": "Each section: 1-2 sentences. No more."
         },
         {
-          "t": "16:03",
-          "end": "16:15",
+          "t": "16:24",
+          "end": "16:30",
           "label": "Read it through. Time it. Should land at ~100 seconds."
         }
       ],
@@ -2242,72 +1368,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s34",
-      "sid": "2-pm-pitch-prep",
-      "day": 2,
-      "start": 975,
-      "end": 1020,
-      "track": "core",
-      "title": "Pitch prep",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": null,
-      "aspects": [],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "16:15",
-          "end": "16:26",
-          "label": "Refine your 5-section pitch."
-        },
-        {
-          "t": "16:26",
-          "end": "16:37",
-          "label": "Stand up and deliver it to a partner. They time it, you adjust."
-        },
-        {
-          "t": "16:37",
-          "end": "16:48",
-          "label": "Switch. Take their feedback."
-        },
-        {
-          "t": "16:48",
-          "end": "17:00",
-          "label": "By 17:00 you have a pitch you'd be willing to deliver tomorrow."
-        }
-      ],
-      "note": "Time-boxed work block. Polish the templated pitch into something deliverable tomorrow. Practice it out loud. Get one peer review.",
-      "assets": [
-        {
-          "t": "Pitch template (immediate prerequisite)",
-          "k": "pdf"
-        },
-        {
-          "t": "Pitch Practice (Notion: Knowledge / Method)",
-          "k": "pdf"
-        },
-        {
-          "t": "Thu AM RC: Pitch speed dating (downstream test event)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "45 min. Hands-off. Drift among pairs, push on opens, flag pitches that take more than 90 seconds. Don't write for them. The pitch they show up with tomorrow is the pitch they own.",
-      "studentTasks": [
-        "Refine your 5-section pitch.",
-        "Stand up and deliver it to a partner. They time it, you adjust.",
-        "Switch. Take their feedback.",
-        "By 17:00 you have a pitch you'd be willing to deliver tomorrow."
-      ]
-    },
-    {
-      "id": "s35",
+      "id": "s24",
       "sid": "3-am-welcome",
       "day": 3,
-      "start": 540,
-      "end": 555,
+      "start": 570,
+      "end": 600,
       "track": "core",
       "title": "Welcome",
       "room": "",
@@ -2320,18 +1385,18 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:00",
-          "end": "09:05",
+          "t": "09:30",
+          "end": "09:40",
           "label": "Find your seat."
         },
         {
-          "t": "09:05",
-          "end": "09:10",
+          "t": "09:40",
+          "end": "09:50",
           "label": "30-second check: ready to pitch?"
         },
         {
-          "t": "09:10",
-          "end": "09:15",
+          "t": "09:50",
+          "end": "10:00",
           "label": "Rollercoaster pulse."
         }
       ],
@@ -2354,13 +1419,13 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s36",
-      "sid": "3-am-pitch-prep",
+      "id": "s25",
+      "sid": "3-am-complete-solution-pitch",
       "day": 3,
-      "start": 555,
-      "end": 630,
+      "start": 600,
+      "end": 660,
       "track": "core",
-      "title": "Pitch prep",
+      "title": "Complete solution pitch",
       "room": "",
       "facils": [],
       "group": "All",
@@ -2371,23 +1436,23 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:15",
-          "end": "09:34",
+          "t": "10:00",
+          "end": "10:15",
           "label": "Run your pitch out loud. Time it."
         },
         {
-          "t": "09:34",
-          "end": "09:53",
+          "t": "10:15",
+          "end": "10:30",
           "label": "Tighten the open: first 10 seconds must hook."
         },
         {
-          "t": "09:53",
-          "end": "10:12",
+          "t": "10:30",
+          "end": "10:45",
           "label": "Cut to 90 seconds. RC speed dating won't tolerate longer."
         },
         {
-          "t": "10:12",
-          "end": "10:30",
+          "t": "10:45",
+          "end": "11:00",
           "label": "Partner check: one pitch each, hard feedback."
         }
       ],
@@ -2415,11 +1480,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s37",
+      "id": "s26",
       "sid": "3-am-alumni-rehearse",
       "day": 3,
-      "start": 585,
-      "end": 630,
+      "start": 600,
+      "end": 645,
       "track": "alumni",
       "title": "Alumni: Rehearse",
       "room": "",
@@ -2432,18 +1497,18 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:45",
-          "end": "10:00",
-          "label": "5 minutes max. Stand up. Don't read."
-        },
-        {
           "t": "10:00",
           "end": "10:15",
-          "label": "Take notes on the feedback you get; you refine overnight."
+          "label": "5 minutes max. Stand up. Don't read."
         },
         {
           "t": "10:15",
           "end": "10:30",
+          "label": "Take notes on the feedback you get; you refine overnight."
+        },
+        {
+          "t": "10:30",
+          "end": "10:45",
           "label": "Listen hard to the other specialties' teach-backs — Tuesday you deliver side by side."
         }
       ],
@@ -2462,11 +1527,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s38",
+      "id": "s27",
       "sid": "3-am-rc-pitch-speed-dating",
       "day": 3,
-      "start": 630,
-      "end": 675,
+      "start": 660,
+      "end": 720,
       "track": "talks",
       "title": "RC: Pitch speed dating",
       "room": "",
@@ -2481,18 +1546,18 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "10:30",
-          "end": "10:45",
+          "t": "11:00",
+          "end": "11:20",
           "label": "Pair up — your partner is from another team."
         },
         {
-          "t": "10:45",
-          "end": "11:00",
+          "t": "11:20",
+          "end": "11:40",
           "label": "90-second pitch each. Then 60 seconds: \"What do you think this is, who's it for, why now?\""
         },
         {
-          "t": "11:00",
-          "end": "11:15",
+          "t": "11:40",
+          "end": "12:00",
           "label": "Rotate. Five rounds. Capture the one thing each partner got wrong about your idea."
         }
       ],
@@ -2524,11 +1589,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s39",
+      "id": "s28",
       "sid": "3-am-pitches",
       "day": 3,
-      "start": 675,
-      "end": 720,
+      "start": 720,
+      "end": 780,
       "track": "build",
       "title": "Pitches",
       "room": "",
@@ -2543,18 +1608,18 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "11:15",
-          "end": "11:30",
+          "t": "12:00",
+          "end": "12:20",
           "label": "Deliver your pitch. 90 seconds, no notes."
         },
         {
-          "t": "11:30",
-          "end": "11:45",
+          "t": "12:20",
+          "end": "12:40",
           "label": "Listen to others. Mark the 3 pitches that surprised you."
         },
         {
-          "t": "11:45",
-          "end": "12:00",
+          "t": "12:40",
+          "end": "13:00",
           "label": "After all pitches, name what made the strong ones strong."
         }
       ],
@@ -2581,11 +1646,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s40",
+      "id": "s29",
       "sid": "3-pm-pitches",
       "day": 3,
-      "start": 780,
-      "end": 840,
+      "start": 840,
+      "end": 885,
       "track": "build",
       "title": "Pitches",
       "room": "",
@@ -2600,18 +1665,18 @@ window.STUDIO = {
       "half": "pm",
       "micro": [
         {
-          "t": "13:00",
-          "end": "13:20",
+          "t": "14:00",
+          "end": "14:15",
           "label": "Deliver your pitch to the broader audience. Same 90 seconds."
         },
         {
-          "t": "13:20",
-          "end": "13:40",
+          "t": "14:15",
+          "end": "14:30",
           "label": "Take questions. Don't dodge. Don't ramble."
         },
         {
-          "t": "13:40",
-          "end": "14:00",
+          "t": "14:30",
+          "end": "14:45",
           "label": "Capture: what question came up that you didn't expect?"
         }
       ],
@@ -2638,11 +1703,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s41",
+      "id": "s30",
       "sid": "3-pm-game",
       "day": 3,
-      "start": 840,
-      "end": 870,
+      "start": 885,
+      "end": 900,
       "track": "ops",
       "title": "Game",
       "room": "",
@@ -2655,23 +1720,23 @@ window.STUDIO = {
       "half": "pm",
       "micro": [
         {
-          "t": "14:00",
-          "end": "14:08",
+          "t": "14:45",
+          "end": "14:49",
           "label": "Pair up. One person makes a wild claim. Partner responds 'Yes, and...' adding to it."
         },
         {
-          "t": "14:08",
-          "end": "14:16",
+          "t": "14:49",
+          "end": "14:53",
           "label": "Build the story together. No 'no.' No 'but.'"
         },
         {
-          "t": "14:16",
-          "end": "14:24",
+          "t": "14:53",
+          "end": "14:57",
           "label": "Switch. 3 rounds."
         },
         {
-          "t": "14:24",
-          "end": "14:30",
+          "t": "14:57",
+          "end": "15:00",
           "label": "End with one pair performing a 30-second build for the room."
         }
       ],
@@ -2695,10 +1760,10 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s42",
+      "id": "s31",
       "sid": "3-pm-pitches-2",
       "day": 3,
-      "start": 870,
+      "start": 900,
       "end": 930,
       "track": "build",
       "title": "Pitches",
@@ -2714,17 +1779,17 @@ window.STUDIO = {
       "half": "pm",
       "micro": [
         {
-          "t": "14:30",
-          "end": "14:50",
+          "t": "15:00",
+          "end": "15:10",
           "label": "Deliver your pitch. Final form. 90 seconds."
         },
         {
-          "t": "14:50",
-          "end": "15:10",
+          "t": "15:10",
+          "end": "15:20",
           "label": "Take 1-2 questions per pitch."
         },
         {
-          "t": "15:10",
+          "t": "15:20",
           "end": "15:30",
           "label": "Listen hard to others. Voting comes next."
         }
@@ -2752,7 +1817,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s43",
+      "id": "s32",
       "sid": "3-pm-voting",
       "day": 3,
       "start": 930,
@@ -2812,58 +1877,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s44",
-      "sid": "3-pm-reflection",
-      "day": 3,
-      "start": 990,
-      "end": 1020,
-      "track": "core",
-      "title": "Reflection",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": "30 min team reflection before dinner",
-      "aspects": [],
-      "half": "pm",
-      "micro": [
-        {
-          "t": "16:30",
-          "end": "16:40",
-          "label": "Sit with whoever's near you (cohort small enough for ad hoc groups)."
-        },
-        {
-          "t": "16:40",
-          "end": "16:50",
-          "label": "Each person: one thing that shifted today, one thing that landed, one open question."
-        },
-        {
-          "t": "16:50",
-          "end": "17:00",
-          "label": "Capture quick: what state are you arriving at dinner in?"
-        }
-      ],
-      "note": "End-of-day reflection before dinner. Day 4 has been intense (3 pitch rounds + voting). Surface what shifted, what landed, what's next.",
-      "assets": [
-        {
-          "t": "Daily Standup (Notion Knowledge, similar reflection pattern)",
-          "k": "pdf"
-        },
-        {
-          "t": "Dinner (immediate downstream)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "30 min. Light touch. Sit with a group, model the format. Don't push anyone who's still processing. Dinner follows immediately, this is the bridge.",
-      "studentTasks": [
-        "Sit with whoever's near you (cohort small enough for ad hoc groups).",
-        "Each person: one thing that shifted today, one thing that landed, one open question.",
-        "Capture quick: what state are you arriving at dinner in?"
-      ]
-    },
-    {
-      "id": "s45",
+      "id": "s33",
       "sid": "3-pm-dinner",
       "day": 3,
       "start": 1080,
@@ -2885,11 +1899,11 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s46",
+      "id": "s34",
       "sid": "4-am-welcome",
       "day": 4,
-      "start": 540,
-      "end": 555,
+      "start": 570,
+      "end": 600,
       "track": "core",
       "title": "Welcome",
       "room": "",
@@ -2902,18 +1916,18 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:00",
-          "end": "09:05",
+          "t": "09:30",
+          "end": "09:40",
           "label": "Find your seat."
         },
         {
-          "t": "09:05",
-          "end": "09:10",
+          "t": "09:40",
+          "end": "09:50",
           "label": "30-second check: how are you feeling about the voting result?"
         },
         {
-          "t": "09:10",
-          "end": "09:15",
+          "t": "09:50",
+          "end": "10:00",
           "label": "Rollercoaster pulse."
         }
       ],
@@ -2936,13 +1950,33 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s47",
-      "sid": "4-am-pitch-selection-3-tracks-intro",
+      "id": "s35",
+      "sid": "4-am-voting-results",
       "day": 4,
-      "start": 555,
-      "end": 615,
+      "start": 600,
+      "end": 630,
       "track": "core",
-      "title": "Pitch selection — 3 tracks intro",
+      "title": "Voting results",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "work",
+      "code": null,
+      "sub": null,
+      "aspects": [],
+      "half": "am",
+      "note": "Share what the room chose and why it landed where it did.",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s36",
+      "sid": "4-am-intro-to-specialities",
+      "day": 4,
+      "start": 630,
+      "end": 660,
+      "track": "core",
+      "title": "Intro to specialities",
       "room": "",
       "facils": [],
       "group": "All",
@@ -2953,28 +1987,28 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "09:15",
-          "end": "09:30",
+          "t": "10:30",
+          "end": "10:38",
           "label": "See the top 5 pitches announced."
         },
         {
-          "t": "09:30",
-          "end": "09:45",
+          "t": "10:38",
+          "end": "10:46",
           "label": "Hear the 3-track structure: Product, Business, Market. What each does in Week 2."
         },
         {
-          "t": "09:45",
-          "end": "10:00",
+          "t": "10:46",
+          "end": "10:54",
           "label": "Note: every team will have one student from each track. You'll choose your track + your project."
         },
         {
-          "t": "10:00",
-          "end": "10:15",
+          "t": "10:54",
+          "end": "11:00",
           "label": "Hold questions for later — Repitch the 5 is next."
         }
       ],
       "deck": {
-        "title": "Pitch selection — 3 tracks intro",
+        "title": "Intro to specialities",
         "slides": 0,
         "status": "draft",
         "url": "https://docs.google.com/presentation/d/1nQVQj0bt-nXqDGq2aET6HY91gTIdI2vHKExOUyi_tqs/edit",
@@ -3006,145 +2040,13 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s48",
-      "sid": "4-am-repitch-the-5",
-      "day": 4,
-      "start": 615,
-      "end": 660,
-      "track": "build",
-      "title": "Repitch the 5",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "pitch",
-      "code": null,
-      "sub": null,
-      "aspects": [
-        "pitch"
-      ],
-      "half": "am",
-      "micro": [
-        {
-          "t": "10:15",
-          "end": "10:30",
-          "label": "Top 5 pitchers: re-deliver. 90 seconds. Polish, not redesign."
-        },
-        {
-          "t": "10:30",
-          "end": "10:45",
-          "label": "Cohort: listen as if you're choosing what to work on. Because you are."
-        },
-        {
-          "t": "10:45",
-          "end": "11:00",
-          "label": "Capture: which 2-3 of these pitches could you actually build?"
-        }
-      ],
-      "deck": {
-        "title": "Repitch the 5",
-        "slides": 0,
-        "status": "draft",
-        "url": "https://docs.google.com/presentation/d/1LWPyngNBheA4EbLA56GQ8i4OrpFVc-Ysp0AN9tdL_rk/edit",
-        "isLocal": false,
-        "pdfUrl": null,
-        "code": null
-      },
-      "note": "Top-5 pitchers re-deliver their pitch with overnight refinement. The cohort hears them again as the projects they'll commit to, not just yesterday's individual ideas.",
-      "assets": [
-        {
-          "t": "Pitches Round 3 + Voting (Thu PM, prerequisites)",
-          "k": "pdf"
-        },
-        {
-          "t": "Pitch Practice (Notion: Knowledge / Method)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "45 min. Tight. 5 pitches × 5 min each (90 sec pitch + 90 sec questions + buffer). Pre-brief pitchers: don't change the substance, sharpen the open. The audience is now choosing teammates, not voting.",
-      "studentTasks": [
-        "Top 5 pitchers: re-deliver. 90 seconds. Polish, not redesign.",
-        "Cohort: listen as if you're choosing what to work on. Because you are.",
-        "Capture: which 2-3 of these pitches could you actually build?"
-      ]
-    },
-    {
-      "id": "s49",
-      "sid": "4-am-preferences",
+      "id": "s37",
+      "sid": "4-am-intro-to-week-2-lpp-prd",
       "day": 4,
       "start": 660,
-      "end": 720,
-      "track": "core",
-      "title": "Preferences",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": null,
-      "aspects": [],
-      "half": "am",
-      "micro": [
-        {
-          "t": "11:00",
-          "end": "11:15",
-          "label": "Rank your top 3 project preferences from the 5 repitched."
-        },
-        {
-          "t": "11:15",
-          "end": "11:30",
-          "label": "Pick your track preference (Product / Business / Market). Pick first choice, second choice."
-        },
-        {
-          "t": "11:30",
-          "end": "11:45",
-          "label": "Submit (mechanism provided)."
-        },
-        {
-          "t": "11:45",
-          "end": "12:00",
-          "label": "Honest preferences. Don't game it."
-        }
-      ],
-      "deck": {
-        "title": "Preferences",
-        "slides": 0,
-        "status": "draft",
-        "url": "https://docs.google.com/presentation/d/1RIO1WCkPMDn7wNEnDUrZ0pw1uEWfa6OOOFgKSUiI2kM/edit",
-        "isLocal": false,
-        "pdfUrl": null,
-        "code": null
-      },
-      "note": "Each student ranks their preferences: top 3 projects + track choice (Product / Business / Market). This drives team allocation in PM. Honest preferences in, working teams out.",
-      "assets": [
-        {
-          "t": "Repitch the 5 (immediate prerequisite)",
-          "k": "pdf"
-        },
-        {
-          "t": "Pitch selection — 3 tracks intro (track definitions)",
-          "k": "pdf"
-        },
-        {
-          "t": "Team allocation (Fri PM, immediate downstream)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "60 min. 10 min frame (honest preferences = working teams; gaming produces bad fits), 30 min individual reflection + submission, 20 min Q&A about what each track actually does. Allocation algorithm runs after lunch.",
-      "studentTasks": [
-        "Rank your top 3 project preferences from the 5 repitched.",
-        "Pick your track preference (Product / Business / Market). Pick first choice, second choice.",
-        "Submit (mechanism provided).",
-        "Honest preferences. Don't game it."
-      ]
-    },
-    {
-      "id": "s50",
-      "sid": "4-pm-lpp-flow-prd-wk2",
-      "day": 4,
-      "start": 780,
-      "end": 825,
+      "end": 690,
       "track": "build",
-      "title": "LPP Flow / PRD WK2",
+      "title": "Intro to Week 2 (LPP / PRD)",
       "room": "",
       "facils": [],
       "group": "All",
@@ -3152,31 +2054,31 @@ window.STUDIO = {
       "code": null,
       "sub": "Introduction to the Lean Product Plan and PRD structure for Week 2",
       "aspects": [],
-      "half": "pm",
+      "half": "am",
       "micro": [
         {
-          "t": "13:00",
-          "end": "13:11",
+          "t": "11:00",
+          "end": "11:08",
           "label": "See the LPP structure: Problem, Persona, Solution, Market, Business Model, Validation."
         },
         {
-          "t": "13:11",
-          "end": "13:22",
+          "t": "11:08",
+          "end": "11:16",
           "label": "See where PRD Lab fits (Wk2 Mon onward)."
         },
         {
-          "t": "13:22",
-          "end": "13:33",
+          "t": "11:16",
+          "end": "11:24",
           "label": "Hear the ADAPT recap one more time. Same loop, bigger artifacts next week."
         },
         {
-          "t": "13:33",
-          "end": "13:45",
+          "t": "11:24",
+          "end": "11:30",
           "label": "Ask anything before team allocation."
         }
       ],
       "deck": {
-        "title": "LPP Flow / PRD WK2",
+        "title": "Intro to Week 2 (LPP / PRD)",
         "slides": 0,
         "status": "draft",
         "url": "https://docs.google.com/presentation/d/1sqU1FmOye5CCxIrVui6vZKxEw-0uZLcccM-bT9tb1hQ/edit",
@@ -3212,11 +2114,100 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s51",
-      "sid": "4-pm-team-allocation",
+      "id": "s38",
+      "sid": "4-am-game",
       "day": 4,
-      "start": 825,
-      "end": 870,
+      "start": 690,
+      "end": 720,
+      "track": "ops",
+      "title": "Game",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "game",
+      "code": null,
+      "sub": null,
+      "aspects": [],
+      "half": "am",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s39",
+      "sid": "4-am-select-speciality-idea",
+      "day": 4,
+      "start": 720,
+      "end": 750,
+      "track": "core",
+      "title": "Select speciality + idea",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "work",
+      "code": null,
+      "sub": null,
+      "aspects": [],
+      "half": "am",
+      "micro": [
+        {
+          "t": "12:00",
+          "end": "12:08",
+          "label": "Rank your top 3 project preferences from the 5 repitched."
+        },
+        {
+          "t": "12:08",
+          "end": "12:16",
+          "label": "Pick your track preference (Product / Business / Market). Pick first choice, second choice."
+        },
+        {
+          "t": "12:16",
+          "end": "12:24",
+          "label": "Submit (mechanism provided)."
+        },
+        {
+          "t": "12:24",
+          "end": "12:30",
+          "label": "Honest preferences. Don't game it."
+        }
+      ],
+      "deck": {
+        "title": "Select speciality + idea",
+        "slides": 0,
+        "status": "draft",
+        "url": "https://docs.google.com/presentation/d/1RIO1WCkPMDn7wNEnDUrZ0pw1uEWfa6OOOFgKSUiI2kM/edit",
+        "isLocal": false,
+        "pdfUrl": null,
+        "code": null
+      },
+      "note": "Each student ranks their preferences: top 3 projects + track choice (Product / Business / Market). This drives team allocation in PM. Honest preferences in, working teams out.",
+      "assets": [
+        {
+          "t": "Repitch the 5 (immediate prerequisite)",
+          "k": "pdf"
+        },
+        {
+          "t": "Pitch selection — 3 tracks intro (track definitions)",
+          "k": "pdf"
+        },
+        {
+          "t": "Team allocation (Fri PM, immediate downstream)",
+          "k": "pdf"
+        }
+      ],
+      "facilitatorCue": "60 min. 10 min frame (honest preferences = working teams; gaming produces bad fits), 30 min individual reflection + submission, 20 min Q&A about what each track actually does. Allocation algorithm runs after lunch.",
+      "studentTasks": [
+        "Rank your top 3 project preferences from the 5 repitched.",
+        "Pick your track preference (Product / Business / Market). Pick first choice, second choice.",
+        "Submit (mechanism provided).",
+        "Honest preferences. Don't game it."
+      ]
+    },
+    {
+      "id": "s40",
+      "sid": "4-am-team-allocation",
+      "day": 4,
+      "start": 750,
+      "end": 780,
       "track": "core",
       "title": "Team allocation",
       "room": "",
@@ -3226,26 +2217,26 @@ window.STUDIO = {
       "code": null,
       "sub": null,
       "aspects": [],
-      "half": "pm",
+      "half": "am",
       "micro": [
         {
-          "t": "13:45",
-          "end": "13:56",
+          "t": "12:30",
+          "end": "12:38",
           "label": "See your team assignment."
         },
         {
-          "t": "13:56",
-          "end": "14:07",
+          "t": "12:38",
+          "end": "12:46",
           "label": "Find your team. First introduction round: name, track, one thing you bring."
         },
         {
-          "t": "14:07",
-          "end": "14:18",
+          "t": "12:46",
+          "end": "12:54",
           "label": "Read the team's project brief (the pitch they were assigned to)."
         },
         {
-          "t": "14:18",
-          "end": "14:30",
+          "t": "12:54",
+          "end": "13:00",
           "label": "First team agreement: how do you want to work together this week?"
         }
       ],
@@ -3269,11 +2260,11 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s52",
+      "id": "s41",
       "sid": "4-pm-sa1-who-s-it-for",
       "day": 4,
-      "start": 870,
-      "end": 930,
+      "start": 840,
+      "end": 900,
       "track": "core",
       "title": "SA1 · Who's it for?",
       "room": "",
@@ -3286,23 +2277,23 @@ window.STUDIO = {
       "half": "pm",
       "micro": [
         {
+          "t": "14:00",
+          "end": "14:15",
+          "label": "Pick your team's user. The actual person, not 'people who...'"
+        },
+        {
+          "t": "14:15",
+          "end": "14:30",
+          "label": "Name them. Age. What they do all day. What they're frustrated by."
+        },
+        {
           "t": "14:30",
           "end": "14:45",
-          "label": "Pick your team's user. The actual person, not 'people who...'"
+          "label": "Pink card on the whiteboard. One persona per team."
         },
         {
           "t": "14:45",
           "end": "15:00",
-          "label": "Name them. Age. What they do all day. What they're frustrated by."
-        },
-        {
-          "t": "15:00",
-          "end": "15:15",
-          "label": "Pink card on the whiteboard. One persona per team."
-        },
-        {
-          "t": "15:15",
-          "end": "15:30",
           "label": "Defend it: why this person, not someone else?"
         }
       ],
@@ -3326,77 +2317,67 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s53",
-      "sid": "4-pm-sa2-8-frames-customer-journey",
+      "id": "s42",
+      "sid": "4-pm-sa2-problem-validation-outreach",
       "day": 4,
-      "start": 930,
-      "end": 990,
+      "start": 900,
+      "end": 960,
       "track": "core",
-      "title": "SA2 · 8 frames customer journey",
+      "title": "SA2 · Problem validation outreach",
       "room": "",
       "facils": [],
       "group": "All",
       "kind": "work",
       "code": null,
-      "sub": "Crazy 8s on the user experience",
+      "sub": null,
       "aspects": [],
       "half": "pm",
       "micro": [
         {
-          "t": "15:30",
-          "end": "15:45",
-          "label": "Take your SA1 persona. Walk their experience in 8 frames."
+          "t": "15:00",
+          "end": "15:20",
+          "label": "Decide what you need to learn before building."
         },
         {
-          "t": "15:45",
+          "t": "15:20",
+          "end": "15:40",
+          "label": "Pick the format: calls, survey, intercepts."
+        },
+        {
+          "t": "15:40",
           "end": "16:00",
-          "label": "Crazy 8s format: stick figures fine. Annotate user does / system does."
-        },
-        {
-          "t": "16:00",
-          "end": "16:15",
-          "label": "Frame 1 = entry point (how they discover the problem). Frame 8 = resolution (or what's missing)."
-        },
-        {
-          "t": "16:15",
-          "end": "16:30",
-          "label": "Circle the friction frame. That's where your solution lives."
+          "label": "Get it out before the wrap-up."
         }
       ],
-      "deck": {
-        "title": "SA2 · 8 frames customer journey",
-        "slides": 0,
-        "status": "draft",
-        "url": "https://docs.google.com/presentation/d/1Qi2R4FViztvTu6UyzsDuZPQJvo1PmuLC1HY4qDY4w9w/edit",
-        "isLocal": false,
-        "pdfUrl": null,
-        "code": null
-      },
-      "note": "Second Solution Alignment moment. Each team sketches 8 frames of the user experience (Crazy 8s format). Feeds into Week 2 prototype work.",
-      "assets": [
-        {
-          "t": "Journey Mapping (Notion: Knowledge / Foundation)",
-          "k": "pdf"
-        },
-        {
-          "t": "P1 Solution Blueprint worksheet (Mon PM Wk2 references this 8-frame journey)",
-          "k": "pdf"
-        },
-        {
-          "t": "SA1 Persona (prerequisite: persona card)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "60 min. 5 min Crazy 8s template intro, 30 min team sketching, 15 min friction-circle round (each team identifies and defends their circled frame), 10 min synthesis. Output: 8-frame journey per team, one circled frame. Feeds Wk2 SA2.5 reanchor and the prototype build (P1 Solution Blueprint cites this 8-frame journey explicitly). Push teams away from happy paths. The friction frame is the gold.",
+      "note": "A problem-validation experiment: teams run another round of outreach to get data on their chosen direction, in whatever format fits.",
+      "facilitatorCue": null,
       "studentTasks": [
-        "Take your SA1 persona. Walk their experience in 8 frames.",
-        "Crazy 8s format: stick figures fine. Annotate user does / system does.",
-        "Frame 1 = entry point (how they discover the problem). Frame 8 = resolution (or what's missing).",
-        "Circle the friction frame. That's where your solution lives."
+        "Decide what you need to learn before building.",
+        "Pick the format: calls, survey, intercepts.",
+        "Get it out before the wrap-up."
       ]
     },
     {
-      "id": "s54",
+      "id": "s43",
+      "sid": "4-pm-wrap-up",
+      "day": 4,
+      "start": 960,
+      "end": 990,
+      "track": "core",
+      "title": "Wrap-up",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "work",
+      "code": null,
+      "sub": null,
+      "aspects": [],
+      "half": "pm",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s44",
       "sid": "4-pm-external-team-activity",
       "day": 4,
       "start": 1020,
@@ -3418,7 +2399,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s55",
+      "id": "s45",
       "sid": "5-am-welcome",
       "day": 5,
       "start": 540,
@@ -3482,7 +2463,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s56",
+      "id": "s46",
       "sid": "5-am-week-2-flow-prd",
       "day": 5,
       "start": 570,
@@ -3556,7 +2537,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s57",
+      "id": "s47",
       "sid": "5-am-sa2-5-realigning-around-customer",
       "day": 5,
       "start": 630,
@@ -3613,7 +2594,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s58",
+      "id": "s48",
       "sid": "5-am-guest-talk",
       "day": 5,
       "start": 675,
@@ -3672,7 +2653,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s59",
+      "id": "s49",
       "sid": "5-pm-sa3-how-is-it-solved-now",
       "day": 5,
       "start": 780,
@@ -3729,7 +2710,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s60",
+      "id": "s50",
       "sid": "5-pm-sa4-team-aligned-on-v1-solution",
       "day": 5,
       "start": 825,
@@ -3795,7 +2776,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s61",
+      "id": "s51",
       "sid": "5-pm-solution-blueprint",
       "day": 5,
       "start": 855,
@@ -3812,16 +2793,16 @@ window.STUDIO = {
       "half": "pm",
       "deck": {
         "title": "Solution Blueprint",
-        "slides": 15,
+        "slides": 17,
         "status": "ready",
         "url": "/decks-html/P1-solution-blueprint.html",
         "isLocal": true,
-        "pdfUrl": "/decks/HLV-P1-Solution-Blueprint.pdf",
+        "pdfUrl": "/decks/HLV-P1-Solution-Blueprint-v1_5.pdf",
         "code": "P1"
       }
     },
     {
-      "id": "s62",
+      "id": "s52",
       "sid": "5-pm-canvas-lite",
       "day": 5,
       "start": 855,
@@ -3837,17 +2818,17 @@ window.STUDIO = {
       "aspects": [],
       "half": "pm",
       "deck": {
-        "title": "Canvas Lite",
-        "slides": 17,
+        "title": "Canvas & Margin",
+        "slides": 8,
         "status": "draft",
         "url": "/decks-html/B1-canvas-lite.html",
         "isLocal": true,
-        "pdfUrl": "/decks/HLV-B1-Canvas-Lite.pdf",
+        "pdfUrl": "/decks/HLV-B1-Canvas-Lite-v1_1.pdf",
         "code": "B1"
       }
     },
     {
-      "id": "s63",
+      "id": "s53",
       "sid": "5-pm-landscape-map",
       "day": 5,
       "start": 855,
@@ -3864,16 +2845,16 @@ window.STUDIO = {
       "half": "pm",
       "deck": {
         "title": "Landscape Map",
-        "slides": 18,
+        "slides": 8,
         "status": "draft",
         "url": "/decks-html/M1-landscape-map.html",
         "isLocal": true,
-        "pdfUrl": "/decks/HLV-M1-Landscape-Map.pdf",
+        "pdfUrl": "/decks/HLV-M1-Landscape-Map-v6_1.pdf",
         "code": "M1"
       }
     },
     {
-      "id": "s64",
+      "id": "s54",
       "sid": "5-pm-team-synthesis",
       "day": 5,
       "start": 960,
@@ -3939,7 +2920,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s65",
+      "id": "s55",
       "sid": "6-am-welcome",
       "day": 6,
       "start": 540,
@@ -3990,7 +2971,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s66",
+      "id": "s56",
       "sid": "6-am-product-definition",
       "day": 6,
       "start": 555,
@@ -4007,16 +2988,16 @@ window.STUDIO = {
       "half": "am",
       "deck": {
         "title": "Product Definition",
-        "slides": 15,
+        "slides": 8,
         "status": "draft",
         "url": "/decks-html/P2-product-definition.html",
         "isLocal": true,
-        "pdfUrl": "/decks/HLV-P2-Product-Definition.pdf",
+        "pdfUrl": null,
         "code": "P2"
       }
     },
     {
-      "id": "s67",
+      "id": "s57",
       "sid": "6-am-back-of-napkin-economics",
       "day": 6,
       "start": 555,
@@ -4033,16 +3014,16 @@ window.STUDIO = {
       "half": "am",
       "deck": {
         "title": "Back-of-Napkin Economics",
-        "slides": 15,
+        "slides": 8,
         "status": "draft",
         "url": "/decks-html/B2-napkin-economics.html",
         "isLocal": true,
-        "pdfUrl": "/decks/HLV-B2-Napkin-Economics.pdf",
+        "pdfUrl": null,
         "code": "B2"
       }
     },
     {
-      "id": "s68",
+      "id": "s58",
       "sid": "6-am-validation-design",
       "day": 6,
       "start": 555,
@@ -4059,16 +3040,16 @@ window.STUDIO = {
       "half": "am",
       "deck": {
         "title": "Validation Design",
-        "slides": 15,
+        "slides": 8,
         "status": "draft",
         "url": "/decks-html/M2-validation-design.html",
         "isLocal": true,
-        "pdfUrl": "/decks/HLV-M2-Validation-Design.pdf",
+        "pdfUrl": null,
         "code": "M2"
       }
     },
     {
-      "id": "s69",
+      "id": "s59",
       "sid": "6-am-team-synthesis",
       "day": 6,
       "start": 690,
@@ -4129,7 +3110,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s70",
+      "id": "s60",
       "sid": "6-pm-out-in-market",
       "day": 6,
       "start": 780,
@@ -4196,7 +3177,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s71",
+      "id": "s61",
       "sid": "6-pm-out-in-market-debrief",
       "day": 6,
       "start": 960,
@@ -4265,7 +3246,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s72",
+      "id": "s62",
       "sid": "7-am-welcome",
       "day": 7,
       "start": 540,
@@ -4316,7 +3297,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s73",
+      "id": "s63",
       "sid": "7-am-sponsor-feedback-sessions",
       "day": 7,
       "start": 555,
@@ -4398,7 +3379,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s74",
+      "id": "s64",
       "sid": "7-am-prototype-build-a-b",
       "day": 7,
       "start": 615,
@@ -4414,17 +3395,17 @@ window.STUDIO = {
       "aspects": [],
       "half": "am",
       "deck": {
-        "title": "Prototype Build",
-        "slides": 15,
+        "title": "Prototype Spec Sheet",
+        "slides": 8,
         "status": "draft",
         "url": "/decks-html/P3-prototype-build.html",
         "isLocal": true,
-        "pdfUrl": "/decks/HLV-P3-Prototype-Build.pdf",
+        "pdfUrl": null,
         "code": "P3"
       }
     },
     {
-      "id": "s75",
+      "id": "s65",
       "sid": "7-am-the-100-day-plan",
       "day": 7,
       "start": 615,
@@ -4468,11 +3449,11 @@ window.STUDIO = {
       ],
       "deck": {
         "title": "The 100-Day Plan",
-        "slides": 12,
+        "slides": 0,
         "status": "draft",
         "url": "/decks-html/B3M3-joint-100-day-plan.html",
         "isLocal": true,
-        "pdfUrl": "/decks/HLV-B3M3-100-Day-Plan.pdf",
+        "pdfUrl": null,
         "code": null
       },
       "note": "Business and Market specialists converge for the first time this week. The 100-Day Plan is the team's answer to: 'If a sponsor said yes Friday, what would the first 100 days actually look like?' Validation, experimentation, the initial proof toward launching — lo-fi, interaction-driven, get-outside (Prehype-style signal mining, not desk research). Draws on the Reality Check collection: Out in Market #1 findings plus the morning's Sponsor Feedback.",
@@ -4508,7 +3489,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s76",
+      "id": "s66",
       "sid": "7-pm-team-alignment",
       "day": 7,
       "start": 780,
@@ -4569,7 +3550,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s77",
+      "id": "s67",
       "sid": "7-pm-out-in-market",
       "day": 7,
       "start": 825,
@@ -4649,7 +3630,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s78",
+      "id": "s68",
       "sid": "7-pm-out-in-market-debrief",
       "day": 7,
       "start": 960,
@@ -4714,7 +3695,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s79",
+      "id": "s69",
       "sid": "8-am-welcome",
       "day": 8,
       "start": 540,
@@ -4765,7 +3746,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s80",
+      "id": "s70",
       "sid": "8-am-lpp-time",
       "day": 8,
       "start": 555,
@@ -4849,7 +3830,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s81",
+      "id": "s71",
       "sid": "8-am-guest-how-to-pitch",
       "day": 8,
       "start": 660,
@@ -4921,7 +3902,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s82",
+      "id": "s72",
       "sid": "8-pm-lpp-time-narrative-time",
       "day": 8,
       "start": 780,
@@ -4997,7 +3978,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s83",
+      "id": "s73",
       "sid": "8-pm-lpp-late-work-session",
       "day": 8,
       "start": 1020,
@@ -5017,7 +3998,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s84",
+      "id": "s74",
       "sid": "9-am-welcome",
       "day": 9,
       "start": 540,
@@ -5068,7 +4049,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s85",
+      "id": "s75",
       "sid": "9-am-lpp-practice",
       "day": 9,
       "start": 555,
@@ -5140,7 +4121,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s86",
+      "id": "s76",
       "sid": "9-pm-final-practice",
       "day": 9,
       "start": 780,
@@ -5208,7 +4189,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s87",
+      "id": "s77",
       "sid": "9-pm-final-pitches",
       "day": 9,
       "start": 840,
@@ -5284,7 +4265,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s88",
+      "id": "s78",
       "sid": "9-pm-reception",
       "day": 9,
       "start": 960,

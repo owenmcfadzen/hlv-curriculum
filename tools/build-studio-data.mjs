@@ -189,16 +189,16 @@ const ASPECTS = {
 };
 
 const DAYS = [
-  { i: 0, wk: 1, dow: "Mon", date: "Jul 6",  evening: null },
-  { i: 1, wk: 1, dow: "Tue", date: "Jul 7",  evening: null },
-  { i: 2, wk: 1, dow: "Wed", date: "Jul 8",  evening: null },
-  { i: 3, wk: 1, dow: "Thu", date: "Jul 9",  evening: null },
-  { i: 4, wk: 1, dow: "Fri", date: "Jul 10", evening: null },
-  { i: 5, wk: 2, dow: "Mon", date: "Jul 13", evening: null },
-  { i: 6, wk: 2, dow: "Tue", date: "Jul 14", evening: null },
-  { i: 7, wk: 2, dow: "Wed", date: "Jul 15", evening: null },
-  { i: 8, wk: 2, dow: "Thu", date: "Jul 16", evening: "Final pitches" },
-  { i: 9, wk: 2, dow: "Fri", date: "Jul 17", evening: "Reception" },
+  { i: 0, wk: 1, dow: "Mon", date: "Jun 29", evening: null },
+  { i: 1, wk: 1, dow: "Tue", date: "Jun 30", evening: null },
+  { i: 2, wk: 1, dow: "Wed", date: "Jul 1",  evening: null },
+  { i: 3, wk: 1, dow: "Thu", date: "Jul 2",  evening: null },
+  { i: 4, wk: 1, dow: "Fri", date: "Jul 3",  evening: null },
+  { i: 5, wk: 2, dow: "Mon", date: "Jul 6",  evening: null },
+  { i: 6, wk: 2, dow: "Tue", date: "Jul 7",  evening: null },
+  { i: 7, wk: 2, dow: "Wed", date: "Jul 8",  evening: null },
+  { i: 8, wk: 2, dow: "Thu", date: "Jul 9",  evening: "Final pitches" },
+  { i: 9, wk: 2, dow: "Fri", date: "Jul 10", evening: "Reception" },
 ].map((d, i) => {
   const meta = daysMeta.days[i] || {};
   return { ...d, theme: meta.theme || null, lead: meta.lead || null, takeaway: meta.takeaway || null };

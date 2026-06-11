@@ -3054,23 +3054,39 @@ const SCHEDULE = {
         {
           name: "Mon",
           am: [
-            { label: "Welcome", kind: "welcome",
+            {
+              label: "Welcome",
+              kind: "welcome",
               slides_link_or_embed: "https://docs.google.com/presentation/d/1VLeUeBe5V2Z445ARVnWz9scpl6xCmv3b8tryVFMQjW4/edit",
-              time_start: "09:00", time_end: "09:30",
+              time_start: "09:30",
+              time_end: "10:00",
               slide: {
                 status: "draft",
                 foundation: "Day 1 opener. The first ten minutes set the tone for two weeks. Warm, direct, no corporate energy. Keep it short — they'll be sitting a lot today.",
                 students: [
                   "Find a seat (any seat).",
                   "Name + one thing you're hoping to make this week.",
-                  "Quick orientation to the building, the schedule shape, the core promise.",
+                  "Quick orientation to the building, the schedule shape, the core promise."
                 ],
                 facilitator: "Don't over-explain the program. The structure reveals itself through doing. Energy check on the room — if it's flat, lean into the playfulness in the next block.",
-                references: ["Day 1 facilitator script (TBD)", "Schedule overview (this view)"],
+                references: [
+                  "Day 1 facilitator script (TBD)",
+                  "Schedule overview (this view)"
+                ],
+                notes: [
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Week 1 rebuilt 2026-06-11 (Owen + Philip): sponsor challenge centres young adults, so the cohort runs the research loop on itself. Times corrected per Cate: 09:30-16:30, lunch 13:00."
+                  }
+                ]
               }
             },
-            { label: "Intro game", kind: "game",
-              time_start: "09:30", time_end: "10:00",
+            {
+              label: "Intro game",
+              kind: "game",
+              time_start: "10:00",
+              time_end: "10:30",
               slide: {
                 status: "draft",
                 foundation: "Rollercoaster Check-in opens the program by giving students a visual way to say where they actually are. Cold openings hide real state. The diagram makes it visible, surfaces clusters, and gives shy students a label to pick rather than improvise.",
@@ -3086,17 +3102,40 @@ const SCHEDULE = {
                   "HLV Curriculum: Active Design (Notion canonical)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "Rebuilt from the Notion Practice Entry (Rollercoaster Check-in) rather than the Porto 2025 Day 1 deck. Notion is more recent and explicit about diagnostic use ('Use the data, do not just collect it')." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "The 10 reference points (Curious / Bored / Nervous etc.) are verbatim from the 2025 deck. Kept because they give shy students a label to pick rather than improvise. The Notion entry doesn't enumerate them; treat as a useful 2025 carry-over." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "No ai_loop on this block. It's a check-in, not a build." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "Rollercoaster as a framing device (program-arc visualization) lives in the Entrepreneurship intro block right after this. Same diagram, two uses: here is personal weather, next is program weather." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "Cleanup pass: stripped em-dashes from prior PDF-source notes per Owen's style rule. Replaced 'meatspace warm-up' phrasing with 'It is a check-in, not a build' which is the actual point." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "Rebuilt from the Notion Practice Entry (Rollercoaster Check-in) rather than the Porto 2025 Day 1 deck. Notion is more recent and explicit about diagnostic use ('Use the data, do not just collect it')."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "The 10 reference points (Curious / Bored / Nervous etc.) are verbatim from the 2025 deck. Kept because they give shy students a label to pick rather than improvise. The Notion entry doesn't enumerate them; treat as a useful 2025 carry-over."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "No ai_loop on this block. It's a check-in, not a build."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "Rollercoaster as a framing device (program-arc visualization) lives in the Entrepreneurship intro block right after this. Same diagram, two uses: here is personal weather, next is program weather."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "Cleanup pass: stripped em-dashes from prior PDF-source notes per Owen's style rule. Replaced 'meatspace warm-up' phrasing with 'It is a check-in, not a build' which is the actual point."
+                  }
                 ]
               }
             },
-            { label: "Entrepreneurship intro", kind: "work",
+            {
+              label: "Entrepreneurship intro",
+              kind: "work",
               slides_link_or_embed: "https://docs.google.com/presentation/d/1ebqGoQsMDJMmwDRygdH18xZsexVVG7GqbaRyI8DZBO8/edit",
-              time_start: "10:00", time_end: "11:15",
+              time_start: "10:30",
+              time_end: "11:45",
               slide: {
                 status: "draft",
                 foundation: "Move students from 'entrepreneur = billionaire founder' to a usable definition: noticing real problems, building solutions, finding a way for them to survive. By end of block they have a working definition (problem to solution to scale), four behaviors to practice, and a one-sentence personal commitment for the week.",
@@ -3115,19 +3154,57 @@ const SCHEDULE = {
                   "HLV Introduction (Notion: facilitator mental model)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "Rebuilt from the Notion 'What is Entrepreneurship?' Module. The lesson structure (5 narrative beats, 60-75 min) maps cleanly to this 75-min block." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "Reframed around Stacey's 4-behavior cluster (Problem spotter / Experimenter / Gravity maker / Resilient learner) instead of the 2025 8-trait list. Stacey's reframe is cleaner and Notion-canonical." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "Future of Work content stays in this block per Notion canonical (3 simplified points: Automation/AI, Freelance / portfolio careers, Constant change). Earlier draft note saying 'trimmed because belongs in next block' was wrong. Notion keeps it here." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "'Problem Spotters' exercise (from 2025 slide 35) is now framed as the opening 'what bugs you' beat per Notion. Three sub-prompts (Where were you? What was frustrating? Who else might feel this?) are good lifts but not strictly required by the Notion module." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "Working agreement was originally flagged as a wall-only artifact. Per Owen's call, it now also lives as a single student bullet in this block (BE PRESENT, EXPRESS POV, WRITE INSIGHTS, OPEN-MINDED, MOVE FORWARD WITH CONSENSUS, plus ELMO). Origin: Notion ELMO Practice Entry plus the 2025 Day 1 deck. Recommendation: also produce as a physical wall artifact at the venue so it persists beyond this block." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "Voice question: went compressed-and-directive ('notice problems, make solutions, scale impact'). Notion module uses the same line ('identifying problems and finding solutions that have impact and can scale'). Aligned. Pick whichever you prefer." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "Cleanup pass: stripped em-dashes from prior PDF-source notes per Owen's style rule." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "Rebuilt from the Notion 'What is Entrepreneurship?' Module. The lesson structure (5 narrative beats, 60-75 min) maps cleanly to this 75-min block."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "Reframed around Stacey's 4-behavior cluster (Problem spotter / Experimenter / Gravity maker / Resilient learner) instead of the 2025 8-trait list. Stacey's reframe is cleaner and Notion-canonical."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "Future of Work content stays in this block per Notion canonical (3 simplified points: Automation/AI, Freelance / portfolio careers, Constant change). Earlier draft note saying 'trimmed because belongs in next block' was wrong. Notion keeps it here."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "'Problem Spotters' exercise (from 2025 slide 35) is now framed as the opening 'what bugs you' beat per Notion. Three sub-prompts (Where were you? What was frustrating? Who else might feel this?) are good lifts but not strictly required by the Notion module."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "Working agreement was originally flagged as a wall-only artifact. Per Owen's call, it now also lives as a single student bullet in this block (BE PRESENT, EXPRESS POV, WRITE INSIGHTS, OPEN-MINDED, MOVE FORWARD WITH CONSENSUS, plus ELMO). Origin: Notion ELMO Practice Entry plus the 2025 Day 1 deck. Recommendation: also produce as a physical wall artifact at the venue so it persists beyond this block."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "Voice question: went compressed-and-directive ('notice problems, make solutions, scale impact'). Notion module uses the same line ('identifying problems and finding solutions that have impact and can scale'). Aligned. Pick whichever you prefer."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "Cleanup pass: stripped em-dashes from prior PDF-source notes per Owen's style rule."
+                  }
                 ]
               }
             },
-            { label: "Alumni: Orient", kind: "work", sub: "Why You're Back · pick specialty",
-              audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-mon-am-entrepreneurship-intro",
-              time_start: "10:00", time_end: "11:15",
+            {
+              label: "Alumni: Orient",
+              kind: "work",
+              sub: "Why You're Back · pick specialty",
+              audiences: [
+                "alumni"
+              ],
+              facilitators: [
+                "f2"
+              ],
+              parallel_to: "w1-mon-am-entrepreneurship-intro",
+              time_start: "10:30",
+              time_end: "11:45",
               slide: {
                 status: "draft",
                 foundation: "Pulled during the Entrepreneurship intro. This block is the brief for the Week 1 alumni arc plus a specialty pick. By end of block, every alumnus knows which specialty they're delivering on Wk2 Tuesday.",
@@ -3137,11 +3214,23 @@ const SCHEDULE = {
                   "Sign your name to the chart. The chart is the commitment."
                 ],
                 facilitator: "F2 owns end-to-end.",
-                references: ["flow-stacey-2026-05-14.html · Alumni window list"]
+                references: [
+                  "flow-stacey-2026-05-14.html · Alumni window list"
+                ],
+                notes: [
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Re-timed parallel to Entrepreneurship intro in the rebuilt week. Alumni-track pairing pending Cate review."
+                  }
+                ]
               }
             },
-            { label: "AI tooling, PRD, intro pitch", kind: "work",
-              time_start: "11:15", time_end: "12:00",
+            {
+              label: "AI tooling, PRD, intro pitch",
+              kind: "work",
+              time_start: "11:45",
+              time_end: "13:00",
               ai_loop: {
                 analog: "Pre-arrival thinking about self plus the challenge",
                 structure: "Structured prompt for an intro pitch",
@@ -3168,78 +3257,86 @@ const SCHEDULE = {
                   "Quick Pitch Template (Notion Knowledge)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "ADAPT vs canonical mapping (locked Owen call, for Monday discussion with Stacey): ADAPT (Analog / Dialogue / Adjust / Produce / Test) is the student-facing mnemonic. ai_loop fields use the canonical Stacey-developed names (analog / structure / output / final / reality_check). Mapping: A=analog, D=structure, Adjust=output, Produce=final, T=reality_check. Slide content uses ADAPT vocabulary; ai_loop block keeps canonical." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "No Notion source for this block as written. Drafted from Owen's original brief (May 2026). ADAPT one-pager doesn't exist yet, needs creation before delivery (referenced TBD)." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "ai_loop populated per Owen's brief verbatim with the dialogue to structure / adjust to output / produce to final mapping locked in decision #3. Friction point: 'Iterate with AI until the pitch sounds like you' reads as process not artifact, but schema says output is the working artifact. Left as-is pending the deferred schema rename." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "Test step here is soft (peer feedback in room). The first formal Reality Check block is Thu AM (RC: Pitch speed dating). Worth a callback line when facilitator notes are expanded for delivery." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "Framing question: teach ADAPT cold (5 letters on a slide, then run the loop) or run-first / reveal-second. Drafted cold-teach because lower facilitator-skill and easier for Stacey to run Monday. 30-sec rewrite if you want to flip." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "No sponsor placeholder needed in this block. No sponsor reference." },
-                  { author: "Cowork", ts: "2026-05-15T18:00:00Z", text: "Cleanup pass: stripped em-dashes from prior PDF-source notes per Owen's style rule." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "ADAPT vs canonical mapping (locked Owen call, for Monday discussion with Stacey): ADAPT (Analog / Dialogue / Adjust / Produce / Test) is the student-facing mnemonic. ai_loop fields use the canonical Stacey-developed names (analog / structure / output / final / reality_check). Mapping: A=analog, D=structure, Adjust=output, Produce=final, T=reality_check. Slide content uses ADAPT vocabulary; ai_loop block keeps canonical."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "No Notion source for this block as written. Drafted from Owen's original brief (May 2026). ADAPT one-pager doesn't exist yet, needs creation before delivery (referenced TBD)."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "ai_loop populated per Owen's brief verbatim with the dialogue to structure / adjust to output / produce to final mapping locked in decision #3. Friction point: 'Iterate with AI until the pitch sounds like you' reads as process not artifact, but schema says output is the working artifact. Left as-is pending the deferred schema rename."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "Test step here is soft (peer feedback in room). The first formal Reality Check block is Thu AM (RC: Pitch speed dating). Worth a callback line when facilitator notes are expanded for delivery."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "Framing question: teach ADAPT cold (5 letters on a slide, then run the loop) or run-first / reveal-second. Drafted cold-teach because lower facilitator-skill and easier for Stacey to run Monday. 30-sec rewrite if you want to flip."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "No sponsor placeholder needed in this block. No sponsor reference."
+                  },
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T18:00:00Z",
+                    text: "Cleanup pass: stripped em-dashes from prior PDF-source notes per Owen's style rule."
+                  },
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Swag challenge folded in here per rebuild; standalone 'Swag challenge intro' (Mon pm) and 'Swag pitch' (Tue am) removed — content in git history."
+                  }
                 ]
-              }
-            },
+              },
+              sub: "incl. swag challenge questions"
+            }
           ],
           pm: [
-            { label: "Sponsor briefing", kind: "sponsor",
+            {
+              label: "Sponsor briefing",
+              kind: "sponsor",
               slides_link_or_embed: "https://docs.google.com/presentation/d/1ytRhPSLZIrm_ymh0qNF7ZGf4PfdVnDHgapH2Tg6KesE/edit",
-              time_start: "13:00", time_end: "13:45",
+              time_start: "14:00",
+              time_end: "15:00",
               slide: {
                 status: "draft",
                 foundation: "The sponsor names the real-world challenge. This is the seed for everything Week 1 students do. Sponsor must be specific and human — not a corporate brief. Students should leave knowing what frustrates the sponsor's customers, not the sponsor's strategy.",
                 students: [
                   "Listen — no notes the first 5 minutes, just hear them.",
                   "Capture: what frustrates the people they're trying to serve?",
-                  "Q&A in the next block; hold questions, don't fire them.",
+                  "Q&A in the next block; hold questions, don't fire them."
                 ],
                 facilitator: "Brief the sponsor beforehand: tell us about your customers' worst day, not your roadmap. Hard cap at 25 minutes — the panel that follows is where students mine the brief.",
-                references: ["Sponsor brief template (TBD)", "Lisbon: Sonae · Porto: TBD · NYC: IKEA · Seoul: Coupang"],
-              }
-            },
-            { label: "Challenge Q&A", kind: "panel",
-              time_start: "13:45", time_end: "14:30",
-              slide: {
-                status: "draft",
-                foundation: "Students mine the sponsor brief from the previous block. Sponsor stays in the room for direct questions. Bar: every student asks at least one. The questions teach more than the brief did.",
-                students: [
-                  "Reread your notes from the briefing.",
-                  "Write 3 questions you actually want answered.",
-                  "Ask one out loud. Listen to others ask theirs.",
-                  "Capture answers that contradict what you assumed."
-                ],
-                facilitator: "45 min. 5 min frame (questions teach more than briefs), 30 min Q&A (round-robin until everyone asks), 10 min debrief (what answer surprised you?). Sponsor pre-brief: be candid; if you don't know, say so.",
                 references: [
-                  "Sponsor briefing (immediate prerequisite)",
-                  "Stakeholder Mapping (Notion: Knowledge / Foundation)",
-                  "[SPONSOR — TBD between Sonae and JdM, hard floor 8 Jun] panelist briefing"
+                  "Sponsor brief template (TBD)",
+                  "Lisbon: Sonae · Porto: TBD · NYC: IKEA · Seoul: Coupang"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Hard requirement: every student asks one question. Mining the sponsor while they're warm is the unlock." }
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Extended to absorb the challenge brief; 'Challenge Q&A' block folded in — content in git history."
+                  }
                 ]
-              }
+              },
+              sub: "incl. challenge brief"
             },
-            { label: "Game", kind: "game",
-              time_start: "14:30", time_end: "15:00",
-              slide: {
-                status: "draft",
-                foundation: "[drafted] Mid-day Mon energizer. Picked: 'Two Truths and a Lie.' Cohort still finding each other; this surfaces personality fast.",
-                students: [
-                  "Pair up with someone you don't know.",
-                  "Each tells the other 3 statements: 2 true, 1 false.",
-                  "Partner guesses the lie.",
-                  "Switch pairs after 3 rounds. Final: room shares the most surprising true thing they heard."
-                ],
-                facilitator: "30 min. 5 min rules, 20 min pairs (3 rotations), 5 min surprise share-out. Don't rescue awkward statements. The cringe builds the room.",
-                references: [
-                  "Activities deck (Porto 2025): Two Truths and a Lie variant",
-                  "Mon AM Intro game (Rollercoaster, prior energizer)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Picked per STANDARDS.md decision #8. Mon PM is still cohort-formation phase. TT&L surfaces personality without high stakes." }
-                ]
-              }
-            },
-            { label: "Active listening & interviews", kind: "panel",
-              time_start: "15:00", time_end: "16:00",
+            {
+              label: "Interviews — 5 questions + 5 whys",
+              kind: "work",
+              time_start: "15:00",
+              time_end: "16:30",
               slide: {
                 status: "draft",
                 foundation: "First customer encounter. Real customers from the sponsor's domain talk about their actual frustrations. No solutions, no validation, just listening. The friction they describe seeds tomorrow's problem work.",
@@ -3257,114 +3354,78 @@ const SCHEDULE = {
                   "block-drafts/w1-mon-pm-customer-insights-panel.md (prior draft, leverage)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "First customer encounter. Listening-not-pitching framing is the explicit constraint. Customer panelists will recur Tue AM (Revisit) and Tue PM (Validation), so first impressions matter." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "First customer encounter. Listening-not-pitching framing is the explicit constraint. Customer panelists will recur Tue AM (Revisit) and Tue PM (Validation), so first impressions matter."
+                  },
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Evolved from 'Active listening & interviews'. Students interview each other with set questions: 5 questions, then 5 whys on one answer. The cohort is the challenge's user group."
+                  }
                 ]
               }
-            },
-            { label: "Debrief: problems", kind: "work",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1Rf-fSmOdVLRKAxwEfnYCn0EKuwjB5s-0v0_p4vkXzcI/edit",
-              time_start: "16:00", time_end: "16:30",
-              slide: {
-                status: "draft",
-                foundation: "End-of-day capture. Take what you heard from sponsor + customers and surface initial problem candidates. Not problem statements yet (that's Tue), just raw friction notes.",
-                students: [
-                  "List every friction you heard today (sponsor brief plus customer panel).",
-                  "Group similar ones.",
-                  "Pick the 3 frictions that felt sharpest.",
-                  "Bring them into Tue AM Opportunity ID."
-                ],
-                facilitator: "30 min. 5 min frame (raw notes, not finished thinking), 20 min individual capture, 5 min round (each student names their top friction). Output: every student has 3 friction candidates ready for Tue.",
-                references: [
-                  "Sponsor briefing + Challenge Q&A + Active listening & interviews (today's inputs)",
-                  "Tue AM M: Opportunity ID (immediate downstream)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Bridge from listening to working. Raw notes today, structured problem statements Tue. Order matters." }
-                ]
-              }
-            },
-            { label: "Swag challenge intro", kind: "sponsor",
-              time_start: "16:30", time_end: "17:00",
-              slide: {
-                status: "draft",
-                foundation: "Lightweight evening challenge: design swag for the program (sticker, tee, mug, anything). Why: low-stakes practice of the ADAPT loop they'll run on real stuff Tue AM. Submission tomorrow morning.",
-                students: [
-                  "Hear the swag challenge brief: design something the cohort would actually want.",
-                  "Constraints: any medium, deliver as a sketch + 60-second pitch tomorrow at 9am.",
-                  "This is your evening: 30 minutes max, then go decompress.",
-                  "Tomorrow's first block (Swag pitch) is your delivery."
-                ],
-                facilitator: "30 min. 5 min frame (low-stakes, ADAPT practice in disguise), 15 min Q&A on constraints, 10 min team chats (informal, who's pairing up). Don't over-spec the brief; ambiguity is the point. Tomorrow's Swag pitch block is the delivery moment.",
-                references: [
-                  "Tue AM Swag pitch (immediate downstream, first solo ai_loop)",
-                  "ADAPT methodology one-pager (TBD)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Sets up Tue AM Swag pitch (first solo ADAPT loop). Constraint of '30 minutes max evening work' protects against burnout on Day 1." }
-                ]
-              }
-            },
-          ],
+            }
+          ]
         },
         {
           name: "Tue",
           am: [
-            { label: "Swag pitch", kind: "module",
-              time_start: "09:00", time_end: "09:45",
-              ai_loop: {
-                analog: "Sketches and ideas for the swag concept (developed after Mon PM Swag challenge intro, possibly with overnight thinking)",
-                structure: "Pitch the swag idea via AI for refinement",
-                output: "Refine based on AI feedback. Cut anything that doesn't sound like you",
-                final: "60-second swag pitch with single hook, single image",
-                reality_check: "Pitch to cohort, capture the one bit of feedback that lands hardest",
-                uses_prd_lab: false
-              },
+            {
+              label: "Welcome",
+              kind: "welcome",
+              time_start: "09:30",
+              time_end: "10:00",
               slide: {
-                status: "draft",
-                foundation: "First solo ADAPT loop. Students take their swag concept (sketched after Mon PM Swag challenge intro), run it through Analog to Dialogue to Adjust to Produce to Test, and pitch to the cohort. Low-stakes practice of the loop they'll run all program.",
-                students: [
-                  "Bring your swag sketch (Analog).",
-                  "Dialogue: pitch the swag idea via AI for refinement. Get back a sharper framing.",
-                  "Adjust: cut anything that doesn't sound like you. AI's first draft is a starting point, not the answer.",
-                  "Produce: 60-second swag pitch. Single hook, single image.",
-                  "Test: pitch to the cohort. Capture the one bit of feedback that lands hardest."
-                ],
-                facilitator: "45 min. 5 min ADAPT recall (Mon AM Wk1 reminder, this is your second loop), 5 min sketch surface (each student shows their analog), 15 min Dialogue plus Adjust loop, 5 min Produce locked, 15 min Test (cohort pitches with quick feedback). Don't rescue students who go wrong. The failures here are cheap and instructive.",
-                references: [
-                  "ADAPT methodology one-pager (TBD: needs creation before delivery)",
-                  "Mon PM Swag challenge intro (prerequisite)",
-                  "Quick Pitch Template (Notion: Knowledge)"
-                ],
+                status: "stub",
+                claude_drafted: true,
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Second ADAPT loop in the program. First was Mon AM intro pitch (delivered to room). This is the first solo loop where students drive the AI back-and-forth themselves. Stakes intentionally low (swag, not life). ai_loop populated per Owen's brief." }
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "New block from 2026-06-11 week 1 rebuild. Content TBD."
+                  }
                 ]
               }
             },
-            { label: "M: Opportunity ID", kind: "module",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1OsC3s35ZNqoCTkch3jBQHhiMFWwviVCpVBb3sUafFNs/edit",
-              time_start: "09:45", time_end: "10:30",
+            {
+              label: "Synthesis",
+              kind: "work",
+              time_start: "10:00",
+              time_end: "11:00",
               slide: {
                 status: "draft",
-                foundation: "Module teach. Frame how opportunities show up: friction in your own life, friction at the edges of systems, friction nobody complains about because they've adapted. Set the lens for the rest of the day's problem work.",
+                foundation: "Work Monday's interview notes into patterns. What did we actually hear?",
+                claude_drafted: true,
                 students: [
-                  "Note 3 frictions you've noticed in your own life. Last week, last month, last year.",
-                  "For each: who else feels this?",
-                  "Pick the one that's most interesting to dig into.",
-                  "That's your candidate for problem identification."
+                  "Lay out Monday's interview notes.",
+                  "Cluster what repeats.",
+                  "Name the three strongest patterns."
                 ],
-                facilitator: "45 min. 25 min teach (opportunity = friction plus audience that feels it), 15 min individual capture, 5 min round (each student names their candidate). Output: every student has a friction-candidate to take into PM problem work. Don't accept 'I don't have any.' Push for the small, specific, human-scale frictions.",
-                references: [
-                  "Opportunity Identification Process (Notion: Knowledge / Foundation)",
-                  "Active Listening (Day 1 deck, Mon PM customer panel reference)"
-                ],
+                facilitator: "Keep them in the data, not in opinions. Patterns must trace to something someone said.",
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted from Notion's Opportunity Identification Process. Friction lens is the spine. Low-bar: every student leaves with one friction-candidate." }
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Drafted from Owen's 2026-06-11 week 1 rebuild spec (sponsor-challenge research practicum). Review before ready."
+                  }
                 ]
               }
             },
-            { label: "Alumni: Anchor", kind: "work", sub: "Read your LPP slide",
-              audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-tue-am-m-opportunity-id",
-              time_start: "09:45", time_end: "10:45",
+            {
+              label: "Alumni: Anchor",
+              kind: "work",
+              sub: "Read your LPP slide",
+              audiences: [
+                "alumni"
+              ],
+              facilitators: [
+                "f2"
+              ],
+              parallel_to: "w1-tue-am-m-opportunity-id",
+              time_start: "10:00",
+              time_end: "11:00",
               slide: {
                 status: "draft",
                 foundation: "Pulled during M: Opportunity ID. Read the actual LPP slide for your chosen specialty. Pin down the vocabulary, the framing questions, and what \"expert\" looks like for the track you picked.",
@@ -3374,60 +3435,284 @@ const SCHEDULE = {
                   "Note three concrete things you still don't understand — those are Deepen 1's brief."
                 ],
                 facilitator: "F2 owns end-to-end.",
-                references: ["flow-stacey-2026-05-14.html · Alumni window list", "LPP slide deck (per specialty)"]
-              }
-            },
-            { label: "Revisit panel", kind: "panel",
-              time_start: "10:30", time_end: "11:15",
-              slide: {
-                status: "draft",
-                foundation: "Same customers from Mon PM, sharpened questions. Students have had time to digest the Mon PM panel, surface what they missed, and ask better. The questions are the test.",
-                students: [
-                  "Pull your Mon PM notes.",
-                  "Pick 3 questions you wish you'd asked then.",
-                  "Pose them now. Listen for the one answer that contradicts your assumption set.",
-                  "Capture the contradicting answer. That's the seed for tomorrow."
-                ],
-                facilitator: "45 min. 5 min frame (better questions = better signal), 30 min panel Q&A (round-robin students), 10 min capture round. Pre-brief panelists: be candid, push back if a question is loaded. Don't let students rephrase questions to get the answer they want.",
                 references: [
-                  "Customer Discovery & Validation (Notion: Knowledge / Foundation)",
-                  "Mon PM Active listening & interviews (prerequisite)",
-                  "[CUSTOMER PANELISTS — TBD] briefing"
+                  "flow-stacey-2026-05-14.html · Alumni window list",
+                  "LPP slide deck (per specialty)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted as a sharper Mon PM. The 'contradicting answer is the seed' framing comes from Customer Discovery & Validation. Customer panelists carry over from Mon PM, no separate recruitment." }
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Re-timed parallel to Synthesis in the rebuilt week. Alumni-track pairing pending Cate review."
+                  }
                 ]
               }
             },
-            { label: "User journey", kind: "work",
-              time_start: "11:15", time_end: "12:00",
+            {
+              label: "Build interviews",
+              kind: "work",
+              time_start: "11:00",
+              time_end: "12:00",
               slide: {
                 status: "draft",
-                foundation: "Sketch the journey of someone facing your friction-candidate. 8 frames, stick figures fine. This is the Wk1 individual version of what teams will do in SA2 with persona-and-team refinement. The point: see the experience as a sequence.",
+                foundation: "Turn the patterns into a sharper interview. Better questions come from what the first round surfaced.",
+                claude_drafted: true,
                 students: [
-                  "Take your friction-candidate from M: Opportunity ID.",
-                  "Sketch 8 frames of the user's experience: how they encounter the friction, what they try, where they give up.",
-                  "Crazy 8s format. Stick figures, captions.",
-                  "Circle the worst frame. That's where your problem lives."
-                ],
-                facilitator: "45 min. 5 min Crazy 8s template, 30 min individual sketching, 10 min round (each student shows plus names worst frame). Output: every student has an 8-frame journey plus worst-frame circled. Feeds Tue PM Problems work. Don't let students pre-design solutions, this is observation.",
-                references: [
-                  "Journey Mapping (Notion: Knowledge / Foundation)",
-                  "M: Opportunity ID (prerequisite, Tue AM friction-candidate)",
-                  "SA2 (Wk1 Fri PM, team-version with persona)"
+                  "Pick the pattern worth digging into.",
+                  "Write the next interview: 5 questions.",
+                  "Trade with another pair and pressure-test."
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Wk1 individual version of the journey-mapping pattern. SA2 is the team-version with persona (Fri PM). Same Crazy 8s format, same friction-frame focus. Reuse builds muscle." }
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Drafted from Owen's 2026-06-11 week 1 rebuild spec (sponsor-challenge research practicum). Review before ready."
+                  }
                 ]
               }
             },
+            {
+              label: "Interview each other",
+              kind: "work",
+              time_start: "12:00",
+              time_end: "13:00",
+              slide: {
+                status: "draft",
+                foundation: "Run the new interviews across teams. Second round, better instrument.",
+                claude_drafted: true,
+                notes: [
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Drafted from Owen's 2026-06-11 week 1 rebuild spec (sponsor-challenge research practicum). Review before ready."
+                  }
+                ]
+              }
+            }
           ],
           pm: [
-            { label: "Problems", kind: "work",
-              time_start: "13:00", time_end: "13:45",
+            {
+              label: "Team activity",
+              kind: "game",
+              time_start: "14:00",
+              time_end: "14:30",
+              slide: {
+                status: "draft",
+                foundation: "[drafted] Go Bananas, picked per Owen's standard #8. Mid-day Tue energizer. Higher energy than the morning Rollercoaster check-in. Resets the room before the harder problem-validation work in the afternoon.",
+                students: [
+                  "Stand up. Find a partner.",
+                  "30 seconds: each tells the other a true 'I once did this absurd thing' story.",
+                  "Switch partners. Repeat 3 rounds.",
+                  "Final round: tell the whole room your favorite story you heard."
+                ],
+                facilitator: "30 min. 5 min set-up plus rules, 15 min partner rounds (3 rotations), 10 min favorite-story share-out. Don't rescue awkward pairings. The cringe is part of the energy reset. Picked because the room needs movement before the panel work.",
+                references: [
+                  "Activities deck (Porto 2025): Go Bananas spec",
+                  "Mon AM Intro game (Rollercoaster, prior energizer)"
+                ],
+                notes: [
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Picked per STANDARDS.md decision #8. Go Bananas works post-lunch better than Rollercoaster (which is contemplative). Activity rotates absurd-story-telling among partners. Low-stakes, kinetic, surfaces personality."
+                  }
+                ]
+              }
+            },
+            {
+              label: "Synthesis — what we heard",
+              kind: "work",
+              time_start: "14:30",
+              time_end: "15:00",
+              slide: {
+                status: "draft",
+                foundation: "Fold round two into the picture. What held, what broke, what's new?",
+                claude_drafted: true,
+                notes: [
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Drafted from Owen's 2026-06-11 week 1 rebuild spec (sponsor-challenge research practicum). Review before ready."
+                  }
+                ]
+              }
+            },
+            {
+              label: "Create survey / interview / questionnaire",
+              kind: "work",
+              time_start: "15:00",
+              time_end: "16:00",
+              slide: {
+                status: "draft",
+                foundation: "Build an instrument to send beyond the room: survey, interview script, or questionnaire — for everyone you know who can offer insight on the challenge area.",
+                claude_drafted: true,
+                students: [
+                  "Pick the format that fits your question.",
+                  "Draft it.",
+                  "Test it on one person in the room before it ships."
+                ],
+                facilitator: "The instrument goes to their own networks tonight. Quality bar: would you answer it?",
+                notes: [
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Drafted from Owen's 2026-06-11 week 1 rebuild spec (sponsor-challenge research practicum). Review before ready."
+                  }
+                ]
+              }
+            },
+            {
+              label: "Send out",
+              kind: "work",
+              time_start: "16:00",
+              time_end: "16:30",
+              slide: {
+                status: "draft",
+                foundation: "Ship the instrument to your network before you leave. Replies come back overnight; tomorrow morning we work them.",
+                claude_drafted: true,
+                facilitator: "Push for same-evening responses: group chats, a reply target per student. Thin data tomorrow means a thin morning.",
+                notes: [
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Drafted from Owen's 2026-06-11 week 1 rebuild spec (sponsor-challenge research practicum). Review before ready."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          name: "Wed",
+          am: [
+            {
+              label: "Welcome",
+              kind: "welcome",
+              time_start: "09:30",
+              time_end: "10:00",
+              slide: {
+                status: "draft",
+                foundation: "Day 3 morning check-in. Yesterday's problem work landed (or didn't). Quick pulse before solutions work begins.",
+                students: [
+                  "Find your seat.",
+                  "30-second check: how did your problem statement survive yesterday?",
+                  "Rollercoaster pulse."
+                ],
+                facilitator: "15 min. Tight standup. The shift today: from problems to solutions. If a student is still stuck on yesterday's validation, surface privately, don't let it derail the room.",
+                references: [
+                  "Rollercoaster Check-in (Notion Knowledge / Activity)",
+                  "Daily Standup (Notion Knowledge)"
+                ],
+                notes: [
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Templated. Day 3 is when problem-validation reality lands. Standup catches stuck students before they spiral."
+                  }
+                ]
+              }
+            },
+            {
+              label: "Review replies → share-out",
+              kind: "work",
+              time_start: "10:00",
+              time_end: "11:00",
+              slide: {
+                status: "draft",
+                foundation: "Go through what came back, as groups. Then everything gets shared with the whole room.",
+                claude_drafted: true,
+                students: [
+                  "Read your replies. Mark what surprised you.",
+                  "Pull the three strongest signals.",
+                  "Share-out: one round, whole group."
+                ],
+                notes: [
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Drafted from Owen's 2026-06-11 week 1 rebuild spec (sponsor-challenge research practicum). Review before ready."
+                  }
+                ]
+              }
+            },
+            {
+              label: "Alumni: Deepen 2",
+              kind: "work",
+              sub: "Pressure-test + rewrite brief",
+              audiences: [
+                "alumni"
+              ],
+              facilitators: [
+                "f2"
+              ],
+              parallel_to: "w1-wed-am-m-solutions",
+              time_start: "10:00",
+              time_end: "10:45",
+              slide: {
+                status: "draft",
+                foundation: "Pulled during M: Solutions. F2 pressure-tests each Specialist Brief — where's the hand-wave, where's the borrowed phrase, where's the part you can't defend. One rewrite pass produces v2.",
+                students: [
+                  "Read your v1 out loud to F2.",
+                  "Take the hard feedback. Don't defend; rewrite.",
+                  "Ship v2 — sharper, in your voice, defensible."
+                ],
+                facilitator: "F2 owns end-to-end. Push hard on the hand-wave; the brief is what they teach from on Tuesday.",
+                references: [
+                  "flow-stacey-2026-05-14.html · Alumni window list"
+                ],
+                notes: [
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Re-timed parallel to replies review in the rebuilt week. Alumni-track pairing pending Cate review."
+                  }
+                ]
+              }
+            },
+            {
+              label: "Entrepreneur Story",
+              kind: "panel",
+              time_start: "11:00",
+              time_end: "12:00",
+              slide: {
+                status: "draft",
+                foundation: "An early-stage founder tells their actual journey: first users, validation, what nearly broke. Bar is narrative over expertise. Students hear what it actually felt like to build something from nothing.",
+                students: [
+                  "Listen first 20 min. No notes.",
+                  "Capture: what's the one moment where it almost didn't work?",
+                  "Q&A 10 min. Ask about the specific decision that made the difference."
+                ],
+                facilitator: "30 min. 5 min intro, 20 min story, 5 min Q&A. Pre-brief guest: tell the actual story (first users, validation, near-misses), not lessons learned. Narrative over expertise. Last year's product guy worked because he could tell the story. Pick on that signal.",
+                references: [
+                  "[GUEST — TBD: early-stage founder, narrative-strong] briefing",
+                  "Past Quick Pitch Examples (Notion: Knowledge)"
+                ],
+                notes: [
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T23:30:00Z",
+                    text: "Reframed from generic Guest: valuable idea? to Entrepreneur Story per Owen's Cate brief (2026-05-15 evening). Guest still TBD, logged in needs-owen.md. Format spec: narrative-first, 'what almost broke' as the diagnostic question."
+                  },
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Guest session preserved per Cate; extended 30 to 60 min per Owen's 2026-06-11 spec — confirm the speaker has the hour."
+                  }
+                ]
+              }
+            },
+            {
+              label: "Problem identification",
+              kind: "work",
+              time_start: "12:00",
+              time_end: "13:00",
               slide: {
                 companion_decks: [
-                  { name: "Problem Mapping (W1D2)", url: "https://docs.google.com/presentation/d/137gWfX4oQsBMBP3uIj01RrL1Oicf_e1oye4uKb90uFo/edit", why: "Stick-figure map: triggers, makes-worse, workarounds, holes. Useful framework to overlay." }
+                  {
+                    name: "Problem Mapping (W1D2)",
+                    url: "https://docs.google.com/presentation/d/137gWfX4oQsBMBP3uIj01RrL1Oicf_e1oye4uKb90uFo/edit",
+                    why: "Stick-figure map: triggers, makes-worse, workarounds, holes. Useful framework to overlay."
+                  }
                 ],
                 status: "draft",
                 foundation: "From friction to defined problem. Students take their worst-frame from User journey and write a problem statement. Specific. Bounded. About a real person.",
@@ -3445,12 +3730,26 @@ const SCHEDULE = {
                   "5 Whys Exercise (Notion: Knowledge / Method)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted from Notion's Problem Identification. The '[Persona] cannot [X] because [Y]' template is the standard problem statement format. Sanity checks address the two most common failure modes (vague persona, vague constraint)." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Drafted from Notion's Problem Identification. The '[Persona] cannot [X] because [Y]' template is the standard problem statement format. Sanity checks address the two most common failure modes (vague persona, vague constraint)."
+                  },
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Carried from old Tue 'Problems' block; now runs on the cohort's own research data."
+                  }
                 ]
               }
-            },
-            { label: "Top problems", kind: "work",
-              time_start: "13:45", time_end: "14:30",
+            }
+          ],
+          pm: [
+            {
+              label: "Problem selection + reframing",
+              kind: "work",
+              time_start: "14:00",
+              time_end: "15:00",
               slide: {
                 status: "draft",
                 foundation: "Synthesis moment. Surface the strongest problem statements across the cohort. The room votes by attention, not formal ballot. The point: students see their problem against others, learn what 'specific' and 'bounded' look like.",
@@ -3466,195 +3765,24 @@ const SCHEDULE = {
                   "Problems (immediate prerequisite)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted as exposure-not-ranking. Avoiding formal vote keeps focus on calibration ('what does sharp look like?') instead of competition." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Drafted as exposure-not-ranking. Avoiding formal vote keeps focus on calibration ('what does sharp look like?') instead of competition."
+                  },
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Carried from old Tue 'Top problems'; selection and reframing now one session."
+                  }
                 ]
               }
             },
-            { label: "Game", kind: "game",
-              time_start: "14:30", time_end: "15:00",
-              slide: {
-                status: "draft",
-                foundation: "[drafted] Go Bananas, picked per Owen's standard #8. Mid-day Tue energizer. Higher energy than the morning Rollercoaster check-in. Resets the room before the harder problem-validation work in the afternoon.",
-                students: [
-                  "Stand up. Find a partner.",
-                  "30 seconds: each tells the other a true 'I once did this absurd thing' story.",
-                  "Switch partners. Repeat 3 rounds.",
-                  "Final round: tell the whole room your favorite story you heard."
-                ],
-                facilitator: "30 min. 5 min set-up plus rules, 15 min partner rounds (3 rotations), 10 min favorite-story share-out. Don't rescue awkward pairings. The cringe is part of the energy reset. Picked because the room needs movement before the panel work.",
-                references: [
-                  "Activities deck (Porto 2025): Go Bananas spec",
-                  "Mon AM Intro game (Rollercoaster, prior energizer)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Picked per STANDARDS.md decision #8. Go Bananas works post-lunch better than Rollercoaster (which is contemplative). Activity rotates absurd-story-telling among partners. Low-stakes, kinetic, surfaces personality." }
-                ]
-              }
-            },
-            { label: "M: Problem validation", kind: "module",
-              time_start: "15:00", time_end: "15:45",
-              slide: {
-                companion_decks: [
-                  { name: "Interview Prep (W1D2)", url: "https://docs.google.com/presentation/d/10D2hf7E6Gpf9UhjA0E8SiesfO-iWmqWP3UrzfwNF68A/edit", why: "Writing an interview guide — 3 open Qs × 2 follow-ups, past-tense framings." },
-                  { name: "Interviews (W1D3)", url: "https://docs.google.com/presentation/d/140gViXVY1Zy6d_TwFfMU1hc_AxdOqT0IuNIvNKF-qfc/edit", why: "Field interview run — pairs, verbatim capture, 5 per pair. Use when extending into actual interviews." }
-                ],
-                status: "draft",
-                foundation: "Teach: a problem isn't real until someone outside your head agrees. Module covers 5 Whys (drilling causes), Active Listening (hearing what's said vs. what's meant), and the empathy interview opener. Sets up the panel that follows.",
-                students: [
-                  "5 Whys: take your problem statement. Ask 'why does this happen?' five times. Each answer becomes the new question.",
-                  "Active Listening: subject talks, listener asks open questions only, observer takes notes. Practice in trios.",
-                  "Empathy Interview opener: 'Walk me through the last time this happened.' Get specific, get story.",
-                  "Apply to a partner's problem statement. They get more useful answers than you do."
-                ],
-                facilitator: "45 min. 15 min teach (5 Whys plus Active Listening plus empathy opener), 25 min trio practice (subject/listener/observer rotations), 5 min synthesis. Push back if listeners give advice instead of asking. The trio format is the working unit, not optional.",
-                references: [
-                  "5 Whys Exercise (Notion: Knowledge / Method)",
-                  "Active Listening (Notion: Knowledge / Method)",
-                  "Empathy Interview Protocol (Notion: Knowledge / Method)",
-                  "Problems (immediate prerequisite)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Triangulated from three Notion entries: 5 Whys (causal drilling), Active Listening (subject/listener/observer roles), Empathy Interview Protocol (opener plus structure). Trio practice format comes from Active Listening Notion entry." }
-                ]
-              }
-            },
-            { label: "Alumni: Deepen 1", kind: "work", sub: "AI-assisted research → Specialist Brief v1",
-              audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-tue-pm-m-problem-validation",
-              time_start: "15:00", time_end: "16:00",
-              ai_loop: {
-                analog: "Quick scan of last year's track materials + this year's challenge brief",
-                structure: "Structured prompt via PRD Lab (or copy-paste fallback) — research specialty topic against Sonae challenge",
-                output: "Specialist Brief v1 — one page in their own words",
-                final: "Specialist Brief v2 (after Wed AM rewrite)",
-                reality_check: "Thu AM teach-back to cohort + F2 feedback",
-                uses_prd_lab: true
-              },
-              slide: {
-                status: "draft",
-                foundation: "Pulled during M: Problem validation. Laptops out. Research the intersection of your specialty and this year's Sonae challenge. By end of block, every alumnus has a one-page Specialist Brief v1 in their own words.",
-                students: [
-                  "Open laptops. Open the Sonae brief. Open whatever AI you trust.",
-                  "Research the intersection: your specialty × this sponsor × this challenge.",
-                  "Draft a one-page Specialist Brief — your words, not a paste."
-                ],
-                facilitator: "F2 owns end-to-end. AI-assisted research is the explicit method; this is not a writing test.",
-                references: ["flow-stacey-2026-05-14.html · Alumni window list", "Sonae challenge brief"]
-              }
-            },
-            { label: "Panel: validation", kind: "panel",
-              time_start: "15:45", time_end: "16:30",
-              slide: {
-                status: "draft",
-                foundation: "Same panelists, harder questions. Students apply M: Problem validation tools (5 Whys, empathy opener, active listening) to test their problem statements with real customers. Validation is the test event for the morning's problem work.",
-                students: [
-                  "Take your problem statement to a panelist.",
-                  "Open with the empathy interview: 'Walk me through the last time this happened.'",
-                  "If they say 'this isn't my problem,' that's data. Capture it.",
-                  "Drill with 5 Whys when they describe a frustration.",
-                  "Capture: what's the contradicting evidence to your problem statement?"
-                ],
-                facilitator: "45 min. 5 min frame (validation = looking for disconfirmation), 30 min panel Q&A (round-robin, students drive), 10 min capture round. Pre-brief panelists: don't agree to be polite. Push back on problem statements that don't match their experience. The contradicting answer is the gold.",
-                references: [
-                  "Customer Discovery & Validation (Notion: Knowledge / Foundation)",
-                  "Empathy Interview Protocol (Notion: Knowledge / Method)",
-                  "M: Problem validation (prerequisite tools)",
-                  "[CUSTOMER PANELISTS — TBD] briefing"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Test event for Tue's problem work. 'Looking for disconfirmation' framing per Customer Discovery & Validation Notion entry. Panelists are third encounter (Mon PM Customer panel, Tue AM Revisit panel, Tue PM Validation), same people, sharper bar each time." }
-                ]
-              }
-            },
-            { label: "Top problems revisit", kind: "work",
-              time_start: "16:30", time_end: "17:00",
-              slide: {
-                status: "draft",
-                foundation: "End-of-day synthesis. Re-read problem statements, mark which survived validation, mark which didn't. The point: problem definitions die in contact with reality. That's normal.",
-                students: [
-                  "Pull your problem statement from this morning.",
-                  "Mark: did the panel validate, contradict, or surprise?",
-                  "If contradicted: rewrite. If validated: sharpen. If surprised: pause and ask why.",
-                  "Take refined statement into Wed solutions work."
-                ],
-                facilitator: "30 min. 5 min frame (problems die in contact with reality, normal), 20 min individual rework, 5 min round (each student names how their statement changed). Don't let students protect a dying problem. Data is data.",
-                references: [
-                  "Problems (Tue PM 13:00, original)",
-                  "Panel: validation (Tue PM 15:45, validation event)",
-                  "Problem Reframing (Notion: Knowledge / Method, used Wed)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Close-of-day synthesis. Frames problem-death-as-normal so students don't cling. Hand-off to Wed Problem Reframing." }
-                ]
-              }
-            },
-          ],
-        },
-        {
-          name: "Wed",
-          am: [
-            { label: "Welcome", kind: "welcome",
-              time_start: "09:00", time_end: "09:15",
-              slide: {
-                status: "draft",
-                foundation: "Day 3 morning check-in. Yesterday's problem work landed (or didn't). Quick pulse before solutions work begins.",
-                students: [
-                  "Find your seat.",
-                  "30-second check: how did your problem statement survive yesterday?",
-                  "Rollercoaster pulse."
-                ],
-                facilitator: "15 min. Tight standup. The shift today: from problems to solutions. If a student is still stuck on yesterday's validation, surface privately, don't let it derail the room.",
-                references: [
-                  "Rollercoaster Check-in (Notion Knowledge / Activity)",
-                  "Daily Standup (Notion Knowledge)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Templated. Day 3 is when problem-validation reality lands. Standup catches stuck students before they spiral." }
-                ]
-              }
-            },
-            { label: "M: Solutions", kind: "module",
-              time_start: "09:15", time_end: "10:00",
-              slide: {
-                companion_decks: [
-                  { name: "Problem Reframing (W1D3)", url: "https://docs.google.com/presentation/d/1M-d8wVkQr_k_a8v9VvS0idgFYuvn7bDa3imBSs8KPQw/edit", why: "HMW statements from interview surprises. Bridges from problems → solutions." },
-                  { name: "Reframing Checklist (W1D3)", url: "https://docs.google.com/presentation/d/1CnqD0uH1IUDsVEigXHOM5-KhN-uGWDEcEdpAMhXNvYw/edit", why: "4-point quality check on HMW statements — Audience / Context / Verb / Scope." }
-                ],
-                status: "draft",
-                foundation: "Module teach. From a validated problem to a candidate solution. The Reframing move: turn 'how do I solve this' into 'what if the problem were different?' Generates more solutions than direct attack.",
-                students: [
-                  "Take your refined problem statement from yesterday.",
-                  "Generate 6 reframings of it (use the Notion Reframing Checklist categories).",
-                  "For each reframing, sketch one candidate solution.",
-                  "You leave with 6 problem-solution pairs, not a winner."
-                ],
-                facilitator: "45 min. 15 min teach (Reframing as the unlock for solution diversity, walk the 6 categories), 25 min individual generation, 5 min round (each student names their most surprising reframing). Don't let students collapse to one solution prematurely. Diversity now = better choice later.",
-                references: [
-                  "Problem Reframing (Notion: Knowledge / Foundation, gold standard)",
-                  "Reframing Checklist (Notion: Knowledge / Method)",
-                  "Top problems revisit (Tue PM, prerequisite problem statement)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted from Notion's Problem Reframing (gold standard). Owen's brief flagged Reframing as 'perhaps the most distinctively HLV tool.' 6 reframings = the Reframing Checklist categories." }
-                ]
-              }
-            },
-            { label: "Alumni: Deepen 2", kind: "work", sub: "Pressure-test + rewrite brief",
-              audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-wed-am-m-solutions",
-              time_start: "09:15", time_end: "10:00",
-              slide: {
-                status: "draft",
-                foundation: "Pulled during M: Solutions. F2 pressure-tests each Specialist Brief — where's the hand-wave, where's the borrowed phrase, where's the part you can't defend. One rewrite pass produces v2.",
-                students: [
-                  "Read your v1 out loud to F2.",
-                  "Take the hard feedback. Don't defend; rewrite.",
-                  "Ship v2 — sharper, in your voice, defensible."
-                ],
-                facilitator: "F2 owns end-to-end. Push hard on the hand-wave; the brief is what they teach from on Tuesday.",
-                references: ["flow-stacey-2026-05-14.html · Alumni window list"]
-              }
-            },
-            { label: "Solutions", kind: "work",
-              time_start: "10:00", time_end: "11:00",
+            {
+              label: "Solutions",
+              kind: "work",
+              time_start: "15:00",
+              time_end: "16:00",
               slide: {
                 status: "draft",
                 foundation: "Open work block. Take the 6 problem-solution pairs from M: Solutions. Develop the most promising 2 into something concrete enough to defend in the next block.",
@@ -3670,144 +3798,24 @@ const SCHEDULE = {
                   "M: Solutions (immediate prerequisite)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "2-candidate cap forces development. Three+ candidates means students stay in generation mode and never commit." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "2-candidate cap forces development. Three+ candidates means students stay in generation mode and never commit."
+                  },
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Re-timed from Wed am in the rebuilt week."
+                  }
                 ]
               }
             },
-            { label: "Entrepreneur Story", kind: "panel",
-              time_start: "11:00", time_end: "11:30",
-              slide: {
-                status: "draft",
-                foundation: "An early-stage founder tells their actual journey: first users, validation, what nearly broke. Bar is narrative over expertise. Students hear what it actually felt like to build something from nothing.",
-                students: [
-                  "Listen first 20 min. No notes.",
-                  "Capture: what's the one moment where it almost didn't work?",
-                  "Q&A 10 min. Ask about the specific decision that made the difference."
-                ],
-                facilitator: "30 min. 5 min intro, 20 min story, 5 min Q&A. Pre-brief guest: tell the actual story (first users, validation, near-misses), not lessons learned. Narrative over expertise. Last year's product guy worked because he could tell the story. Pick on that signal.",
-                references: [
-                  "[GUEST — TBD: early-stage founder, narrative-strong] briefing",
-                  "Past Quick Pitch Examples (Notion: Knowledge)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T23:30:00Z", text: "Reframed from generic Guest: valuable idea? to Entrepreneur Story per Owen's Cate brief (2026-05-15 evening). Guest still TBD, logged in needs-owen.md. Format spec: narrative-first, 'what almost broke' as the diagnostic question." }
-                ]
-              }
-            },
-            { label: "Top solutions", kind: "work",
-              time_start: "11:30", time_end: "12:00",
-              slide: {
-                status: "draft",
-                foundation: "Pick the one you'd actually pitch. The constraint forces commitment. Yesterday's exposure-not-ranking move applied to solutions: read aloud, see the range, pick the one you'll defend.",
-                students: [
-                  "Read both your candidate solutions to the room. 30 seconds each.",
-                  "Listen to others.",
-                  "Pick one of yours to take into PM panel work. Just one.",
-                  "Refine the one you picked based on what you heard."
-                ],
-                facilitator: "30 min. 20 min round-robin reads, 5 min cohort debrief, 5 min individual pick + refinement. Push back if a student picks the easier candidate vs. the better one. The constraint is 'which one will you defend,' not 'which one is safer.'",
-                references: [
-                  "Solutions (immediate prerequisite)",
-                  "Top problems (Tue PM, same exposure-not-ranking pattern)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Same exposure-not-ranking pattern as Tue's Top problems. Constraint shift: yesterday read-and-refine, today read-and-pick. Forces commitment going into PM panel test." }
-                ]
-              }
-            },
-          ],
-          pm: [
-            { label: "Panel: solution validation", kind: "panel",
-              time_start: "13:00", time_end: "13:45",
-              slide: {
-                status: "draft",
-                foundation: "Same panelists, fourth encounter. Now testing solution candidates instead of problem statements. Bar: would they actually use it? Would they pay for it? Would they recommend it?",
-                students: [
-                  "Pitch your one solution to a panelist. 60 seconds.",
-                  "Three questions: would you use it? Would you pay? Would you recommend?",
-                  "Capture the hesitation. The 'maybe' is more useful than the 'yes.'",
-                  "If they say no, ask why. The why is the data."
-                ],
-                facilitator: "45 min. 5 min frame (validation = hesitation hunt, not approval seeking), 30 min round-robin, 10 min capture. Pre-brief panelists: don't say yes to be polite. Surface the hesitation. Students need real signal.",
-                references: [
-                  "Customer Discovery & Validation (Notion: Knowledge / Foundation)",
-                  "Top solutions (immediate prerequisite)",
-                  "[CUSTOMER PANELISTS — TBD] briefing"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Fourth panel encounter (Mon PM, Tue AM, Tue PM, now Wed PM). Bar shifts each time. This one is solution validation. Hesitation-hunt framing is the explicit move." }
-                ]
-              }
-            },
-            { label: "Pick solution", kind: "work",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/14H4jaPfEPF1OLY_Ab0FybRSOil1i8z3Gnnh08L3jwjk/edit",
-              time_start: "13:45", time_end: "14:30",
-              slide: {
-                companion_decks: [
-                  { name: "Synthesis (W1D3)", url: "https://docs.google.com/presentation/d/1wiryrC6v7XPK7p3k36SYajNxOqQhMadQBvFLd8TW5DU/edit", why: "One-page synthesis: HMW + problem + quotes + direction. Feeds the picking decision." }
-                ],
-                status: "draft",
-                foundation: "Refine or replace the solution based on panel feedback. Some students will need to swap candidates. Some will need to sharpen. The choice is theirs but the bar is: defendable in tomorrow's pitch.",
-                students: [
-                  "Pull panel feedback. Sort: validate, contradict, surprise.",
-                  "Decide: keep this solution and sharpen it, or pivot to your second candidate.",
-                  "Either way: write the V1 solution sentence. 'For [user], this [solution] solves [problem] by [mechanism].'",
-                  "Lock it. The pitch tomorrow assumes this V1."
-                ],
-                facilitator: "45 min. 5 min frame (pivot is fine, defending a dying solution is not), 30 min individual decide-and-write, 10 min round (each student reads V1 sentence). Don't let students stall on the pivot decision. Choose by 14:15 or default to refinement.",
-                references: [
-                  "Panel: solution validation (immediate prerequisite)",
-                  "M: Solutions (the original 6 reframings, fallback options)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Hard 14:15 deadline on pivot decision is the convergence move. Without it, students rabbit-hole on candidate switching." }
-                ]
-              }
-            },
-            { label: "Game", kind: "game",
-              time_start: "14:30", time_end: "15:00",
-              slide: {
-                status: "draft",
-                foundation: "[drafted] Mid-afternoon energizer. Picked: Storytelling Roulette (improv-style, builds the muscle they'll use in pitch work right after).",
-                students: [
-                  "Form a circle. One person starts a story with 'Once...'",
-                  "Next person continues with 'Suddenly...' Next: 'Fortunately...' Next: 'Unfortunately...' (keep alternating).",
-                  "No planning ahead. Whatever's said is canon.",
-                  "End when the story dies naturally or after 3 rounds."
-                ],
-                facilitator: "30 min. 5 min set-up plus rules, 20 min playing, 5 min synthesis (improv builds the same 'commit to what's said' muscle as pitching). Useful warm-up for pitch template work next.",
-                references: [
-                  "Activities deck (Porto 2025): improv variant",
-                  "Pitch game (Wed PM, downstream)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Picked per STANDARDS.md decision #8. Storytelling Roulette warms the pitch muscle. If Storytelling Roulette isn't in the Activities deck spec, swap for any improv variant." }
-                ]
-              }
-            },
-            { label: "Pitch game", kind: "pitch",
-              time_start: "15:00", time_end: "15:30",
-              slide: {
-                status: "draft",
-                foundation: "Low-stakes pitch warm-up. Pitch a fake solution (not yours) for 60 seconds. The constraint flips ownership pressure off so students can practice the form before the real thing.",
-                students: [
-                  "Pick something dumb to pitch: a banana, a stapler, your shoe.",
-                  "60 seconds. Make it sound like the next big thing.",
-                  "Listen to others. Steal the moves that work.",
-                  "Note: what made the strong pitches strong? Open, hook, concrete?"
-                ],
-                facilitator: "30 min. 5 min frame (low-stakes, steal the moves), 20 min round-robin pitches, 5 min synthesis (which moves landed). Keep it loose. The muscle is what carries into the real pitch.",
-                references: [
-                  "Pitch Practice (Notion: Knowledge / Method)",
-                  "Storytelling & Pitch (Notion: Knowledge / Foundation)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Fake-stakes pitch = practice without ownership weight. Steal-the-moves framing makes peer learning explicit." }
-                ]
-              }
-            },
-            { label: "Pitch template", kind: "work",
-              time_start: "15:30", time_end: "16:15",
+            {
+              label: "Pitch intro",
+              kind: "work",
+              time_start: "16:00",
+              time_end: "16:30",
               slide: {
                 status: "draft",
                 foundation: "Hand them the structure. Quick Pitch Template: Hook, Problem, Solution, Why now, Ask. 5 sections, ~20 seconds each = 100-second pitch. Constraint forces clarity.",
@@ -3824,39 +3832,29 @@ const SCHEDULE = {
                   "Pitch Deck Framework (Notion: Knowledge / Foundation)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Quick Pitch Template lifted from Notion. 5-section structure is the canonical form. Owen's brief flagged Pitch Deck Framework + Storytelling & Pitch as gold sources for pitch work." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Quick Pitch Template lifted from Notion. 5-section structure is the canonical form. Owen's brief flagged Pitch Deck Framework + Storytelling & Pitch as gold sources for pitch work."
+                  },
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Carried from old 'Pitch template'; marks end of day, sets up Thursday."
+                  }
                 ]
               }
-            },
-            { label: "Pitch prep", kind: "work",
-              time_start: "16:15", time_end: "17:00",
-              slide: {
-                status: "draft",
-                foundation: "Time-boxed work block. Polish the templated pitch into something deliverable tomorrow. Practice it out loud. Get one peer review.",
-                students: [
-                  "Refine your 5-section pitch.",
-                  "Stand up and deliver it to a partner. They time it, you adjust.",
-                  "Switch. Take their feedback.",
-                  "By 17:00 you have a pitch you'd be willing to deliver tomorrow."
-                ],
-                facilitator: "45 min. Hands-off. Drift among pairs, push on opens, flag pitches that take more than 90 seconds. Don't write for them. The pitch they show up with tomorrow is the pitch they own.",
-                references: [
-                  "Pitch template (immediate prerequisite)",
-                  "Pitch Practice (Notion: Knowledge / Method)",
-                  "Thu AM RC: Pitch speed dating (downstream test event)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Sets up Thu AM RC: Pitch speed dating (already marked ready). Hands-off facilitator role is intentional — students need to feel the pitch in their own mouth before tomorrow's RC." }
-                ]
-              }
-            },
-          ],
+            }
+          ]
         },
         {
           name: "Thu",
           am: [
-            { label: "Welcome", kind: "welcome",
-              time_start: "09:00", time_end: "09:15",
+            {
+              label: "Welcome",
+              kind: "welcome",
+              time_start: "09:30",
+              time_end: "10:00",
               slide: {
                 status: "draft",
                 foundation: "Day 4 morning check-in. Pitch day. Energy matters. Spot anyone frozen, grab them privately.",
@@ -3871,12 +3869,19 @@ const SCHEDULE = {
                   "Daily Standup (Notion Knowledge)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Templated. Pitch-day note about freeze spotting." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Templated. Pitch-day note about freeze spotting."
+                  }
                 ]
               }
             },
-            { label: "Pitch prep", kind: "work",
-              time_start: "09:15", time_end: "10:30",
+            {
+              label: "Complete solution pitch",
+              kind: "work",
+              time_start: "10:00",
+              time_end: "11:00",
               slide: {
                 status: "draft",
                 foundation: "Final polish window before RC: Pitch speed dating. Tighten opens, lock the 90-second cut, rehearse with a partner.",
@@ -3893,13 +3898,32 @@ const SCHEDULE = {
                   "RC: Pitch speed dating (downstream, immediate next block)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Lead-in to the RC. Hard 90-second cut is the explicit constraint pulled from the RC block's content." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Lead-in to the RC. Hard 90-second cut is the explicit constraint pulled from the RC block's content."
+                  },
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Relabelled from 'Pitch prep'; one hour to finish pitches before speed dating."
+                  }
                 ]
               }
             },
-            { label: "Alumni: Rehearse", kind: "work", sub: "First teach-back · F2 owns room",
-              audiences: ["alumni"], facilitators: ["f2"], parallel_to: "w1-thu-am-pitch-prep",
-              time_start: "09:45", time_end: "10:30",
+            {
+              label: "Alumni: Rehearse",
+              kind: "work",
+              sub: "First teach-back · F2 owns room",
+              audiences: [
+                "alumni"
+              ],
+              facilitators: [
+                "f2"
+              ],
+              parallel_to: "w1-thu-am-pitch-prep",
+              time_start: "10:00",
+              time_end: "10:45",
               slide: {
                 status: "draft",
                 foundation: "Pulled during student pitch prep. First full teach-back of the Specialist Brief — 5 minutes each, to the alumni cohort and F2. Hard feedback. The brief gets one more refine overnight. Runs parallel to the student pitch prep — F2 owns the alumni room.",
@@ -3909,26 +3933,45 @@ const SCHEDULE = {
                   "Listen hard to the other specialties' teach-backs — Tuesday you deliver side by side."
                 ],
                 facilitator: "F2 owns end-to-end. F1 is on student pitch prep; do not pull F1 in.",
-                references: ["flow-stacey-2026-05-14.html · Alumni window list (moved from Thu PM)"]
+                references: [
+                  "flow-stacey-2026-05-14.html · Alumni window list (moved from Thu PM)"
+                ],
+                notes: [
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Re-timed parallel to pitch completion in the rebuilt week. Alumni-track pairing pending Cate review."
+                  }
+                ]
               }
             },
-            { label: "RC: Pitch speed dating", kind: "rc",
+            {
+              label: "RC: Pitch speed dating",
+              kind: "rc",
               slides_link_or_embed: "https://docs.google.com/presentation/d/175VzFjLm7QrqypN1oHn3j15AZYxWfX8-nFWlEmBuiMA/edit",
-              time_start: "10:30", time_end: "11:15",
+              time_start: "11:00",
+              time_end: "12:00",
               slide: {
                 status: "ready",
                 foundation: "First Reality Check of the program. The principle: an idea isn't ready until someone outside your team can hear it cold and tell you what they think it is. Speed dating format strips away preamble — you have 90 seconds. If you can't land it in 90 seconds, the pitch isn't there yet.",
                 students: [
                   "Pair up — your partner is from another team.",
                   "90-second pitch each. Then 60 seconds: \"What do you think this is, who's it for, why now?\"",
-                  "Rotate. Five rounds. Capture the one thing each partner got wrong about your idea.",
+                  "Rotate. Five rounds. Capture the one thing each partner got wrong about your idea."
                 ],
                 facilitator: "Run a tight clock — visible timer, hard cuts. Coach the listening side: don't be polite. The single debrief question afterwards: what did everyone consistently misunderstand?",
-                references: ["Reality Check methodology (TBD chapter)", "Audience tier scoring decision — see §4"],
+                references: [
+                  "Reality Check methodology (TBD chapter)",
+                  "Audience tier scoring decision — see §4"
+                ]
               }
             },
-            { label: "Pitches", kind: "pitch", sub: "Round 1 · refined after RC",
-              time_start: "11:15", time_end: "12:00",
+            {
+              label: "Pitches",
+              kind: "pitch",
+              sub: "Round 1 · refined after RC",
+              time_start: "12:00",
+              time_end: "13:00",
               slide: {
                 status: "draft",
                 foundation: "Round 1 of pitch presentations. Right after RC: Pitch speed dating. Each student delivers their refined pitch to the cohort. First time the full cohort hears each pitch in finished form.",
@@ -3944,14 +3987,22 @@ const SCHEDULE = {
                   "Audience tier scoring decision (see Reality Check methodology)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Round 1 of 3 (tier 1 = cohort peers). Audience tiers escalate Thu PM. Audience tier scoring is referenced from the RC block but the §4 doc isn't accessible to me; framing assumed from context." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Round 1 of 3 (tier 1 = cohort peers). Audience tiers escalate Thu PM. Audience tier scoring is referenced from the RC block but the §4 doc isn't accessible to me; framing assumed from context."
+                  }
                 ]
               }
-            },
+            }
           ],
           pm: [
-            { label: "Pitches", kind: "pitch", sub: "Round 2 · mentor / staff audience",
-              time_start: "13:00", time_end: "14:00",
+            {
+              label: "Pitches",
+              kind: "pitch",
+              sub: "Round 2 · mentor / staff audience",
+              time_start: "14:00",
+              time_end: "14:45",
               slide: {
                 status: "draft",
                 foundation: "Round 2 of pitch presentations. Audience widens: facilitators, mentors, staff. Higher bar than the cohort, but still friendly.",
@@ -3967,12 +4018,19 @@ const SCHEDULE = {
                   "Audience tier scoring decision (see Reality Check methodology)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Round 2 of 3. Tier 2 audience (mentors/staff). Bar shifts to question-survival." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Round 2 of 3. Tier 2 audience (mentors/staff). Bar shifts to question-survival."
+                  }
                 ]
               }
             },
-            { label: "Game", kind: "game",
-              time_start: "14:00", time_end: "14:30",
+            {
+              label: "Game",
+              kind: "game",
+              time_start: "14:45",
+              time_end: "15:00",
               slide: {
                 status: "draft",
                 foundation: "[drafted] Mid-afternoon energizer between pitch rounds. Picked: Yes, And — improv exercise that builds on Storytelling Roulette muscle. Resets nerves before final pitch round.",
@@ -3988,12 +4046,20 @@ const SCHEDULE = {
                   "Pitches Round 3 (downstream, the nervous one)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Picked per STANDARDS.md decision #8. Yes And resets between Round 2 and Round 3 pitch tiers." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Picked per STANDARDS.md decision #8. Yes And resets between Round 2 and Round 3 pitch tiers."
+                  }
                 ]
               }
             },
-            { label: "Pitches", kind: "pitch", sub: "Round 3 · external / mixed audience",
-              time_start: "14:30", time_end: "15:30",
+            {
+              label: "Pitches",
+              kind: "pitch",
+              sub: "Round 3 · external / mixed audience",
+              time_start: "15:00",
+              time_end: "15:30",
               slide: {
                 status: "draft",
                 foundation: "Final pitch round. Audience tier 3: external visitors, alumni, sponsor representation. Highest stakes of the day. Voting follows.",
@@ -4009,13 +4075,20 @@ const SCHEDULE = {
                   "Voting (immediate downstream)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Round 3 of 3. Tier 3 audience (external/alumni/sponsor). Sets up Voting. Three-round audience-tier escalation matches the RC methodology referenced in the original ready RC block." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Round 3 of 3. Tier 3 audience (external/alumni/sponsor). Sets up Voting. Three-round audience-tier escalation matches the RC methodology referenced in the original ready RC block."
+                  }
                 ]
               }
             },
-            { label: "Voting", kind: "work",
+            {
+              label: "Voting",
+              kind: "work",
               slides_link_or_embed: "https://docs.google.com/presentation/d/1rkryN0YzQji4GQR_9W2kESsNJYWPVD6AA0YsklQV10k/edit",
-              time_start: "15:30", time_end: "16:30",
+              time_start: "15:30",
+              time_end: "16:30",
               slide: {
                 status: "draft",
                 foundation: "Cohort votes on top 5 pitches. Not which is 'best' but which 5 we'll develop into team projects for Week 2. Every student voting decides what they might work on.",
@@ -4030,45 +4103,38 @@ const SCHEDULE = {
                   "Fri AM Pitch selection — 3 tracks intro (downstream)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Voting frame is 'what I'd build,' not 'best pitch.' That distinction is the difference between popularity vote and viable team formation." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Voting frame is 'what I'd build,' not 'best pitch.' That distinction is the difference between popularity vote and viable team formation."
+                  }
                 ]
               }
             },
-            { label: "Reflection", kind: "work", sub: "30 min team reflection before dinner",
-              time_start: "16:30", time_end: "17:00",
-              slide: {
-                status: "draft",
-                foundation: "End-of-day reflection before dinner. Day 4 has been intense (3 pitch rounds + voting). Surface what shifted, what landed, what's next.",
-                students: [
-                  "Sit with whoever's near you (cohort small enough for ad hoc groups).",
-                  "Each person: one thing that shifted today, one thing that landed, one open question.",
-                  "Capture quick: what state are you arriving at dinner in?"
-                ],
-                facilitator: "30 min. Light touch. Sit with a group, model the format. Don't push anyone who's still processing. Dinner follows immediately, this is the bridge.",
-                references: [
-                  "Daily Standup (Notion Knowledge, similar reflection pattern)",
-                  "Dinner (immediate downstream)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Bridge to dinner. Light touch reflection. After 3 pitch rounds + voting, students need decompression more than facilitation." }
-                ]
-              }
-            },
-            { label: "Dinner", kind: "social",
-              time_start: "18:00", time_end: "20:00",
-              audiences: ["student", "alumni"],
+            {
+              label: "Dinner",
+              kind: "social",
+              time_start: "18:00",
+              time_end: "20:00",
+              audiences: [
+                "student",
+                "alumni"
+              ],
               slide: {
                 status: "draft",
                 foundation: "Team dinner. Off-site. Decompress after pitch day."
               }
-            },
-          ],
+            }
+          ]
         },
         {
           name: "Fri",
           am: [
-            { label: "Welcome", kind: "welcome",
-              time_start: "09:00", time_end: "09:15",
+            {
+              label: "Welcome",
+              kind: "welcome",
+              time_start: "09:30",
+              time_end: "10:00",
               slide: {
                 status: "draft",
                 foundation: "Day 5 morning check-in. Last day of Wk1. Voting results land this morning, teams form by lunch.",
@@ -4083,13 +4149,38 @@ const SCHEDULE = {
                   "Daily Standup (Notion Knowledge)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Templated. Fri morning is post-voting. Students whose ideas didn't advance need acknowledgment, not avoidance." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Templated. Fri morning is post-voting. Students whose ideas didn't advance need acknowledgment, not avoidance."
+                  }
                 ]
               }
             },
-            { label: "Pitch selection — 3 tracks intro", kind: "work",
+            {
+              label: "Voting results",
+              kind: "work",
+              time_start: "10:00",
+              time_end: "10:30",
+              slide: {
+                status: "draft",
+                foundation: "Share what the room chose and why it landed where it did.",
+                claude_drafted: true,
+                notes: [
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Drafted from Owen's 2026-06-11 week 1 rebuild spec (sponsor-challenge research practicum). Review before ready."
+                  }
+                ]
+              }
+            },
+            {
+              label: "Intro to specialities",
+              kind: "work",
               slides_link_or_embed: "https://docs.google.com/presentation/d/1nQVQj0bt-nXqDGq2aET6HY91gTIdI2vHKExOUyi_tqs/edit",
-              time_start: "09:15", time_end: "10:15",
+              time_start: "10:30",
+              time_end: "11:00",
               slide: {
                 status: "draft",
                 foundation: "Reveal the top 5 pitches from yesterday's voting. Introduce the 3-track structure (Product / Business / Market) that Week 2 will run on. Set up the team-formation choice.",
@@ -4106,60 +4197,30 @@ const SCHEDULE = {
                   "Wk2 specialty round overview (Mon PM, Tue AM, Wed AM)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Pivot moment: from individual ideation to team execution. The frame 'everyone joins a top-5 team' protects against feeling-of-loss for un-selected pitchers." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Pivot moment: from individual ideation to team execution. The frame 'everyone joins a top-5 team' protects against feeling-of-loss for un-selected pitchers."
+                  },
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Relabelled from 'Pitch selection — 3 tracks intro'; compressed to 30 min in the rebuilt week."
+                  }
                 ]
               }
             },
-            { label: "Repitch the 5", kind: "pitch",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1LWPyngNBheA4EbLA56GQ8i4OrpFVc-Ysp0AN9tdL_rk/edit",
-              time_start: "10:15", time_end: "11:00",
-              slide: {
-                status: "draft",
-                foundation: "Top-5 pitchers re-deliver their pitch with overnight refinement. The cohort hears them again as the projects they'll commit to, not just yesterday's individual ideas.",
-                students: [
-                  "Top 5 pitchers: re-deliver. 90 seconds. Polish, not redesign.",
-                  "Cohort: listen as if you're choosing what to work on. Because you are.",
-                  "Capture: which 2-3 of these pitches could you actually build?"
-                ],
-                facilitator: "45 min. Tight. 5 pitches × 5 min each (90 sec pitch + 90 sec questions + buffer). Pre-brief pitchers: don't change the substance, sharpen the open. The audience is now choosing teammates, not voting.",
-                references: [
-                  "Pitches Round 3 + Voting (Thu PM, prerequisites)",
-                  "Pitch Practice (Notion: Knowledge / Method)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Frame: 'audience is now choosing teammates, not voting.' Polish-not-redesign keeps pitches consistent with what cohort voted for yesterday." }
-                ]
-              }
-            },
-            { label: "Preferences", kind: "work",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1RIO1WCkPMDn7wNEnDUrZ0pw1uEWfa6OOOFgKSUiI2kM/edit",
-              time_start: "11:00", time_end: "12:00",
-              slide: {
-                status: "draft",
-                foundation: "Each student ranks their preferences: top 3 projects + track choice (Product / Business / Market). This drives team allocation in PM. Honest preferences in, working teams out.",
-                students: [
-                  "Rank your top 3 project preferences from the 5 repitched.",
-                  "Pick your track preference (Product / Business / Market). Pick first choice, second choice.",
-                  "Submit (mechanism provided).",
-                  "Honest preferences. Don't game it."
-                ],
-                facilitator: "60 min. 10 min frame (honest preferences = working teams; gaming produces bad fits), 30 min individual reflection + submission, 20 min Q&A about what each track actually does. Allocation algorithm runs after lunch.",
-                references: [
-                  "Repitch the 5 (immediate prerequisite)",
-                  "Pitch selection — 3 tracks intro (track definitions)",
-                  "Team allocation (Fri PM, immediate downstream)"
-                ],
-                notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Ranking mechanism not specified — could be a form, sticky-vote, etc. Owen + Stacey decide format closer to delivery." }
-                ]
-              }
-            },
-          ],
-          pm: [
-            { label: "LPP Flow / PRD WK2", kind: "lpp",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1sqU1FmOye5CCxIrVui6vZKxEw-0uZLcccM-bT9tb1hQ/edit", sub: "Introduction to the Lean Product Plan and PRD structure for Week 2",
-              time_start: "13:00", time_end: "13:45",
-              audiences: ["student", "alumni"],
+            {
+              label: "Intro to Week 2 (LPP / PRD)",
+              kind: "lpp",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1sqU1FmOye5CCxIrVui6vZKxEw-0uZLcccM-bT9tb1hQ/edit",
+              sub: "Introduction to the Lean Product Plan and PRD structure for Week 2",
+              time_start: "11:00",
+              time_end: "11:30",
+              audiences: [
+                "student",
+                "alumni"
+              ],
               slide: {
                 status: "draft",
                 foundation: "Frame Week 2: the Lean Product Plan as the artifact teams ship by Friday. PRD as the working tool. ADAPT as the methodology threading through. Foreshadow without doing.",
@@ -4177,16 +4238,87 @@ const SCHEDULE = {
                   "Wk2 Mon AM Week 2 Flow (PRD) (downstream, deeper version)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Foreshadow-not-do version of Week 2. Deeper walkthrough is Wk2 Mon AM. Here: orient, not train." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Foreshadow-not-do version of Week 2. Deeper walkthrough is Wk2 Mon AM. Here: orient, not train."
+                  },
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Moved from Fri pm; introduces the week 2 flow before track selection."
+                  }
                 ]
               }
             },
-            { label: "Team allocation", kind: "work",
-              time_start: "13:45", time_end: "14:30",
-              audiences: ["student", "alumni"],
+            {
+              label: "Game",
+              kind: "game",
+              time_start: "11:30",
+              time_end: "12:00",
+              slide: {
+                status: "stub",
+                claude_drafted: true,
+                notes: [
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "New block from 2026-06-11 week 1 rebuild. Content TBD."
+                  }
+                ]
+              }
+            },
+            {
+              label: "Select speciality + idea",
+              kind: "work",
+              slides_link_or_embed: "https://docs.google.com/presentation/d/1RIO1WCkPMDn7wNEnDUrZ0pw1uEWfa6OOOFgKSUiI2kM/edit",
+              time_start: "12:00",
+              time_end: "12:30",
+              slide: {
+                status: "draft",
+                foundation: "Each student ranks their preferences: top 3 projects + track choice (Product / Business / Market). This drives team allocation in PM. Honest preferences in, working teams out.",
+                students: [
+                  "Rank your top 3 project preferences from the 5 repitched.",
+                  "Pick your track preference (Product / Business / Market). Pick first choice, second choice.",
+                  "Submit (mechanism provided).",
+                  "Honest preferences. Don't game it."
+                ],
+                facilitator: "60 min. 10 min frame (honest preferences = working teams; gaming produces bad fits), 30 min individual reflection + submission, 20 min Q&A about what each track actually does. Allocation algorithm runs after lunch.",
+                references: [
+                  "Repitch the 5 (immediate prerequisite)",
+                  "Pitch selection — 3 tracks intro (track definitions)",
+                  "Team allocation (Fri PM, immediate downstream)"
+                ],
+                notes: [
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Ranking mechanism not specified — could be a form, sticky-vote, etc. Owen + Stacey decide format closer to delivery."
+                  },
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Relabelled from 'Preferences': students pick their track and which of the top ~5 ideas they want."
+                  }
+                ]
+              }
+            },
+            {
+              label: "Team allocation",
+              kind: "work",
+              time_start: "12:30",
+              time_end: "13:00",
+              audiences: [
+                "student",
+                "alumni"
+              ],
               slide: {
                 companion_decks: [
-                  { name: "Track Confirmation (W2D1)", url: "https://docs.google.com/presentation/d/1QrDp5eonmPQV2XGciYxCRHl2td54GuARMsFnYa-kxUo/edit", why: "Per-team P/B/M assignment ritual. Use during allocation to lock who's doing what." }
+                  {
+                    name: "Track Confirmation (W2D1)",
+                    url: "https://docs.google.com/presentation/d/1QrDp5eonmPQV2XGciYxCRHl2td54GuARMsFnYa-kxUo/edit",
+                    why: "Per-team P/B/M assignment ritual. Use during allocation to lock who's doing what."
+                  }
                 ],
                 status: "draft",
                 foundation: "Reveal team assignments. Each student now knows their project + track + teammates. The first conversation between teammates happens here.",
@@ -4202,13 +4334,31 @@ const SCHEDULE = {
                   "Pitch selection — 3 tracks intro (track structure)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "First team formation moment. Light-touch facilitator role — teams need to encounter each other directly, not through facilitation." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "First team formation moment. Light-touch facilitator role — teams need to encounter each other directly, not through facilitation."
+                  },
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Moved before lunch: Owen's Friday afternoon spec overran by 30 min while the morning had 30 spare. New teams have lunch together."
+                  }
                 ]
               }
-            },
-            { label: "SA1 · Who's it for?", kind: "work", sub: "Problem/Solution + Persona definition",
-              time_start: "14:30", time_end: "15:30",
-              audiences: ["student", "alumni"],
+            }
+          ],
+          pm: [
+            {
+              label: "SA1 · Who's it for?",
+              kind: "work",
+              sub: "Problem/Solution + Persona definition",
+              time_start: "14:00",
+              time_end: "15:00",
+              audiences: [
+                "student",
+                "alumni"
+              ],
               slide: {
                 status: "draft",
                 foundation: "First Solution Alignment moment. Each team aligns on who they're solving for: the persona. Pink card on the whiteboard. Output feeds into LPP draft.",
@@ -4224,48 +4374,84 @@ const SCHEDULE = {
                   "Stakeholder Map Template (Notion: Knowledge / Template)"
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted students/facilitator/references from Notion's Stakeholder Mapping entry. Foundation kept as Owen wrote it (em-dash punctuation cleaned, no word changes). Pink persona card is the analog artifact." }
+                  {
+                    author: "Cowork",
+                    ts: "2026-05-15T22:30:00Z",
+                    text: "Drafted students/facilitator/references from Notion's Stakeholder Mapping entry. Foundation kept as Owen wrote it (em-dash punctuation cleaned, no word changes). Pink persona card is the analog artifact."
+                  }
                 ]
               }
             },
-            { label: "SA2 · 8 frames customer journey", kind: "work",
-              slides_link_or_embed: "https://docs.google.com/presentation/d/1Qi2R4FViztvTu6UyzsDuZPQJvo1PmuLC1HY4qDY4w9w/edit", sub: "Crazy 8s on the user experience",
-              time_start: "15:30", time_end: "16:30",
-              audiences: ["student", "alumni"],
+            {
+              label: "SA2 · Problem validation outreach",
+              kind: "work",
+              time_start: "15:00",
+              time_end: "16:00",
+              audiences: [
+                "student",
+                "alumni"
+              ],
               slide: {
                 status: "draft",
-                foundation: "Second Solution Alignment moment. Each team sketches 8 frames of the user experience (Crazy 8s format). Feeds into Week 2 prototype work.",
+                foundation: "A problem-validation experiment: teams run another round of outreach to get data on their chosen direction, in whatever format fits.",
+                claude_drafted: true,
                 students: [
-                  "Take your SA1 persona. Walk their experience in 8 frames.",
-                  "Crazy 8s format: stick figures fine. Annotate user does / system does.",
-                  "Frame 1 = entry point (how they discover the problem). Frame 8 = resolution (or what's missing).",
-                  "Circle the friction frame. That's where your solution lives."
-                ],
-                facilitator: "60 min. 5 min Crazy 8s template intro, 30 min team sketching, 15 min friction-circle round (each team identifies and defends their circled frame), 10 min synthesis. Output: 8-frame journey per team, one circled frame. Feeds Wk2 SA2.5 reanchor and the prototype build (P1 Solution Blueprint cites this 8-frame journey explicitly). Push teams away from happy paths. The friction frame is the gold.",
-                references: [
-                  "Journey Mapping (Notion: Knowledge / Foundation)",
-                  "P1 Solution Blueprint worksheet (Mon PM Wk2 references this 8-frame journey)",
-                  "SA1 Persona (prerequisite: persona card)"
+                  "Decide what you need to learn before building.",
+                  "Pick the format: calls, survey, intercepts.",
+                  "Get it out before the wrap-up."
                 ],
                 notes: [
-                  { author: "Cowork", ts: "2026-05-15T22:30:00Z", text: "Drafted from Notion's Journey Mapping entry. Crazy 8s is the canonical sketch protocol. The 8-frame journey is also the explicit input to P1 Solution Blueprint, reinforced in P1's ai_loop.analog field." }
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Replaces old 'SA2 · 8 frames customer journey' (content in git history) per Owen's 2026-06-11 spec. Seeds week 2 with fresh data over the weekend."
+                  }
                 ]
               }
             },
-            { label: "External team activity", kind: "social",
-              time_start: "17:00", time_end: "21:00",
-              audiences: ["student", "alumni"],
-              facilitator_roles: ["f2"],
+            {
+              label: "Wrap-up",
+              kind: "work",
+              time_start: "16:00",
+              time_end: "16:30",
+              slide: {
+                status: "stub",
+                claude_drafted: true,
+                notes: [
+                  {
+                    author: "Claude",
+                    ts: "2026-06-11T12:00:00Z",
+                    text: "Week 1 close. Content TBD."
+                  }
+                ]
+              }
+            },
+            {
+              label: "External team activity",
+              kind: "social",
+              time_start: "17:00",
+              time_end: "21:00",
+              audiences: [
+                "student",
+                "alumni"
+              ],
+              facilitator_roles: [
+                "f2"
+              ],
               slide: {
                 companion_decks: [
-                  { name: "Team Building (W1D1)", url: "https://docs.google.com/presentation/d/1TR1Uirk4MBB82LwZ8nUVtihs0za2QUKuVBIenxp3GTo/edit", why: "Energy game + group challenge + debrief. Companion concept for the closing social block." }
+                  {
+                    name: "Team Building (W1D1)",
+                    url: "https://docs.google.com/presentation/d/1TR1Uirk4MBB82LwZ8nUVtihs0za2QUKuVBIenxp3GTo/edit",
+                    why: "Energy game + group challenge + debrief. Companion concept for the closing social block."
+                  }
                 ],
                 status: "draft",
                 foundation: "End of Week 1. Cohort-wide evening — marks transition into Week 2 specialty work. F2 + Leadership alumni co-host."
               }
-            },
-          ],
-        },
+            }
+          ]
+        }
       ],
     },
     {
@@ -5359,14 +5545,14 @@ const FLOW = [
    ════════════════════════════════════════════════════════════ */
 const DAYS = [
   { weekIdx: 0, dayIdx: 0, theme: "The brief",
-    lead: "Day 1 of Discovery. Tone-set, hear the challenge, meet the customer.",
+    lead: "Day 1 of Discovery. Tone-set, hear the challenge, run the first interviews.",
     takeaway: "Students don't pitch yet — today they listen. The sponsor briefing and customer panel are the seed material for everything that follows in Week 1." },
-  { weekIdx: 0, dayIdx: 1, theme: "Problems",
-    lead: "Day 2 of Discovery. Find what frustrates the customer — not the sponsor.",
-    takeaway: "Validation panel is the proof point. Top problems get carried into Wednesday's solutions work — without validation here, the rest of the week generates noise." },
-  { weekIdx: 0, dayIdx: 2, theme: "Solutions",
-    lead: "Day 3 of Discovery. Generate, validate, pick.",
-    takeaway: "Solutions get tested against the same panel that validated the problems. The day ends with a pitch template ready for Thursday's first Reality Check." },
+  { weekIdx: 0, dayIdx: 1, theme: "Research",
+    lead: "Day 2 of Discovery. Interview each other, build instruments, send them out.",
+    takeaway: "The cohort is the customer. Instruments ship tonight; replies get worked tomorrow morning." },
+  { weekIdx: 0, dayIdx: 2, theme: "Problems → Solutions",
+    lead: "Day 3 of Discovery. Work the replies into problems, then solutions.",
+    takeaway: "Problems come from the cohort's own data. By close of day everyone has a solution and knows the pitch format." },
   { weekIdx: 0, dayIdx: 3, theme: "Pitches",
     lead: "Day 4 of Discovery. First Reality Check — pitch speed dating.",
     takeaway: "If the pitch doesn't land in 90 seconds, the idea isn't there yet. Voting at end of day. Tomorrow's allocations depend on what survives." },

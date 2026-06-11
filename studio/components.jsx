@@ -93,7 +93,7 @@ function Topbar({ view, setView, editToken, setEditToken, apiOn }) {
     <header className="topbar">
       <div className="prog">
         <div className="ttl">HLV Summer School &rsquo;26 &middot; Lisbon</div>
-        <div className="meta">Jul 6 &ndash; 17 &middot; 10 days &middot; Product &middot; Business &middot; Market</div>
+        <div className="meta">Jun 29 &ndash; Jul 10 &middot; 10 days &middot; Product &middot; Business &middot; Market</div>
       </div>
       <div className="grow"></div>
       <div className="switch">
