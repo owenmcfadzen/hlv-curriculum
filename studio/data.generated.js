@@ -378,53 +378,6 @@ window.STUDIO = {
     },
     {
       "id": "s3",
-      "sid": "0-am-alumni-orient",
-      "day": 0,
-      "start": 630,
-      "end": 705,
-      "track": "alumni",
-      "title": "Alumni: Orient",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": "Why You're Back · pick specialty",
-      "aspects": [],
-      "half": "am",
-      "micro": [
-        {
-          "t": "10:30",
-          "end": "10:55",
-          "label": "Get the Week 1 alumni arc in 90 seconds: Orient → Anchor → Deepen × 2 → Rehearse → Run."
-        },
-        {
-          "t": "10:55",
-          "end": "11:20",
-          "label": "Pick a specialty: Product / Business / Market / Leadership."
-        },
-        {
-          "t": "11:20",
-          "end": "11:45",
-          "label": "Sign your name to the chart. The chart is the commitment."
-        }
-      ],
-      "note": "Pulled during the Entrepreneurship intro. This block is the brief for the Week 1 alumni arc plus a specialty pick. By end of block, every alumnus knows which specialty they're delivering on Wk2 Tuesday.",
-      "assets": [
-        {
-          "t": "flow-stacey-2026-05-14.html · Alumni window list",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "F2 owns end-to-end.",
-      "studentTasks": [
-        "Get the Week 1 alumni arc in 90 seconds: Orient → Anchor → Deepen × 2 → Rehearse → Run.",
-        "Pick a specialty: Product / Business / Market / Leadership.",
-        "Sign your name to the chart. The chart is the commitment."
-      ]
-    },
-    {
-      "id": "s4",
       "sid": "0-am-ai-tooling-prd-intro-pitch",
       "day": 0,
       "start": 705,
@@ -497,7 +450,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s5",
+      "id": "s4",
       "sid": "0-pm-sponsor-briefing",
       "day": 0,
       "start": 840,
@@ -559,7 +512,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s6",
+      "id": "s5",
       "sid": "0-pm-interviews-5-questions-5-whys",
       "day": 0,
       "start": 900,
@@ -624,7 +577,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s7",
+      "id": "s6",
       "sid": "1-am-welcome",
       "day": 1,
       "start": 570,
@@ -643,7 +596,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s8",
+      "id": "s7",
       "sid": "1-am-synthesis",
       "day": 1,
       "start": 600,
@@ -684,58 +637,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s9",
-      "sid": "1-am-alumni-anchor",
-      "day": 1,
-      "start": 600,
-      "end": 660,
-      "track": "alumni",
-      "title": "Alumni: Anchor",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": "Read your LPP slide",
-      "aspects": [],
-      "half": "am",
-      "micro": [
-        {
-          "t": "10:00",
-          "end": "10:20",
-          "label": "Read your specialty's LPP slide. Slowly. Twice."
-        },
-        {
-          "t": "10:20",
-          "end": "10:40",
-          "label": "Mark up the framing questions you'd actually ask out loud."
-        },
-        {
-          "t": "10:40",
-          "end": "11:00",
-          "label": "Note three concrete things you still don't understand — those are Deepen 1's brief."
-        }
-      ],
-      "note": "Pulled during M: Opportunity ID. Read the actual LPP slide for your chosen specialty. Pin down the vocabulary, the framing questions, and what \"expert\" looks like for the track you picked.",
-      "assets": [
-        {
-          "t": "flow-stacey-2026-05-14.html · Alumni window list",
-          "k": "pdf"
-        },
-        {
-          "t": "LPP slide deck (per specialty)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "F2 owns end-to-end.",
-      "studentTasks": [
-        "Read your specialty's LPP slide. Slowly. Twice.",
-        "Mark up the framing questions you'd actually ask out loud.",
-        "Note three concrete things you still don't understand — those are Deepen 1's brief."
-      ]
-    },
-    {
-      "id": "s10",
+      "id": "s8",
       "sid": "1-am-build-interviews",
       "day": 1,
       "start": 660,
@@ -776,7 +678,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s11",
+      "id": "s9",
       "sid": "1-am-interview-each-other",
       "day": 1,
       "start": 720,
@@ -796,7 +698,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s12",
+      "id": "s10",
       "sid": "1-pm-team-activity",
       "day": 1,
       "start": 840,
@@ -853,7 +755,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s13",
+      "id": "s11",
       "sid": "1-pm-synthesis-what-we-heard",
       "day": 1,
       "start": 870,
@@ -873,7 +775,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s14",
+      "id": "s12",
       "sid": "1-pm-create-survey-interview-question",
       "day": 1,
       "start": 900,
@@ -914,7 +816,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s15",
+      "id": "s13",
       "sid": "1-pm-send-out",
       "day": 1,
       "start": 960,
@@ -934,7 +836,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s16",
+      "id": "s14",
       "sid": "2-am-welcome",
       "day": 2,
       "start": 570,
@@ -985,7 +887,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s17",
+      "id": "s15",
       "sid": "2-am-review-replies-share-out",
       "day": 2,
       "start": 600,
@@ -1026,54 +928,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s18",
-      "sid": "2-am-alumni-deepen-2",
-      "day": 2,
-      "start": 600,
-      "end": 645,
-      "track": "alumni",
-      "title": "Alumni: Deepen 2",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": "Pressure-test + rewrite brief",
-      "aspects": [],
-      "half": "am",
-      "micro": [
-        {
-          "t": "10:00",
-          "end": "10:15",
-          "label": "Read your v1 out loud to F2."
-        },
-        {
-          "t": "10:15",
-          "end": "10:30",
-          "label": "Take the hard feedback. Don't defend; rewrite."
-        },
-        {
-          "t": "10:30",
-          "end": "10:45",
-          "label": "Ship v2 — sharper, in your voice, defensible."
-        }
-      ],
-      "note": "Pulled during M: Solutions. F2 pressure-tests each Specialist Brief — where's the hand-wave, where's the borrowed phrase, where's the part you can't defend. One rewrite pass produces v2.",
-      "assets": [
-        {
-          "t": "flow-stacey-2026-05-14.html · Alumni window list",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "F2 owns end-to-end. Push hard on the hand-wave; the brief is what they teach from on Tuesday.",
-      "studentTasks": [
-        "Read your v1 out loud to F2.",
-        "Take the hard feedback. Don't defend; rewrite.",
-        "Ship v2 — sharper, in your voice, defensible."
-      ]
-    },
-    {
-      "id": "s19",
+      "id": "s16",
       "sid": "2-am-entrepreneur-story",
       "day": 2,
       "start": 660,
@@ -1126,7 +981,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s20",
+      "id": "s17",
       "sid": "2-am-problem-identification",
       "day": 2,
       "start": 720,
@@ -1193,7 +1048,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s21",
+      "id": "s18",
       "sid": "2-pm-problem-selection-reframing",
       "day": 2,
       "start": 840,
@@ -1250,7 +1105,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s22",
+      "id": "s19",
       "sid": "2-pm-solutions",
       "day": 2,
       "start": 900,
@@ -1307,7 +1162,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s23",
+      "id": "s20",
       "sid": "2-pm-pitch-intro",
       "day": 2,
       "start": 960,
@@ -1368,7 +1223,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s24",
+      "id": "s21",
       "sid": "3-am-welcome",
       "day": 3,
       "start": 570,
@@ -1419,7 +1274,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s25",
+      "id": "s22",
       "sid": "3-am-complete-solution-pitch",
       "day": 3,
       "start": 600,
@@ -1480,54 +1335,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s26",
-      "sid": "3-am-alumni-rehearse",
-      "day": 3,
-      "start": 600,
-      "end": 645,
-      "track": "alumni",
-      "title": "Alumni: Rehearse",
-      "room": "",
-      "facils": [],
-      "group": "All",
-      "kind": "work",
-      "code": null,
-      "sub": "First teach-back · F2 owns room",
-      "aspects": [],
-      "half": "am",
-      "micro": [
-        {
-          "t": "10:00",
-          "end": "10:15",
-          "label": "5 minutes max. Stand up. Don't read."
-        },
-        {
-          "t": "10:15",
-          "end": "10:30",
-          "label": "Take notes on the feedback you get; you refine overnight."
-        },
-        {
-          "t": "10:30",
-          "end": "10:45",
-          "label": "Listen hard to the other specialties' teach-backs — Tuesday you deliver side by side."
-        }
-      ],
-      "note": "Pulled during student pitch prep. First full teach-back of the Specialist Brief — 5 minutes each, to the alumni cohort and F2. Hard feedback. The brief gets one more refine overnight. Runs parallel to the student pitch prep — F2 owns the alumni room.",
-      "assets": [
-        {
-          "t": "flow-stacey-2026-05-14.html · Alumni window list (moved from Thu PM)",
-          "k": "pdf"
-        }
-      ],
-      "facilitatorCue": "F2 owns end-to-end. F1 is on student pitch prep; do not pull F1 in.",
-      "studentTasks": [
-        "5 minutes max. Stand up. Don't read.",
-        "Take notes on the feedback you get; you refine overnight.",
-        "Listen hard to the other specialties' teach-backs — Tuesday you deliver side by side."
-      ]
-    },
-    {
-      "id": "s27",
+      "id": "s23",
       "sid": "3-am-rc-pitch-speed-dating",
       "day": 3,
       "start": 660,
@@ -1589,7 +1397,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s28",
+      "id": "s24",
       "sid": "3-am-pitches",
       "day": 3,
       "start": 720,
@@ -1646,7 +1454,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s29",
+      "id": "s25",
       "sid": "3-pm-pitches",
       "day": 3,
       "start": 840,
@@ -1703,7 +1511,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s30",
+      "id": "s26",
       "sid": "3-pm-game",
       "day": 3,
       "start": 885,
@@ -1760,7 +1568,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s31",
+      "id": "s27",
       "sid": "3-pm-pitches-2",
       "day": 3,
       "start": 900,
@@ -1817,7 +1625,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s32",
+      "id": "s28",
       "sid": "3-pm-voting",
       "day": 3,
       "start": 930,
@@ -1877,7 +1685,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s33",
+      "id": "s29",
       "sid": "3-pm-dinner",
       "day": 3,
       "start": 1080,
@@ -1899,7 +1707,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s34",
+      "id": "s30",
       "sid": "4-am-welcome",
       "day": 4,
       "start": 570,
@@ -1950,7 +1758,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s35",
+      "id": "s31",
       "sid": "4-am-voting-results",
       "day": 4,
       "start": 600,
@@ -1970,7 +1778,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s36",
+      "id": "s32",
       "sid": "4-am-intro-to-specialities",
       "day": 4,
       "start": 630,
@@ -2040,7 +1848,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s37",
+      "id": "s33",
       "sid": "4-am-intro-to-week-2-lpp-prd",
       "day": 4,
       "start": 660,
@@ -2114,7 +1922,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s38",
+      "id": "s34",
       "sid": "4-am-game",
       "day": 4,
       "start": 690,
@@ -2133,7 +1941,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s39",
+      "id": "s35",
       "sid": "4-am-select-speciality-idea",
       "day": 4,
       "start": 720,
@@ -2203,7 +2011,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s40",
+      "id": "s36",
       "sid": "4-am-team-allocation",
       "day": 4,
       "start": 750,
@@ -2260,7 +2068,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s41",
+      "id": "s37",
       "sid": "4-pm-sa1-who-s-it-for",
       "day": 4,
       "start": 840,
@@ -2317,7 +2125,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s42",
+      "id": "s38",
       "sid": "4-pm-sa2-problem-validation-outreach",
       "day": 4,
       "start": 900,
@@ -2358,7 +2166,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s43",
+      "id": "s39",
       "sid": "4-pm-wrap-up",
       "day": 4,
       "start": 960,
@@ -2377,7 +2185,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s44",
+      "id": "s40",
       "sid": "4-pm-external-team-activity",
       "day": 4,
       "start": 1020,
@@ -2399,7 +2207,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s45",
+      "id": "s41",
       "sid": "5-am-welcome",
       "day": 5,
       "start": 570,
@@ -2463,7 +2271,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s46",
+      "id": "s42",
       "sid": "5-am-intro-to-week-2",
       "day": 5,
       "start": 600,
@@ -2537,7 +2345,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s47",
+      "id": "s43",
       "sid": "5-am-sa3-customer-journey",
       "day": 5,
       "start": 630,
@@ -2594,7 +2402,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s48",
+      "id": "s44",
       "sid": "5-am-sa4-data-and-team-alignment",
       "day": 5,
       "start": 675,
@@ -2660,7 +2468,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s49",
+      "id": "s45",
       "sid": "5-am-guest-talk",
       "day": 5,
       "start": 735,
@@ -2719,7 +2527,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s50",
+      "id": "s46",
       "sid": "5-pm-solution-blueprint",
       "day": 5,
       "start": 840,
@@ -2745,7 +2553,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s51",
+      "id": "s47",
       "sid": "5-pm-canvas-lite",
       "day": 5,
       "start": 840,
@@ -2771,7 +2579,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s52",
+      "id": "s48",
       "sid": "5-pm-landscape-map",
       "day": 5,
       "start": 840,
@@ -2797,7 +2605,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s53",
+      "id": "s49",
       "sid": "5-pm-team-synthesis",
       "day": 5,
       "start": 960,
@@ -2863,7 +2671,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s54",
+      "id": "s50",
       "sid": "6-am-welcome",
       "day": 6,
       "start": 570,
@@ -2914,7 +2722,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s55",
+      "id": "s51",
       "sid": "6-am-product-definition",
       "day": 6,
       "start": 600,
@@ -2940,7 +2748,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s56",
+      "id": "s52",
       "sid": "6-am-back-of-napkin-economics",
       "day": 6,
       "start": 600,
@@ -2966,7 +2774,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s57",
+      "id": "s53",
       "sid": "6-am-validation-design",
       "day": 6,
       "start": 600,
@@ -2992,7 +2800,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s58",
+      "id": "s54",
       "sid": "6-am-team-synthesis",
       "day": 6,
       "start": 750,
@@ -3053,7 +2861,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s59",
+      "id": "s55",
       "sid": "6-pm-out-in-market",
       "day": 6,
       "start": 840,
@@ -3120,7 +2928,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s60",
+      "id": "s56",
       "sid": "6-pm-out-in-market-debrief",
       "day": 6,
       "start": 960,
@@ -3189,7 +2997,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s61",
+      "id": "s57",
       "sid": "7-am-welcome",
       "day": 7,
       "start": 570,
@@ -3240,7 +3048,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s62",
+      "id": "s58",
       "sid": "7-am-sponsor-feedback-sessions",
       "day": 7,
       "start": 600,
@@ -3322,7 +3130,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s63",
+      "id": "s59",
       "sid": "7-am-prototype-build-a-b",
       "day": 7,
       "start": 600,
@@ -3348,7 +3156,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s64",
+      "id": "s60",
       "sid": "7-am-the-100-day-plan",
       "day": 7,
       "start": 600,
@@ -3375,7 +3183,7 @@ window.STUDIO = {
       "note": "Business + Market join forces"
     },
     {
-      "id": "s65",
+      "id": "s61",
       "sid": "7-am-the-100-day-plan-2",
       "day": 7,
       "start": 600,
@@ -3402,7 +3210,7 @@ window.STUDIO = {
       "note": "Business + Market join forces"
     },
     {
-      "id": "s66",
+      "id": "s62",
       "sid": "7-am-team-alignment",
       "day": 7,
       "start": 750,
@@ -3463,7 +3271,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s67",
+      "id": "s63",
       "sid": "7-pm-out-in-market",
       "day": 7,
       "start": 840,
@@ -3543,7 +3351,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s68",
+      "id": "s64",
       "sid": "7-pm-out-in-market-debrief",
       "day": 7,
       "start": 960,
@@ -3608,7 +3416,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s69",
+      "id": "s65",
       "sid": "8-am-welcome",
       "day": 8,
       "start": 570,
@@ -3659,7 +3467,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s70",
+      "id": "s66",
       "sid": "8-am-lpp-time",
       "day": 8,
       "start": 600,
@@ -3743,7 +3551,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s71",
+      "id": "s67",
       "sid": "8-am-guest-how-to-pitch",
       "day": 8,
       "start": 720,
@@ -3815,7 +3623,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s72",
+      "id": "s68",
       "sid": "8-pm-lpp-time-narrative-time",
       "day": 8,
       "start": 840,
@@ -3891,7 +3699,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s73",
+      "id": "s69",
       "sid": "8-pm-lpp-late-work-session",
       "day": 8,
       "start": 1080,
@@ -3911,7 +3719,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s74",
+      "id": "s70",
       "sid": "9-am-welcome",
       "day": 9,
       "start": 570,
@@ -3962,7 +3770,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s75",
+      "id": "s71",
       "sid": "9-am-lpp-practice",
       "day": 9,
       "start": 600,
@@ -4034,7 +3842,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s76",
+      "id": "s72",
       "sid": "9-am-final-practice",
       "day": 9,
       "start": 720,
@@ -4102,7 +3910,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s77",
+      "id": "s73",
       "sid": "9-pm-final-pitches",
       "day": 9,
       "start": 840,
@@ -4178,7 +3986,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s78",
+      "id": "s74",
       "sid": "9-pm-reception",
       "day": 9,
       "start": 930,
