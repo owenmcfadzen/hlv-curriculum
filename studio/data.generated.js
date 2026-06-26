@@ -239,39 +239,39 @@ window.STUDIO = {
     },
     {
       "id": "s1",
-      "sid": "0-am-intro-game",
+      "sid": "0-am-intro-game-intro-to-hlv-adapt",
       "day": 0,
       "start": 600,
-      "end": 630,
+      "end": 660,
       "track": "ops",
-      "title": "Intro game",
+      "title": "Intro game · Intro to HLV ADAPT",
       "room": "",
       "facils": [],
       "group": "All",
       "kind": "game",
       "code": null,
-      "sub": null,
+      "sub": "Rollercoaster check-in + brief ADAPT primer",
       "aspects": [],
       "half": "am",
       "micro": [
         {
           "t": "10:00",
-          "end": "10:08",
+          "end": "10:15",
           "label": "Take a sticky. Write your name."
         },
         {
-          "t": "10:08",
-          "end": "10:16",
+          "t": "10:15",
+          "end": "10:30",
           "label": "Place yourself on the rollercoaster: where you actually are right now, not where you think you should be."
         },
         {
-          "t": "10:16",
-          "end": "10:24",
+          "t": "10:30",
+          "end": "10:45",
           "label": "Reference points if you need them: Curious / Bored / Nervous / Trying to fit in / This is cool / Too much at once / Tired but here / Catching the wave / Whoa learning / Where did the time go."
         },
         {
-          "t": "10:24",
-          "end": "10:30",
+          "t": "10:45",
+          "end": "11:00",
           "label": "Quick share: name plus one sentence on where you placed yourself."
         }
       ],
@@ -298,8 +298,8 @@ window.STUDIO = {
       "id": "s2",
       "sid": "0-am-entrepreneurship-intro",
       "day": 0,
-      "start": 630,
-      "end": 705,
+      "start": 660,
+      "end": 720,
       "track": "core",
       "title": "Entrepreneurship intro",
       "room": "",
@@ -312,33 +312,33 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "10:30",
-          "end": "10:43",
+          "t": "11:00",
+          "end": "11:10",
           "label": "Open with what bugs you. Jot 3-5 small problems you've noticed recently at school, at home, online."
         },
         {
-          "t": "10:43",
-          "end": "10:56",
+          "t": "11:10",
+          "end": "11:20",
           "label": "List the entrepreneurs you know: famous, local, family, anywhere on the spectrum."
         },
         {
-          "t": "10:56",
-          "end": "11:09",
+          "t": "11:20",
+          "end": "11:30",
           "label": "Land on the working definition: entrepreneurship = problem, solution, scale."
         },
         {
-          "t": "11:09",
-          "end": "11:22",
+          "t": "11:30",
+          "end": "11:40",
           "label": "Map yourself against the four behaviors: Problem spotter / Experimenter / Gravity maker / Resilient learner. Which one feels most natural? Which feels hardest?"
         },
         {
-          "t": "11:22",
-          "end": "11:35",
+          "t": "11:40",
+          "end": "11:50",
           "label": "Write one sentence: 'This week I will practice being entrepreneurial by...'"
         },
         {
-          "t": "11:35",
-          "end": "11:45",
+          "t": "11:50",
+          "end": "12:00",
           "label": "Working agreement for the room: BE PRESENT, EXPRESS POV, WRITE INSIGHTS, OPEN-MINDED, MOVE FORWARD WITH CONSENSUS. Use ELMO (Enough, Let's Move On) if a discussion is going long."
         }
       ],
@@ -378,79 +378,89 @@ window.STUDIO = {
     },
     {
       "id": "s3",
-      "sid": "0-am-ai-tooling-prd-intro-pitch",
+      "sid": "0-am-interviews-5-questions-5-whys",
       "day": 0,
-      "start": 705,
+      "start": 720,
       "end": 780,
       "track": "core",
-      "title": "AI tooling, PRD, intro pitch",
+      "title": "Interviews — 5 questions + 5 whys",
       "room": "",
       "facils": [],
       "group": "All",
       "kind": "work",
       "code": null,
-      "sub": "incl. swag challenge questions",
+      "sub": "Cohort interviews cohort: 5 set questions, then 5 whys on one answer",
       "aspects": [],
       "half": "am",
       "micro": [
         {
-          "t": "11:45",
-          "end": "11:58",
-          "label": "Read the ADAPT one-pager. Five letters. Five steps. You'll see them every day."
+          "t": "12:00",
+          "end": "12:15",
+          "label": "Pair up. One interviewer, one interviewee. Switch at 25 min."
         },
         {
-          "t": "11:58",
-          "end": "12:11",
-          "label": "Analog: scribble what you'd say if someone outside the program asked 'who are you and why are you here?' Paper or notes app. Your words. (3-5 min.)"
+          "t": "12:15",
+          "end": "12:30",
+          "label": "Run the 5 set questions verbatim. Don't paraphrase, don't soften."
         },
         {
-          "t": "12:11",
-          "end": "12:24",
-          "label": "Dialogue: open the AI of your choice. Paste your scribble plus the structured prompt we'll give you. Have a back-and-forth, not a one-shot."
+          "t": "12:30",
+          "end": "12:45",
+          "label": "Pick one answer that hooked you. 5 whys on it. Push past the polite layer."
         },
         {
-          "t": "12:24",
-          "end": "12:37",
-          "label": "Adjust: push back on the AI. Cut the corporate phrases. Cut anything that doesn't sound like you."
-        },
-        {
-          "t": "12:37",
-          "end": "12:50",
-          "label": "Produce: lock the 30-second intro pitch. No notes when you deliver."
-        },
-        {
-          "t": "12:50",
+          "t": "12:45",
           "end": "13:00",
-          "label": "Test: five or six volunteers deliver to the room. The room calls out one thing that landed and one thing that didn't."
+          "label": "Capture frustrations in their words, not yours."
         }
       ],
-      "note": "First exposure to ADAPT, the loop you'll run all program: Analog, Dialogue, Adjust, Produce, Test. Today's loop is small on purpose: bring something analog (your story), dialogue with AI to structure it, adjust until it sounds like you, produce a 30-second pitch, test it on the room. The artifact is small. The point is feeling the loop.",
+      "note": "First listening block. Students interview each other with set questions: 5 questions, then 5 whys on one answer. The cohort itself is the challenge's user group (challenge centres young adults), so they are both interviewer and source. The friction that surfaces seeds tomorrow's problem work.",
       "assets": [
         {
-          "t": "ADAPT methodology one-pager (TBD: needs creation before delivery)",
+          "t": "Customer Discovery & Validation (Notion: Knowledge / Foundation)",
           "k": "pdf"
         },
         {
-          "t": "HLV Curriculum: Active Design (Notion: canonical micro-cycle)",
+          "t": "Empathy Interview Protocol (Notion: Knowledge / Method)",
           "k": "pdf"
         },
         {
-          "t": "Quick Pitch Template (Notion Knowledge)",
+          "t": "block-drafts/w1-mon-pm-customer-insights-panel.md (prior draft, leverage)",
           "k": "pdf"
         }
       ],
-      "facilitatorCue": "45 min total. Suggested split: 5 min ADAPT intro (show the 5 letters on a slide, frame as the loop the whole program runs on), 5 min Analog scribble, 10 min Dialogue plus Adjust (combined work block), 5 min Produce (lock the 30-sec pitch), 15 min Test (5-6 volunteer deliveries plus room reaction), 5 min meta-debrief ('what did the AI add, what did you have to fight it on?'). Don't use PRD Lab here. Overkill for a 30-sec pitch and we want the AI tool to feel light. PRD Lab debuts in the Wk2 specialty rounds. Wk2 specialty rounds run the same ADAPT loop on bigger artifacts.",
+      "facilitatorCue": "60 min total. 5 min frame (listen, don't pitch), 25 min interview round 1, 25 min interview round 2 (switch roles), 5 min capture/save. Coach empathy interview opens (verbatim phrasing, not paraphrased). Watch for pairs going abstract — pull them back to specific situations ('walk me through the last time…').",
       "studentTasks": [
-        "Read the ADAPT one-pager. Five letters. Five steps. You'll see them every day.",
-        "Analog: scribble what you'd say if someone outside the program asked 'who are you and why are you here?' Paper or notes app. Your words. (3-5 min.)",
-        "Dialogue: open the AI of your choice. Paste your scribble plus the structured prompt we'll give you. Have a back-and-forth, not a one-shot.",
-        "Adjust: push back on the AI. Cut the corporate phrases. Cut anything that doesn't sound like you.",
-        "Produce: lock the 30-second intro pitch. No notes when you deliver.",
-        "Test: five or six volunteers deliver to the room. The room calls out one thing that landed and one thing that didn't."
+        "Pair up. One interviewer, one interviewee. Switch at 25 min.",
+        "Run the 5 set questions verbatim. Don't paraphrase, don't soften.",
+        "Pick one answer that hooked you. 5 whys on it. Push past the polite layer.",
+        "Capture frustrations in their words, not yours."
       ]
     },
     {
       "id": "s4",
+      "sid": "0-pm-lunch",
+      "day": 0,
+      "start": 780,
+      "end": 840,
+      "track": "evening",
+      "title": "Lunch",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "social",
+      "code": null,
+      "sub": "Cohort lunch · downshift before sponsor briefing",
+      "aspects": [
+        "social"
+      ],
+      "half": "pm",
+      "note": "Hard lunch break per canonical schedule. Students drop the morning's listening frame, downshift before sponsor briefing lands at 14:00.",
+      "facilitatorCue": "60 min. Lunch venue: ISEG cafeteria. Cate confirms catering. Staff eats with cohort — don't separate.",
+      "studentTasks": null
+    },
+    {
+      "id": "s5",
       "sid": "0-pm-sponsor-briefing",
       "day": 0,
       "start": 840,
@@ -512,72 +522,125 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s5",
-      "sid": "0-pm-interviews-5-questions-5-whys",
+      "id": "s6",
+      "sid": "0-pm-sponsor-debrief",
       "day": 0,
       "start": 900,
-      "end": 990,
+      "end": 945,
       "track": "core",
-      "title": "Interviews — 5 questions + 5 whys",
+      "title": "Sponsor debrief",
       "room": "",
       "facils": [],
       "group": "All",
       "kind": "work",
       "code": null,
-      "sub": null,
+      "sub": "Capture what frustrates JdM's customers · seed for Tue problem work",
       "aspects": [],
       "half": "pm",
       "micro": [
         {
           "t": "15:00",
-          "end": "15:23",
-          "label": "Listen first 20 minutes. No notes."
+          "end": "15:11",
+          "label": "Solo 5 min: write the 3 frustrations you heard, in the sponsor's customers' words."
         },
         {
-          "t": "15:23",
-          "end": "15:46",
-          "label": "Then capture frustrations they named, in their words."
+          "t": "15:11",
+          "end": "15:22",
+          "label": "Cluster 15 min: small groups (3 students) — combine sticky notes, look for repeats."
         },
         {
-          "t": "15:46",
-          "end": "16:09",
-          "label": "Q&A 30 min: ask about specific situations, not opinions ('walk me through the last time...')."
+          "t": "15:22",
+          "end": "15:33",
+          "label": "Share-back 20 min: each cluster posts its 2 strongest frustrations on the main wall. Brief discussion: where did the sponsor make a leap, where did they speak from data?"
         },
         {
-          "t": "16:09",
-          "end": "16:30",
-          "label": "Don't pitch solutions. Today is listening."
+          "t": "15:33",
+          "end": "15:45",
+          "label": "Capture 5 min: every student writes 1 question they want to ask a real JdM customer tomorrow."
         }
       ],
-      "note": "First customer encounter. Real customers from the sponsor's domain talk about their actual frustrations. No solutions, no validation, just listening. The friction they describe seeds tomorrow's problem work.",
+      "note": "Direct synthesis after the sponsor briefing. Cohort works in small clusters to surface what they actually heard, separated from sponsor narrative. The wall fills with frustrations (in JdM's customers' words) plus what the sponsor said vs what they meant. Sets Tue AM up.",
       "assets": [
+        {
+          "t": "Sponsor briefing block (immediate prerequisite)",
+          "k": "pdf"
+        },
         {
           "t": "Customer Discovery & Validation (Notion: Knowledge / Foundation)",
           "k": "pdf"
         },
         {
-          "t": "Empathy Interview Protocol (Notion: Knowledge / Method)",
-          "k": "pdf"
-        },
-        {
-          "t": "[CUSTOMER PANELISTS — TBD] briefing",
-          "k": "pdf"
-        },
-        {
-          "t": "block-drafts/w1-mon-pm-customer-insights-panel.md (prior draft, leverage)",
+          "t": "Tue AM Synthesis (downstream — frustrations feed problem work)",
           "k": "pdf"
         }
       ],
-      "facilitatorCue": "60 min. 5 min frame (listen, don't pitch), 20 min customer-told-stories, 30 min Q&A, 5 min capture round. Pre-brief panelists: tell us about your worst day, not your roadmap. Coach students to use empathy interview opens (verbatim phrasing, not paraphrased).",
+      "facilitatorCue": "45 min. 5 min frame (the gap between what was said and what's meant), 15 min cluster work, 20 min share-back round (cap each cluster at 90 sec), 5 min question-capture round. Wall artifact carries forward to Tue AM Synthesis. Don't let the room slip into solutioning — today is still listening.",
       "studentTasks": [
-        "Listen first 20 minutes. No notes.",
-        "Then capture frustrations they named, in their words.",
-        "Q&A 30 min: ask about specific situations, not opinions ('walk me through the last time...').",
-        "Don't pitch solutions. Today is listening."
+        "Solo 5 min: write the 3 frustrations you heard, in the sponsor's customers' words.",
+        "Cluster 15 min: small groups (3 students) — combine sticky notes, look for repeats.",
+        "Share-back 20 min: each cluster posts its 2 strongest frustrations on the main wall. Brief discussion: where did the sponsor make a leap, where did they speak from data?",
+        "Capture 5 min: every student writes 1 question they want to ask a real JdM customer tomorrow."
       ]
     },
     {
-      "id": "s6",
+      "id": "s7",
+      "sid": "0-pm-deputy-mayor-gon-alo-reis",
+      "day": 0,
+      "start": 945,
+      "end": 990,
+      "track": "talks",
+      "title": "Deputy Mayor Gonçalo Reis",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "panel",
+      "code": null,
+      "sub": "Guest: Deputy Mayor of Lisbon, civic-frame opener",
+      "aspects": [
+        "guest"
+      ],
+      "half": "pm",
+      "micro": [
+        {
+          "t": "15:45",
+          "end": "16:00",
+          "label": "Listen — 25 min. No phones, no notes for the first 10."
+        },
+        {
+          "t": "16:00",
+          "end": "16:15",
+          "label": "Capture: what's the Deputy Mayor framing as the city's bet?"
+        },
+        {
+          "t": "16:15",
+          "end": "16:30",
+          "label": "Q&A 15 min. Ask one concrete question about what the city is doing differently."
+        }
+      ],
+      "note": "Civic-frame opener for Week 1. Deputy Mayor speaks to the Lisbon context: why this city, why now, why the cohort matters. Sits intentionally between sponsor work (JdM 14:00) and the cohort dinner Friday — books the program inside the city, not parallel to it. Interpreter line ready (Cate).",
+      "assets": [
+        {
+          "t": "Reis bio one-pager (Cate prep — see materials-by-day.md Mon Jun 29)",
+          "k": "pdf"
+        },
+        {
+          "t": "Interpreter line confirmed (TBD-Cate)",
+          "k": "pdf"
+        },
+        {
+          "t": "S105 civic frame slide (existing in deck)",
+          "k": "pdf"
+        }
+      ],
+      "facilitatorCue": "45 min. 5 min Owen intro + frame, 25 min Deputy Mayor (with interpreter line if needed), 15 min Q&A. Pre-brief the Deputy Mayor: not a corporate welcome speech — tell us what Lisbon is betting on for young adults right now. Cate hands him the Sponsor brief packet pre-event so the framing connects. Owen closes with the bridge to tomorrow.",
+      "studentTasks": [
+        "Listen — 25 min. No phones, no notes for the first 10.",
+        "Capture: what's the Deputy Mayor framing as the city's bet?",
+        "Q&A 15 min. Ask one concrete question about what the city is doing differently."
+      ]
+    },
+    {
+      "id": "s8",
       "sid": "1-am-welcome",
       "day": 1,
       "start": 570,
@@ -596,7 +659,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s7",
+      "id": "s9",
       "sid": "1-am-synthesis",
       "day": 1,
       "start": 600,
@@ -637,7 +700,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s8",
+      "id": "s10",
       "sid": "1-am-build-interviews",
       "day": 1,
       "start": 660,
@@ -678,7 +741,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s9",
+      "id": "s11",
       "sid": "1-am-interview-each-other",
       "day": 1,
       "start": 720,
@@ -698,7 +761,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s10",
+      "id": "s12",
       "sid": "1-pm-team-activity",
       "day": 1,
       "start": 840,
@@ -755,7 +818,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s11",
+      "id": "s13",
       "sid": "1-pm-synthesis-what-we-heard",
       "day": 1,
       "start": 870,
@@ -775,7 +838,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s12",
+      "id": "s14",
       "sid": "1-pm-create-survey-interview-question",
       "day": 1,
       "start": 900,
@@ -816,7 +879,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s13",
+      "id": "s15",
       "sid": "1-pm-send-out",
       "day": 1,
       "start": 960,
@@ -836,7 +899,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s14",
+      "id": "s16",
       "sid": "2-am-welcome",
       "day": 2,
       "start": 570,
@@ -887,7 +950,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s15",
+      "id": "s17",
       "sid": "2-am-review-replies-share-out",
       "day": 2,
       "start": 600,
@@ -928,7 +991,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s16",
+      "id": "s18",
       "sid": "2-am-entrepreneur-story",
       "day": 2,
       "start": 660,
@@ -981,7 +1044,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s17",
+      "id": "s19",
       "sid": "2-am-problem-identification",
       "day": 2,
       "start": 720,
@@ -1048,7 +1111,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s18",
+      "id": "s20",
       "sid": "2-pm-problem-selection-reframing",
       "day": 2,
       "start": 840,
@@ -1105,7 +1168,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s19",
+      "id": "s21",
       "sid": "2-pm-solutions",
       "day": 2,
       "start": 900,
@@ -1162,7 +1225,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s20",
+      "id": "s22",
       "sid": "2-pm-pitch-intro",
       "day": 2,
       "start": 960,
@@ -1223,7 +1286,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s21",
+      "id": "s23",
       "sid": "3-am-welcome",
       "day": 3,
       "start": 570,
@@ -1274,7 +1337,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s22",
+      "id": "s24",
       "sid": "3-am-complete-solution-pitch",
       "day": 3,
       "start": 600,
@@ -1335,7 +1398,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s23",
+      "id": "s25",
       "sid": "3-am-rc-pitch-speed-dating",
       "day": 3,
       "start": 660,
@@ -1397,7 +1460,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s24",
+      "id": "s26",
       "sid": "3-am-pitches",
       "day": 3,
       "start": 720,
@@ -1454,7 +1517,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s25",
+      "id": "s27",
       "sid": "3-pm-pitches",
       "day": 3,
       "start": 840,
@@ -1511,7 +1574,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s26",
+      "id": "s28",
       "sid": "3-pm-game",
       "day": 3,
       "start": 885,
@@ -1568,7 +1631,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s27",
+      "id": "s29",
       "sid": "3-pm-pitches-2",
       "day": 3,
       "start": 900,
@@ -1625,7 +1688,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s28",
+      "id": "s30",
       "sid": "3-pm-voting",
       "day": 3,
       "start": 930,
@@ -1685,7 +1748,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s29",
+      "id": "s31",
       "sid": "3-pm-dinner",
       "day": 3,
       "start": 1080,
@@ -1707,7 +1770,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s30",
+      "id": "s32",
       "sid": "4-am-welcome",
       "day": 4,
       "start": 570,
@@ -1758,7 +1821,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s31",
+      "id": "s33",
       "sid": "4-am-voting-results",
       "day": 4,
       "start": 600,
@@ -1778,7 +1841,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s32",
+      "id": "s34",
       "sid": "4-am-intro-to-specialities",
       "day": 4,
       "start": 630,
@@ -1848,7 +1911,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s33",
+      "id": "s35",
       "sid": "4-am-intro-to-week-2-lpp-prd",
       "day": 4,
       "start": 660,
@@ -1922,7 +1985,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s34",
+      "id": "s36",
       "sid": "4-am-game",
       "day": 4,
       "start": 690,
@@ -1941,7 +2004,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s35",
+      "id": "s37",
       "sid": "4-am-select-speciality-idea",
       "day": 4,
       "start": 720,
@@ -2011,7 +2074,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s36",
+      "id": "s38",
       "sid": "4-am-team-allocation",
       "day": 4,
       "start": 750,
@@ -2068,7 +2131,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s37",
+      "id": "s39",
       "sid": "4-pm-sa1-who-s-it-for",
       "day": 4,
       "start": 840,
@@ -2125,7 +2188,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s38",
+      "id": "s40",
       "sid": "4-pm-sa2-problem-validation-outreach",
       "day": 4,
       "start": 900,
@@ -2166,7 +2229,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s39",
+      "id": "s41",
       "sid": "4-pm-wrap-up",
       "day": 4,
       "start": 960,
@@ -2185,7 +2248,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s40",
+      "id": "s42",
       "sid": "4-pm-external-team-activity",
       "day": 4,
       "start": 1020,
@@ -2207,7 +2270,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s41",
+      "id": "s43",
       "sid": "5-am-welcome",
       "day": 5,
       "start": 570,
@@ -2271,7 +2334,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s42",
+      "id": "s44",
       "sid": "5-am-intro-to-week-2",
       "day": 5,
       "start": 600,
@@ -2345,7 +2408,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s43",
+      "id": "s45",
       "sid": "5-am-sa3-customer-journey",
       "day": 5,
       "start": 630,
@@ -2402,7 +2465,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s44",
+      "id": "s46",
       "sid": "5-am-sa4-data-and-team-alignment",
       "day": 5,
       "start": 675,
@@ -2468,7 +2531,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s45",
+      "id": "s47",
       "sid": "5-am-guest-talk",
       "day": 5,
       "start": 660,
@@ -2527,7 +2590,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s46",
+      "id": "s48",
       "sid": "5-pm-solution-blueprint",
       "day": 5,
       "start": 840,
@@ -2553,7 +2616,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s47",
+      "id": "s49",
       "sid": "5-pm-canvas-lite",
       "day": 5,
       "start": 840,
@@ -2579,7 +2642,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s48",
+      "id": "s50",
       "sid": "5-pm-landscape-map",
       "day": 5,
       "start": 840,
@@ -2605,7 +2668,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s49",
+      "id": "s51",
       "sid": "5-pm-team-synthesis",
       "day": 5,
       "start": 960,
@@ -2671,7 +2734,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s50",
+      "id": "s52",
       "sid": "6-am-welcome",
       "day": 6,
       "start": 570,
@@ -2722,7 +2785,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s51",
+      "id": "s53",
       "sid": "6-am-product-definition",
       "day": 6,
       "start": 600,
@@ -2748,7 +2811,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s52",
+      "id": "s54",
       "sid": "6-am-back-of-napkin-economics",
       "day": 6,
       "start": 600,
@@ -2774,7 +2837,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s53",
+      "id": "s55",
       "sid": "6-am-validation-design",
       "day": 6,
       "start": 600,
@@ -2800,7 +2863,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s54",
+      "id": "s56",
       "sid": "6-am-team-synthesis",
       "day": 6,
       "start": 750,
@@ -2861,7 +2924,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s55",
+      "id": "s57",
       "sid": "6-pm-out-in-market",
       "day": 6,
       "start": 840,
@@ -2928,7 +2991,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s56",
+      "id": "s58",
       "sid": "6-pm-out-in-market-debrief",
       "day": 6,
       "start": 960,
@@ -2997,7 +3060,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s57",
+      "id": "s59",
       "sid": "7-am-welcome",
       "day": 7,
       "start": 570,
@@ -3048,7 +3111,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s58",
+      "id": "s60",
       "sid": "7-am-sponsor-feedback-sessions",
       "day": 7,
       "start": 600,
@@ -3130,7 +3193,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s59",
+      "id": "s61",
       "sid": "7-am-prototype-build-a-b",
       "day": 7,
       "start": 600,
@@ -3156,7 +3219,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s60",
+      "id": "s62",
       "sid": "7-am-the-100-day-plan",
       "day": 7,
       "start": 600,
@@ -3183,7 +3246,7 @@ window.STUDIO = {
       "note": "Business + Market join forces"
     },
     {
-      "id": "s61",
+      "id": "s63",
       "sid": "7-am-the-100-day-plan-2",
       "day": 7,
       "start": 600,
@@ -3210,7 +3273,7 @@ window.STUDIO = {
       "note": "Business + Market join forces"
     },
     {
-      "id": "s62",
+      "id": "s64",
       "sid": "7-am-team-alignment",
       "day": 7,
       "start": 750,
@@ -3271,7 +3334,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s63",
+      "id": "s65",
       "sid": "7-pm-out-in-market",
       "day": 7,
       "start": 840,
@@ -3351,7 +3414,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s64",
+      "id": "s66",
       "sid": "7-pm-out-in-market-debrief",
       "day": 7,
       "start": 960,
@@ -3416,7 +3479,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s65",
+      "id": "s67",
       "sid": "8-am-welcome",
       "day": 8,
       "start": 570,
@@ -3467,7 +3530,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s66",
+      "id": "s68",
       "sid": "8-am-lpp-time",
       "day": 8,
       "start": 600,
@@ -3551,7 +3614,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s67",
+      "id": "s69",
       "sid": "8-am-guest-how-to-pitch",
       "day": 8,
       "start": 660,
@@ -3623,7 +3686,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s68",
+      "id": "s70",
       "sid": "8-pm-lpp-time-narrative-time",
       "day": 8,
       "start": 840,
@@ -3699,7 +3762,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s69",
+      "id": "s71",
       "sid": "8-pm-lpp-late-work-session",
       "day": 8,
       "start": 1080,
@@ -3719,7 +3782,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s70",
+      "id": "s72",
       "sid": "9-am-welcome",
       "day": 9,
       "start": 570,
@@ -3770,7 +3833,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s71",
+      "id": "s73",
       "sid": "9-am-lpp-practice",
       "day": 9,
       "start": 600,
@@ -3842,7 +3905,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s72",
+      "id": "s74",
       "sid": "9-am-final-practice",
       "day": 9,
       "start": 720,
@@ -3910,7 +3973,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s73",
+      "id": "s75",
       "sid": "9-pm-final-pitches",
       "day": 9,
       "start": 840,
@@ -3986,7 +4049,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s74",
+      "id": "s76",
       "sid": "9-pm-reception",
       "day": 9,
       "start": 930,

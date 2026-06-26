@@ -3083,10 +3083,11 @@ const SCHEDULE = {
               }
             },
             {
-              label: "Intro game",
+              label: "Intro game · Intro to HLV ADAPT",
               kind: "game",
               time_start: "10:00",
-              time_end: "10:30",
+              time_end: "11:00",
+              sub: "Rollercoaster check-in + brief ADAPT primer",
               slide: {
                 status: "draft",
                 foundation: "Rollercoaster Check-in opens the program by giving students a visual way to say where they actually are. Cold openings hide real state. The diagram makes it visible, surfaces clusters, and gives shy students a label to pick rather than improvise.",
@@ -3134,8 +3135,8 @@ const SCHEDULE = {
               label: "Entrepreneurship intro",
               kind: "work",
               slides_link_or_embed: "https://docs.google.com/presentation/d/1ebqGoQsMDJMmwDRygdH18xZsexVVG7GqbaRyI8DZBO8/edit",
-              time_start: "10:30",
-              time_end: "11:45",
+              time_start: "11:00",
+              time_end: "12:00",
               slide: {
                 status: "draft",
                 foundation: "Move students from 'entrepreneur = billionaire founder' to a usable definition: noticing real problems, building solutions, finding a way for them to survive. By end of block they have a working definition (problem to solution to scale), four behaviors to practice, and a one-sentence personal commitment for the week.",
@@ -3193,82 +3194,71 @@ const SCHEDULE = {
               }
             },
             {
-              label: "AI tooling, PRD, intro pitch",
+              label: "Interviews — 5 questions + 5 whys",
               kind: "work",
-              time_start: "11:45",
+              time_start: "12:00",
               time_end: "13:00",
-              ai_loop: {
-                analog: "Pre-arrival thinking about self plus the challenge",
-                structure: "Structured prompt for an intro pitch",
-                output: "Iterate with AI until the pitch sounds like you",
-                final: "30-second intro pitch",
-                reality_check: "Deliver to the room",
-                uses_prd_lab: false
-              },
+              sub: "Cohort interviews cohort: 5 set questions, then 5 whys on one answer",
               slide: {
                 status: "draft",
-                foundation: "First exposure to ADAPT, the loop you'll run all program: Analog, Dialogue, Adjust, Produce, Test. Today's loop is small on purpose: bring something analog (your story), dialogue with AI to structure it, adjust until it sounds like you, produce a 30-second pitch, test it on the room. The artifact is small. The point is feeling the loop.",
+                foundation: "First listening block. Students interview each other with set questions: 5 questions, then 5 whys on one answer. The cohort itself is the challenge's user group (challenge centres young adults), so they are both interviewer and source. The friction that surfaces seeds tomorrow's problem work.",
                 students: [
-                  "Read the ADAPT one-pager. Five letters. Five steps. You'll see them every day.",
-                  "Analog: scribble what you'd say if someone outside the program asked 'who are you and why are you here?' Paper or notes app. Your words. (3-5 min.)",
-                  "Dialogue: open the AI of your choice. Paste your scribble plus the structured prompt we'll give you. Have a back-and-forth, not a one-shot.",
-                  "Adjust: push back on the AI. Cut the corporate phrases. Cut anything that doesn't sound like you.",
-                  "Produce: lock the 30-second intro pitch. No notes when you deliver.",
-                  "Test: five or six volunteers deliver to the room. The room calls out one thing that landed and one thing that didn't."
+                  "Pair up. One interviewer, one interviewee. Switch at 25 min.",
+                  "Run the 5 set questions verbatim. Don't paraphrase, don't soften.",
+                  "Pick one answer that hooked you. 5 whys on it. Push past the polite layer.",
+                  "Capture frustrations in their words, not yours."
                 ],
-                facilitator: "45 min total. Suggested split: 5 min ADAPT intro (show the 5 letters on a slide, frame as the loop the whole program runs on), 5 min Analog scribble, 10 min Dialogue plus Adjust (combined work block), 5 min Produce (lock the 30-sec pitch), 15 min Test (5-6 volunteer deliveries plus room reaction), 5 min meta-debrief ('what did the AI add, what did you have to fight it on?'). Don't use PRD Lab here. Overkill for a 30-sec pitch and we want the AI tool to feel light. PRD Lab debuts in the Wk2 specialty rounds. Wk2 specialty rounds run the same ADAPT loop on bigger artifacts.",
+                facilitator: "60 min total. 5 min frame (listen, don't pitch), 25 min interview round 1, 25 min interview round 2 (switch roles), 5 min capture/save. Coach empathy interview opens (verbatim phrasing, not paraphrased). Watch for pairs going abstract — pull them back to specific situations ('walk me through the last time…').",
                 references: [
-                  "ADAPT methodology one-pager (TBD: needs creation before delivery)",
-                  "HLV Curriculum: Active Design (Notion: canonical micro-cycle)",
-                  "Quick Pitch Template (Notion Knowledge)"
+                  "Customer Discovery & Validation (Notion: Knowledge / Foundation)",
+                  "Empathy Interview Protocol (Notion: Knowledge / Method)",
+                  "block-drafts/w1-mon-pm-customer-insights-panel.md (prior draft, leverage)"
                 ],
                 notes: [
                   {
+                    author: "Claude",
+                    ts: "2026-06-26T15:30:00Z",
+                    text: "Moved from PM to AM 12:00-13:00 per canonical sheet revert 2026-06-26 (Decision #8). Block previously sat at 15:00-16:30 in PM. Content kept verbatim from the prior PM version; the 'first customer encounter' framing is preserved — cohort IS the challenge's user group per challenge rebuild."
+                  },
+                  {
                     author: "Cowork",
                     ts: "2026-05-15T22:30:00Z",
-                    text: "ADAPT vs canonical mapping (locked Owen call, for Monday discussion with Stacey): ADAPT (Analog / Dialogue / Adjust / Produce / Test) is the student-facing mnemonic. ai_loop fields use the canonical Stacey-developed names (analog / structure / output / final / reality_check). Mapping: A=analog, D=structure, Adjust=output, Produce=final, T=reality_check. Slide content uses ADAPT vocabulary; ai_loop block keeps canonical."
-                  },
-                  {
-                    author: "Cowork",
-                    ts: "2026-05-15T18:00:00Z",
-                    text: "No Notion source for this block as written. Drafted from Owen's original brief (May 2026). ADAPT one-pager doesn't exist yet, needs creation before delivery (referenced TBD)."
-                  },
-                  {
-                    author: "Cowork",
-                    ts: "2026-05-15T18:00:00Z",
-                    text: "ai_loop populated per Owen's brief verbatim with the dialogue to structure / adjust to output / produce to final mapping locked in decision #3. Friction point: 'Iterate with AI until the pitch sounds like you' reads as process not artifact, but schema says output is the working artifact. Left as-is pending the deferred schema rename."
-                  },
-                  {
-                    author: "Cowork",
-                    ts: "2026-05-15T18:00:00Z",
-                    text: "Test step here is soft (peer feedback in room). The first formal Reality Check block is Thu AM (RC: Pitch speed dating). Worth a callback line when facilitator notes are expanded for delivery."
-                  },
-                  {
-                    author: "Cowork",
-                    ts: "2026-05-15T18:00:00Z",
-                    text: "Framing question: teach ADAPT cold (5 letters on a slide, then run the loop) or run-first / reveal-second. Drafted cold-teach because lower facilitator-skill and easier for Stacey to run Monday. 30-sec rewrite if you want to flip."
-                  },
-                  {
-                    author: "Cowork",
-                    ts: "2026-05-15T18:00:00Z",
-                    text: "No sponsor placeholder needed in this block. No sponsor reference."
-                  },
-                  {
-                    author: "Cowork",
-                    ts: "2026-05-15T18:00:00Z",
-                    text: "Cleanup pass: stripped em-dashes from prior PDF-source notes per Owen's style rule."
+                    text: "First customer encounter. Listening-not-pitching framing is the explicit constraint. Customer panelists will recur Tue AM (Revisit) and Tue PM (Validation), so first impressions matter."
                   },
                   {
                     author: "Claude",
                     ts: "2026-06-11T12:00:00Z",
-                    text: "Swag challenge folded in here per rebuild; standalone 'Swag challenge intro' (Mon pm) and 'Swag pitch' (Tue am) removed — content in git history."
+                    text: "Evolved from 'Active listening & interviews'. Students interview each other with set questions: 5 questions, then 5 whys on one answer. The cohort is the challenge's user group."
+                  },
+                  {
+                    author: "Claude",
+                    ts: "2026-06-26T15:30:00Z",
+                    text: "ADAPT introduction + AI tooling exercise (prior 11:45-13:00 block) removed per canonical sheet 2026-06-25. Content in git history. ADAPT vocabulary still appears across Tue/Wed teach-backs; Tue Synthesis is the first explicit ADAPT loop run on a real artifact."
                   }
                 ]
-              },
-              sub: "incl. swag challenge questions"
+              }
             }
           ],
           pm: [
+            {
+              label: "Lunch",
+              kind: "social",
+              time_start: "13:00",
+              time_end: "14:00",
+              sub: "Cohort lunch · downshift before sponsor briefing",
+              slide: {
+                status: "draft",
+                foundation: "Hard lunch break per canonical schedule. Students drop the morning's listening frame, downshift before sponsor briefing lands at 14:00.",
+                facilitator: "60 min. Lunch venue: ISEG cafeteria. Cate confirms catering. Staff eats with cohort — don't separate.",
+                notes: [
+                  {
+                    author: "Claude",
+                    ts: "2026-06-26T15:30:00Z",
+                    text: "Added per canonical sheet 2026-06-25 (Decision #8 revert). Previously not in code; prior /api/overrides held 12:45 sponsor briefing which started immediately after the morning ran long. With revert, lunch is a clean 60-min block."
+                  }
+                ]
+              }
+            },
             {
               label: "Sponsor briefing",
               kind: "sponsor",
@@ -3305,36 +3295,66 @@ const SCHEDULE = {
               }
             },
             {
-              label: "Interviews — 5 questions + 5 whys",
+              label: "Sponsor debrief",
               kind: "work",
               time_start: "15:00",
-              time_end: "16:30",
+              time_end: "15:45",
+              sub: "Capture what frustrates JdM's customers · seed for Tue problem work",
               slide: {
                 status: "draft",
-                foundation: "First customer encounter. Real customers from the sponsor's domain talk about their actual frustrations. No solutions, no validation, just listening. The friction they describe seeds tomorrow's problem work.",
+                foundation: "Direct synthesis after the sponsor briefing. Cohort works in small clusters to surface what they actually heard, separated from sponsor narrative. The wall fills with frustrations (in JdM's customers' words) plus what the sponsor said vs what they meant. Sets Tue AM up.",
                 students: [
-                  "Listen first 20 minutes. No notes.",
-                  "Then capture frustrations they named, in their words.",
-                  "Q&A 30 min: ask about specific situations, not opinions ('walk me through the last time...').",
-                  "Don't pitch solutions. Today is listening."
+                  "Solo 5 min: write the 3 frustrations you heard, in the sponsor's customers' words.",
+                  "Cluster 15 min: small groups (3 students) — combine sticky notes, look for repeats.",
+                  "Share-back 20 min: each cluster posts its 2 strongest frustrations on the main wall. Brief discussion: where did the sponsor make a leap, where did they speak from data?",
+                  "Capture 5 min: every student writes 1 question they want to ask a real JdM customer tomorrow."
                 ],
-                facilitator: "60 min. 5 min frame (listen, don't pitch), 20 min customer-told-stories, 30 min Q&A, 5 min capture round. Pre-brief panelists: tell us about your worst day, not your roadmap. Coach students to use empathy interview opens (verbatim phrasing, not paraphrased).",
+                facilitator: "45 min. 5 min frame (the gap between what was said and what's meant), 15 min cluster work, 20 min share-back round (cap each cluster at 90 sec), 5 min question-capture round. Wall artifact carries forward to Tue AM Synthesis. Don't let the room slip into solutioning — today is still listening.",
                 references: [
+                  "Sponsor briefing block (immediate prerequisite)",
                   "Customer Discovery & Validation (Notion: Knowledge / Foundation)",
-                  "Empathy Interview Protocol (Notion: Knowledge / Method)",
-                  "[CUSTOMER PANELISTS — TBD] briefing",
-                  "block-drafts/w1-mon-pm-customer-insights-panel.md (prior draft, leverage)"
+                  "Tue AM Synthesis (downstream — frustrations feed problem work)"
                 ],
                 notes: [
                   {
-                    author: "Cowork",
-                    ts: "2026-05-15T22:30:00Z",
-                    text: "First customer encounter. Listening-not-pitching framing is the explicit constraint. Customer panelists will recur Tue AM (Revisit) and Tue PM (Validation), so first impressions matter."
-                  },
+                    author: "Claude",
+                    ts: "2026-06-26T15:30:00Z",
+                    text: "Added per canonical sheet 2026-06-25 (Decision #8 revert 2026-06-26). New block in the canonical structure — synthesizes JdM briefing before Deputy Mayor at 15:45. 45 min slot fits sheet's 15:00-15:45 window."
+                  }
+                ]
+              }
+            },
+            {
+              label: "Deputy Mayor Gonçalo Reis",
+              kind: "panel",
+              time_start: "15:45",
+              time_end: "16:30",
+              sub: "Guest: Deputy Mayor of Lisbon, civic-frame opener",
+              guest: {
+                name: "Gonçalo Reis",
+                title: "Deputy Mayor of Lisbon",
+                org: "Câmara Municipal de Lisboa",
+                source: "Google Sheet canonical 2026-06-25 (sheet typo 'Ries'; confirmed Reis per tracker + pre-read PDF). Slot confirmed by Cate with Mayor's Office."
+              },
+              slide: {
+                status: "draft",
+                foundation: "Civic-frame opener for Week 1. Deputy Mayor speaks to the Lisbon context: why this city, why now, why the cohort matters. Sits intentionally between sponsor work (JdM 14:00) and the cohort dinner Friday — books the program inside the city, not parallel to it. Interpreter line ready (Cate).",
+                students: [
+                  "Listen — 25 min. No phones, no notes for the first 10.",
+                  "Capture: what's the Deputy Mayor framing as the city's bet?",
+                  "Q&A 15 min. Ask one concrete question about what the city is doing differently."
+                ],
+                facilitator: "45 min. 5 min Owen intro + frame, 25 min Deputy Mayor (with interpreter line if needed), 15 min Q&A. Pre-brief the Deputy Mayor: not a corporate welcome speech — tell us what Lisbon is betting on for young adults right now. Cate hands him the Sponsor brief packet pre-event so the framing connects. Owen closes with the bridge to tomorrow.",
+                references: [
+                  "Reis bio one-pager (Cate prep — see materials-by-day.md Mon Jun 29)",
+                  "Interpreter line confirmed (TBD-Cate)",
+                  "S105 civic frame slide (existing in deck)"
+                ],
+                notes: [
                   {
                     author: "Claude",
-                    ts: "2026-06-11T12:00:00Z",
-                    text: "Evolved from 'Active listening & interviews'. Students interview each other with set questions: 5 questions, then 5 whys on one answer. The cohort is the challenge's user group."
+                    ts: "2026-06-26T15:30:00Z",
+                    text: "Added per canonical sheet 2026-06-25 (Decision #8 revert 2026-06-26). Slot was confirmed with Mayor's Office by Cate; previously couldn't be added because the /api/overrides layer held the 12:45 Sponsor briefing fallback, which left no 15:45 slot. With the structural revert + overrides clear, this block is the program closer for Mon Jun 29."
                   }
                 ]
               }
