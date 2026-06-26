@@ -3368,18 +3368,18 @@ window.STUDIO = {
     },
     {
       "id": "s68",
-      "sid": "7-am-the-100-day-plan",
+      "sid": "7-am-the-100-day-plan-business-spine",
       "day": 7,
       "start": 600,
       "end": 750,
       "track": "build",
-      "title": "The 100-Day Plan",
+      "title": "The 100-Day Plan · Business spine",
       "room": "",
       "facils": [],
       "group": "Business",
       "kind": "track",
       "code": "B3",
-      "sub": "Business + Market join forces",
+      "sub": "B+M joint · Validate / Build / Grow + Day 100 scorecard. Joins Market room.",
       "aspects": [],
       "half": "am",
       "deck": {
@@ -3391,22 +3391,22 @@ window.STUDIO = {
         "pdfUrl": null,
         "code": "B3"
       },
-      "note": "Business + Market join forces"
+      "note": "B+M joint · Validate / Build / Grow + Day 100 scorecard. Joins Market room."
     },
     {
       "id": "s69",
-      "sid": "7-am-the-100-day-plan-2",
+      "sid": "7-am-the-100-day-plan-market-first-mo",
       "day": 7,
       "start": 600,
       "end": 750,
       "track": "build",
-      "title": "The 100-Day Plan",
+      "title": "The 100-Day Plan · Market First Moves",
       "room": "",
       "facils": [],
       "group": "Market",
       "kind": "track",
       "code": "M3",
-      "sub": "Business + Market join forces",
+      "sub": "B+M joint · 6 channels scored, first 100 users sequenced. Joins Business room.",
       "aspects": [],
       "half": "am",
       "deck": {
@@ -3418,7 +3418,7 @@ window.STUDIO = {
         "pdfUrl": null,
         "code": "M3"
       },
-      "note": "Business + Market join forces"
+      "note": "B+M joint · 6 channels scored, first 100 users sequenced. Joins Business room."
     },
     {
       "id": "s70",
@@ -3881,6 +3881,55 @@ window.STUDIO = {
     },
     {
       "id": "s78",
+      "sid": "8-pm-flexible-close-framing",
+      "day": 8,
+      "start": 825,
+      "end": 840,
+      "track": "core",
+      "title": "Flexible close framing",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "welcome",
+      "code": null,
+      "sub": "Permission, not pressure: when your LPP is sharp, you can go",
+      "aspects": [
+        "transition"
+      ],
+      "half": "pm",
+      "micro": [
+        {
+          "t": "13:45",
+          "end": "13:49",
+          "label": "Hear the close-window: room stays open until 22:00."
+        },
+        {
+          "t": "13:49",
+          "end": "13:53",
+          "label": "Hear the out-clause: when your LPP is sharp and beautiful, you can go."
+        },
+        {
+          "t": "13:53",
+          "end": "13:57",
+          "label": "Hear the bar: 'sharp and beautiful' is your judgment plus a 5-min check with F1 or F2 before you leave."
+        },
+        {
+          "t": "13:57",
+          "end": "14:00",
+          "label": "Get back to work."
+        }
+      ],
+      "note": "Quick framing block before LPP Narrative Time starts. Owen sets the rule: the room stays open until 22:00, but when a team's LPP is sharp and beautiful, they can leave. This is permission, not pressure. Frame the late-session as opt-in support, not endurance.",
+      "facilitatorCue": "15 min. Owen owns the frame. 3 min on the rule, 5 min on what 'sharp and beautiful' means in practice (one example of what passes the bar, one example of what doesn't), 5 min Q&A, 2 min back-to-work. Don't repeat the framing later — it lands once or it doesn't.",
+      "studentTasks": [
+        "Hear the close-window: room stays open until 22:00.",
+        "Hear the out-clause: when your LPP is sharp and beautiful, you can go.",
+        "Hear the bar: 'sharp and beautiful' is your judgment plus a 5-min check with F1 or F2 before you leave.",
+        "Get back to work."
+      ]
+    },
+    {
+      "id": "s79",
       "sid": "8-pm-lpp-time-narrative-time",
       "day": 8,
       "start": 840,
@@ -3892,7 +3941,7 @@ window.STUDIO = {
       "group": "All",
       "kind": "lpp",
       "code": null,
-      "sub": "Assemble the final story",
+      "sub": "Assemble the final story · 3 energizer pauses · flexible close",
       "aspects": [],
       "half": "pm",
       "micro": [
@@ -3956,7 +4005,47 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s79",
+      "id": "s80",
+      "sid": "8-pm-en-002-stand-sit-lean",
+      "day": 8,
+      "start": 930,
+      "end": 945,
+      "track": "ops",
+      "title": "EN-002 Stand-Sit-Lean",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "game",
+      "code": null,
+      "sub": "Mid-afternoon energizer · physical reset inside LPP Narrative Time",
+      "aspects": [],
+      "half": "pm",
+      "note": "Mid-afternoon energizer overlay. Three hours into LPP Narrative Time, the room is heads-down. EN-002 is fast, physical, hilarious. Whole-room break — facilitator-called, no opt-out, then back to LPP. Picked over EN-001/EN-003 because post-meal heads need physical, not verbal.",
+      "facilitatorCue": "5 min for the game itself; the block is 15 min so teams transition out and back in cleanly. Cate or F1 calls it cold — no warning. Per backup-activities/by-trigger/energy-crash.md (suited_codes: EN-001/EN-002/EN-003/EN-004/EN-005).",
+      "studentTasks": null
+    },
+    {
+      "id": "s81",
+      "sid": "8-pm-en-001-1-2-3-switch",
+      "day": 8,
+      "start": 1050,
+      "end": 1065,
+      "track": "ops",
+      "title": "EN-001 1-2-3 Switch",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "game",
+      "code": null,
+      "sub": "Pre-evening energizer · pair-based count game, wakes verbal brain",
+      "aspects": [],
+      "half": "pm",
+      "note": "Pre-evening pivot. LPP Narrative Time is about to wrap; the late session is about to begin. 1-2-3 Switch is pair-based, gets the verbal brain back online, and it's a natural seating mix-up so teams that have been heads-down separately get a low-stakes reset before the evening push.",
+      "facilitatorCue": "7-8 min for the game itself; 15-min block leaves room for the LPP wrap and the late-session handoff. EN-001 picked over EN-005 (Whoosh-Bang-Bong) because the late session needs verbal sharpness, not circle-attention reset.",
+      "studentTasks": null
+    },
+    {
+      "id": "s82",
       "sid": "8-pm-lpp-late-work-session",
       "day": 8,
       "start": 1080,
@@ -3968,15 +4057,35 @@ window.STUDIO = {
       "group": "All",
       "kind": "work",
       "code": null,
-      "sub": "Teams push through narrative + prototype",
+      "sub": "Teams push through narrative + prototype · 20:00 energizer · close when sharp",
       "aspects": [],
       "half": "pm",
-      "note": "Optional extended work session. Teams that need more time on LPP narrative or prototype stay. F1 + F2 present for support. Food provided.",
+      "note": "Optional extended work session. Teams that need more time on LPP narrative or prototype stay. F1 + F2 present for support. Food provided. Close-rule: when a team's LPP is sharp and beautiful (per the 13:45 framing), they leave after a 5-min check with F1 or F2.",
       "facilitatorCue": null,
       "studentTasks": null
     },
     {
-      "id": "s80",
+      "id": "s83",
+      "sid": "8-pm-en-005-whoosh-bang-bong",
+      "day": 8,
+      "start": 1200,
+      "end": 1215,
+      "track": "ops",
+      "title": "EN-005 Whoosh-Bang-Bong",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "game",
+      "code": null,
+      "sub": "Deep-evening reset · circle attention, re-engages quieter voices",
+      "aspects": [],
+      "half": "pm",
+      "note": "Deep into the late session. Two hours in, the teams still in the room are the ones grinding. EN-005 resets dominant voices — by 20:00 the loud team has probably hijacked the room. Whoosh-Bang-Bong forces a full-circle attention reset and reshuffles who speaks next.",
+      "facilitatorCue": "8 min for the game itself; 15-min block buffers transitions. F1 or F2 calls it cold, no warning. Picked over EN-002 (Stand-Sit-Lean, already used 15:30) and EN-001 (1-2-3 Switch, already used 17:30) — variety matters this late.",
+      "studentTasks": null
+    },
+    {
+      "id": "s84",
       "sid": "9-am-welcome",
       "day": 9,
       "start": 570,
@@ -4029,7 +4138,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s81",
+      "id": "s85",
       "sid": "9-am-lpp-practice",
       "day": 9,
       "start": 600,
@@ -4101,7 +4210,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s82",
+      "id": "s86",
       "sid": "9-am-final-practice",
       "day": 9,
       "start": 720,
@@ -4169,7 +4278,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s83",
+      "id": "s87",
       "sid": "9-pm-lunch",
       "day": 9,
       "start": 780,
@@ -4191,7 +4300,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s84",
+      "id": "s88",
       "sid": "9-pm-final-pitches",
       "day": 9,
       "start": 840,
@@ -4267,7 +4376,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s85",
+      "id": "s89",
       "sid": "9-pm-reception",
       "day": 9,
       "start": 930,
