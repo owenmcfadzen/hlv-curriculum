@@ -462,7 +462,7 @@ window.STUDIO = {
       "group": "All",
       "kind": "sponsor",
       "code": null,
-      "sub": "incl. challenge brief",
+      "sub": "Guest: João Mil-Homens, Innovation and Sustainability Director, José de Mello (JdM)",
       "aspects": [
         "sponsor"
       ],
@@ -940,7 +940,7 @@ window.STUDIO = {
       "group": "All",
       "kind": "panel",
       "code": null,
-      "sub": null,
+      "sub": "Guest: Rodrigo Figueiredo, Upspeech",
       "aspects": [
         "guest"
       ],
@@ -2471,8 +2471,8 @@ window.STUDIO = {
       "id": "s45",
       "sid": "5-am-guest-talk",
       "day": 5,
-      "start": 735,
-      "end": 780,
+      "start": 660,
+      "end": 705,
       "track": "talks",
       "title": "Guest Talk",
       "room": "",
@@ -2480,34 +2480,34 @@ window.STUDIO = {
       "group": "All",
       "kind": "panel",
       "code": null,
-      "sub": null,
+      "sub": "Guest: Francisco Martins, CTO Cozecare",
       "aspects": [
         "guest"
       ],
       "half": "am",
       "micro": [
         {
-          "t": "12:15",
-          "end": "12:26",
+          "t": "11:00",
+          "end": "11:11",
           "label": "Listen first 25 min. No notes."
         },
         {
-          "t": "12:26",
-          "end": "12:37",
+          "t": "11:11",
+          "end": "11:22",
           "label": "Capture: what surprised you about how they actually work?"
         },
         {
-          "t": "12:37",
-          "end": "12:48",
+          "t": "11:22",
+          "end": "11:33",
           "label": "Q&A 15 min. Ask about a specific decision they made recently, not abstract advice."
         },
         {
-          "t": "12:48",
-          "end": "13:00",
+          "t": "11:33",
+          "end": "11:45",
           "label": "Surface one thing you'll try in your specialty work this week."
         }
       ],
-      "note": "Last year's product guy returns. Lisbon-based, Stanford grad, gave the strong product talk in 2025. Same narrative-over-expertise bar as Wk1's Entrepreneur Story: a working practitioner saying what they actually do all day, not a methodology lecture.",
+      "note": "Francisco Martins, CTO Cozecare. Narrative-over-expertise bar from Wk1's Entrepreneur Story: a working practitioner saying what they actually do all day, not a methodology lecture. (Prior pass: 'Last year's product guy returns' was Owen's earlier candidate; sheet-canonical 2026-06-25 names Francisco.)",
       "assets": [
         {
           "t": "[GUEST — Lisbon 2025 product guy, contact pending Owen] briefing",
@@ -3554,8 +3554,8 @@ window.STUDIO = {
       "id": "s67",
       "sid": "8-am-guest-how-to-pitch",
       "day": 8,
-      "start": 720,
-      "end": 780,
+      "start": 660,
+      "end": 705,
       "track": "talks",
       "title": "Guest: How to pitch",
       "room": "",
@@ -3563,30 +3563,30 @@ window.STUDIO = {
       "group": "All",
       "kind": "panel",
       "code": null,
-      "sub": null,
+      "sub": "Guest: Vicente Mayer Garção, Lamsy Health",
       "aspects": [
         "guest"
       ],
       "half": "am",
       "micro": [
         {
-          "t": "12:00",
-          "end": "12:15",
+          "t": "11:00",
+          "end": "11:11",
           "label": "Listen 20 min. Capture: what's their definition of a 'problem that lands'?"
         },
         {
-          "t": "12:15",
-          "end": "12:30",
+          "t": "11:11",
+          "end": "11:22",
           "label": "Bring your own pitch open (30 seconds). Guest reacts to 2-3 of them live."
         },
         {
-          "t": "12:30",
-          "end": "12:45",
+          "t": "11:22",
+          "end": "11:33",
           "label": "Q&A 15 min. Ask about a pitch you've seen recently that didn't land. What was missing?"
         },
         {
-          "t": "12:45",
-          "end": "13:00",
+          "t": "11:33",
+          "end": "11:45",
           "label": "Surface one structural change you'll try before tomorrow's practice."
         }
       ],
@@ -3599,7 +3599,7 @@ window.STUDIO = {
         "pdfUrl": null,
         "code": null
       },
-      "note": "Pitch craft from someone who pitches for a living. Story structure and what makes the problem land in 3 minutes (not slide design, not investor decks). Interactive: students bring real material, guest reacts.",
+      "note": "Pitch craft from someone who pitches for a living - Vicente Mayer Garção of Lamsy Health. Story structure and what makes the problem land in 3 minutes (not slide design, not investor decks). Interactive: students bring real material, guest reacts.",
       "assets": [
         {
           "t": "[GUEST — TBD: pitch coach, comms, storyteller, or clarity-known founder] briefing",
@@ -3922,7 +3922,7 @@ window.STUDIO = {
       "group": "All",
       "kind": "pitch",
       "code": null,
-      "sub": null,
+      "sub": "Venue: Unicorn Factory Lisboa Health Hub (NOT ISEG) · Jury: João Mil-Homens + JdM",
       "aspects": [
         "pitch"
       ],
@@ -3958,7 +3958,7 @@ window.STUDIO = {
         "pdfUrl": null,
         "code": null
       },
-      "note": "Terminal moment of the program. Teams pitch their work to a panel of 2-3 judges, a mix of sponsor leadership and UFL leadership. Reception follows. The audience is the people whose judgment matters. The room knows it.",
+      "note": "Terminal moment of the program. Teams pitch their work to a panel of 2-3 judges, sponsor leadership (João Mil-Homens + JdM) plus UFL leadership. Reception follows. Venue is Unicorn Factory Lisboa Health Hub, NOT ISEG. The audience is the people whose judgment matters. The room knows it.",
       "assets": [
         {
           "t": "Pitch Practice (Notion: Knowledge / Method)",
