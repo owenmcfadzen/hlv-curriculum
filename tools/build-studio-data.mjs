@@ -27,6 +27,7 @@ const KIND_TO_TRACK = {
   rc: "talks", panel: "talks", sponsor: "talks",
   teamteach: "build", pitch: "build", lpp: "build", track: "build",
   social: "evening",
+  meal: "ops",       // Lunch + meal blocks sit in Ops, not Evening (Wave B 2026-06-26)
 };
 
 const LOCAL_HTML_DECKS = {
@@ -58,6 +59,8 @@ function inferAspects(blk) {
   if (blk.kind === "rc")        out.push("rc");
   if (blk.kind === "social")    out.push("social");
   if (blk.kind === "pitch")     out.push("pitch");
+  if (blk.kind === "meal")      out.push("meal");        // Wave B 2026-06-26
+  if (blk.kind === "welcome")   out.push("transition");  // Wave B 2026-06-26
   return out;
 }
 
@@ -181,11 +184,13 @@ const GROUPS_META = {
 };
 
 const ASPECTS = {
-  guest:   { label: "Guest",         color: "#7649C2", icon: "guest" },
-  sponsor: { label: "Sponsor",       color: "#0B5FB0", icon: "sponsor" },
-  rc:      { label: "Reality Check", color: "#C2342B", icon: "alumni" },
-  social:  { label: "Social",        color: "#C98A00", icon: "family" },
-  pitch:   { label: "Pitch",         color: "#0A8C3D", icon: "family" },
+  guest:      { label: "Guest",         color: "#7649C2", icon: "guest" },
+  sponsor:    { label: "Sponsor",       color: "#0B5FB0", icon: "sponsor" },
+  rc:         { label: "Reality Check", color: "#C2342B", icon: "alumni" },
+  social:     { label: "Social",        color: "#C98A00", icon: "family" },
+  pitch:      { label: "Pitch",         color: "#0A8C3D", icon: "family" },
+  meal:       { label: "Meal",          color: "#8A6400", icon: "family" }, // Wave B 2026-06-26
+  transition: { label: "Transition",    color: "#565656", icon: "family" }, // Wave B 2026-06-26
 };
 
 const DAYS = [

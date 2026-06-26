@@ -191,7 +191,9 @@ window.STUDIO = {
       "kind": "welcome",
       "code": null,
       "sub": null,
-      "aspects": [],
+      "aspects": [
+        "transition"
+      ],
       "half": "am",
       "micro": [
         {
@@ -443,16 +445,16 @@ window.STUDIO = {
       "day": 0,
       "start": 780,
       "end": 840,
-      "track": "evening",
+      "track": "ops",
       "title": "Lunch",
       "room": "",
       "facils": [],
       "group": "All",
-      "kind": "social",
+      "kind": "meal",
       "code": null,
       "sub": "Cohort lunch · downshift before sponsor briefing",
       "aspects": [
-        "social"
+        "meal"
       ],
       "half": "pm",
       "note": "Hard lunch break per canonical schedule. Students drop the morning's listening frame, downshift before sponsor briefing lands at 14:00.",
@@ -653,7 +655,9 @@ window.STUDIO = {
       "kind": "welcome",
       "code": null,
       "sub": null,
-      "aspects": [],
+      "aspects": [
+        "transition"
+      ],
       "half": "am",
       "facilitatorCue": null,
       "studentTasks": null
@@ -762,6 +766,28 @@ window.STUDIO = {
     },
     {
       "id": "s12",
+      "sid": "1-pm-lunch",
+      "day": 1,
+      "start": 780,
+      "end": 840,
+      "track": "ops",
+      "title": "Lunch",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "meal",
+      "code": null,
+      "sub": "Cohort lunch",
+      "aspects": [
+        "meal"
+      ],
+      "half": "pm",
+      "note": "Logistics block. Lunch.",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s13",
       "sid": "1-pm-team-activity",
       "day": 1,
       "start": 840,
@@ -818,7 +844,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s13",
+      "id": "s14",
       "sid": "1-pm-synthesis-what-we-heard",
       "day": 1,
       "start": 870,
@@ -838,7 +864,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s14",
+      "id": "s15",
       "sid": "1-pm-create-survey-interview-question",
       "day": 1,
       "start": 900,
@@ -879,7 +905,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s15",
+      "id": "s16",
       "sid": "1-pm-send-out",
       "day": 1,
       "start": 960,
@@ -899,7 +925,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s16",
+      "id": "s17",
       "sid": "2-am-welcome",
       "day": 2,
       "start": 570,
@@ -912,7 +938,9 @@ window.STUDIO = {
       "kind": "welcome",
       "code": null,
       "sub": null,
-      "aspects": [],
+      "aspects": [
+        "transition"
+      ],
       "half": "am",
       "micro": [
         {
@@ -950,7 +978,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s17",
+      "id": "s18",
       "sid": "2-am-review-replies-share-out",
       "day": 2,
       "start": 600,
@@ -991,7 +1019,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s18",
+      "id": "s19",
       "sid": "2-am-entrepreneur-story",
       "day": 2,
       "start": 660,
@@ -1044,7 +1072,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s19",
+      "id": "s20",
       "sid": "2-am-problem-identification",
       "day": 2,
       "start": 720,
@@ -1111,7 +1139,29 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s20",
+      "id": "s21",
+      "sid": "2-pm-lunch",
+      "day": 2,
+      "start": 780,
+      "end": 840,
+      "track": "ops",
+      "title": "Lunch",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "meal",
+      "code": null,
+      "sub": "Cohort lunch",
+      "aspects": [
+        "meal"
+      ],
+      "half": "pm",
+      "note": "Logistics block. Lunch.",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s22",
       "sid": "2-pm-problem-selection-reframing",
       "day": 2,
       "start": 840,
@@ -1168,7 +1218,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s21",
+      "id": "s23",
       "sid": "2-pm-solutions",
       "day": 2,
       "start": 900,
@@ -1225,7 +1275,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s22",
+      "id": "s24",
       "sid": "2-pm-pitch-intro",
       "day": 2,
       "start": 960,
@@ -1286,7 +1336,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s23",
+      "id": "s25",
       "sid": "3-am-welcome",
       "day": 3,
       "start": 570,
@@ -1299,7 +1349,9 @@ window.STUDIO = {
       "kind": "welcome",
       "code": null,
       "sub": null,
-      "aspects": [],
+      "aspects": [
+        "transition"
+      ],
       "half": "am",
       "micro": [
         {
@@ -1337,7 +1389,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s24",
+      "id": "s26",
       "sid": "3-am-complete-solution-pitch",
       "day": 3,
       "start": 600,
@@ -1398,7 +1450,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s25",
+      "id": "s27",
       "sid": "3-am-rc-pitch-speed-dating",
       "day": 3,
       "start": 660,
@@ -1460,7 +1512,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s26",
+      "id": "s28",
       "sid": "3-am-pitches",
       "day": 3,
       "start": 720,
@@ -1517,7 +1569,29 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s27",
+      "id": "s29",
+      "sid": "3-pm-lunch",
+      "day": 3,
+      "start": 780,
+      "end": 840,
+      "track": "ops",
+      "title": "Lunch",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "meal",
+      "code": null,
+      "sub": "Cohort lunch",
+      "aspects": [
+        "meal"
+      ],
+      "half": "pm",
+      "note": "Logistics block. Lunch.",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s30",
       "sid": "3-pm-pitches",
       "day": 3,
       "start": 840,
@@ -1574,7 +1648,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s28",
+      "id": "s31",
       "sid": "3-pm-game",
       "day": 3,
       "start": 885,
@@ -1631,7 +1705,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s29",
+      "id": "s32",
       "sid": "3-pm-pitches-2",
       "day": 3,
       "start": 900,
@@ -1688,7 +1762,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s30",
+      "id": "s33",
       "sid": "3-pm-voting",
       "day": 3,
       "start": 930,
@@ -1748,7 +1822,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s31",
+      "id": "s34",
       "sid": "3-pm-dinner",
       "day": 3,
       "start": 1080,
@@ -1770,7 +1844,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s32",
+      "id": "s35",
       "sid": "4-am-welcome",
       "day": 4,
       "start": 570,
@@ -1783,7 +1857,9 @@ window.STUDIO = {
       "kind": "welcome",
       "code": null,
       "sub": null,
-      "aspects": [],
+      "aspects": [
+        "transition"
+      ],
       "half": "am",
       "micro": [
         {
@@ -1821,7 +1897,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s33",
+      "id": "s36",
       "sid": "4-am-voting-results",
       "day": 4,
       "start": 600,
@@ -1841,7 +1917,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s34",
+      "id": "s37",
       "sid": "4-am-intro-to-specialities",
       "day": 4,
       "start": 630,
@@ -1911,7 +1987,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s35",
+      "id": "s38",
       "sid": "4-am-intro-to-week-2-lpp-prd",
       "day": 4,
       "start": 660,
@@ -1985,7 +2061,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s36",
+      "id": "s39",
       "sid": "4-am-game",
       "day": 4,
       "start": 690,
@@ -2004,7 +2080,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s37",
+      "id": "s40",
       "sid": "4-am-select-speciality-idea",
       "day": 4,
       "start": 720,
@@ -2074,7 +2150,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s38",
+      "id": "s41",
       "sid": "4-am-team-allocation",
       "day": 4,
       "start": 750,
@@ -2131,7 +2207,29 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s39",
+      "id": "s42",
+      "sid": "4-pm-lunch",
+      "day": 4,
+      "start": 780,
+      "end": 840,
+      "track": "ops",
+      "title": "Lunch",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "meal",
+      "code": null,
+      "sub": "Cohort lunch",
+      "aspects": [
+        "meal"
+      ],
+      "half": "pm",
+      "note": "Logistics block. Lunch.",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s43",
       "sid": "4-pm-sa1-who-s-it-for",
       "day": 4,
       "start": 840,
@@ -2188,7 +2286,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s40",
+      "id": "s44",
       "sid": "4-pm-sa2-problem-validation-outreach",
       "day": 4,
       "start": 900,
@@ -2229,7 +2327,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s41",
+      "id": "s45",
       "sid": "4-pm-wrap-up",
       "day": 4,
       "start": 960,
@@ -2248,7 +2346,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s42",
+      "id": "s46",
       "sid": "4-pm-external-team-activity",
       "day": 4,
       "start": 1020,
@@ -2270,7 +2368,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s43",
+      "id": "s47",
       "sid": "5-am-welcome",
       "day": 5,
       "start": 570,
@@ -2283,7 +2381,9 @@ window.STUDIO = {
       "kind": "welcome",
       "code": null,
       "sub": null,
-      "aspects": [],
+      "aspects": [
+        "transition"
+      ],
       "half": "am",
       "micro": [
         {
@@ -2334,7 +2434,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s44",
+      "id": "s48",
       "sid": "5-am-intro-to-week-2",
       "day": 5,
       "start": 600,
@@ -2408,7 +2508,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s45",
+      "id": "s49",
       "sid": "5-am-sa3-customer-journey",
       "day": 5,
       "start": 630,
@@ -2465,7 +2565,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s46",
+      "id": "s50",
       "sid": "5-am-sa4-data-and-team-alignment",
       "day": 5,
       "start": 675,
@@ -2531,7 +2631,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s47",
+      "id": "s51",
       "sid": "5-am-guest-talk",
       "day": 5,
       "start": 660,
@@ -2590,7 +2690,29 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s48",
+      "id": "s52",
+      "sid": "5-pm-lunch",
+      "day": 5,
+      "start": 780,
+      "end": 840,
+      "track": "ops",
+      "title": "Lunch",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "meal",
+      "code": null,
+      "sub": "Cohort lunch",
+      "aspects": [
+        "meal"
+      ],
+      "half": "pm",
+      "note": "Logistics block. Lunch.",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s53",
       "sid": "5-pm-solution-blueprint",
       "day": 5,
       "start": 840,
@@ -2616,7 +2738,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s49",
+      "id": "s54",
       "sid": "5-pm-canvas-lite",
       "day": 5,
       "start": 840,
@@ -2642,7 +2764,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s50",
+      "id": "s55",
       "sid": "5-pm-landscape-map",
       "day": 5,
       "start": 840,
@@ -2668,7 +2790,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s51",
+      "id": "s56",
       "sid": "5-pm-team-synthesis",
       "day": 5,
       "start": 960,
@@ -2734,7 +2856,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s52",
+      "id": "s57",
       "sid": "6-am-welcome",
       "day": 6,
       "start": 570,
@@ -2747,7 +2869,9 @@ window.STUDIO = {
       "kind": "welcome",
       "code": null,
       "sub": "Morning check-in",
-      "aspects": [],
+      "aspects": [
+        "transition"
+      ],
       "half": "am",
       "micro": [
         {
@@ -2785,7 +2909,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s53",
+      "id": "s58",
       "sid": "6-am-product-definition",
       "day": 6,
       "start": 600,
@@ -2811,7 +2935,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s54",
+      "id": "s59",
       "sid": "6-am-back-of-napkin-economics",
       "day": 6,
       "start": 600,
@@ -2837,7 +2961,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s55",
+      "id": "s60",
       "sid": "6-am-validation-design",
       "day": 6,
       "start": 600,
@@ -2863,7 +2987,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s56",
+      "id": "s61",
       "sid": "6-am-team-synthesis",
       "day": 6,
       "start": 750,
@@ -2924,7 +3048,29 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s57",
+      "id": "s62",
+      "sid": "6-pm-lunch",
+      "day": 6,
+      "start": 780,
+      "end": 840,
+      "track": "ops",
+      "title": "Lunch",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "meal",
+      "code": null,
+      "sub": "Cohort lunch",
+      "aspects": [
+        "meal"
+      ],
+      "half": "pm",
+      "note": "Logistics block. Lunch.",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s63",
       "sid": "6-pm-out-in-market",
       "day": 6,
       "start": 840,
@@ -2991,7 +3137,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s58",
+      "id": "s64",
       "sid": "6-pm-out-in-market-debrief",
       "day": 6,
       "start": 960,
@@ -3060,7 +3206,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s59",
+      "id": "s65",
       "sid": "7-am-welcome",
       "day": 7,
       "start": 570,
@@ -3073,7 +3219,9 @@ window.STUDIO = {
       "kind": "welcome",
       "code": null,
       "sub": "Morning check-in",
-      "aspects": [],
+      "aspects": [
+        "transition"
+      ],
       "half": "am",
       "micro": [
         {
@@ -3111,7 +3259,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s60",
+      "id": "s66",
       "sid": "7-am-sponsor-feedback-sessions",
       "day": 7,
       "start": 600,
@@ -3193,7 +3341,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s61",
+      "id": "s67",
       "sid": "7-am-prototype-build-a-b",
       "day": 7,
       "start": 600,
@@ -3219,7 +3367,7 @@ window.STUDIO = {
       }
     },
     {
-      "id": "s62",
+      "id": "s68",
       "sid": "7-am-the-100-day-plan",
       "day": 7,
       "start": 600,
@@ -3246,7 +3394,7 @@ window.STUDIO = {
       "note": "Business + Market join forces"
     },
     {
-      "id": "s63",
+      "id": "s69",
       "sid": "7-am-the-100-day-plan-2",
       "day": 7,
       "start": 600,
@@ -3273,7 +3421,7 @@ window.STUDIO = {
       "note": "Business + Market join forces"
     },
     {
-      "id": "s64",
+      "id": "s70",
       "sid": "7-am-team-alignment",
       "day": 7,
       "start": 750,
@@ -3334,7 +3482,29 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s65",
+      "id": "s71",
+      "sid": "7-pm-lunch",
+      "day": 7,
+      "start": 780,
+      "end": 840,
+      "track": "ops",
+      "title": "Lunch",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "meal",
+      "code": null,
+      "sub": "Cohort lunch",
+      "aspects": [
+        "meal"
+      ],
+      "half": "pm",
+      "note": "Logistics block. Lunch.",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s72",
       "sid": "7-pm-out-in-market",
       "day": 7,
       "start": 840,
@@ -3414,7 +3584,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s66",
+      "id": "s73",
       "sid": "7-pm-out-in-market-debrief",
       "day": 7,
       "start": 960,
@@ -3479,7 +3649,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s67",
+      "id": "s74",
       "sid": "8-am-welcome",
       "day": 8,
       "start": 570,
@@ -3492,7 +3662,9 @@ window.STUDIO = {
       "kind": "welcome",
       "code": null,
       "sub": null,
-      "aspects": [],
+      "aspects": [
+        "transition"
+      ],
       "half": "am",
       "micro": [
         {
@@ -3530,7 +3702,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s68",
+      "id": "s75",
       "sid": "8-am-lpp-time",
       "day": 8,
       "start": 600,
@@ -3614,7 +3786,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s69",
+      "id": "s76",
       "sid": "8-am-guest-how-to-pitch",
       "day": 8,
       "start": 660,
@@ -3686,7 +3858,29 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s70",
+      "id": "s77",
+      "sid": "8-pm-lunch",
+      "day": 8,
+      "start": 780,
+      "end": 840,
+      "track": "ops",
+      "title": "Lunch",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "meal",
+      "code": null,
+      "sub": "Cohort lunch",
+      "aspects": [
+        "meal"
+      ],
+      "half": "pm",
+      "note": "Logistics block. Lunch.",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s78",
       "sid": "8-pm-lpp-time-narrative-time",
       "day": 8,
       "start": 840,
@@ -3762,7 +3956,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s71",
+      "id": "s79",
       "sid": "8-pm-lpp-late-work-session",
       "day": 8,
       "start": 1080,
@@ -3782,7 +3976,7 @@ window.STUDIO = {
       "studentTasks": null
     },
     {
-      "id": "s72",
+      "id": "s80",
       "sid": "9-am-welcome",
       "day": 9,
       "start": 570,
@@ -3795,7 +3989,9 @@ window.STUDIO = {
       "kind": "welcome",
       "code": null,
       "sub": null,
-      "aspects": [],
+      "aspects": [
+        "transition"
+      ],
       "half": "am",
       "micro": [
         {
@@ -3833,7 +4029,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s73",
+      "id": "s81",
       "sid": "9-am-lpp-practice",
       "day": 9,
       "start": 600,
@@ -3905,7 +4101,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s74",
+      "id": "s82",
       "sid": "9-am-final-practice",
       "day": 9,
       "start": 720,
@@ -3973,7 +4169,29 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s75",
+      "id": "s83",
+      "sid": "9-pm-lunch",
+      "day": 9,
+      "start": 780,
+      "end": 840,
+      "track": "ops",
+      "title": "Lunch",
+      "room": "",
+      "facils": [],
+      "group": "All",
+      "kind": "meal",
+      "code": null,
+      "sub": "Cohort lunch",
+      "aspects": [
+        "meal"
+      ],
+      "half": "pm",
+      "note": "Logistics block. Lunch.",
+      "facilitatorCue": null,
+      "studentTasks": null
+    },
+    {
+      "id": "s84",
       "sid": "9-pm-final-pitches",
       "day": 9,
       "start": 840,
@@ -4049,7 +4267,7 @@ window.STUDIO = {
       ]
     },
     {
-      "id": "s76",
+      "id": "s85",
       "sid": "9-pm-reception",
       "day": 9,
       "start": 930,
@@ -4143,6 +4361,16 @@ window.STUDIO = {
     "pitch": {
       "label": "Pitch",
       "color": "#0A8C3D",
+      "icon": "family"
+    },
+    "meal": {
+      "label": "Meal",
+      "color": "#8A6400",
+      "icon": "family"
+    },
+    "transition": {
+      "label": "Transition",
+      "color": "#565656",
       "icon": "family"
     }
   },
