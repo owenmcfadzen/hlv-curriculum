@@ -2471,8 +2471,8 @@ window.STUDIO = {
       "id": "s45",
       "sid": "5-am-guest-talk",
       "day": 5,
-      "start": 735,
-      "end": 780,
+      "start": 660,
+      "end": 705,
       "track": "talks",
       "title": "Guest Talk",
       "room": "",
@@ -2487,23 +2487,23 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "12:15",
-          "end": "12:26",
+          "t": "11:00",
+          "end": "11:11",
           "label": "Listen first 25 min. No notes."
         },
         {
-          "t": "12:26",
-          "end": "12:37",
+          "t": "11:11",
+          "end": "11:22",
           "label": "Capture: what surprised you about how they actually work?"
         },
         {
-          "t": "12:37",
-          "end": "12:48",
+          "t": "11:22",
+          "end": "11:33",
           "label": "Q&A 15 min. Ask about a specific decision they made recently, not abstract advice."
         },
         {
-          "t": "12:48",
-          "end": "13:00",
+          "t": "11:33",
+          "end": "11:45",
           "label": "Surface one thing you'll try in your specialty work this week."
         }
       ],
@@ -3554,8 +3554,8 @@ window.STUDIO = {
       "id": "s67",
       "sid": "8-am-guest-how-to-pitch",
       "day": 8,
-      "start": 720,
-      "end": 780,
+      "start": 660,
+      "end": 705,
       "track": "talks",
       "title": "Guest: How to pitch",
       "room": "",
@@ -3570,23 +3570,23 @@ window.STUDIO = {
       "half": "am",
       "micro": [
         {
-          "t": "12:00",
-          "end": "12:15",
+          "t": "11:00",
+          "end": "11:11",
           "label": "Listen 20 min. Capture: what's their definition of a 'problem that lands'?"
         },
         {
-          "t": "12:15",
-          "end": "12:30",
+          "t": "11:11",
+          "end": "11:22",
           "label": "Bring your own pitch open (30 seconds). Guest reacts to 2-3 of them live."
         },
         {
-          "t": "12:30",
-          "end": "12:45",
+          "t": "11:22",
+          "end": "11:33",
           "label": "Q&A 15 min. Ask about a pitch you've seen recently that didn't land. What was missing?"
         },
         {
-          "t": "12:45",
-          "end": "13:00",
+          "t": "11:33",
+          "end": "11:45",
           "label": "Surface one structural change you'll try before tomorrow's practice."
         }
       ],
